@@ -27,7 +27,6 @@
     "s": "56 federal penalties totaling $328.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -130,74 +128,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Entergy",
-    "slug": "entergy",
-    "ownership": "publicly traded (ticker symbol ETR)",
-    "hq": "Louisiana",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 327959852,
-    "totalRecords": 56,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 300562100,
-        "records": 15
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 15000000,
-        "records": 2
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 9631144,
-        "records": 6
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 2590143,
-        "records": 18
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 135783,
-        "records": 13
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 300085000,
-        "records": 2
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 12000000,
-        "records": 1
-      },
-      {
-        "category": "energy market violation",
-        "penalty": 9631144,
-        "records": 6
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 3000000,
-        "records": 1
-      },
-      {
-        "category": "nuclear safety violation",
-        "penalty": 2470000,
-        "records": 8
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:05:18.464Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00113035",

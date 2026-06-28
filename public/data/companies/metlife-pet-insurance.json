@@ -38,15 +38,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "77 federal penalties totaling $953.6M since 2000 (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -89,69 +87,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z"
   },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "metlife",
-      "matchedName": "MetLife",
-      "totalPenalty": 953591146,
-      "totalRecords": 77,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 542748986,
-          "records": 36
-        },
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 199500000,
-          "records": 2
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 132753989,
-          "records": 22
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 64588171,
-          "records": 15
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 14000000,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "insurance violation",
-          "penalty": 312388986,
-          "records": 30
-        },
-        {
-          "category": "False Claims Act and related",
-          "penalty": 199500000,
-          "records": 2
-        },
-        {
-          "category": "discriminatory practices (non-employment)",
-          "penalty": 160000000,
-          "records": 1
-        },
-        {
-          "category": "banking violation",
-          "penalty": 81736455,
-          "records": 2
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 70350000,
-          "records": 4
-        }
-      ],
-      "rating": "mixed"
-    }
-  },
   "competitors": [
     "nationwide-pet-insurance",
     "trupanion",
@@ -189,74 +124,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "MetLife",
-    "slug": "metlife",
-    "ownership": "publicly traded (ticker symbol MET)",
-    "hq": "New York",
-    "majorIndustry": "financial services",
-    "specificIndustry": "insurance",
-    "totalPenalty": 953591146,
-    "totalRecords": 77,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 542748986,
-        "records": 36
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 199500000,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 132753989,
-        "records": 22
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 64588171,
-        "records": 15
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 14000000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "insurance violation",
-        "penalty": 312388986,
-        "records": 30
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 199500000,
-        "records": 2
-      },
-      {
-        "category": "discriminatory practices (non-employment)",
-        "penalty": 160000000,
-        "records": 1
-      },
-      {
-        "category": "banking violation",
-        "penalty": 81736455,
-        "records": 2
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 70350000,
-        "records": 4
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

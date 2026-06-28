@@ -44,15 +44,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "60 federal penalties totaling $380.0M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -103,59 +101,6 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "usaa",
-      "matchedName": "USAA",
-      "totalPenalty": 379955409,
-      "totalRecords": 60,
-      "offenseGroups": [
-        {
-          "category": "financial offenses",
-          "penalty": 225382500,
-          "records": 4
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 153709125,
-          "records": 54
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 863784,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "anti-money-laundering deficiencies",
-          "penalty": 140000000,
-          "records": 2
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 137624396,
-          "records": 8
-        },
-        {
-          "category": "banking violation",
-          "penalty": 85382500,
-          "records": 2
-        },
-        {
-          "category": "insurance violation",
-          "penalty": 12784729,
-          "records": 44
-        },
-        {
-          "category": "privacy violation",
-          "penalty": 3250000,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "state-farm",
@@ -233,64 +178,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "USAA",
-    "slug": "usaa",
-    "ownership": "privately held",
-    "hq": "Texas",
-    "majorIndustry": "financial services",
-    "specificIndustry": "financial services",
-    "totalPenalty": 379955409,
-    "totalRecords": 60,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 225382500,
-        "records": 4
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 153709125,
-        "records": 54
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 863784,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "anti-money-laundering deficiencies",
-        "penalty": 140000000,
-        "records": 2
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 137624396,
-        "records": 8
-      },
-      {
-        "category": "banking violation",
-        "penalty": 85382500,
-        "records": 2
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 12784729,
-        "records": 44
-      },
-      {
-        "category": "privacy violation",
-        "penalty": 3250000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00164145",

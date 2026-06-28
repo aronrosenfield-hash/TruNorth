@@ -27,7 +27,6 @@
     "s": "4 federal penalties totaling $711K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "environmental violation: $53K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -150,54 +148,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Belden",
-    "slug": "belden",
-    "ownership": "publicly traded (ticker symbol BDC)",
-    "hq": "Missouri",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "industrial equipment",
-    "totalPenalty": 711069,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 650000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 52599,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 8470,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 650000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 52599,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 8470,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:49:09.101Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00041012",

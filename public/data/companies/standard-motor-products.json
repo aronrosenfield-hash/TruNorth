@@ -26,7 +26,6 @@
     "s": "3 federal penalties totaling $34K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "air pollution violation: $6K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -136,44 +134,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Standard Motor Products",
-    "slug": "standard-motor-products",
-    "ownership": "publicly traded (ticker symbol SMP)",
-    "hq": "New York",
-    "majorIndustry": "automotive parts",
-    "specificIndustry": "automotive parts",
-    "totalPenalty": 33758,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 27758,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 6000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 27758,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 6000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T01:05:10.979Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

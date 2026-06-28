@@ -30,7 +30,6 @@
     "s": "14 federal penalties totaling $556.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -53,8 +52,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -160,74 +158,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Broadcom",
-    "slug": "broadcom",
-    "ownership": "publicly traded (ticker symbol AVGO)",
-    "hq": "California",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "electronic equipment",
-    "totalPenalty": 556037791,
-    "totalRecords": 14,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 412500000,
-        "records": 6
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 143500000,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 20000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 12791,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 232000000,
-        "records": 3
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 180500000,
-        "records": 3
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 143500000,
-        "records": 5
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 20000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 12791,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:53:28.511Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00680504",

@@ -26,7 +26,6 @@
     "s": "7 federal penalties totaling $15.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -165,59 +163,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "3D Systems",
-    "slug": "3d-systems",
-    "ownership": "publicly traded (ticker symbol DDD)",
-    "hq": "South Carolina",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "3-D printers",
-    "totalPenalty": 15224207,
-    "totalRecords": 7,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 15047570,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 153742,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 22895,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "export control violation",
-        "penalty": 15047570,
-        "records": 3
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 136083,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 22895,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 17659,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:28:33.775Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -28,7 +28,6 @@
     "s": "2 federal penalties totaling $11.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -133,44 +131,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Hollister Inc.",
-    "slug": "hollister-inc",
-    "ownership": "employee-owned",
-    "hq": "Illinois",
-    "majorIndustry": "medical equipment and supplies",
-    "specificIndustry": "medical supplies",
-    "totalPenalty": 11447928,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 11440000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 7928,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "kickbacks and bribery",
-        "penalty": 11440000,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 7928,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T00:08:53.604Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00824425",

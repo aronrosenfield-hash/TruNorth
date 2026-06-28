@@ -27,7 +27,6 @@
     "s": "17 federal penalties totaling $399K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $133K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -126,64 +124,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Givaudan",
-    "slug": "givaudan",
-    "ownership": "publicly traded",
-    "hq": "Switzerland",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "flavorings",
-    "totalPenalty": 399217,
-    "totalRecords": 17,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 217170,
-        "records": 9
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 162225,
-        "records": 6
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 19822,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 162225,
-        "records": 6
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 133270,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 71900,
-        "records": 6
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 19822,
-        "records": 2
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 12000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:38:25.839Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

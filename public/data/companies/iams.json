@@ -27,7 +27,6 @@
     "s": "26 federal penalties totaling $9.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "air pollution violation: $41K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -119,69 +117,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Williams-Sonoma",
-    "slug": "williams-sonoma",
-    "ownership": "publicly traded (ticker symbol WSM)",
-    "hq": "California",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-housewares",
-    "totalPenalty": 9399430,
-    "totalRecords": 26,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 5175000,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 2200553,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 1946271,
-        "records": 17
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 77606,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 5175000,
-        "records": 3
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 2200553,
-        "records": 3
-      },
-      {
-        "category": "product safety violation",
-        "penalty": 1687500,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 258771,
-        "records": 15
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 40600,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T00:13:01.084Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

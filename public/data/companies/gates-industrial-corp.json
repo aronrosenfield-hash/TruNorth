@@ -26,7 +26,6 @@
     "s": "23 federal penalties totaling $380K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $108K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -120,54 +118,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Gates Industrial Corporation",
-    "slug": "gates-industrial-corporation",
-    "ownership": "publicly traded (ticker symbol GTES)",
-    "hq": "Colorado",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "power transmission belts",
-    "totalPenalty": 379779,
-    "totalRecords": 23,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 249829,
-        "records": 21
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 107950,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 22000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 249829,
-        "records": 21
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 107950,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 22000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:36:46.057Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

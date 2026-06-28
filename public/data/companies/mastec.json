@@ -26,7 +26,6 @@
     "s": "69 federal penalties totaling $17.8M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "water pollution violation: $217K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -150,69 +148,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "MasTec",
-    "slug": "mastec",
-    "ownership": "publicly traded (ticker symbol MTZ)",
-    "hq": "Florida",
-    "majorIndustry": "construction and engineering",
-    "specificIndustry": "construction &amp; engineering",
-    "totalPenalty": 17787643,
-    "totalRecords": 69,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 16481349,
-        "records": 12
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 965726,
-        "records": 48
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 289258,
-        "records": 6
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 51310,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 13248199,
-        "records": 7
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 3233150,
-        "records": 5
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 923646,
-        "records": 45
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 217058,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 72200,
-        "records": 4
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:10:14.212Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

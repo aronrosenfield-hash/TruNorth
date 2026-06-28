@@ -26,7 +26,6 @@
     "s": "23 federal penalties totaling $764K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "environmental violation: $86K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -133,69 +131,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Sika AG",
-    "slug": "sika-ag",
-    "ownership": "publicly traded",
-    "hq": "Switzerland",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 763743,
-    "totalRecords": 23,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 345308,
-        "records": 12
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 200000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 178447,
-        "records": 8
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 39988,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 328528,
-        "records": 10
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 200000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 85590,
-        "records": 4
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 85457,
-        "records": 3
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 34788,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:43:26.615Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

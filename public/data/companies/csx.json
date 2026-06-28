@@ -45,15 +45,13 @@
     "s": "environmental violation: $225.4M in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "2137 federal penalties totaling $259.9M since 2000 (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -105,59 +103,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "csx",
-      "matchedName": "CSX",
-      "totalPenalty": 259880859,
-      "totalRecords": 2137,
-      "offenseGroups": [
-        {
-          "category": "environment-related offenses",
-          "penalty": 229549082,
-          "records": 59
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 23081849,
-          "records": 2065
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 7249928,
-          "records": 13
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "environmental violation",
-          "penalty": 225407103,
-          "records": 42
-        },
-        {
-          "category": "railroad safety violation",
-          "penalty": 22791250,
-          "records": 2054
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 5308611,
-          "records": 2
-        },
-        {
-          "category": "water pollution violation",
-          "penalty": 3482360,
-          "records": 8
-        },
-        {
-          "category": "workplace whistleblower retaliation",
-          "penalty": 1850226,
-          "records": 6
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [],
   "wiki": {
@@ -223,64 +168,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "CSX",
-    "slug": "csx",
-    "ownership": "publicly traded (ticker symbol CSX)",
-    "hq": "Florida",
-    "majorIndustry": "railroads",
-    "specificIndustry": "railroads",
-    "totalPenalty": 259880859,
-    "totalRecords": 2137,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 229549082,
-        "records": 59
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 23081849,
-        "records": 2065
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 7249928,
-        "records": 13
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 225407103,
-        "records": 42
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 22791250,
-        "records": 2054
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 5308611,
-        "records": 2
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 3482360,
-        "records": 8
-      },
-      {
-        "category": "workplace whistleblower retaliation",
-        "penalty": 1850226,
-        "records": 6
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00163832",

@@ -25,7 +25,6 @@
     "s": "137 federal penalties totaling $101.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "environmental violation: $41.3M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -154,74 +152,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Icahn Enterprises",
-    "slug": "icahn-enterprises",
-    "ownership": "publicly traded (ticker symbol IEP)",
-    "hq": "New York",
-    "majorIndustry": "diversified",
-    "specificIndustry": "diversified",
-    "totalPenalty": 101242442,
-    "totalRecords": 137,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 87692630,
-        "records": 35
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 7302933,
-        "records": 10
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 2764748,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 1782131,
-        "records": 87
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 1510000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 41323659,
-        "records": 17
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 39883995,
-        "records": 11
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 7282745,
-        "records": 8
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 3700000,
-        "records": 1
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 2764748,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:25:22.357Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

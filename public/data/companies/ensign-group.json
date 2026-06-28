@@ -27,7 +27,6 @@
     "s": "356 federal penalties totaling $56.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $5K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -126,74 +124,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ensign Group",
-    "slug": "ensign-group",
-    "ownership": "publicly traded (ticker symbol ENSG)",
-    "hq": "California",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "skilled nursing facilities",
-    "totalPenalty": 56511305,
-    "totalRecords": 356,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 48000000,
-        "records": 1
-      },
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 8414924,
-        "records": 347
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 74071,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 17310,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 48000000,
-        "records": 1
-      },
-      {
-        "category": "nursing home violation",
-        "penalty": 8414924,
-        "records": 347
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 74071,
-        "records": 4
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 17310,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:01:56.638Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -26,7 +26,6 @@
     "s": "11 federal penalties totaling $6.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "environmental violation: $1.7M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -111,74 +109,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Crane Co.",
-    "slug": "crane-co",
-    "ownership": "publicly traded (ticker symbol CR)",
-    "hq": "Connecticut",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "industrial equipment",
-    "totalPenalty": 6501552,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 4500000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1749846,
-        "records": 7
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 200000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 27704,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 24002,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 4500000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 1733846,
-        "records": 5
-      },
-      {
-        "category": "export control violation",
-        "penalty": 200000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 27704,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 24002,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:03:17.209Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

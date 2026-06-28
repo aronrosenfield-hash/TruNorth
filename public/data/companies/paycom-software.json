@@ -26,7 +26,6 @@
     "s": "3 federal penalties totaling $484K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -134,54 +132,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Paycom Software",
-    "slug": "paycom-software",
-    "ownership": "publicly traded (ticker symbol PAYC)",
-    "hq": "Oklahoma",
-    "majorIndustry": "information technology",
-    "specificIndustry": "human resources software",
-    "totalPenalty": 484032,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 250000,
-        "records": 1
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 212500,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 21532,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 250000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 212500,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 21532,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:04:23.073Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

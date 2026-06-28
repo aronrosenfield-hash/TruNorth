@@ -26,7 +26,6 @@
     "s": "50 federal penalties totaling $8.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "environmental violation: $4.1M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -158,69 +156,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Andersons Inc.",
-    "slug": "andersons-inc",
-    "ownership": "publicly traded (ticker symbol ANDE)",
-    "hq": "Ohio",
-    "majorIndustry": "wholesalers",
-    "specificIndustry": "wholesalers-food products",
-    "totalPenalty": 8093201,
-    "totalRecords": 50,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 4120905,
-        "records": 19
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 3400000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 548196,
-        "records": 29
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 24100,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 4104830,
-        "records": 17
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 3400000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 431771,
-        "records": 15
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 116425,
-        "records": 14
-      },
-      {
-        "category": "agribusiness violation",
-        "penalty": 24100,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:30:55.604Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

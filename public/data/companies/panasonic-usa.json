@@ -37,15 +37,13 @@
     "s": "environmental violation: $219K in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "50 federal penalties totaling $657.9M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -82,69 +80,6 @@
     "sources": [
       "Claude AI synthesis"
     ]
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "panasonic",
-      "matchedName": "Panasonic",
-      "totalPenalty": 657907789,
-      "totalRecords": 50,
-      "offenseGroups": [
-        {
-          "category": "competition-related offenses",
-          "penalty": 655519551,
-          "records": 25
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 1672778,
-          "records": 4
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 275000,
-          "records": 1
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 243423,
-          "records": 10
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 197037,
-          "records": 10
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 375119551,
-          "records": 23
-        },
-        {
-          "category": "Foreign Corrupt Practices Act",
-          "penalty": 280400000,
-          "records": 2
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 1500000,
-          "records": 1
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 275000,
-          "records": 1
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 219423,
-          "records": 6
-        }
-      ],
-      "rating": "good"
-    }
   },
   "dataLastUpdated": "2026-05-28",
   "competitors": [],
@@ -185,74 +120,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Panasonic",
-    "slug": "panasonic",
-    "ownership": "publicly traded",
-    "hq": "Japan",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "consumer electronics",
-    "totalPenalty": 657907789,
-    "totalRecords": 50,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 655519551,
-        "records": 25
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1672778,
-        "records": 4
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 275000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 243423,
-        "records": 10
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 197037,
-        "records": 10
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 375119551,
-        "records": 23
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 280400000,
-        "records": 2
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 1500000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 275000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 219423,
-        "records": 6
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

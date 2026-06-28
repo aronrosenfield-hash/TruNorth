@@ -25,7 +25,6 @@
     "s": "32 federal penalties totaling $4.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $4.0M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -142,64 +140,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "EOG Resources",
-    "slug": "eog-resources",
-    "ownership": "publicly traded (ticker symbol EOG)",
-    "hq": "Texas",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 4388810,
-    "totalRecords": 32,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 3996197,
-        "records": 19
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 240000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 152613,
-        "records": 12
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 3975197,
-        "records": 17
-      },
-      {
-        "category": "federal leasing royalty violation",
-        "penalty": 240000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 88163,
-        "records": 6
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 64450,
-        "records": 6
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 21000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:06:22.468Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

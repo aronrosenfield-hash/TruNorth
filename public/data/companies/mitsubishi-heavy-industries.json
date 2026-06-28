@@ -27,7 +27,6 @@
     "s": "15 federal penalties totaling $26.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $272K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -126,69 +124,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Mitsubishi Heavy Industries",
-    "slug": "mitsubishi-heavy-industries",
-    "ownership": "publicly traded",
-    "hq": "Japan",
-    "majorIndustry": "diversified",
-    "specificIndustry": "diversified",
-    "totalPenalty": 26139429,
-    "totalRecords": 15,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 25540000,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 320132,
-        "records": 9
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 255302,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 23995,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 25540000,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 271757,
-        "records": 6
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 255302,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 48375,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 23995,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:41:04.809Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

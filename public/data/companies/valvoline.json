@@ -26,7 +26,6 @@
     "s": "10 federal penalties totaling $301K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "air pollution violation: $233K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -142,64 +140,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Valvoline Inc.",
-    "slug": "valvoline-inc",
-    "ownership": "publicly traded (ticker symbol VVV)",
-    "hq": "Kentucky",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-automotive",
-    "totalPenalty": 301019,
-    "totalRecords": 10,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 262341,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 25678,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 13000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 233375,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 25678,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 21666,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 13000,
-        "records": 2
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 7300,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:27:49.012Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

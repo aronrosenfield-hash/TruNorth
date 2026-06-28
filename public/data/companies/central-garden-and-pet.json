@@ -26,7 +26,6 @@
     "s": "23 federal penalties totaling $780K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "hazardous waste violation: $141K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -144,59 +142,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Central Garden & Pet Co.",
-    "slug": "central-garden-and-pet-co",
-    "ownership": "publicly traded (ticker symbol CENTA)",
-    "hq": "California",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "pet and garden supplies",
-    "totalPenalty": 780109,
-    "totalRecords": 23,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 604974,
-        "records": 10
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 175135,
-        "records": 13
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "pesticide violation",
-        "penalty": 324993,
-        "records": 4
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 141285,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 122856,
-        "records": 4
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 121135,
-        "records": 12
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 54000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:46:06.175Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

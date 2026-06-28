@@ -26,7 +26,6 @@
     "s": "2 federal penalties totaling $20K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "hazardous waste violation: $15K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -139,39 +137,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "STMicroelectronics",
-    "slug": "stmicroelectronics",
-    "ownership": "publicly traded (ticker symbol STM)",
-    "hq": "Switzerland",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "semiconductors",
-    "totalPenalty": 20061,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 20061,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "hazardous waste violation",
-        "penalty": 15061,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T01:11:09.922Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

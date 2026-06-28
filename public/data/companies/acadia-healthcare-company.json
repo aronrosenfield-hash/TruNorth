@@ -27,7 +27,6 @@
     "s": "17 federal penalties totaling $67.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -146,74 +144,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Acadia Healthcare",
-    "slug": "acadia-healthcare",
-    "ownership": "publicly traded (ticker symbol ACHC)",
-    "hq": "Tennessee",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "healthcare services",
-    "totalPenalty": 67448047,
-    "totalRecords": 17,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 65750000,
-        "records": 5
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 1386000,
-        "records": 1
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 154523,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 110878,
-        "records": 7
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 46646,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 65750000,
-        "records": 5
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 1386000,
-        "records": 1
-      },
-      {
-        "category": "discriminatory practices (non-employment)",
-        "penalty": 154523,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 103970,
-        "records": 6
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 46646,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:09:25.020Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00897470",

@@ -36,15 +36,13 @@
     "s": "water pollution violation: $33.6M in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "4105 federal penalties totaling $193.2M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -81,59 +79,6 @@
     "sources": [
       "Claude AI synthesis"
     ]
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "union-pacific",
-      "matchedName": "Union Pacific",
-      "totalPenalty": 193247916,
-      "totalRecords": 4105,
-      "offenseGroups": [
-        {
-          "category": "safety-related offenses",
-          "penalty": 149831080,
-          "records": 4036
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 40870226,
-          "records": 56
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 2546610,
-          "records": 13
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "utility safety violation",
-          "penalty": 102100000,
-          "records": 2
-        },
-        {
-          "category": "railroad safety violation",
-          "penalty": 47611776,
-          "records": 4021
-        },
-        {
-          "category": "water pollution violation",
-          "penalty": 33552705,
-          "records": 8
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 2525647,
-          "records": 28
-        },
-        {
-          "category": "hazardous waste violation",
-          "penalty": 2427450,
-          "records": 4
-        }
-      ],
-      "rating": "good"
-    }
   },
   "dataLastUpdated": "2026-05-28",
   "competitors": [
@@ -215,64 +160,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Union Pacific",
-    "slug": "union-pacific",
-    "ownership": "publicly traded (ticker symbol UNP)",
-    "hq": "Nebraska",
-    "majorIndustry": "railroads",
-    "specificIndustry": "railroads",
-    "totalPenalty": 193247916,
-    "totalRecords": 4105,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 149831080,
-        "records": 4036
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 40870226,
-        "records": 56
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 2546610,
-        "records": 13
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "utility safety violation",
-        "penalty": 102100000,
-        "records": 2
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 47611776,
-        "records": 4021
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 33552705,
-        "records": 8
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 2525647,
-        "records": 28
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 2427450,
-        "records": 4
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

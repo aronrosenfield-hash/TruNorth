@@ -27,7 +27,6 @@
     "s": "52 federal penalties totaling $3.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $112K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -160,69 +158,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ball Corp.",
-    "slug": "ball-corp",
-    "ownership": "publicly traded (ticker symbol BLL)",
-    "hq": "Colorado",
-    "majorIndustry": "paper and packaging",
-    "specificIndustry": "packaging",
-    "totalPenalty": 2955569,
-    "totalRecords": 52,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 1804043,
-        "records": 8
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 703987,
-        "records": 34
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 300000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 147539,
-        "records": 9
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment discrimination",
-        "penalty": 1430000,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 703987,
-        "records": 34
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 300000,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 274041,
-        "records": 4
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 112339,
-        "records": 5
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:48:42.890Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00695254",

@@ -26,7 +26,6 @@
     "s": "125 federal penalties totaling $899.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "hazardous waste violation: $811.6M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -154,69 +152,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Mosaic Co.",
-    "slug": "mosaic-co",
-    "ownership": "publicly traded (ticker symbol MOS)",
-    "hq": "Minnesota",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 899157851,
-    "totalRecords": 125,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 853945857,
-        "records": 52
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 43750000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 815133,
-        "records": 68
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 646861,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "hazardous waste violation",
-        "penalty": 811650000,
-        "records": 3
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 43750000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 41831682,
-        "records": 39
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 632875,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 579933,
-        "records": 52
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:26:42.582Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

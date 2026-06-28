@@ -26,7 +26,6 @@
     "s": "43 federal penalties totaling $1.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $298K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -146,64 +144,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Knife River Corporation",
-    "slug": "knife-river-corporation",
-    "ownership": "publicly traded (ticker symbol KNF)",
-    "hq": "North Dakota",
-    "majorIndustry": "building materials",
-    "specificIndustry": "construction aggregates",
-    "totalPenalty": 1240755,
-    "totalRecords": 43,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 712640,
-        "records": 25
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 457102,
-        "records": 13
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 71013,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 712640,
-        "records": 25
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 297690,
-        "records": 7
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 149412,
-        "records": 5
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 50000,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 21013,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:50:53.687Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

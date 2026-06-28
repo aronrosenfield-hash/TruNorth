@@ -27,7 +27,6 @@
     "s": "52 federal penalties totaling $12.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "air pollution violation: $1.0M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -150,74 +148,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Molson Coors Beverage",
-    "slug": "molson-coors-beverage",
-    "ownership": "publicly traded (ticker symbol TAP)",
-    "hq": "Colorado",
-    "majorIndustry": "beverages",
-    "specificIndustry": "beverages",
-    "totalPenalty": 12685849,
-    "totalRecords": 52,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 10050000,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1607571,
-        "records": 23
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 521358,
-        "records": 23
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 499000,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 7920,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 10050000,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 1016125,
-        "records": 15
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 521358,
-        "records": 23
-      },
-      {
-        "category": "tax violations",
-        "penalty": 499000,
-        "records": 3
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 351206,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:23:34.465Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00457697",

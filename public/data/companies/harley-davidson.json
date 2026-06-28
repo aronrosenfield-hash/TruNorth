@@ -25,7 +25,6 @@
     "s": "9 federal penalties totaling $24.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $12.0M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -154,64 +152,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Harley-Davidson",
-    "slug": "harley-davidson",
-    "ownership": "publicly traded (ticker symbol HOG)",
-    "hq": "Wisconsin",
-    "majorIndustry": "motor vehicles",
-    "specificIndustry": "motor vehicles",
-    "totalPenalty": 24324870,
-    "totalRecords": 9,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 24012500,
-        "records": 3
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 275500,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 36870,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 12012500,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 12000000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 253000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 36870,
-        "records": 3
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 22500,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:12:12.622Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

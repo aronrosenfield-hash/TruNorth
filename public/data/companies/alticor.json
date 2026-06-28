@@ -28,7 +28,6 @@
     "s": "6 federal penalties totaling $1.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $132K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -122,64 +120,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Alticor",
-    "slug": "alticor",
-    "ownership": "privately held",
-    "hq": "Michigan",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "direct sales",
-    "totalPenalty": 1695031,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 1510000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 176031,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 9000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 1510000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 131850,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 23800,
-        "records": 1
-      },
-      {
-        "category": "pesticide violation",
-        "penalty": 20381,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 9000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T21:50:33.729Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00034884",

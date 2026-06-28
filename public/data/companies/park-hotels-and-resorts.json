@@ -26,7 +26,6 @@
     "s": "12 federal penalties totaling $245K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $25K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -133,59 +131,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Park Hotels & Resorts",
-    "slug": "park-hotels-and-resorts",
-    "ownership": "publicly traded (ticker symbol PK)",
-    "hq": "Virginia",
-    "majorIndustry": "hotels",
-    "specificIndustry": "Hotels real estate investment trust",
-    "totalPenalty": 245139,
-    "totalRecords": 12,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 127881,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 92258,
-        "records": 6
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 25000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 92258,
-        "records": 6
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 72591,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 55290,
-        "records": 4
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 25000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:03:40.241Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

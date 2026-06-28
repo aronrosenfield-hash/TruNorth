@@ -47,15 +47,13 @@
     "s": "No public record found.",
     "rating": "Poor",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "70 federal penalties totaling $1.8B since 2000 (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -106,69 +104,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "tenet-healthcare",
-      "matchedName": "Tenet Healthcare",
-      "totalPenalty": 1845604328,
-      "totalRecords": 70,
-      "offenseGroups": [
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 1683459764,
-          "records": 21
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 88097626,
-          "records": 24
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 63000000,
-          "records": 3
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 10000000,
-          "records": 1
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 520000,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "False Claims Act and related",
-          "penalty": 1683459764,
-          "records": 21
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 85904015,
-          "records": 17
-        },
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 42000000,
-          "records": 1
-        },
-        {
-          "category": "kickbacks and bribery",
-          "penalty": 21000000,
-          "records": 2
-        },
-        {
-          "category": "investor protection violation",
-          "penalty": 10000000,
-          "records": 1
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "hca-healthcare",
@@ -246,74 +181,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Tenet Healthcare",
-    "slug": "tenet-healthcare",
-    "ownership": "publicly traded (ticker symbol THC)",
-    "hq": "Texas",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "hospitals (for-profit)",
-    "totalPenalty": 1845604328,
-    "totalRecords": 70,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 1683459764,
-        "records": 21
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 88097626,
-        "records": 24
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 63000000,
-        "records": 3
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 10000000,
-        "records": 1
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 520000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 1683459764,
-        "records": 21
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 85904015,
-        "records": 17
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 42000000,
-        "records": 1
-      },
-      {
-        "category": "kickbacks and bribery",
-        "penalty": 21000000,
-        "records": 2
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 10000000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00119354",

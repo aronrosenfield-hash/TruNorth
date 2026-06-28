@@ -27,7 +27,6 @@
     "s": "55 federal penalties totaling $1.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $376K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -143,59 +141,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Minerals Technologies Inc.",
-    "slug": "minerals-technologies-inc",
-    "ownership": "publicly traded (ticker symbol MTX)",
-    "hq": "New York",
-    "majorIndustry": "mining and minerals",
-    "specificIndustry": "minerals",
-    "totalPenalty": 1170949,
-    "totalRecords": 55,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 808270,
-        "records": 23
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 362679,
-        "records": 32
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 376170,
-        "records": 14
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 352679,
-        "records": 31
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 299000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 133100,
-        "records": 8
-      },
-      {
-        "category": "mining violation",
-        "penalty": 10000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:21:56.786Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00378067",

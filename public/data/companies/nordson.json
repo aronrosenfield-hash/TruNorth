@@ -26,7 +26,6 @@
     "s": "7 federal penalties totaling $130K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $20K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -148,44 +146,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Nordson Corp.",
-    "slug": "nordson-corp",
-    "ownership": "publicly traded (ticker symbol NDSN)",
-    "hq": "Ohio",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "industrial equipment",
-    "totalPenalty": 129572,
-    "totalRecords": 7,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 109572,
-        "records": 6
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 20000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 109572,
-        "records": 6
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 20000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:15:43.049Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

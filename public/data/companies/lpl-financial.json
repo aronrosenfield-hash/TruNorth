@@ -44,15 +44,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "73 federal penalties totaling $158.7M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -102,44 +100,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "lpl-financial",
-      "matchedName": "LPL Financial",
-      "totalPenalty": 158655651,
-      "totalRecords": 73,
-      "offenseGroups": [
-        {
-          "category": "financial offenses",
-          "penalty": 156655651,
-          "records": 72
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 2000000,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "investor protection violation",
-          "penalty": 138655651,
-          "records": 71
-        },
-        {
-          "category": "anti-money-laundering deficiencies",
-          "penalty": 18000000,
-          "records": 1
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 2000000,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "charles-schwab",
@@ -225,49 +185,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "LPL Financial",
-    "slug": "lpl-financial",
-    "ownership": "publicly traded (ticker symbol LPLA)",
-    "hq": "California",
-    "majorIndustry": "financial services",
-    "specificIndustry": "investment advisory services",
-    "totalPenalty": 158655651,
-    "totalRecords": 73,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 156655651,
-        "records": 72
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 2000000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 138655651,
-        "records": 71
-      },
-      {
-        "category": "anti-money-laundering deficiencies",
-        "penalty": 18000000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 2000000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00486217",

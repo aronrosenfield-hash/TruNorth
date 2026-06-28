@@ -43,15 +43,13 @@
     "s": "No public record found.",
     "rating": "Poor",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "20 federal penalties totaling $978.2M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -101,69 +99,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "encompass-health",
-      "matchedName": "Encompass Health",
-      "totalPenalty": 978182289,
-      "totalRecords": 20,
-      "offenseGroups": [
-        {
-          "category": "financial offenses",
-          "penalty": 545000000,
-          "records": 2
-        },
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 404160683,
-          "records": 7
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 28895210,
-          "records": 6
-        },
-        {
-          "category": "healthcare-related offenses",
-          "penalty": 100000,
-          "records": 1
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 12324,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "accounting fraud or deficiencies",
-          "penalty": 545000000,
-          "records": 2
-        },
-        {
-          "category": "False Claims Act and related",
-          "penalty": 404160683,
-          "records": 7
-        },
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 28850000,
-          "records": 1
-        },
-        {
-          "category": "HHS civil monetary penalties",
-          "penalty": 100000,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 36223,
-          "records": 4
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "kindred-healthcare",
@@ -246,74 +181,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Encompass Health",
-    "slug": "encompass-health",
-    "ownership": "publicly traded (ticker symbol EHC)",
-    "hq": "Alabama",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "healthcare services",
-    "totalPenalty": 978182289,
-    "totalRecords": 20,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 545000000,
-        "records": 2
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 404160683,
-        "records": 7
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 28895210,
-        "records": 6
-      },
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 100000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 12324,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 545000000,
-        "records": 2
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 404160683,
-        "records": 7
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 28850000,
-        "records": 1
-      },
-      {
-        "category": "HHS civil monetary penalties",
-        "penalty": 100000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 36223,
-        "records": 4
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00414649",

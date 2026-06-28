@@ -27,7 +27,6 @@
     "s": "41 federal penalties totaling $10.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "environmental violation: $119K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -156,69 +154,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Lear Corp.",
-    "slug": "lear-corp",
-    "ownership": "publicly traded (ticker symbol LEA)",
-    "hq": "Michigan",
-    "majorIndustry": "automotive parts",
-    "specificIndustry": "automotive parts",
-    "totalPenalty": 10033374,
-    "totalRecords": 41,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 5379876,
-        "records": 9
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 4201000,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 333498,
-        "records": 28
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 119000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 5250000,
-        "records": 1
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 4201000,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 333498,
-        "records": 28
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 119000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 58454,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:10:59.393Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00478362",

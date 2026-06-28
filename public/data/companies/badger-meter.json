@@ -26,7 +26,6 @@
     "s": "4 federal penalties totaling $145K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $105K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -124,49 +122,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Badger Meter",
-    "slug": "badger-meter",
-    "ownership": "publicly traded (ticker symbol BMI)",
-    "hq": "Wisconsin",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "flow measurement technology",
-    "totalPenalty": 145286,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 105400,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 39886,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 105400,
-        "records": 1
-      },
-      {
-        "category": "motor vehicle safety violation",
-        "penalty": 27630,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 12256,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:56:33.754Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

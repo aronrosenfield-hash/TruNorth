@@ -27,7 +27,6 @@
     "s": "2 federal penalties totaling $202K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -148,39 +146,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Alnylam Pharmaceuticals",
-    "slug": "alnylam-pharmaceuticals",
-    "ownership": "publicly traded (ticker symbol ALNY)",
-    "hq": "Massachusetts",
-    "majorIndustry": "pharmaceuticals",
-    "specificIndustry": "pharmaceuticals",
-    "totalPenalty": 201959,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 201959,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "HHS civil monetary penalties",
-        "penalty": 170000,
-        "records": 1
-      },
-      {
-        "category": "Medicare Coverage Gap Discount Program violation",
-        "penalty": 31959,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:25:33.190Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00670331",

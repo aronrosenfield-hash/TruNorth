@@ -26,7 +26,6 @@
     "s": "21 federal penalties totaling $290.4M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "environmental violation: $90K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -128,69 +126,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Infineon Technologies",
-    "slug": "infineon-technologies",
-    "ownership": "publicly traded",
-    "hq": "Germany",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "semiconductors",
-    "totalPenalty": 290432828,
-    "totalRecords": 21,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 246341302,
-        "records": 8
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 43888236,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 113690,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 89600,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 246271302,
-        "records": 7
-      },
-      {
-        "category": "WARN Act violation",
-        "penalty": 43568000,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 310235,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 113690,
-        "records": 4
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 89600,
-        "records": 5
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:07:42.611Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -26,7 +26,6 @@
     "s": "6 federal penalties totaling $637K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "environmental violation: $19K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -120,64 +118,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "GrafTech International",
-    "slug": "graftech-international",
-    "ownership": "publicly traded (ticker symbol EAF)",
-    "hq": "Ohio",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "graphite electrode products",
-    "totalPenalty": 637327,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 575000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 33000,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 19100,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 10227,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "export control violation",
-        "penalty": 575000,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 33000,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 19100,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 10227,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:58:24.210Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

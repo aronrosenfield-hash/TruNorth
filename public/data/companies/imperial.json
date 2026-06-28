@@ -27,7 +27,6 @@
     "s": "19 federal penalties totaling $524K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "environmental violation: $213K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -143,59 +141,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Imperial Group",
-    "slug": "imperial-group",
-    "ownership": "privately held",
-    "hq": "Illinois",
-    "majorIndustry": "metals",
-    "specificIndustry": "metals",
-    "totalPenalty": 523699,
-    "totalRecords": 19,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 305513,
-        "records": 6
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 200442,
-        "records": 12
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 17744,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 213013,
-        "records": 4
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 200442,
-        "records": 12
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 92500,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 17744,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T00:13:58.398Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00134718",

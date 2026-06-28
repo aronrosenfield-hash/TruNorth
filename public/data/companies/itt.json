@@ -26,7 +26,6 @@
     "s": "30 federal penalties totaling $14.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $936K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -148,74 +146,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "ITT Inc.",
-    "slug": "itt-inc",
-    "ownership": "publicly traded (ticker symbol ITT)",
-    "hq": "New York",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "industrial equipment",
-    "totalPenalty": 14271839,
-    "totalRecords": 30,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 11000000,
-        "records": 1
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 1828550,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 953216,
-        "records": 13
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 275073,
-        "records": 12
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 215000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 11000000,
-        "records": 1
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 1678650,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 936216,
-        "records": 11
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 275073,
-        "records": 12
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 215000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:08:27.156Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -27,7 +27,6 @@
     "s": "8 federal penalties totaling $1.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "hazardous waste violation: $33K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -142,54 +140,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "OPMobility",
-    "slug": "opmobility",
-    "ownership": "publicly traded",
-    "hq": "France",
-    "majorIndustry": "automotive parts",
-    "specificIndustry": "automotive parts",
-    "totalPenalty": 1028354,
-    "totalRecords": 8,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 942404,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 85950,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 942404,
-        "records": 3
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 32500,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 27450,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 26000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T01:17:54.801Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

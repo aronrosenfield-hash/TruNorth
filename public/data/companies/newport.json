@@ -27,7 +27,6 @@
     "s": "4 federal penalties totaling $230K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "water pollution violation: $200K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -130,49 +128,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Newport Sand & Gravel",
-    "slug": "newport-sand-and-gravel",
-    "ownership": "privately held",
-    "hq": "Tennessee",
-    "majorIndustry": "building materials",
-    "specificIndustry": "building materials",
-    "totalPenalty": 230176,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 200000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 30176,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "water pollution violation",
-        "penalty": 200000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 30176,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 0,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T01:34:27.880Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

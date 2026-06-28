@@ -37,15 +37,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "1 federal penalties totaling $3.3M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -95,29 +93,6 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "penske-automotive",
-      "matchedName": "Penske Automotive",
-      "totalPenalty": 3275000,
-      "totalRecords": 1,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 3275000,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "wage and hour violation",
-          "penalty": 3275000,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "hertz",
@@ -198,34 +173,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Penske Automotive",
-    "slug": "penske-automotive",
-    "ownership": "publicly traded (ticker symbol PAG)",
-    "hq": "Michigan",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-automotive",
-    "totalPenalty": 3275000,
-    "totalRecords": 1,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 3275000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 3275000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

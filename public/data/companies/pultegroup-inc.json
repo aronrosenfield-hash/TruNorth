@@ -26,7 +26,6 @@
     "s": "85 federal penalties totaling $10.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "water pollution violation: $2.5M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -121,74 +119,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "PulteGroup",
-    "slug": "pultegroup",
-    "ownership": "publicly traded (ticker symbol PHM)",
-    "hq": "Michigan",
-    "majorIndustry": "construction and engineering",
-    "specificIndustry": "homebuilding",
-    "totalPenalty": 10174881,
-    "totalRecords": 85,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 5914400,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 3055251,
-        "records": 46
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 556810,
-        "records": 31
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 536420,
-        "records": 3
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 112000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 5914400,
-        "records": 4
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 2472809,
-        "records": 11
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 556810,
-        "records": 31
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 529751,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 383866,
-        "records": 31
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:14:13.377Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

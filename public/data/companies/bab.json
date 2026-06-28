@@ -27,7 +27,6 @@
     "s": "20 federal penalties totaling $844K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $51K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -122,59 +120,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Babcock & Wilcox",
-    "slug": "babcock-and-wilcox",
-    "ownership": "publicly traded (ticker symbol BW)",
-    "hq": "North Carolina",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "industrial equipment",
-    "totalPenalty": 843994,
-    "totalRecords": 20,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 766258,
-        "records": 17
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 50736,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 27000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "nuclear safety violation",
-        "penalty": 603750,
-        "records": 4
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 162508,
-        "records": 13
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 50736,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 27000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:56:19.307Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00577072",

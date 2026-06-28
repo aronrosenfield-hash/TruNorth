@@ -45,15 +45,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "12 federal penalties totaling $2.1M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -108,54 +106,6 @@
     "execPay": "2026-06-11T03:48:51.753Z",
     "federalContracts": "2026-06-11T23:51:18.870Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "leidos",
-      "matchedName": "Leidos",
-      "totalPenalty": 2089270,
-      "totalRecords": 12,
-      "offenseGroups": [
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 1500000,
-          "records": 1
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 578815,
-          "records": 10
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 10455,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "False Claims Act and related",
-          "penalty": 1500000,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 381961,
-          "records": 8
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 196854,
-          "records": 2
-        },
-        {
-          "category": "tax violations",
-          "penalty": 10455,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "lockheed-martin",
@@ -263,59 +213,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Leidos",
-    "slug": "leidos",
-    "ownership": "publicly traded (ticker symbol LDOS)",
-    "hq": "Virginia",
-    "majorIndustry": "information technology",
-    "specificIndustry": "information technology",
-    "totalPenalty": 2089270,
-    "totalRecords": 12,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 1500000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 578815,
-        "records": 10
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 10455,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 1500000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 381961,
-        "records": 8
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 196854,
-        "records": 2
-      },
-      {
-        "category": "tax violations",
-        "penalty": 10455,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00546234",

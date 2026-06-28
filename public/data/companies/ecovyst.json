@@ -26,7 +26,6 @@
     "s": "45 federal penalties totaling $4.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "air pollution violation: $2.8M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -144,64 +142,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ecovyst Inc.",
-    "slug": "ecovyst-inc",
-    "ownership": "publicly traded (ticker symbol ECVT)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 4067016,
-    "totalRecords": 45,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 3708214,
-        "records": 23
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 293802,
-        "records": 20
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 65000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 2792602,
-        "records": 7
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 915612,
-        "records": 16
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 223702,
-        "records": 11
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 70100,
-        "records": 9
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 65000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:48:28.574Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

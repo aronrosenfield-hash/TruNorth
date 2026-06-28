@@ -45,15 +45,13 @@
     "s": "environmental violation: $1.7M in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "26 federal penalties totaling $10.3M since 2000 (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -106,59 +104,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "old-dominion-freight-line",
-      "matchedName": "Old Dominion Freight Line",
-      "totalPenalty": 10250079,
-      "totalRecords": 26,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 8390153,
-          "records": 13
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 1685000,
-          "records": 3
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 174926,
-          "records": 10
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "wage and hour violation",
-          "penalty": 6261295,
-          "records": 3
-        },
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 1900000,
-          "records": 1
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 1685000,
-          "records": 3
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 164926,
-          "records": 9
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 119612,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "j-b-hunt",
@@ -231,64 +176,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Old Dominion Freight Line",
-    "slug": "old-dominion-freight-line",
-    "ownership": "publicly traded (ticker symbol ODFL)",
-    "hq": "North Carolina",
-    "majorIndustry": "freight and logistics",
-    "specificIndustry": "logistics",
-    "totalPenalty": 10250079,
-    "totalRecords": 26,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 8390153,
-        "records": 13
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1685000,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 174926,
-        "records": 10
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 6261295,
-        "records": 3
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 1900000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 1685000,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 164926,
-        "records": 9
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 119612,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00496836",

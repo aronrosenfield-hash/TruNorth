@@ -27,7 +27,6 @@
     "s": "2 federal penalties totaling $4.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $10K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -137,44 +135,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Premier Health",
-    "slug": "premier-health",
-    "ownership": "non-profit",
-    "hq": "Ohio",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "hospitals",
-    "totalPenalty": 4242492,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 4232992,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 9500,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 4232992,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 9500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:01:00.801Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00346288",

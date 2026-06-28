@@ -27,7 +27,6 @@
     "s": "11 federal penalties totaling $342K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $245K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -148,59 +146,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Hawkins Inc.",
-    "slug": "hawkins-inc",
-    "ownership": "publicly traded (ticker symbol HWKN)",
-    "hq": "Minnesota",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 341641,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 296137,
-        "records": 8
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 45504,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 244979,
-        "records": 7
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 51158,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 30264,
-        "records": 1
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 8000,
-        "records": 1
-      },
-      {
-        "category": "motor vehicle safety violation",
-        "penalty": 7240,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:13:55.640Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00167122",

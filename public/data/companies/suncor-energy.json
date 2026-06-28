@@ -26,7 +26,6 @@
     "s": "74 federal penalties totaling $18.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "air pollution violation: $15.9M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -134,59 +132,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Suncor Energy",
-    "slug": "suncor-energy",
-    "ownership": "publicly traded (ticker symbol SU)",
-    "hq": "Canada",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 18350888,
-    "totalRecords": 74,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 17907850,
-        "records": 38
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 443038,
-        "records": 36
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 15934830,
-        "records": 26
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 1964170,
-        "records": 11
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 281100,
-        "records": 33
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 161938,
-        "records": 3
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 8850,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T01:18:09.570Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

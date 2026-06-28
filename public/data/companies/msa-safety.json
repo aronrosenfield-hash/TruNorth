@@ -27,7 +27,6 @@
     "s": "2 federal penalties totaling $510K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -142,34 +140,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "MSA Safety Inc.",
-    "slug": "msa-safety-inc",
-    "ownership": "publicly traded (ticker symbol MSA)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "safety equipment",
-    "totalPenalty": 510000,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 510000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "export control violation",
-        "penalty": 510000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:27:18.118Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00173344",

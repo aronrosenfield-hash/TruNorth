@@ -26,7 +26,6 @@
     "s": "103 federal penalties totaling $583.7M since 2000 (Violation Tracker).",
     "rating": "poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -112,74 +110,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Providence",
-    "slug": "providence",
-    "ownership": "non-profit",
-    "hq": "Washington",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "hospitals",
-    "totalPenalty": 583711452,
-    "totalRecords": 103,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 371562649,
-        "records": 19
-      },
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 179754085,
-        "records": 56
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 28290458,
-        "records": 3
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 3914500,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 163760,
-        "records": 18
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 354151000,
-        "records": 2
-      },
-      {
-        "category": "healthcare price transparency violation",
-        "penalty": 157800000,
-        "records": 1
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 28290458,
-        "records": 3
-      },
-      {
-        "category": "HHS civil monetary penalties",
-        "penalty": 19870389,
-        "records": 7
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 16211465,
-        "records": 10
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T01:56:24.843Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

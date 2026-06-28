@@ -44,15 +44,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "5 federal penalties totaling $263.0M since 2000 (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -101,39 +99,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "synchrony-financial",
-      "matchedName": "Synchrony Financial",
-      "totalPenalty": 262958300,
-      "totalRecords": 5,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 262936000,
-          "records": 4
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 22300,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "consumer protection violation",
-          "penalty": 262936000,
-          "records": 4
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 22300,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "capital-one",
@@ -209,44 +174,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Synchrony Financial",
-    "slug": "synchrony-financial",
-    "ownership": "publicly traded (ticker symbol SYF)",
-    "hq": "Connecticut",
-    "majorIndustry": "financial services",
-    "specificIndustry": "financial services",
-    "totalPenalty": 262958300,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 262936000,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 22300,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 262936000,
-        "records": 4
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 22300,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00589119",

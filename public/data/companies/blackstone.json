@@ -27,7 +27,6 @@
     "s": "129 federal penalties totaling $372.1M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -162,74 +160,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Blackstone",
-    "slug": "blackstone",
-    "ownership": "publicly traded (ticker symbol BX)",
-    "hq": "New York",
-    "majorIndustry": "private equity (including portfolio companies)",
-    "specificIndustry": "private equity (including portfolio companies)",
-    "totalPenalty": 372091891,
-    "totalRecords": 129,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 108833333,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 107875000,
-        "records": 3
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 100500000,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 31309624,
-        "records": 25
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 19889942,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 108833333,
-        "records": 2
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 107875000,
-        "records": 3
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 100500000,
-        "records": 3
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 31060206,
-        "records": 20
-      },
-      {
-        "category": "privacy violation",
-        "penalty": 18375000,
-        "records": 2
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:12:02.651Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

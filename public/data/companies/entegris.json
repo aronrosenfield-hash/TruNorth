@@ -26,7 +26,6 @@
     "s": "10 federal penalties totaling $785K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $66K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -147,74 +145,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Entegris",
-    "slug": "entegris",
-    "ownership": "publicly traded (ticker symbol ENTG)",
-    "hq": "Massachusetts",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "semiconductor components",
-    "totalPenalty": 784984,
-    "totalRecords": 10,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 496000,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 150000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 80588,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 31082,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 27314,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "export control violation",
-        "penalty": 496000,
-        "records": 1
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 150000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 65988,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 31082,
-        "records": 2
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 14600,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:02:00.832Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

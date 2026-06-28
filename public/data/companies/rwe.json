@@ -27,7 +27,6 @@
     "s": "10 federal penalties totaling $21.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $1.1M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -142,69 +140,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Norwegian Cruise Line",
-    "slug": "norwegian-cruise-line",
-    "ownership": "publicly traded (ticker symbol NCLH)",
-    "hq": "Florida",
-    "majorIndustry": "entertainment",
-    "specificIndustry": "cruise line",
-    "totalPenalty": 21739587,
-    "totalRecords": 10,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 14750000,
-        "records": 1
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 4381666,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1552921,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1055000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "maritime violation",
-        "penalty": 14750000,
-        "records": 1
-      },
-      {
-        "category": "privacy violation",
-        "penalty": 4166666,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 1067921,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 1055000,
-        "records": 2
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 485000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:42:47.176Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

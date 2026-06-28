@@ -27,7 +27,6 @@
     "s": "49 federal penalties totaling $39.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "water pollution violation: $190K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -132,69 +130,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Six Flags Entertainment",
-    "slug": "six-flags-entertainment",
-    "ownership": "publicly traded (ticker symbol FUN)",
-    "hq": "Texas",
-    "majorIndustry": "entertainment",
-    "specificIndustry": "entertainment",
-    "totalPenalty": 39810531,
-    "totalRecords": 49,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 36000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 2674333,
-        "records": 6
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 720321,
-        "records": 33
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 415877,
-        "records": 9
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "privacy violation",
-        "penalty": 36000000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 2613435,
-        "records": 4
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 720321,
-        "records": 33
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 190000,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 187878,
-        "records": 4
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T02:20:21.958Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -28,7 +28,6 @@
     "s": "132 federal penalties totaling $2.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "air pollution violation: $584K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -127,64 +125,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Amcor",
-    "slug": "amcor",
-    "ownership": "publicly traded (ticker symbol AMCR)",
-    "hq": "Australia",
-    "majorIndustry": "paper and packaging",
-    "specificIndustry": "packaging",
-    "totalPenalty": 2625258,
-    "totalRecords": 132,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 1311743,
-        "records": 96
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 936819,
-        "records": 27
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 376696,
-        "records": 9
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 1311743,
-        "records": 96
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 584288,
-        "records": 10
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 246468,
-        "records": 13
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 245000,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 94121,
-        "records": 5
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:27:22.739Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00236430",

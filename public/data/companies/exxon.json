@@ -28,7 +28,6 @@
     "s": "648 federal penalties totaling $3.4B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "air pollution violation: $963.1M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -142,74 +140,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Exxon Mobil",
-    "slug": "exxon-mobil",
-    "ownership": "publicly traded (ticker symbol XOM)",
-    "hq": "Texas",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 3367412804,
-    "totalRecords": 648,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 2221427866,
-        "records": 507
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 1075030000,
-        "records": 3
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 58090000,
-        "records": 5
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 5000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 3835385,
-        "records": 12
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 1075000000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 963052428,
-        "records": 115
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 825230002,
-        "records": 318
-      },
-      {
-        "category": "MTBE violation",
-        "penalty": 317116667,
-        "records": 7
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 57200000,
-        "records": 4
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T23:33:32.213Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00121368",

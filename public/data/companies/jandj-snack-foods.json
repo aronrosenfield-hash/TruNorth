@@ -26,7 +26,6 @@
     "s": "43 federal penalties totaling $1.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "air pollution violation: $115K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -126,64 +124,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "J&J Snack Foods",
-    "slug": "j-and-j-snack-foods",
-    "ownership": "publicly traded (ticker symbol JJSF)",
-    "hq": "New Jersey",
-    "majorIndustry": "food products",
-    "specificIndustry": "snack foods",
-    "totalPenalty": 1840266,
-    "totalRecords": 43,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 875347,
-        "records": 32
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 706852,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 258067,
-        "records": 10
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 875347,
-        "records": 32
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 706852,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 114500,
-        "records": 4
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 99000,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 39567,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:42:10.636Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

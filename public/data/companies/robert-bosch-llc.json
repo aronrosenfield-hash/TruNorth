@@ -26,7 +26,6 @@
     "s": "45 federal penalties totaling $624.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "air pollution violation: $515.6M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -126,74 +124,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Robert Bosch",
-    "slug": "robert-bosch",
-    "ownership": "privately held",
-    "hq": "Germany",
-    "majorIndustry": "automotive parts",
-    "specificIndustry": "automotive parts",
-    "totalPenalty": 624286815,
-    "totalRecords": 45,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 515634052,
-        "records": 16
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 104183000,
-        "records": 6
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 2162882,
-        "records": 15
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1781881,
-        "records": 7
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 525000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 515552680,
-        "records": 9
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 104183000,
-        "records": 6
-      },
-      {
-        "category": "product safety violation",
-        "penalty": 2000000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 1216090,
-        "records": 4
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 565791,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T02:09:32.830Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

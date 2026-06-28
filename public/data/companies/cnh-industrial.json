@@ -45,15 +45,13 @@
     "s": "air pollution violation: $11K in federal penalties (Violation Tracker).",
     "rating": "Excellent",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "20 federal penalties totaling $2.8M since 2000 (Violation Tracker).",
     "rating": "Below Average",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -104,64 +102,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "cnh-industrial",
-      "matchedName": "CNH Industrial",
-      "totalPenalty": 2808985,
-      "totalRecords": 20,
-      "offenseGroups": [
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 2600000,
-          "records": 1
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 164069,
-          "records": 15
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 38956,
-          "records": 3
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 5960,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "False Claims Act and related",
-          "penalty": 2600000,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 164069,
-          "records": 15
-        },
-        {
-          "category": "pesticide violation",
-          "penalty": 27956,
-          "records": 2
-        },
-        {
-          "category": "air pollution violation",
-          "penalty": 11000,
-          "records": 1
-        },
-        {
-          "category": "Family and Medical Leave Act",
-          "penalty": 5960,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "deere-and-company",
@@ -231,69 +171,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "CNH Industrial",
-    "slug": "cnh-industrial",
-    "ownership": "publicly traded (ticker symbol CNH)",
-    "hq": "United Kingdom",
-    "majorIndustry": "agribusiness",
-    "specificIndustry": "agricultural equipment",
-    "totalPenalty": 2808985,
-    "totalRecords": 20,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 2600000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 164069,
-        "records": 15
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 38956,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 5960,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 2600000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 164069,
-        "records": 15
-      },
-      {
-        "category": "pesticide violation",
-        "penalty": 27956,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 11000,
-        "records": 1
-      },
-      {
-        "category": "Family and Medical Leave Act",
-        "penalty": 5960,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00303883",

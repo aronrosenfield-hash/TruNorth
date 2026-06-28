@@ -28,7 +28,6 @@
     "s": "199 federal penalties totaling $207.0M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,7 +46,6 @@
     "s": "Insure Our Future 2024 scorecard: 2.3/10 (weak). Sub-scores: coal underwriting moderate; oil & gas underwriting weak. Chubb: 2022 oil-sands underwriting policy improved coal/oil sands position; oil and gas exclusions still lag European peers.",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "insure-our-future"
     ]
   },
@@ -162,74 +160,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Chubb Limited",
-    "slug": "chubb-limited",
-    "ownership": "publicly traded (ticker symbol CB)",
-    "hq": "Switzerland",
-    "majorIndustry": "financial services",
-    "specificIndustry": "insurance",
-    "totalPenalty": 207021142,
-    "totalRecords": 199,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 112470000,
-        "records": 5
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 70000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 14506000,
-        "records": 3
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 9978930,
-        "records": 189
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 66212,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 112470000,
-        "records": 5
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 70000000,
-        "records": 1
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 9739919,
-        "records": 188
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 8500000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 6006000,
-        "records": 2
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:50:56.650Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00348938",

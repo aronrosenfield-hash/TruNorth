@@ -37,15 +37,13 @@
     "s": "environmental violation: $74K in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "16 federal penalties totaling $225K since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -99,54 +97,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "ethan-allen-interiors",
-      "matchedName": "Ethan Allen Interiors",
-      "totalPenalty": 225392,
-      "totalRecords": 16,
-      "offenseGroups": [
-        {
-          "category": "safety-related offenses",
-          "penalty": 139882,
-          "records": 13
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 79197,
-          "records": 2
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 6313,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 139882,
-          "records": 13
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 73852,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 6313,
-          "records": 1
-        },
-        {
-          "category": "air pollution violation",
-          "penalty": 5345,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "rh",
@@ -253,59 +203,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ethan Allen Interiors",
-    "slug": "ethan-allen-interiors",
-    "ownership": "publicly traded (ticker symbol ETH)",
-    "hq": "Connecticut",
-    "majorIndustry": "housewares and home furnishings",
-    "specificIndustry": "furniture manufacturing and retailing",
-    "totalPenalty": 225392,
-    "totalRecords": 16,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 139882,
-        "records": 13
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 79197,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 6313,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 139882,
-        "records": 13
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 73852,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 6313,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 5345,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

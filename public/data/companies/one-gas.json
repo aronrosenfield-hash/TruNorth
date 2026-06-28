@@ -27,7 +27,6 @@
     "s": "11 federal penalties totaling $95K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -141,44 +139,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "ONE Gas Inc.",
-    "slug": "one-gas-inc",
-    "ownership": "publicly traded (ticker symbol OGS)",
-    "hq": "Oklahoma",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "natural gas distribution",
-    "totalPenalty": 95032,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 89500,
-        "records": 10
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 5532,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "utility safety violation",
-        "penalty": 89500,
-        "records": 10
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 5532,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:57:30.683Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00554444",

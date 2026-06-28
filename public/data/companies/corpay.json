@@ -26,7 +26,6 @@
     "s": "3 federal penalties totaling $100.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -158,49 +156,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Corpay Inc.",
-    "slug": "corpay-inc",
-    "ownership": "publicly traded (ticker symbol CPAY)",
-    "hq": "Georgia",
-    "majorIndustry": "business services",
-    "specificIndustry": "fuel payment cards",
-    "totalPenalty": 100660759,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 100000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 660759,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 100000000,
-        "records": 1
-      },
-      {
-        "category": "employment screening violation",
-        "penalty": 530759,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 130000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:02:30.085Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -26,7 +26,6 @@
     "s": "3 federal penalties totaling $1.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -130,54 +128,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Quantum Corp.",
-    "slug": "quantum-corp",
-    "ownership": "publicly traded (ticker symbol QMCO)",
-    "hq": "California",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "data storage",
-    "totalPenalty": 1225161,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 1000000,
-        "records": 1
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 151875,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 73286,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 1000000,
-        "records": 1
-      },
-      {
-        "category": "export control violation",
-        "penalty": 151875,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 73286,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:19:42.295Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

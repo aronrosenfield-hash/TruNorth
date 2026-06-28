@@ -27,7 +27,6 @@
     "s": "203 federal penalties totaling $201.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "hazardous waste violation: $84.5M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -126,74 +124,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Nutrien Ltd.",
-    "slug": "nutrien-ltd",
-    "ownership": "publicly traded",
-    "hq": "Canada",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "fertilizers",
-    "totalPenalty": 201792151,
-    "totalRecords": 203,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 146611503,
-        "records": 72
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 53750000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 1379148,
-        "records": 126
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 24000,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 17000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "hazardous waste violation",
-        "penalty": 84510023,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 59769625,
-        "records": 53
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 53750000,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 1077718,
-        "records": 8
-      },
-      {
-        "category": "pesticide violation",
-        "penalty": 964137,
-        "records": 5
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:49:57.462Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00385039",

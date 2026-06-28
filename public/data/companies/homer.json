@@ -28,7 +28,6 @@
     "s": "23 federal penalties totaling $416K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "environmental violation: $224K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -130,64 +128,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Synthomer",
-    "slug": "synthomer",
-    "ownership": "publicly traded",
-    "hq": "United Kingdom",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "polymer products",
-    "totalPenalty": 415933,
-    "totalRecords": 23,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 244354,
-        "records": 13
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 100000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 71579,
-        "records": 8
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 224354,
-        "records": 12
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 100000,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 64579,
-        "records": 7
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 20000,
-        "records": 1
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 7000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T00:09:26.967Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00012625",

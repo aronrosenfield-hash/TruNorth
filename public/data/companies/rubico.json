@@ -25,7 +25,6 @@
     "s": "8 federal penalties totaling $105K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -40,8 +39,7 @@
   "environment": {
     "s": "environmental violation: $43K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -113,49 +111,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Rubicon LLC",
-    "slug": "rubicon-llc",
-    "ownership": "joint venture (owned 50-50 by Huntsman and Lanxess)",
-    "hq": "Louisiana",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 104916,
-    "totalRecords": 8,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 61704,
-        "records": 6
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 43212,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 43212,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 35704,
-        "records": 2
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 26000,
-        "records": 4
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:27:11.836Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

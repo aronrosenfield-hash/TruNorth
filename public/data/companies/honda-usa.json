@@ -39,15 +39,13 @@
     "s": "air pollution violation: $18.3M in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "58 federal penalties totaling $1.1B since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -88,69 +86,6 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "dataLastUpdated": "2026-05-28",
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "honda",
-      "matchedName": "Honda",
-      "totalPenalty": 1093625520,
-      "totalRecords": 58,
-      "offenseGroups": [
-        {
-          "category": "safety-related offenses",
-          "penalty": 739374271,
-          "records": 25
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 331420981,
-          "records": 12
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 19140637,
-          "records": 17
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 3602376,
-          "records": 3
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 87255,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "product safety violation",
-          "penalty": 664114623,
-          "records": 6
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 322995481,
-          "records": 10
-        },
-        {
-          "category": "motor vehicle safety violation",
-          "penalty": 75044000,
-          "records": 3
-        },
-        {
-          "category": "air pollution violation",
-          "penalty": 18333937,
-          "records": 13
-        },
-        {
-          "category": "discriminatory practices (non-employment)",
-          "penalty": 7793000,
-          "records": 1
-        }
-      ],
-      "rating": "mixed"
-    }
-  },
   "competitors": [
     "toyota-usa",
     "ford-motor",
@@ -197,74 +132,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Honda",
-    "slug": "honda",
-    "ownership": "publicly traded (ticker symbol HMC)",
-    "hq": "Japan",
-    "majorIndustry": "motor vehicles",
-    "specificIndustry": "motor vehicles",
-    "totalPenalty": 1093625520,
-    "totalRecords": 58,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 739374271,
-        "records": 25
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 331420981,
-        "records": 12
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 19140637,
-        "records": 17
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 3602376,
-        "records": 3
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 87255,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "product safety violation",
-        "penalty": 664114623,
-        "records": 6
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 322995481,
-        "records": 10
-      },
-      {
-        "category": "motor vehicle safety violation",
-        "penalty": 75044000,
-        "records": 3
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 18333937,
-        "records": 13
-      },
-      {
-        "category": "discriminatory practices (non-employment)",
-        "penalty": 7793000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

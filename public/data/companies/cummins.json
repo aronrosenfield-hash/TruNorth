@@ -27,7 +27,6 @@
     "s": "94 federal penalties totaling $4.2B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "air pollution violation: $2.4B in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -141,69 +139,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Cummins",
-    "slug": "cummins",
-    "ownership": "publicly traded (ticker symbol CMI)",
-    "hq": "Indiana",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "engines",
-    "totalPenalty": 4187277087,
-    "totalRecords": 94,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 4173649426,
-        "records": 34
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 7468750,
-        "records": 9
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 5240957,
-        "records": 33
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 917954,
-        "records": 18
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 2423972217,
-        "records": 18
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 1749670209,
-        "records": 15
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 7368750,
-        "records": 8
-      },
-      {
-        "category": "product safety violation",
-        "penalty": 4800000,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 557631,
-        "records": 11
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:07:28.705Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00377952",

@@ -26,7 +26,6 @@
     "s": "9 federal penalties totaling $152K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $88K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -121,54 +119,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Neogen",
-    "slug": "neogen",
-    "ownership": "publicly traded (ticker symbol NEOG)",
-    "hq": "Michigan",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "diagnostic kits and veterinary products",
-    "totalPenalty": 151582,
-    "totalRecords": 9,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 88029,
-        "records": 5
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 37335,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 26218,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 88029,
-        "records": 5
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 37335,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 26218,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:36:11.289Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

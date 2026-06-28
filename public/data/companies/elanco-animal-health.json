@@ -25,7 +25,6 @@
     "s": "4 federal penalties totaling $30.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "air pollution violation: $37K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -149,54 +147,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Elanco Animal Health",
-    "slug": "elanco-animal-health",
-    "ownership": "publicly traded (ticker symbol ELAN)",
-    "hq": "Indiana",
-    "majorIndustry": "pharmaceuticals",
-    "specificIndustry": "animal health products",
-    "totalPenalty": 30037000,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 15000000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 15000000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 37000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 15000000,
-        "records": 1
-      },
-      {
-        "category": "product safety violation",
-        "penalty": 15000000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 37000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:50:05.082Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

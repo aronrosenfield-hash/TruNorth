@@ -46,7 +46,6 @@
     "rating": "Mixed",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "cdp-climate"
     ]
   },
@@ -54,7 +53,6 @@
     "s": "181 federal penalties totaling $269.1M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -112,69 +110,6 @@
     "execPay": "2026-06-11T03:48:51.753Z",
     "federalContracts": "2026-06-11T23:51:18.870Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "general-dynamics",
-      "matchedName": "General Dynamics",
-      "totalPenalty": 269094964,
-      "totalRecords": 181,
-      "offenseGroups": [
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 209751962,
-          "records": 7
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 47891492,
-          "records": 29
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 5006600,
-          "records": 2
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 3399453,
-          "records": 32
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 3045457,
-          "records": 111
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "False Claims Act and related",
-          "penalty": 209751962,
-          "records": 7
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 30274532,
-          "records": 24
-        },
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 15150000,
-          "records": 1
-        },
-        {
-          "category": "export control violation",
-          "penalty": 5006600,
-          "records": 2
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 2400000,
-          "records": 2
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "lockheed-martin",
@@ -268,74 +203,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "General Dynamics",
-    "slug": "general-dynamics",
-    "ownership": "publicly traded (ticker symbol GD)",
-    "hq": "Virginia",
-    "majorIndustry": "aerospace and military contracting",
-    "specificIndustry": "aerospace &amp; military contracting",
-    "totalPenalty": 269094964,
-    "totalRecords": 181,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 209751962,
-        "records": 7
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 47891492,
-        "records": 29
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 5006600,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 3399453,
-        "records": 32
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 3045457,
-        "records": 111
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 209751962,
-        "records": 7
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 30274532,
-        "records": 24
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 15150000,
-        "records": 1
-      },
-      {
-        "category": "export control violation",
-        "penalty": 5006600,
-        "records": 2
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 2400000,
-        "records": 2
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00078451",

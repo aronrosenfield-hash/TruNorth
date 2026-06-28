@@ -25,7 +25,6 @@
     "s": "10 federal penalties totaling $71.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -146,64 +144,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Sinclair Broadcast Group",
-    "slug": "sinclair-broadcast-group",
-    "ownership": "publicly traded (ticker symbol SBGI)",
-    "hq": "Maryland",
-    "majorIndustry": "media",
-    "specificIndustry": "broadcasting",
-    "totalPenalty": 71605321,
-    "totalRecords": 10,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 71371200,
-        "records": 4
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 227121,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 7000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "telecommunications violation",
-        "penalty": 71371200,
-        "records": 4
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 185000,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 34020,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 8101,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 7000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:48:17.918Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

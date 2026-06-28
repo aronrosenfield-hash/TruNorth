@@ -46,15 +46,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "46 federal penalties totaling $531.4M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -106,69 +104,6 @@
     "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
     "federalContracts": "2026-06-11T23:51:18.870Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "medtronic",
-      "matchedName": "Medtronic",
-      "totalPenalty": 531410633,
-      "totalRecords": 46,
-      "offenseGroups": [
-        {
-          "category": "safety-related offenses",
-          "penalty": 330141375,
-          "records": 17
-        },
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 173447947,
-          "records": 10
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 23840750,
-          "records": 4
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 3702834,
-          "records": 7
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 265227,
-          "records": 7
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "drug or medical equipment safety violation",
-          "penalty": 307900000,
-          "records": 4
-        },
-        {
-          "category": "False Claims Act and related",
-          "penalty": 173447947,
-          "records": 10
-        },
-        {
-          "category": "kickbacks and bribery",
-          "penalty": 23827000,
-          "records": 3
-        },
-        {
-          "category": "product safety violation",
-          "penalty": 22000000,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 3026018,
-          "records": 3
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "boston-scientific",
@@ -318,74 +253,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Medtronic",
-    "slug": "medtronic",
-    "ownership": "publicly traded (ticker symbol MDT)",
-    "hq": "Ireland",
-    "majorIndustry": "medical equipment and supplies",
-    "specificIndustry": "medical devices",
-    "totalPenalty": 531410633,
-    "totalRecords": 46,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 330141375,
-        "records": 17
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 173447947,
-        "records": 10
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 23840750,
-        "records": 4
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 3702834,
-        "records": 7
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 265227,
-        "records": 7
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "drug or medical equipment safety violation",
-        "penalty": 307900000,
-        "records": 4
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 173447947,
-        "records": 10
-      },
-      {
-        "category": "kickbacks and bribery",
-        "penalty": 23827000,
-        "records": 3
-      },
-      {
-        "category": "product safety violation",
-        "penalty": 22000000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 3026018,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00311878",

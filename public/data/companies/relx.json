@@ -28,7 +28,6 @@
     "s": "12 federal penalties totaling $55.0M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -139,64 +137,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "RELX Group",
-    "slug": "relx-group",
-    "ownership": "publicly traded",
-    "hq": "United Kingdom",
-    "majorIndustry": "media",
-    "specificIndustry": "publishing",
-    "totalPenalty": 55011799,
-    "totalRecords": 12,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 23551799,
-        "records": 6
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 15780000,
-        "records": 4
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 15680000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 15680000,
-        "records": 2
-      },
-      {
-        "category": "privacy violation",
-        "penalty": 15505000,
-        "records": 3
-      },
-      {
-        "category": "Fair Credit Reporting Act violation",
-        "penalty": 13500000,
-        "records": 1
-      },
-      {
-        "category": "employment screening violation",
-        "penalty": 8232500,
-        "records": 2
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 1245000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:19:59.071Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00345793",

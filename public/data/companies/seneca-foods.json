@@ -26,7 +26,6 @@
     "s": "38 federal penalties totaling $1.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $250K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -135,64 +133,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Seneca Foods",
-    "slug": "seneca-foods",
-    "ownership": "publicly traded (ticker symbol SENEA)",
-    "hq": "New York",
-    "majorIndustry": "food products",
-    "specificIndustry": "food products",
-    "totalPenalty": 1388193,
-    "totalRecords": 38,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 1004899,
-        "records": 30
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 378294,
-        "records": 7
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 1004899,
-        "records": 30
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 250060,
-        "records": 5
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 113234,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 15000,
-        "records": 1
-      },
-      {
-        "category": "Family and Medical Leave Act",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:39:10.915Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

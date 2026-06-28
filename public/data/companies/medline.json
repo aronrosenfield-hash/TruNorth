@@ -27,7 +27,6 @@
     "s": "25 federal penalties totaling $91.9M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $4.9M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -141,69 +139,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Medline Industries",
-    "slug": "medline-industries",
-    "ownership": "privately held",
-    "hq": "Illinois",
-    "majorIndustry": "medical equipment and supplies",
-    "specificIndustry": "medical supplies",
-    "totalPenalty": 91906163,
-    "totalRecords": 25,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 85000000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 5073191,
-        "records": 7
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1706051,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 126921,
-        "records": 13
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 85000000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 4930000,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 1643571,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 109421,
-        "records": 12
-      },
-      {
-        "category": "pesticide violation",
-        "penalty": 66191,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:18:13.755Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

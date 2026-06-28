@@ -44,15 +44,13 @@
     "s": "air pollution violation: $818.2M in federal penalties (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "350 federal penalties totaling $1.2B since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -105,69 +103,6 @@
     "execPay": "2026-06-11T03:48:51.753Z",
     "federalContracts": "2026-06-11T23:51:18.870Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "valero-energy",
-      "matchedName": "Valero Energy",
-      "totalPenalty": 1194845521,
-      "totalRecords": 350,
-      "offenseGroups": [
-        {
-          "category": "environment-related offenses",
-          "penalty": 1192437050,
-          "records": 272
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 1926886,
-          "records": 73
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 426500,
-          "records": 3
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 35000,
-          "records": 1
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 20085,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "air pollution violation",
-          "penalty": 818235003,
-          "records": 72
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 280304402,
-          "records": 181
-        },
-        {
-          "category": "underground storage tank violation",
-          "penalty": 40820735,
-          "records": 6
-        },
-        {
-          "category": "water pollution violation",
-          "penalty": 25263338,
-          "records": 5
-        },
-        {
-          "category": "MTBE violation",
-          "penalty": 18791667,
-          "records": 3
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "phillips-66",
@@ -252,74 +187,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Valero Energy",
-    "slug": "valero-energy",
-    "ownership": "publicly traded (ticker symbol VLO)",
-    "hq": "Texas",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 1194845521,
-    "totalRecords": 350,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1192437050,
-        "records": 272
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 1926886,
-        "records": 73
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 426500,
-        "records": 3
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 35000,
-        "records": 1
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 20085,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 818235003,
-        "records": 72
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 280304402,
-        "records": 181
-      },
-      {
-        "category": "underground storage tank violation",
-        "penalty": 40820735,
-        "records": 6
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 25263338,
-        "records": 5
-      },
-      {
-        "category": "MTBE violation",
-        "penalty": 18791667,
-        "records": 3
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00109546",

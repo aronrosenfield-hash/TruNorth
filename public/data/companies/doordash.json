@@ -40,15 +40,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "11 federal penalties totaling $61.2M since 2000 (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -101,44 +99,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "doordash",
-      "matchedName": "DoorDash",
-      "totalPenalty": 61168822,
-      "totalRecords": 11,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 31493822,
-          "records": 8
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 29675000,
-          "records": 3
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "wage and hour violation",
-          "penalty": 31418822,
-          "records": 7
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 29675000,
-          "records": 3
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 75000,
-          "records": 1
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "uber",
@@ -230,49 +190,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "DoorDash",
-    "slug": "doordash",
-    "ownership": "publicly traded (ticker symbol DASH)",
-    "hq": "California",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "restaurant delivery service",
-    "totalPenalty": 61168822,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 31493822,
-        "records": 8
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 29675000,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 31418822,
-        "records": 7
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 29675000,
-        "records": 3
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 75000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

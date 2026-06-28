@@ -37,15 +37,13 @@
     "s": "environmental violation: $1.7M in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "137 federal penalties totaling $39.4M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -83,64 +81,6 @@
     "sources": [
       "Claude AI synthesis"
     ]
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "parker-hannifin",
-      "matchedName": "Parker-Hannifin",
-      "totalPenalty": 39377815,
-      "totalRecords": 137,
-      "offenseGroups": [
-        {
-          "category": "competition-related offenses",
-          "penalty": 31593750,
-          "records": 8
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 3644319,
-          "records": 10
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 2368216,
-          "records": 46
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 1771530,
-          "records": 73
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "export control violation",
-          "penalty": 25185000,
-          "records": 2
-        },
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 6408750,
-          "records": 6
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 3322106,
-          "records": 5
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 1696426,
-          "records": 31
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 1100550,
-          "records": 60
-        }
-      ],
-      "rating": "good"
-    }
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
@@ -231,69 +171,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Parker-Hannifin",
-    "slug": "parker-hannifin",
-    "ownership": "publicly traded (ticker symbol PH)",
-    "hq": "Ohio",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "industrial equipment",
-    "totalPenalty": 39377815,
-    "totalRecords": 137,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 31593750,
-        "records": 8
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 3644319,
-        "records": 10
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 2368216,
-        "records": 46
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 1771530,
-        "records": 73
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "export control violation",
-        "penalty": 25185000,
-        "records": 2
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 6408750,
-        "records": 6
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 3322106,
-        "records": 5
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 1696426,
-        "records": 31
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 1100550,
-        "records": 60
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

@@ -27,7 +27,6 @@
     "s": "803 federal penalties totaling $15.9M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "mining environmental violation: $3.3M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -130,69 +128,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "James C. Justice Companies",
-    "slug": "james-c-justice-companies",
-    "ownership": "privately held",
-    "hq": "West Virginia",
-    "majorIndustry": "mining and minerals",
-    "specificIndustry": "coal mining",
-    "totalPenalty": 15948388,
-    "totalRecords": 803,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 9385917,
-        "records": 584
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 5723689,
-        "records": 215
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 663500,
-        "records": 3
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 175282,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 9380317,
-        "records": 583
-      },
-      {
-        "category": "mining environmental violation",
-        "penalty": 3268253,
-        "records": 202
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 1353236,
-        "records": 8
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 1102200,
-        "records": 5
-      },
-      {
-        "category": "WARN Act violation",
-        "penalty": 625000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T00:18:58.981Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00337972",

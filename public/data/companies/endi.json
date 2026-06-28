@@ -26,7 +26,6 @@
     "s": "9 federal penalties totaling $4.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -112,54 +110,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "LendingTree",
-    "slug": "lendingtree",
-    "ownership": "publicly traded (ticker symbol TREE)",
-    "hq": "North Carolina",
-    "majorIndustry": "financial services",
-    "specificIndustry": "online loans",
-    "totalPenalty": 4659000,
-    "totalRecords": 9,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 2500000,
-        "records": 1
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 2159000,
-        "records": 8
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 2500000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 1269000,
-        "records": 6
-      },
-      {
-        "category": "privacy violation",
-        "penalty": 875000,
-        "records": 1
-      },
-      {
-        "category": "discriminatory practices (non-employment)",
-        "penalty": 15000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:55:20.945Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

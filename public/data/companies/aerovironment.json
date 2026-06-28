@@ -27,7 +27,6 @@
     "s": "4 federal penalties totaling $1.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -176,54 +174,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "AeroVironment",
-    "slug": "aerovironment",
-    "ownership": "publicly traded (ticker symbol AVAV)",
-    "hq": "California",
-    "majorIndustry": "aerospace and military contracting",
-    "specificIndustry": "unmanned aircraft systems",
-    "totalPenalty": 1057571,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 1000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 37211,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 20360,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "export control violation",
-        "penalty": 1000000,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 37211,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 20360,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:29:32.550Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00797530",

@@ -38,15 +38,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "1 federal penalties totaling $7.0M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -97,29 +95,6 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "t-rowe-price",
-      "matchedName": "T. Rowe Price",
-      "totalPenalty": 7000000,
-      "totalRecords": 1,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 7000000,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 7000000,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "vanguard",
@@ -198,34 +173,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "T. Rowe Price",
-    "slug": "t-rowe-price",
-    "ownership": "publicly traded (ticker symbol TROW)",
-    "hq": "Maryland",
-    "majorIndustry": "financial services",
-    "specificIndustry": "financial services",
-    "totalPenalty": 7000000,
-    "totalRecords": 1,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 7000000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 7000000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

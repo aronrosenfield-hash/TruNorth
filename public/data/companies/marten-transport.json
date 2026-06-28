@@ -26,7 +26,6 @@
     "s": "9 federal penalties totaling $308K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "air pollution violation: $100K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -123,64 +121,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Marten Transport",
-    "slug": "marten-transport",
-    "ownership": "publicly traded (ticker symbol MRTN)",
-    "hq": "Wisconsin",
-    "majorIndustry": "freight and logistics",
-    "specificIndustry": "trucking",
-    "totalPenalty": 308246,
-    "totalRecords": 9,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 131490,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 107197,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 69559,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "motor vehicle safety violation",
-        "penalty": 124990,
-        "records": 3
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 100000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 69559,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 7197,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 6500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:09:42.399Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

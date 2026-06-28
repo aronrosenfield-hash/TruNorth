@@ -26,7 +26,6 @@
     "s": "81 federal penalties totaling $397.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -118,69 +116,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Aegon",
-    "slug": "aegon",
-    "ownership": "publicly traded (ticker symbol AEG)",
-    "hq": "Netherlands",
-    "majorIndustry": "financial services",
-    "specificIndustry": "insurance",
-    "totalPenalty": 397705976,
-    "totalRecords": 81,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 261706192,
-        "records": 65
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 126724203,
-        "records": 12
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 9270143,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 5438,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 195000000,
-        "records": 1
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 126724203,
-        "records": 12
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 66706192,
-        "records": 64
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 9200000,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 70143,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:10:21.642Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

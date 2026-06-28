@@ -27,7 +27,6 @@
     "s": "291 federal penalties totaling $498.3M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $9.4M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -148,69 +146,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "International Paper",
-    "slug": "international-paper",
-    "ownership": "publicly traded (ticker symbol IP)",
-    "hq": "Tennessee",
-    "majorIndustry": "paper and packaging",
-    "specificIndustry": "paper &amp; packaging",
-    "totalPenalty": 498320951,
-    "totalRecords": 291,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 445600000,
-        "records": 8
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 36325577,
-        "records": 29
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 13869622,
-        "records": 86
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 2525752,
-        "records": 168
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 445600000,
-        "records": 8
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 30000000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 9376007,
-        "records": 49
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 4528010,
-        "records": 3
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 3546250,
-        "records": 5
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T00:15:32.882Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00004036",

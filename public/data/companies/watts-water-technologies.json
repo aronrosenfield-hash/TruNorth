@@ -36,15 +36,13 @@
     "s": "environmental violation: $288K in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "11 federal penalties totaling $40.4M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -82,59 +80,6 @@
     "sources": [
       "Claude AI synthesis"
     ]
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "watts-water-technologies-inc",
-      "matchedName": "Watts Water Technologies Inc.",
-      "totalPenalty": 40354889,
-      "totalRecords": 11,
-      "offenseGroups": [
-        {
-          "category": "safety-related offenses",
-          "penalty": 37050258,
-          "records": 5
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 2955815,
-          "records": 1
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 348816,
-          "records": 5
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "product safety violation",
-          "penalty": 37000000,
-          "records": 2
-        },
-        {
-          "category": "Foreign Corrupt Practices Act",
-          "penalty": 2955815,
-          "records": 1
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 288258,
-          "records": 4
-        },
-        {
-          "category": "pesticide violation",
-          "penalty": 60558,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 50258,
-          "records": 3
-        }
-      ],
-      "rating": "good"
-    }
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
@@ -194,64 +139,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Watts Water Technologies Inc.",
-    "slug": "watts-water-technologies-inc",
-    "ownership": "publicly traded (ticker symbol WTS)",
-    "hq": "Massachusetts",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "water control products",
-    "totalPenalty": 40354889,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 37050258,
-        "records": 5
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 2955815,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 348816,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "product safety violation",
-        "penalty": 37000000,
-        "records": 2
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 2955815,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 288258,
-        "records": 4
-      },
-      {
-        "category": "pesticide violation",
-        "penalty": 60558,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 50258,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

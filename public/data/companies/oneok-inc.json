@@ -27,7 +27,6 @@
     "s": "148 federal penalties totaling $60.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "water pollution violation: $27.5M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -155,74 +153,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Oneok",
-    "slug": "oneok",
-    "ownership": "publicly traded (ticker symbol OKE)",
-    "hq": "Oklahoma",
-    "majorIndustry": "pipelines",
-    "specificIndustry": "pipelines",
-    "totalPenalty": 59968616,
-    "totalRecords": 148,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 39231766,
-        "records": 111
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 17414945,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 3000000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 305307,
-        "records": 32
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 10000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "water pollution violation",
-        "penalty": 27488940,
-        "records": 9
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 11000000,
-        "records": 1
-      },
-      {
-        "category": "energy market violation",
-        "penalty": 6414945,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 6028199,
-        "records": 50
-      },
-      {
-        "category": "pipeline safety violation",
-        "penalty": 4070575,
-        "records": 43
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:57:46.088Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00215384",

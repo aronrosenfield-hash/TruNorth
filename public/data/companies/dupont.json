@@ -46,15 +46,13 @@
     "s": "air pollution violation: $71.5M in federal penalties (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "76 federal penalties totaling $1.6B since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -107,64 +105,6 @@
     "execPay": "2026-06-11T03:48:51.753Z",
     "federalContracts": "2026-06-11T23:51:18.870Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "dupont-de-nemours",
-      "matchedName": "DuPont de Nemours",
-      "totalPenalty": 1619825183,
-      "totalRecords": 76,
-      "offenseGroups": [
-        {
-          "category": "environment-related offenses",
-          "penalty": 1499015235,
-          "records": 46
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 109400000,
-          "records": 2
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 11142816,
-          "records": 4
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 267132,
-          "records": 24
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "PFAS violation",
-          "penalty": 1409500000,
-          "records": 5
-        },
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 109400000,
-          "records": 2
-        },
-        {
-          "category": "air pollution violation",
-          "penalty": 71519458,
-          "records": 26
-        },
-        {
-          "category": "lead violation",
-          "penalty": 10000000,
-          "records": 1
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 7938277,
-          "records": 10
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "huntsman",
@@ -250,69 +190,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "DuPont de Nemours",
-    "slug": "dupont-de-nemours",
-    "ownership": "publicly traded (ticker symbol DD)",
-    "hq": "Delaware",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "specialty materials",
-    "totalPenalty": 1619825183,
-    "totalRecords": 76,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1499015235,
-        "records": 46
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 109400000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 11142816,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 267132,
-        "records": 24
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "PFAS violation",
-        "penalty": 1409500000,
-        "records": 5
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 109400000,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 71519458,
-        "records": 26
-      },
-      {
-        "category": "lead violation",
-        "penalty": 10000000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 7938277,
-        "records": 10
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00171926",

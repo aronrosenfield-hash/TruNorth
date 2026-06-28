@@ -27,7 +27,6 @@
     "s": "4 federal penalties totaling $231.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -142,44 +140,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "SLM Corp.",
-    "slug": "slm-corp",
-    "ownership": "publicly traded (ticker symbol SLM)",
-    "hq": "Delaware",
-    "majorIndustry": "financial services",
-    "specificIndustry": "financial services",
-    "totalPenalty": 231300000,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 138000000,
-        "records": 3
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 93300000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 138000000,
-        "records": 3
-      },
-      {
-        "category": "banking violation",
-        "penalty": 93300000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:51:57.464Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00580076",

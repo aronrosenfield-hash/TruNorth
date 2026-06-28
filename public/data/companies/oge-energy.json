@@ -27,7 +27,6 @@
     "s": "11 federal penalties totaling $537K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $300K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -138,64 +136,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "OGE Energy",
-    "slug": "oge-energy",
-    "ownership": "publicly traded (ticker symbol OGE)",
-    "hq": "Oklahoma",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "energy generation",
-    "totalPenalty": 536944,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 458550,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 54094,
-        "records": 6
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 24300,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 300000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 112050,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 54094,
-        "records": 6
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 46500,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 24300,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:52:59.346Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00337808",

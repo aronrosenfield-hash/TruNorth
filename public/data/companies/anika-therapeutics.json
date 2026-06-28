@@ -26,7 +26,6 @@
     "s": "3 federal penalties totaling $32K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $16K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -134,44 +132,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Anika Therapeutics",
-    "slug": "anika-therapeutics",
-    "ownership": "publicly traded (ticker symbol ANIK)",
-    "hq": "Massachusetts",
-    "majorIndustry": "pharmaceuticals",
-    "specificIndustry": "pharmaceuticals",
-    "totalPenalty": 31800,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 16300,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 15500,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 16300,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 15500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:31:39.560Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

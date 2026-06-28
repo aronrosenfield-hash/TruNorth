@@ -26,7 +26,6 @@
     "s": "28 federal penalties totaling $575K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $12K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -153,69 +151,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Jones Lang LaSalle",
-    "slug": "jones-lang-lasalle",
-    "ownership": "publicly traded (ticker symbol JLL)",
-    "hq": "Illinois",
-    "majorIndustry": "real estate",
-    "specificIndustry": "real estate",
-    "totalPenalty": 574757,
-    "totalRecords": 28,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 221506,
-        "records": 19
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 191251,
-        "records": 6
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 150000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 12000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 221506,
-        "records": 19
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 150000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 98751,
-        "records": 4
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 82500,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 12000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:43:44.841Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

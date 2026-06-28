@@ -27,7 +27,6 @@
     "s": "139 federal penalties totaling $3.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "environmental violation: $520K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -130,64 +128,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Newmont Corporation",
-    "slug": "newmont-corporation",
-    "ownership": "publicly traded (ticker symbol NEM)",
-    "hq": "Colorado",
-    "majorIndustry": "mining and minerals",
-    "specificIndustry": "mining",
-    "totalPenalty": 2984011,
-    "totalRecords": 139,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 2055719,
-        "records": 129
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 786850,
-        "records": 9
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 141442,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 2005719,
-        "records": 127
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 520000,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 154350,
-        "records": 2
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 141442,
-        "records": 1
-      },
-      {
-        "category": "mining environmental violation",
-        "penalty": 112500,
-        "records": 5
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:38:03.140Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00206672",

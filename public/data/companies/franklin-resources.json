@@ -27,7 +27,6 @@
     "s": "21 federal penalties totaling $341.3M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -135,59 +133,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Franklin Resources",
-    "slug": "franklin-resources",
-    "ownership": "publicly traded (ticker symbol BEN)",
-    "hq": "California",
-    "majorIndustry": "financial services",
-    "specificIndustry": "financial services",
-    "totalPenalty": 341288720,
-    "totalRecords": 21,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 207715468,
-        "records": 16
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 98700000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 34873252,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 207715468,
-        "records": 16
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 98700000,
-        "records": 2
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 34850000,
-        "records": 2
-      },
-      {
-        "category": "Family and Medical Leave Act",
-        "penalty": 23252,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:30:01.200Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00874982",

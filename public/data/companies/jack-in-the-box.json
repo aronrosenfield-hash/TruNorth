@@ -40,15 +40,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "25 federal penalties totaling $19.2M since 2000 (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -100,49 +98,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "jack-in-the-box-inc",
-      "matchedName": "Jack in the Box Inc.",
-      "totalPenalty": 19166742,
-      "totalRecords": 25,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 19106580,
-          "records": 18
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 60162,
-          "records": 7
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "wage and hour violation",
-          "penalty": 17433900,
-          "records": 13
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 1570000,
-          "records": 3
-        },
-        {
-          "category": "labor relations violation",
-          "penalty": 102680,
-          "records": 2
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 60162,
-          "records": 7
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "burger-king",
@@ -292,54 +247,6 @@
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Jack in the Box Inc.",
-    "slug": "jack-in-the-box-inc",
-    "ownership": "publicly traded (ticker symbol JACK)",
-    "hq": "California",
-    "majorIndustry": "restaurants and foodservice",
-    "specificIndustry": "restaurants",
-    "totalPenalty": 19166742,
-    "totalRecords": 25,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 19106580,
-        "records": 18
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 60162,
-        "records": 7
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 17433900,
-        "records": 13
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 1570000,
-        "records": 3
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 102680,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 60162,
-        "records": 7
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

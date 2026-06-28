@@ -27,7 +27,6 @@
     "s": "1020 federal penalties totaling $1.1B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $190.2M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -140,74 +138,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Amrize Ltd.",
-    "slug": "amrize-ltd",
-    "ownership": "publicly traded (ticker symbol AMRZ)",
-    "hq": "Switzerland",
-    "majorIndustry": "building materials",
-    "specificIndustry": "building materials",
-    "totalPenalty": 1098734220,
-    "totalRecords": 1020,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 856000000,
-        "records": 5
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 230666288,
-        "records": 137
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 10081253,
-        "records": 861
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1896679,
-        "records": 15
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 90000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "kickbacks and bribery",
-        "penalty": 777780000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 190222712,
-        "records": 78
-      },
-      {
-        "category": "fraud",
-        "penalty": 50000000,
-        "records": 1
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 28220000,
-        "records": 3
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 27733872,
-        "records": 47
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:30:10.105Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00213348",

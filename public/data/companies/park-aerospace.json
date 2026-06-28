@@ -26,7 +26,6 @@
     "s": "6 federal penalties totaling $71K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $35K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -117,59 +115,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Park Aerospace Corp.",
-    "slug": "park-aerospace-corp",
-    "ownership": "publicly traded (ticker symbol PKE)",
-    "hq": "New York",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "advanced composite materials",
-    "totalPenalty": 71179,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 35000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 30679,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 5500,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 35000,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 20678,
-        "records": 2
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 10001,
-        "records": 1
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 5500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:03:33.615Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

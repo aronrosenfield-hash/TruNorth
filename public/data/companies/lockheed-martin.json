@@ -47,15 +47,13 @@
     "s": "environmental violation: $5.4M in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "106 federal penalties totaling $334.2M since 2000 (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -112,69 +110,6 @@
     "execPay": "2026-06-11T03:48:51.753Z",
     "federalContracts": "2026-06-11T23:51:18.870Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "lockheed-martin",
-      "matchedName": "Lockheed Martin",
-      "totalPenalty": 334158791,
-      "totalRecords": 106,
-      "offenseGroups": [
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 233641437,
-          "records": 17
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 78500087,
-          "records": 46
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 15000000,
-          "records": 3
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 5587709,
-          "records": 19
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 1429558,
-          "records": 21
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "False Claims Act and related",
-          "penalty": 233641437,
-          "records": 17
-        },
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 62000000,
-          "records": 1
-        },
-        {
-          "category": "export control violation",
-          "penalty": 15000000,
-          "records": 3
-        },
-        {
-          "category": "labor relations violation",
-          "penalty": 8631136,
-          "records": 13
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 5439062,
-          "records": 12
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "boeing",
@@ -282,74 +217,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Lockheed Martin",
-    "slug": "lockheed-martin",
-    "ownership": "publicly traded (ticker symbol LMT)",
-    "hq": "Maryland",
-    "majorIndustry": "aerospace and military contracting",
-    "specificIndustry": "aerospace &amp; military contracting",
-    "totalPenalty": 334158791,
-    "totalRecords": 106,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 233641437,
-        "records": 17
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 78500087,
-        "records": 46
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 15000000,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 5587709,
-        "records": 19
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 1429558,
-        "records": 21
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 233641437,
-        "records": 17
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 62000000,
-        "records": 1
-      },
-      {
-        "category": "export control violation",
-        "penalty": 15000000,
-        "records": 3
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 8631136,
-        "records": 13
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 5439062,
-        "records": 12
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00303024",

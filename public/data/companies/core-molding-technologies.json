@@ -26,7 +26,6 @@
     "s": "13 federal penalties totaling $233K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "air pollution violation: $73K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -138,49 +136,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Core Molding Technologies",
-    "slug": "core-molding-technologies",
-    "ownership": "publicly traded (ticker symbol CMT)",
-    "hq": "Ohio",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "reinforced plastics",
-    "totalPenalty": 233402,
-    "totalRecords": 13,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 120902,
-        "records": 9
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 112500,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 120902,
-        "records": 9
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 72500,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 40000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:01:21.816Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

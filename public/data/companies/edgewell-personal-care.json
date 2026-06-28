@@ -26,7 +26,6 @@
     "s": "12 federal penalties totaling $190K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $30K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -145,54 +143,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Edgewell Personal Care",
-    "slug": "edgewell-personal-care",
-    "ownership": "publicly traded (ticker symbol EPC)",
-    "hq": "Missouri",
-    "majorIndustry": "household and personal care products",
-    "specificIndustry": "household and personal care products",
-    "totalPenalty": 189732,
-    "totalRecords": 12,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 137732,
-        "records": 9
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 52000,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 107732,
-        "records": 8
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 30000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 29500,
-        "records": 2
-      },
-      {
-        "category": "pesticide violation",
-        "penalty": 22500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:48:37.347Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

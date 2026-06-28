@@ -27,7 +27,6 @@
     "s": "34 federal penalties totaling $4.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "environmental violation: $3.1M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -132,54 +130,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Merit Energy",
-    "slug": "merit-energy",
-    "ownership": "privately held",
-    "hq": "Texas",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 3962282,
-    "totalRecords": 34,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 3884113,
-        "records": 30
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 78169,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 3065363,
-        "records": 13
-      },
-      {
-        "category": "oil or gas drilling violation",
-        "penalty": 671250,
-        "records": 10
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 147500,
-        "records": 7
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 78169,
-        "records": 4
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T01:05:47.707Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

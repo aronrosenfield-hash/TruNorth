@@ -27,7 +27,6 @@
     "s": "11 federal penalties totaling $160K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $72K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -137,49 +135,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Meritage Homes",
-    "slug": "meritage-homes",
-    "ownership": "publicly traded (ticker symbol MTH)",
-    "hq": "Arizona",
-    "majorIndustry": "construction and engineering",
-    "specificIndustry": "homebuilding",
-    "totalPenalty": 160092,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 81575,
-        "records": 8
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 78517,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 81575,
-        "records": 8
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 71720,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 6797,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:18:57.382Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00494211",

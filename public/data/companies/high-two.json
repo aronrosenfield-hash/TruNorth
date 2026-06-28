@@ -25,7 +25,6 @@
     "s": "4 federal penalties totaling $65.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -40,8 +39,7 @@
   "environment": {
     "s": "environmental violation: $63K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -102,64 +100,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Lehigh Valley Health Network",
-    "slug": "lehigh-valley-health-network",
-    "ownership": "non-profit",
-    "hq": "Pennsylvania",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "hospitals",
-    "totalPenalty": 65409979,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 65000000,
-        "records": 1
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 332479,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 62500,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 15000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "privacy violation",
-        "penalty": 65000000,
-        "records": 1
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 332479,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 62500,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 15000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T00:07:22.345Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

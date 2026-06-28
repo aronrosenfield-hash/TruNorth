@@ -26,7 +26,6 @@
     "s": "3 federal penalties totaling $22.0M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $2.0M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -149,44 +147,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Talen Energy Corporation",
-    "slug": "talen-energy-corporation",
-    "ownership": "publicly traded (ticker symbol TLN)",
-    "hq": "Texas",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "wholesale electricity provider",
-    "totalPenalty": 21952150,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 20000000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1952150,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 20000000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 1952150,
-        "records": 2
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T01:24:45.185Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -26,7 +26,6 @@
     "s": "3 federal penalties totaling $406K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "environmental violation: $5K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -136,44 +134,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Littelfuse Inc.",
-    "slug": "littelfuse-inc",
-    "ownership": "publicly traded (ticker symbol LFUS)",
-    "hq": "Illinois",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "circuit protection products",
-    "totalPenalty": 406100,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 401100,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "export control violation",
-        "penalty": 401100,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:02:52.100Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

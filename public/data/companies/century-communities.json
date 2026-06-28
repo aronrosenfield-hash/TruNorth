@@ -26,7 +26,6 @@
     "s": "15 federal penalties totaling $416K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "water pollution violation: $157K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -148,49 +146,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Century Communities",
-    "slug": "century-communities",
-    "ownership": "publicly traded (ticker symbol CCS)",
-    "hq": "Colorado",
-    "majorIndustry": "construction and engineering",
-    "specificIndustry": "homebuilding",
-    "totalPenalty": 415766,
-    "totalRecords": 15,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 225960,
-        "records": 11
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 189806,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 225960,
-        "records": 11
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 156806,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 33000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:46:42.184Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

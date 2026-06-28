@@ -27,7 +27,6 @@
     "s": "67 federal penalties totaling $833.6M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $3.6M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -134,74 +132,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Siemens",
-    "slug": "siemens",
-    "ownership": "publicly traded",
-    "hq": "Germany",
-    "majorIndustry": "diversified",
-    "specificIndustry": "diversified",
-    "totalPenalty": 833627428,
-    "totalRecords": 67,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 801000000,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 21438789,
-        "records": 17
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 6986430,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 3727171,
-        "records": 16
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 300038,
-        "records": 28
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 800000000,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 21212989,
-        "records": 10
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 6986430,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 3580625,
-        "records": 13
-      },
-      {
-        "category": "kickbacks and bribery",
-        "penalty": 1000000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:43:20.966Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00450965",

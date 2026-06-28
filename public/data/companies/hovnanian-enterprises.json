@@ -26,7 +26,6 @@
     "s": "15 federal penalties totaling $1.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "water pollution violation: $1.1M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -133,59 +131,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Hovnanian Enterprises",
-    "slug": "hovnanian-enterprises",
-    "ownership": "publicly traded (ticker symbol HOV)",
-    "hq": "New Jersey",
-    "majorIndustry": "construction and engineering",
-    "specificIndustry": "homebuilding",
-    "totalPenalty": 1388737,
-    "totalRecords": 15,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1265000,
-        "records": 8
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 62737,
-        "records": 6
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 61000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "water pollution violation",
-        "penalty": 1130000,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 135000,
-        "records": 6
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 62737,
-        "records": 6
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 61000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:18:25.356Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

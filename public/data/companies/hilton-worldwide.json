@@ -39,7 +39,6 @@
     "rating": "Positive",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "cdp-climate"
     ]
   },
@@ -47,7 +46,6 @@
     "s": "42 federal penalties totaling $7.1M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -92,69 +90,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "hilton-worldwide",
-      "matchedName": "Hilton Worldwide",
-      "totalPenalty": 7112805,
-      "totalRecords": 42,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 4607355,
-          "records": 22
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 1335407,
-          "records": 2
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 1025000,
-          "records": 3
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 138043,
-          "records": 14
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 7000,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "wage and hour violation",
-          "penalty": 4433006,
-          "records": 12
-        },
-        {
-          "category": "economic sanction violation",
-          "penalty": 735407,
-          "records": 1
-        },
-        {
-          "category": "privacy violation",
-          "penalty": 700000,
-          "records": 1
-        },
-        {
-          "category": "accounting fraud or deficiencies",
-          "penalty": 600000,
-          "records": 1
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 300000,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "marriott-international",
@@ -237,74 +172,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Hilton Worldwide",
-    "slug": "hilton-worldwide",
-    "ownership": "publicly traded (ticker symbol HLT)",
-    "hq": "Virginia",
-    "majorIndustry": "hotels",
-    "specificIndustry": "hotels",
-    "totalPenalty": 7112805,
-    "totalRecords": 42,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 4607355,
-        "records": 22
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 1335407,
-        "records": 2
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 1025000,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 138043,
-        "records": 14
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 7000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 4433006,
-        "records": 12
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 735407,
-        "records": 1
-      },
-      {
-        "category": "privacy violation",
-        "penalty": 700000,
-        "records": 1
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 600000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 300000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

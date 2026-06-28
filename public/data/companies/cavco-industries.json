@@ -26,7 +26,6 @@
     "s": "37 federal penalties totaling $1.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $124K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -145,64 +143,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Cavco Industries",
-    "slug": "cavco-industries",
-    "ownership": "publicly traded (ticker symbol CVCO)",
-    "hq": "Arizona",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "factory-built housing",
-    "totalPenalty": 1144236,
-    "totalRecords": 37,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 769248,
-        "records": 28
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 216519,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 158469,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 769248,
-        "records": 28
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 135000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 123569,
-        "records": 4
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 81519,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 34900,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:38:47.491Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

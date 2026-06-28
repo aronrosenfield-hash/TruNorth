@@ -38,15 +38,13 @@
     "s": "air pollution violation: $2.5M in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "110 federal penalties totaling $58.6M since 2000 (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -98,64 +96,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "packaging-corporation-of-america",
-      "matchedName": "Packaging Corporation of America",
-      "totalPenalty": 58569358,
-      "totalRecords": 110,
-      "offenseGroups": [
-        {
-          "category": "competition-related offenses",
-          "penalty": 51600000,
-          "records": 2
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 2988280,
-          "records": 9
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 2716125,
-          "records": 16
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 1264953,
-          "records": 83
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 51600000,
-          "records": 2
-        },
-        {
-          "category": "air pollution violation",
-          "penalty": 2538545,
-          "records": 5
-        },
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 1300000,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 1139853,
-          "records": 67
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 1132562,
-          "records": 3
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "international-paper",
@@ -243,69 +183,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Packaging Corporation of America",
-    "slug": "packaging-corporation-of-america",
-    "ownership": "publicly traded (ticker symbol PKG)",
-    "hq": "Illinois",
-    "majorIndustry": "paper and packaging",
-    "specificIndustry": "packaging",
-    "totalPenalty": 58569358,
-    "totalRecords": 110,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 51600000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 2988280,
-        "records": 9
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 2716125,
-        "records": 16
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 1264953,
-        "records": 83
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 51600000,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 2538545,
-        "records": 5
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 1300000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 1139853,
-        "records": 67
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 1132562,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

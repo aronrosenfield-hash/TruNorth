@@ -26,7 +26,6 @@
     "s": "6 federal penalties totaling $5.9M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $5.9M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -119,44 +117,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Gulfport Energy",
-    "slug": "gulfport-energy",
-    "ownership": "publicly traded (ticker symbol GPOR)",
-    "hq": "Oklahoma",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 5890226,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 5884683,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 5543,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 5884683,
-        "records": 5
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 5543,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:06:47.830Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

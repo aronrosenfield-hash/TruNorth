@@ -38,7 +38,6 @@
     "rating": "Positive",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "consumer-scorecards"
     ]
   },
@@ -46,7 +45,6 @@
     "s": "47 federal penalties totaling $5.5M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -91,54 +89,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "sunrun-inc",
-      "matchedName": "Sunrun Inc.",
-      "totalPenalty": 5518029,
-      "totalRecords": 47,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 4300000,
-          "records": 1
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 1106680,
-          "records": 44
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 111349,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "consumer protection violation",
-          "penalty": 4300000,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 1106680,
-          "records": 44
-        },
-        {
-          "category": "labor relations violation",
-          "penalty": 57682,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 53667,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "vivint",
@@ -215,59 +165,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Sunrun Inc.",
-    "slug": "sunrun-inc",
-    "ownership": "publicly traded (ticker symbol RUN)",
-    "hq": "California",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "solar energy",
-    "totalPenalty": 5518029,
-    "totalRecords": 47,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 4300000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 1106680,
-        "records": 44
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 111349,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 4300000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 1106680,
-        "records": 44
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 57682,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 53667,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

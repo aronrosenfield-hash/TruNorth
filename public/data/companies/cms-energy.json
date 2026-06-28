@@ -27,7 +27,6 @@
     "s": "82 federal penalties totaling $62.6M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "environmental violation: $10.3M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -129,74 +127,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "CMS Energy",
-    "slug": "cms-energy",
-    "ownership": "publicly traded (ticker symbol CMS)",
-    "hq": "Michigan",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 62596352,
-    "totalRecords": 82,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 29038041,
-        "records": 3
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 20825000,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 10409011,
-        "records": 8
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 1581000,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 743300,
-        "records": 65
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 28000000,
-        "records": 1
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 20825000,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 10289460,
-        "records": 4
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 1581000,
-        "records": 3
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 1023385,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:54:36.819Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00075473",

@@ -26,7 +26,6 @@
     "s": "2 federal penalties totaling $258K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "environmental violation: $250K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -140,39 +138,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Lotte Chemical",
-    "slug": "lotte-chemical",
-    "ownership": "publicly traded",
-    "hq": "South Korea",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 257500,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 257500,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 250000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 7500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:40:41.192Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

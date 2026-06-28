@@ -26,7 +26,6 @@
     "s": "10 federal penalties totaling $2.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -142,59 +140,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Automatic Data Processing",
-    "slug": "automatic-data-processing",
-    "ownership": "publicly traded (ticker symbol ADP)",
-    "hq": "New Jersey",
-    "majorIndustry": "business services",
-    "specificIndustry": "business services",
-    "totalPenalty": 2273062,
-    "totalRecords": 10,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 2040577,
-        "records": 7
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 232485,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment discrimination",
-        "penalty": 1400000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 614502,
-        "records": 4
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 232485,
-        "records": 3
-      },
-      {
-        "category": "Family and Medical Leave Act",
-        "penalty": 14858,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 11217,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:42:54.840Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

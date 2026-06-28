@@ -26,7 +26,6 @@
     "s": "33 federal penalties totaling $19.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "air pollution violation: $56K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -139,69 +137,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Compass Minerals International",
-    "slug": "compass-minerals-international",
-    "ownership": "publicly traded (ticker symbol CMP)",
-    "hq": "Kansas",
-    "majorIndustry": "mining and minerals",
-    "specificIndustry": "mining",
-    "totalPenalty": 19685954,
-    "totalRecords": 33,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 12000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 7330213,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 284194,
-        "records": 25
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 71547,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 12000000,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 7330213,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 284194,
-        "records": 25
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 55972,
-        "records": 4
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 10000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:58:23.440Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -27,7 +27,6 @@
     "s": "33 federal penalties totaling $14.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $166K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -136,69 +134,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Hackensack Meridian Health",
-    "slug": "hackensack-meridian-health",
-    "ownership": "non-profit",
-    "hq": "New Jersey",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "hospitals",
-    "totalPenalty": 14295784,
-    "totalRecords": 33,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 13714000,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 369775,
-        "records": 16
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 178870,
-        "records": 12
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 33139,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 13714000,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 178870,
-        "records": 12
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 165500,
-        "records": 4
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 63275,
-        "records": 5
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 57000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:13:55.171Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00015925",

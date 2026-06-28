@@ -26,7 +26,6 @@
     "s": "93 federal penalties totaling $11.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "water pollution violation: $3.5M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -134,69 +132,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Steel Dynamics Inc.",
-    "slug": "steel-dynamics-inc",
-    "ownership": "publicly traded (ticker symbol STLD)",
-    "hq": "Indiana",
-    "majorIndustry": "metals",
-    "specificIndustry": "steel",
-    "totalPenalty": 11622241,
-    "totalRecords": 93,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 6238605,
-        "records": 51
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 4600000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 459836,
-        "records": 39
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 323800,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 4600000,
-        "records": 1
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 3475000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 2185595,
-        "records": 21
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 454836,
-        "records": 38
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 440825,
-        "records": 20
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T01:06:38.561Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -28,7 +28,6 @@
     "s": "37 federal penalties totaling $40.9M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $1.4M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -154,69 +152,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "FMC Corp.",
-    "slug": "fmc-corp",
-    "ownership": "publicly traded (ticker symbol FMC)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 40877228,
-    "totalRecords": 37,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 35950000,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 3100000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1705501,
-        "records": 21
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 121727,
-        "records": 12
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 35950000,
-        "records": 3
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 3100000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 1400192,
-        "records": 11
-      },
-      {
-        "category": "pesticide violation",
-        "penalty": 177659,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 121727,
-        "records": 12
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:24:29.706Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00033704",

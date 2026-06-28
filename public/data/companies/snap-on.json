@@ -26,7 +26,6 @@
     "s": "14 federal penalties totaling $495K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $10K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -124,64 +122,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Snap-on",
-    "slug": "snap-on",
-    "ownership": "publicly traded (ticker symbol SNA)",
-    "hq": "Wisconsin",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "industrial equipment",
-    "totalPenalty": 495400,
-    "totalRecords": 14,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 394045,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 91355,
-        "records": 11
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 10000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 365000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 83505,
-        "records": 10
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 29045,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 10000,
-        "records": 1
-      },
-      {
-        "category": "motor vehicle safety violation",
-        "penalty": 7850,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:58:53.012Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

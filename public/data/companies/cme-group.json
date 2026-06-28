@@ -27,7 +27,6 @@
     "s": "4 federal penalties totaling $89.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -155,44 +153,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "CME Group",
-    "slug": "cme-group",
-    "ownership": "publicly traded (ticker symbol CME)",
-    "hq": "Illinois",
-    "majorIndustry": "financial services",
-    "specificIndustry": "financial services",
-    "totalPenalty": 89300000,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 61500000,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 27800000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 61500000,
-        "records": 2
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 27800000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:54:23.056Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00076299",

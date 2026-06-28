@@ -26,7 +26,6 @@
     "s": "35 federal penalties totaling $642K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $198K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -133,69 +131,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "AZZ Inc.",
-    "slug": "azz-inc",
-    "ownership": "publicly traded (ticker symbol AZZ)",
-    "hq": "Texas",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "electrical equipment",
-    "totalPenalty": 641661,
-    "totalRecords": 35,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 312244,
-        "records": 8
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 274270,
-        "records": 24
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 50032,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 5115,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 274270,
-        "records": 24
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 198395,
-        "records": 5
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 104000,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 50032,
-        "records": 2
-      },
-      {
-        "category": "solid waste violation",
-        "penalty": 9849,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:44:52.105Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

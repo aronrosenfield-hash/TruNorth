@@ -26,7 +26,6 @@
     "s": "6 federal penalties totaling $68K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -135,44 +133,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Forum Energy Technologies",
-    "slug": "forum-energy-technologies",
-    "ownership": "publicly traded (ticker symbol FET)",
-    "hq": "Texas",
-    "majorIndustry": "metals",
-    "specificIndustry": "metal products",
-    "totalPenalty": 67804,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 61318,
-        "records": 5
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 6486,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 61318,
-        "records": 5
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 6486,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:26:52.417Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

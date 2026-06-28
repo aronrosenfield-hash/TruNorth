@@ -26,7 +26,6 @@
     "s": "9 federal penalties totaling $5.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "environmental violation: $100K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -159,74 +157,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Analog Devices Inc.",
-    "slug": "analog-devices-inc",
-    "ownership": "publicly traded (ticker symbol ADI)",
-    "hq": "Massachusetts",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "semiconductors",
-    "totalPenalty": 5027403,
-    "totalRecords": 9,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 3000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1718584,
-        "records": 3
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 192000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 109979,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 6840,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 3000000,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 1500000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 218584,
-        "records": 2
-      },
-      {
-        "category": "export control violation",
-        "penalty": 192000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 100279,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:30:44.165Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

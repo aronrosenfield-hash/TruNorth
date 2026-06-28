@@ -36,15 +36,13 @@
     "s": "air pollution violation: $25.4M in federal penalties (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "112 federal penalties totaling $34.4M since 2000 (Violation Tracker).",
     "rating": "Below Average",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -96,59 +94,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "delek",
-      "matchedName": "Delek",
-      "totalPenalty": 34418751,
-      "totalRecords": 112,
-      "offenseGroups": [
-        {
-          "category": "environment-related offenses",
-          "penalty": 33131518,
-          "records": 58
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 1104655,
-          "records": 47
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 182578,
-          "records": 7
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "air pollution violation",
-          "penalty": 25376781,
-          "records": 20
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 7528987,
-          "records": 35
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 853475,
-          "records": 21
-        },
-        {
-          "category": "railroad safety violation",
-          "penalty": 251180,
-          "records": 26
-        },
-        {
-          "category": "pipeline safety violation",
-          "penalty": 220000,
-          "records": 2
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "valero-energy",
@@ -235,64 +180,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Delek",
-    "slug": "delek",
-    "ownership": "publicly traded (ticker symbol DK)",
-    "hq": "Israel",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 34418751,
-    "totalRecords": 112,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 33131518,
-        "records": 58
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 1104655,
-        "records": 47
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 182578,
-        "records": 7
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 25376781,
-        "records": 20
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 7528987,
-        "records": 35
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 853475,
-        "records": 21
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 251180,
-        "records": 26
-      },
-      {
-        "category": "pipeline safety violation",
-        "penalty": 220000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

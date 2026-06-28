@@ -46,15 +46,13 @@
     "s": "air pollution violation: $640.5M in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "3630 federal penalties totaling $2.8B since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -103,69 +101,6 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "berkshire-hathaway",
-      "matchedName": "Berkshire Hathaway",
-      "totalPenalty": 2802573718,
-      "totalRecords": 3630,
-      "offenseGroups": [
-        {
-          "category": "environment-related offenses",
-          "penalty": 1005926191,
-          "records": 326
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 945957134,
-          "records": 3128
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 393770500,
-          "records": 9
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 320437253,
-          "records": 102
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 113816281,
-          "records": 8
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "utility safety violation",
-          "penalty": 877768625,
-          "records": 18
-        },
-        {
-          "category": "air pollution violation",
-          "penalty": 640468583,
-          "records": 94
-        },
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 285500000,
-          "records": 3
-        },
-        {
-          "category": "water pollution violation",
-          "penalty": 196972524,
-          "records": 15
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 157186000,
-          "records": 12
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "loews",
@@ -242,74 +177,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Berkshire Hathaway",
-    "slug": "berkshire-hathaway",
-    "ownership": "publicly traded (ticker symbol BRK.B)",
-    "hq": "Nebraska",
-    "majorIndustry": "diversified",
-    "specificIndustry": "diversified",
-    "totalPenalty": 2802573718,
-    "totalRecords": 3630,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1005926191,
-        "records": 326
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 945957134,
-        "records": 3128
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 393770500,
-        "records": 9
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 320437253,
-        "records": 102
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 113816281,
-        "records": 8
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "utility safety violation",
-        "penalty": 877768625,
-        "records": 18
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 640468583,
-        "records": 94
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 285500000,
-        "records": 3
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 196972524,
-        "records": 15
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 157186000,
-        "records": 12
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00324483",

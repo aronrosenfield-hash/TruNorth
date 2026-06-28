@@ -27,7 +27,6 @@
     "s": "2 federal penalties totaling $516K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -137,44 +135,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "International Game Technology",
-    "slug": "international-game-technology",
-    "ownership": "publicly traded (ticker symbol IGT)",
-    "hq": "Nevada",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "gambling equipment",
-    "totalPenalty": 515900,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 500000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 15900,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 500000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 15900,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T00:15:46.996Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00316331",

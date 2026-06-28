@@ -27,7 +27,6 @@
     "s": "55 federal penalties totaling $7.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $3.2M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -132,59 +130,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "CNX Resources",
-    "slug": "cnx-resources",
-    "ownership": "publicly traded (ticker symbol CNX)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 6977853,
-    "totalRecords": 55,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 4977853,
-        "records": 54
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 2000000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 3156853,
-        "records": 39
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 2000000,
-        "records": 1
-      },
-      {
-        "category": "oil or gas drilling violation",
-        "penalty": 1339000,
-        "records": 5
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 343000,
-        "records": 9
-      },
-      {
-        "category": "pipeline safety violation",
-        "penalty": 139000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:55:16.739Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00660902",

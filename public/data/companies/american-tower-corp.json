@@ -26,7 +26,6 @@
     "s": "7 federal penalties totaling $547K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "hazardous waste violation: $175K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -132,64 +130,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "American Tower Corp.",
-    "slug": "american-tower-corp",
-    "ownership": "publicly traded (ticker symbol AMT)",
-    "hq": "Massachusetts",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "telecommunications services",
-    "totalPenalty": 546710,
-    "totalRecords": 7,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 289951,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 251759,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 289951,
-        "records": 1
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 175000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 71759,
-        "records": 3
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 5000,
-        "records": 1
-      },
-      {
-        "category": "motor vehicle safety violation",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:28:54.388Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

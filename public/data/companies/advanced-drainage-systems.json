@@ -27,7 +27,6 @@
     "s": "18 federal penalties totaling $1.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -125,54 +123,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Advanced Drainage Systems",
-    "slug": "advanced-drainage-systems",
-    "ownership": "publicly traded (ticker symbol WMS)",
-    "hq": "Ohio",
-    "majorIndustry": "building materials",
-    "specificIndustry": "plastic piping",
-    "totalPenalty": 1194968,
-    "totalRecords": 18,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 1000000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 182519,
-        "records": 16
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 12449,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 1000000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 182519,
-        "records": 16
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 12449,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:18:28.024Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00691634",

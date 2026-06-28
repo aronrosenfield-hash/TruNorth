@@ -26,7 +26,6 @@
     "s": "14 federal penalties totaling $195.1M since 2000 (Violation Tracker).",
     "rating": "poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -136,64 +134,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Signet Jewelers",
-    "slug": "signet-jewelers",
-    "ownership": "publicly traded (ticker symbol SIG)",
-    "hq": "Bermuda",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-jewelry",
-    "totalPenalty": 195123176,
-    "totalRecords": 14,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 183440256,
-        "records": 7
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 11590220,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 92700,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment discrimination",
-        "penalty": 175030000,
-        "records": 2
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 11000000,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 8410256,
-        "records": 5
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 590220,
-        "records": 1
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 80000,
-        "records": 2
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:30:29.057Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

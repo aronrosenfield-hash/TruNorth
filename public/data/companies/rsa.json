@@ -26,7 +26,6 @@
     "s": "27 federal penalties totaling $8.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "environmental violation: $6.9M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -139,54 +137,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Corsa Coal",
-    "slug": "corsa-coal",
-    "ownership": "privately held",
-    "hq": "Pennsylvania",
-    "majorIndustry": "mining and minerals",
-    "specificIndustry": "coal mining",
-    "totalPenalty": 8384315,
-    "totalRecords": 27,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 6851728,
-        "records": 9
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 1200000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 332587,
-        "records": 17
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 6851728,
-        "records": 9
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 1200000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 332587,
-        "records": 17
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T02:11:29.549Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

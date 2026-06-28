@@ -27,7 +27,6 @@
     "s": "93 federal penalties totaling $143.9M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -143,74 +141,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Fidelity National Financial",
-    "slug": "fidelity-national-financial",
-    "ownership": "publicly traded (ticker symbol FNF)",
-    "hq": "Florida",
-    "majorIndustry": "financial services",
-    "specificIndustry": "insurance",
-    "totalPenalty": 143852467,
-    "totalRecords": 93,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 73414171,
-        "records": 84
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 65000000,
-        "records": 1
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 4568635,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 864056,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 5605,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "banking violation",
-        "penalty": 65000000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 38300408,
-        "records": 5
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 24213763,
-        "records": 77
-      },
-      {
-        "category": "privacy violation",
-        "penalty": 5900000,
-        "records": 1
-      },
-      {
-        "category": "mortgage abuses",
-        "penalty": 5000000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:18:20.259Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00364455",

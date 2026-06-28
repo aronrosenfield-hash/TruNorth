@@ -43,15 +43,13 @@
     "s": "environmental violation: $11K in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "14 federal penalties totaling $4.1M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -99,64 +97,6 @@
   "ab": "#2a1a05",
   "ac": "#f0a030",
   "dataLastUpdated": "2026-05-28",
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "windstream",
-      "matchedName": "Windstream",
-      "totalPenalty": 4054498,
-      "totalRecords": 14,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 3943000,
-          "records": 4
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 61100,
-          "records": 6
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 39065,
-          "records": 3
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 11333,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "telecommunications violation",
-          "penalty": 3718000,
-          "records": 3
-        },
-        {
-          "category": "utility service violation",
-          "penalty": 225000,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 61100,
-          "records": 6
-        },
-        {
-          "category": "labor relations violation",
-          "penalty": 39065,
-          "records": 3
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 11333,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
-  },
   "competitors": [
     "atandt",
     "verizon",
@@ -232,69 +172,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Windstream",
-    "slug": "windstream",
-    "ownership": "privately held",
-    "hq": "Arkansas",
-    "majorIndustry": "telecommunications",
-    "specificIndustry": "telecommunications",
-    "totalPenalty": 4054498,
-    "totalRecords": 14,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 3943000,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 61100,
-        "records": 6
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 39065,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 11333,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "telecommunications violation",
-        "penalty": 3718000,
-        "records": 3
-      },
-      {
-        "category": "utility service violation",
-        "penalty": 225000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 61100,
-        "records": 6
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 39065,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 11333,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00370171",

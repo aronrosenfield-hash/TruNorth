@@ -27,7 +27,6 @@
     "s": "7 federal penalties totaling $148K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $125K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -122,49 +120,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Mylar Specialty Films",
-    "slug": "mylar-specialty-films",
-    "ownership": "joint venture (owned 50-50 by Celanese and Teijin)",
-    "hq": "Virginia",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "polyester films",
-    "totalPenalty": 148453,
-    "totalRecords": 7,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 138415,
-        "records": 6
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 10038,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 125415,
-        "records": 5
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 13000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 10038,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:47:01.831Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

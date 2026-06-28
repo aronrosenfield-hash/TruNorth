@@ -26,7 +26,6 @@
     "s": "12 federal penalties totaling $203K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $35K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -122,64 +120,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Coherent Corp.",
-    "slug": "coherent-corp",
-    "ownership": "publicly traded (ticker symbol COHR)",
-    "hq": "California",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "photonics systems",
-    "totalPenalty": 203129,
-    "totalRecords": 12,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 100629,
-        "records": 6
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 60500,
-        "records": 5
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 42000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 94019,
-        "records": 5
-      },
-      {
-        "category": "export control violation",
-        "penalty": 42000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 34500,
-        "records": 2
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 13500,
-        "records": 1
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 12500,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:57:17.607Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

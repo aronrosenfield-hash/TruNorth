@@ -39,15 +39,13 @@
     "s": "environmental violation: $25.6M in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "125 federal penalties totaling $110.3M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -87,69 +85,6 @@
     "sources": [
       "Claude AI synthesis"
     ]
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "caterpillar-inc",
-      "matchedName": "Caterpillar Inc.",
-      "totalPenalty": 110279651,
-      "totalRecords": 125,
-      "offenseGroups": [
-        {
-          "category": "safety-related offenses",
-          "penalty": 61017007,
-          "records": 78
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 29601392,
-          "records": 29
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 19576902,
-          "records": 13
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 40000,
-          "records": 3
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 26350,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "product safety violation",
-          "penalty": 60000000,
-          "records": 1
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 25627455,
-          "records": 10
-        },
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 16500000,
-          "records": 1
-        },
-        {
-          "category": "air pollution violation",
-          "penalty": 3692183,
-          "records": 13
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 1844100,
-          "records": 5
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
@@ -251,74 +186,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Caterpillar Inc.",
-    "slug": "caterpillar-inc",
-    "ownership": "publicly traded (ticker symbol CAT)",
-    "hq": "Illinois",
-    "majorIndustry": "heavy equipment",
-    "specificIndustry": "construction equipment",
-    "totalPenalty": 110279651,
-    "totalRecords": 125,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 61017007,
-        "records": 78
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 29601392,
-        "records": 29
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 19576902,
-        "records": 13
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 40000,
-        "records": 3
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 26350,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "product safety violation",
-        "penalty": 60000000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 25627455,
-        "records": 10
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 16500000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 3692183,
-        "records": 13
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 1844100,
-        "records": 5
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

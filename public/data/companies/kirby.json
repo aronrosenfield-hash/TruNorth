@@ -27,7 +27,6 @@
     "s": "12 federal penalties totaling $20.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $4.9M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -145,59 +143,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Kirby Corp.",
-    "slug": "kirby-corp",
-    "ownership": "publicly traded (ticker symbol KEX)",
-    "hq": "Texas",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "barge services",
-    "totalPenalty": 20334668,
-    "totalRecords": 12,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 20215000,
-        "records": 4
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 110007,
-        "records": 7
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 9661,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "oil spill",
-        "penalty": 15300000,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 4915000,
-        "records": 2
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 110007,
-        "records": 7
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 9661,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:50:38.727Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00250027",

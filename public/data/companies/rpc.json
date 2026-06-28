@@ -26,7 +26,6 @@
     "s": "9 federal penalties totaling $353K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $17K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -130,59 +128,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "RPC",
-    "slug": "rpc",
-    "ownership": "publicly traded (ticker symbol RES)",
-    "hq": "Georgia",
-    "majorIndustry": "oilfield services and supplies",
-    "specificIndustry": "oilfield services",
-    "totalPenalty": 353145,
-    "totalRecords": 9,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 298166,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 38479,
-        "records": 5
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 16500,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 298166,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 29699,
-        "records": 4
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 16500,
-        "records": 1
-      },
-      {
-        "category": "motor vehicle safety violation",
-        "penalty": 8780,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:26:53.557Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

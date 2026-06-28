@@ -26,7 +26,6 @@
     "s": "2 federal penalties totaling $2.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $10K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -143,44 +141,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Precigen",
-    "slug": "precigen",
-    "ownership": "publicly traded (ticker symbol PGEN)",
-    "hq": "Maryland",
-    "majorIndustry": "agribusiness",
-    "specificIndustry": "biotechnology",
-    "totalPenalty": 2510314,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 2500000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 10314,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 2500000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 10314,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:11:23.919Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

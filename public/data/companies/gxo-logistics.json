@@ -27,7 +27,6 @@
     "s": "13 federal penalties totaling $1.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "air pollution violation: $9K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -133,64 +131,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "GXO Logistics",
-    "slug": "gxo-logistics",
-    "ownership": "publicly traded (ticker symbol GXO)",
-    "hq": "Connecticut",
-    "majorIndustry": "freight and logistics",
-    "specificIndustry": "logistics",
-    "totalPenalty": 1735412,
-    "totalRecords": 13,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 1626295,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 100117,
-        "records": 8
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 9000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment discrimination",
-        "penalty": 1590000,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 94117,
-        "records": 7
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 22795,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 13500,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 9000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:10:21.421Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

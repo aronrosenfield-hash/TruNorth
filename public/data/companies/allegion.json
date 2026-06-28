@@ -27,7 +27,6 @@
     "s": "8 federal penalties totaling $159K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "air pollution violation: $20K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -127,49 +125,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Allegion",
-    "slug": "allegion",
-    "ownership": "publicly traded (ticker symbol ALLE)",
-    "hq": "Ireland",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "security products",
-    "totalPenalty": 159167,
-    "totalRecords": 8,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 123300,
-        "records": 5
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 35867,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 123300,
-        "records": 5
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 19850,
-        "records": 2
-      },
-      {
-        "category": "solid waste violation",
-        "penalty": 16017,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:24:36.792Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

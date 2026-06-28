@@ -38,15 +38,13 @@
     "s": "environmental violation: $50K in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "28 federal penalties totaling $26.4M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -98,64 +96,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "jb-hunt-transport-services",
-      "matchedName": "J.B. Hunt Transport Services",
-      "totalPenalty": 26376715,
-      "totalRecords": 28,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 26102170,
-          "records": 9
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 194545,
-          "records": 15
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 50000,
-          "records": 2
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 30000,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "wage and hour violation",
-          "penalty": 25805263,
-          "records": 7
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 260000,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 165545,
-          "records": 11
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 50000,
-          "records": 2
-        },
-        {
-          "category": "labor relations violation",
-          "penalty": 36907,
-          "records": 1
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "schneider-national",
@@ -229,69 +169,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "J.B. Hunt Transport Services",
-    "slug": "jb-hunt-transport-services",
-    "ownership": "publicly traded (ticker symbol JBHT)",
-    "hq": "Arkansas",
-    "majorIndustry": "freight and logistics",
-    "specificIndustry": "freight services",
-    "totalPenalty": 26376715,
-    "totalRecords": 28,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 26102170,
-        "records": 9
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 194545,
-        "records": 15
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 50000,
-        "records": 2
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 30000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 25805263,
-        "records": 7
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 260000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 165545,
-        "records": 11
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 50000,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 36907,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

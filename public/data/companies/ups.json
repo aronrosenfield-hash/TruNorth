@@ -40,7 +40,6 @@
     "rating": "Mixed",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "epa-smartway"
     ]
   },
@@ -48,7 +47,6 @@
     "s": "1 federal penalties totaling $7.0M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -91,29 +89,6 @@
     "sources": [
       "Claude AI synthesis"
     ]
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "upstream-rehabilitation",
-      "matchedName": "Upstream Rehabilitation",
-      "totalPenalty": 7000000,
-      "totalRecords": 1,
-      "offenseGroups": [
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 7000000,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "False Claims Act and related",
-          "penalty": 7000000,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
@@ -240,34 +215,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Upstream Rehabilitation",
-    "slug": "upstream-rehabilitation",
-    "ownership": "privately held",
-    "hq": "Alabama",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "healthcare services",
-    "totalPenalty": 7000000,
-    "totalRecords": 1,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 7000000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 7000000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

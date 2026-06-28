@@ -26,7 +26,6 @@
     "s": "3 federal penalties totaling $53K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $39K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -120,54 +118,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Allient Inc.",
-    "slug": "allient-inc",
-    "ownership": "publicly traded (ticker symbol ALNT)",
-    "hq": "New York",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "motion control components",
-    "totalPenalty": 52599,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 39034,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 8000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 5565,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 39034,
-        "records": 1
-      },
-      {
-        "category": "Family and Medical Leave Act",
-        "penalty": 8000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 5565,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:25:08.829Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

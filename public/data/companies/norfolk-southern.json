@@ -39,15 +39,13 @@
     "s": "environmental violation: $610.0M in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "2012 federal penalties totaling $984.2M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -85,59 +83,6 @@
     "sources": [
       "Claude AI synthesis"
     ]
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "norfolk-southern",
-      "matchedName": "Norfolk Southern",
-      "totalPenalty": 984166099,
-      "totalRecords": 2012,
-      "offenseGroups": [
-        {
-          "category": "environment-related offenses",
-          "penalty": 932340789,
-          "records": 28
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 32998790,
-          "records": 10
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 18826520,
-          "records": 1974
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "environmental violation",
-          "penalty": 610020756,
-          "records": 17
-        },
-        {
-          "category": "water pollution violation",
-          "penalty": 321437933,
-          "records": 6
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 31908521,
-          "records": 7
-        },
-        {
-          "category": "railroad safety violation",
-          "penalty": 18697350,
-          "records": 1967
-        },
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 1000000,
-          "records": 1
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
@@ -229,64 +174,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Norfolk Southern",
-    "slug": "norfolk-southern",
-    "ownership": "publicly traded (ticker symbol NSC)",
-    "hq": "Virginia",
-    "majorIndustry": "railroads",
-    "specificIndustry": "railroads",
-    "totalPenalty": 984166099,
-    "totalRecords": 2012,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 932340789,
-        "records": 28
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 32998790,
-        "records": 10
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 18826520,
-        "records": 1974
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 610020756,
-        "records": 17
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 321437933,
-        "records": 6
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 31908521,
-        "records": 7
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 18697350,
-        "records": 1967
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 1000000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

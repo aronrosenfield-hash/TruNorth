@@ -29,7 +29,6 @@
     "s": "241 federal penalties totaling $264.0M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "air pollution violation: $135.6M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -161,74 +159,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Cargill",
-    "slug": "cargill",
-    "ownership": "privately held",
-    "hq": "Minnesota",
-    "majorIndustry": "agribusiness",
-    "specificIndustry": "agribusiness",
-    "totalPenalty": 263976899,
-    "totalRecords": 241,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 146977514,
-        "records": 82
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 83437675,
-        "records": 9
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 14123903,
-        "records": 15
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 11313000,
-        "records": 4
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 6100000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 135631800,
-        "records": 21
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 83205000,
-        "records": 5
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 11250000,
-        "records": 3
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 9609547,
-        "records": 5
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 8492778,
-        "records": 10
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T22:21:48.057Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00067884",

@@ -27,7 +27,6 @@
     "s": "30 federal penalties totaling $21.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -150,69 +148,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "First American Financial",
-    "slug": "first-american-financial",
-    "ownership": "publicly traded (ticker symbol FAF)",
-    "hq": "California",
-    "majorIndustry": "financial services",
-    "specificIndustry": "insurance",
-    "totalPenalty": 21472851,
-    "totalRecords": 30,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 11151710,
-        "records": 23
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 10180000,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 96430,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 44711,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 7000000,
-        "records": 1
-      },
-      {
-        "category": "kickbacks and bribery",
-        "penalty": 5680000,
-        "records": 2
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 4500000,
-        "records": 1
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 2664094,
-        "records": 20
-      },
-      {
-        "category": "privacy violation",
-        "penalty": 1487616,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:18:58.405Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00346726",

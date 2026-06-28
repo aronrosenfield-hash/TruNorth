@@ -27,7 +27,6 @@
     "s": "54 federal penalties totaling $2.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "water pollution violation: $186K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -141,64 +139,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "MDU Resources",
-    "slug": "mdu-resources",
-    "ownership": "publicly traded (ticker symbol MDU)",
-    "hq": "North Dakota",
-    "majorIndustry": "diversified",
-    "specificIndustry": "diversified",
-    "totalPenalty": 2692945,
-    "totalRecords": 54,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 2098111,
-        "records": 37
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 542149,
-        "records": 14
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 52685,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "utility safety violation",
-        "penalty": 1523320,
-        "records": 6
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 512031,
-        "records": 29
-      },
-      {
-        "category": "pipeline safety violation",
-        "penalty": 288500,
-        "records": 3
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 185544,
-        "records": 3
-      },
-      {
-        "category": "motor vehicle safety violation",
-        "penalty": 62760,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:11:49.751Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00163253",

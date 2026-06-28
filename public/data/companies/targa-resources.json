@@ -27,7 +27,6 @@
     "s": "98 federal penalties totaling $13.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $12.4M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -141,64 +139,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Targa Resources",
-    "slug": "targa-resources",
-    "ownership": "publicly traded (ticker symbol TRGP)",
-    "hq": "Texas",
-    "majorIndustry": "pipelines",
-    "specificIndustry": "pipelines",
-    "totalPenalty": 13656806,
-    "totalRecords": 98,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 13453219,
-        "records": 81
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 125216,
-        "records": 16
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 78371,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 12357033,
-        "records": 68
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 1048186,
-        "records": 11
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 78371,
-        "records": 1
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 67650,
-        "records": 10
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 57566,
-        "records": 6
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T01:25:30.101Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00510016",

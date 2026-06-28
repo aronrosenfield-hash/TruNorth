@@ -27,7 +27,6 @@
     "s": "3 federal penalties totaling $20.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -172,34 +170,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Merit Medical Systems",
-    "slug": "merit-medical-systems",
-    "ownership": "publicly traded (ticker symbol MMSI)",
-    "hq": "Utah",
-    "majorIndustry": "medical equipment and supplies",
-    "specificIndustry": "medical devices",
-    "totalPenalty": 20390000,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 20390000,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 20390000,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:18:51.844Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00475343",

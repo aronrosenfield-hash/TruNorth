@@ -38,15 +38,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "32 federal penalties totaling $3.7M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -94,29 +92,6 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "oscar-health-inc",
-      "matchedName": "Oscar Health Inc.",
-      "totalPenalty": 3711250,
-      "totalRecords": 32,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 3711250,
-          "records": 32
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "insurance violation",
-          "penalty": 3711250,
-          "records": 32
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "humana",
@@ -191,34 +166,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Oscar Health Inc.",
-    "slug": "oscar-health-inc",
-    "ownership": "publicly traded (ticker symbol OSCR)",
-    "hq": "New York",
-    "majorIndustry": "financial services",
-    "specificIndustry": "insurance",
-    "totalPenalty": 3711250,
-    "totalRecords": 32,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 3711250,
-        "records": 32
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "insurance violation",
-        "penalty": 3711250,
-        "records": 32
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

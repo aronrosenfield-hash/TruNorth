@@ -26,7 +26,6 @@
     "s": "22 federal penalties totaling $3.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "air pollution violation: $2.8M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -140,64 +138,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Fresh Del Monte Produce",
-    "slug": "fresh-del-monte-produce",
-    "ownership": "publicly traded (ticker symbol FDP)",
-    "hq": "California",
-    "majorIndustry": "food products",
-    "specificIndustry": "food products",
-    "totalPenalty": 3632890,
-    "totalRecords": 22,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 3470564,
-        "records": 10
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 83843,
-        "records": 9
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 78483,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 2840650,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 629914,
-        "records": 8
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 83843,
-        "records": 9
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 66333,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 12150,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:05:37.173Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

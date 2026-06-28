@@ -27,7 +27,6 @@
     "s": "3 federal penalties totaling $11.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -123,49 +121,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "EZCORP Inc.",
-    "slug": "ezcorp-inc",
-    "ownership": "publicly traded (ticker symbol EZPW)",
-    "hq": "Texas",
-    "majorIndustry": "financial services",
-    "specificIndustry": "pawnshops",
-    "totalPenalty": 11113043,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 11100000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 13043,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 10500000,
-        "records": 1
-      },
-      {
-        "category": "privacy violation",
-        "penalty": 600000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 13043,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:15:53.148Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00414185",

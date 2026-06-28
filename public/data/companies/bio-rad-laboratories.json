@@ -26,7 +26,6 @@
     "s": "7 federal penalties totaling $56.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "air pollution violation: $990K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -142,64 +140,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Bio-Rad Laboratories",
-    "slug": "bio-rad-laboratories",
-    "ownership": "publicly traded (ticker symbol BIO)",
-    "hq": "California",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "healthcare services",
-    "totalPenalty": 56116810,
-    "totalRecords": 7,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 55050000,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1037150,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 29660,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 55050000,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 990000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 29660,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 29000,
-        "records": 1
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 18150,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:04:56.261Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

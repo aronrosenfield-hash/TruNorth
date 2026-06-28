@@ -27,7 +27,6 @@
     "s": "208 federal penalties totaling $516.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "air pollution violation: $438.1M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -156,69 +154,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "HF Sinclair Corporation",
-    "slug": "hf-sinclair-corporation",
-    "ownership": "publicly traded (ticker symbol DINO)",
-    "hq": "Texas",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 516761593,
-    "totalRecords": 208,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 512383709,
-        "records": 97
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 3277884,
-        "records": 109
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 800000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 300000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 438139355,
-        "records": 43
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 63900158,
-        "records": 42
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 7431200,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 2498569,
-        "records": 38
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 2484838,
-        "records": 4
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:15:51.759Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00342766",

@@ -27,7 +27,6 @@
     "s": "17 federal penalties totaling $572K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "environmental violation: $212K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -133,59 +131,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "AdvanSix",
-    "slug": "advansix",
-    "ownership": "publicly traded (ticker symbol ASIX)",
-    "hq": "New Jersey",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "polymer resins",
-    "totalPenalty": 571907,
-    "totalRecords": 17,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 462810,
-        "records": 7
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 109097,
-        "records": 10
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 211510,
-        "records": 4
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 202221,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 71697,
-        "records": 6
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 37400,
-        "records": 4
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 34726,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:18:36.760Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00652842",

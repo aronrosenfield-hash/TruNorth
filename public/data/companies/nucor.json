@@ -28,7 +28,6 @@
     "s": "96 federal penalties totaling $148.5M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "air pollution violation: $98.5M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -158,69 +156,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Nucor",
-    "slug": "nucor",
-    "ownership": "publicly traded (ticker symbol NUE)",
-    "hq": "North Carolina",
-    "majorIndustry": "metals",
-    "specificIndustry": "steel",
-    "totalPenalty": 148473135,
-    "totalRecords": 96,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 100684538,
-        "records": 43
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 23752646,
-        "records": 6
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 23400000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 635951,
-        "records": 46
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 98499913,
-        "records": 20
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 23700000,
-        "records": 2
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 23400000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 1742779,
-        "records": 15
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 592051,
-        "records": 42
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:49:41.613Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00379628",

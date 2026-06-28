@@ -26,7 +26,6 @@
     "s": "31 federal penalties totaling $1.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $193K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -146,64 +144,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "HNI Corp.",
-    "slug": "hni-corp",
-    "ownership": "publicly traded (ticker symbol HNI)",
-    "hq": "Iowa",
-    "majorIndustry": "housewares and home furnishings",
-    "specificIndustry": "home furnishings; office equipment",
-    "totalPenalty": 1641515,
-    "totalRecords": 31,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 1240256,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 251622,
-        "records": 10
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 149637,
-        "records": 17
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment discrimination",
-        "penalty": 1181623,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 192800,
-        "records": 6
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 149637,
-        "records": 17
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 50001,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 40000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:16:44.595Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

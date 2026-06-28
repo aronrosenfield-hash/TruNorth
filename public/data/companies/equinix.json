@@ -26,7 +26,6 @@
     "s": "3 federal penalties totaling $41.5M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "air pollution violation: $28K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -150,44 +148,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Equinix",
-    "slug": "equinix",
-    "ownership": "publicly traded (ticker symbol EQIX)",
-    "hq": "California",
-    "majorIndustry": "telecommunications",
-    "specificIndustry": "telecommunications",
-    "totalPenalty": 41527834,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 41500000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 27834,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 41500000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 27834,
-        "records": 2
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:07:31.791Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -26,7 +26,6 @@
     "s": "29 federal penalties totaling $2.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $277K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -141,69 +139,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Avery Dennison",
-    "slug": "avery-dennison",
-    "ownership": "publicly traded (ticker symbol AVY)",
-    "hq": "California",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "office supplies",
-    "totalPenalty": 2622100,
-    "totalRecords": 29,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 1600000,
-        "records": 1
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 518470,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 317425,
-        "records": 9
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 186205,
-        "records": 18
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "labor relations violation",
-        "penalty": 1600000,
-        "records": 1
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 518470,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 277425,
-        "records": 5
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 186205,
-        "records": 18
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 35000,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:01:39.943Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -45,15 +45,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "47 federal penalties totaling $599.8M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -104,69 +102,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "becton-dickinson",
-      "matchedName": "Becton Dickinson",
-      "totalPenalty": 599769128,
-      "totalRecords": 47,
-      "offenseGroups": [
-        {
-          "category": "safety-related offenses",
-          "penalty": 244198778,
-          "records": 14
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 175000000,
-          "records": 1
-        },
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 105360000,
-          "records": 3
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 69323000,
-          "records": 4
-        },
-        {
-          "category": "healthcare-related offenses",
-          "penalty": 3300000,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "drug or medical equipment safety violation",
-          "penalty": 244000000,
-          "records": 2
-        },
-        {
-          "category": "investor protection violation",
-          "penalty": 175000000,
-          "records": 1
-        },
-        {
-          "category": "False Claims Act and related",
-          "penalty": 105360000,
-          "records": 3
-        },
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 67000000,
-          "records": 2
-        },
-        {
-          "category": "off-label or unapproved promotion of medical products",
-          "penalty": 3300000,
-          "records": 2
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "abbott-laboratories",
@@ -306,74 +241,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Becton Dickinson",
-    "slug": "becton-dickinson",
-    "ownership": "publicly traded (ticker symbol BDX)",
-    "hq": "New Jersey",
-    "majorIndustry": "medical equipment and supplies",
-    "specificIndustry": "medical supplies",
-    "totalPenalty": 599769128,
-    "totalRecords": 47,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 244198778,
-        "records": 14
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 175000000,
-        "records": 1
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 105360000,
-        "records": 3
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 69323000,
-        "records": 4
-      },
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 3300000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "drug or medical equipment safety violation",
-        "penalty": 244000000,
-        "records": 2
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 175000000,
-        "records": 1
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 105360000,
-        "records": 3
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 67000000,
-        "records": 2
-      },
-      {
-        "category": "off-label or unapproved promotion of medical products",
-        "penalty": 3300000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00376582",

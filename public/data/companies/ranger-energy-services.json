@@ -26,7 +26,6 @@
     "s": "33 federal penalties totaling $1.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $21K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -126,64 +124,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ranger Energy Services",
-    "slug": "ranger-energy-services",
-    "ownership": "publicly traded (ticker symbol RNGR)",
-    "hq": "Texas",
-    "majorIndustry": "oilfield services and supplies",
-    "specificIndustry": "oilfield services",
-    "totalPenalty": 1143714,
-    "totalRecords": 33,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 630674,
-        "records": 24
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 481025,
-        "records": 6
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 32015,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 630674,
-        "records": 24
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 250000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 231025,
-        "records": 5
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 20500,
-        "records": 2
-      },
-      {
-        "category": "oil or gas drilling violation",
-        "penalty": 11515,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:20:27.664Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

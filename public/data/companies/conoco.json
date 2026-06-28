@@ -28,7 +28,6 @@
     "s": "192 federal penalties totaling $609.2M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "air pollution violation: $361.9M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -136,74 +134,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "ConocoPhillips",
-    "slug": "conocophillips",
-    "ownership": "publicly traded (ticker symbol COP)",
-    "hq": "Texas",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 609228843,
-    "totalRecords": 192,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 439005508,
-        "records": 144
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 144732798,
-        "records": 8
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 15800007,
-        "records": 2
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 5000000,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 4393000,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 361855500,
-        "records": 34
-      },
-      {
-        "category": "federal leasing royalty violation",
-        "penalty": 97835322,
-        "records": 4
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 74432008,
-        "records": 91
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 46897476,
-        "records": 4
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 15800007,
-        "records": 2
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T22:48:24.555Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00112896",

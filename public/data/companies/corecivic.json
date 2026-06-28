@@ -28,7 +28,6 @@
     "s": "29 federal penalties totaling $23.2M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -146,59 +144,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "CoreCivic",
-    "slug": "corecivic",
-    "ownership": "publicly traded (ticker symbol CXW)",
-    "hq": "Tennessee",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "private prisons",
-    "totalPenalty": 23202669,
-    "totalRecords": 29,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 23154488,
-        "records": 23
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 48181,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 20871134,
-        "records": 14
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 2162648,
-        "records": 4
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 103483,
-        "records": 4
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 42401,
-        "records": 5
-      },
-      {
-        "category": "Family and Medical Leave Act",
-        "penalty": 17223,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:02:08.147Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00366468",

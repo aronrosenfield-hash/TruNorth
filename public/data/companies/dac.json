@@ -26,7 +26,6 @@
     "s": "98 federal penalties totaling $14.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "environmental violation: $11K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -124,74 +122,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "DAC Acquisition LLC",
-    "slug": "dac-acquisition-llc",
-    "ownership": "privately held",
-    "hq": "Maryland",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "skilled nursing facilities",
-    "totalPenalty": 14282189,
-    "totalRecords": 98,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 9500000,
-        "records": 1
-      },
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 4641747,
-        "records": 93
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 112304,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 17638,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 10500,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 9500000,
-        "records": 1
-      },
-      {
-        "category": "nursing home violation",
-        "penalty": 4641747,
-        "records": 93
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 112304,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 17638,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 10500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T22:54:18.674Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

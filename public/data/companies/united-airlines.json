@@ -47,7 +47,6 @@
     "rating": "Good",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "cdp-climate"
     ]
   },
@@ -55,7 +54,6 @@
     "s": "567 federal penalties totaling $210.7M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -114,69 +112,6 @@
     "doj": "2026-06-11T14:35:40.356Z",
     "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "united-airlines-holdings",
-      "matchedName": "United Airlines Holdings",
-      "totalPenalty": 210670015,
-      "totalRecords": 567,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 121067881,
-          "records": 20
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 51719102,
-          "records": 3
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 24519316,
-          "records": 506
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 8278400,
-          "records": 24
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 2685316,
-          "records": 13
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "wage and hour violation",
-          "penalty": 69127612,
-          "records": 7
-        },
-        {
-          "category": "fraud",
-          "penalty": 49458102,
-          "records": 1
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 46684817,
-          "records": 11
-        },
-        {
-          "category": "aviation safety violation",
-          "penalty": 23831971,
-          "records": 468
-        },
-        {
-          "category": "aviation consumer protection violation",
-          "penalty": 8212000,
-          "records": 22
-        }
-      ],
-      "rating": "poor"
-    }
   },
   "competitors": [
     "american-airlines",
@@ -270,74 +205,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "United Airlines Holdings",
-    "slug": "united-airlines-holdings",
-    "ownership": "publicly traded (ticker symbol UAL)",
-    "hq": "Illinois",
-    "majorIndustry": "airlines",
-    "specificIndustry": "airlines",
-    "totalPenalty": 210670015,
-    "totalRecords": 567,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 121067881,
-        "records": 20
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 51719102,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 24519316,
-        "records": 506
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 8278400,
-        "records": 24
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 2685316,
-        "records": 13
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 69127612,
-        "records": 7
-      },
-      {
-        "category": "fraud",
-        "penalty": 49458102,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 46684817,
-        "records": 11
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 23831971,
-        "records": 468
-      },
-      {
-        "category": "aviation consumer protection violation",
-        "penalty": 8212000,
-        "records": 22
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00251009",

@@ -37,15 +37,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "2 federal penalties totaling $127K since 2000 (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -86,39 +84,6 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "dataLastUpdated": "2026-05-28",
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "invenergy",
-      "matchedName": "Invenergy",
-      "totalPenalty": 127108,
-      "totalRecords": 2,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 109000,
-          "records": 1
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 18108,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "utility service violation",
-          "penalty": 109000,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 18108,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
-  },
   "competitors": [
     "red-bull",
     "monster-energy",
@@ -162,44 +127,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Invenergy",
-    "slug": "invenergy",
-    "ownership": "privately held",
-    "hq": "Illinois",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "power systems",
-    "totalPenalty": 127108,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 109000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 18108,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "utility service violation",
-        "penalty": 109000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 18108,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

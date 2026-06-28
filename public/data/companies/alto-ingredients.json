@@ -26,7 +26,6 @@
     "s": "27 federal penalties totaling $1.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "air pollution violation: $652K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -105,64 +103,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Alto Ingredients",
-    "slug": "alto-ingredients",
-    "ownership": "publicly traded (ticker symbol ALTO)",
-    "hq": "California",
-    "majorIndustry": "miscellaneous energy products and systems",
-    "specificIndustry": "ethanol",
-    "totalPenalty": 1244038,
-    "totalRecords": 27,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1082150,
-        "records": 9
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 154388,
-        "records": 17
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 7500,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 651687,
-        "records": 4
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 411463,
-        "records": 4
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 99025,
-        "records": 12
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 55363,
-        "records": 5
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 19000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:26:34.432Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

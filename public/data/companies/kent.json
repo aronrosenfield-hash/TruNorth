@@ -28,7 +28,6 @@
     "s": "29 federal penalties totaling $2.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $2.2M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -132,64 +130,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Kent Corp.",
-    "slug": "kent-corp",
-    "ownership": "privately held",
-    "hq": "Iowa",
-    "majorIndustry": "agribusiness",
-    "specificIndustry": "agribusiness",
-    "totalPenalty": 2538245,
-    "totalRecords": 29,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 2349390,
-        "records": 8
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 168855,
-        "records": 20
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 20000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 2220390,
-        "records": 7
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 129000,
-        "records": 1
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 128100,
-        "records": 15
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 40755,
-        "records": 5
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 20000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T00:22:59.351Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00650853",

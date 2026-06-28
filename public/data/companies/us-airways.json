@@ -26,7 +26,6 @@
     "s": "18 federal penalties totaling $89.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $100K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -143,69 +141,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Qantas Airways",
-    "slug": "qantas-airways",
-    "ownership": "publicly traded",
-    "hq": "Australia",
-    "majorIndustry": "airlines",
-    "specificIndustry": "airlines",
-    "totalPenalty": 89126435,
-    "totalRecords": 18,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 88400000,
-        "records": 3
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 355000,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 271435,
-        "records": 9
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 100000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 88400000,
-        "records": 3
-      },
-      {
-        "category": "aviation consumer protection violation",
-        "penalty": 355000,
-        "records": 4
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 235500,
-        "records": 7
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 100000,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 35935,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T03:12:52.484Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -27,7 +27,6 @@
     "s": "5 federal penalties totaling $65.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -135,64 +133,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Las Vegas Sands Corp.",
-    "slug": "las-vegas-sands-corp",
-    "ownership": "publicly traded (ticker symbol LVS)",
-    "hq": "Nevada",
-    "majorIndustry": "entertainment",
-    "specificIndustry": "casinos",
-    "totalPenalty": 65397673,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 47400300,
-        "records": 1
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 15960000,
-        "records": 2
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 2000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 37373,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "anti-money-laundering deficiencies",
-        "penalty": 47400300,
-        "records": 1
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 15960000,
-        "records": 2
-      },
-      {
-        "category": "gambling industry violation",
-        "penalty": 2000000,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 37373,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:53:41.285Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00399642",

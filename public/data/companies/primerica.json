@@ -27,7 +27,6 @@
     "s": "2 federal penalties totaling $44K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -131,39 +129,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Primerica Inc.",
-    "slug": "primerica-inc",
-    "ownership": "publicly traded (ticker symbol PRI)",
-    "hq": "Georgia",
-    "majorIndustry": "financial services",
-    "specificIndustry": "insurance",
-    "totalPenalty": 44000,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 44000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 35000,
-        "records": 1
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 9000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:12:08.860Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00521914",

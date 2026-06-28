@@ -27,7 +27,6 @@
     "s": "5 federal penalties totaling $2.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -139,44 +137,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "First Interstate Bancsystem",
-    "slug": "first-interstate-bancsystem",
-    "ownership": "publicly traded (ticker symbol FIBK)",
-    "hq": "Montana",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking",
-    "totalPenalty": 2370110,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 2200000,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 170110,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 2200000,
-        "records": 1
-      },
-      {
-        "category": "banking violation",
-        "penalty": 170110,
-        "records": 4
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:20:08.230Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00359554",

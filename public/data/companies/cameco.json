@@ -26,7 +26,6 @@
     "s": "10 federal penalties totaling $1.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "environmental violation: $1.1M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -119,49 +117,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Cameco Corporation",
-    "slug": "cameco-corporation",
-    "ownership": "publicly traded",
-    "hq": "Canada",
-    "majorIndustry": "mining and minerals",
-    "specificIndustry": "uranium",
-    "totalPenalty": 1269000,
-    "totalRecords": 10,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1232000,
-        "records": 9
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 37000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 1145000,
-        "records": 7
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 87000,
-        "records": 2
-      },
-      {
-        "category": "utility service violation",
-        "penalty": 37000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:53:59.608Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

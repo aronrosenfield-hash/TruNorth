@@ -27,7 +27,6 @@
     "s": "16 federal penalties totaling $84.7M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "environmental violation: $53.6M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -156,64 +154,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Eastman Kodak",
-    "slug": "eastman-kodak",
-    "ownership": "publicly traded (ticker symbol KODK)",
-    "hq": "New York",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "imaging products",
-    "totalPenalty": 84722721,
-    "totalRecords": 16,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 53612221,
-        "records": 11
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 31076500,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 34000,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 53606821,
-        "records": 10
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 21376500,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 9700000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 29000,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 5400,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:42:28.262Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00297085",

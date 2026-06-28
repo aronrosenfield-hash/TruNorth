@@ -27,7 +27,6 @@
     "s": "13 federal penalties totaling $631.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $32K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -152,64 +150,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Sun Life Financial",
-    "slug": "sun-life-financial",
-    "ownership": "publicly traded",
-    "hq": "Canada",
-    "majorIndustry": "financial services",
-    "specificIndustry": "life insurance",
-    "totalPenalty": 631224103,
-    "totalRecords": 13,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 627817858,
-        "records": 5
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 3342500,
-        "records": 5
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 32110,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 31635,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 627817858,
-        "records": 5
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 3342500,
-        "records": 5
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 32110,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 31635,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T01:17:56.042Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00677146",

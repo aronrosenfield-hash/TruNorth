@@ -27,7 +27,6 @@
     "s": "127 federal penalties totaling $11.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "air pollution violation: $6.3M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -147,64 +145,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "SM Energy",
-    "slug": "sm-energy",
-    "ownership": "publicly traded (ticker symbol SM)",
-    "hq": "Colorado",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 11163941,
-    "totalRecords": 127,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 10624224,
-        "records": 123
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 519052,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 20665,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 6269325,
-        "records": 76
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 4023829,
-        "records": 44
-      },
-      {
-        "category": "federal leasing royalty violation",
-        "penalty": 519052,
-        "records": 2
-      },
-      {
-        "category": "oil or gas drilling violation",
-        "penalty": 331070,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 20665,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:52:15.059Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00035204",

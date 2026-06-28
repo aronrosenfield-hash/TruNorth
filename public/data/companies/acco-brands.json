@@ -26,7 +26,6 @@
     "s": "4 federal penalties totaling $129K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $105K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -148,44 +146,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "ACCO Brands",
-    "slug": "acco-brands",
-    "ownership": "publicly traded (ticker symbol ACCO)",
-    "hq": "Illinois",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "office supplies",
-    "totalPenalty": 129203,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 105000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 24203,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 105000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 24203,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:28:49.115Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

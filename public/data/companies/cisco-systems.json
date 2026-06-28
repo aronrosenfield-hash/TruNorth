@@ -27,7 +27,6 @@
     "s": "8 federal penalties totaling $85.4M since 2000 (Violation Tracker). Supply-chain signals: KnowTheChain 41/100; CHRB 15/26; UK MS statement; AU MS statement.",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB",
       "knowthechain",
@@ -53,7 +52,6 @@
     "s": "CDP Climate Change: A (2024) — leadership-band environmental disclosure with validated targets.",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "cdp-climate"
     ]
   },
@@ -170,74 +168,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Cisco Systems",
-    "slug": "cisco-systems",
-    "ownership": "publicly traded (ticker symbol CSCO)",
-    "hq": "California",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "electronic equipment",
-    "totalPenalty": 85410675,
-    "totalRecords": 8,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 48000000,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 20000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 11400000,
-        "records": 3
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 6000000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 10675,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 48000000,
-        "records": 1
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 20000000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 6700000,
-        "records": 1
-      },
-      {
-        "category": "privacy violation",
-        "penalty": 6000000,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 4700000,
-        "records": 2
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:54:27.136Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00362707",

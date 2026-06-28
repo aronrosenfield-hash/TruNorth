@@ -26,7 +26,6 @@
     "s": "11 federal penalties totaling $939K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $908K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -134,59 +132,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "SiteOne Landscape Supply",
-    "slug": "siteone-landscape-supply",
-    "ownership": "publicly traded (ticker symbol SITE)",
-    "hq": "Georgia",
-    "majorIndustry": "wholesalers",
-    "specificIndustry": "wholesalers-landscaping supplies",
-    "totalPenalty": 938853,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 920374,
-        "records": 8
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 12367,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 6112,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 907863,
-        "records": 6
-      },
-      {
-        "category": "pesticide violation",
-        "penalty": 12511,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 12367,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 6112,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:49:36.357Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

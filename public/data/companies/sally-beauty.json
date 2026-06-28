@@ -37,15 +37,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "5 federal penalties totaling $162K since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -97,49 +95,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "sally-beauty",
-      "matchedName": "Sally Beauty",
-      "totalPenalty": 161637,
-      "totalRecords": 5,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 103000,
-          "records": 2
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 30536,
-          "records": 2
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 28101,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "wage and hour violation",
-          "penalty": 103000,
-          "records": 2
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 30536,
-          "records": 2
-        },
-        {
-          "category": "pesticide violation",
-          "penalty": 28101,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "ulta-beauty",
@@ -251,54 +206,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Sally Beauty",
-    "slug": "sally-beauty",
-    "ownership": "publicly traded (ticker symbol SBH)",
-    "hq": "Texas",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-cosmetics",
-    "totalPenalty": 161637,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 103000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 30536,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 28101,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 103000,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 30536,
-        "records": 2
-      },
-      {
-        "category": "pesticide violation",
-        "penalty": 28101,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

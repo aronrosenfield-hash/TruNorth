@@ -37,15 +37,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "18 federal penalties totaling $202.1M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -82,59 +80,6 @@
     "sources": [
       "Claude AI synthesis"
     ]
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "h-and-r-block",
-      "matchedName": "H&R Block",
-      "totalPenalty": 202129777,
-      "totalRecords": 18,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 156560000,
-          "records": 8
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 44544777,
-          "records": 8
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 1025000,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "discriminatory practices (non-employment)",
-          "penalty": 125000000,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 44544777,
-          "records": 8
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 31545000,
-          "records": 6
-        },
-        {
-          "category": "investor protection violation",
-          "penalty": 1025000,
-          "records": 2
-        },
-        {
-          "category": "privacy violation",
-          "penalty": 15000,
-          "records": 1
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
@@ -213,64 +158,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "H&R Block",
-    "slug": "h-and-r-block",
-    "ownership": "publicly traded (ticker symbol HRB)",
-    "hq": "Missouri",
-    "majorIndustry": "financial services",
-    "specificIndustry": "tax preparation services",
-    "totalPenalty": 202129777,
-    "totalRecords": 18,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 156560000,
-        "records": 8
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 44544777,
-        "records": 8
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 1025000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "discriminatory practices (non-employment)",
-        "penalty": 125000000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 44544777,
-        "records": 8
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 31545000,
-        "records": 6
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 1025000,
-        "records": 2
-      },
-      {
-        "category": "privacy violation",
-        "penalty": 15000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

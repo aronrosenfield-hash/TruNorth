@@ -36,15 +36,13 @@
     "s": "environmental violation: $2.8M in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "156 federal penalties totaling $112.5M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -83,69 +81,6 @@
       "Claude AI synthesis"
     ]
   },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "pilot-corporation",
-      "matchedName": "Pilot Corporation",
-      "totalPenalty": 112529708,
-      "totalRecords": 156,
-      "offenseGroups": [
-        {
-          "category": "competition-related offenses",
-          "penalty": 102000000,
-          "records": 2
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 6654378,
-          "records": 54
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 3487067,
-          "records": 79
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 210000,
-          "records": 4
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 178263,
-          "records": 17
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "fraud",
-          "penalty": 92000000,
-          "records": 1
-        },
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 10000000,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 6591978,
-          "records": 53
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 2827337,
-          "records": 49
-        },
-        {
-          "category": "water pollution violation",
-          "penalty": 298885,
-          "records": 12
-        }
-      ],
-      "rating": "good"
-    }
-  },
   "dataLastUpdated": "2026-05-28",
   "competitors": [
     "workday"
@@ -180,74 +115,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Pilot Corporation",
-    "slug": "pilot-corporation",
-    "ownership": "privately held",
-    "hq": "Tennessee",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-convenience stores",
-    "totalPenalty": 112529708,
-    "totalRecords": 156,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 102000000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 6654378,
-        "records": 54
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 3487067,
-        "records": 79
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 210000,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 178263,
-        "records": 17
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "fraud",
-        "penalty": 92000000,
-        "records": 1
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 10000000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 6591978,
-        "records": 53
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 2827337,
-        "records": 49
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 298885,
-        "records": 12
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

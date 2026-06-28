@@ -27,7 +27,6 @@
     "s": "33 federal penalties totaling $161.9M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $1.9M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -123,64 +121,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Braskem",
-    "slug": "braskem",
-    "ownership": "publicly traded",
-    "hq": "Brazil",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 161915640,
-    "totalRecords": 33,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 159800000,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 2047983,
-        "records": 25
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 67657,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 159800000,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 1888516,
-        "records": 20
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 127967,
-        "records": 4
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 35000,
-        "records": 4
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 32657,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:53:22.340Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

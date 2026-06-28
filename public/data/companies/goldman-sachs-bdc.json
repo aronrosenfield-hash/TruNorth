@@ -25,7 +25,6 @@
     "s": "118 federal penalties totaling $17.9B since 2000 (Violation Tracker).",
     "rating": "poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -122,74 +120,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Goldman Sachs",
-    "slug": "goldman-sachs",
-    "ownership": "publicly traded (ticker symbol GS)",
-    "hq": "New York",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking &amp; securities",
-    "totalPenalty": 17929100116,
-    "totalRecords": 118,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 13140362841,
-        "records": 60
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 3666739743,
-        "records": 13
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 895477261,
-        "records": 11
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 225249003,
-        "records": 5
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 917587,
-        "records": 10
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "toxic securities abuses",
-        "penalty": 8767542857,
-        "records": 6
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 4170429984,
-        "records": 50
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 2921088000,
-        "records": 2
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 745651743,
-        "records": 11
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 491477261,
-        "records": 8
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:57:04.308Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

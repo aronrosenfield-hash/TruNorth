@@ -26,7 +26,6 @@
     "s": "42 federal penalties totaling $1.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -128,64 +126,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Restaurant Brands International",
-    "slug": "restaurant-brands-international",
-    "ownership": "publicly traded (ticker symbol QSR)",
-    "hq": "Canada",
-    "majorIndustry": "restaurants and foodservice",
-    "specificIndustry": "restaurants",
-    "totalPenalty": 1348071,
-    "totalRecords": 42,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 1045415,
-        "records": 33
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 240000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 62656,
-        "records": 7
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 960415,
-        "records": 32
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 185000,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 85000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 62656,
-        "records": 7
-      },
-      {
-        "category": "Americans with Disabilities Act",
-        "penalty": 55000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:23:18.561Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

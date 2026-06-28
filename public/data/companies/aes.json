@@ -26,7 +26,6 @@
     "s": "58 federal penalties totaling $40.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "air pollution violation: $19.5M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -166,69 +164,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "AES Corp.",
-    "slug": "aes-corp",
-    "ownership": "publicly traded (ticker symbol AES)",
-    "hq": "Virginia",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 40206135,
-    "totalRecords": 58,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 26716130,
-        "records": 41
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 6800000,
-        "records": 1
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 6333500,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 356505,
-        "records": 14
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 19546595,
-        "records": 22
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 6944340,
-        "records": 15
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 6800000,
-        "records": 1
-      },
-      {
-        "category": "energy market violation",
-        "penalty": 6333500,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 356505,
-        "records": 14
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:10:32.191Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

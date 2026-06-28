@@ -26,7 +26,6 @@
     "s": "88 federal penalties totaling $2.0B since 2000 (Violation Tracker).",
     "rating": "poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -148,74 +146,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "General Electric",
-    "slug": "general-electric",
-    "ownership": "publicly traded (ticker symbol GE)",
-    "hq": "Massachusetts",
-    "majorIndustry": "diversified",
-    "specificIndustry": "diversified",
-    "totalPenalty": 2014643549,
-    "totalRecords": 88,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 1752785128,
-        "records": 5
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 120988587,
-        "records": 16
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 71130300,
-        "records": 12
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 39243152,
-        "records": 28
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 30043204,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "toxic securities abuses",
-        "penalty": 1500000000,
-        "records": 1
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 250000000,
-        "records": 2
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 101250002,
-        "records": 4
-      },
-      {
-        "category": "export control violation",
-        "penalty": 37230300,
-        "records": 10
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 33900000,
-        "records": 2
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:06:10.654Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00024869",

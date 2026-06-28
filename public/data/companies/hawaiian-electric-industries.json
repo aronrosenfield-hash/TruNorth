@@ -26,7 +26,6 @@
     "s": "16 federal penalties totaling $2.0B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $200K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -150,64 +148,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Hawaiian Electric Industries",
-    "slug": "hawaiian-electric-industries",
-    "ownership": "publicly traded (ticker symbol HE)",
-    "hq": "Hawaii",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 1990557523,
-    "totalRecords": 16,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 1990205735,
-        "records": 11
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 250000,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 101788,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "utility safety violation",
-        "penalty": 1990000000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 205735,
-        "records": 10
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 200000,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 51788,
-        "records": 1
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 50000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:13:33.923Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -27,7 +27,6 @@
     "s": "146 federal penalties totaling $60.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $29.3M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -157,64 +155,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "PBF Energy",
-    "slug": "pbf-energy",
-    "ownership": "publicly traded (ticker symbol PBF)",
-    "hq": "New Jersey",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 60180948,
-    "totalRecords": 146,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 55918893,
-        "records": 99
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 2900213,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 1361842,
-        "records": 46
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 29333886,
-        "records": 28
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 21820787,
-        "records": 64
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 4482000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 2900213,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 1201342,
-        "records": 30
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:30:10.007Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

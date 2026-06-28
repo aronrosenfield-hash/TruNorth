@@ -27,7 +27,6 @@
     "s": "99 federal penalties totaling $120.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "air pollution violation: $102.7M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -163,74 +161,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "DTE Energy",
-    "slug": "dte-energy",
-    "ownership": "publicly traded (ticker symbol DTE)",
-    "hq": "Michigan",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 120124785,
-    "totalRecords": 99,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 116844832,
-        "records": 34
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 2457800,
-        "records": 9
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 745490,
-        "records": 53
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 61663,
-        "records": 2
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 15000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 102661619,
-        "records": 6
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 14086113,
-        "records": 24
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 2407800,
-        "records": 8
-      },
-      {
-        "category": "utility safety violation",
-        "penalty": 551000,
-        "records": 36
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 156990,
-        "records": 12
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:33:05.291Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00081547",

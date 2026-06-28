@@ -26,7 +26,6 @@
     "s": "34 federal penalties totaling $21.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "air pollution violation: $16.5M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -111,64 +109,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Emera",
-    "slug": "emera",
-    "ownership": "publicly traded",
-    "hq": "Canada",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "power generation",
-    "totalPenalty": 21369594,
-    "totalRecords": 34,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 17234418,
-        "records": 21
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 3837200,
-        "records": 11
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 297976,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 16508000,
-        "records": 2
-      },
-      {
-        "category": "utility safety violation",
-        "penalty": 3000000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 837200,
-        "records": 10
-      },
-      {
-        "category": "solid waste violation",
-        "penalty": 434600,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 297976,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:20:19.127Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

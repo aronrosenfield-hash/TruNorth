@@ -43,15 +43,13 @@
     "s": "air pollution violation: $1.0M in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "52 federal penalties totaling $12.7M since 2000 (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -103,69 +101,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z"
   },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "molson-coors-beverage",
-      "matchedName": "Molson Coors Beverage",
-      "totalPenalty": 12685849,
-      "totalRecords": 52,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 10050000,
-          "records": 2
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 1607571,
-          "records": 23
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 521358,
-          "records": 23
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 499000,
-          "records": 3
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 7920,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "consumer protection violation",
-          "penalty": 10050000,
-          "records": 2
-        },
-        {
-          "category": "air pollution violation",
-          "penalty": 1016125,
-          "records": 15
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 521358,
-          "records": 23
-        },
-        {
-          "category": "tax violations",
-          "penalty": 499000,
-          "records": 3
-        },
-        {
-          "category": "water pollution violation",
-          "penalty": 351206,
-          "records": 2
-        }
-      ],
-      "rating": "good"
-    }
-  },
   "competitors": [
     "budweiser-anheuser-busch-inbev",
     "heineken-usa",
@@ -199,74 +134,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Molson Coors Beverage",
-    "slug": "molson-coors-beverage",
-    "ownership": "publicly traded (ticker symbol TAP)",
-    "hq": "Colorado",
-    "majorIndustry": "beverages",
-    "specificIndustry": "beverages",
-    "totalPenalty": 12685849,
-    "totalRecords": 52,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 10050000,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1607571,
-        "records": 23
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 521358,
-        "records": 23
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 499000,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 7920,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 10050000,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 1016125,
-        "records": 15
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 521358,
-        "records": 23
-      },
-      {
-        "category": "tax violations",
-        "penalty": 499000,
-        "records": 3
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 351206,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00457697",

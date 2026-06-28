@@ -37,15 +37,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "47 federal penalties totaling $22.4M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -84,64 +82,6 @@
     "sources": [
       "Claude AI synthesis"
     ]
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "best-buy",
-      "matchedName": "Best Buy",
-      "totalPenalty": 22384418,
-      "totalRecords": 47,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 17170921,
-          "records": 12
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 4130106,
-          "records": 31
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 883570,
-          "records": 2
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 199821,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "employment discrimination",
-          "penalty": 10199999,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 6679639,
-          "records": 6
-        },
-        {
-          "category": "product safety violation",
-          "penalty": 3800000,
-          "records": 1
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 633570,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 324606,
-          "records": 29
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "dataLastUpdated": "2026-05-28",
   "competitors": [
@@ -216,69 +156,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Best Buy",
-    "slug": "best-buy",
-    "ownership": "publicly traded (ticker symbol BBY)",
-    "hq": "Minnesota",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-consumer electronics",
-    "totalPenalty": 22384418,
-    "totalRecords": 47,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 17170921,
-        "records": 12
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 4130106,
-        "records": 31
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 883570,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 199821,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment discrimination",
-        "penalty": 10199999,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 6679639,
-        "records": 6
-      },
-      {
-        "category": "product safety violation",
-        "penalty": 3800000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 633570,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 324606,
-        "records": 29
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

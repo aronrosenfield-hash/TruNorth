@@ -26,7 +26,6 @@
     "s": "218 federal penalties totaling $763.8M since 2000 (Violation Tracker).",
     "rating": "poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -133,74 +131,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Sears",
-    "slug": "sears",
-    "ownership": "privately held",
-    "hq": "Illinois",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-department stores",
-    "totalPenalty": 763813650,
-    "totalRecords": 218,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 503434282,
-        "records": 107
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 123729043,
-        "records": 52
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 62600000,
-        "records": 1
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 37707492,
-        "records": 5
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 24741650,
-        "records": 23
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "product safety violation",
-        "penalty": 500550000,
-        "records": 3
-      },
-      {
-        "category": "fraud",
-        "penalty": 62600000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 57013951,
-        "records": 18
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 45501100,
-        "records": 3
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 37707492,
-        "records": 5
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:35:49.054Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

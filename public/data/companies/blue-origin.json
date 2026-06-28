@@ -43,15 +43,13 @@
     "s": "water pollution violation: $25K in federal penalties (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "5 federal penalties totaling $86K since 2000 (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -99,44 +97,6 @@
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
   "dataLastUpdated": "2026-05-28",
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "blue-origin-llc",
-      "matchedName": "Blue Origin LLC",
-      "totalPenalty": 86082,
-      "totalRecords": 5,
-      "offenseGroups": [
-        {
-          "category": "safety-related offenses",
-          "penalty": 53823,
-          "records": 2
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 32259,
-          "records": 3
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 53823,
-          "records": 2
-        },
-        {
-          "category": "water pollution violation",
-          "penalty": 25200,
-          "records": 2
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 7059,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
-  },
   "competitors": [
     "spacex",
     "virgin-galactic",
@@ -200,49 +160,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Blue Origin LLC",
-    "slug": "blue-origin-llc",
-    "ownership": "privately held",
-    "hq": "Washington",
-    "majorIndustry": "aerospace and military contracting",
-    "specificIndustry": "spaceflight services",
-    "totalPenalty": 86082,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 53823,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 32259,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 53823,
-        "records": 2
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 25200,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 7059,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00557793",

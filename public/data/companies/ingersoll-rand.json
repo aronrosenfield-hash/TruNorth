@@ -27,7 +27,6 @@
     "s": "23 federal penalties totaling $8.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -156,74 +154,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ingersoll Rand",
-    "slug": "ingersoll-rand",
-    "ownership": "publicly traded (ticker symbol IR)",
-    "hq": "North Carolina",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "industrial equipment",
-    "totalPenalty": 7960666,
-    "totalRecords": 23,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 7400987,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 257757,
-        "records": 10
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 137500,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 134607,
-        "records": 5
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 29815,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 6720987,
-        "records": 2
-      },
-      {
-        "category": "export control violation",
-        "penalty": 680000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 257757,
-        "records": 10
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 137500,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 127119,
-        "records": 4
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:27:42.239Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00056226",

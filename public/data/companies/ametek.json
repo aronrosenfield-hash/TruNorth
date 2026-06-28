@@ -40,15 +40,13 @@
     "s": "environmental violation: $492K in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "49 federal penalties totaling $2.2M since 2000 (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -101,64 +99,6 @@
     "execPay": "2026-06-11T03:48:51.753Z",
     "federalContracts": "2026-06-11T23:51:18.870Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "ametek",
-      "matchedName": "Ametek",
-      "totalPenalty": 2172935,
-      "totalRecords": 49,
-      "offenseGroups": [
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 1200000,
-          "records": 1
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 527810,
-          "records": 17
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 401925,
-          "records": 30
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 43200,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "False Claims Act and related",
-          "penalty": 1200000,
-          "records": 1
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 491510,
-          "records": 16
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 242925,
-          "records": 24
-        },
-        {
-          "category": "aviation safety violation",
-          "penalty": 159000,
-          "records": 6
-        },
-        {
-          "category": "labor relations violation",
-          "penalty": 43200,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "te-connectivity",
@@ -217,69 +157,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ametek",
-    "slug": "ametek",
-    "ownership": "publicly traded (ticker symbol AME)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "electronic equipment",
-    "totalPenalty": 2172935,
-    "totalRecords": 49,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 1200000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 527810,
-        "records": 17
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 401925,
-        "records": 30
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 43200,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 1200000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 491510,
-        "records": 16
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 242925,
-        "records": 24
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 159000,
-        "records": 6
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 43200,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

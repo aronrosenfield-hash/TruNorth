@@ -26,7 +26,6 @@
     "s": "4 federal penalties totaling $59.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -143,54 +141,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Blackbaud",
-    "slug": "blackbaud",
-    "ownership": "publicly traded (ticker symbol BLKB)",
-    "hq": "South Carolina",
-    "majorIndustry": "information technology",
-    "specificIndustry": "software for non-profits",
-    "totalPenalty": 59383915,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 56250000,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 3000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 133915,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "privacy violation",
-        "penalty": 56250000,
-        "records": 2
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 3000000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 133915,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:11:44.812Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

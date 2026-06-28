@@ -27,7 +27,6 @@
     "s": "8 federal penalties totaling $22.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -132,69 +130,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Option Care Health",
-    "slug": "option-care-health",
-    "ownership": "publicly traded (ticker symbol OPCH)",
-    "hq": "Illinois",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "infusion services",
-    "totalPenalty": 22084032,
-    "totalRecords": 8,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 15000000,
-        "records": 2
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 6270576,
-        "records": 3
-      },
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 801000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 12456,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "kickbacks and bribery",
-        "penalty": 15000000,
-        "records": 2
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 6270576,
-        "records": 3
-      },
-      {
-        "category": "HHS civil monetary penalties",
-        "penalty": 795000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 12456,
-        "records": 1
-      },
-      {
-        "category": "nursing home violation",
-        "penalty": 6000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:59:26.809Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00668384",

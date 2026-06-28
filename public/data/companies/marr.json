@@ -27,7 +27,6 @@
     "s": "13 federal penalties totaling $6.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "environmental violation: $189K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -128,59 +126,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Giumarra Vineyards",
-    "slug": "giumarra-vineyards",
-    "ownership": "privately held",
-    "hq": "California",
-    "majorIndustry": "beverages",
-    "specificIndustry": "wines",
-    "totalPenalty": 6763168,
-    "totalRecords": 13,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 6460368,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 188882,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 113918,
-        "records": 8
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 6110368,
-        "records": 2
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 350000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 188882,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 113918,
-        "records": 8
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T00:56:38.808Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00346619",

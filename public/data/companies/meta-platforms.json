@@ -30,7 +30,6 @@
     "s": "20 federal penalties totaling $8.2B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -60,8 +59,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -216,69 +214,6 @@
     "source": "courtlistener-recap"
   },
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Meta Platforms Inc.",
-    "slug": "meta-platforms-inc",
-    "ownership": "publicly traded (ticker symbol META)",
-    "hq": "California",
-    "majorIndustry": "information technology",
-    "specificIndustry": "internet services",
-    "totalPenalty": 8226379654,
-    "totalRecords": 20,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 8033565054,
-        "records": 11
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 124898000,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 52016600,
-        "records": 4
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 15900000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "privacy violation",
-        "penalty": 7991000000,
-        "records": 8
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 100000000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 52016600,
-        "records": 4
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 40000000,
-        "records": 1
-      },
-      {
-        "category": "campaign finance violation",
-        "penalty": 24898000,
-        "records": 2
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:19:12.077Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00502906",

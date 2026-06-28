@@ -26,7 +26,6 @@
     "s": "177 federal penalties totaling $192.4M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "hazardous waste violation: $22.6M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -141,74 +139,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Target",
-    "slug": "target",
-    "ownership": "publicly traded (ticker symbol TGT)",
-    "hq": "Minnesota",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-discount stores",
-    "totalPenalty": 192417054,
-    "totalRecords": 177,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 91024528,
-        "records": 10
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 47548904,
-        "records": 25
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 31421155,
-        "records": 27
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 12437500,
-        "records": 1
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 6025000,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "privacy violation",
-        "penalty": 71066939,
-        "records": 4
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 27052020,
-        "records": 11
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 22603696,
-        "records": 3
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 19957589,
-        "records": 6
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 12437500,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T01:25:34.798Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

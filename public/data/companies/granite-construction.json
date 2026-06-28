@@ -27,7 +27,6 @@
     "s": "44 federal penalties totaling $22.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "environmental violation: $814K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -147,74 +145,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Granite Construction",
-    "slug": "granite-construction",
-    "ownership": "publicly traded (ticker symbol GVA)",
-    "hq": "California",
-    "majorIndustry": "construction and engineering",
-    "specificIndustry": "construction &amp; engineering",
-    "totalPenalty": 22528933,
-    "totalRecords": 44,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 12000000,
-        "records": 1
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 8250000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1083085,
-        "records": 9
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 520998,
-        "records": 29
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 367500,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 12000000,
-        "records": 1
-      },
-      {
-        "category": "fraud",
-        "penalty": 8250000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 813885,
-        "records": 6
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 491958,
-        "records": 28
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 367500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:02:07.523Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00337394",

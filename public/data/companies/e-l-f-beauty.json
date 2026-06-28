@@ -37,15 +37,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "1 federal penalties totaling $996K since 2000 (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -95,29 +93,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "elf-beauty",
-      "matchedName": "e.l.f. Beauty",
-      "totalPenalty": 996080,
-      "totalRecords": 1,
-      "offenseGroups": [
-        {
-          "category": "financial offenses",
-          "penalty": 996080,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "economic sanction violation",
-          "penalty": 996080,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "revlon",
@@ -196,34 +171,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "e.l.f. Beauty",
-    "slug": "elf-beauty",
-    "ownership": "publicly traded (ticker symbol ELF)",
-    "hq": "California",
-    "majorIndustry": "household and personal care products",
-    "specificIndustry": "cosmetics",
-    "totalPenalty": 996080,
-    "totalRecords": 1,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 996080,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "economic sanction violation",
-        "penalty": 996080,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

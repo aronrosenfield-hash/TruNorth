@@ -26,7 +26,6 @@
     "s": "77 federal penalties totaling $5.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "air pollution violation: $3.2M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -145,64 +143,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Lineage Logistics",
-    "slug": "lineage-logistics",
-    "ownership": "privately held",
-    "hq": "California",
-    "majorIndustry": "freight and logistics",
-    "specificIndustry": "logistics",
-    "totalPenalty": 5059700,
-    "totalRecords": 77,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 3587059,
-        "records": 9
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 1008793,
-        "records": 55
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 463848,
-        "records": 13
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 3208141,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 997143,
-        "records": 54
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 378918,
-        "records": 6
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 244975,
-        "records": 5
-      },
-      {
-        "category": "employment screening violation",
-        "penalty": 149205,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:57:05.809Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

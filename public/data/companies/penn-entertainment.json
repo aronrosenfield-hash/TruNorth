@@ -27,7 +27,6 @@
     "s": "38 federal penalties totaling $6.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $10K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -143,69 +141,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "PENN Entertainment",
-    "slug": "penn-entertainment",
-    "ownership": "publicly traded (ticker symbol PENN)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "entertainment",
-    "specificIndustry": "casinos",
-    "totalPenalty": 6789792,
-    "totalRecords": 38,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 5938570,
-        "records": 7
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 828218,
-        "records": 28
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 12600,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 10404,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 5500000,
-        "records": 1
-      },
-      {
-        "category": "gambling industry violation",
-        "penalty": 828218,
-        "records": 28
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 438570,
-        "records": 6
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 12600,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 10404,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:05:36.053Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00423814",

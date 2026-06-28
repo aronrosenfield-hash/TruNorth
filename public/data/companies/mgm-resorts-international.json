@@ -28,7 +28,6 @@
     "s": "77 federal penalties totaling $59.3M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -164,74 +162,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "MGM Resorts International",
-    "slug": "mgm-resorts-international",
-    "ownership": "publicly traded (ticker symbol MGM)",
-    "hq": "Nevada",
-    "majorIndustry": "entertainment",
-    "specificIndustry": "casinos",
-    "totalPenalty": 59307085,
-    "totalRecords": 77,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 46120489,
-        "records": 58
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 12927763,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 211049,
-        "records": 10
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 42159,
-        "records": 3
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 5625,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "privacy violation",
-        "penalty": 45000000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 12570000,
-        "records": 2
-      },
-      {
-        "category": "gambling industry violation",
-        "penalty": 1120489,
-        "records": 57
-      },
-      {
-        "category": "workplace whistleblower retaliation",
-        "penalty": 325000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 211049,
-        "records": 10
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:20:22.469Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00299321",

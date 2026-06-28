@@ -26,7 +26,6 @@
     "s": "15 federal penalties totaling $8.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "air pollution violation: $28K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -153,64 +151,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "TD Synnex",
-    "slug": "td-synnex",
-    "ownership": "publicly traded (ticker symbol SNX)",
-    "hq": "California",
-    "majorIndustry": "wholesalers",
-    "specificIndustry": "wholesalers-computers",
-    "totalPenalty": 8066433,
-    "totalRecords": 15,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 8020333,
-        "records": 11
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 28000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 18100,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 7992520,
-        "records": 8
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 28000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 18100,
-        "records": 3
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 15000,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 12813,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T01:25:53.485Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

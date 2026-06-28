@@ -27,7 +27,6 @@
     "s": "130 federal penalties totaling $18.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $6.8M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -140,69 +138,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "CHS Inc.",
-    "slug": "chs-inc",
-    "ownership": "cooperative",
-    "hq": "Minnesota",
-    "majorIndustry": "agribusiness",
-    "specificIndustry": "agribusiness",
-    "totalPenalty": 18019527,
-    "totalRecords": 130,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 8650000,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 7790691,
-        "records": 56
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 1459857,
-        "records": 67
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 118979,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 6842477,
-        "records": 31
-      },
-      {
-        "category": "anti-money-laundering deficiencies",
-        "penalty": 6500000,
-        "records": 1
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 2150000,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 1236607,
-        "records": 45
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 579514,
-        "records": 15
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:50:48.904Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00485896",

@@ -26,7 +26,6 @@
     "s": "32 federal penalties totaling $90.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "environmental violation: $234K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -101,69 +99,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Balfour Beatty",
-    "slug": "balfour-beatty",
-    "ownership": "publicly traded",
-    "hq": "United Kingdom",
-    "majorIndustry": "construction and engineering",
-    "specificIndustry": "construction &amp; engineering",
-    "totalPenalty": 90797244,
-    "totalRecords": 32,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 90150000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 255172,
-        "records": 22
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 245300,
-        "records": 4
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 146772,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 90150000,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 234300,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 224732,
-        "records": 17
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 80000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 66772,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:56:46.711Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -27,7 +27,6 @@
     "s": "107 federal penalties totaling $5.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $2.0M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -132,64 +130,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "EQT AB",
-    "slug": "eqt-ab",
-    "ownership": "privately held",
-    "hq": "Sweden",
-    "majorIndustry": "private equity (including portfolio companies)",
-    "specificIndustry": "private equity (including portfolio companies)",
-    "totalPenalty": 5319205,
-    "totalRecords": 107,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 3226707,
-        "records": 74
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1701610,
-        "records": 7
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 390888,
-        "records": 26
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 1955554,
-        "records": 33
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 1357898,
-        "records": 4
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 807653,
-        "records": 36
-      },
-      {
-        "category": "solid waste violation",
-        "penalty": 437000,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 378728,
-        "records": 25
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:07:12.567Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00151175",

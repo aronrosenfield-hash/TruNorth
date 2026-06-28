@@ -27,7 +27,6 @@
     "s": "19 federal penalties totaling $45.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $55K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -134,64 +132,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Iron Mountain",
-    "slug": "iron-mountain",
-    "ownership": "publicly traded (ticker symbol IRM)",
-    "hq": "Massachusetts",
-    "majorIndustry": "business services",
-    "specificIndustry": "business services",
-    "totalPenalty": 45471699,
-    "totalRecords": 19,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 45300000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 110433,
-        "records": 14
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 54765,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 6501,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 45300000,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 110433,
-        "records": 14
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 54765,
-        "records": 2
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 6501,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:38:53.245Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00523936",

@@ -37,15 +37,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "13 federal penalties totaling $178K since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -83,34 +81,6 @@
     "sources": [
       "Claude AI synthesis"
     ]
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "alamo-group",
-      "matchedName": "Alamo Group",
-      "totalPenalty": 178103,
-      "totalRecords": 13,
-      "offenseGroups": [
-        {
-          "category": "safety-related offenses",
-          "penalty": 178103,
-          "records": 13
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 163303,
-          "records": 12
-        },
-        {
-          "category": "motor vehicle safety violation",
-          "penalty": 14800,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
@@ -209,39 +179,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Alamo Group",
-    "slug": "alamo-group",
-    "ownership": "publicly traded (ticker symbol ALG)",
-    "hq": "Texas",
-    "majorIndustry": "agribusiness",
-    "specificIndustry": "agricultural equipment",
-    "totalPenalty": 178103,
-    "totalRecords": 13,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 178103,
-        "records": 13
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 163303,
-        "records": 12
-      },
-      {
-        "category": "motor vehicle safety violation",
-        "penalty": 14800,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

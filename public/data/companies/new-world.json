@@ -26,7 +26,6 @@
     "s": "23 federal penalties totaling $2.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $10K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -144,64 +142,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Cineworld",
-    "slug": "cineworld",
-    "ownership": "publicly traded",
-    "hq": "United Kingdom",
-    "majorIndustry": "entertainment",
-    "specificIndustry": "cinemas",
-    "totalPenalty": 2066190,
-    "totalRecords": 23,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 1953551,
-        "records": 15
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 102639,
-        "records": 7
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 10000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "labor relations violation",
-        "penalty": 1546231,
-        "records": 4
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 232320,
-        "records": 10
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 175000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 102639,
-        "records": 7
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 10000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T01:34:10.676Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

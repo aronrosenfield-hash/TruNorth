@@ -26,7 +26,6 @@
     "s": "180 federal penalties totaling $26.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "environmental violation: $1.8M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -112,74 +110,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Goodyear Tire & Rubber",
-    "slug": "goodyear-tire-and-rubber",
-    "ownership": "publicly traded (ticker symbol GT)",
-    "hq": "Ohio",
-    "majorIndustry": "automotive parts",
-    "specificIndustry": "automotive parts-tires",
-    "totalPenalty": 26748692,
-    "totalRecords": 180,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 16000000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 5318785,
-        "records": 109
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 3448414,
-        "records": 17
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1946493,
-        "records": 52
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 35000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 16000000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 5248025,
-        "records": 102
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 1974029,
-        "records": 6
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 1768812,
-        "records": 39
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 985000,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:57:13.503Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

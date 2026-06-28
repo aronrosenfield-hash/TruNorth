@@ -38,15 +38,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "46 federal penalties totaling $360.3M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -96,59 +94,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "raymond-james-financial",
-      "matchedName": "Raymond James Financial",
-      "totalPenalty": 360337686,
-      "totalRecords": 46,
-      "offenseGroups": [
-        {
-          "category": "financial offenses",
-          "penalty": 344674610,
-          "records": 43
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 15000000,
-          "records": 1
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 663076,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "toxic securities abuses",
-          "penalty": 200000000,
-          "records": 2
-        },
-        {
-          "category": "investor protection violation",
-          "penalty": 127674610,
-          "records": 40
-        },
-        {
-          "category": "anti-money-laundering deficiencies",
-          "penalty": 17000000,
-          "records": 1
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 15000000,
-          "records": 1
-        },
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 633715,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "ameriprise-financial",
@@ -228,64 +173,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Raymond James Financial",
-    "slug": "raymond-james-financial",
-    "ownership": "publicly traded (ticker symbol RJF)",
-    "hq": "Florida",
-    "majorIndustry": "financial services",
-    "specificIndustry": "financial services",
-    "totalPenalty": 360337686,
-    "totalRecords": 46,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 344674610,
-        "records": 43
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 15000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 663076,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "toxic securities abuses",
-        "penalty": 200000000,
-        "records": 2
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 127674610,
-        "records": 40
-      },
-      {
-        "category": "anti-money-laundering deficiencies",
-        "penalty": 17000000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 15000000,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 633715,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

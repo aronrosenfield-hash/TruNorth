@@ -28,7 +28,6 @@
     "s": "21 federal penalties totaling $217.2M since 2000 (Violation Tracker). Supply-chain signals: KnowTheChain 48/100; CHRB 14.7/26; UK MS statement; AU MS statement.",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB",
       "knowthechain",
@@ -54,7 +53,6 @@
     "s": "CDP Climate Change: A- (2024) — leadership-band environmental disclosure with validated targets.",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "cdp-climate"
     ]
   },
@@ -167,74 +165,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Dell Technologies",
-    "slug": "dell-technologies",
-    "ownership": "publicly traded (ticker symbol DVMT)",
-    "hq": "Texas",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "computers",
-    "totalPenalty": 217155498,
-    "totalRecords": 21,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 100000000,
-        "records": 1
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 89800000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 19917218,
-        "records": 13
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 7350000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 75280,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 100000000,
-        "records": 1
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 89800000,
-        "records": 2
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 18575836,
-        "records": 6
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 7350000,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 1341382,
-        "records": 7
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:18:29.049Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00369751",

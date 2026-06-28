@@ -27,7 +27,6 @@
     "s": "183 federal penalties totaling $295.6M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -151,74 +149,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Carlyle Group",
-    "slug": "carlyle-group",
-    "ownership": "publicly traded (ticker symbol CG)",
-    "hq": "District of Columbia",
-    "majorIndustry": "private equity (including portfolio companies)",
-    "specificIndustry": "private equity (including portfolio companies)",
-    "totalPenalty": 295642527,
-    "totalRecords": 183,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 232575967,
-        "records": 13
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 28500000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 16399729,
-        "records": 33
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 12341647,
-        "records": 9
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 3791061,
-        "records": 54
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 229580454,
-        "records": 11
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 28500000,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 15455710,
-        "records": 25
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 12000000,
-        "records": 1
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 2981513,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:35:57.318Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00689091",

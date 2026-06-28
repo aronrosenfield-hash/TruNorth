@@ -27,7 +27,6 @@
     "s": "71 federal penalties totaling $4.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "air pollution violation: $1.0M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -133,64 +131,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ryder System",
-    "slug": "ryder-system",
-    "ownership": "publicly traded (ticker symbol R)",
-    "hq": "Florida",
-    "majorIndustry": "freight and logistics",
-    "specificIndustry": "logistics",
-    "totalPenalty": 4137796,
-    "totalRecords": 71,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 2381687,
-        "records": 18
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1400564,
-        "records": 17
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 355545,
-        "records": 36
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment discrimination",
-        "penalty": 1510000,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 1030125,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 524335,
-        "records": 11
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 339489,
-        "records": 4
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 325532,
-        "records": 12
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:28:08.197Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00088435",

@@ -25,7 +25,6 @@
     "s": "609 federal penalties totaling $5.8B since 2000 (Violation Tracker).",
     "rating": "poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -40,8 +39,7 @@
   "environment": {
     "s": "water pollution violation: $90.8M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -111,74 +109,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Walmart",
-    "slug": "walmart",
-    "ownership": "publicly traded (ticker symbol WMT)",
-    "hq": "Arkansas",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-discount stores",
-    "totalPenalty": 5803396993,
-    "totalRecords": 609,
-    "offenseGroups": [
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 3423173855,
-        "records": 5
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1756050445,
-        "records": 144
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 308250000,
-        "records": 3
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 158452349,
-        "records": 45
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 145983403,
-        "records": 117
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "off-label or unapproved promotion of medical products",
-        "penalty": 3423173855,
-        "records": 5
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 1651000886,
-        "records": 54
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 281000000,
-        "records": 2
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 128990409,
-        "records": 34
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 90836723,
-        "records": 12
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T03:27:17.526Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

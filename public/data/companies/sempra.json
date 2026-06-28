@@ -26,7 +26,6 @@
     "s": "101 federal penalties totaling $2.0B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $123.5M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -157,74 +155,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Sempra Energy",
-    "slug": "sempra-energy",
-    "ownership": "publicly traded (ticker symbol SRE)",
-    "hq": "California",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 2045900805,
-    "totalRecords": 101,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 1848377860,
-        "records": 28
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 133539835,
-        "records": 29
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 32407959,
-        "records": 3
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 31153477,
-        "records": 35
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 255000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "utility safety violation",
-        "penalty": 1847824000,
-        "records": 9
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 123513607,
-        "records": 3
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 32000000,
-        "records": 2
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 23040447,
-        "records": 15
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 9973025,
-        "records": 25
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:38:53.377Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

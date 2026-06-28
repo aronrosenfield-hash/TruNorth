@@ -28,7 +28,6 @@
     "s": "6 federal penalties totaling $26.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $500K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -159,64 +157,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Motorola Solutions",
-    "slug": "motorola-solutions",
-    "ownership": "publicly traded (ticker symbol MSI)",
-    "hq": "Illinois",
-    "majorIndustry": "telecommunications",
-    "specificIndustry": "telecommunications",
-    "totalPenalty": 26191012,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 25000000,
-        "records": 1
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 600000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 500000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 91012,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 25000000,
-        "records": 1
-      },
-      {
-        "category": "export control violation",
-        "penalty": 600000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 500000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 91012,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:26:53.438Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00075341",

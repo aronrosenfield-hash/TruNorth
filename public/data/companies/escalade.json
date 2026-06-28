@@ -26,7 +26,6 @@
     "s": "4 federal penalties totaling $54K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "hazardous waste violation: $19K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -130,44 +128,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Escalade Inc.",
-    "slug": "escalade-inc",
-    "ownership": "publicly traded (ticker symbol ESCA)",
-    "hq": "Indiana",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "sporting goods",
-    "totalPenalty": 54084,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 35486,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 18598,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 35486,
-        "records": 3
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 18598,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:08:19.325Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

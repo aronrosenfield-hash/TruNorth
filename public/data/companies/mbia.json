@@ -26,7 +26,6 @@
     "s": "2 federal penalties totaling $75.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -122,39 +120,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "MBIA",
-    "slug": "mbia",
-    "ownership": "publicly traded (ticker symbol MBI)",
-    "hq": "New York",
-    "majorIndustry": "financial services",
-    "specificIndustry": "financial services",
-    "totalPenalty": 75000000,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 75000000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 50000000,
-        "records": 1
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 25000000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:11:26.440Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

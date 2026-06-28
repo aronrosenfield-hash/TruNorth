@@ -26,7 +26,6 @@
     "s": "10 federal penalties totaling $1.5B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -144,64 +142,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "S&P Global",
-    "slug": "s-and-p-global",
-    "ownership": "publicly traded (ticker symbol SPGI)",
-    "hq": "New York",
-    "majorIndustry": "information technology",
-    "specificIndustry": "information services",
-    "totalPenalty": 1483883808,
-    "totalRecords": 10,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 1483578750,
-        "records": 8
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 300000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 5058,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "toxic securities abuses",
-        "penalty": 1433000000,
-        "records": 3
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 50500000,
-        "records": 4
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 300000,
-        "records": 1
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 78750,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 5058,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:28:23.009Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

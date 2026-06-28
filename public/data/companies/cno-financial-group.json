@@ -26,7 +26,6 @@
     "s": "82 federal penalties totaling $62.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -140,64 +138,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "CNO Financial",
-    "slug": "cno-financial",
-    "ownership": "publicly traded (ticker symbol CNO)",
-    "hq": "Indiana",
-    "majorIndustry": "financial services",
-    "specificIndustry": "insurance",
-    "totalPenalty": 62283101,
-    "totalRecords": 82,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 35519011,
-        "records": 74
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 26532778,
-        "records": 5
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 231312,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 26532778,
-        "records": 5
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 25199011,
-        "records": 69
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 10275000,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 231312,
-        "records": 3
-      },
-      {
-        "category": "privacy violation",
-        "penalty": 45000,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:55:01.508Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -27,7 +27,6 @@
     "s": "37 federal penalties totaling $2.4B since 2000 (Violation Tracker).",
     "rating": "poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -150,74 +148,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Novartis",
-    "slug": "novartis",
-    "ownership": "publicly traded (ticker symbol NVS)",
-    "hq": "Switzerland",
-    "majorIndustry": "pharmaceuticals",
-    "specificIndustry": "pharmaceuticals",
-    "totalPenalty": 2449435337,
-    "totalRecords": 37,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 1052800000,
-        "records": 11
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 612613689,
-        "records": 8
-      },
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 501638250,
-        "records": 5
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 282080480,
-        "records": 7
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 168500,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 612613689,
-        "records": 8
-      },
-      {
-        "category": "kickbacks and bribery",
-        "penalty": 504800000,
-        "records": 4
-      },
-      {
-        "category": "off-label or unapproved promotion of medical products",
-        "penalty": 501638250,
-        "records": 5
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 370800000,
-        "records": 3
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 183051594,
-        "records": 3
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:18:26.634Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00033969",

@@ -26,7 +26,6 @@
     "s": "21 federal penalties totaling $1.9M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -135,54 +133,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Griffon Corp.",
-    "slug": "griffon-corp",
-    "ownership": "publicly traded (ticker symbol GFF)",
-    "hq": "New York",
-    "majorIndustry": "diversified",
-    "specificIndustry": "diversified",
-    "totalPenalty": 1883359,
-    "totalRecords": 21,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 1648235,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 235124,
-        "records": 18
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment screening violation",
-        "penalty": 1585000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 235124,
-        "records": 18
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 50000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 13235,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:05:17.396Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

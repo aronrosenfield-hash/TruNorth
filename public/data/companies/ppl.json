@@ -27,7 +27,6 @@
     "s": "43 federal penalties totaling $213.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "air pollution violation: $193.9M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -163,74 +161,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "PPL Corp.",
-    "slug": "ppl-corp",
-    "ownership": "publicly traded (ticker symbol PPL)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 213683137,
-    "totalRecords": 43,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 202996679,
-        "records": 19
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 8396858,
-        "records": 3
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 1246000,
-        "records": 8
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 693600,
-        "records": 12
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 350000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 193875250,
-        "records": 7
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 9096429,
-        "records": 11
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 8200000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 1186000,
-        "records": 7
-      },
-      {
-        "category": "utility safety violation",
-        "penalty": 565000,
-        "records": 4
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:10:52.357Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00228106",

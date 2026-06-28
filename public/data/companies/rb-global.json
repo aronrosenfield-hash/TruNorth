@@ -26,7 +26,6 @@
     "s": "11 federal penalties totaling $244K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $117K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -143,64 +141,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "RB Global Inc.",
-    "slug": "rb-global-inc",
-    "ownership": "publicly traded (ticker symbol RBA)",
-    "hq": "Canada",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "miscellaneous services",
-    "totalPenalty": 244474,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 144421,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 92954,
-        "records": 5
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 7099,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 117216,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 82954,
-        "records": 4
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 27205,
-        "records": 3
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 10000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 7099,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:20:54.702Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -27,7 +27,6 @@
     "s": "104 federal penalties totaling $98.3M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -127,74 +126,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Costco",
-    "slug": "costco",
-    "ownership": "publicly traded (ticker symbol COST)",
-    "hq": "Washington",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail",
-    "totalPenalty": 98343061,
-    "totalRecords": 104,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 63800554,
-        "records": 17
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 12308504,
-        "records": 7
-      },
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 11750000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 9839481,
-        "records": 32
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 644522,
-        "records": 47
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 37776595,
-        "records": 11
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 13333959,
-        "records": 3
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 12278004,
-        "records": 5
-      },
-      {
-        "category": "Controlled Substances Act violation",
-        "penalty": 11750000,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 10200000,
-        "records": 2
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T22:51:35.422Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00209809",

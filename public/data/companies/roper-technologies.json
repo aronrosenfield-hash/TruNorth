@@ -39,15 +39,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "2 federal penalties totaling $432K since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -99,39 +97,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "roper-technologies",
-      "matchedName": "Roper Technologies",
-      "totalPenalty": 431848,
-      "totalRecords": 2,
-      "offenseGroups": [
-        {
-          "category": "competition-related offenses",
-          "penalty": 422000,
-          "records": 1
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 9848,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "export control violation",
-          "penalty": 422000,
-          "records": 1
-        },
-        {
-          "category": "tax violations",
-          "penalty": 9848,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "fortive",
@@ -189,44 +154,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Roper Technologies",
-    "slug": "roper-technologies",
-    "ownership": "publicly traded (ticker symbol ROP)",
-    "hq": "Florida",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "electronic equipment",
-    "totalPenalty": 431848,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 422000,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 9848,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "export control violation",
-        "penalty": 422000,
-        "records": 1
-      },
-      {
-        "category": "tax violations",
-        "penalty": 9848,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

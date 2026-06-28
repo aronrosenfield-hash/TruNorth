@@ -43,15 +43,13 @@
     "s": "environmental violation: $42.6M in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "3 federal penalties totaling $85.2M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -103,44 +101,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "manitowoc",
-      "matchedName": "Manitowoc",
-      "totalPenalty": 85242000,
-      "totalRecords": 3,
-      "offenseGroups": [
-        {
-          "category": "environment-related offenses",
-          "penalty": 85200000,
-          "records": 2
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 42000,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "environmental violation",
-          "penalty": 42600000,
-          "records": 1
-        },
-        {
-          "category": "air pollution violation",
-          "penalty": 42600000,
-          "records": 1
-        },
-        {
-          "category": "labor relations violation",
-          "penalty": 42000,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "terex",
@@ -218,49 +178,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Manitowoc",
-    "slug": "manitowoc",
-    "ownership": "publicly traded (ticker symbol MTW)",
-    "hq": "Wisconsin",
-    "majorIndustry": "heavy equipment",
-    "specificIndustry": "construction equipment",
-    "totalPenalty": 85242000,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 85200000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 42000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 42600000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 42600000,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 42000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00287847",

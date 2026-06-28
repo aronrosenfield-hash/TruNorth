@@ -26,7 +26,6 @@
     "s": "8 federal penalties totaling $1.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "air pollution violation: $1.4M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -136,69 +134,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Axalta Coating Systems",
-    "slug": "axalta-coating-systems",
-    "ownership": "publicly traded (ticker symbol AXTA)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "paints and coatings",
-    "specificIndustry": "paints &amp; coatings",
-    "totalPenalty": 1704211,
-    "totalRecords": 8,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1662723,
-        "records": 5
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 25000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 10060,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 6428,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 1377328,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 190395,
-        "records": 3
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 95000,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 25000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 10060,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:44:05.511Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

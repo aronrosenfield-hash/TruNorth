@@ -26,7 +26,6 @@
     "s": "15 federal penalties totaling $12.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -128,64 +126,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Lee Enterprises",
-    "slug": "lee-enterprises",
-    "ownership": "publicly traded (ticker symbol LEE)",
-    "hq": "Iowa",
-    "majorIndustry": "media",
-    "specificIndustry": "media",
-    "totalPenalty": 12818698,
-    "totalRecords": 15,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 9505000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 3241678,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 72020,
-        "records": 8
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "privacy violation",
-        "penalty": 9505000,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 3200000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 72020,
-        "records": 8
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 31677,
-        "records": 3
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 10001,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:54:25.138Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

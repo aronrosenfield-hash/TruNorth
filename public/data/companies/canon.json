@@ -26,7 +26,6 @@
     "s": "9 federal penalties totaling $7.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $5K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -147,64 +145,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Canon",
-    "slug": "canon",
-    "ownership": "publicly traded",
-    "hq": "Japan",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "imaging products",
-    "totalPenalty": 6993386,
-    "totalRecords": 9,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 4435305,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 2500000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 53081,
-        "records": 5
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 4435305,
-        "records": 2
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 2500000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 53081,
-        "records": 5
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:54:07.409Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

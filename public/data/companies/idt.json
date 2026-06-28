@@ -27,7 +27,6 @@
     "s": "2 federal penalties totaling $38K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -146,34 +144,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "IDT Corp.",
-    "slug": "idt-corp",
-    "ownership": "publicly traded (ticker symbol IDT)",
-    "hq": "New Jersey",
-    "majorIndustry": "telecommunications",
-    "specificIndustry": "telecommunications",
-    "totalPenalty": 38000,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 38000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 38000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:26:14.780Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00367383",

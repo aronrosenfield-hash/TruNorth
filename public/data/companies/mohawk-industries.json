@@ -26,7 +26,6 @@
     "s": "68 federal penalties totaling $146.7M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $193K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -153,69 +151,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Mohawk Industries",
-    "slug": "mohawk-industries",
-    "ownership": "publicly traded (ticker symbol MHK)",
-    "hq": "Georgia",
-    "majorIndustry": "housewares and home furnishings",
-    "specificIndustry": "home furnishings",
-    "totalPenalty": 146682550,
-    "totalRecords": 68,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 127500000,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 18051000,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 662461,
-        "records": 40
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 469089,
-        "records": 22
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 127500000,
-        "records": 3
-      },
-      {
-        "category": "work visa violations",
-        "penalty": 18000000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 662461,
-        "records": 40
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 193260,
-        "records": 7
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 170545,
-        "records": 9
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:29:56.474Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -28,7 +28,6 @@
     "s": "133 federal penalties totaling $1.9B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "air pollution violation: $9.4M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -134,64 +132,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Chemours",
-    "slug": "chemours",
-    "ownership": "publicly traded (ticker symbol CC)",
-    "hq": "Delaware",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 1949626988,
-    "totalRecords": 133,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1948748611,
-        "records": 96
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 872757,
-        "records": 36
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 5620,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "PFAS violation",
-        "penalty": 1930850000,
-        "records": 6
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 9439685,
-        "records": 20
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 5593044,
-        "records": 38
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 2708147,
-        "records": 25
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 706507,
-        "records": 22
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:48:25.784Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00656868",

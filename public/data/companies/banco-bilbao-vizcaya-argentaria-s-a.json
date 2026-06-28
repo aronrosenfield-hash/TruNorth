@@ -26,7 +26,6 @@
     "s": "5 federal penalties totaling $48.9M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -145,64 +143,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Banco Bilbao Vizcaya Argentaria",
-    "slug": "banco-bilbao-vizcaya-argentaria",
-    "ownership": "publicly traded (ticker symbol BBVA)",
-    "hq": "Spain",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking",
-    "totalPenalty": 48926571,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 37395000,
-        "records": 3
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 11500000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 31571,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "banking violation",
-        "penalty": 27000000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 11500000,
-        "records": 1
-      },
-      {
-        "category": "tax violations",
-        "penalty": 10390000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 31571,
-        "records": 1
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:57:11.436Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

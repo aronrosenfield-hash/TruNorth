@@ -37,15 +37,13 @@
     "s": "air pollution violation: $1.2B in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "73 federal penalties totaling $4.0B since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -82,69 +80,6 @@
     "sources": [
       "Claude AI synthesis"
     ]
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "dominion-energy",
-      "matchedName": "Dominion Energy",
-      "totalPenalty": 3951779024,
-      "totalRecords": 73,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 2528607182,
-          "records": 5
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 1247785887,
-          "records": 46
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 141750000,
-          "records": 2
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 24800000,
-          "records": 2
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 5342181,
-          "records": 4
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "consumer protection violation",
-          "penalty": 2528607182,
-          "records": 5
-        },
-        {
-          "category": "air pollution violation",
-          "penalty": 1232459090,
-          "records": 6
-        },
-        {
-          "category": "investor protection violation",
-          "penalty": 141750000,
-          "records": 2
-        },
-        {
-          "category": "energy market violation",
-          "penalty": 24800000,
-          "records": 2
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 14884617,
-          "records": 31
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
@@ -295,74 +230,6 @@
     "source": "courtlistener-recap"
   },
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Dominion Energy",
-    "slug": "dominion-energy",
-    "ownership": "publicly traded (ticker symbol D)",
-    "hq": "Virginia",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 3951779024,
-    "totalRecords": 73,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 2528607182,
-        "records": 5
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1247785887,
-        "records": 46
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 141750000,
-        "records": 2
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 24800000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 5342181,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 2528607182,
-        "records": 5
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 1232459090,
-        "records": 6
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 141750000,
-        "records": 2
-      },
-      {
-        "category": "energy market violation",
-        "penalty": 24800000,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 14884617,
-        "records": 31
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

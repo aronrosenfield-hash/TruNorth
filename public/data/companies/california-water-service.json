@@ -27,7 +27,6 @@
     "s": "4 federal penalties totaling $1.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "water pollution violation: $1.0M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -126,54 +124,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "California Water Service Group",
-    "slug": "california-water-service-group",
-    "ownership": "publicly traded (ticker symbol CWT)",
-    "hq": "California",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 1076947,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1000000,
-        "records": 1
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 71697,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 5250,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "water pollution violation",
-        "penalty": 1000000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 71697,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 5250,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:53:53.780Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00357608",

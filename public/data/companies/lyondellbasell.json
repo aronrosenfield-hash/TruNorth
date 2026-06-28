@@ -38,15 +38,13 @@
     "s": "environmental violation: $309.4M in federal penalties (Violation Tracker).",
     "rating": "Very Poor",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "284 federal penalties totaling $375.5M since 2000 (Violation Tracker).",
     "rating": "Below Average",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -98,64 +96,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "lyondellbasell-industries",
-      "matchedName": "LyondellBasell Industries",
-      "totalPenalty": 375466555,
-      "totalRecords": 284,
-      "offenseGroups": [
-        {
-          "category": "environment-related offenses",
-          "penalty": 373623825,
-          "records": 227
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 1239744,
-          "records": 4
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 563336,
-          "records": 52
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 39650,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "environmental violation",
-          "penalty": 309382894,
-          "records": 199
-        },
-        {
-          "category": "air pollution violation",
-          "penalty": 60196851,
-          "records": 24
-        },
-        {
-          "category": "MTBE violation",
-          "penalty": 4000000,
-          "records": 1
-        },
-        {
-          "category": "workplace whistleblower retaliation",
-          "penalty": 764444,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 391300,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "reliance",
@@ -230,69 +170,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "LyondellBasell Industries",
-    "slug": "lyondellbasell-industries",
-    "ownership": "publicly traded (ticker symbol LYB)",
-    "hq": "Netherlands",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 375466555,
-    "totalRecords": 284,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 373623825,
-        "records": 227
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1239744,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 563336,
-        "records": 52
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 39650,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 309382894,
-        "records": 199
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 60196851,
-        "records": 24
-      },
-      {
-        "category": "MTBE violation",
-        "penalty": 4000000,
-        "records": 1
-      },
-      {
-        "category": "workplace whistleblower retaliation",
-        "penalty": 764444,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 391300,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -26,7 +26,6 @@
     "s": "6 federal penalties totaling $3.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "hazardous waste violation: $38K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -151,64 +149,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Microchip Technology Inc.",
-    "slug": "microchip-technology-inc",
-    "ownership": "publicly traded (ticker symbol MCHP)",
-    "hq": "Arizona",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "semiconductors",
-    "totalPenalty": 3092827,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 3000000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 71027,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 21800,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 3000000,
-        "records": 1
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 38212,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 21800,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 20315,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 12500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:14:00.200Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

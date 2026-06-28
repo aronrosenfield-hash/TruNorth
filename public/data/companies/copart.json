@@ -27,7 +27,6 @@
     "s": "14 federal penalties totaling $1.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "hazardous waste violation: $800K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -147,64 +145,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Copart Inc.",
-    "slug": "copart-inc",
-    "ownership": "publicly traded (ticker symbol CPRT)",
-    "hq": "Texas",
-    "majorIndustry": "information services",
-    "specificIndustry": "online automobile auctions",
-    "totalPenalty": 1024835,
-    "totalRecords": 14,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 845500,
-        "records": 6
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 156462,
-        "records": 6
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 22873,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "hazardous waste violation",
-        "penalty": 800000,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 60002,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 60000,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 45500,
-        "records": 5
-      },
-      {
-        "category": "Family and Medical Leave Act",
-        "penalty": 36460,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:00:48.641Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00452581",

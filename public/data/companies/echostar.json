@@ -27,7 +27,6 @@
     "s": "38 federal penalties totaling $610.9M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "hazardous waste violation: $5.5M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -133,74 +131,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "EchoStar Corporation",
-    "slug": "echostar-corporation",
-    "ownership": "publicly traded (ticker symbol SATS)",
-    "hq": "Colorado",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "telecommunications equipment",
-    "totalPenalty": 610901073,
-    "totalRecords": 38,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 571241500,
-        "records": 15
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 17280240,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 16727213,
-        "records": 16
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 5500000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 152120,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 299539500,
-        "records": 8
-      },
-      {
-        "category": "privacy violation",
-        "penalty": 271580000,
-        "records": 5
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 17280240,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 11628668,
-        "records": 4
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 5500000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:04:47.603Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00330647",

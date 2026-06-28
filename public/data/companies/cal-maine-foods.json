@@ -26,7 +26,6 @@
     "s": "42 federal penalties totaling $34.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $5.5M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -125,69 +123,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Cal-Maine Foods",
-    "slug": "cal-maine-foods",
-    "ownership": "publicly traded (ticker symbol CALM)",
-    "hq": "Mississippi",
-    "majorIndustry": "food products",
-    "specificIndustry": "food products",
-    "totalPenalty": 34469625,
-    "totalRecords": 42,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 28000000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 5999697,
-        "records": 13
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 370217,
-        "records": 27
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 99711,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 28000000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 5524697,
-        "records": 11
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 475000,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 359993,
-        "records": 26
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 99711,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:29:19.507Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

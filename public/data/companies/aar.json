@@ -27,7 +27,6 @@
     "s": "42 federal penalties totaling $69.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "environmental violation: $245K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -148,74 +146,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "AAR Corp.",
-    "slug": "aar-corp",
-    "ownership": "publicly traded (ticker symbol AIR)",
-    "hq": "Illinois",
-    "majorIndustry": "aerospace and military contracting",
-    "specificIndustry": "aerospace &amp; military contracting",
-    "totalPenalty": 69141800,
-    "totalRecords": 42,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 55599653,
-        "records": 2
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 11088000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 2170417,
-        "records": 32
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 259780,
-        "records": 5
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 14550,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 55599653,
-        "records": 2
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 11088000,
-        "records": 1
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 1922184,
-        "records": 22
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 248233,
-        "records": 10
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 244700,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:08:37.163Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00625921",

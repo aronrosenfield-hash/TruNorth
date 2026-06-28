@@ -27,7 +27,6 @@
     "s": "65 federal penalties totaling $20.1M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -129,74 +127,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Campbell Soup",
-    "slug": "campbell-soup",
-    "ownership": "publicly traded (ticker symbol CPB)",
-    "hq": "New Jersey",
-    "majorIndustry": "food products",
-    "specificIndustry": "food products",
-    "totalPenalty": 20071266,
-    "totalRecords": 65,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 11000445,
-        "records": 9
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 5000000,
-        "records": 1
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 2773693,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 746327,
-        "records": 15
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 550801,
-        "records": 38
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 6178625,
-        "records": 2
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 5000000,
-        "records": 1
-      },
-      {
-        "category": "WARN Act violation",
-        "penalty": 4000000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 2773693,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 771819,
-        "records": 5
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T22:19:55.786Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00415166",

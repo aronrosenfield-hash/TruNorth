@@ -27,7 +27,6 @@
     "s": "96 federal penalties totaling $90.7M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $19.9M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -158,74 +156,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ashland Inc.",
-    "slug": "ashland-inc",
-    "ownership": "publicly traded (ticker symbol ASH)",
-    "hq": "Kentucky",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 90724144,
-    "totalRecords": 96,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 36000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 22022685,
-        "records": 5
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 21071869,
-        "records": 60
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 11250000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 379590,
-        "records": 29
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "tax violations",
-        "penalty": 36000000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 19904135,
-        "records": 38
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 18037500,
-        "records": 1
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 11250000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 3905185,
-        "records": 2
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:39:18.983Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00075994",

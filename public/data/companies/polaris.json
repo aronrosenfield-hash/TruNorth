@@ -28,7 +28,6 @@
     "s": "15 federal penalties totaling $28.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -146,64 +144,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Polaris Industries",
-    "slug": "polaris-industries",
-    "ownership": "publicly traded (ticker symbol PII)",
-    "hq": "Minnesota",
-    "majorIndustry": "motor vehicles",
-    "specificIndustry": "recreational vehicles",
-    "totalPenalty": 28529156,
-    "totalRecords": 15,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 28319388,
-        "records": 11
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 203288,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 6480,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "product safety violation",
-        "penalty": 28200000,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 148288,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 86608,
-        "records": 7
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 55000,
-        "records": 1
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 25000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:09:25.110Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00279497",

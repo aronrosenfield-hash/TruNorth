@@ -26,7 +26,6 @@
     "s": "3 federal penalties totaling $291K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "air pollution violation: $168K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -156,39 +154,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Diamond Green Diesel",
-    "slug": "diamond-green-diesel",
-    "ownership": "joint venture (owned 50-50 by Valero Energy and Darling Ingredients)",
-    "hq": "Louisiana",
-    "majorIndustry": "miscellaneous energy products and systems",
-    "specificIndustry": "biofuels",
-    "totalPenalty": 291450,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 291450,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 168000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 123450,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:36:25.208Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

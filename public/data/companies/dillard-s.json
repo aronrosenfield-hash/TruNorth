@@ -38,15 +38,13 @@
     "s": "No public record found.",
     "rating": "Poor",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "15 federal penalties totaling $56.7M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -99,64 +97,6 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "dillards",
-      "matchedName": "Dillard's",
-      "totalPenalty": 56717578,
-      "totalRecords": 15,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 44239328,
-          "records": 9
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 12437500,
-          "records": 1
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 35000,
-          "records": 4
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 5750,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 35000000,
-          "records": 1
-        },
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 12437500,
-          "records": 1
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 9230000,
-          "records": 7
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 35000,
-          "records": 4
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 9328,
-          "records": 1
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "macy-s",
@@ -234,69 +174,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Dillard's",
-    "slug": "dillards",
-    "ownership": "publicly traded (ticker symbol DDS)",
-    "hq": "Arkansas",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-department stores",
-    "totalPenalty": 56717578,
-    "totalRecords": 15,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 44239328,
-        "records": 9
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 12437500,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 35000,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 5750,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 35000000,
-        "records": 1
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 12437500,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 9230000,
-        "records": 7
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 35000,
-        "records": 4
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 9328,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

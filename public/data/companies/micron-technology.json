@@ -27,7 +27,6 @@
     "s": "15 federal penalties totaling $336.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $157K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -169,64 +167,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Micron Technology",
-    "slug": "micron-technology",
-    "ownership": "publicly traded (ticker symbol MU)",
-    "hq": "Idaho",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "semiconductors",
-    "totalPenalty": 336354465,
-    "totalRecords": 15,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 336094364,
-        "records": 11
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 157101,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 85000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 18000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 336094364,
-        "records": 11
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 157101,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 85000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 18000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:20:48.105Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00443671",

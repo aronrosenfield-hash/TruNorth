@@ -27,7 +27,6 @@
     "s": "11 federal penalties totaling $2.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -125,59 +123,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "CACI International",
-    "slug": "caci-international",
-    "ownership": "publicly traded (ticker symbol CACI)",
-    "hq": "Virginia",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "outsourced government services",
-    "totalPenalty": 2257686,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 1531928,
-        "records": 1
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 400000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 325758,
-        "records": 8
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 1531928,
-        "records": 1
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 400000,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 175758,
-        "records": 7
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 150000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:28:41.503Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00783423",

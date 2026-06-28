@@ -26,7 +26,6 @@
     "s": "3 federal penalties totaling $37K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -120,44 +118,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "CorVel Corporation",
-    "slug": "corvel-corporation",
-    "ownership": "publicly traded (ticker symbol CRVL)",
-    "hq": "California",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "workers compensation services",
-    "totalPenalty": 36602,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 29602,
-        "records": 2
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 7000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 29602,
-        "records": 2
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 7000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:02:37.059Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

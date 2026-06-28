@@ -39,7 +39,6 @@
     "rating": "Good",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "cdp-climate"
     ]
   },
@@ -47,7 +46,6 @@
     "s": "8 federal penalties totaling $1.1M since 2000 (Violation Tracker). Supply-chain signals: KnowTheChain 65/100; Fashion Rev 42%; FLA affiliate; UK MS statement.",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB",
       "knowthechain",
@@ -107,44 +105,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "levi-strauss",
-      "matchedName": "Levi Strauss",
-      "totalPenalty": 1098932,
-      "totalRecords": 8,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 1050989,
-          "records": 3
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 47943,
-          "records": 5
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "wage and hour violation",
-          "penalty": 1023989,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 47943,
-          "records": 5
-        },
-        {
-          "category": "labor relations violation",
-          "penalty": 27000,
-          "records": 2
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "gap-inc",
@@ -229,49 +189,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Levi Strauss",
-    "slug": "levi-strauss",
-    "ownership": "publicly traded (ticker symbol LEVI)",
-    "hq": "California",
-    "majorIndustry": "apparel",
-    "specificIndustry": "apparel",
-    "totalPenalty": 1098932,
-    "totalRecords": 8,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 1050989,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 47943,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 1023989,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 47943,
-        "records": 5
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 27000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

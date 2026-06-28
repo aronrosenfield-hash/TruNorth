@@ -48,7 +48,6 @@
     "rating": "Mixed",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "cdp-climate"
     ]
   },
@@ -56,7 +55,6 @@
     "s": "309 federal penalties totaling $1.2B since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -121,69 +119,6 @@
     "federalContracts": "2026-06-11T23:51:18.870Z",
     "finra": "2026-06-23T12:57:34.337Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "at-and-t",
-      "matchedName": "AT&T",
-      "totalPenalty": 1192043906,
-      "totalRecords": 309,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 740948093,
-          "records": 80
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 306656459,
-          "records": 129
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 86897124,
-          "records": 26
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 28150000,
-          "records": 3
-        },
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 18240846,
-          "records": 5
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "telecommunications violation",
-          "penalty": 350592800,
-          "records": 29
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 294708293,
-          "records": 42
-        },
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 148675000,
-          "records": 4
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 139201930,
-          "records": 41
-        },
-        {
-          "category": "privacy violation",
-          "penalty": 70160000,
-          "records": 4
-        }
-      ],
-      "rating": "poor"
-    }
   },
   "competitors": [
     "verizon",
@@ -332,74 +267,6 @@
     "source": "courtlistener-recap"
   },
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "AT&T",
-    "slug": "at-and-t",
-    "ownership": "publicly traded (ticker symbol T)",
-    "hq": "Texas",
-    "majorIndustry": "telecommunications",
-    "specificIndustry": "telecommunications",
-    "totalPenalty": 1192043906,
-    "totalRecords": 309,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 740948093,
-        "records": 80
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 306656459,
-        "records": 129
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 86897124,
-        "records": 26
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 28150000,
-        "records": 3
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 18240846,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "telecommunications violation",
-        "penalty": 350592800,
-        "records": 29
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 294708293,
-        "records": 42
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 148675000,
-        "records": 4
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 139201930,
-        "records": 41
-      },
-      {
-        "category": "privacy violation",
-        "penalty": 70160000,
-        "records": 4
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00144154",

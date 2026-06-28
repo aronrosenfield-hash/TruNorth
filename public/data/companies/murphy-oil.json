@@ -27,7 +27,6 @@
     "s": "10 federal penalties totaling $324K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "water pollution violation: $107K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -143,44 +141,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Murphy Oil",
-    "slug": "murphy-oil",
-    "ownership": "publicly traded (ticker symbol MUR)",
-    "hq": "Arkansas",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 323616,
-    "totalRecords": 10,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 323616,
-        "records": 10
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "oil or gas drilling violation",
-        "penalty": 127986,
-        "records": 6
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 106667,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 88963,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:28:34.712Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00145722",

@@ -26,7 +26,6 @@
     "s": "18 federal penalties totaling $7.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $226K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -126,64 +124,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Pentair",
-    "slug": "pentair",
-    "ownership": "publicly traded (ticker symbol PNR)",
-    "hq": "Switzerland",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "industrial equipment",
-    "totalPenalty": 7148513,
-    "totalRecords": 18,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 6600000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 311594,
-        "records": 12
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 225919,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 11000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 6600000,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 311594,
-        "records": 12
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 225919,
-        "records": 3
-      },
-      {
-        "category": "Family and Medical Leave Act",
-        "penalty": 11000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:05:41.487Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -27,7 +27,6 @@
     "s": "12 federal penalties totaling $30.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "environmental violation: $477K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -119,74 +117,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Yale University",
-    "slug": "yale-university",
-    "ownership": "non-profit",
-    "hq": "Connecticut",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "university",
-    "totalPenalty": 29950845,
-    "totalRecords": 12,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 18500000,
-        "records": 1
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 9107743,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1383119,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 476862,
-        "records": 2
-      },
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 308000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 18500000,
-        "records": 1
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 9107743,
-        "records": 2
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 1377500,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 476862,
-        "records": 2
-      },
-      {
-        "category": "Controlled Substances Act violation",
-        "penalty": 308000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T03:51:10.013Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

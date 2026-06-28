@@ -27,7 +27,6 @@
     "s": "17 federal penalties totaling $2.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "environmental violation: $1.1M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -125,64 +123,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Sensient Technologies",
-    "slug": "sensient-technologies",
-    "ownership": "publicly traded (ticker symbol SXT)",
-    "hq": "Wisconsin",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 2211668,
-    "totalRecords": 17,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1207115,
-        "records": 6
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 830915,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 173638,
-        "records": 7
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 1077115,
-        "records": 2
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 800000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 139638,
-        "records": 6
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 100000,
-        "records": 1
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 34000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:21:01.054Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00283796",

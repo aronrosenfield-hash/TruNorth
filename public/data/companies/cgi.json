@@ -28,7 +28,6 @@
     "s": "8 federal penalties totaling $896K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -130,54 +128,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "CGI Inc.",
-    "slug": "cgi-inc",
-    "ownership": "publicly traded (ticker symbol GIB)",
-    "hq": "Canada",
-    "majorIndustry": "information technology",
-    "specificIndustry": "information technology",
-    "totalPenalty": 895918,
-    "totalRecords": 8,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 883593,
-        "records": 7
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 12325,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 843592,
-        "records": 5
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 30000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 12325,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 10001,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:47:24.361Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00354241",

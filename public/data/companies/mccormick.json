@@ -44,15 +44,13 @@
     "s": "No public record found.",
     "rating": "Excellent",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "5 federal penalties totaling $5.6M since 2000 (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -104,49 +102,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "mccormick",
-      "matchedName": "McCormick",
-      "totalPenalty": 5591150,
-      "totalRecords": 5,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 5500000,
-          "records": 2
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 58000,
-          "records": 1
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 33150,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "consumer protection violation",
-          "penalty": 5500000,
-          "records": 2
-        },
-        {
-          "category": "labor relations violation",
-          "penalty": 58000,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 33150,
-          "records": 2
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [],
   "bbb": {
@@ -274,54 +229,6 @@
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "McCormick",
-    "slug": "mccormick",
-    "ownership": "publicly traded (ticker symbol MKC)",
-    "hq": "Maryland",
-    "majorIndustry": "food products",
-    "specificIndustry": "food products",
-    "totalPenalty": 5591150,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 5500000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 58000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 33150,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 5500000,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 58000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 33150,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00096875",

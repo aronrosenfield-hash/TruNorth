@@ -27,7 +27,6 @@
     "s": "78 federal penalties totaling $48.9M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $3.5M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -158,64 +156,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Cintas",
-    "slug": "cintas",
-    "ownership": "publicly traded (ticker symbol CTAS)",
-    "hq": "Ohio",
-    "majorIndustry": "business services",
-    "specificIndustry": "business services",
-    "totalPenalty": 48877955,
-    "totalRecords": 78,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 41074963,
-        "records": 25
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 4729301,
-        "records": 24
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 3073691,
-        "records": 29
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 32867791,
-        "records": 8
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 4000000,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 3967022,
-        "records": 5
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 3499025,
-        "records": 12
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 3073691,
-        "records": 29
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:51:54.602Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00449165",

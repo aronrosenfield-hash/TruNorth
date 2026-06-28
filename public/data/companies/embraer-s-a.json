@@ -26,7 +26,6 @@
     "s": "11 federal penalties totaling $205.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "hazardous waste violation: $6K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -134,59 +132,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Embraer",
-    "slug": "embraer",
-    "ownership": "publicly traded (ticker symbol ERJ)",
-    "hq": "Brazil",
-    "majorIndustry": "aerospace and military contracting",
-    "specificIndustry": "aerospace &amp; military contracting",
-    "totalPenalty": 205648360,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 205285090,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 357030,
-        "records": 8
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 6240,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 205285090,
-        "records": 2
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 327750,
-        "records": 6
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 29280,
-        "records": 2
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 6240,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:51:10.266Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

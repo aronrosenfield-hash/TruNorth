@@ -26,7 +26,6 @@
     "s": "3 federal penalties totaling $147.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -142,44 +140,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Cadence Design Systems",
-    "slug": "cadence-design-systems",
-    "ownership": "publicly traded (ticker symbol CDNS)",
-    "hq": "California",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "semiconductor services",
-    "totalPenalty": 147664856,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 140000000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 7664856,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "export control violation",
-        "penalty": 140000000,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 7664856,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:53:48.556Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

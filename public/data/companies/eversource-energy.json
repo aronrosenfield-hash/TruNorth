@@ -27,7 +27,6 @@
     "s": "73 federal penalties totaling $378.8M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -163,69 +161,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "EverSource Energy",
-    "slug": "eversource-energy",
-    "ownership": "publicly traded (ticker symbol ES)",
-    "hq": "Massachusetts",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 378811318,
-    "totalRecords": 73,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 200876344,
-        "records": 44
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 98475000,
-        "records": 7
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 62589327,
-        "records": 16
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 16870647,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "utility safety violation",
-        "penalty": 200425000,
-        "records": 26
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 92400000,
-        "records": 5
-      },
-      {
-        "category": "pipeline safety violation",
-        "penalty": 53049804,
-        "records": 2
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 15000000,
-        "records": 1
-      },
-      {
-        "category": "PCB violation",
-        "penalty": 8600000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:09:59.791Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00102160",

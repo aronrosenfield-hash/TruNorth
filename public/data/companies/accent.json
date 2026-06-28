@@ -27,7 +27,6 @@
     "s": "5 federal penalties totaling $67.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -125,49 +123,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Accenture",
-    "slug": "accenture",
-    "ownership": "publicly traded (ticker symbol ACN)",
-    "hq": "Ireland",
-    "majorIndustry": "business services",
-    "specificIndustry": "business services",
-    "totalPenalty": 67082173,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 65419559,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1662614,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 65419559,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 1025000,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 637614,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T21:43:07.827Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00300707",

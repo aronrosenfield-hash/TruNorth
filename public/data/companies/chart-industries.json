@@ -26,7 +26,6 @@
     "s": "12 federal penalties totaling $508K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "environmental violation: $109K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -143,49 +141,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Chart Industries",
-    "slug": "chart-industries",
-    "ownership": "publicly traded (ticker symbol GTLS)",
-    "hq": "Ohio",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 507631,
-    "totalRecords": 12,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 383281,
-        "records": 10
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 124350,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 383281,
-        "records": 10
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 109350,
-        "records": 1
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 15000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:47:42.374Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

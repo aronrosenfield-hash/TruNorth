@@ -39,15 +39,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "1 federal penalties totaling $520.0M since 2000 (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -88,29 +86,6 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "dataLastUpdated": "2026-05-28",
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "epic-games-inc",
-      "matchedName": "Epic Games Inc.",
-      "totalPenalty": 520000000,
-      "totalRecords": 1,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 520000000,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "privacy violation",
-          "penalty": 520000000,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
-  },
   "competitors": [
     "activision-blizzard",
     "microsoft"
@@ -166,34 +141,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Epic Games Inc.",
-    "slug": "epic-games-inc",
-    "ownership": "privately held",
-    "hq": "North Carolina",
-    "majorIndustry": "entertainment",
-    "specificIndustry": "video games",
-    "totalPenalty": 520000000,
-    "totalRecords": 1,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 520000000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "privacy violation",
-        "penalty": 520000000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

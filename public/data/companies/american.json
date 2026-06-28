@@ -27,7 +27,6 @@
     "s": "36 federal penalties totaling $675.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -149,64 +147,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "American Express",
-    "slug": "american-express",
-    "ownership": "publicly traded (ticker symbol AXP)",
-    "hq": "New York",
-    "majorIndustry": "financial services",
-    "specificIndustry": "financial services",
-    "totalPenalty": 675129717,
-    "totalRecords": 36,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 568396900,
-        "records": 17
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 106671424,
-        "records": 16
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 61393,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 568145000,
-        "records": 11
-      },
-      {
-        "category": "anti-money-laundering deficiencies",
-        "penalty": 55000000,
-        "records": 1
-      },
-      {
-        "category": "banking violation",
-        "penalty": 45750000,
-        "records": 7
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 5906454,
-        "records": 7
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 251900,
-        "records": 6
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T21:51:46.802Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00649772",

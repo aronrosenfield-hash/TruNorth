@@ -27,7 +27,6 @@
     "s": "7 federal penalties totaling $21.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -145,74 +143,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Graham Holdings",
-    "slug": "graham-holdings",
-    "ownership": "publicly traded (ticker symbol GHC)",
-    "hq": "District of Columbia",
-    "majorIndustry": "media",
-    "specificIndustry": "media; educational services",
-    "totalPenalty": 21455981,
-    "totalRecords": 7,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 14375000,
-        "records": 2
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 4750000,
-        "records": 1
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 1300000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1025281,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 5700,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 14375000,
-        "records": 2
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 4750000,
-        "records": 1
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 1300000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 1025281,
-        "records": 2
-      },
-      {
-        "category": "tax violations",
-        "penalty": 5700,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:58:32.809Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00440008",

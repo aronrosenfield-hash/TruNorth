@@ -26,7 +26,6 @@
     "s": "10 federal penalties totaling $2.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "water pollution violation: $65K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -101,69 +99,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "University of Illinois",
-    "slug": "university-of-illinois",
-    "ownership": "non-profit",
-    "hq": "Illinois",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "university",
-    "totalPenalty": 2160644,
-    "totalRecords": 10,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 2003290,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 83555,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 73799,
-        "records": 5
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 0,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "fraud",
-        "penalty": 2003290,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 73799,
-        "records": 5
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 65000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 10000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 8555,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T03:09:21.902Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

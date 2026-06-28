@@ -26,7 +26,6 @@
     "s": "8 federal penalties totaling $5.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "air pollution violation: $150K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -127,59 +125,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ormat Technologies",
-    "slug": "ormat-technologies",
-    "ownership": "publicly traded (ticker symbol ORA)",
-    "hq": "Nevada",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "energy generation",
-    "totalPenalty": 5746160,
-    "totalRecords": 8,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 5500000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 157500,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 88660,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 5500000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 150000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 88660,
-        "records": 5
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 7500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:59:58.549Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

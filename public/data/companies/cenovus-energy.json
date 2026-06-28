@@ -25,7 +25,6 @@
     "s": "61 federal penalties totaling $199.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "air pollution violation: $169.0M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -122,64 +120,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Cenovus Energy",
-    "slug": "cenovus-energy",
-    "ownership": "publicly traded",
-    "hq": "Canada",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 199239350,
-    "totalRecords": 61,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 197762450,
-        "records": 21
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 969182,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 507718,
-        "records": 39
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 169000000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 28083330,
-        "records": 14
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 969182,
-        "records": 1
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 420470,
-        "records": 1
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 296650,
-        "records": 29
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:45:33.174Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

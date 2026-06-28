@@ -45,15 +45,13 @@
     "s": "air pollution violation: $72.6M in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "214 federal penalties totaling $446.2M since 2000 (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -108,69 +106,6 @@
     "execPay": "2026-06-11T03:48:51.753Z",
     "federalContracts": "2026-06-11T23:51:18.870Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "honeywell-international",
-      "matchedName": "Honeywell International",
-      "totalPenalty": 446230811,
-      "totalRecords": 214,
-      "offenseGroups": [
-        {
-          "category": "competition-related offenses",
-          "penalty": 179073500,
-          "records": 9
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 164225531,
-          "records": 83
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 90647076,
-          "records": 31
-        },
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 9950000,
-          "records": 3
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 2334704,
-          "records": 88
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "Foreign Corrupt Practices Act",
-          "penalty": 162950000,
-          "records": 4
-        },
-        {
-          "category": "air pollution violation",
-          "penalty": 72599908,
-          "records": 19
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 52241562,
-          "records": 51
-        },
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 45425000,
-          "records": 3
-        },
-        {
-          "category": "labor relations violation",
-          "penalty": 40995389,
-          "records": 11
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "siemens-healthineers",
@@ -257,74 +192,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Honeywell International",
-    "slug": "honeywell-international",
-    "ownership": "publicly traded (ticker symbol HON)",
-    "hq": "North Carolina",
-    "majorIndustry": "diversified",
-    "specificIndustry": "diversified",
-    "totalPenalty": 446230811,
-    "totalRecords": 214,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 179073500,
-        "records": 9
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 164225531,
-        "records": 83
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 90647076,
-        "records": 31
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 9950000,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 2334704,
-        "records": 88
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 162950000,
-        "records": 4
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 72599908,
-        "records": 19
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 52241562,
-        "records": 51
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 45425000,
-        "records": 3
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 40995389,
-        "records": 11
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00096156",

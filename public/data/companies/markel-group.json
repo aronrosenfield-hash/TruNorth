@@ -25,7 +25,6 @@
     "s": "27 federal penalties totaling $4.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "environmental violation: $65K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -151,69 +149,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Markel",
-    "slug": "markel",
-    "ownership": "publicly traded (ticker symbol MKL)",
-    "hq": "Virginia",
-    "majorIndustry": "diversified",
-    "specificIndustry": "diversified",
-    "totalPenalty": 4204557,
-    "totalRecords": 27,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 3975500,
-        "records": 13
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 116906,
-        "records": 11
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 105151,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 7000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 3750000,
-        "records": 1
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 225500,
-        "records": 12
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 108656,
-        "records": 10
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 65236,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 39915,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:09:07.035Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

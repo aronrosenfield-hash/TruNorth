@@ -26,7 +26,6 @@
     "s": "24 federal penalties totaling $296K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $10K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -133,64 +131,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Fortune Brands Innovations Inc.",
-    "slug": "fortune-brands-innovations-inc",
-    "ownership": "publicly traded (ticker symbol FBIN)",
-    "hq": "Illinois",
-    "majorIndustry": "housewares and home furnishings",
-    "specificIndustry": "housewares",
-    "totalPenalty": 296067,
-    "totalRecords": 24,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 242029,
-        "records": 20
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 34100,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 19938,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 242029,
-        "records": 20
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 28000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 10000,
-        "records": 1
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 9938,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 6100,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:26:39.098Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

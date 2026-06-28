@@ -27,7 +27,6 @@
     "s": "144 federal penalties totaling $14.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -164,74 +162,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Caesars Entertainment Inc.",
-    "slug": "caesars-entertainment-inc",
-    "ownership": "publicly traded (ticker symbol CZR)",
-    "hq": "Nevada",
-    "majorIndustry": "entertainment",
-    "specificIndustry": "casinos",
-    "totalPenalty": 14566870,
-    "totalRecords": 144,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 8000000,
-        "records": 1
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 3706129,
-        "records": 78
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 2005283,
-        "records": 27
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 709598,
-        "records": 32
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 145860,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "anti-money-laundering deficiencies",
-        "penalty": 8000000,
-        "records": 1
-      },
-      {
-        "category": "gambling industry violation",
-        "penalty": 3519129,
-        "records": 76
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 1135516,
-        "records": 6
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 697238,
-        "records": 30
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 626459,
-        "records": 17
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:29:10.396Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00239947",

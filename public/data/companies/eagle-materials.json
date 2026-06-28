@@ -26,7 +26,6 @@
     "s": "127 federal penalties totaling $132.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "air pollution violation: $3.7M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -137,64 +135,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Eagle Materials",
-    "slug": "eagle-materials",
-    "ownership": "publicly traded (ticker symbol EXP)",
-    "hq": "Texas",
-    "majorIndustry": "building materials",
-    "specificIndustry": "building materials",
-    "totalPenalty": 132248051,
-    "totalRecords": 127,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 126250000,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 4417971,
-        "records": 19
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 1580080,
-        "records": 106
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 126250000,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 3733314,
-        "records": 13
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 1580080,
-        "records": 106
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 673157,
-        "records": 5
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 11500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:36:17.430Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

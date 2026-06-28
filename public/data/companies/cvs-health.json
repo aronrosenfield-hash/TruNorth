@@ -47,7 +47,6 @@
     "rating": "Good",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "cdp-climate"
     ]
   },
@@ -55,7 +54,6 @@
     "s": "556 federal penalties totaling $7.2B since 2000 (Violation Tracker).",
     "rating": "Below Average",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -113,69 +111,6 @@
     "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
     "federalContracts": "2026-06-11T23:51:18.870Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "cvs-health",
-      "matchedName": "CVS Health",
-      "totalPenalty": 7168997825,
-      "totalRecords": 556,
-      "offenseGroups": [
-        {
-          "category": "healthcare-related offenses",
-          "penalty": 5702839616,
-          "records": 34
-        },
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 865996936,
-          "records": 38
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 369086623,
-          "records": 287
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 125254668,
-          "records": 85
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 67150000,
-          "records": 7
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "off-label or unapproved promotion of medical products",
-          "penalty": 5494000000,
-          "records": 3
-        },
-        {
-          "category": "False Claims Act and related",
-          "penalty": 865996936,
-          "records": 38
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 282620239,
-          "records": 39
-        },
-        {
-          "category": "Controlled Substances Act violation",
-          "penalty": 199262500,
-          "records": 17
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 108460175,
-          "records": 69
-        }
-      ],
-      "rating": "poor"
-    }
   },
   "competitors": [
     "walgreens",
@@ -331,74 +266,6 @@
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "CVS Health",
-    "slug": "cvs-health",
-    "ownership": "publicly traded (ticker symbol CVS)",
-    "hq": "Rhode Island",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-pharmacies",
-    "totalPenalty": 7168997825,
-    "totalRecords": 556,
-    "offenseGroups": [
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 5702839616,
-        "records": 34
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 865996936,
-        "records": 38
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 369086623,
-        "records": 287
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 125254668,
-        "records": 85
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 67150000,
-        "records": 7
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "off-label or unapproved promotion of medical products",
-        "penalty": 5494000000,
-        "records": 3
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 865996936,
-        "records": 38
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 282620239,
-        "records": 39
-      },
-      {
-        "category": "Controlled Substances Act violation",
-        "penalty": 199262500,
-        "records": 17
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 108460175,
-        "records": 69
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00384818",

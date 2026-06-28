@@ -27,7 +27,6 @@
     "s": "3 federal penalties totaling $2.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -124,54 +122,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "MidFirst Bank",
-    "slug": "midfirst-bank",
-    "ownership": "privately held",
-    "hq": "Oklahoma",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking",
-    "totalPenalty": 2640581,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 2600000,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 35000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 5581,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 2600000,
-        "records": 1
-      },
-      {
-        "category": "banking violation",
-        "penalty": 35000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 5581,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:57:29.733Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00123885",

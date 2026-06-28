@@ -26,7 +26,6 @@
     "s": "58 federal penalties totaling $489.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "environmental violation: $475.7M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -160,64 +158,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Murphy USA",
-    "slug": "murphy-usa",
-    "ownership": "publicly traded (ticker symbol MUSA)",
-    "hq": "Arkansas",
-    "majorIndustry": "retailing",
-    "specificIndustry": "gas stations",
-    "totalPenalty": 489731573,
-    "totalRecords": 58,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 489313502,
-        "records": 52
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 318071,
-        "records": 5
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 100000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 475706061,
-        "records": 25
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 13261025,
-        "records": 7
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 300571,
-        "records": 3
-      },
-      {
-        "category": "underground storage tank violation",
-        "penalty": 237282,
-        "records": 12
-      },
-      {
-        "category": "solid waste violation",
-        "penalty": 109134,
-        "records": 8
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:28:42.098Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

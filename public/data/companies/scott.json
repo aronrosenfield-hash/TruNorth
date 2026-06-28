@@ -27,7 +27,6 @@
     "s": "27 federal penalties totaling $102.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $822K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -131,64 +129,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Scotts Miracle-Gro",
-    "slug": "scotts-miracle-gro",
-    "ownership": "publicly traded (ticker symbol SMG)",
-    "hq": "Ohio",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 102613528,
-    "totalRecords": 27,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 85081543,
-        "records": 5
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 13596986,
-        "records": 20
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 3934999,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "product safety violation",
-        "penalty": 85000000,
-        "records": 1
-      },
-      {
-        "category": "pesticide violation",
-        "penalty": 12418071,
-        "records": 6
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 3084999,
-        "records": 1
-      },
-      {
-        "category": "employment screening violation",
-        "penalty": 850000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 822148,
-        "records": 11
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:43:06.973Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00365254",

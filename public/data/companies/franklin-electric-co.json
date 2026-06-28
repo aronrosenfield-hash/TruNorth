@@ -27,7 +27,6 @@
     "s": "5 federal penalties totaling $66K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -136,44 +134,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Franklin Electric",
-    "slug": "franklin-electric",
-    "ownership": "publicly traded (ticker symbol FELE)",
-    "hq": "Indiana",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "pumping systems",
-    "totalPenalty": 65542,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 51780,
-        "records": 4
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 13762,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 51780,
-        "records": 4
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 13762,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:29:53.147Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00034348",

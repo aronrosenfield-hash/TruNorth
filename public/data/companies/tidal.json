@@ -40,15 +40,13 @@
     "s": "environmental violation: $14K in federal penalties (Violation Tracker).",
     "rating": "N/A",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "5 federal penalties totaling $4.7M since 2000 (Violation Tracker).",
     "rating": "Below Average",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -97,44 +95,6 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "dataLastUpdated": "2026-05-28",
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "tidalhealth-inc",
-      "matchedName": "Tidalhealth, Inc.",
-      "totalPenalty": 4724000,
-      "totalRecords": 5,
-      "offenseGroups": [
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 4700000,
-          "records": 2
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 24000,
-          "records": 3
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "False Claims Act and related",
-          "penalty": 4700000,
-          "records": 2
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 14000,
-          "records": 2
-        },
-        {
-          "category": "hazardous waste violation",
-          "penalty": 10000,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
-  },
   "competitors": [
     "spotify",
     "apple-music",
@@ -189,49 +149,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Tidalhealth, Inc.",
-    "slug": "tidalhealth-inc",
-    "ownership": "non-profit",
-    "hq": "Maryland",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "hospitals",
-    "totalPenalty": 4724000,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 4700000,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 24000,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 4700000,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 14000,
-        "records": 2
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 10000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

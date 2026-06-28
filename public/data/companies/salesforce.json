@@ -49,15 +49,13 @@
     "s": "No public record found.",
     "rating": "Excellent",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "4 federal penalties totaling $1.5M since 2000 (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -121,39 +119,6 @@
     "courtlistener": "2026-06-21T22:16:03.341Z",
     "msha": "2026-06-11T14:35:43.462Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "salesforcecom",
-      "matchedName": "Salesforce.com",
-      "totalPenalty": 1503591,
-      "totalRecords": 4,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 1503591,
-          "records": 4
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 1360001,
-          "records": 2
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 132581,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 11009,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "microsoft",
@@ -286,44 +251,6 @@
     "source": "courtlistener-recap"
   },
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Salesforce.com",
-    "slug": "salesforcecom",
-    "ownership": "publicly traded (ticker symbol CRM)",
-    "hq": "California",
-    "majorIndustry": "information technology",
-    "specificIndustry": "software",
-    "totalPenalty": 1503591,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 1503591,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 1360001,
-        "records": 2
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 132581,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 11009,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00511600",

@@ -45,15 +45,13 @@
     "s": "air pollution violation: $504K in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "77 federal penalties totaling $6.1M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -106,69 +104,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "illinois-tool-works",
-      "matchedName": "Illinois Tool Works",
-      "totalPenalty": 6147627,
-      "totalRecords": 77,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 4305181,
-          "records": 2
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 802962,
-          "records": 20
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 650484,
-          "records": 51
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 369000,
-          "records": 3
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 20000,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "wage and hour violation",
-          "penalty": 4200000,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 635484,
-          "records": 50
-        },
-        {
-          "category": "air pollution violation",
-          "penalty": 503520,
-          "records": 6
-        },
-        {
-          "category": "export control violation",
-          "penalty": 369000,
-          "records": 3
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 265284,
-          "records": 13
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "parker-hannifin",
@@ -256,74 +191,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Illinois Tool Works",
-    "slug": "illinois-tool-works",
-    "ownership": "publicly traded (ticker symbol ITW)",
-    "hq": "Illinois",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "industrial equipment",
-    "totalPenalty": 6147627,
-    "totalRecords": 77,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 4305181,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 802962,
-        "records": 20
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 650484,
-        "records": 51
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 369000,
-        "records": 3
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 20000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 4200000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 635484,
-        "records": 50
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 503520,
-        "records": 6
-      },
-      {
-        "category": "export control violation",
-        "penalty": 369000,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 265284,
-        "records": 13
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00000042",

@@ -27,7 +27,6 @@
     "s": "7 federal penalties totaling $31.4M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -118,54 +116,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Nexstar Media Group",
-    "slug": "nexstar-media-group",
-    "ownership": "publicly traded (ticker symbol NXST)",
-    "hq": "Texas",
-    "majorIndustry": "media",
-    "specificIndustry": "television broadcasting",
-    "totalPenalty": 31398446,
-    "totalRecords": 7,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 31120946,
-        "records": 5
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 277500,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 31000000,
-        "records": 1
-      },
-      {
-        "category": "telecommunications violation",
-        "penalty": 277500,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 100000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 20946,
-        "records": 3
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:12:40.026Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00216184",

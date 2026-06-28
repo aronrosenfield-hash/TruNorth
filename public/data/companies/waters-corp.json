@@ -26,7 +26,6 @@
     "s": "7 federal penalties totaling $7.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "air pollution violation: $6.5M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -132,59 +130,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Waters Corporation",
-    "slug": "waters-corporation",
-    "ownership": "publicly traded (ticker symbol WAT)",
-    "hq": "Massachusetts",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "scientific equipment",
-    "totalPenalty": 7532900,
-    "totalRecords": 7,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 6713300,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 800000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 19600,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 6500000,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 800000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 213300,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 19600,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:28:10.517Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

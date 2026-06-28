@@ -27,7 +27,6 @@
     "s": "103 federal penalties totaling $8.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "air pollution violation: $1.3M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -143,69 +141,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Kaiser Aluminum",
-    "slug": "kaiser-aluminum",
-    "ownership": "publicly traded (ticker symbol KALU)",
-    "hq": "California",
-    "majorIndustry": "metals",
-    "specificIndustry": "aluminum",
-    "totalPenalty": 8142841,
-    "totalRecords": 103,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 5215800,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1756011,
-        "records": 58
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 961030,
-        "records": 40
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 210000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "labor relations violation",
-        "penalty": 5040800,
-        "records": 3
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 1332461,
-        "records": 50
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 961030,
-        "records": 40
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 316950,
-        "records": 6
-      },
-      {
-        "category": "export control violation",
-        "penalty": 210000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:44:15.938Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00047415",

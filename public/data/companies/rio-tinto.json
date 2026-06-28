@@ -27,7 +27,6 @@
     "s": "163 federal penalties totaling $116.7M since 2000 (Violation Tracker). Supply-chain signals: CHRB 19.8/26; AU MS statement; EITI supporter.",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB",
       "chrb",
@@ -50,8 +49,7 @@
   "environment": {
     "s": "water pollution violation: $68.3M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -151,74 +149,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Rio Tinto",
-    "slug": "rio-tinto",
-    "ownership": "publicly traded",
-    "hq": "United Kingdom",
-    "majorIndustry": "mining and minerals",
-    "specificIndustry": "mining",
-    "totalPenalty": 116655806,
-    "totalRecords": 163,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 69087319,
-        "records": 17
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 28000000,
-        "records": 1
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 15000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 3086899,
-        "records": 8
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 1481588,
-        "records": 136
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "water pollution violation",
-        "penalty": 68258193,
-        "records": 5
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 28000000,
-        "records": 1
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 15000000,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 3026897,
-        "records": 6
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 1395588,
-        "records": 126
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:20:16.439Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00243675",

@@ -27,7 +27,6 @@
     "s": "3 federal penalties totaling $749K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "air pollution violation: $749K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -115,39 +113,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "CFMOTO",
-    "slug": "cfmoto",
-    "ownership": "privately held",
-    "hq": "China",
-    "majorIndustry": "motor vehicles",
-    "specificIndustry": "motor vehicles",
-    "totalPenalty": 749000,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 749000,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 749000,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 0,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T22:56:06.280Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00308460",

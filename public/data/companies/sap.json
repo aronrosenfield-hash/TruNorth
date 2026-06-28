@@ -39,7 +39,6 @@
     "rating": "Mixed",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "climate-coalitions"
     ]
   },
@@ -47,7 +46,6 @@
     "s": "10 federal penalties totaling $235.5M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -84,64 +82,6 @@
     "sources": [
       "Claude AI synthesis"
     ]
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "sap",
-      "matchedName": "SAP",
-      "totalPenalty": 235536267,
-      "totalRecords": 10,
-      "offenseGroups": [
-        {
-          "category": "competition-related offenses",
-          "penalty": 224190000,
-          "records": 4
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 7272174,
-          "records": 2
-        },
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 2200000,
-          "records": 1
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 1874093,
-          "records": 3
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "Foreign Corrupt Practices Act",
-          "penalty": 220900000,
-          "records": 3
-        },
-        {
-          "category": "economic sanction violation",
-          "penalty": 7272174,
-          "records": 2
-        },
-        {
-          "category": "export control violation",
-          "penalty": 3290000,
-          "records": 1
-        },
-        {
-          "category": "False Claims Act and related",
-          "penalty": 2200000,
-          "records": 1
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 1842943,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
@@ -223,69 +163,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "SAP",
-    "slug": "sap",
-    "ownership": "publicly traded",
-    "hq": "Germany",
-    "majorIndustry": "information technology",
-    "specificIndustry": "software",
-    "totalPenalty": 235536267,
-    "totalRecords": 10,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 224190000,
-        "records": 4
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 7272174,
-        "records": 2
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 2200000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1874093,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 220900000,
-        "records": 3
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 7272174,
-        "records": 2
-      },
-      {
-        "category": "export control violation",
-        "penalty": 3290000,
-        "records": 1
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 2200000,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 1842943,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

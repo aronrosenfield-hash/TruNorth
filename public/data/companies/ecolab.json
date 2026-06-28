@@ -27,7 +27,6 @@
     "s": "93 federal penalties totaling $124.2M since 2000 (Violation Tracker).",
     "rating": "poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $3.6M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -165,74 +163,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ecolab",
-    "slug": "ecolab",
-    "ownership": "publicly traded (ticker symbol ECL)",
-    "hq": "Minnesota",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "cleaning products",
-    "totalPenalty": 124195740,
-    "totalRecords": 93,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 114173990,
-        "records": 15
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 5543259,
-        "records": 38
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 2115000,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 2000000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 363491,
-        "records": 37
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 113905990,
-        "records": 10
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 3649441,
-        "records": 24
-      },
-      {
-        "category": "fraud",
-        "penalty": 2000000,
-        "records": 1
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 2000000,
-        "records": 1
-      },
-      {
-        "category": "pesticide violation",
-        "penalty": 818150,
-        "records": 6
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:04:55.082Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00101485",

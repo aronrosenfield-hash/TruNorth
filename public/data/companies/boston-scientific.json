@@ -46,15 +46,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "19 federal penalties totaling $1.6B since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -105,69 +103,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "boston-scientific-corp",
-      "matchedName": "Boston Scientific Corp.",
-      "totalPenalty": 1647185388,
-      "totalRecords": 19,
-      "offenseGroups": [
-        {
-          "category": "safety-related offenses",
-          "penalty": 1520438185,
-          "records": 10
-        },
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 104150000,
-          "records": 3
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 15200000,
-          "records": 2
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 7040000,
-          "records": 1
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 277017,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "drug or medical equipment safety violation",
-          "penalty": 1520350000,
-          "records": 6
-        },
-        {
-          "category": "False Claims Act and related",
-          "penalty": 104150000,
-          "records": 3
-        },
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 15200000,
-          "records": 2
-        },
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 7040000,
-          "records": 1
-        },
-        {
-          "category": "economic sanction violation",
-          "penalty": 277017,
-          "records": 1
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "medtronic",
@@ -319,74 +254,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Boston Scientific Corp.",
-    "slug": "boston-scientific-corp",
-    "ownership": "publicly traded (ticker symbol BSX)",
-    "hq": "Massachusetts",
-    "majorIndustry": "medical equipment and supplies",
-    "specificIndustry": "medical devices",
-    "totalPenalty": 1647185388,
-    "totalRecords": 19,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 1520438185,
-        "records": 10
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 104150000,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 15200000,
-        "records": 2
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 7040000,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 277017,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "drug or medical equipment safety violation",
-        "penalty": 1520350000,
-        "records": 6
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 104150000,
-        "records": 3
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 15200000,
-        "records": 2
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 7040000,
-        "records": 1
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 277017,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00357863",

@@ -27,7 +27,6 @@
     "s": "5 federal penalties totaling $194K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "environmental violation: $64K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -142,64 +140,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Centrus Energy",
-    "slug": "centrus-energy",
-    "ownership": "publicly traded (ticker symbol LEU)",
-    "hq": "Maryland",
-    "majorIndustry": "miscellaneous energy products and systems",
-    "specificIndustry": "nuclear fuel",
-    "totalPenalty": 194315,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 65165,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 65000,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 64150,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 64150,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 60165,
-        "records": 1
-      },
-      {
-        "category": "nuclear safety violation",
-        "penalty": 60000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 5000,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:46:28.859Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00355719",

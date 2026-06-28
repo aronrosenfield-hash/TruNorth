@@ -27,7 +27,6 @@
     "s": "2 federal penalties totaling $4.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -151,39 +149,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "IQVIA",
-    "slug": "iqvia",
-    "ownership": "publicly traded (ticker symbol IQV)",
-    "hq": "Connecticut",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "pharmaceutical services",
-    "totalPenalty": 4050000,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 4050000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 3500000,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 550000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T00:16:37.156Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

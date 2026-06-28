@@ -39,15 +39,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "4 federal penalties totaling $15.0M since 2000 (Violation Tracker).",
     "rating": "Below Average",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -97,49 +95,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "american-eagle-outfitters",
-      "matchedName": "American Eagle Outfitters",
-      "totalPenalty": 15037617,
-      "totalRecords": 4,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 14500000,
-          "records": 1
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 512617,
-          "records": 2
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 25000,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "privacy violation",
-          "penalty": 14500000,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 512617,
-          "records": 2
-        },
-        {
-          "category": "lead violation",
-          "penalty": 25000,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "abercrombie-and-fitch",
@@ -265,54 +220,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "American Eagle Outfitters",
-    "slug": "american-eagle-outfitters",
-    "ownership": "publicly traded (ticker symbol AEO)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-apparel",
-    "totalPenalty": 15037617,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 14500000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 512617,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 25000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "privacy violation",
-        "penalty": 14500000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 512617,
-        "records": 2
-      },
-      {
-        "category": "lead violation",
-        "penalty": 25000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

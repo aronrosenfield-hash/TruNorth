@@ -26,7 +26,6 @@
     "s": "23 federal penalties totaling $490K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $176K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -155,69 +153,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "International Flavors & Fragrances",
-    "slug": "international-flavors-and-fragrances",
-    "ownership": "publicly traded (ticker symbol IFF)",
-    "hq": "New York",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "flavors and fragrances",
-    "totalPenalty": 489855,
-    "totalRecords": 23,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 327499,
-        "records": 8
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 106983,
-        "records": 13
-      },
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 50000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 5373,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 175899,
-        "records": 4
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 151600,
-        "records": 4
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 66483,
-        "records": 6
-      },
-      {
-        "category": "Controlled Substances Act violation",
-        "penalty": 50000,
-        "records": 1
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 40500,
-        "records": 7
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:08:18.780Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

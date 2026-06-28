@@ -27,7 +27,6 @@
     "s": "9 federal penalties totaling $700K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $625K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -139,49 +137,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Lennox International",
-    "slug": "lennox-international",
-    "ownership": "publicly traded (ticker symbol LII)",
-    "hq": "Texas",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "heating &amp; cooling equipment",
-    "totalPenalty": 700198,
-    "totalRecords": 9,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 633000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 67198,
-        "records": 7
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 625000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 67198,
-        "records": 7
-      },
-      {
-        "category": "energy conservation violation",
-        "penalty": 8000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:55:08.666Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00116996",

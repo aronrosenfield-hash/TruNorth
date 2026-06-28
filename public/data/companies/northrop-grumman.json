@@ -45,15 +45,13 @@
     "s": "hazardous waste violation: $2.6M in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "101 federal penalties totaling $778.6M since 2000 (Violation Tracker).",
     "rating": "Below Average",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -111,69 +109,6 @@
     "execPay": "2026-06-11T03:48:51.753Z",
     "federalContracts": "2026-06-11T23:51:18.870Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "northrop-grumman",
-      "matchedName": "Northrop Grumman",
-      "totalPenalty": 778606304,
-      "totalRecords": 101,
-      "offenseGroups": [
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 690577160,
-          "records": 13
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 67727620,
-          "records": 22
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 15400000,
-          "records": 2
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 4139399,
-          "records": 28
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 762125,
-          "records": 36
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "False Claims Act and related",
-          "penalty": 690577160,
-          "records": 13
-        },
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 65250000,
-          "records": 2
-        },
-        {
-          "category": "export control violation",
-          "penalty": 15400000,
-          "records": 2
-        },
-        {
-          "category": "hazardous waste violation",
-          "penalty": 2629191,
-          "records": 5
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 2274246,
-          "records": 14
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "lockheed-martin",
@@ -267,74 +202,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Northrop Grumman",
-    "slug": "northrop-grumman",
-    "ownership": "publicly traded (ticker symbol NOC)",
-    "hq": "Virginia",
-    "majorIndustry": "aerospace and military contracting",
-    "specificIndustry": "aerospace &amp; military contracting",
-    "totalPenalty": 778606304,
-    "totalRecords": 101,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 690577160,
-        "records": 13
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 67727620,
-        "records": 22
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 15400000,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 4139399,
-        "records": 28
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 762125,
-        "records": 36
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 690577160,
-        "records": 13
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 65250000,
-        "records": 2
-      },
-      {
-        "category": "export control violation",
-        "penalty": 15400000,
-        "records": 2
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 2629191,
-        "records": 5
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 2274246,
-        "records": 14
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00088591",

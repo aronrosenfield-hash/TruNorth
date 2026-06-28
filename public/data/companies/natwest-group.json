@@ -25,7 +25,6 @@
     "s": "42 federal penalties totaling $14.3B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -40,8 +39,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -122,64 +120,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "NatWest Group PLC",
-    "slug": "natwest-group-plc",
-    "ownership": "publicly traded",
-    "hq": "United Kingdom",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking &amp; securities",
-    "totalPenalty": 14268917618,
-    "totalRecords": 42,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 12129162857,
-        "records": 23
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 1797433333,
-        "records": 15
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 342321428,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "toxic securities abuses",
-        "penalty": 11718442857,
-        "records": 15
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 1762433333,
-        "records": 14
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 342321428,
-        "records": 4
-      },
-      {
-        "category": "banking violation",
-        "penalty": 324000000,
-        "records": 2
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 83000000,
-        "records": 2
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:32:50.412Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

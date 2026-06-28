@@ -27,7 +27,6 @@
     "s": "19 federal penalties totaling $1.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "environmental violation: $1.2M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -118,54 +116,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Casey Company",
-    "slug": "casey-company",
-    "ownership": "privately held",
-    "hq": "California",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 1731301,
-    "totalRecords": 19,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1455000,
-        "records": 6
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 276301,
-        "records": 13
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 1200000,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 255000,
-        "records": 4
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 251801,
-        "records": 10
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 24500,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T22:23:27.499Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

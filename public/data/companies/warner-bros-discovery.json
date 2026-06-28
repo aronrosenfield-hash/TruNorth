@@ -37,15 +37,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "18 federal penalties totaling $81.3M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -85,69 +83,6 @@
     "sources": [
       "sec-def14a"
     ]
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "warner-bros-discovery-inc",
-      "matchedName": "Warner Bros. Discovery Inc.",
-      "totalPenalty": 81294247,
-      "totalRecords": 18,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 78920287,
-          "records": 7
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 2293000,
-          "records": 4
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 44060,
-          "records": 4
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 29400,
-          "records": 2
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 7500,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "labor relations violation",
-          "penalty": 76037000,
-          "records": 3
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 2638787,
-          "records": 3
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 2000000,
-          "records": 1
-        },
-        {
-          "category": "telecommunications violation",
-          "penalty": 293000,
-          "records": 3
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 244500,
-          "records": 1
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
@@ -235,74 +170,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Warner Bros. Discovery Inc.",
-    "slug": "warner-bros-discovery-inc",
-    "ownership": "publicly traded (ticker symbol WBD)",
-    "hq": "New York",
-    "majorIndustry": "media",
-    "specificIndustry": "media",
-    "totalPenalty": 81294247,
-    "totalRecords": 18,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 78920287,
-        "records": 7
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 2293000,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 44060,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 29400,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 7500,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "labor relations violation",
-        "penalty": 76037000,
-        "records": 3
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 2638787,
-        "records": 3
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 2000000,
-        "records": 1
-      },
-      {
-        "category": "telecommunications violation",
-        "penalty": 293000,
-        "records": 3
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 244500,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

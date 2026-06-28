@@ -26,7 +26,6 @@
     "s": "8 federal penalties totaling $414.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -140,64 +138,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Daiichi Sankyo",
-    "slug": "daiichi-sankyo",
-    "ownership": "publicly traded",
-    "hq": "Japan",
-    "majorIndustry": "pharmaceuticals",
-    "specificIndustry": "pharmaceuticals",
-    "totalPenalty": 414097967,
-    "totalRecords": 8,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 300000000,
-        "records": 1
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 78000000,
-        "records": 2
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 27897967,
-        "records": 4
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 8200000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "product safety violation",
-        "penalty": 300000000,
-        "records": 1
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 78000000,
-        "records": 2
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 27897967,
-        "records": 4
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 8200000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:35:17.017Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

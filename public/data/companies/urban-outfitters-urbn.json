@@ -37,15 +37,13 @@
     "s": "No public record found.",
     "rating": "Poor",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "11 federal penalties totaling $6.3M since 2000 (Violation Tracker).",
     "rating": "Below Average",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -96,39 +94,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z"
   },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "urban-outfitters",
-      "matchedName": "Urban Outfitters",
-      "totalPenalty": 6304659,
-      "totalRecords": 11,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 6193298,
-          "records": 3
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 111361,
-          "records": 8
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "wage and hour violation",
-          "penalty": 6193298,
-          "records": 3
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 111361,
-          "records": 8
-        }
-      ],
-      "rating": "good"
-    }
-  },
   "competitors": [
     "american-eagle-outfitters",
     "free-people-urbn",
@@ -158,44 +123,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Urban Outfitters",
-    "slug": "urban-outfitters",
-    "ownership": "publicly traded (ticker symbol URBN)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-apparel",
-    "totalPenalty": 6304659,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 6193298,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 111361,
-        "records": 8
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 6193298,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 111361,
-        "records": 8
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -28,7 +28,6 @@
     "s": "3 federal penalties totaling $293K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "environmental violation: $210K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -123,54 +121,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Bloom Energy",
-    "slug": "bloom-energy",
-    "ownership": "publicly traded (ticker symbol BE)",
-    "hq": "California",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "power systems",
-    "totalPenalty": 293246,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 210000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 70005,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 13241,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 210000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 70005,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 13241,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:12:13.953Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00764290",

@@ -38,15 +38,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "6 federal penalties totaling $133K since 2000 (Violation Tracker).",
     "rating": "Below Average",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -97,29 +95,6 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "wingstop",
-      "matchedName": "Wingstop",
-      "totalPenalty": 132817,
-      "totalRecords": 6,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 132817,
-          "records": 6
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "wage and hour violation",
-          "penalty": 132817,
-          "records": 6
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [],
   "wiki": {
@@ -278,34 +253,6 @@
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Wingstop",
-    "slug": "wingstop",
-    "ownership": "publicly traded (ticker symbol WING)",
-    "hq": "Texas",
-    "majorIndustry": "restaurants and foodservice",
-    "specificIndustry": "restaurants",
-    "totalPenalty": 132817,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 132817,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 132817,
-        "records": 6
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

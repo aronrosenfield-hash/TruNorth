@@ -38,15 +38,13 @@
     "s": "No public record found.",
     "rating": "Poor",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "7 federal penalties totaling $114.3M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -91,44 +89,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "coinbase-global-inc",
-      "matchedName": "Coinbase Global Inc.",
-      "totalPenalty": 114291750,
-      "totalRecords": 7,
-      "offenseGroups": [
-        {
-          "category": "financial offenses",
-          "penalty": 111500000,
-          "records": 3
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 2791750,
-          "records": 4
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "anti-money-laundering deficiencies",
-          "penalty": 100000000,
-          "records": 1
-        },
-        {
-          "category": "investor protection violation",
-          "penalty": 11500000,
-          "records": 2
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 2791750,
-          "records": 4
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [],
   "wiki": {
@@ -210,49 +170,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Coinbase Global Inc.",
-    "slug": "coinbase-global-inc",
-    "ownership": "publicly traded (ticker symbol COIN)",
-    "hq": "Delaware",
-    "majorIndustry": "financial services",
-    "specificIndustry": "cryptocurrency",
-    "totalPenalty": 114291750,
-    "totalRecords": 7,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 111500000,
-        "records": 3
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 2791750,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "anti-money-laundering deficiencies",
-        "penalty": 100000000,
-        "records": 1
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 11500000,
-        "records": 2
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 2791750,
-        "records": 4
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

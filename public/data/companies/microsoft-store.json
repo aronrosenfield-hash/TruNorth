@@ -45,7 +45,6 @@
     "s": "23 federal penalties totaling $1.6B since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -88,69 +87,6 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "microsoft",
-      "matchedName": "Microsoft",
-      "totalPenalty": 1590084462,
-      "totalRecords": 23,
-      "offenseGroups": [
-        {
-          "category": "competition-related offenses",
-          "penalty": 1296283959,
-          "records": 6
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 202330841,
-          "records": 9
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 53100000,
-          "records": 4
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 38327896,
-          "records": 3
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 41766,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 1270967014,
-          "records": 4
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 104355841,
-          "records": 3
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 91225000,
-          "records": 5
-        },
-        {
-          "category": "investor protection violation",
-          "penalty": 35000000,
-          "records": 1
-        },
-        {
-          "category": "privacy violation",
-          "penalty": 33000000,
-          "records": 2
-        }
-      ],
-      "rating": "poor"
-    }
   },
   "competitors": [
     "apple",
@@ -200,74 +136,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Microsoft",
-    "slug": "microsoft",
-    "ownership": "publicly traded (ticker symbol MSFT)",
-    "hq": "Washington",
-    "majorIndustry": "information technology",
-    "specificIndustry": "software",
-    "totalPenalty": 1590084462,
-    "totalRecords": 23,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 1296283959,
-        "records": 6
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 202330841,
-        "records": 9
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 53100000,
-        "records": 4
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 38327896,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 41766,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 1270967014,
-        "records": 4
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 104355841,
-        "records": 3
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 91225000,
-        "records": 5
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 35000000,
-        "records": 1
-      },
-      {
-        "category": "privacy violation",
-        "penalty": 33000000,
-        "records": 2
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

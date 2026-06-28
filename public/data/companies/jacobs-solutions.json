@@ -27,7 +27,6 @@
     "s": "64 federal penalties totaling $77.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $2.0M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -147,74 +145,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Jacobs Solutions",
-    "slug": "jacobs-solutions",
-    "ownership": "publicly traded (ticker symbol J)",
-    "hq": "California",
-    "majorIndustry": "construction and engineering",
-    "specificIndustry": "construction &amp; engineering",
-    "totalPenalty": 76956493,
-    "totalRecords": 64,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 69616937,
-        "records": 8
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 2499394,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 2382649,
-        "records": 35
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 1500000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 957513,
-        "records": 15
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 69616937,
-        "records": 8
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 2016000,
-        "records": 2
-      },
-      {
-        "category": "kickbacks and bribery",
-        "penalty": 1500000,
-        "records": 1
-      },
-      {
-        "category": "product safety violation",
-        "penalty": 1250000,
-        "records": 1
-      },
-      {
-        "category": "nuclear safety violation",
-        "penalty": 751250,
-        "records": 4
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:42:29.988Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00142299",

@@ -26,7 +26,6 @@
     "s": "3 federal penalties totaling $91K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $82K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -118,44 +116,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Baytex Energy",
-    "slug": "baytex-energy",
-    "ownership": "publicly traded (ticker symbol BTE)",
-    "hq": "Canada",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 91019,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 81751,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 9268,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 81751,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 9268,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:02:49.512Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

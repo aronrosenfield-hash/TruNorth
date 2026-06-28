@@ -27,7 +27,6 @@
     "s": "12 federal penalties totaling $44.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -163,69 +161,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Fiserv",
-    "slug": "fiserv",
-    "ownership": "publicly traded (ticker symbol FI)",
-    "hq": "Wisconsin",
-    "majorIndustry": "business services",
-    "specificIndustry": "business services",
-    "totalPenalty": 44414852,
-    "totalRecords": 12,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 44180000,
-        "records": 4
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 151565,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 59951,
-        "records": 3
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 23336,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 44180000,
-        "records": 4
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 100000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 59951,
-        "records": 3
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 51565,
-        "records": 3
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 23336,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:21:15.240Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00378166",

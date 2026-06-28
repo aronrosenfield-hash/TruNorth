@@ -27,7 +27,6 @@
     "s": "8 federal penalties totaling $2.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -118,49 +116,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "General Atomics",
-    "slug": "general-atomics",
-    "ownership": "privately held",
-    "hq": "California",
-    "majorIndustry": "aerospace and military contracting",
-    "specificIndustry": "aerospace &amp; military contracting",
-    "totalPenalty": 1983562,
-    "totalRecords": 8,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 1896457,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 87105,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 1896457,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 61105,
-        "records": 5
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 26000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T23:57:31.748Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00215285",

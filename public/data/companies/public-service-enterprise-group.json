@@ -27,7 +27,6 @@
     "s": "55 federal penalties totaling $420.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "air pollution violation: $350.6M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -140,69 +138,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Public Service Enterprise",
-    "slug": "public-service-enterprise",
-    "ownership": "publicly traded (ticker symbol PEG)",
-    "hq": "New Jersey",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 420763797,
-    "totalRecords": 55,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 364135274,
-        "records": 33
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 46000000,
-        "records": 2
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 10000000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 628523,
-        "records": 19
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 350558700,
-        "records": 17
-      },
-      {
-        "category": "energy market violation",
-        "penalty": 46000000,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 13494968,
-        "records": 7
-      },
-      {
-        "category": "utility service violation",
-        "penalty": 10000000,
-        "records": 1
-      },
-      {
-        "category": "utility safety violation",
-        "penalty": 465000,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:13:55.258Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00383489",

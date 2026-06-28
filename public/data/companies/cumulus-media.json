@@ -26,7 +26,6 @@
     "s": "12 federal penalties totaling $5.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -142,54 +140,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Cumulus Media",
-    "slug": "cumulus-media",
-    "ownership": "publicly traded (ticker symbol CMLS)",
-    "hq": "Georgia",
-    "majorIndustry": "media",
-    "specificIndustry": "broadcasting",
-    "totalPenalty": 5165978,
-    "totalRecords": 12,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 3082000,
-        "records": 6
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 2083978,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "telecommunications violation",
-        "penalty": 3082000,
-        "records": 6
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 1000000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 928267,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 155711,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:07:32.286Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

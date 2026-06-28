@@ -26,7 +26,6 @@
     "s": "34 federal penalties totaling $183.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -127,74 +125,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Masco",
-    "slug": "masco",
-    "ownership": "publicly traded (ticker symbol MAS)",
-    "hq": "Michigan",
-    "majorIndustry": "housewares and home furnishings",
-    "specificIndustry": "housewares",
-    "totalPenalty": 183487968,
-    "totalRecords": 34,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 107500000,
-        "records": 1
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 75000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 559721,
-        "records": 5
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 265675,
-        "records": 12
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 162572,
-        "records": 15
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 107500000,
-        "records": 1
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 75000000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 444721,
-        "records": 2
-      },
-      {
-        "category": "pesticide violation",
-        "penalty": 169994,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 162572,
-        "records": 15
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:13:41.437Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

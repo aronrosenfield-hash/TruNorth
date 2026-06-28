@@ -37,15 +37,13 @@
     "s": "environmental violation: $2.0M in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "87 federal penalties totaling $21.1M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -82,69 +80,6 @@
     "s": "No public record found.",
     "ratio": "N/A",
     "sources": []
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "textron",
-      "matchedName": "Textron",
-      "totalPenalty": 21104914,
-      "totalRecords": 87,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 6164673,
-          "records": 12
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 4685040,
-          "records": 2
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 4157111,
-          "records": 50
-        },
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 4004842,
-          "records": 2
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 2093248,
-          "records": 21
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 4375000,
-          "records": 1
-        },
-        {
-          "category": "False Claims Act and related",
-          "penalty": 4004842,
-          "records": 2
-        },
-        {
-          "category": "Foreign Corrupt Practices Act",
-          "penalty": 3535040,
-          "records": 1
-        },
-        {
-          "category": "aviation safety violation",
-          "penalty": 3218980,
-          "records": 27
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 1984948,
-          "records": 18
-        }
-      ],
-      "rating": "good"
-    }
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
@@ -225,74 +160,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Textron",
-    "slug": "textron",
-    "ownership": "publicly traded (ticker symbol TXT)",
-    "hq": "Rhode Island",
-    "majorIndustry": "aerospace and military contracting",
-    "specificIndustry": "aerospace &amp; military contracting",
-    "totalPenalty": 21104914,
-    "totalRecords": 87,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 6164673,
-        "records": 12
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 4685040,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 4157111,
-        "records": 50
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 4004842,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 2093248,
-        "records": 21
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 4375000,
-        "records": 1
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 4004842,
-        "records": 2
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 3535040,
-        "records": 1
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 3218980,
-        "records": 27
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 1984948,
-        "records": 18
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

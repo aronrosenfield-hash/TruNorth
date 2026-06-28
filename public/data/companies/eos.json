@@ -26,7 +26,6 @@
     "s": "175 federal penalties totaling $64.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $9.0M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -151,69 +149,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ineos",
-    "slug": "ineos",
-    "ownership": "privately held",
-    "hq": "United Kingdom",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 64706280,
-    "totalRecords": 175,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 51485000,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 12252650,
-        "records": 95
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 707602,
-        "records": 73
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 261028,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 51485000,
-        "records": 4
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 9034572,
-        "records": 77
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 1669681,
-        "records": 16
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 1541647,
-        "records": 1
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 432850,
-        "records": 60
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:37:06.227Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

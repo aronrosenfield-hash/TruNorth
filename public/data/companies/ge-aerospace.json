@@ -28,7 +28,6 @@
     "s": "52 federal penalties totaling $4.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $827K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -158,74 +156,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Howmet Aerospace",
-    "slug": "howmet-aerospace",
-    "ownership": "publicly traded (ticker symbol HWM)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "aerospace and military contracting",
-    "specificIndustry": "aerospace components",
-    "totalPenalty": 4525892,
-    "totalRecords": 52,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 2343190,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1047593,
-        "records": 18
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 536492,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 503617,
-        "records": 27
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 95000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment discrimination",
-        "penalty": 2239667,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 827111,
-        "records": 11
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 536492,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 333617,
-        "records": 26
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 170000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T23:56:47.614Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00024869",

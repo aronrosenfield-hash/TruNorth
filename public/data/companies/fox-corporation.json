@@ -45,15 +45,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "5 federal penalties totaling $824.5M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -106,49 +104,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "fox-corporation",
-      "matchedName": "Fox Corporation",
-      "totalPenalty": 824500000,
-      "totalRecords": 5,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 787500000,
-          "records": 1
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 31000000,
-          "records": 3
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 6000000,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "consumer protection violation",
-          "penalty": 787500000,
-          "records": 1
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 31000000,
-          "records": 3
-        },
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 6000000,
-          "records": 1
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "disney",
@@ -243,54 +198,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Fox Corporation",
-    "slug": "fox-corporation",
-    "ownership": "publicly traded (ticker symbol FOX)",
-    "hq": "New York",
-    "majorIndustry": "media",
-    "specificIndustry": "broadcasting",
-    "totalPenalty": 824500000,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 787500000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 31000000,
-        "records": 3
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 6000000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 787500000,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 31000000,
-        "records": 3
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 6000000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00693002",

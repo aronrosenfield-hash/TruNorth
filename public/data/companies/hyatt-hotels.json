@@ -40,7 +40,6 @@
     "rating": "Mixed",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "cdp-climate"
     ]
   },
@@ -48,7 +47,6 @@
     "s": "24 federal penalties totaling $4.5M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -95,59 +93,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "hyatt-hotels",
-      "matchedName": "Hyatt Hotels",
-      "totalPenalty": 4457136,
-      "totalRecords": 24,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 2815100,
-          "records": 2
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 1466066,
-          "records": 11
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 175970,
-          "records": 11
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "privacy violation",
-          "penalty": 1565100,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 1255674,
-          "records": 5
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 1250000,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 175970,
-          "records": 11
-        },
-        {
-          "category": "labor relations violation",
-          "penalty": 110392,
-          "records": 5
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "marriott-international",
@@ -230,64 +175,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Hyatt Hotels",
-    "slug": "hyatt-hotels",
-    "ownership": "publicly traded (ticker symbol H)",
-    "hq": "Illinois",
-    "majorIndustry": "hotels",
-    "specificIndustry": "hotels",
-    "totalPenalty": 4457136,
-    "totalRecords": 24,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 2815100,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1466066,
-        "records": 11
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 175970,
-        "records": 11
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "privacy violation",
-        "penalty": 1565100,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 1255674,
-        "records": 5
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 1250000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 175970,
-        "records": 11
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 110392,
-        "records": 5
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

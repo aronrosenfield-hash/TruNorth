@@ -26,7 +26,6 @@
     "s": "12 federal penalties totaling $196K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $31K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -137,44 +135,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "nVent Electric PLC",
-    "slug": "nvent-electric-plc",
-    "ownership": "publicly traded (ticker symbol NVT)",
-    "hq": "United Kingdom",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "electrical connection products",
-    "totalPenalty": 196422,
-    "totalRecords": 12,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 165082,
-        "records": 11
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 31340,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 165082,
-        "records": 11
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 31340,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:50:20.607Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

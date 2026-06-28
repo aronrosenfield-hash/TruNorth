@@ -27,7 +27,6 @@
     "s": "2 federal penalties totaling $152K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -143,44 +141,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Independent Bank Corp. (Michigan)",
-    "slug": "independent-bank-corp-michigan",
-    "ownership": "publicly traded (ticker symbol IBCP)",
-    "hq": "Michigan",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking",
-    "totalPenalty": 151905,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 95700,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 56205,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 95700,
-        "records": 1
-      },
-      {
-        "category": "banking violation",
-        "penalty": 56205,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:27:08.952Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00032698",

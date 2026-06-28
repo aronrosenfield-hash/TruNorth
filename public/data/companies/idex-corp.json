@@ -26,7 +26,6 @@
     "s": "18 federal penalties totaling $851K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -121,69 +119,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "IDEX Corp.",
-    "slug": "idex-corp",
-    "ownership": "publicly traded (ticker symbol IEX)",
-    "hq": "Illinois",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "industrial equipment",
-    "totalPenalty": 850615,
-    "totalRecords": 18,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 400000,
-        "records": 2
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 195200,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 180415,
-        "records": 12
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 75000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment discrimination",
-        "penalty": 380000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 180415,
-        "records": 12
-      },
-      {
-        "category": "export control violation",
-        "penalty": 135000,
-        "records": 2
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 75000,
-        "records": 1
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 60200,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:07:28.478Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

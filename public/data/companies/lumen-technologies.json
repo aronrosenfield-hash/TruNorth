@@ -45,15 +45,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "114 federal penalties totaling $491.9M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -103,69 +101,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "lumen-technologies",
-      "matchedName": "Lumen Technologies",
-      "totalPenalty": 491855291,
-      "totalRecords": 114,
-      "offenseGroups": [
-        {
-          "category": "financial offenses",
-          "penalty": 269000000,
-          "records": 2
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 161926800,
-          "records": 47
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 39187355,
-          "records": 24
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 13047843,
-          "records": 2
-        },
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 8200000,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "accounting fraud or deficiencies",
-          "penalty": 269000000,
-          "records": 2
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 103932550,
-          "records": 20
-        },
-        {
-          "category": "telecommunications violation",
-          "penalty": 44138500,
-          "records": 20
-        },
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 36200000,
-          "records": 2
-        },
-        {
-          "category": "utility service violation",
-          "penalty": 13855750,
-          "records": 7
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "atandt",
@@ -250,74 +185,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Lumen Technologies",
-    "slug": "lumen-technologies",
-    "ownership": "publicly traded (ticker symbol LUMN)",
-    "hq": "Louisiana",
-    "majorIndustry": "telecommunications",
-    "specificIndustry": "telecommunications",
-    "totalPenalty": 491855291,
-    "totalRecords": 114,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 269000000,
-        "records": 2
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 161926800,
-        "records": 47
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 39187355,
-        "records": 24
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 13047843,
-        "records": 2
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 8200000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 269000000,
-        "records": 2
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 103932550,
-        "records": 20
-      },
-      {
-        "category": "telecommunications violation",
-        "penalty": 44138500,
-        "records": 20
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 36200000,
-        "records": 2
-      },
-      {
-        "category": "utility service violation",
-        "penalty": 13855750,
-        "records": 7
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00419911",

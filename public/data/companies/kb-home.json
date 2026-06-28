@@ -27,7 +27,6 @@
     "s": "36 federal penalties totaling $37.9M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "water pollution violation: $2.1M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -146,69 +144,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "KB Home",
-    "slug": "kb-home",
-    "ownership": "publicly traded (ticker symbol KBH)",
-    "hq": "California",
-    "majorIndustry": "construction and engineering",
-    "specificIndustry": "homebuilding",
-    "totalPenalty": 37858460,
-    "totalRecords": 36,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 28700000,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 6490793,
-        "records": 5
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 2634857,
-        "records": 23
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 32810,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 25500000,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 3490793,
-        "records": 4
-      },
-      {
-        "category": "mortgage abuses",
-        "penalty": 3200000,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 3000000,
-        "records": 1
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 2066666,
-        "records": 4
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:44:51.152Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00417139",

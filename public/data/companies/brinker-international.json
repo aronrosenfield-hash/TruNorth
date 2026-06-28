@@ -27,7 +27,6 @@
     "s": "20 federal penalties totaling $46.9M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $101K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -142,64 +140,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Brinker International",
-    "slug": "brinker-international",
-    "ownership": "publicly traded (ticker symbol EAT)",
-    "hq": "Texas",
-    "majorIndustry": "restaurants and foodservice",
-    "specificIndustry": "restaurants",
-    "totalPenalty": 46946723,
-    "totalRecords": 20,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 46724313,
-        "records": 11
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 121450,
-        "records": 7
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 100960,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 46273313,
-        "records": 8
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 433000,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 121450,
-        "records": 7
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 100960,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 18000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:23:53.754Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00241851",

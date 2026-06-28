@@ -43,15 +43,13 @@
     "s": "air pollution violation: $22.3M in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "30 federal penalties totaling $29.3M since 2000 (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -102,64 +100,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "boise-cascade",
-      "matchedName": "Boise Cascade",
-      "totalPenalty": 29295245,
-      "totalRecords": 30,
-      "offenseGroups": [
-        {
-          "category": "environment-related offenses",
-          "penalty": 22657156,
-          "records": 14
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 6382000,
-          "records": 1
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 216089,
-          "records": 13
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 40000,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "air pollution violation",
-          "penalty": 22286300,
-          "records": 4
-        },
-        {
-          "category": "trade violations",
-          "penalty": 6382000,
-          "records": 1
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 370856,
-          "records": 10
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 216089,
-          "records": 13
-        },
-        {
-          "category": "labor relations violation",
-          "penalty": 40000,
-          "records": 2
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "weyerhaeuser",
@@ -232,69 +172,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Boise Cascade",
-    "slug": "boise-cascade",
-    "ownership": "publicly traded (ticker symbol BCC)",
-    "hq": "Idaho",
-    "majorIndustry": "building materials",
-    "specificIndustry": "building materials",
-    "totalPenalty": 29295245,
-    "totalRecords": 30,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 22657156,
-        "records": 14
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 6382000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 216089,
-        "records": 13
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 40000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 22286300,
-        "records": 4
-      },
-      {
-        "category": "trade violations",
-        "penalty": 6382000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 370856,
-        "records": 10
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 216089,
-        "records": 13
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 40000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00039131",

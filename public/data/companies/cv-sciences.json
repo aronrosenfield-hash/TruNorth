@@ -26,7 +26,6 @@
     "s": "7 federal penalties totaling $546.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -147,64 +145,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Gilead Sciences",
-    "slug": "gilead-sciences",
-    "ownership": "publicly traded (ticker symbol GILD)",
-    "hq": "California",
-    "majorIndustry": "pharmaceuticals",
-    "specificIndustry": "pharmaceuticals",
-    "totalPenalty": 546015701,
-    "totalRecords": 7,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 299250000,
-        "records": 4
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 246750000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 10001,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 5700,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 299250000,
-        "records": 4
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 246750000,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 10001,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 5700,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:07:57.782Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

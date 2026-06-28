@@ -39,15 +39,13 @@
     "s": "environmental violation: $251K in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "26 federal penalties totaling $3.1M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -97,59 +95,6 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "carvana-co",
-      "matchedName": "Carvana Co.",
-      "totalPenalty": 3095084,
-      "totalRecords": 26,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 2467375,
-          "records": 3
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 327009,
-          "records": 17
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 300700,
-          "records": 6
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "consumer protection violation",
-          "penalty": 2467375,
-          "records": 3
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 291409,
-          "records": 14
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 250800,
-          "records": 3
-        },
-        {
-          "category": "motor vehicle safety violation",
-          "penalty": 35600,
-          "records": 3
-        },
-        {
-          "category": "air pollution violation",
-          "penalty": 27500,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "vroom",
@@ -231,64 +176,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Carvana Co.",
-    "slug": "carvana-co",
-    "ownership": "publicly traded (ticker symbol CVNA)",
-    "hq": "Arizona",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-used car sales online",
-    "totalPenalty": 3095084,
-    "totalRecords": 26,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 2467375,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 327009,
-        "records": 17
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 300700,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 2467375,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 291409,
-        "records": 14
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 250800,
-        "records": 3
-      },
-      {
-        "category": "motor vehicle safety violation",
-        "penalty": 35600,
-        "records": 3
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 27500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

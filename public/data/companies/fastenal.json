@@ -26,7 +26,6 @@
     "s": "35 federal penalties totaling $18.6M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -142,69 +140,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Fastenal",
-    "slug": "fastenal",
-    "ownership": "publicly traded (ticker symbol FAST)",
-    "hq": "Minnesota",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-hardware",
-    "totalPenalty": 18609155,
-    "totalRecords": 35,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 11872447,
-        "records": 10
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 6250000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 471709,
-        "records": 23
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 14999,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 10017758,
-        "records": 2
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 6250000,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 1827896,
-        "records": 6
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 401109,
-        "records": 20
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 45000,
-        "records": 2
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:16:31.242Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

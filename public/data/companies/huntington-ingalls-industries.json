@@ -27,7 +27,6 @@
     "s": "37 federal penalties totaling $19.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -151,69 +149,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Huntington Ingalls Industries",
-    "slug": "huntington-ingalls-industries",
-    "ownership": "publicly traded (ticker symbol HII)",
-    "hq": "Virginia",
-    "majorIndustry": "aerospace and military contracting",
-    "specificIndustry": "aerospace &amp; military contracting",
-    "totalPenalty": 18973885,
-    "totalRecords": 37,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 9200000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 9094324,
-        "records": 7
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 442360,
-        "records": 23
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 237201,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 9200000,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 4144050,
-        "records": 5
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 2800000,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 2150274,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 407360,
-        "records": 22
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:19:31.128Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00325092",

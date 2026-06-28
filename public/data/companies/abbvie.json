@@ -48,7 +48,6 @@
     "rating": "Good",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "cdp-climate"
     ]
   },
@@ -56,7 +55,6 @@
     "s": "85 federal penalties totaling $7.6B since 2000 (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -110,69 +108,6 @@
     "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
     "federalContracts": "2026-06-11T23:51:18.870Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "abbvie",
-      "matchedName": "AbbVie",
-      "totalPenalty": 7565081404,
-      "totalRecords": 85,
-      "offenseGroups": [
-        {
-          "category": "healthcare-related offenses",
-          "penalty": 5397449298,
-          "records": 16
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 1647685912,
-          "records": 29
-        },
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 448190629,
-          "records": 24
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 51676957,
-          "records": 4
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 15000000,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "off-label or unapproved promotion of medical products",
-          "penalty": 5397332595,
-          "records": 15
-        },
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 1606185912,
-          "records": 26
-        },
-        {
-          "category": "False Claims Act and related",
-          "penalty": 448190629,
-          "records": 24
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 51676957,
-          "records": 4
-        },
-        {
-          "category": "kickbacks and bribery",
-          "penalty": 41500000,
-          "records": 3
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "johnson-and-johnson",
@@ -311,74 +246,6 @@
     "source": "courtlistener-recap"
   },
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "AbbVie",
-    "slug": "abbvie",
-    "ownership": "publicly traded (ticker symbol ABBV)",
-    "hq": "Illinois",
-    "majorIndustry": "pharmaceuticals",
-    "specificIndustry": "pharmaceuticals",
-    "totalPenalty": 7565081404,
-    "totalRecords": 85,
-    "offenseGroups": [
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 5397449298,
-        "records": 16
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 1647685912,
-        "records": 29
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 448190629,
-        "records": 24
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 51676957,
-        "records": 4
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 15000000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "off-label or unapproved promotion of medical products",
-        "penalty": 5397332595,
-        "records": 15
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 1606185912,
-        "records": 26
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 448190629,
-        "records": 24
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 51676957,
-        "records": 4
-      },
-      {
-        "category": "kickbacks and bribery",
-        "penalty": 41500000,
-        "records": 3
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00536573",

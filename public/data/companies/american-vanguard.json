@@ -26,7 +26,6 @@
     "s": "14 federal penalties totaling $1.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "hazardous waste violation: $511K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -142,59 +140,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "American Vanguard",
-    "slug": "american-vanguard",
-    "ownership": "publicly traded (ticker symbol AVD)",
-    "hq": "California",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 1062096,
-    "totalRecords": 14,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1038096,
-        "records": 11
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 24000,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "hazardous waste violation",
-        "penalty": 511000,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 487096,
-        "records": 6
-      },
-      {
-        "category": "pesticide violation",
-        "penalty": 32000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 14000,
-        "records": 1
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 10000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:29:03.137Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

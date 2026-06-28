@@ -27,7 +27,6 @@
     "s": "61 federal penalties totaling $1.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -125,69 +123,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Monro Inc.",
-    "slug": "monro-inc",
-    "ownership": "publicly traded (ticker symbol MNRO)",
-    "hq": "New York",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "auto repair services",
-    "totalPenalty": 1554272,
-    "totalRecords": 61,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 1187716,
-        "records": 50
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 307386,
-        "records": 9
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 35000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 24170,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 1187716,
-        "records": 50
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 205000,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 73342,
-        "records": 2
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 35000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 29044,
-        "records": 5
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:26:14.225Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00613133",

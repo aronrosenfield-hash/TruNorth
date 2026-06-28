@@ -27,7 +27,6 @@
     "s": "3 federal penalties totaling $35.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -138,39 +136,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Match Group",
-    "slug": "match-group",
-    "ownership": "publicly traded (ticker symbol MTCH)",
-    "hq": "Texas",
-    "majorIndustry": "information technology",
-    "specificIndustry": "software",
-    "totalPenalty": 35200000,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 35200000,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "discriminatory practices (non-employment)",
-        "penalty": 19200000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 16000000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:13:48.419Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00215053",

@@ -26,7 +26,6 @@
     "s": "3 federal penalties totaling $1.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -132,49 +130,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Lam Research",
-    "slug": "lam-research",
-    "ownership": "publicly traded (ticker symbol LRCX)",
-    "hq": "California",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "semiconductor equipment",
-    "totalPenalty": 1845500,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 1818000,
-        "records": 2
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 27500,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 1650000,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 168000,
-        "records": 1
-      },
-      {
-        "category": "export control violation",
-        "penalty": 27500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:10:39.480Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

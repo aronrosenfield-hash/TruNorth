@@ -26,7 +26,6 @@
     "s": "11 federal penalties totaling $804K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "hazardous waste violation: $241K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -137,64 +135,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ameresco",
-    "slug": "ameresco",
-    "ownership": "publicly traded (ticker symbol AMRC)",
-    "hq": "Massachusetts",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "energy efficiency services",
-    "totalPenalty": 803759,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 667275,
-        "records": 8
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 119934,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 16550,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "hazardous waste violation",
-        "penalty": 241000,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 237875,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 188400,
-        "records": 4
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 119934,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 16550,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:27:39.455Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

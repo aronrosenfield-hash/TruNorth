@@ -27,7 +27,6 @@
     "s": "14 federal penalties totaling $360.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -157,74 +155,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "First Horizon National",
-    "slug": "first-horizon-national",
-    "ownership": "publicly traded (ticker symbol FHN)",
-    "hq": "Tennessee",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking",
-    "totalPenalty": 360570706,
-    "totalRecords": 14,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 224192149,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 111405000,
-        "records": 5
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 14500000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 6009344,
-        "records": 2
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 4450000,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 224192149,
-        "records": 2
-      },
-      {
-        "category": "toxic securities abuses",
-        "penalty": 110000000,
-        "records": 1
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 14500000,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 6000000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 2550000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:19:59.947Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00008151",

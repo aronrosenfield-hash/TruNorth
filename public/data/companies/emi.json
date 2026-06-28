@@ -27,7 +27,6 @@
     "s": "45 federal penalties totaling $12.9M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "environmental violation: $301K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -143,64 +141,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Kemira",
-    "slug": "kemira",
-    "ownership": "publicly traded",
-    "hq": "Finland",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 12890210,
-    "totalRecords": 45,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 11375000,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1339160,
-        "records": 15
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 176050,
-        "records": 26
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 11375000,
-        "records": 4
-      },
-      {
-        "category": "pesticide violation",
-        "penalty": 813401,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 300665,
-        "records": 8
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 176050,
-        "records": 26
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 167684,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T23:25:31.684Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

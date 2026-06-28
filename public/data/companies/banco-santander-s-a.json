@@ -26,7 +26,6 @@
     "s": "33 federal penalties totaling $874.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -146,64 +144,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Banco Santander",
-    "slug": "banco-santander",
-    "ownership": "publicly traded (ticker symbol SAN)",
-    "hq": "Spain",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking",
-    "totalPenalty": 874312202,
-    "totalRecords": 33,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 830212166,
-        "records": 19
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 39779281,
-        "records": 11
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 4320755,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 830212166,
-        "records": 19
-      },
-      {
-        "category": "banking violation",
-        "penalty": 25486180,
-        "records": 3
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 14273101,
-        "records": 7
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 4320755,
-        "records": 3
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 20000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:57:17.487Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

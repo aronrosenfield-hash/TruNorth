@@ -27,7 +27,6 @@
     "s": "12 federal penalties totaling $3.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -140,34 +138,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Erie Indemnity",
-    "slug": "erie-indemnity",
-    "ownership": "publicly traded (ticker symbol ERIE)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "financial services",
-    "specificIndustry": "insurance",
-    "totalPenalty": 2990474,
-    "totalRecords": 12,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 2990474,
-        "records": 12
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "insurance violation",
-        "penalty": 2990474,
-        "records": 12
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:08:06.202Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00153577",

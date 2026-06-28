@@ -27,7 +27,6 @@
     "s": "27 federal penalties totaling $10.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "water pollution violation: $585K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -133,69 +131,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Lindt & Sprungli",
-    "slug": "lindt-and-sprungli",
-    "ownership": "publicly traded",
-    "hq": "Switzerland",
-    "majorIndustry": "food products",
-    "specificIndustry": "food products",
-    "totalPenalty": 10170844,
-    "totalRecords": 27,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 6000000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 3087998,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 707124,
-        "records": 6
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 375722,
-        "records": 17
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 6000000,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 3075000,
-        "records": 1
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 585000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 375722,
-        "records": 17
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 122124,
-        "records": 5
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:41:17.677Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

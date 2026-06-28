@@ -26,7 +26,6 @@
     "s": "6 federal penalties totaling $2.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "air pollution violation: $1.9M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -145,54 +143,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Malibu Boats",
-    "slug": "malibu-boats",
-    "ownership": "publicly traded (ticker symbol MBUU)",
-    "hq": "Tennessee",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "sport boats",
-    "totalPenalty": 2188035,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 2144060,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 43975,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 1876500,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 133780,
-        "records": 1
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 133780,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 43975,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:06:54.928Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

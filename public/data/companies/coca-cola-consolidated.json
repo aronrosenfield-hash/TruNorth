@@ -27,7 +27,6 @@
     "s": "20 federal penalties totaling $7.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $15K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -148,64 +146,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Coca-Cola Consolidated",
-    "slug": "coca-cola-consolidated",
-    "ownership": "publicly traded (ticker symbol COKE)",
-    "hq": "North Carolina",
-    "majorIndustry": "beverages",
-    "specificIndustry": "beverages",
-    "totalPenalty": 7360649,
-    "totalRecords": 20,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 7196182,
-        "records": 6
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 149094,
-        "records": 13
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 15373,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 3500000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 3191182,
-        "records": 3
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 495000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 149094,
-        "records": 13
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 15373,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:54:30.594Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

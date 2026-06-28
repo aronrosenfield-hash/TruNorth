@@ -45,15 +45,13 @@
     "s": "environmental violation: $439K in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "53 federal penalties totaling $197.6M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -103,69 +101,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "universal-health-services-inc",
-      "matchedName": "Universal Health Services Inc.",
-      "totalPenalty": 197558980,
-      "totalRecords": 53,
-      "offenseGroups": [
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 171250000,
-          "records": 7
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 25360773,
-          "records": 17
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 466848,
-          "records": 11
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 369361,
-          "records": 17
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 111998,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "False Claims Act and related",
-          "penalty": 171250000,
-          "records": 7
-        },
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 12500000,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 10412170,
-          "records": 6
-        },
-        {
-          "category": "labor relations violation",
-          "penalty": 2421274,
-          "records": 8
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 439348,
-          "records": 8
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "hca-healthcare",
@@ -253,74 +188,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Universal Health Services Inc.",
-    "slug": "universal-health-services-inc",
-    "ownership": "publicly traded (ticker symbol UHS)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "hospitals (for-profit)",
-    "totalPenalty": 197558980,
-    "totalRecords": 53,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 171250000,
-        "records": 7
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 25360773,
-        "records": 17
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 466848,
-        "records": 11
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 369361,
-        "records": 17
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 111998,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 171250000,
-        "records": 7
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 12500000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 10412170,
-        "records": 6
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 2421274,
-        "records": 8
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 439348,
-        "records": 8
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00185520",

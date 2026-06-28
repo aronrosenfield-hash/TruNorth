@@ -27,7 +27,6 @@
     "s": "43 federal penalties totaling $2.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $574K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -118,69 +116,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "ArcBest Corp.",
-    "slug": "arcbest-corp",
-    "ownership": "publicly traded (ticker symbol ARCB)",
-    "hq": "Arkansas",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "truck leasing",
-    "totalPenalty": 1961455,
-    "totalRecords": 43,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1190913,
-        "records": 6
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 446968,
-        "records": 33
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 314574,
-        "records": 3
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 9000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 573699,
-        "records": 2
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 553214,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 423968,
-        "records": 31
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 300000,
-        "records": 1
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 57500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:34:36.861Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00193383",

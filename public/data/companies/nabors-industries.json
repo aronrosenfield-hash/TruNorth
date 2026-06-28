@@ -26,7 +26,6 @@
     "s": "50 federal penalties totaling $652K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "air pollution violation: $9K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -141,54 +139,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Nabors Industries",
-    "slug": "nabors-industries",
-    "ownership": "publicly traded (ticker symbol NBR)",
-    "hq": "Bermuda",
-    "majorIndustry": "oilfield services and supplies",
-    "specificIndustry": "oilfield services",
-    "totalPenalty": 651822,
-    "totalRecords": 50,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 506991,
-        "records": 48
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 135831,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 9000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 506991,
-        "records": 48
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 135831,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 9000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:29:11.782Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

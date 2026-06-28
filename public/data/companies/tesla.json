@@ -41,7 +41,6 @@
     "rating": "Mixed",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "cdp-a-list",
       "consumer-scorecards"
     ]
@@ -50,7 +49,6 @@
     "s": "81 federal penalties totaling $99.4M since 2000 (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -112,69 +110,6 @@
     "courtlistener": "2026-06-21T22:16:03.341Z",
     "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "tesla-inc",
-      "matchedName": "Tesla Inc.",
-      "totalPenalty": 99442374,
-      "totalRecords": 81,
-      "offenseGroups": [
-        {
-          "category": "financial offenses",
-          "penalty": 35800000,
-          "records": 3
-        },
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 29820000,
-          "records": 2
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 14350890,
-          "records": 2
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 7935361,
-          "records": 51
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 6155000,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "False Claims Act and related",
-          "penalty": 29820000,
-          "records": 2
-        },
-        {
-          "category": "investor protection violation",
-          "penalty": 20000000,
-          "records": 1
-        },
-        {
-          "category": "Foreign Corrupt Practices Act",
-          "penalty": 14350890,
-          "records": 2
-        },
-        {
-          "category": "tax violations",
-          "penalty": 13000000,
-          "records": 1
-        },
-        {
-          "category": "product safety violation",
-          "penalty": 6915280,
-          "records": 2
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "rivian-automotive-inc-de",
@@ -356,74 +291,6 @@
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Tesla Inc.",
-    "slug": "tesla-inc",
-    "ownership": "publicly traded (ticker symbol TSLA)",
-    "hq": "California",
-    "majorIndustry": "motor vehicles",
-    "specificIndustry": "motor vehicles and energy",
-    "totalPenalty": 99442374,
-    "totalRecords": 81,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 35800000,
-        "records": 3
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 29820000,
-        "records": 2
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 14350890,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 7935361,
-        "records": 51
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 6155000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 29820000,
-        "records": 2
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 20000000,
-        "records": 1
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 14350890,
-        "records": 2
-      },
-      {
-        "category": "tax violations",
-        "penalty": 13000000,
-        "records": 1
-      },
-      {
-        "category": "product safety violation",
-        "penalty": 6915280,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

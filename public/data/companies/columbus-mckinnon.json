@@ -26,7 +26,6 @@
     "s": "3 federal penalties totaling $25K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -148,44 +146,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Columbus McKinnon",
-    "slug": "columbus-mckinnon",
-    "ownership": "publicly traded (ticker symbol CMCO)",
-    "hq": "New York",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "industrial equipment",
-    "totalPenalty": 25100,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 20100,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 20100,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:57:41.175Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

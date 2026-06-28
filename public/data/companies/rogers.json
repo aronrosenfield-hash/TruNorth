@@ -27,7 +27,6 @@
     "s": "11 federal penalties totaling $477K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $226K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -146,54 +144,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Rogers Corp.",
-    "slug": "rogers-corp",
-    "ownership": "publicly traded (ticker symbol ROG)",
-    "hq": "Connecticut",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "engineered materials",
-    "totalPenalty": 476885,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 225668,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 157584,
-        "records": 8
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 93633,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 225668,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 157584,
-        "records": 8
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 93633,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:25:33.950Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00277152",

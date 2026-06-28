@@ -27,7 +27,6 @@
     "s": "126 federal penalties totaling $285.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $20.9M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -148,74 +146,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Enbridge",
-    "slug": "enbridge",
-    "ownership": "publicly traded (ticker symbol ENB)",
-    "hq": "Canada",
-    "majorIndustry": "pipelines",
-    "specificIndustry": "pipelines",
-    "totalPenalty": 285642405,
-    "totalRecords": 126,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 283952426,
-        "records": 109
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 900000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 726340,
-        "records": 13
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 50000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 13639,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "oil spill",
-        "penalty": 252400000,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 20939945,
-        "records": 63
-      },
-      {
-        "category": "pipeline safety violation",
-        "penalty": 9484581,
-        "records": 37
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 1082900,
-        "records": 5
-      },
-      {
-        "category": "energy market violation",
-        "penalty": 900000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:52:26.447Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00429662",

@@ -26,7 +26,6 @@
     "s": "11 federal penalties totaling $2.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $865K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -140,64 +138,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "SandRidge Energy",
-    "slug": "sandridge-energy",
-    "ownership": "publicly traded (ticker symbol SD)",
-    "hq": "Oklahoma",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 2745817,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 1400000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1312067,
-        "records": 9
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 33750,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 1400000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 865267,
-        "records": 5
-      },
-      {
-        "category": "oil or gas drilling violation",
-        "penalty": 361750,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 85050,
-        "records": 2
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 33750,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:30:22.780Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

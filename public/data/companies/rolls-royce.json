@@ -27,7 +27,6 @@
     "s": "20 federal penalties totaling $173.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "air pollution violation: $2.7M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -146,74 +144,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Rolls-Royce",
-    "slug": "rolls-royce",
-    "ownership": "publicly traded",
-    "hq": "United Kingdom",
-    "majorIndustry": "aerospace and military contracting",
-    "specificIndustry": "aerospace &amp; military contracting",
-    "totalPenalty": 173410686,
-    "totalRecords": 20,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 169917710,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 2988679,
-        "records": 12
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 363634,
-        "records": 5
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 135000,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 5663,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 169917710,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 2725750,
-        "records": 4
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 339500,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 204529,
-        "records": 6
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 135000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:42:33.855Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00296822",

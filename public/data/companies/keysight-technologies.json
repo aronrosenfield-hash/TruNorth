@@ -27,7 +27,6 @@
     "s": "3 federal penalties totaling $7.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "environmental violation: $32K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -153,54 +151,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Keysight Technologies",
-    "slug": "keysight-technologies",
-    "ownership": "publicly traded (ticker symbol KEYS)",
-    "hq": "California",
-    "majorIndustry": "automotive parts",
-    "specificIndustry": "automotive parts",
-    "totalPenalty": 7105157,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 6600000,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 473157,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 32000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "export control violation",
-        "penalty": 6600000,
-        "records": 1
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 473157,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 32000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:08:15.116Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

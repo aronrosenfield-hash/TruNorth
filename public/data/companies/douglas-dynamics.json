@@ -26,7 +26,6 @@
     "s": "10 federal penalties totaling $130K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $18K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -133,49 +131,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Douglas Dynamics Inc.",
-    "slug": "douglas-dynamics-inc",
-    "ownership": "publicly traded (ticker symbol PLOW)",
-    "hq": "Wisconsin",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "vehicle attachments",
-    "totalPenalty": 130419,
-    "totalRecords": 10,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 112044,
-        "records": 9
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 18375,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 98034,
-        "records": 7
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 18375,
-        "records": 1
-      },
-      {
-        "category": "motor vehicle safety violation",
-        "penalty": 14010,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:29:38.034Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

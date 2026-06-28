@@ -28,7 +28,6 @@
     "s": "289 federal penalties totaling $177.7M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $114.4M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -153,74 +151,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Republic Services",
-    "slug": "republic-services",
-    "ownership": "publicly traded (ticker symbol RSG)",
-    "hq": "Arizona",
-    "majorIndustry": "waste management and environmental services",
-    "specificIndustry": "waste management",
-    "totalPenalty": 177675048,
-    "totalRecords": 289,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 161712091,
-        "records": 169
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 13013803,
-        "records": 49
-      },
-      {
-        "category": "miscellaneous offenses",
-        "penalty": 1625000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 830908,
-        "records": 66
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 250000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 114414837,
-        "records": 84
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 37050000,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 6841723,
-        "records": 31
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 3969000,
-        "records": 4
-      },
-      {
-        "category": "work visa violations",
-        "penalty": 3000000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T02:03:38.653Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00428391",

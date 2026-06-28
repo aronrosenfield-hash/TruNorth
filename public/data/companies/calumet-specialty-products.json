@@ -37,15 +37,13 @@
     "s": "environmental violation: $2.4M in federal penalties (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "54 federal penalties totaling $5.8M since 2000 (Violation Tracker).",
     "rating": "Below Average",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -96,64 +94,6 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "calumet-specialty-products",
-      "matchedName": "Calumet Specialty Products",
-      "totalPenalty": 5800430,
-      "totalRecords": 54,
-      "offenseGroups": [
-        {
-          "category": "environment-related offenses",
-          "penalty": 2708132,
-          "records": 15
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 2100000,
-          "records": 1
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 742298,
-          "records": 37
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 250000,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "environmental violation",
-          "penalty": 2443642,
-          "records": 10
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 2100000,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 481073,
-          "records": 13
-        },
-        {
-          "category": "railroad safety violation",
-          "penalty": 261225,
-          "records": 24
-        },
-        {
-          "category": "air pollution violation",
-          "penalty": 254490,
-          "records": 4
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "hollyfrontier",
@@ -228,69 +168,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Calumet Specialty Products",
-    "slug": "calumet-specialty-products",
-    "ownership": "publicly traded (ticker symbol CLMT)",
-    "hq": "Indiana",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 5800430,
-    "totalRecords": 54,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 2708132,
-        "records": 15
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 2100000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 742298,
-        "records": 37
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 250000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 2443642,
-        "records": 10
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 2100000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 481073,
-        "records": 13
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 261225,
-        "records": 24
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 254490,
-        "records": 4
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

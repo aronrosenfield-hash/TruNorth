@@ -26,7 +26,6 @@
     "s": "12 federal penalties totaling $238K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -133,54 +131,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Discount Tire",
-    "slug": "discount-tire",
-    "ownership": "privately held",
-    "hq": "Arizona",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-auto parts",
-    "totalPenalty": 238250,
-    "totalRecords": 12,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 106757,
-        "records": 7
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 100000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 31493,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 106757,
-        "records": 7
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 100000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 31493,
-        "records": 4
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:05:21.860Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -28,7 +28,6 @@
     "s": "31 federal penalties totaling $243.6M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -51,8 +50,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -145,69 +143,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Aon",
-    "slug": "aon",
-    "ownership": "publicly traded (ticker symbol AON)",
-    "hq": "Ireland",
-    "majorIndustry": "financial services",
-    "specificIndustry": "insurance",
-    "totalPenalty": 243629170,
-    "totalRecords": 31,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 210032292,
-        "records": 4
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 27642641,
-        "records": 11
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 4412050,
-        "records": 15
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 1542187,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 193727272,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 16752640,
-        "records": 6
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 16305020,
-        "records": 2
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 10810001,
-        "records": 4
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 4000000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:32:18.680Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00211250",

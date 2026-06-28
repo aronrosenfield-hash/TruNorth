@@ -26,7 +26,6 @@
     "s": "52 federal penalties totaling $657K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $64K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -108,59 +106,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Oil-Dri",
-    "slug": "oil-dri",
-    "ownership": "publicly traded (ticker symbol ODC)",
-    "hq": "Illinois",
-    "majorIndustry": "mining and minerals",
-    "specificIndustry": "minerals",
-    "totalPenalty": 657424,
-    "totalRecords": 52,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 488295,
-        "records": 47
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 169129,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 488295,
-        "records": 47
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 64000,
-        "records": 2
-      },
-      {
-        "category": "pesticide violation",
-        "penalty": 60000,
-        "records": 1
-      },
-      {
-        "category": "solid waste violation",
-        "penalty": 25000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 20129,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:54:19.257Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

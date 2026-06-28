@@ -44,15 +44,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "1 federal penalties totaling $1.4M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -104,29 +102,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "cava-group",
-      "matchedName": "Cava Group",
-      "totalPenalty": 1450000,
-      "totalRecords": 1,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 1450000,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "wage and hour violation",
-          "penalty": 1450000,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "chipotle",
@@ -231,34 +206,6 @@
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Cava Group",
-    "slug": "cava-group",
-    "ownership": "publicly traded (ticker symbol CAVA)",
-    "hq": "District of Columbia",
-    "majorIndustry": "restaurants and foodservice",
-    "specificIndustry": "restaurants",
-    "totalPenalty": 1450000,
-    "totalRecords": 1,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 1450000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 1450000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00435107",

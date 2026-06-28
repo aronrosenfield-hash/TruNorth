@@ -26,7 +26,6 @@
     "s": "4 federal penalties totaling $1.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -153,44 +151,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Insight Enterprises",
-    "slug": "insight-enterprises",
-    "ownership": "publicly traded (ticker symbol NSIT)",
-    "hq": "Arizona",
-    "majorIndustry": "wholesalers",
-    "specificIndustry": "wholesalers-electronic equipment",
-    "totalPenalty": 1459481,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 1000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 459481,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 1000000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 459481,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:29:12.238Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -27,7 +27,6 @@
     "s": "4 federal penalties totaling $242.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -166,54 +164,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Organon & Co.",
-    "slug": "organon-and-co",
-    "ownership": "publicly traded (ticker symbol OGN)",
-    "hq": "New Jersey",
-    "majorIndustry": "pharmaceuticals",
-    "specificIndustry": "pharmaceuticals",
-    "totalPenalty": 242000000,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 111000000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 100000000,
-        "records": 1
-      },
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 31000000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 111000000,
-        "records": 2
-      },
-      {
-        "category": "drug or medical equipment safety violation",
-        "penalty": 100000000,
-        "records": 1
-      },
-      {
-        "category": "off-label or unapproved promotion of medical products",
-        "penalty": 31000000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:08:41.390Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

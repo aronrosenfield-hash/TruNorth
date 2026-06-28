@@ -26,7 +26,6 @@
     "s": "5 federal penalties totaling $5.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "hazardous waste violation: $200K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -139,49 +137,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Dartmouth-Hitchcock Health",
-    "slug": "dartmouth-hitchcock-health",
-    "ownership": "non-profit",
-    "hq": "New Hampshire",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "healthcare services",
-    "totalPenalty": 5598846,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 5398846,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 200000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "HHS civil monetary penalties",
-        "penalty": 3398846,
-        "records": 3
-      },
-      {
-        "category": "Controlled Substances Act violation",
-        "penalty": 2000000,
-        "records": 1
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 200000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T00:08:13.947Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

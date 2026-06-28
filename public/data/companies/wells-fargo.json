@@ -46,15 +46,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "274 federal penalties totaling $28.0B since 2000 (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -121,69 +119,6 @@
     "finra": "2026-06-23T12:57:34.337Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z",
     "fedReserve": "2026-06-27T21:34:23.374Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "wells-fargo",
-      "matchedName": "Wells Fargo",
-      "totalPenalty": 27974669231,
-      "totalRecords": 274,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 11779992252,
-          "records": 63
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 10771630989,
-          "records": 133
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 3212570000,
-          "records": 6
-        },
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 1204046786,
-          "records": 2
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 1006403204,
-          "records": 67
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "consumer protection violation",
-          "penalty": 6008156743,
-          "records": 42
-        },
-        {
-          "category": "mortgage abuses",
-          "penalty": 5625783671,
-          "records": 7
-        },
-        {
-          "category": "banking violation",
-          "penalty": 4091194886,
-          "records": 18
-        },
-        {
-          "category": "toxic securities abuses",
-          "penalty": 3637750000,
-          "records": 7
-        },
-        {
-          "category": "fraud",
-          "penalty": 3000000000,
-          "records": 1
-        }
-      ],
-      "rating": "poor"
-    }
   },
   "competitors": [
     "jpmorgan-chase",
@@ -332,74 +267,6 @@
     "source": "courtlistener-recap"
   },
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Wells Fargo",
-    "slug": "wells-fargo",
-    "ownership": "publicly traded (ticker symbol WFC)",
-    "hq": "California",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking",
-    "totalPenalty": 27974669231,
-    "totalRecords": 274,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 11779992252,
-        "records": 63
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 10771630989,
-        "records": 133
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 3212570000,
-        "records": 6
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 1204046786,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1006403204,
-        "records": 67
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 6008156743,
-        "records": 42
-      },
-      {
-        "category": "mortgage abuses",
-        "penalty": 5625783671,
-        "records": 7
-      },
-      {
-        "category": "banking violation",
-        "penalty": 4091194886,
-        "records": 18
-      },
-      {
-        "category": "toxic securities abuses",
-        "penalty": 3637750000,
-        "records": 7
-      },
-      {
-        "category": "fraud",
-        "penalty": 3000000000,
-        "records": 1
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00034595",

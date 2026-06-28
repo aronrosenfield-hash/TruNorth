@@ -27,7 +27,6 @@
     "s": "13 federal penalties totaling $6.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -50,8 +49,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -172,74 +170,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Agilent Technologies",
-    "slug": "agilent-technologies",
-    "ownership": "publicly traded (ticker symbol A)",
-    "hq": "California",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "scientific equipment",
-    "totalPenalty": 6597209,
-    "totalRecords": 13,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 5244273,
-        "records": 2
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 849678,
-        "records": 1
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 299800,
-        "records": 4
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 114958,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 58500,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment discrimination",
-        "penalty": 5224273,
-        "records": 1
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 849678,
-        "records": 1
-      },
-      {
-        "category": "export control violation",
-        "penalty": 299800,
-        "records": 4
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 114958,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 49500,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:10:51.740Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

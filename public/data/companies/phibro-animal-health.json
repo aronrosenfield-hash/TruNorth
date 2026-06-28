@@ -26,7 +26,6 @@
     "s": "14 federal penalties totaling $908K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $734K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -120,64 +118,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Phibro Animal Health",
-    "slug": "phibro-animal-health",
-    "ownership": "publicly traded (ticker symbol PAHC)",
-    "hq": "New Jersey",
-    "majorIndustry": "pharmaceuticals",
-    "specificIndustry": "animal health products",
-    "totalPenalty": 908130,
-    "totalRecords": 14,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 814570,
-        "records": 8
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 62560,
-        "records": 5
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 31000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 734070,
-        "records": 4
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 54000,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 50110,
-        "records": 3
-      },
-      {
-        "category": "export control violation",
-        "penalty": 31000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 26500,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:07:50.665Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

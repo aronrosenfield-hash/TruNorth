@@ -26,7 +26,6 @@
     "s": "18 federal penalties totaling $834K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $167K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -124,64 +122,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Sanmina",
-    "slug": "sanmina",
-    "ownership": "publicly traded (ticker symbol SANM)",
-    "hq": "California",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "electronic equipment",
-    "totalPenalty": 833575,
-    "totalRecords": 18,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 560686,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 175790,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 97099,
-        "records": 10
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 483186,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 166870,
-        "records": 4
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 91599,
-        "records": 9
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 77500,
-        "records": 1
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 8920,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:30:45.557Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

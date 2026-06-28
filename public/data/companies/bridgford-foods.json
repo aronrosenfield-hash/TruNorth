@@ -26,7 +26,6 @@
     "s": "15 federal penalties totaling $622K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "environmental violation: $36K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -109,44 +107,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Bridgford Foods",
-    "slug": "bridgford-foods",
-    "ownership": "publicly traded (ticker symbol BRID)",
-    "hq": "California",
-    "majorIndustry": "food products",
-    "specificIndustry": "food products",
-    "totalPenalty": 621781,
-    "totalRecords": 15,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 585381,
-        "records": 14
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 36400,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 585381,
-        "records": 14
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 36400,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:23:32.889Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

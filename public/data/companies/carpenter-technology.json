@@ -27,7 +27,6 @@
     "s": "26 federal penalties totaling $666K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $480K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -124,44 +122,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Carpenter Technology",
-    "slug": "carpenter-technology",
-    "ownership": "publicly traded (ticker symbol CRS)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "metals",
-    "specificIndustry": "steel",
-    "totalPenalty": 665849,
-    "totalRecords": 26,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 480200,
-        "records": 9
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 185649,
-        "records": 17
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 480200,
-        "records": 9
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 185649,
-        "records": 17
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:36:15.935Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00116061",

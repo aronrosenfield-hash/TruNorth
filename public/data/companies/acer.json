@@ -27,7 +27,6 @@
     "s": "28 federal penalties totaling $927K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $253K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -141,64 +139,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Acerinox",
-    "slug": "acerinox",
-    "ownership": "publicly traded",
-    "hq": "Spain",
-    "majorIndustry": "metals",
-    "specificIndustry": "stainless steel",
-    "totalPenalty": 927485,
-    "totalRecords": 28,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 602060,
-        "records": 17
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 180000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 145425,
-        "records": 10
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 252622,
-        "records": 4
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 180000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 145425,
-        "records": 10
-      },
-      {
-        "category": "solid waste violation",
-        "penalty": 131500,
-        "records": 3
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 117938,
-        "records": 5
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:09:41.478Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

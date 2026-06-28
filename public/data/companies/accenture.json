@@ -44,7 +44,6 @@
     "rating": "Positive",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "just-capital"
     ]
   },
@@ -52,7 +51,6 @@
     "s": "5 federal penalties totaling $67.1M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -104,44 +102,6 @@
     "execPay": "2026-06-11T03:48:51.753Z",
     "federalContracts": "2026-06-11T23:51:18.870Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "accenture",
-      "matchedName": "Accenture",
-      "totalPenalty": 67082173,
-      "totalRecords": 5,
-      "offenseGroups": [
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 65419559,
-          "records": 2
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 1662614,
-          "records": 3
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "False Claims Act and related",
-          "penalty": 65419559,
-          "records": 2
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 1025000,
-          "records": 1
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 637614,
-          "records": 2
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "deloitte",
@@ -240,49 +200,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Accenture",
-    "slug": "accenture",
-    "ownership": "publicly traded (ticker symbol ACN)",
-    "hq": "Ireland",
-    "majorIndustry": "business services",
-    "specificIndustry": "business services",
-    "totalPenalty": 67082173,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 65419559,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1662614,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 65419559,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 1025000,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 637614,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

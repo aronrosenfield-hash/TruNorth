@@ -26,7 +26,6 @@
     "s": "347 federal penalties totaling $1.8B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $30.7M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -144,69 +142,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Kinder Morgan",
-    "slug": "kinder-morgan",
-    "ownership": "publicly traded (ticker symbol KMI)",
-    "hq": "Texas",
-    "majorIndustry": "pipelines",
-    "specificIndustry": "pipelines",
-    "totalPenalty": 1786002653,
-    "totalRecords": 347,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 1575666667,
-        "records": 8
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 185693894,
-        "records": 245
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 23768491,
-        "records": 9
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 873601,
-        "records": 85
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 1567966667,
-        "records": 7
-      },
-      {
-        "category": "pipeline safety violation",
-        "penalty": 123569602,
-        "records": 29
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 30710144,
-        "records": 105
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 25811098,
-        "records": 19
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 17000000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:46:13.630Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -37,15 +37,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "14 federal penalties totaling $23.4M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -82,69 +80,6 @@
     "sources": [
       "Claude AI synthesis"
     ]
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "ch-robinson",
-      "matchedName": "C.H. Robinson",
-      "totalPenalty": 23408347,
-      "totalRecords": 14,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 23014057,
-          "records": 4
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 257690,
-          "records": 1
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 62000,
-          "records": 2
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 49200,
-          "records": 5
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 25400,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "employment discrimination",
-          "penalty": 15000000,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 8014057,
-          "records": 3
-        },
-        {
-          "category": "economic sanction violation",
-          "penalty": 257690,
-          "records": 1
-        },
-        {
-          "category": "export control violation",
-          "penalty": 37000,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 31200,
-          "records": 3
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "dataLastUpdated": "2026-05-28",
   "competitors": [
@@ -202,74 +137,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "C.H. Robinson",
-    "slug": "ch-robinson",
-    "ownership": "publicly traded (ticker symbol CHRW)",
-    "hq": "Minnesota",
-    "majorIndustry": "freight and logistics",
-    "specificIndustry": "freight services",
-    "totalPenalty": 23408347,
-    "totalRecords": 14,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 23014057,
-        "records": 4
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 257690,
-        "records": 1
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 62000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 49200,
-        "records": 5
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 25400,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment discrimination",
-        "penalty": 15000000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 8014057,
-        "records": 3
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 257690,
-        "records": 1
-      },
-      {
-        "category": "export control violation",
-        "penalty": 37000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 31200,
-        "records": 3
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

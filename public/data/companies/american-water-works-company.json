@@ -28,7 +28,6 @@
     "s": "47 federal penalties totaling $126.9M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "water pollution violation: $126.1M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -155,69 +153,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "American Water Works",
-    "slug": "american-water-works",
-    "ownership": "publicly traded (ticker symbol AWK)",
-    "hq": "New Jersey",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 126880697,
-    "totalRecords": 47,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 126360897,
-        "records": 17
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 371687,
-        "records": 24
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 138113,
-        "records": 5
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 10000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "water pollution violation",
-        "penalty": 126107723,
-        "records": 6
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 364147,
-        "records": 23
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 191099,
-        "records": 7
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 88112,
-        "records": 4
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 52875,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:29:13.486Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00354548",

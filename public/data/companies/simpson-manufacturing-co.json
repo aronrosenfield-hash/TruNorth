@@ -26,7 +26,6 @@
     "s": "8 federal penalties totaling $99K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "hazardous waste violation: $39K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -136,49 +134,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Simpson Manufacturing",
-    "slug": "simpson-manufacturing",
-    "ownership": "publicly traded (ticker symbol SSD)",
-    "hq": "California",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "industrial equipment",
-    "totalPenalty": 98909,
-    "totalRecords": 8,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 59509,
-        "records": 6
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 39400,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 59509,
-        "records": 6
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 39400,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 0,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:47:56.419Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

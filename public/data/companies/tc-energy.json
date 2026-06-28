@@ -25,7 +25,6 @@
     "s": "53 federal penalties totaling $16.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "environmental violation: $1.3M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -141,69 +139,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "TC Energy",
-    "slug": "tc-energy",
-    "ownership": "publicly traded (ticker symbol TRP)",
-    "hq": "Canada",
-    "majorIndustry": "pipelines",
-    "specificIndustry": "pipelines",
-    "totalPenalty": 16474177,
-    "totalRecords": 53,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 12350000,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 4049502,
-        "records": 46
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 43000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 31675,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "energy market violation",
-        "penalty": 12350000,
-        "records": 3
-      },
-      {
-        "category": "pipeline safety violation",
-        "penalty": 2658904,
-        "records": 33
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 1335698,
-        "records": 11
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 54900,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 43000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T01:25:49.081Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

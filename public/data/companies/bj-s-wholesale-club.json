@@ -27,7 +27,6 @@
     "s": "33 federal penalties totaling $21.9M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $134K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -143,69 +141,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "BJ's Wholesale Club Holdings",
-    "slug": "bjs-wholesale-club-holdings",
-    "ownership": "publicly traded (ticker symbol BJ)",
-    "hq": "Massachusetts",
-    "majorIndustry": "retailing",
-    "specificIndustry": "warehouse clubs",
-    "totalPenalty": 21883350,
-    "totalRecords": 33,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 12539499,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 9162850,
-        "records": 18
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 141001,
-        "records": 10
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 40000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 12539499,
-        "records": 4
-      },
-      {
-        "category": "product safety violation",
-        "penalty": 9000000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 162850,
-        "records": 17
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 133501,
-        "records": 9
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 40000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T22:08:22.451Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

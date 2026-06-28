@@ -27,7 +27,6 @@
     "s": "42 federal penalties totaling $12.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $10.2M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -119,59 +117,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Sasol",
-    "slug": "sasol",
-    "ownership": "publicly traded (ticker symbol SSL)",
-    "hq": "South Africa",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 11958450,
-    "totalRecords": 42,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 11807772,
-        "records": 21
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 150678,
-        "records": 21
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 10174922,
-        "records": 14
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 1602850,
-        "records": 6
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 137025,
-        "records": 20
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 30000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 13653,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:20:55.180Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

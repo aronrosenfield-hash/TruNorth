@@ -27,7 +27,6 @@
     "s": "113 federal penalties totaling $1.4B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -158,74 +156,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "NRG Energy",
-    "slug": "nrg-energy",
-    "ownership": "publicly traded (ticker symbol NRG)",
-    "hq": "New Jersey",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "energy generation",
-    "totalPenalty": 1426196394,
-    "totalRecords": 113,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 1342685907,
-        "records": 15
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 38816000,
-        "records": 29
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 25991000,
-        "records": 6
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 13344556,
-        "records": 49
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 3200000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 1265918601,
-        "records": 7
-      },
-      {
-        "category": "energy market violation",
-        "penalty": 65767306,
-        "records": 7
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 38066266,
-        "records": 20
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 16291000,
-        "records": 5
-      },
-      {
-        "category": "fraud",
-        "penalty": 11000000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:49:05.178Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00366559",

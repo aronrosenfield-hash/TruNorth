@@ -27,7 +27,6 @@
     "s": "12 federal penalties totaling $41.9M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -157,59 +155,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Cognizant Technology Solutions",
-    "slug": "cognizant-technology-solutions",
-    "ownership": "publicly traded (ticker symbol CTSH)",
-    "hq": "New Jersey",
-    "majorIndustry": "information technology",
-    "specificIndustry": "information technology",
-    "totalPenalty": 41928823,
-    "totalRecords": 12,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 35270561,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 6651442,
-        "records": 8
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 6820,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 25370561,
-        "records": 2
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 9900000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 6651442,
-        "records": 8
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 6820,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:55:52.783Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00485979",

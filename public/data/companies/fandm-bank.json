@@ -26,7 +26,6 @@
     "s": "22 federal penalties totaling $266.2M since 2000 (Violation Tracker).",
     "rating": "poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -144,69 +142,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "M&T Bank",
-    "slug": "m-and-t-bank",
-    "ownership": "publicly traded (ticker symbol MTB)",
-    "hq": "New York",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking",
-    "totalPenalty": 266216397,
-    "totalRecords": 22,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 137633250,
-        "records": 9
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 64000000,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 54158147,
-        "records": 9
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 10425000,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 134273250,
-        "records": 5
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 64000000,
-        "records": 1
-      },
-      {
-        "category": "banking violation",
-        "penalty": 33296000,
-        "records": 2
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 18500000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 10425000,
-        "records": 3
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:15:58.983Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

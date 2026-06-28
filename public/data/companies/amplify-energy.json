@@ -26,7 +26,6 @@
     "s": "4 federal penalties totaling $68.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "water pollution violation: $12.9M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -140,44 +138,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Amplify Energy Corp.",
-    "slug": "amplify-energy-corp",
-    "ownership": "publicly traded (ticker symbol AMPY)",
-    "hq": "Texas",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil and natural gas development and production",
-    "totalPenalty": 67988091,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 67988091,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "oil spill",
-        "penalty": 50000000,
-        "records": 1
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 12900000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 5088091,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:29:48.120Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

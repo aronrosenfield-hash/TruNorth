@@ -27,7 +27,6 @@
     "s": "6 federal penalties totaling $2.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -118,59 +116,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "The Queen's Medical Center",
-    "slug": "the-queens-medical-center",
-    "ownership": "non-profit",
-    "hq": "Hawaii",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "hospitals",
-    "totalPenalty": 2748230,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 2555249,
-        "records": 2
-      },
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 150500,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 42481,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 2555249,
-        "records": 2
-      },
-      {
-        "category": "HHS civil monetary penalties",
-        "penalty": 150500,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 34981,
-        "records": 2
-      },
-      {
-        "category": "nuclear safety violation",
-        "penalty": 7500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T01:57:12.560Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00070870",

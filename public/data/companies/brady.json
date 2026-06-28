@@ -27,7 +27,6 @@
     "s": "6 federal penalties totaling $322K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $81K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -148,59 +146,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Brady Corp.",
-    "slug": "brady-corp",
-    "ownership": "publicly traded (ticker symbol BRC)",
-    "hq": "Wisconsin",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "miscellaneous manufacturing",
-    "totalPenalty": 321985,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 232815,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 81400,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 7770,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "labor relations violation",
-        "penalty": 202812,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 81400,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 30003,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 7770,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:19:16.605Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00113449",

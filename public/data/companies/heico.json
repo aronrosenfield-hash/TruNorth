@@ -26,7 +26,6 @@
     "s": "54 federal penalties totaling $2.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $1.6M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -134,64 +132,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Heico Companies",
-    "slug": "heico-companies",
-    "ownership": "privately held",
-    "hq": "Illinois",
-    "majorIndustry": "diversified",
-    "specificIndustry": "diversified",
-    "totalPenalty": 2426597,
-    "totalRecords": 54,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1725454,
-        "records": 15
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 636321,
-        "records": 34
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 64822,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 1630000,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 636321,
-        "records": 34
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 86554,
-        "records": 11
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 32085,
-        "records": 3
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 22736,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:06:39.231Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -46,15 +46,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "185 federal penalties totaling $27.1B since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -118,69 +116,6 @@
     "secLitigation": "2026-06-22T17:33:19.578Z",
     "finra": "2026-06-23T12:57:34.337Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "citigroup",
-      "matchedName": "Citigroup",
-      "totalPenalty": 27115311792,
-      "totalRecords": 185,
-      "offenseGroups": [
-        {
-          "category": "financial offenses",
-          "penalty": 19885993935,
-          "records": 108
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 4414386460,
-          "records": 43
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 2689441666,
-          "records": 18
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 125465984,
-          "records": 12
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 17747,
-          "records": 3
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "toxic securities abuses",
-          "penalty": 8772892857,
-          "records": 10
-        },
-        {
-          "category": "investor protection violation",
-          "penalty": 8389770730,
-          "records": 71
-        },
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 2689381666,
-          "records": 17
-        },
-        {
-          "category": "banking violation",
-          "penalty": 2370143378,
-          "records": 15
-        },
-        {
-          "category": "mortgage abuses",
-          "penalty": 2360975000,
-          "records": 4
-        }
-      ],
-      "rating": "poor"
-    }
   },
   "competitors": [
     "jpmorgan-chase",
@@ -330,74 +265,6 @@
     "source": "courtlistener-recap"
   },
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Citigroup",
-    "slug": "citigroup",
-    "ownership": "publicly traded (ticker symbol C)",
-    "hq": "New York",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking &amp; securities",
-    "totalPenalty": 27115311792,
-    "totalRecords": 185,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 19885993935,
-        "records": 108
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 4414386460,
-        "records": 43
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 2689441666,
-        "records": 18
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 125465984,
-        "records": 12
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 17747,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "toxic securities abuses",
-        "penalty": 8772892857,
-        "records": 10
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 8389770730,
-        "records": 71
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 2689381666,
-        "records": 17
-      },
-      {
-        "category": "banking violation",
-        "penalty": 2370143378,
-        "records": 15
-      },
-      {
-        "category": "mortgage abuses",
-        "penalty": 2360975000,
-        "records": 4
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00039305",

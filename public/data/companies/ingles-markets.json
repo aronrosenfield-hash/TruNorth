@@ -26,7 +26,6 @@
     "s": "14 federal penalties totaling $870K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "environmental violation: $32K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -122,69 +120,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ingles Markets",
-    "slug": "ingles-markets",
-    "ownership": "publicly traded (ticker symbol IMKTA)",
-    "hq": "North Carolina",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-supermarkets",
-    "totalPenalty": 869928,
-    "totalRecords": 14,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 700000,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 108430,
-        "records": 7
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 32325,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 29173,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "aviation consumer protection violation",
-        "penalty": 700000,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 75430,
-        "records": 6
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 33000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 32325,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 29173,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:27:48.915Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

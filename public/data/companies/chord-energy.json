@@ -26,7 +26,6 @@
     "s": "38 federal penalties totaling $2.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $1.4M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -136,59 +134,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Chord Energy",
-    "slug": "chord-energy",
-    "ownership": "publicly traded (ticker symbol CHRD)",
-    "hq": "Texas",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 2495021,
-    "totalRecords": 38,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 2422583,
-        "records": 37
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 72438,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 1364030,
-        "records": 16
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 962983,
-        "records": 18
-      },
-      {
-        "category": "federal leasing royalty violation",
-        "penalty": 72438,
-        "records": 1
-      },
-      {
-        "category": "oil spill",
-        "penalty": 58570,
-        "records": 1
-      },
-      {
-        "category": "pipeline safety violation",
-        "penalty": 32000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:50:37.775Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

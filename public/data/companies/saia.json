@@ -26,7 +26,6 @@
     "s": "36 federal penalties totaling $639K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "hazardous waste violation: $24K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -138,64 +136,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Saia Inc.",
-    "slug": "saia-inc",
-    "ownership": "publicly traded (ticker symbol SAIA)",
-    "hq": "Georgia",
-    "majorIndustry": "freight and logistics",
-    "specificIndustry": "trucking",
-    "totalPenalty": 639254,
-    "totalRecords": 36,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 316794,
-        "records": 26
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 271059,
-        "records": 6
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 51401,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "labor relations violation",
-        "penalty": 263205,
-        "records": 5
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 234914,
-        "records": 19
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 52500,
-        "records": 6
-      },
-      {
-        "category": "motor vehicle safety violation",
-        "penalty": 29380,
-        "records": 1
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 23651,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:20:34.456Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

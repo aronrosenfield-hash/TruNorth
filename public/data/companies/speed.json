@@ -27,7 +27,6 @@
     "s": "5 federal penalties totaling $309K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "environmental violation: $274K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -126,44 +124,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Wolfspeed Inc.",
-    "slug": "wolfspeed-inc",
-    "ownership": "publicly traded (ticker symbol WOLF)",
-    "hq": "North Carolina",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "lighting equipment",
-    "totalPenalty": 308757,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 274290,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 34467,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 274290,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 34467,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T02:41:31.229Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00571042",

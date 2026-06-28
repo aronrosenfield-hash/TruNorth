@@ -26,7 +26,6 @@
     "s": "15 federal penalties totaling $4.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $654K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -115,64 +113,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "SPX Technologies",
-    "slug": "spx-technologies",
-    "ownership": "publicly traded (ticker symbol SPXC)",
-    "hq": "North Carolina",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "industrial equipment",
-    "totalPenalty": 4732163,
-    "totalRecords": 15,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 3988503,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 659000,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 84660,
-        "records": 8
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 3600000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 654000,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 388503,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 84660,
-        "records": 8
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T01:04:28.404Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -27,7 +27,6 @@
     "s": "2 federal penalties totaling $155K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -151,44 +149,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Financial Institutions Inc.",
-    "slug": "financial-institutions-inc",
-    "ownership": "publicly traded (ticker symbol FISI)",
-    "hq": "New York",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking",
-    "totalPenalty": 155495,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 150000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 5495,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "discriminatory practices (non-employment)",
-        "penalty": 150000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 5495,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:18:39.499Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00325886",

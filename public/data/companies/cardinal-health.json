@@ -28,7 +28,6 @@
     "s": "43 federal penalties totaling $7.6B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -50,8 +49,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -202,74 +200,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Cardinal Health",
-    "slug": "cardinal-health",
-    "ownership": "publicly traded (ticker symbol CAH)",
-    "hq": "Ohio",
-    "majorIndustry": "wholesalers",
-    "specificIndustry": "wholesalers-medical supplies",
-    "totalPenalty": 7561714432,
-    "totalRecords": 43,
-    "offenseGroups": [
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 7156755000,
-        "records": 12
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 256759666,
-        "records": 9
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 53305766,
-        "records": 7
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 35000000,
-        "records": 1
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 26817500,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "off-label or unapproved promotion of medical products",
-        "penalty": 7057500000,
-        "records": 5
-      },
-      {
-        "category": "product safety violation",
-        "penalty": 246666666,
-        "records": 2
-      },
-      {
-        "category": "Controlled Substances Act violation",
-        "penalty": 99255000,
-        "records": 7
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 44000000,
-        "records": 2
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 35000000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:54:14.059Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00332833",

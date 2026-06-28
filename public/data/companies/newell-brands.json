@@ -26,7 +26,6 @@
     "s": "42 federal penalties totaling $25.9M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -169,69 +167,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Newell Brands",
-    "slug": "newell-brands",
-    "ownership": "publicly traded (ticker symbol NWL)",
-    "hq": "Georgia",
-    "majorIndustry": "housewares and home furnishings",
-    "specificIndustry": "housewares; home furnishings",
-    "totalPenalty": 25917121,
-    "totalRecords": 42,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 12500000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 11978990,
-        "records": 29
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 848606,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 589525,
-        "records": 9
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 12500000,
-        "records": 1
-      },
-      {
-        "category": "product safety violation",
-        "penalty": 8500000,
-        "records": 2
-      },
-      {
-        "category": "motor vehicle safety violation",
-        "penalty": 3008580,
-        "records": 2
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 683606,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 470410,
-        "records": 25
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:37:43.839Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

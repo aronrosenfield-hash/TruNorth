@@ -26,7 +26,6 @@
     "s": "2 federal penalties totaling $211K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "air pollution violation: $196K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -119,44 +117,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Preformed Line Products Co.",
-    "slug": "preformed-line-products-co",
-    "ownership": "publicly traded (ticker symbol PLPC)",
-    "hq": "Ohio",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "infrastructure products and systems",
-    "totalPenalty": 210502,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 196000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 14502,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 196000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 14502,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:11:38.536Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

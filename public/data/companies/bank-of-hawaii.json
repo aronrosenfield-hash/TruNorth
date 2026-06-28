@@ -27,7 +27,6 @@
     "s": "4 federal penalties totaling $11.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -145,59 +143,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Bank of Hawaii",
-    "slug": "bank-of-hawaii",
-    "ownership": "publicly traded (ticker symbol BOH)",
-    "hq": "Hawaii",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking",
-    "totalPenalty": 11523131,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 9000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 2507631,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 15500,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 9000000,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 2500000,
-        "records": 1
-      },
-      {
-        "category": "banking violation",
-        "penalty": 15500,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 7631,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:57:37.846Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00025668",

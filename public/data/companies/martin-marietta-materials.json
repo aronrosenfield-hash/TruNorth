@@ -26,7 +26,6 @@
     "s": "194 federal penalties totaling $5.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $2.2M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -146,64 +144,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Martin Marietta Materials",
-    "slug": "martin-marietta-materials",
-    "ownership": "publicly traded (ticker symbol MLM)",
-    "hq": "North Carolina",
-    "majorIndustry": "building materials",
-    "specificIndustry": "building materials",
-    "totalPenalty": 5532467,
-    "totalRecords": 194,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 3406433,
-        "records": 36
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 2025031,
-        "records": 156
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 101003,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 2226935,
-        "records": 22
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 1985491,
-        "records": 149
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 1161998,
-        "records": 12
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 60000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 41003,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:09:49.012Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

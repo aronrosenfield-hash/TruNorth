@@ -27,7 +27,6 @@
     "s": "55 federal penalties totaling $930.8M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -160,74 +158,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Prudential Financial",
-    "slug": "prudential-financial",
-    "ownership": "publicly traded (ticker symbol PRU)",
-    "hq": "New Jersey",
-    "majorIndustry": "financial services",
-    "specificIndustry": "insurance",
-    "totalPenalty": 930841582,
-    "totalRecords": 55,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 744787147,
-        "records": 19
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 113049393,
-        "records": 27
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 72646042,
-        "records": 7
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 350000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 9000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 744787147,
-        "records": 19
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 62000000,
-        "records": 2
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 48100000,
-        "records": 2
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 46299393,
-        "records": 24
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 24528200,
-        "records": 4
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:13:25.665Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00127779",

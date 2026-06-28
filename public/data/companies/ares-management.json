@@ -27,7 +27,6 @@
     "s": "89 federal penalties totaling $29.3M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "hazardous waste violation: $2.4M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -155,74 +153,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ares Management",
-    "slug": "ares-management",
-    "ownership": "publicly traded (ticker symbol ARES)",
-    "hq": "California",
-    "majorIndustry": "private equity (including portfolio companies)",
-    "specificIndustry": "private equity (including portfolio companies)",
-    "totalPenalty": 29277105,
-    "totalRecords": 89,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 18557264,
-        "records": 31
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 4535430,
-        "records": 14
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 2700000,
-        "records": 1
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 1800000,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 1000000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 16539754,
-        "records": 26
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 2700000,
-        "records": 1
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 2362500,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 1979190,
-        "records": 9
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 1800000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:35:20.917Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00406884",

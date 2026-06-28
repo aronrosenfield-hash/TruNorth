@@ -27,7 +27,6 @@
     "s": "84 federal penalties totaling $171.5M since 2000 (Violation Tracker).",
     "rating": "poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "environmental violation: $105K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -147,64 +145,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Flowers Foods",
-    "slug": "flowers-foods",
-    "ownership": "publicly traded (ticker symbol FLO)",
-    "hq": "Georgia",
-    "majorIndustry": "food products",
-    "specificIndustry": "food products",
-    "totalPenalty": 171468828,
-    "totalRecords": 84,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 170674454,
-        "records": 14
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 637714,
-        "records": 56
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 156660,
-        "records": 14
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 170179397,
-        "records": 8
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 617754,
-        "records": 55
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 350775,
-        "records": 4
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 133282,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 104520,
-        "records": 6
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:24:03.534Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00033555",

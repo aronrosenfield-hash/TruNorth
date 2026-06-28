@@ -26,7 +26,6 @@
     "s": "4 federal penalties totaling $30.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "air pollution violation: $127K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -125,59 +123,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Distribution Solutions Group Inc.",
-    "slug": "distribution-solutions-group-inc",
-    "ownership": "publicly traded (ticker symbol DSGR)",
-    "hq": "Illinois",
-    "majorIndustry": "wholesalers",
-    "specificIndustry": "wholesalers-maintenance products",
-    "totalPenalty": 30191613,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 30000000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 131613,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 60000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "fraud",
-        "penalty": 30000000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 126500,
-        "records": 1
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 60000,
-        "records": 1
-      },
-      {
-        "category": "pesticide violation",
-        "penalty": 5113,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:20:28.554Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

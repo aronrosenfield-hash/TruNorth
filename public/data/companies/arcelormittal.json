@@ -27,7 +27,6 @@
     "s": "13 federal penalties totaling $92.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "air pollution violation: $965K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -144,69 +142,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "ArcelorMittal",
-    "slug": "arcelormittal",
-    "ownership": "publicly traded",
-    "hq": "Luxembourg",
-    "majorIndustry": "metals",
-    "specificIndustry": "steel",
-    "totalPenalty": 91985695,
-    "totalRecords": 13,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 90000000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1573480,
-        "records": 7
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 300958,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 111257,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 90000000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 965000,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 608480,
-        "records": 4
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 300958,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 111257,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:07:57.046Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

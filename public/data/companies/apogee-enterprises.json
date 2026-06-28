@@ -26,7 +26,6 @@
     "s": "16 federal penalties totaling $422K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "air pollution violation: $250K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -128,54 +126,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Apogee Enterprises",
-    "slug": "apogee-enterprises",
-    "ownership": "publicly traded (ticker symbol APOG)",
-    "hq": "Minnesota",
-    "majorIndustry": "building materials",
-    "specificIndustry": "glass products",
-    "totalPenalty": 422281,
-    "totalRecords": 16,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 301369,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 120912,
-        "records": 14
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 250000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 112912,
-        "records": 13
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 51369,
-        "records": 1
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 8000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:32:59.177Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

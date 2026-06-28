@@ -26,7 +26,6 @@
     "s": "88 federal penalties totaling $56.7M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "environmental violation: $40.8M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -129,64 +127,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "O-I Glass",
-    "slug": "o-i-glass",
-    "ownership": "publicly traded (ticker symbol OI)",
-    "hq": "Ohio",
-    "majorIndustry": "paper and packaging",
-    "specificIndustry": "glass containers",
-    "totalPenalty": 56668609,
-    "totalRecords": 88,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 41352007,
-        "records": 40
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 14500000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 816602,
-        "records": 46
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 40764302,
-        "records": 20
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 14500000,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 816602,
-        "records": 46
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 526969,
-        "records": 18
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 60736,
-        "records": 2
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:50:54.291Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

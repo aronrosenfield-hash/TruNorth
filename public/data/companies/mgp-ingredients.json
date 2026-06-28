@@ -26,7 +26,6 @@
     "s": "26 federal penalties totaling $3.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "air pollution violation: $2.6M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -140,64 +138,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "MGP Ingredients",
-    "slug": "mgp-ingredients",
-    "ownership": "publicly traded (ticker symbol MGPI)",
-    "hq": "Kansas",
-    "majorIndustry": "agribusiness",
-    "specificIndustry": "agribusiness",
-    "totalPenalty": 3707069,
-    "totalRecords": 26,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 3391368,
-        "records": 8
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 269576,
-        "records": 16
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 46125,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 2639900,
-        "records": 6
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 751468,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 182636,
-        "records": 6
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 86940,
-        "records": 10
-      },
-      {
-        "category": "tax violations",
-        "penalty": 46125,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:20:25.675Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

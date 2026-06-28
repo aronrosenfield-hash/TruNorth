@@ -26,7 +26,6 @@
     "s": "21 federal penalties totaling $853K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "air pollution violation: $232K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -112,49 +110,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Steinway Musical Instruments",
-    "slug": "steinway-musical-instruments",
-    "ownership": "privately held",
-    "hq": "Massachusetts",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "musical instruments",
-    "totalPenalty": 852913,
-    "totalRecords": 21,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 458370,
-        "records": 17
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 394543,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 458370,
-        "records": 17
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 232043,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 162500,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T02:43:51.393Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

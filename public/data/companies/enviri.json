@@ -26,7 +26,6 @@
     "s": "86 federal penalties totaling $5.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $4.0M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -137,64 +135,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Enviri Corporation",
-    "slug": "enviri-corporation",
-    "ownership": "publicly traded (ticker symbol NVRI)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "industrial equipment",
-    "totalPenalty": 5463528,
-    "totalRecords": 86,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 5175394,
-        "records": 61
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 218656,
-        "records": 21
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 69478,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 3995981,
-        "records": 31
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 694750,
-        "records": 16
-      },
-      {
-        "category": "solid waste violation",
-        "penalty": 250000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 228663,
-        "records": 12
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 208656,
-        "records": 20
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:06:08.543Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

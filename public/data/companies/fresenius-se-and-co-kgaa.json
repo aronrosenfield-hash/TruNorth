@@ -27,7 +27,6 @@
     "s": "2 federal penalties totaling $50.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -118,39 +116,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Fresenius SE & Co.",
-    "slug": "fresenius-se-and-co",
-    "ownership": "publicly traded",
-    "hq": "Germany",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "dialysis services",
-    "totalPenalty": 50007093,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 50007093,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "drug or medical equipment safety violation",
-        "penalty": 50000000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 7093,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:31:38.653Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

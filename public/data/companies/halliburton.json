@@ -27,7 +27,6 @@
     "s": "59 federal penalties totaling $1.1B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,7 +45,6 @@
     "s": "Excluded from 1 ESG-screened fund — Oil-services exposure (Fossil Free Funds screen).",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "divestment-impact-funds"
     ]
   },
@@ -154,74 +152,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Halliburton",
-    "slug": "halliburton",
-    "ownership": "publicly traded (ticker symbol HAL)",
-    "hq": "Texas",
-    "majorIndustry": "oilfield services and supplies",
-    "specificIndustry": "oilfield services",
-    "totalPenalty": 1088266335,
-    "totalRecords": 59,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1030646785,
-        "records": 14
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 29200000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 20218717,
-        "records": 9
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 7804706,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 396127,
-        "records": 33
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "oil spill",
-        "penalty": 1028200000,
-        "records": 2
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 29200000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 18830582,
-        "records": 5
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 7500000,
-        "records": 1
-      },
-      {
-        "category": "solid waste violation",
-        "penalty": 1800000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:11:33.607Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00035691",

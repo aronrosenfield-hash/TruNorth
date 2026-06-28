@@ -26,7 +26,6 @@
     "s": "20 federal penalties totaling $888K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "water pollution violation: $425K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -147,69 +145,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "NVR",
-    "slug": "nvr",
-    "ownership": "publicly traded (ticker symbol NVR)",
-    "hq": "Virginia",
-    "majorIndustry": "construction and engineering",
-    "specificIndustry": "homebuilding",
-    "totalPenalty": 888130,
-    "totalRecords": 20,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 425000,
-        "records": 2
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 280000,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 163620,
-        "records": 14
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 19510,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "water pollution violation",
-        "penalty": 425000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 280000,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 163620,
-        "records": 14
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 19510,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 0,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:50:25.558Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

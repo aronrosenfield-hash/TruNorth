@@ -39,15 +39,13 @@
     "s": "hazardous waste violation: $8.1M in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "100 federal penalties totaling $78.2M since 2000 (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -98,69 +96,6 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "xpo-logistics",
-      "matchedName": "XPO Logistics",
-      "totalPenalty": 78204537,
-      "totalRecords": 100,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 51374679,
-          "records": 28
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 14431765,
-          "records": 25
-        },
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 10000000,
-          "records": 1
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 2098093,
-          "records": 45
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 300000,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "wage and hour violation",
-          "penalty": 50745051,
-          "records": 19
-        },
-        {
-          "category": "False Claims Act and related",
-          "penalty": 10000000,
-          "records": 1
-        },
-        {
-          "category": "hazardous waste violation",
-          "penalty": 8083120,
-          "records": 8
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 6308720,
-          "records": 14
-        },
-        {
-          "category": "aviation safety violation",
-          "penalty": 1560250,
-          "records": 7
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "j-b-hunt",
@@ -253,74 +188,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "XPO Logistics",
-    "slug": "xpo-logistics",
-    "ownership": "publicly traded (ticker symbol XPO)",
-    "hq": "Connecticut",
-    "majorIndustry": "freight and logistics",
-    "specificIndustry": "trucking and logistics",
-    "totalPenalty": 78204537,
-    "totalRecords": 100,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 51374679,
-        "records": 28
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 14431765,
-        "records": 25
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 10000000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 2098093,
-        "records": 45
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 300000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 50745051,
-        "records": 19
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 10000000,
-        "records": 1
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 8083120,
-        "records": 8
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 6308720,
-        "records": 14
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 1560250,
-        "records": 7
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

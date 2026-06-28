@@ -25,7 +25,6 @@
     "s": "34 federal penalties totaling $31.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -40,8 +39,7 @@
   "environment": {
     "s": "environmental violation: $2.6M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -138,74 +136,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "NextEra Energy",
-    "slug": "nextera-energy",
-    "ownership": "publicly traded (ticker symbol NEE)",
-    "hq": "Florida",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 31109012,
-    "totalRecords": 34,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 25486724,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 2709552,
-        "records": 13
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 2346632,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 460104,
-        "records": 10
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 106000,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "energy market violation",
-        "penalty": 25486724,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 2632977,
-        "records": 10
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 1350000,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 979521,
-        "records": 2
-      },
-      {
-        "category": "nuclear safety violation",
-        "penalty": 360000,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T01:34:37.327Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

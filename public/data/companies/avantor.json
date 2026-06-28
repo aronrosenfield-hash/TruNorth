@@ -26,7 +26,6 @@
     "s": "33 federal penalties totaling $7.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $872K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -154,69 +152,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Avantor Inc.",
-    "slug": "avantor-inc",
-    "ownership": "publicly traded (ticker symbol AVTR)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "performance materials",
-    "totalPenalty": 7455547,
-    "totalRecords": 33,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 5755194,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1269113,
-        "records": 18
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 310495,
-        "records": 12
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 120745,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 5755194,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 871883,
-        "records": 8
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 255330,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 245495,
-        "records": 11
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 120745,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:43:23.405Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -40,7 +40,6 @@
     "rating": "Mixed",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "the-climate-pledge"
     ]
   },
@@ -48,7 +47,6 @@
     "s": "45 federal penalties totaling $607.5M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -92,69 +90,6 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "federalContracts": "2026-06-11T23:51:18.870Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "kpmg",
-      "matchedName": "KPMG",
-      "totalPenalty": 607499642,
-      "totalRecords": 45,
-      "offenseGroups": [
-        {
-          "category": "financial offenses",
-          "penalty": 584092986,
-          "records": 35
-        },
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 11770000,
-          "records": 2
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 11621656,
-          "records": 6
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 10000,
-          "records": 1
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 5000,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "tax violations",
-          "penalty": 456000000,
-          "records": 1
-        },
-        {
-          "category": "accounting fraud or deficiencies",
-          "penalty": 128092986,
-          "records": 34
-        },
-        {
-          "category": "False Claims Act and related",
-          "penalty": 11770000,
-          "records": 2
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 10971656,
-          "records": 5
-        },
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 650000,
-          "records": 1
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "deloitte",
@@ -224,74 +159,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "KPMG",
-    "slug": "kpmg",
-    "ownership": "privately held",
-    "hq": "Netherlands",
-    "majorIndustry": "business services",
-    "specificIndustry": "accounting services",
-    "totalPenalty": 607499642,
-    "totalRecords": 45,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 584092986,
-        "records": 35
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 11770000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 11621656,
-        "records": 6
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 10000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "tax violations",
-        "penalty": 456000000,
-        "records": 1
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 128092986,
-        "records": 34
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 11770000,
-        "records": 2
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 10971656,
-        "records": 5
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 650000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

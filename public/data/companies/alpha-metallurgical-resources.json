@@ -27,7 +27,6 @@
     "s": "4094 federal penalties totaling $565.9M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "water pollution violation: $251.4M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -140,64 +138,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Alpha Metallurgical Resources",
-    "slug": "alpha-metallurgical-resources",
-    "ownership": "publicly traded (ticker symbol AMR)",
-    "hq": "Tennessee",
-    "majorIndustry": "mining and minerals",
-    "specificIndustry": "coal mining",
-    "totalPenalty": 565859801,
-    "totalRecords": 4094,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 279101647,
-        "records": 4005
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 254772806,
-        "records": 82
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 31985348,
-        "records": 7
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 279095987,
-        "records": 4004
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 251428860,
-        "records": 21
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 23111606,
-        "records": 4
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 8750000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 2014283,
-        "records": 25
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:25:49.746Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00650598",

@@ -45,15 +45,13 @@
     "s": "air pollution violation: $610.9M in federal penalties (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "444 federal penalties totaling $820.0M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -105,69 +103,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "phillips-66",
-      "matchedName": "Phillips 66",
-      "totalPenalty": 819979668,
-      "totalRecords": 444,
-      "offenseGroups": [
-        {
-          "category": "environment-related offenses",
-          "penalty": 797700570,
-          "records": 345
-        },
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 8039360,
-          "records": 2
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 6391798,
-          "records": 12
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 4079900,
-          "records": 2
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 3768040,
-          "records": 83
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "air pollution violation",
-          "penalty": 610872908,
-          "records": 109
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 135163502,
-          "records": 201
-        },
-        {
-          "category": "MTBE violation",
-          "penalty": 39661667,
-          "records": 3
-        },
-        {
-          "category": "water pollution violation",
-          "penalty": 9794897,
-          "records": 8
-        },
-        {
-          "category": "False Claims Act and related",
-          "penalty": 8000000,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "valero-energy",
@@ -253,74 +188,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Phillips 66",
-    "slug": "phillips-66",
-    "ownership": "publicly traded (ticker symbol PSX)",
-    "hq": "Texas",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 819979668,
-    "totalRecords": 444,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 797700570,
-        "records": 345
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 8039360,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 6391798,
-        "records": 12
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 4079900,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 3768040,
-        "records": 83
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 610872908,
-        "records": 109
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 135163502,
-        "records": 201
-      },
-      {
-        "category": "MTBE violation",
-        "penalty": 39661667,
-        "records": 3
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 9794897,
-        "records": 8
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 8000000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00513549",

@@ -27,7 +27,6 @@
     "s": "25 federal penalties totaling $2.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "air pollution violation: $1.2M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -145,64 +143,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "EnerSys",
-    "slug": "enersys",
-    "ownership": "publicly traded (ticker symbol ENS)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "miscellaneous energy products and systems",
-    "specificIndustry": "batteries",
-    "totalPenalty": 1977833,
-    "totalRecords": 25,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1822685,
-        "records": 8
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 140148,
-        "records": 16
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 15000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 1175500,
-        "records": 5
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 642185,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 140148,
-        "records": 16
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 15000,
-        "records": 1
-      },
-      {
-        "category": "solid waste violation",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:01:10.953Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00263970",

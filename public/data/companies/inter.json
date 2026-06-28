@@ -27,7 +27,6 @@
     "s": "3 federal penalties totaling $1.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -150,44 +148,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "WW International",
-    "slug": "ww-international",
-    "ownership": "publicly traded (ticker symbol WW)",
-    "hq": "New York",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "weight loss services",
-    "totalPenalty": 1545000,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 1500000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 45000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "privacy violation",
-        "penalty": 1500000,
-        "records": 2
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 45000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:08:13.298Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00034785",

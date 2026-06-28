@@ -26,7 +26,6 @@
     "s": "38 federal penalties totaling $72.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "environmental violation: $11.4M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -114,69 +112,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Rentokil Initial PLC",
-    "slug": "rentokil-initial-plc",
-    "ownership": "publicly traded",
-    "hq": "United Kingdom",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "pest control and hygiene services",
-    "totalPenalty": 72270997,
-    "totalRecords": 38,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 60200841,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 11435660,
-        "records": 8
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 347348,
-        "records": 9
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 287148,
-        "records": 17
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 60200841,
-        "records": 4
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 11435660,
-        "records": 8
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 287148,
-        "records": 17
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 220000,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 68861,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:22:44.567Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

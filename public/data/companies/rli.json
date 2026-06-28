@@ -26,7 +26,6 @@
     "s": "38 federal penalties totaling $1.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "air pollution violation: $699K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -149,64 +147,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Carlisle",
-    "slug": "carlisle",
-    "ownership": "publicly traded (ticker symbol CSL)",
-    "hq": "North Carolina",
-    "majorIndustry": "building materials",
-    "specificIndustry": "building materials",
-    "totalPenalty": 1318914,
-    "totalRecords": 38,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1036152,
-        "records": 18
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 261262,
-        "records": 18
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 21500,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 699454,
-        "records": 6
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 291002,
-        "records": 9
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 254262,
-        "records": 17
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 24780,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 21500,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:24:43.653Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

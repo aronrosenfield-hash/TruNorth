@@ -26,7 +26,6 @@
     "s": "3 federal penalties totaling $21K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "hazardous waste violation: $10K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -124,39 +122,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Daktronics",
-    "slug": "daktronics",
-    "ownership": "publicly traded (ticker symbol DAKT)",
-    "hq": "South Dakota",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "electronic scoreboards",
-    "totalPenalty": 20589,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 20589,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "hazardous waste violation",
-        "penalty": 10465,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 10124,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:12:26.518Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

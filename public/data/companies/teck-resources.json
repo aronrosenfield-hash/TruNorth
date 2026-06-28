@@ -26,7 +26,6 @@
     "s": "33 federal penalties totaling $2.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "air pollution violation: $827K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -123,64 +121,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Teck Resources",
-    "slug": "teck-resources",
-    "ownership": "publicly traded (ticker symbol TECK)",
-    "hq": "Canada",
-    "majorIndustry": "mining and minerals",
-    "specificIndustry": "mining",
-    "totalPenalty": 2284105,
-    "totalRecords": 33,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1839588,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 265221,
-        "records": 27
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 179296,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 827000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 582794,
-        "records": 3
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 429794,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 215271,
-        "records": 22
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 179296,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T01:26:28.160Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -40,15 +40,13 @@
     "s": "environmental violation: $3.4M in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "34 federal penalties totaling $17.8M since 2000 (Violation Tracker).",
     "rating": "Below Average",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -102,64 +100,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "ross-stores",
-      "matchedName": "Ross Stores",
-      "totalPenalty": 17788310,
-      "totalRecords": 34,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 4854000,
-          "records": 1
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 4736598,
-          "records": 20
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 4595767,
-          "records": 7
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 3601945,
-          "records": 6
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "consumer protection violation",
-          "penalty": 4854000,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 4513558,
-          "records": 5
-        },
-        {
-          "category": "product safety violation",
-          "penalty": 4400000,
-          "records": 2
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 3390000,
-          "records": 2
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 336598,
-          "records": 18
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "burlington",
@@ -245,69 +185,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ross Stores",
-    "slug": "ross-stores",
-    "ownership": "publicly traded (ticker symbol ROST)",
-    "hq": "California",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-apparel",
-    "totalPenalty": 17788310,
-    "totalRecords": 34,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 4854000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 4736598,
-        "records": 20
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 4595767,
-        "records": 7
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 3601945,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 4854000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 4513558,
-        "records": 5
-      },
-      {
-        "category": "product safety violation",
-        "penalty": 4400000,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 3390000,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 336598,
-        "records": 18
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

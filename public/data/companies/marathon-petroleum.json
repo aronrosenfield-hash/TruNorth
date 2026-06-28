@@ -38,15 +38,13 @@
     "s": "air pollution violation: $1.3B in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "396 federal penalties totaling $1.6B since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -84,69 +82,6 @@
     "sources": [
       "Claude AI synthesis"
     ]
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "marathon-petroleum",
-      "matchedName": "Marathon Petroleum",
-      "totalPenalty": 1588003787,
-      "totalRecords": 396,
-      "offenseGroups": [
-        {
-          "category": "environment-related offenses",
-          "penalty": 1452062762,
-          "records": 243
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 51342966,
-          "records": 13
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 41086404,
-          "records": 136
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 22500000,
-          "records": 1
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 20011655,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "air pollution violation",
-          "penalty": 1294160314,
-          "records": 96
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 151638341,
-          "records": 112
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 40206439,
-          "records": 62
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 35020881,
-          "records": 6
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 22500000,
-          "records": 1
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
@@ -214,74 +149,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Marathon Petroleum",
-    "slug": "marathon-petroleum",
-    "ownership": "publicly traded (ticker symbol MPC)",
-    "hq": "Ohio",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 1588003787,
-    "totalRecords": 396,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1452062762,
-        "records": 243
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 51342966,
-        "records": 13
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 41086404,
-        "records": 136
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 22500000,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 20011655,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 1294160314,
-        "records": 96
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 151638341,
-        "records": 112
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 40206439,
-        "records": 62
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 35020881,
-        "records": 6
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 22500000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

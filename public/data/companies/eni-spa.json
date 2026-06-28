@@ -26,7 +26,6 @@
     "s": "14 federal penalties totaling $402.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "environmental violation: $613K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -124,69 +122,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "ENI",
-    "slug": "eni",
-    "ownership": "publicly traded (ticker symbol E)",
-    "hq": "Italy",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 402507362,
-    "totalRecords": 14,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 401670000,
-        "records": 5
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 815500,
-        "records": 6
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 15300,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 6562,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 389500000,
-        "records": 3
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 12170000,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 613000,
-        "records": 3
-      },
-      {
-        "category": "drinking water violation",
-        "penalty": 113000,
-        "records": 1
-      },
-      {
-        "category": "pipeline safety violation",
-        "penalty": 61100,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:01:30.524Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

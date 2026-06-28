@@ -44,15 +44,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "209 federal penalties totaling $10.9B since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -118,69 +116,6 @@
     "finra": "2026-06-23T12:57:34.337Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z",
     "fedReserve": "2026-06-27T21:34:23.374Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "morgan-stanley",
-      "matchedName": "Morgan Stanley",
-      "totalPenalty": 10939337443,
-      "totalRecords": 209,
-      "offenseGroups": [
-        {
-          "category": "financial offenses",
-          "penalty": 9924512956,
-          "records": 171
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 407666666,
-          "records": 10
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 339817000,
-          "records": 9
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 265765001,
-          "records": 14
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 1575820,
-          "records": 5
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "toxic securities abuses",
-          "penalty": 5124050000,
-          "records": 11
-        },
-        {
-          "category": "investor protection violation",
-          "penalty": 4729462956,
-          "records": 157
-        },
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 407666666,
-          "records": 10
-        },
-        {
-          "category": "mortgage abuses",
-          "penalty": 235000000,
-          "records": 2
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 150385000,
-          "records": 6
-        }
-      ],
-      "rating": "poor"
-    }
   },
   "competitors": [
     "goldman-sachs",
@@ -324,74 +259,6 @@
     "source": "courtlistener-recap"
   },
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Morgan Stanley",
-    "slug": "morgan-stanley",
-    "ownership": "publicly traded (ticker symbol MS)",
-    "hq": "New York",
-    "majorIndustry": "financial services",
-    "specificIndustry": "financial services",
-    "totalPenalty": 10939337443,
-    "totalRecords": 209,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 9924512956,
-        "records": 171
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 407666666,
-        "records": 10
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 339817000,
-        "records": 9
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 265765001,
-        "records": 14
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1575820,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "toxic securities abuses",
-        "penalty": 5124050000,
-        "records": 11
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 4729462956,
-        "records": 157
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 407666666,
-        "records": 10
-      },
-      {
-        "category": "mortgage abuses",
-        "penalty": 235000000,
-        "records": 2
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 150385000,
-        "records": 6
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00337626",

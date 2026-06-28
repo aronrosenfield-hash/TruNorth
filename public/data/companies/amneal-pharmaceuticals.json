@@ -27,7 +27,6 @@
     "s": "23 federal penalties totaling $562.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "hazardous waste violation: $77K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -199,74 +197,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Amneal Pharmaceuticals",
-    "slug": "amneal-pharmaceuticals",
-    "ownership": "publicly traded (ticker symbol AMRX)",
-    "hq": "New Jersey",
-    "majorIndustry": "pharmaceuticals",
-    "specificIndustry": "pharmaceuticals",
-    "totalPenalty": 562453398,
-    "totalRecords": 23,
-    "offenseGroups": [
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 344302482,
-        "records": 7
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 217900000,
-        "records": 5
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 99000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 77200,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 74716,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "off-label or unapproved promotion of medical products",
-        "penalty": 344251010,
-        "records": 2
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 217900000,
-        "records": 5
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 99000,
-        "records": 1
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 77200,
-        "records": 4
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 74716,
-        "records": 6
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:29:37.317Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

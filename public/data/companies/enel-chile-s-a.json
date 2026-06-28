@@ -26,7 +26,6 @@
     "s": "8 federal penalties totaling $1.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "environmental violation: $94K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -122,74 +120,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Enel",
-    "slug": "enel",
-    "ownership": "publicly traded",
-    "hq": "Italy",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 1687743,
-    "totalRecords": 8,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 1496806,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 93797,
-        "records": 3
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 45000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 33982,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 18158,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "energy market violation",
-        "penalty": 1496806,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 93797,
-        "records": 3
-      },
-      {
-        "category": "utility service violation",
-        "penalty": 45000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 33982,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 18158,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:58:10.827Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

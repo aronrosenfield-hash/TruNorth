@@ -26,7 +26,6 @@
     "s": "22 federal penalties totaling $1.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $8K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -137,64 +135,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Comfort Systems USA",
-    "slug": "comfort-systems-usa",
-    "ownership": "publicly traded (ticker symbol FIX)",
-    "hq": "Texas",
-    "majorIndustry": "construction and engineering",
-    "specificIndustry": "construction &amp; engineering",
-    "totalPenalty": 1675197,
-    "totalRecords": 22,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 1561737,
-        "records": 14
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 105660,
-        "records": 7
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 7800,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 843205,
-        "records": 9
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 709692,
-        "records": 4
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 105660,
-        "records": 7
-      },
-      {
-        "category": "Family and Medical Leave Act",
-        "penalty": 8840,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 7800,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:57:46.760Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

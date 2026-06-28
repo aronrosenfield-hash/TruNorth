@@ -39,15 +39,13 @@
     "s": "air pollution violation: $19K in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "13 federal penalties totaling $309K since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -99,59 +97,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "la-z-boy",
-      "matchedName": "La-Z-Boy",
-      "totalPenalty": 309305,
-      "totalRecords": 13,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 200838,
-          "records": 4
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 89910,
-          "records": 7
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 18557,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "employment discrimination",
-          "penalty": 173698,
-          "records": 2
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 59910,
-          "records": 6
-        },
-        {
-          "category": "motor vehicle safety violation",
-          "penalty": 30000,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 27140,
-          "records": 2
-        },
-        {
-          "category": "air pollution violation",
-          "penalty": 18557,
-          "records": 2
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "ashley-furniture"
@@ -216,64 +161,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "La-Z-Boy",
-    "slug": "la-z-boy",
-    "ownership": "publicly traded (ticker symbol LZB)",
-    "hq": "Michigan",
-    "majorIndustry": "housewares and home furnishings",
-    "specificIndustry": "furniture",
-    "totalPenalty": 309305,
-    "totalRecords": 13,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 200838,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 89910,
-        "records": 7
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 18557,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment discrimination",
-        "penalty": 173698,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 59910,
-        "records": 6
-      },
-      {
-        "category": "motor vehicle safety violation",
-        "penalty": 30000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 27140,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 18557,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -27,7 +27,6 @@
     "s": "154 federal penalties totaling $4.9B since 2000 (Violation Tracker).",
     "rating": "poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -99,74 +97,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Boeing",
-    "slug": "boeing",
-    "ownership": "publicly traded (ticker symbol BA)",
-    "hq": "Illinois",
-    "majorIndustry": "aerospace and military contracting",
-    "specificIndustry": "aerospace &amp; military contracting",
-    "totalPenalty": 4916146389,
-    "totalRecords": 154,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 2596610000,
-        "records": 8
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 987403633,
-        "records": 15
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 849004568,
-        "records": 83
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 239817124,
-        "records": 22
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 200000000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "fraud",
-        "penalty": 2513600000,
-        "records": 1
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 987403633,
-        "records": 15
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 848154097,
-        "records": 38
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 200000000,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 183000000,
-        "records": 3
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T22:11:26.437Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

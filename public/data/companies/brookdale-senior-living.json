@@ -29,7 +29,6 @@
     "s": "287 federal penalties totaling $29.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -147,74 +145,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Brookdale Senior Living",
-    "slug": "brookdale-senior-living",
-    "ownership": "publicly traded (ticker symbol BKD)",
-    "hq": "Tennessee",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "healthcare services",
-    "totalPenalty": 29368761,
-    "totalRecords": 287,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 13000000,
-        "records": 1
-      },
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 12952399,
-        "records": 222
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 2447400,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 679964,
-        "records": 34
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 288998,
-        "records": 27
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 13000000,
-        "records": 1
-      },
-      {
-        "category": "nursing home violation",
-        "penalty": 12581151,
-        "records": 220
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 2447400,
-        "records": 3
-      },
-      {
-        "category": "HHS civil monetary penalties",
-        "penalty": 371248,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 359480,
-        "records": 28
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:24:35.190Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00459008",

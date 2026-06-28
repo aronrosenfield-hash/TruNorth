@@ -28,7 +28,6 @@
     "s": "20 federal penalties totaling $28.8M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -163,74 +161,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "KeyCorp",
-    "slug": "keycorp",
-    "ownership": "publicly traded (ticker symbol KEY)",
-    "hq": "Ohio",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking",
-    "totalPenalty": 28788677,
-    "totalRecords": 20,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 16276692,
-        "records": 7
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 7770595,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 3679890,
-        "records": 9
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 1033500,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 28000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 16266691,
-        "records": 6
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 7770595,
-        "records": 1
-      },
-      {
-        "category": "banking violation",
-        "penalty": 2042755,
-        "records": 4
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 1262135,
-        "records": 3
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 1033500,
-        "records": 2
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:45:57.246Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00073155",

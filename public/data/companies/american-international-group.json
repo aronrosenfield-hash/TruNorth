@@ -27,7 +27,6 @@
     "s": "248 federal penalties totaling $3.0B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -155,74 +153,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "American International Group",
-    "slug": "american-international-group",
-    "ownership": "publicly traded (ticker symbol AIG)",
-    "hq": "New York",
-    "majorIndustry": "financial services",
-    "specificIndustry": "insurance",
-    "totalPenalty": 2956730555,
-    "totalRecords": 248,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 1702617220,
-        "records": 14
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 844227272,
-        "records": 4
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 285686492,
-        "records": 220
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 65174751,
-        "records": 6
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 59018920,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 1581910000,
-        "records": 8
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 844227272,
-        "records": 4
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 279136492,
-        "records": 217
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 115000000,
-        "records": 3
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 64250001,
-        "records": 3
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:28:14.068Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00097725",

@@ -27,7 +27,6 @@
     "s": "4 federal penalties totaling $51.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -124,44 +122,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Nelnet",
-    "slug": "nelnet",
-    "ownership": "publicly traded (ticker symbol NNI)",
-    "hq": "Nebraska",
-    "majorIndustry": "financial services",
-    "specificIndustry": "financial services",
-    "totalPenalty": 51000000,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 47000000,
-        "records": 1
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 4000000,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 47000000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 4000000,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:36:06.876Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00370015",

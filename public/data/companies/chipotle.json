@@ -40,7 +40,6 @@
     "rating": "Good",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "cdp-a-list"
     ]
   },
@@ -48,7 +47,6 @@
     "s": "118 federal penalties totaling $90.6M since 2000 (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -107,59 +105,6 @@
     "doj": "2026-06-11T14:35:40.356Z",
     "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "chipotle-mexican-grill",
-      "matchedName": "Chipotle Mexican Grill",
-      "totalPenalty": 90626032,
-      "totalRecords": 118,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 58847827,
-          "records": 110
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 25032205,
-          "records": 6
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 6746000,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "wage and hour violation",
-          "penalty": 57829770,
-          "records": 98
-        },
-        {
-          "category": "food safety violation",
-          "penalty": 25000000,
-          "records": 1
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 6746000,
-          "records": 2
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 701220,
-          "records": 7
-        },
-        {
-          "category": "labor relations violation",
-          "penalty": 316837,
-          "records": 5
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "panera-bread",
@@ -365,64 +310,6 @@
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Chipotle Mexican Grill",
-    "slug": "chipotle-mexican-grill",
-    "ownership": "publicly traded (ticker symbol CMG)",
-    "hq": "Colorado",
-    "majorIndustry": "restaurants and foodservice",
-    "specificIndustry": "restaurants",
-    "totalPenalty": 90626032,
-    "totalRecords": 118,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 58847827,
-        "records": 110
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 25032205,
-        "records": 6
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 6746000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 57829770,
-        "records": 98
-      },
-      {
-        "category": "food safety violation",
-        "penalty": 25000000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 6746000,
-        "records": 2
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 701220,
-        "records": 7
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 316837,
-        "records": 5
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

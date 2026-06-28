@@ -25,7 +25,6 @@
     "s": "24 federal penalties totaling $2.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "environmental violation: $1.9M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -124,64 +122,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Magnera Corporation",
-    "slug": "magnera-corporation",
-    "ownership": "publicly traded (ticker symbol MAGN)",
-    "hq": "North Carolina",
-    "majorIndustry": "paper and packaging",
-    "specificIndustry": "paper products",
-    "totalPenalty": 2271403,
-    "totalRecords": 24,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1919455,
-        "records": 16
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 310000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 41948,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 1914196,
-        "records": 15
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 310000,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 34848,
-        "records": 5
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 7100,
-        "records": 1
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 5259,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:06:38.038Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

@@ -27,7 +27,6 @@
     "s": "94 federal penalties totaling $41.9M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,7 +48,6 @@
     "s": "Forest 500 2024: score 52/100 — partial deforestation policy / implementation gaps on supply-chain. Exposed to soy, palm, beef, pulp.",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "forest500"
     ]
   },
@@ -152,74 +150,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Compass Group",
-    "slug": "compass-group",
-    "ownership": "publicly traded",
-    "hq": "United Kingdom",
-    "majorIndustry": "restaurants and foodservice",
-    "specificIndustry": "foodservice",
-    "totalPenalty": 41929505,
-    "totalRecords": 94,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 18000000,
-        "records": 1
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 13740000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 9600544,
-        "records": 58
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 569461,
-        "records": 32
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 19500,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 18000000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 8421935,
-        "records": 33
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 6940000,
-        "records": 1
-      },
-      {
-        "category": "privacy violation",
-        "penalty": 6800000,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 843755,
-        "records": 6
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:58:37.667Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00581728",

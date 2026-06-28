@@ -26,7 +26,6 @@
     "s": "22 federal penalties totaling $5.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "hazardous waste violation: $1.6M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -146,69 +144,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "CarMax",
-    "slug": "carmax",
-    "ownership": "publicly traded (ticker symbol KMX)",
-    "hq": "Virginia",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-automotive",
-    "totalPenalty": 4952590,
-    "totalRecords": 22,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 3025860,
-        "records": 5
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1864619,
-        "records": 12
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 41165,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 20946,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 2839380,
-        "records": 4
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 1608100,
-        "records": 2
-      },
-      {
-        "category": "discriminatory practices (non-employment)",
-        "penalty": 186480,
-        "records": 1
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 119440,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 95755,
-        "records": 5
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:21:03.652Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -26,7 +26,6 @@
     "s": "22 federal penalties totaling $717K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $11K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -142,64 +140,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Middleby Corp.",
-    "slug": "middleby-corp",
-    "ownership": "publicly traded (ticker symbol MIDD)",
-    "hq": "Illinois",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "commercial cooking equipment",
-    "totalPenalty": 716769,
-    "totalRecords": 22,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 653988,
-        "records": 17
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 52780,
-        "records": 4
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 10001,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "product safety violation",
-        "penalty": 450000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 203988,
-        "records": 16
-      },
-      {
-        "category": "energy conservation violation",
-        "penalty": 41760,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 11020,
-        "records": 2
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 10001,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:21:03.504Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

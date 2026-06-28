@@ -27,7 +27,6 @@
     "s": "24 federal penalties totaling $323K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $85K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -148,64 +146,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "GATX",
-    "slug": "gatx",
-    "ownership": "publicly traded (ticker symbol GMT)",
-    "hq": "Illinois",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "railcar leasing",
-    "totalPenalty": 322723,
-    "totalRecords": 24,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 151110,
-        "records": 15
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 127159,
-        "records": 7
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 44454,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "railroad safety violation",
-        "penalty": 105900,
-        "records": 11
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 85340,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 45210,
-        "records": 4
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 41819,
-        "records": 4
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 28949,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:36:53.562Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00118703",

@@ -26,7 +26,6 @@
     "s": "21 federal penalties totaling $582K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $56K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -180,64 +178,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Church & Dwight",
-    "slug": "church-and-dwight",
-    "ownership": "publicly traded (ticker symbol CHD)",
-    "hq": "New Jersey",
-    "majorIndustry": "household and personal care products",
-    "specificIndustry": "household products",
-    "totalPenalty": 581637,
-    "totalRecords": 21,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 311290,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 183097,
-        "records": 15
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 87250,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Fair Credit Reporting Act violation",
-        "penalty": 300000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 171597,
-        "records": 14
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 56250,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 25000,
-        "records": 1
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 11500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:51:01.451Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

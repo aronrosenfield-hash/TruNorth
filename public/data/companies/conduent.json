@@ -27,7 +27,6 @@
     "s": "33 federal penalties totaling $284.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -154,64 +152,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Conduent",
-    "slug": "conduent",
-    "ownership": "publicly traded (ticker symbol CNDT)",
-    "hq": "Connecticut",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "outsourced services",
-    "totalPenalty": 284796871,
-    "totalRecords": 33,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 257804754,
-        "records": 4
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 19665000,
-        "records": 7
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 7327117,
-        "records": 22
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 257804754,
-        "records": 4
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 19660000,
-        "records": 6
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 4843193,
-        "records": 9
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 1500000,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 857500,
-        "records": 6
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:59:43.496Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00629527",

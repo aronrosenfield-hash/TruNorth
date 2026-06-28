@@ -26,7 +26,6 @@
     "s": "6 federal penalties totaling $2.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -129,54 +127,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Charles River Laboratories",
-    "slug": "charles-river-laboratories",
-    "ownership": "publicly traded (ticker symbol CRL)",
-    "hq": "Massachusetts",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "pharmaceutical services",
-    "totalPenalty": 2835446,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 1800000,
-        "records": 1
-      },
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 1000000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 35446,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 1800000,
-        "records": 1
-      },
-      {
-        "category": "Controlled Substances Act violation",
-        "penalty": 1000000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 35446,
-        "records": 4
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:47:36.342Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

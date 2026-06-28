@@ -28,7 +28,6 @@
     "s": "28 federal penalties totaling $8.1B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -152,74 +150,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Cencora Inc.",
-    "slug": "cencora-inc",
-    "ownership": "publicly traded (ticker symbol COR)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "wholesalers",
-    "specificIndustry": "wholesalers-pharmaceuticals",
-    "totalPenalty": 8088182340,
-    "totalRecords": 28,
-    "offenseGroups": [
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 6942800000,
-        "records": 6
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 638400000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 506726611,
-        "records": 11
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 248832,
-        "records": 7
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 6897,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "off-label or unapproved promotion of medical products",
-        "penalty": 6926000000,
-        "records": 4
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 638400000,
-        "records": 2
-      },
-      {
-        "category": "drug or medical equipment safety violation",
-        "penalty": 260000000,
-        "records": 2
-      },
-      {
-        "category": "product safety violation",
-        "penalty": 246666666,
-        "records": 2
-      },
-      {
-        "category": "Controlled Substances Act violation",
-        "penalty": 16800000,
-        "records": 2
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:45:25.059Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00400929",

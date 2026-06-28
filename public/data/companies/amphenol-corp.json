@@ -26,7 +26,6 @@
     "s": "20 federal penalties totaling $27.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "hazardous waste violation: $945K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -126,74 +124,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Amphenol",
-    "slug": "amphenol",
-    "ownership": "publicly traded (ticker symbol APH)",
-    "hq": "Connecticut",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "electronic equipment",
-    "totalPenalty": 27445903,
-    "totalRecords": 20,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 25750000,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1006500,
-        "records": 4
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 436000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 128120,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 70713,
-        "records": 8
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 25750000,
-        "records": 2
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 945000,
-        "records": 1
-      },
-      {
-        "category": "export control violation",
-        "penalty": 436000,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 106106,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 70713,
-        "records": 8
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:47:59.675Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

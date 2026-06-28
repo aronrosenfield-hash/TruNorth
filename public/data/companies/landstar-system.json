@@ -26,7 +26,6 @@
     "s": "2 federal penalties totaling $215K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $207K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -125,39 +123,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Landstar System Inc.",
-    "slug": "landstar-system-inc",
-    "ownership": "publicly traded (ticker symbol LSTR)",
-    "hq": "Florida",
-    "majorIndustry": "freight and logistics",
-    "specificIndustry": "freight and logistics",
-    "totalPenalty": 215000,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 215000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 207000,
-        "records": 1
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 8000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:53:30.433Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

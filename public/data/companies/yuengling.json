@@ -26,7 +26,6 @@
     "s": "8 federal penalties totaling $10.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "water pollution violation: $9.8M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -103,49 +101,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "D. G. Yuengling and Son",
-    "slug": "d-g-yuengling-and-son",
-    "ownership": "privately held",
-    "hq": "Pennsylvania",
-    "majorIndustry": "beverages",
-    "specificIndustry": "beer",
-    "totalPenalty": 10061636,
-    "totalRecords": 8,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 9999028,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 62608,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "water pollution violation",
-        "penalty": 9800000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 199028,
-        "records": 4
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 62608,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T03:53:18.007Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

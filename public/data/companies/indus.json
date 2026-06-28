@@ -27,7 +27,6 @@
     "s": "48 federal penalties totaling $196.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "hazardous waste violation: $176.6M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -142,59 +140,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "CF Industries",
-    "slug": "cf-industries",
-    "ownership": "publicly traded (ticker symbol CF)",
-    "hq": "Illinois",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 196371918,
-    "totalRecords": 48,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 196021445,
-        "records": 21
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 350473,
-        "records": 27
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "hazardous waste violation",
-        "penalty": 176552220,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 17625000,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 1802225,
-        "records": 15
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 186073,
-        "records": 6
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 164400,
-        "records": 21
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:51:12.111Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00133389",

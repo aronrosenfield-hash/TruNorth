@@ -25,7 +25,6 @@
     "s": "43 federal penalties totaling $16.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "environmental violation: $7.5M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -147,54 +145,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Range Resources",
-    "slug": "range-resources",
-    "ownership": "publicly traded (ticker symbol RRC)",
-    "hq": "Texas",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 16604214,
-    "totalRecords": 43,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 16591614,
-        "records": 42
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 12600,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "oil or gas drilling violation",
-        "penalty": 8900000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 7492694,
-        "records": 40
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 198920,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 12600,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:20:24.074Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

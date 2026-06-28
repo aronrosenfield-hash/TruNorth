@@ -27,7 +27,6 @@
     "s": "13 federal penalties totaling $150.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -146,64 +144,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "First Citizens BancShares",
-    "slug": "first-citizens-bancshares",
-    "ownership": "publicly traded (ticker symbol FCNCA)",
-    "hq": "North Carolina",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking",
-    "totalPenalty": 150844480,
-    "totalRecords": 13,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 150537000,
-        "records": 9
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 232680,
-        "records": 3
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 74800,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 138037000,
-        "records": 7
-      },
-      {
-        "category": "discriminatory practices (non-employment)",
-        "penalty": 7300000,
-        "records": 1
-      },
-      {
-        "category": "mortgage abuses",
-        "penalty": 5200000,
-        "records": 1
-      },
-      {
-        "category": "banking violation",
-        "penalty": 232680,
-        "records": 3
-      },
-      {
-        "category": "export control violation",
-        "penalty": 74800,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:19:25.425Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00334193",

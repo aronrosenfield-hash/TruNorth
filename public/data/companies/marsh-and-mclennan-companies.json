@@ -27,7 +27,6 @@
     "s": "36 federal penalties totaling $1.9B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -149,69 +147,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Marsh & McLennan",
-    "slug": "marsh-and-mclennan",
-    "ownership": "publicly traded (ticker symbol MMC)",
-    "hq": "New York",
-    "majorIndustry": "financial services",
-    "specificIndustry": "insurance",
-    "totalPenalty": 1893901513,
-    "totalRecords": 36,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 957481951,
-        "records": 5
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 900096341,
-        "records": 4
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 35049474,
-        "records": 2
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 1273747,
-        "records": 25
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 926000000,
-        "records": 3
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 500000000,
-        "records": 1
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 400000000,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 35000000,
-        "records": 1
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 29081951,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:09:39.408Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00457234",

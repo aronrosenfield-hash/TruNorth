@@ -26,7 +26,6 @@
     "s": "4 federal penalties totaling $95.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -145,54 +143,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Deutsche Telekom",
-    "slug": "deutsche-telekom",
-    "ownership": "publicly traded",
-    "hq": "Germany",
-    "majorIndustry": "telecommunications",
-    "specificIndustry": "telecommunications",
-    "totalPenalty": 95454327,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 95100000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 345972,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 8355,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 95100000,
-        "records": 2
-      },
-      {
-        "category": "workplace whistleblower retaliation",
-        "penalty": 345972,
-        "records": 1
-      },
-      {
-        "category": "tax violations",
-        "penalty": 8355,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:04:19.757Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

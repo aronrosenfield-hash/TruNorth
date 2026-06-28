@@ -25,7 +25,6 @@
     "s": "14 federal penalties totaling $5.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -40,8 +39,7 @@
   "environment": {
     "s": "water pollution violation: $5.0M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -115,69 +113,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Portland General Electric",
-    "slug": "portland-general-electric",
-    "ownership": "publicly traded (ticker symbol POR)",
-    "hq": "Oregon",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 5636600,
-    "totalRecords": 14,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 5146600,
-        "records": 5
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 375000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 95000,
-        "records": 7
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 20000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "water pollution violation",
-        "penalty": 4972600,
-        "records": 2
-      },
-      {
-        "category": "energy market violation",
-        "penalty": 375000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 174000,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 64000,
-        "records": 4
-      },
-      {
-        "category": "utility safety violation",
-        "penalty": 31000,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:10:03.538Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -27,7 +27,6 @@
     "s": "6 federal penalties totaling $1.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "air pollution violation: $102K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -131,39 +129,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Cheniere Energy",
-    "slug": "cheniere-energy",
-    "ownership": "publicly traded (ticker symbol LNG)",
-    "hq": "Texas",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 1718244,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1718244,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "pipeline safety violation",
-        "penalty": 1616700,
-        "records": 4
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 101544,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:48:44.423Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00430157",

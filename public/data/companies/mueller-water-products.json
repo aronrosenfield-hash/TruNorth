@@ -26,7 +26,6 @@
     "s": "34 federal penalties totaling $622K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "air pollution violation: $30K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -148,59 +146,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Mueller Water Products",
-    "slug": "mueller-water-products",
-    "ownership": "publicly traded (ticker symbol MWA)",
-    "hq": "Georgia",
-    "majorIndustry": "building materials",
-    "specificIndustry": "plumbing supplies",
-    "totalPenalty": 621916,
-    "totalRecords": 34,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 428516,
-        "records": 30
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 163400,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 30000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 428516,
-        "records": 30
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 150000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 30000,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 13400,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:28:18.636Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

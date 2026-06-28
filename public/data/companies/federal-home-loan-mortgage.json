@@ -27,7 +27,6 @@
     "s": "5 federal penalties totaling $62.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $56K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -146,69 +144,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Freddie Mac (Federal Home Loan Mortgage Corporation)",
-    "slug": "freddie-mac-federal-home-loan-mortgage-c",
-    "ownership": "government-sponsored",
-    "hq": "Virginia",
-    "majorIndustry": "financial services",
-    "specificIndustry": "secondary mortgage market",
-    "totalPenalty": 62539955,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 50000000,
-        "records": 1
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 12000000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 515802,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 24153,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 50000000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 12000000,
-        "records": 1
-      },
-      {
-        "category": "lead violation",
-        "penalty": 460000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 55802,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 24153,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:17:31.049Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00404129",

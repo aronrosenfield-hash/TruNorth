@@ -28,7 +28,6 @@
     "s": "11 federal penalties totaling $86.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "environmental violation: $41K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -149,69 +147,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Dentsply Sirona",
-    "slug": "dentsply-sirona",
-    "ownership": "publicly traded (ticker symbol XRAY)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "medical equipment and supplies",
-    "specificIndustry": "medical supplies",
-    "totalPenalty": 86307161,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 84000000,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 2220400,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 46088,
-        "records": 5
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 40673,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 84000000,
-        "records": 1
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 1220400,
-        "records": 1
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 1000000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 46088,
-        "records": 5
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 40673,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:08:06.976Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -25,7 +25,6 @@
     "s": "25 federal penalties totaling $3.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -40,8 +39,7 @@
   "environment": {
     "s": "air pollution violation: $2.7M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -116,54 +114,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Pembina Pipeline Corporation",
-    "slug": "pembina-pipeline-corporation",
-    "ownership": "publicly traded",
-    "hq": "Canada",
-    "majorIndustry": "pipelines",
-    "specificIndustry": "petroleum pipelines",
-    "totalPenalty": 3170371,
-    "totalRecords": 25,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 2964021,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 206350,
-        "records": 20
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 2707200,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 243821,
-        "records": 2
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 206350,
-        "records": 20
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 13000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:05:28.383Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

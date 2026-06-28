@@ -27,7 +27,6 @@
     "s": "8 federal penalties totaling $215K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -126,59 +124,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Graybar Electric",
-    "slug": "graybar-electric",
-    "ownership": "employee-owned",
-    "hq": "Missouri",
-    "majorIndustry": "wholesalers",
-    "specificIndustry": "wholesalers-electrical equipment",
-    "totalPenalty": 215267,
-    "totalRecords": 8,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 103267,
-        "records": 5
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 67000,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 45000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "aviation safety violation",
-        "penalty": 67000,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 67000,
-        "records": 2
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 45000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 36267,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T00:02:31.347Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00165522",

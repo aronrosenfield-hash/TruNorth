@@ -27,7 +27,6 @@
     "s": "60 federal penalties totaling $1.1B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -124,64 +122,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Charles Schwab Corp.",
-    "slug": "charles-schwab-corp",
-    "ownership": "publicly traded (ticker symbol SCHW)",
-    "hq": "California",
-    "majorIndustry": "financial services",
-    "specificIndustry": "financial services",
-    "totalPenalty": 1081282884,
-    "totalRecords": 60,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 837546134,
-        "records": 54
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 237436750,
-        "records": 4
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 6300000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 836946134,
-        "records": 53
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 237406750,
-        "records": 3
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 6300000,
-        "records": 2
-      },
-      {
-        "category": "anti-money-laundering deficiencies",
-        "penalty": 600000,
-        "records": 1
-      },
-      {
-        "category": "discriminatory practices (non-employment)",
-        "penalty": 30000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:34:25.085Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00370114",

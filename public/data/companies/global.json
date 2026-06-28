@@ -27,7 +27,6 @@
     "s": "17 federal penalties totaling $904K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $781K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -145,44 +143,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Global Partners LP",
-    "slug": "global-partners-lp",
-    "ownership": "publicly traded (ticker symbol GLP)",
-    "hq": "Massachusetts",
-    "majorIndustry": "wholesalers",
-    "specificIndustry": "wholesalers-petroleum",
-    "totalPenalty": 903752,
-    "totalRecords": 17,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 781252,
-        "records": 7
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 122500,
-        "records": 10
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 781252,
-        "records": 7
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 122500,
-        "records": 10
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T23:59:29.568Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00373910",

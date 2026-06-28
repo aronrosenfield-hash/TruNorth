@@ -26,7 +26,6 @@
     "s": "40 federal penalties totaling $12.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "air pollution violation: $9.4M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -115,59 +113,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ferroglobe",
-    "slug": "ferroglobe",
-    "ownership": "publicly traded (ticker symbol GSM)",
-    "hq": "United Kingdom",
-    "majorIndustry": "metals",
-    "specificIndustry": "metals",
-    "totalPenalty": 12777417,
-    "totalRecords": 40,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 12282328,
-        "records": 12
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 495089,
-        "records": 28
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 9393350,
-        "records": 6
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 2707878,
-        "records": 4
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 495089,
-        "records": 28
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 175000,
-        "records": 1
-      },
-      {
-        "category": "mining environmental violation",
-        "penalty": 6100,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:18:01.560Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

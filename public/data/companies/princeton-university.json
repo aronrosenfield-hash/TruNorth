@@ -26,7 +26,6 @@
     "s": "12 federal penalties totaling $1.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "environmental violation: $75K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -138,59 +136,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Princeton University",
-    "slug": "princeton-university",
-    "ownership": "non-profit",
-    "hq": "New Jersey",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "university",
-    "totalPenalty": 1226231,
-    "totalRecords": 12,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 1041176,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 131055,
-        "records": 9
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 54000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment discrimination",
-        "penalty": 1041176,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 74975,
-        "records": 5
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 56080,
-        "records": 4
-      },
-      {
-        "category": "export control violation",
-        "penalty": 54000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T01:54:33.642Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

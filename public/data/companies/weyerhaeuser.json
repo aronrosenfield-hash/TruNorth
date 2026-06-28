@@ -45,15 +45,13 @@
     "s": "air pollution violation: $94.4M in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "123 federal penalties totaling $217.3M since 2000 (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -105,69 +103,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "weyerhaeuser",
-      "matchedName": "Weyerhaeuser",
-      "totalPenalty": 217296952,
-      "totalRecords": 123,
-      "offenseGroups": [
-        {
-          "category": "environment-related offenses",
-          "penalty": 96011586,
-          "records": 62
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 82295000,
-          "records": 2
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 36440000,
-          "records": 3
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 1587563,
-          "records": 9
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 962803,
-          "records": 47
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "air pollution violation",
-          "penalty": 94374632,
-          "records": 21
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 82295000,
-          "records": 2
-        },
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 36440000,
-          "records": 3
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 1340854,
-          "records": 28
-        },
-        {
-          "category": "labor relations violation",
-          "penalty": 1145365,
-          "records": 6
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "potlatch-deltic",
@@ -259,74 +194,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Weyerhaeuser",
-    "slug": "weyerhaeuser",
-    "ownership": "publicly traded (ticker symbol WY)",
-    "hq": "Washington",
-    "majorIndustry": "building materials",
-    "specificIndustry": "forest products",
-    "totalPenalty": 217296952,
-    "totalRecords": 123,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 96011586,
-        "records": 62
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 82295000,
-        "records": 2
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 36440000,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1587563,
-        "records": 9
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 962803,
-        "records": 47
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 94374632,
-        "records": 21
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 82295000,
-        "records": 2
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 36440000,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 1340854,
-        "records": 28
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 1145365,
-        "records": 6
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00007948",

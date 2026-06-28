@@ -37,15 +37,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "2 federal penalties totaling $10.8M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -97,39 +95,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "celsius-holdings",
-      "matchedName": "Celsius Holdings",
-      "totalPenalty": 10800000,
-      "totalRecords": 2,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 7800000,
-          "records": 1
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 3000000,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "consumer protection violation",
-          "penalty": 7800000,
-          "records": 1
-        },
-        {
-          "category": "accounting fraud or deficiencies",
-          "penalty": 3000000,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "red-bull",
@@ -188,44 +153,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Celsius Holdings",
-    "slug": "celsius-holdings",
-    "ownership": "publicly traded (ticker symbol CELH)",
-    "hq": "Florida",
-    "majorIndustry": "beverages",
-    "specificIndustry": "energy drinks",
-    "totalPenalty": 10800000,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 7800000,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 3000000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 7800000,
-        "records": 1
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 3000000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

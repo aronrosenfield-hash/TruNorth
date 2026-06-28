@@ -26,7 +26,6 @@
     "s": "5 federal penalties totaling $98K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $15K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -127,54 +125,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "ICL Group",
-    "slug": "icl-group",
-    "ownership": "publicly traded",
-    "hq": "Israel",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "specialty mineral products",
-    "totalPenalty": 98354,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 54854,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 43500,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "pesticide violation",
-        "penalty": 40000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 38500,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 14854,
-        "records": 1
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:07:22.746Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

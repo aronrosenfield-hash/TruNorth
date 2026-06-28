@@ -26,7 +26,6 @@
     "s": "9 federal penalties totaling $86K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "water pollution violation: $8K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -144,54 +142,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Matthews International Corp.",
-    "slug": "matthews-international-corp",
-    "ownership": "publicly traded (ticker symbol MATW)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "cemetery products",
-    "totalPenalty": 85992,
-    "totalRecords": 9,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 72788,
-        "records": 7
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 8108,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 5096,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 72788,
-        "records": 7
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 8108,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 5096,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:10:57.904Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

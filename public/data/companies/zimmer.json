@@ -27,7 +27,6 @@
     "s": "17 federal penalties totaling $1.3B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -195,74 +193,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Zimmer Biomet",
-    "slug": "zimmer-biomet",
-    "ownership": "publicly traded (ticker symbol ZBH)",
-    "hq": "Indiana",
-    "majorIndustry": "medical equipment and supplies",
-    "specificIndustry": "medical devices",
-    "totalPenalty": 1303482814,
-    "totalRecords": 17,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 1050178300,
-        "records": 6
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 196400000,
-        "records": 2
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 49383032,
-        "records": 5
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 7380432,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 82850,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "drug or medical equipment safety violation",
-        "penalty": 1050000000,
-        "records": 2
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 196400000,
-        "records": 2
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 49208032,
-        "records": 4
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 7380432,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 178300,
-        "records": 4
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T03:54:03.986Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00341271",

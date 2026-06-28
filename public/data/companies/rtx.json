@@ -30,7 +30,6 @@
     "s": "140 federal penalties totaling $1.7B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,7 +48,6 @@
     "s": "CDP Climate Change: B (2024) — management-band disclosure; discloses emissions data but limited target ambition.",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "cdp-climate"
     ]
   },
@@ -171,74 +169,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "RTX Corporation",
-    "slug": "rtx-corporation",
-    "ownership": "publicly traded (ticker symbol RTX)",
-    "hq": "Massachusetts",
-    "majorIndustry": "aerospace and military contracting",
-    "specificIndustry": "aerospace &amp; military contracting",
-    "totalPenalty": 1682482795,
-    "totalRecords": 140,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 1488270250,
-        "records": 13
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 96476883,
-        "records": 37
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 69729330,
-        "records": 8
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 13865658,
-        "records": 38
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 12000000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "fraud",
-        "penalty": 950000000,
-        "records": 1
-      },
-      {
-        "category": "export control violation",
-        "penalty": 366370250,
-        "records": 9
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 137900000,
-        "records": 2
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 69729330,
-        "records": 8
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 64500000,
-        "records": 2
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:27:03.645Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00097568",

@@ -63,8 +63,7 @@ export const COMPANIES = [
         "OSHA",
         "NLRB",
         "Fair Labor Association",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -119,45 +118,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "nike",
-        "matchedName": "Nike",
-        "totalPenalty": 17765864,
-        "totalRecords": 5,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 17725000,
-            "records": 3
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 40864,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 10125000,
-            "records": 2
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 7600000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 40864,
-            "records": 2
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 2,
@@ -218,8 +179,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -273,70 +233,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "walmart",
-        "matchedName": "Walmart",
-        "totalPenalty": 5803396993,
-        "totalRecords": 609,
-        "offenseGroups": [
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 3423173855,
-            "records": 5
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 1756050445,
-            "records": 144
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 308250000,
-            "records": 3
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 158452349,
-            "records": 45
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 145983403,
-            "records": 117
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "off-label or unapproved promotion of medical products",
-            "penalty": 3423173855,
-            "records": 5
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 1651000886,
-            "records": 54
-          },
-          {
-            "category": "Foreign Corrupt Practices Act",
-            "penalty": 281000000,
-            "records": 2
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 128990409,
-            "records": 34
-          },
-          {
-            "category": "water pollution violation",
-            "penalty": 90836723,
-            "records": 12
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 3,
@@ -399,8 +296,7 @@ export const COMPANIES = [
         "OSHA",
         "NLRB",
         "Senate HELP Committee Report 2024",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -455,70 +351,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "amazoncom",
-        "matchedName": "Amazon.com",
-        "totalPenalty": 2788983667,
-        "totalRecords": 177,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 2643182230,
-            "records": 23
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 112995533,
-            "records": 26
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 20061128,
-            "records": 27
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 5790000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 4270253,
-            "records": 97
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 2516279468,
-            "records": 17
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 126902762,
-            "records": 6
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 104786494,
-            "records": 13
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 10320867,
-            "records": 13
-          },
-          {
-            "category": "employment screening violation",
-            "penalty": 5802720,
-            "records": 2
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 4,
@@ -579,8 +412,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "OSHA",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -634,70 +466,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "apple-inc",
-        "matchedName": "Apple Inc.",
-        "totalPenalty": 1548635101,
-        "totalRecords": 31,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 765645440,
-            "records": 14
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 653750000,
-            "records": 3
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 70015000,
-            "records": 5
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 57978508,
-            "records": 4
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 779241,
-            "records": 4
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 670395440,
-            "records": 12
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 653750000,
-            "records": 3
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 95000000,
-            "records": 1
-          },
-          {
-            "category": "product safety violation",
-            "penalty": 70000000,
-            "records": 2
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 32978508,
-            "records": 3
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 5,
@@ -866,8 +635,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Glassdoor",
-        "SEC proxy",
-        "Violation Tracker (verified)"
+        "SEC proxy"
       ]
     },
     "dei": {
@@ -920,70 +688,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "microsoft",
-        "matchedName": "Microsoft",
-        "totalPenalty": 1590084462,
-        "totalRecords": 23,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 1296283959,
-            "records": 6
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 202330841,
-            "records": 9
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 53100000,
-            "records": 4
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 38327896,
-            "records": 3
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 41766,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 1270967014,
-            "records": 4
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 104355841,
-            "records": 3
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 91225000,
-            "records": 5
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 35000000,
-            "records": 1
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 33000000,
-            "records": 2
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 7,
@@ -1145,9 +850,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "OSHA",
-        "EEOC",
-        "Violation Tracker",
-        "Violation Tracker (verified)"
+        "EEOC"
       ]
     },
     "dei": {
@@ -1201,70 +904,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "tesla-inc",
-        "matchedName": "Tesla Inc.",
-        "totalPenalty": 99442374,
-        "totalRecords": 81,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 35800000,
-            "records": 3
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 29820000,
-            "records": 2
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 14350890,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 7935361,
-            "records": 51
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 6155000,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 29820000,
-            "records": 2
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 20000000,
-            "records": 1
-          },
-          {
-            "category": "Foreign Corrupt Practices Act",
-            "penalty": 14350890,
-            "records": 2
-          },
-          {
-            "category": "tax violations",
-            "penalty": 13000000,
-            "records": 1
-          },
-          {
-            "category": "product safety violation",
-            "penalty": 6915280,
-            "records": 2
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 9,
@@ -1320,8 +960,7 @@ export const COMPANIES = [
         "NLRB",
         "Starbucks Workers United",
         "AFL-CIO",
-        "Court records (3d Cir. 2024)",
-        "Violation Tracker (verified)"
+        "Court records (3d Cir. 2024)"
       ]
     },
     "dei": {
@@ -1377,65 +1016,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "starbucks",
-        "matchedName": "Starbucks",
-        "totalPenalty": 91292991,
-        "totalRecords": 40,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 87005724,
-            "records": 19
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 3916267,
-            "records": 17
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 225000,
-            "records": 1
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 146000,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 85354224,
-            "records": 13
-          },
-          {
-            "category": "product safety violation",
-            "penalty": 3750000,
-            "records": 1
-          },
-          {
-            "category": "Fair Credit Reporting Act violation",
-            "penalty": 1305000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 225000,
-            "records": 1
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 191500,
-            "records": 3
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 10,
@@ -1496,8 +1077,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "OSHA",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -1549,65 +1129,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "mcdonalds",
-        "matchedName": "McDonald's",
-        "totalPenalty": 45807484,
-        "totalRecords": 77,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 37056249,
-            "records": 51
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 8500000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 169205,
-            "records": 19
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 82030,
-            "records": 6
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 36544749,
-            "records": 47
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 8500000,
-            "records": 1
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 511500,
-            "records": 4
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 169205,
-            "records": 19
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 59572,
-            "records": 4
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 11,
@@ -1670,8 +1192,7 @@ export const COMPANIES = [
         "NLRB",
         "OSHA",
         "Glassdoor",
-        "Company CSR",
-        "Violation Tracker (verified)"
+        "Company CSR"
       ]
     },
     "dei": {
@@ -1728,70 +1249,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "target",
-        "matchedName": "Target",
-        "totalPenalty": 192417054,
-        "totalRecords": 177,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 91024528,
-            "records": 10
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 47548904,
-            "records": 25
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 31421155,
-            "records": 27
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 12437500,
-            "records": 1
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 6025000,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "privacy violation",
-            "penalty": 71066939,
-            "records": 4
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 27052020,
-            "records": 11
-          },
-          {
-            "category": "hazardous waste violation",
-            "penalty": 22603696,
-            "records": 3
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 19957589,
-            "records": 6
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 12437500,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 12,
@@ -1844,8 +1302,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -1897,70 +1354,7 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "costco",
-        "matchedName": "Costco",
-        "totalPenalty": 98343061,
-        "totalRecords": 104,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 63800554,
-            "records": 17
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 12308504,
-            "records": 7
-          },
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 11750000,
-            "records": 1
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 9839481,
-            "records": 32
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 644522,
-            "records": 47
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 37776595,
-            "records": 11
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 13333959,
-            "records": 3
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 12278004,
-            "records": 5
-          },
-          {
-            "category": "Controlled Substances Act violation",
-            "penalty": 11750000,
-            "records": 1
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 10200000,
-            "records": 2
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 13,
@@ -2022,8 +1416,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "Glassdoor",
-        "Good Jobs First Violation Tracker",
-        "Violation Tracker (verified)"
+        "Good Jobs First Violation Tracker"
       ]
     },
     "dei": {
@@ -2076,70 +1469,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "home-depot",
-        "matchedName": "Home Depot",
-        "totalPenalty": 325066407,
-        "totalRecords": 368,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 126796064,
-            "records": 46
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 94153415,
-            "records": 69
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 93093251,
-            "records": 15
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 6945000,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 4078677,
-            "records": 236
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 110712532,
-            "records": 21
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 62000000,
-            "records": 3
-          },
-          {
-            "category": "hazardous waste violation",
-            "penalty": 37788953,
-            "records": 6
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 31093251,
-            "records": 12
-          },
-          {
-            "category": "lead violation",
-            "penalty": 20750000,
-            "records": 1
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 14,
@@ -2192,8 +1522,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "OSHA",
-        "Company CSR",
-        "Violation Tracker (verified)"
+        "Company CSR"
       ]
     },
     "dei": {
@@ -2244,65 +1573,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "lowes",
-        "matchedName": "Lowe's",
-        "totalPenalty": 135998205,
-        "totalRecords": 223,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 78389397,
-            "records": 37
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 36551579,
-            "records": 44
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 11172229,
-            "records": 136
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 9885000,
-            "records": 6
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 53076247,
-            "records": 12
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 18572305,
-            "records": 19
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 13225000,
-            "records": 2
-          },
-          {
-            "category": "lead violation",
-            "penalty": 13000000,
-            "records": 2
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 11575000,
-            "records": 6
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 15,
@@ -2363,8 +1634,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -2418,70 +1688,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "cvs-health",
-        "matchedName": "CVS Health",
-        "totalPenalty": 7168997825,
-        "totalRecords": 556,
-        "offenseGroups": [
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 5702839616,
-            "records": 34
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 865996936,
-            "records": 38
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 369086623,
-            "records": 287
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 125254668,
-            "records": 85
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 67150000,
-            "records": 7
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "off-label or unapproved promotion of medical products",
-            "penalty": 5494000000,
-            "records": 3
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 865996936,
-            "records": 38
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 282620239,
-            "records": 39
-          },
-          {
-            "category": "Controlled Substances Act violation",
-            "penalty": 199262500,
-            "records": 17
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 108460175,
-            "records": 69
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 16,
@@ -2658,9 +1865,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -2714,70 +1919,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "kroger",
-        "matchedName": "Kroger",
-        "totalPenalty": 3282777461,
-        "totalRecords": 320,
-        "offenseGroups": [
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 3038871559,
-            "records": 10
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 103611643,
-            "records": 38
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 70000000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 53424278,
-            "records": 64
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 13875767,
-            "records": 9
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "off-label or unapproved promotion of medical products",
-            "penalty": 3024000000,
-            "records": 6
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 102754065,
-            "records": 14
-          },
-          {
-            "category": "fraud",
-            "penalty": 70000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 27739473,
-            "records": 30
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 24048000,
-            "records": 11
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 18,
@@ -2838,8 +1980,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -2890,70 +2031,7 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "albertsons-companies",
-        "matchedName": "Albertsons Companies",
-        "totalPenalty": 1020637464,
-        "totalRecords": 308,
-        "offenseGroups": [
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 779286994,
-            "records": 6
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 155662804,
-            "records": 72
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 52838817,
-            "records": 10
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 29634987,
-            "records": 47
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 3110862,
-            "records": 172
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "off-label or unapproved promotion of medical products",
-            "penalty": 775200000,
-            "records": 2
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 116912299,
-            "records": 47
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 51772417,
-            "records": 9
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 29614000,
-            "records": 10
-          },
-          {
-            "category": "hazardous waste violation",
-            "penalty": 13241500,
-            "records": 3
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 19,
@@ -3014,8 +2092,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -3068,60 +2145,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "publix-super-markets",
-        "matchedName": "Publix Super Markets",
-        "totalPenalty": 55357198,
-        "totalRecords": 33,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 54874609,
-            "records": 12
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 286679,
-            "records": 18
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 195910,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 37277500,
-            "records": 2
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 10500000,
-            "records": 1
-          },
-          {
-            "category": "employment screening violation",
-            "penalty": 6812775,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 286679,
-            "records": 18
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 248625,
-            "records": 6
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 20,
@@ -3182,8 +2206,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -3236,65 +2259,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "aldi",
-        "matchedName": "Aldi",
-        "totalPenalty": 63036995,
-        "totalRecords": 97,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 48996697,
-            "records": 16
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 8381774,
-            "records": 23
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 4675000,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 983524,
-            "records": 56
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "employment discrimination",
-            "penalty": 32020000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 13534197,
-            "records": 10
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 5742800,
-            "records": 19
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 4675000,
-            "records": 2
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 2985000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 21,
@@ -3670,8 +2635,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -3726,70 +2690,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "dollar-general",
-        "matchedName": "Dollar General",
-        "totalPenalty": 92717860,
-        "totalRecords": 296,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 40103551,
-            "records": 29
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 32599154,
-            "records": 247
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 10000000,
-            "records": 1
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 8636006,
-            "records": 8
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 1379149,
-            "records": 11
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 32499154,
-            "records": 246
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 26712565,
-            "records": 13
-          },
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 10000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 9218986,
-            "records": 13
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 8630006,
-            "records": 7
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 25,
@@ -3842,8 +2743,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -3896,70 +2796,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "dollar-tree",
-        "matchedName": "Dollar Tree",
-        "totalPenalty": 45675126,
-        "totalRecords": 350,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 21304858,
-            "records": 24
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 20989867,
-            "records": 316
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 3082001,
-            "records": 7
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 290000,
-            "records": 2
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 8400,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 21244562,
-            "records": 21
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 20429867,
-            "records": 315
-          },
-          {
-            "category": "hazardous waste violation",
-            "penalty": 2720000,
-            "records": 1
-          },
-          {
-            "category": "food safety violation",
-            "penalty": 560000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 290000,
-            "records": 2
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 26,
@@ -4013,8 +2850,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "DOJ",
-        "FDA",
-        "Violation Tracker (verified)"
+        "FDA"
       ]
     },
     "dei": {
@@ -4067,65 +2903,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "family-dollar-stores",
-        "matchedName": "Family Dollar Stores",
-        "totalPenalty": 174224807,
-        "totalRecords": 131,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 100889705,
-            "records": 16
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 46355851,
-            "records": 105
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 26007500,
-            "records": 4
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 971751,
-            "records": 6
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 55661415,
-            "records": 10
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 45218750,
-            "records": 5
-          },
-          {
-            "category": "food safety violation",
-            "penalty": 41675000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 26000000,
-            "records": 3
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 4505851,
-            "records": 102
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 27,
@@ -4404,8 +3182,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "OSHA",
-        "NLRB",
-        "Violation Tracker (verified)"
+        "NLRB"
       ]
     },
     "dei": {
@@ -4457,65 +3234,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "wawa-inc",
-        "matchedName": "Wawa Inc.",
-        "totalPenalty": 74291341,
-        "totalRecords": 30,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 48500000,
-            "records": 3
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 25390000,
-            "records": 3
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 361887,
-            "records": 21
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 39454,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "privacy violation",
-            "penalty": 48500000,
-            "records": 3
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 25000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 370000,
-            "records": 1
-          },
-          {
-            "category": "water pollution violation",
-            "penalty": 182088,
-            "records": 9
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 121899,
-            "records": 6
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 30,
@@ -4579,8 +3298,7 @@ export const COMPANIES = [
       "sources": [
         "EEOC",
         "Glassdoor",
-        "Indeed",
-        "Violation Tracker (verified)"
+        "Indeed"
       ]
     },
     "dei": {
@@ -4633,50 +3351,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "sheetz",
-        "matchedName": "Sheetz",
-        "totalPenalty": 1121955,
-        "totalRecords": 11,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 1065412,
-            "records": 6
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 42300,
-            "records": 4
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 14243,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "environmental violation",
-            "penalty": 1065412,
-            "records": 6
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 42300,
-            "records": 4
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 14243,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 31,
@@ -4729,8 +3404,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Department of Labor",
-        "Violation Tracker (verified)"
+        "Department of Labor"
       ]
     },
     "dei": {
@@ -4781,50 +3455,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "chick-fil-a",
-        "matchedName": "Chick-fil-A",
-        "totalPenalty": 662859,
-        "totalRecords": 15,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 615269,
-            "records": 10
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 26090,
-            "records": 4
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 21500,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 615269,
-            "records": 10
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 26090,
-            "records": 4
-          },
-          {
-            "category": "water pollution violation",
-            "penalty": 21500,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 32,
@@ -5113,8 +3744,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -5167,55 +3797,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "wendys",
-        "matchedName": "Wendy's",
-        "totalPenalty": 6328739,
-        "totalRecords": 25,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 6271385,
-            "records": 18
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 49854,
-            "records": 6
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 7500,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 6223808,
-            "records": 17
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 49854,
-            "records": 6
-          },
-          {
-            "category": "Family and Medical Leave Act",
-            "penalty": 47577,
-            "records": 1
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 7500,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 35,
@@ -5383,8 +3965,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -5437,60 +4018,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "dominos-pizza-inc",
-        "matchedName": "Domino's Pizza Inc.",
-        "totalPenalty": 14982726,
-        "totalRecords": 28,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 14772255,
-            "records": 18
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 124471,
-            "records": 9
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 86000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 12089255,
-            "records": 13
-          },
-          {
-            "category": "employment screening violation",
-            "penalty": 2500000,
-            "records": 1
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 183000,
-            "records": 4
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 94471,
-            "records": 8
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 86000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 37,
@@ -5648,8 +4176,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -5702,45 +4229,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "papa-johns-international",
-        "matchedName": "Papa John's International",
-        "totalPenalty": 16400324,
-        "totalRecords": 15,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 16297949,
-            "records": 11
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 102375,
-            "records": 4
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 16122949,
-            "records": 10
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 175000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 102375,
-            "records": 4
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 39,
@@ -6128,8 +4617,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -6182,60 +4670,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "chipotle-mexican-grill",
-        "matchedName": "Chipotle Mexican Grill",
-        "totalPenalty": 90626032,
-        "totalRecords": 118,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 58847827,
-            "records": 110
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 25032205,
-            "records": 6
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 6746000,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 57829770,
-            "records": 98
-          },
-          {
-            "category": "food safety violation",
-            "penalty": 25000000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 6746000,
-            "records": 2
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 701220,
-            "records": 7
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 316837,
-            "records": 5
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 43,
@@ -6719,8 +5154,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -6773,50 +5207,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "dennys-corp",
-        "matchedName": "Denny's Corp.",
-        "totalPenalty": 4239874,
-        "totalRecords": 19,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 4230274,
-            "records": 18
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 9600,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 2773507,
-            "records": 14
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 1449776,
-            "records": 3
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 9600,
-            "records": 1
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 6991,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 48,
@@ -6877,8 +5268,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -6930,55 +5320,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "cracker-barrel-old-country-store",
-        "matchedName": "Cracker Barrel Old Country Store",
-        "totalPenalty": 2507961,
-        "totalRecords": 14,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 2276949,
-            "records": 4
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 129065,
-            "records": 9
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 101947,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "employment discrimination",
-            "penalty": 2270000,
-            "records": 3
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 129065,
-            "records": 9
-          },
-          {
-            "category": "discriminatory practices (non-employment)",
-            "penalty": 101947,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 6949,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 49,
@@ -7585,8 +5927,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -7639,30 +5980,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "wingstop",
-        "matchedName": "Wingstop",
-        "totalPenalty": 132817,
-        "totalRecords": 6,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 132817,
-            "records": 6
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 132817,
-            "records": 6
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 55,
@@ -7943,8 +6261,7 @@ export const COMPANIES = [
         "OSHA",
         "NLRB",
         "Glassdoor",
-        "Comparably",
-        "Violation Tracker (verified)"
+        "Comparably"
       ]
     },
     "dei": {
@@ -7998,45 +6315,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "shake-shack-inc",
-        "matchedName": "Shake Shack Inc.",
-        "totalPenalty": 237844,
-        "totalRecords": 7,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 232250,
-            "records": 6
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 5594,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 212250,
-            "records": 5
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 20000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 5594,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 58,
@@ -8311,8 +6590,7 @@ export const COMPANIES = [
         "NLRB",
         "OSHA",
         "Comparably",
-        "California DIR",
-        "Violation Tracker (verified)"
+        "California DIR"
       ]
     },
     "dei": {
@@ -8366,50 +6644,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "jack-in-the-box-inc",
-        "matchedName": "Jack in the Box Inc.",
-        "totalPenalty": 19166742,
-        "totalRecords": 25,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 19106580,
-            "records": 18
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 60162,
-            "records": 7
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 17433900,
-            "records": 13
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 1570000,
-            "records": 3
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 102680,
-            "records": 2
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 60162,
-            "records": 7
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 61,
@@ -9307,8 +7542,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Comparably",
-        "NLRB records",
-        "Violation Tracker (verified)"
+        "NLRB records"
       ]
     },
     "dei": {
@@ -9353,40 +7587,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "carlson",
-        "matchedName": "Carlson",
-        "totalPenalty": 165000,
-        "totalRecords": 2,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 125000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 40000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "aviation consumer protection violation",
-            "penalty": 125000,
-            "records": 1
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 40000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 71,
@@ -9858,8 +8059,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "NYC Comptroller",
-        "Company Impact Report",
-        "Violation Tracker (verified)"
+        "Company Impact Report"
       ]
     },
     "dei": {
@@ -9910,30 +8110,7 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "cava-group",
-        "matchedName": "Cava Group",
-        "totalPenalty": 1450000,
-        "totalRecords": 1,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 1450000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 1450000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 76,
@@ -10476,8 +8653,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "Company Workplace Rights Policy",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -10527,70 +8703,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "coca-cola-co",
-        "matchedName": "Coca-Cola Co.",
-        "totalPenalty": 265821187,
-        "totalRecords": 123,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 240145077,
-            "records": 29
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 23775000,
-            "records": 3
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 899822,
-            "records": 19
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 864788,
-            "records": 71
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 136500,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "employment discrimination",
-            "penalty": 201028292,
-            "records": 13
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 38934324,
-            "records": 8
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 23775000,
-            "records": 3
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 855788,
-            "records": 70
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 385352,
-            "records": 7
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 82,
@@ -10650,9 +8763,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "ICCR",
-        "Violation Tracker",
-        "Company Supplier Code",
-        "Violation Tracker (verified)"
+        "Company Supplier Code"
       ]
     },
     "dei": {
@@ -10704,65 +8815,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "pepsico",
-        "matchedName": "PepsiCo",
-        "totalPenalty": 77894380,
-        "totalRecords": 236,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 55823691,
-            "records": 50
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 11519000,
-            "records": 4
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 7170189,
-            "records": 32
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 3381500,
-            "records": 150
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 45516319,
-            "records": 17
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 11519000,
-            "records": 4
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 5835000,
-            "records": 7
-          },
-          {
-            "category": "employment screening violation",
-            "penalty": 3592275,
-            "records": 2
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 3580121,
-            "records": 22
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 83,
@@ -10931,8 +8984,7 @@ export const COMPANIES = [
       "sources": [
         "Oxfam",
         "NLRB",
-        "Unilever Human Rights",
-        "Violation Tracker (verified)"
+        "Unilever Human Rights"
       ]
     },
     "dei": {
@@ -10985,70 +9037,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "unilever",
-        "matchedName": "Unilever",
-        "totalPenalty": 38134766,
-        "totalRecords": 44,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 12588380,
-            "records": 20
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 12437500,
-            "records": 1
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 8008274,
-            "records": 19
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 4740000,
-            "records": 3
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 360612,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 12437500,
-            "records": 1
-          },
-          {
-            "category": "product safety violation",
-            "penalty": 12250000,
-            "records": 2
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 4740000,
-            "records": 3
-          },
-          {
-            "category": "water pollution violation",
-            "penalty": 4592000,
-            "records": 3
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 3202500,
-            "records": 9
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 85,
@@ -11111,8 +9100,7 @@ export const COMPANIES = [
         "OSHA",
         "NLRB",
         "Glassdoor",
-        "Good Jobs First Violation Tracker",
-        "Violation Tracker (verified)"
+        "Good Jobs First Violation Tracker"
       ]
     },
     "dei": {
@@ -11167,70 +9155,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "procter-and-gamble",
-        "matchedName": "Procter & Gamble",
-        "totalPenalty": 89696091,
-        "totalRecords": 60,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 88350000,
-            "records": 4
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 504409,
-            "records": 15
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 491433,
-            "records": 5
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 332749,
-            "records": 35
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 17500,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 88350000,
-            "records": 4
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 391595,
-            "records": 11
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 382503,
-            "records": 3
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 176266,
-            "records": 15
-          },
-          {
-            "category": "railroad safety violation",
-            "penalty": 156483,
-            "records": 20
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 86,
@@ -11292,8 +9217,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -11345,70 +9269,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "johnson-and-johnson",
-        "matchedName": "Johnson & Johnson",
-        "totalPenalty": 25117910922,
-        "totalRecords": 81,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 15127228479,
-            "records": 25
-          },
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 8466011000,
-            "records": 16
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 717161000,
-            "records": 6
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 556555368,
-            "records": 13
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 245450000,
-            "records": 7
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "product safety violation",
-            "penalty": 11550000000,
-            "records": 3
-          },
-          {
-            "category": "off-label or unapproved promotion of medical products",
-            "penalty": 8465500000,
-            "records": 15
-          },
-          {
-            "category": "drug or medical equipment safety violation",
-            "penalty": 3577169800,
-            "records": 14
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 717011000,
-            "records": 5
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 556555368,
-            "records": 13
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 87,
@@ -11468,8 +9329,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "OSHA",
-        "NLRB",
-        "Violation Tracker (verified)"
+        "NLRB"
       ]
     },
     "dei": {
@@ -11521,70 +9381,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "kraft-heinz",
-        "matchedName": "Kraft Heinz",
-        "totalPenalty": 124064754,
-        "totalRecords": 114,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 62000000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 23784268,
-            "records": 13
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 16831000,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 11625736,
-            "records": 22
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 8000000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 62000000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 16831000,
-            "records": 2
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 12906268,
-            "records": 9
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 10912736,
-            "records": 19
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 9500000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 88,
@@ -11645,8 +9442,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Glassdoor",
-        "Company reports",
-        "Violation Tracker (verified)"
+        "Company reports"
       ]
     },
     "dei": {
@@ -11697,65 +9493,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "general-mills",
-        "matchedName": "General Mills",
-        "totalPenalty": 1454783,
-        "totalRecords": 34,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 695925,
-            "records": 10
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 375000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 305358,
-            "records": 20
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 78500,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "environmental violation",
-            "penalty": 583148,
-            "records": 7
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 375000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 265358,
-            "records": 19
-          },
-          {
-            "category": "water pollution violation",
-            "penalty": 86212,
-            "records": 1
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 72500,
-            "records": 2
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 89,
@@ -11923,8 +9661,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -11975,70 +9712,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "conagra-brands",
-        "matchedName": "ConAgra Brands",
-        "totalPenalty": 201235354,
-        "totalRecords": 173,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 104866667,
-            "records": 2
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 45000000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 25968634,
-            "records": 18
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 13160268,
-            "records": 121
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 12239785,
-            "records": 31
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 104866667,
-            "records": 2
-          },
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 45000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 21331014,
-            "records": 4
-          },
-          {
-            "category": "food safety violation",
-            "penalty": 11200000,
-            "records": 1
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 10339272,
-            "records": 24
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 91,
@@ -12099,8 +9773,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "Company Policy",
-        "GoodJobsFirst",
-        "Violation Tracker (verified)"
+        "GoodJobsFirst"
       ]
     },
     "dei": {
@@ -12151,70 +9824,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "mondelez-international",
-        "matchedName": "Mondelez International",
-        "totalPenalty": 75794666,
-        "totalRecords": 41,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 30750000,
-            "records": 4
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 29000000,
-            "records": 2
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 9812500,
-            "records": 4
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 5185914,
-            "records": 7
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 937313,
-            "records": 12
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 30000000,
-            "records": 3
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 16000000,
-            "records": 1
-          },
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 13000000,
-            "records": 1
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 9812500,
-            "records": 4
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 2672787,
-            "records": 5
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 92,
@@ -12274,8 +9884,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Company CSR reports",
-        "Academic case studies",
-        "Violation Tracker (verified)"
+        "Academic case studies"
       ]
     },
     "dei": {
@@ -12326,55 +9935,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "hershey",
-        "matchedName": "Hershey",
-        "totalPenalty": 601397,
-        "totalRecords": 23,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 318925,
-            "records": 19
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 271673,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 10799,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 318925,
-            "records": 19
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 186673,
-            "records": 1
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 85000,
-            "records": 1
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 10799,
-            "records": 2
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 93,
@@ -12438,8 +9999,7 @@ export const COMPANIES = [
         "OSHA",
         "Department of Labor",
         "SEC proxy",
-        "EPI",
-        "Violation Tracker (verified)"
+        "EPI"
       ]
     },
     "dei": {
@@ -12491,70 +10051,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "tyson-foods",
-        "matchedName": "Tyson Foods",
-        "totalPenalty": 484709319,
-        "totalRecords": 369,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 309670000,
-            "records": 11
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 88389560,
-            "records": 41
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 70584690,
-            "records": 87
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 8065069,
-            "records": 227
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 5000000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 300625000,
-            "records": 6
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 73888825,
-            "records": 15
-          },
-          {
-            "category": "water pollution violation",
-            "penalty": 35582265,
-            "records": 11
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 28805746,
-            "records": 59
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 14129165,
-            "records": 13
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 94,
@@ -12718,8 +10215,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "Company CSR",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -12770,65 +10266,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "hormel-foods",
-        "matchedName": "Hormel Foods",
-        "totalPenalty": 19868017,
-        "totalRecords": 65,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 10785000,
-            "records": 3
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 6770012,
-            "records": 6
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 1361116,
-            "records": 6
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 951889,
-            "records": 50
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 10785000,
-            "records": 3
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 6745446,
-            "records": 3
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 1041861,
-            "records": 2
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 951889,
-            "records": 50
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 297375,
-            "records": 2
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 96,
@@ -12889,8 +10327,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -12944,70 +10381,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "campbell-soup",
-        "matchedName": "Campbell Soup",
-        "totalPenalty": 20071266,
-        "totalRecords": 65,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 11000445,
-            "records": 9
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 5000000,
-            "records": 1
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 2773693,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 746327,
-            "records": 15
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 550801,
-            "records": 38
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 6178625,
-            "records": 2
-          },
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 5000000,
-            "records": 1
-          },
-          {
-            "category": "WARN Act violation",
-            "penalty": 4000000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 2773693,
-            "records": 2
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 771819,
-            "records": 5
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 97,
@@ -13173,8 +10547,7 @@ export const COMPANIES = [
       "rating": "Good",
       "sources": [
         "Company CSR",
-        "DiversityInc",
-        "Violation Tracker (verified)"
+        "DiversityInc"
       ]
     },
     "dei": {
@@ -13218,50 +10591,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "mccormick",
-        "matchedName": "McCormick",
-        "totalPenalty": 5591150,
-        "totalRecords": 5,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 5500000,
-            "records": 2
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 58000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 33150,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 5500000,
-            "records": 2
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 58000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 33150,
-            "records": 2
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 99,
@@ -13314,8 +10644,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Indeed",
-        "PayScale",
-        "Violation Tracker (verified)"
+        "PayScale"
       ]
     },
     "dei": {
@@ -13366,65 +10695,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "land-olakes",
-        "matchedName": "Land O'Lakes",
-        "totalPenalty": 27860689,
-        "totalRecords": 60,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 25000000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 1842000,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 535095,
-            "records": 35
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 483594,
-            "records": 22
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 25000000,
-            "records": 1
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 1800000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 473385,
-            "records": 31
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 381269,
-            "records": 19
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 102325,
-            "records": 3
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 100,
@@ -13693,8 +10964,7 @@ export const COMPANIES = [
       "rating": "Good",
       "sources": [
         "Glassdoor",
-        "Company CSR",
-        "Violation Tracker (verified)"
+        "Company CSR"
       ]
     },
     "dei": {
@@ -13743,30 +11013,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "chobani",
-        "matchedName": "Chobani",
-        "totalPenalty": 40833,
-        "totalRecords": 3,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 40833,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 40833,
-            "records": 3
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 103,
@@ -15685,8 +12932,7 @@ export const COMPANIES = [
       "s": "Molson Coors' Power Montana Barley Elevator was recognized by OSHA for workplace safety excellence as a Star site, demonstrating exemplary safety culture and management commitment. The company has maintained cooperative labor relations with recognized workplace safety programs.",
       "rating": "Good",
       "sources": [
-        "OSHA",
-        "Violation Tracker (verified)"
+        "OSHA"
       ]
     },
     "dei": {
@@ -15729,70 +12975,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "molson-coors-beverage",
-        "matchedName": "Molson Coors Beverage",
-        "totalPenalty": 12685849,
-        "totalRecords": 52,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 10050000,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 1607571,
-            "records": 23
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 521358,
-            "records": 23
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 499000,
-            "records": 3
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 7920,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 10050000,
-            "records": 2
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 1016125,
-            "records": 15
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 521358,
-            "records": 23
-          },
-          {
-            "category": "tax violations",
-            "penalty": 499000,
-            "records": 3
-          },
-          {
-            "category": "water pollution violation",
-            "penalty": 351206,
-            "records": 2
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 123,
@@ -15949,8 +13132,7 @@ export const COMPANIES = [
       "rating": "Good",
       "sources": [
         "Glassdoor",
-        "Indeed.com",
-        "Violation Tracker (verified)"
+        "Indeed.com"
       ]
     },
     "dei": {
@@ -16002,30 +13184,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "heineken",
-        "matchedName": "Heineken",
-        "totalPenalty": 2500000,
-        "totalRecords": 1,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 2500000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "tax violations",
-            "penalty": 2500000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 125,
@@ -16364,8 +13523,7 @@ export const COMPANIES = [
       "s": "SNC employs over 4,000 workers across 40+ global locations. Company highlights employee development and culture of innovation. No significant OSHA violations or labor disputes reported in public sources. Glassdoor data and independent labor assessments not readily available.",
       "rating": "Average",
       "sources": [
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -16406,45 +13564,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "sierra-nevada",
-        "matchedName": "Sierra Nevada",
-        "totalPenalty": 14975793,
-        "totalRecords": 3,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 14900000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 75793,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 14900000,
-            "records": 1
-          },
-          {
-            "category": "aviation safety violation",
-            "penalty": 50000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 25793,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 129,
@@ -16793,7 +13913,6 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "OSHA",
-        "Violation Tracker",
         "Company policy"
       ]
     },
@@ -16904,8 +14023,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "OSHA",
-        "ProPublica",
-        "Violation Tracker (verified)"
+        "ProPublica"
       ]
     },
     "dei": {
@@ -16946,70 +14064,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "bacardi-limited",
-        "matchedName": "Bacardi Limited",
-        "totalPenalty": 3285835,
-        "totalRecords": 10,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 2682500,
-            "records": 3
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 320000,
-            "records": 3
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 153333,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 110000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 20002,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "environmental violation",
-            "penalty": 2682500,
-            "records": 3
-          },
-          {
-            "category": "tax violations",
-            "penalty": 320000,
-            "records": 3
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 153333,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 110000,
-            "records": 1
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 20002,
-            "records": 2
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 134,
@@ -17843,8 +14898,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "Company filings",
-        "Violation Tracker (verified)"
+        "Company filings"
       ]
     },
     "dei": {
@@ -17894,40 +14948,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "celsius-holdings",
-        "matchedName": "Celsius Holdings",
-        "totalPenalty": 10800000,
-        "totalRecords": 2,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 7800000,
-            "records": 1
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 3000000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 7800000,
-            "records": 1
-          },
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 3000000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 143,
@@ -18487,8 +15508,7 @@ export const COMPANIES = [
       "rating": "Good",
       "sources": [
         "Company Reports",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -18528,40 +15548,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "invenergy",
-        "matchedName": "Invenergy",
-        "totalPenalty": 127108,
-        "totalRecords": 2,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 109000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 18108,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "utility service violation",
-            "penalty": 109000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 18108,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 150,
@@ -18622,8 +15609,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Company Compliance Reports",
-        "Academic Research",
-        "Violation Tracker (verified)"
+        "Academic Research"
       ]
     },
     "dei": {
@@ -18677,45 +15663,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "gap-inc",
-        "matchedName": "Gap Inc.",
-        "totalPenalty": 5986615,
-        "totalRecords": 12,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 5936735,
-            "records": 6
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 49880,
-            "records": 6
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 5325472,
-            "records": 4
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 611263,
-            "records": 2
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 49880,
-            "records": 6
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 151,
@@ -18765,8 +15713,7 @@ export const COMPANIES = [
       "rating": "Poor",
       "sources": [
         "Clean Clothes Campaign",
-        "Business & Human Rights Centre",
-        "Violation Tracker (verified)"
+        "Business & Human Rights Centre"
       ]
     },
     "dei": {
@@ -18817,45 +15764,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "h-and-m-hennes-and-mauritz",
-        "matchedName": "H&M Hennes & Mauritz",
-        "totalPenalty": 39882663,
-        "totalRecords": 4,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 36075000,
-            "records": 2
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 3807663,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 36000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 3807663,
-            "records": 2
-          },
-          {
-            "category": "discriminatory practices (non-employment)",
-            "penalty": 75000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 152,
@@ -19122,8 +16031,7 @@ export const COMPANIES = [
       "sources": [
         "Public Eye investigations",
         "BBC",
-        "Business and Human Rights Centre",
-        "Violation Tracker (verified)"
+        "Business and Human Rights Centre"
       ]
     },
     "dei": {
@@ -19169,35 +16077,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "shein-group",
-        "matchedName": "SHEIN Group",
-        "totalPenalty": 2600000,
-        "totalRecords": 2,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 2600000,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "privacy violation",
-            "penalty": 1900000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 700000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 155,
@@ -19343,8 +16223,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Worker Rights Consortium",
-        "Fashion Transparency Index",
-        "Violation Tracker (verified)"
+        "Fashion Transparency Index"
       ]
     },
     "dei": {
@@ -19396,45 +16275,7 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "levi-strauss",
-        "matchedName": "Levi Strauss",
-        "totalPenalty": 1098932,
-        "totalRecords": 8,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 1050989,
-            "records": 3
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 47943,
-            "records": 5
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 1023989,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 47943,
-            "records": 5
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 27000,
-            "records": 2
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 157,
@@ -19486,8 +16327,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Company Human Rights Policy",
-        "Good On You",
-        "Violation Tracker (verified)"
+        "Good On You"
       ]
     },
     "dei": {
@@ -19541,50 +16381,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "ralph-lauren-corp",
-        "matchedName": "Ralph Lauren Corp.",
-        "totalPenalty": 7177626,
-        "totalRecords": 7,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 5500000,
-            "records": 2
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 1616846,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 60780,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 5500000,
-            "records": 2
-          },
-          {
-            "category": "Foreign Corrupt Practices Act",
-            "penalty": 1616846,
-            "records": 2
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 60780,
-            "records": 3
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 158,
@@ -19842,8 +16639,7 @@ export const COMPANIES = [
       "sources": [
         "Fair Labor Association",
         "Good On You",
-        "Company Sustainability Report",
-        "Violation Tracker (verified)"
+        "Company Sustainability Report"
       ]
     },
     "dei": {
@@ -19898,70 +16694,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "under-armour",
-        "matchedName": "Under Armour",
-        "totalPenalty": 10679351,
-        "totalRecords": 6,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 9000000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 1100001,
-            "records": 2
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 559107,
-            "records": 1
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 13000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 7243,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "investor protection violation",
-            "penalty": 9000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 1050000,
-            "records": 1
-          },
-          {
-            "category": "insurance violation",
-            "penalty": 559107,
-            "records": 1
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 50001,
-            "records": 1
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 13000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 161,
@@ -20014,8 +16747,7 @@ export const COMPANIES = [
       "sources": [
         "Fair Labor Association",
         "Good On You",
-        "OECD",
-        "Violation Tracker (verified)"
+        "OECD"
       ]
     },
     "dei": {
@@ -20068,40 +16800,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "lululemon-athletica",
-        "matchedName": "Lululemon Athletica",
-        "totalPenalty": 957093,
-        "totalRecords": 3,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 950000,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 7093,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 950000,
-            "records": 2
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 7093,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 162,
@@ -20273,8 +16972,7 @@ export const COMPANIES = [
         "OSHA",
         "NLRB",
         "The Nation",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -20327,60 +17025,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "greif-inc",
-        "matchedName": "Greif Inc.",
-        "totalPenalty": 2718195,
-        "totalRecords": 77,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 1406722,
-            "records": 52
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 1091149,
-            "records": 18
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 220324,
-            "records": 7
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 1406722,
-            "records": 52
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 541000,
-            "records": 3
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 540149,
-            "records": 14
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 194690,
-            "records": 5
-          },
-          {
-            "category": "Family and Medical Leave Act",
-            "penalty": 15000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 164,
@@ -20442,9 +17087,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "OSHA",
-        "Violation Tracker",
-        "Company Employee Relations",
-        "Violation Tracker (verified)"
+        "Company Employee Relations"
       ]
     },
     "dei": {
@@ -20497,65 +17140,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "mars-incorporated",
-        "matchedName": "Mars Incorporated",
-        "totalPenalty": 27416283,
-        "totalRecords": 63,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 18193974,
-            "records": 7
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 8150000,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 689784,
-            "records": 21
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 382525,
-            "records": 33
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 18168974,
-            "records": 6
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 8150000,
-            "records": 2
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 406412,
-            "records": 10
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 382525,
-            "records": 33
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 283372,
-            "records": 11
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 165,
@@ -20608,8 +17193,7 @@ export const COMPANIES = [
         "NLRB",
         "The Intercept",
         "OSHA",
-        "Good On You",
-        "Violation Tracker (verified)"
+        "Good On You"
       ]
     },
     "dei": {
@@ -20664,45 +17248,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "columbia-sportswear",
-        "matchedName": "Columbia Sportswear",
-        "totalPenalty": 169474,
-        "totalRecords": 5,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 154324,
-            "records": 4
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 15150,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "pesticide violation",
-            "penalty": 131444,
-            "records": 2
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 22880,
-            "records": 2
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 15150,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 166,
@@ -20858,8 +17404,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Glassdoor",
-        "PayScale",
-        "Violation Tracker (verified)"
+        "PayScale"
       ]
     },
     "dei": {
@@ -20912,70 +17457,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "nordstrom",
-        "matchedName": "Nordstrom",
-        "totalPenalty": 34088741,
-        "totalRecords": 22,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 16815215,
-            "records": 5
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 12437500,
-            "records": 1
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 2360000,
-            "records": 2
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 2263142,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 153384,
-            "records": 10
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 16512714,
-            "records": 3
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 12437500,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 2360000,
-            "records": 2
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 2263142,
-            "records": 1
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 292500,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 168,
@@ -21027,8 +17509,7 @@ export const COMPANIES = [
       "rating": "Poor",
       "sources": [
         "NLRB",
-        "Ninth Circuit Court decision",
-        "Violation Tracker (verified)"
+        "Ninth Circuit Court decision"
       ]
     },
     "dei": {
@@ -21080,70 +17561,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "macys",
-        "matchedName": "Macy's",
-        "totalPenalty": 66002724,
-        "totalRecords": 96,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 26575000,
-            "records": 4
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 19832963,
-            "records": 21
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 14275000,
-            "records": 7
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 3059701,
-            "records": 50
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 2260060,
-            "records": 14
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 26575000,
-            "records": 4
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 13025000,
-            "records": 5
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 9389873,
-            "records": 10
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 8500000,
-            "records": 1
-          },
-          {
-            "category": "Fair Credit Reporting Act violation",
-            "penalty": 1800000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 169,
@@ -21299,8 +17717,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Glassdoor",
-        "Company Policy",
-        "Violation Tracker (verified)"
+        "Company Policy"
       ]
     },
     "dei": {
@@ -21353,65 +17770,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "kohls",
-        "matchedName": "Kohl's",
-        "totalPenalty": 20644040,
-        "totalRecords": 40,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 12203186,
-            "records": 8
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 7674974,
-            "records": 6
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 740880,
-            "records": 25
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 25000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 11983186,
-            "records": 7
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 7669974,
-            "records": 5
-          },
-          {
-            "category": "product safety violation",
-            "penalty": 460000,
-            "records": 2
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 280880,
-            "records": 23
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 220000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 171,
@@ -21452,9 +17811,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -21480,59 +17837,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "burlington-stores",
-        "matchedName": "Burlington Stores",
-        "totalPenalty": 44453559,
-        "totalRecords": 30,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 42648796,
-            "records": 9
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 1754763,
-            "records": 19
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 50000,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 42638795,
-            "records": 8
-          },
-          {
-            "category": "product safety violation",
-            "penalty": 1500000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 254763,
-            "records": 18
-          },
-          {
-            "category": "lead violation",
-            "penalty": 25000,
-            "records": 1
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 25000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
     }
   },
   {
@@ -21584,9 +17888,7 @@ export const COMPANIES = [
       "rating": "Below Average",
       "sources": [
         "OSHA",
-        "Violation Tracker",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -21638,65 +17940,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "ross-stores",
-        "matchedName": "Ross Stores",
-        "totalPenalty": 17788310,
-        "totalRecords": 34,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 4854000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 4736598,
-            "records": 20
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 4595767,
-            "records": 7
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 3601945,
-            "records": 6
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 4854000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 4513558,
-            "records": 5
-          },
-          {
-            "category": "product safety violation",
-            "penalty": 4400000,
-            "records": 2
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 3390000,
-            "records": 2
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 336598,
-            "records": 18
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 173,
@@ -22247,8 +18491,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Glassdoor",
-        "Company policy",
-        "Violation Tracker (verified)"
+        "Company policy"
       ]
     },
     "dei": {
@@ -22300,65 +18543,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "dillards",
-        "matchedName": "Dillard's",
-        "totalPenalty": 56717578,
-        "totalRecords": 15,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 44239328,
-            "records": 9
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 12437500,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 35000,
-            "records": 4
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 5750,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 35000000,
-            "records": 1
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 12437500,
-            "records": 1
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 9230000,
-            "records": 7
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 35000,
-            "records": 4
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 9328,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 179,
@@ -22520,8 +18705,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -22574,40 +18758,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "urban-outfitters",
-        "matchedName": "Urban Outfitters",
-        "totalPenalty": 6304659,
-        "totalRecords": 11,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 6193298,
-            "records": 3
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 111361,
-            "records": 8
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 6193298,
-            "records": 3
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 111361,
-            "records": 8
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 181,
@@ -22876,8 +19027,7 @@ export const COMPANIES = [
       "sources": [
         "Business and Human Rights Centre",
         "Glassdoor",
-        "PayScale",
-        "Violation Tracker (verified)"
+        "PayScale"
       ]
     },
     "dei": {
@@ -22930,50 +19080,7 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "american-eagle-outfitters",
-        "matchedName": "American Eagle Outfitters",
-        "totalPenalty": 15037617,
-        "totalRecords": 4,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 14500000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 512617,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 25000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "privacy violation",
-            "penalty": 14500000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 512617,
-            "records": 2
-          },
-          {
-            "category": "lead violation",
-            "penalty": 25000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 184,
@@ -23240,8 +19347,7 @@ export const COMPANIES = [
       "rating": "Below Average",
       "sources": [
         "Glassdoor",
-        "Indeed",
-        "Violation Tracker (verified)"
+        "Indeed"
       ]
     },
     "dei": {
@@ -23291,55 +19397,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "nippon-express",
-        "matchedName": "Nippon Express",
-        "totalPenalty": 32272234,
-        "totalRecords": 7,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 32243507,
-            "records": 3
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 16927,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 11800,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 32226507,
-            "records": 2
-          },
-          {
-            "category": "export control violation",
-            "penalty": 17000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 16927,
-            "records": 2
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 11800,
-            "records": 2
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 187,
@@ -23803,8 +19861,7 @@ export const COMPANIES = [
         "OSHA",
         "NLRB",
         "Company Policy",
-        "Labor Litigation Records",
-        "Violation Tracker (verified)"
+        "Labor Litigation Records"
       ]
     },
     "dei": {
@@ -23858,60 +19915,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "victorias-secret-and-co",
-        "matchedName": "Victoria's Secret & Co.",
-        "totalPenalty": 12411568,
-        "totalRecords": 9,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 12196832,
-            "records": 3
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 164736,
-            "records": 5
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 50000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 12017532,
-            "records": 2
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 179300,
-            "records": 1
-          },
-          {
-            "category": "aviation safety violation",
-            "penalty": 85000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 79736,
-            "records": 4
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 50000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 192,
@@ -23965,8 +19969,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -24020,50 +20023,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "bath-and-body-works-inc",
-        "matchedName": "Bath & Body Works, Inc.",
-        "totalPenalty": 97307929,
-        "totalRecords": 17,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 97218960,
-            "records": 6
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 88969,
-            "records": 11
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "employment discrimination",
-            "penalty": 90000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 4468960,
-            "records": 4
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 2750000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 88969,
-            "records": 11
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 193,
@@ -25494,8 +21454,7 @@ export const COMPANIES = [
       "rating": "Good",
       "sources": [
         "Company Impact Report",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -25549,30 +21508,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "elf-beauty",
-        "matchedName": "e.l.f. Beauty",
-        "totalPenalty": 996080,
-        "totalRecords": 1,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 996080,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "economic sanction violation",
-            "penalty": 996080,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 208,
@@ -25927,8 +21863,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Comparably",
-        "Indeed",
-        "Violation Tracker (verified)"
+        "Indeed"
       ]
     },
     "dei": {
@@ -25982,65 +21917,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "ulta-beauty",
-        "matchedName": "Ulta Beauty",
-        "totalPenalty": 10688335,
-        "totalRecords": 15,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 9603039,
-            "records": 5
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 777339,
-            "records": 2
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 175000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 132957,
-            "records": 7
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 9603039,
-            "records": 5
-          },
-          {
-            "category": "hazardous waste violation",
-            "penalty": 752000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 175000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 99957,
-            "records": 6
-          },
-          {
-            "category": "aviation safety violation",
-            "penalty": 33000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 212,
@@ -26093,8 +21970,7 @@ export const COMPANIES = [
         "OSHA",
         "NLRB",
         "Glassdoor",
-        "Legal filings",
-        "Violation Tracker (verified)"
+        "Legal filings"
       ]
     },
     "dei": {
@@ -26148,50 +22024,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "sally-beauty",
-        "matchedName": "Sally Beauty",
-        "totalPenalty": 161637,
-        "totalRecords": 5,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 103000,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 30536,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 28101,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 103000,
-            "records": 2
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 30536,
-            "records": 2
-          },
-          {
-            "category": "pesticide violation",
-            "penalty": 28101,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 213,
@@ -26496,8 +22329,7 @@ export const COMPANIES = [
       "s": "Regis Corporation violated federal labor law by requiring employees to sign yellow-dog agreements preventing union organizing (2009-2010). The NLRB settled the case requiring postings about union rights and DVDs for workers. The company has faced complaints about excessive sales quotas and labor practices.",
       "rating": "Poor",
       "sources": [
-        "NLRB",
-        "Violation Tracker (verified)"
+        "NLRB"
       ]
     },
     "dei": {
@@ -26537,55 +22369,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "regis",
-        "matchedName": "Regis",
-        "totalPenalty": 12257055,
-        "totalRecords": 12,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 12237855,
-            "records": 11
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 19200,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 8450000,
-            "records": 3
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 3719750,
-            "records": 5
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 61476,
-            "records": 2
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 19200,
-            "records": 1
-          },
-          {
-            "category": "Family and Medical Leave Act",
-            "penalty": 6629,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 217,
@@ -26935,9 +22719,7 @@ export const COMPANIES = [
       "rating": "Poor",
       "sources": [
         "OSHA",
-        "DOL",
-        "Violation Tracker",
-        "Violation Tracker (verified)"
+        "DOL"
       ]
     },
     "dei": {
@@ -26986,70 +22768,7 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "unitedhealth-group",
-        "matchedName": "UnitedHealth Group",
-        "totalPenalty": 2703711016,
-        "totalRecords": 458,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 1426135414,
-            "records": 13
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 1011965705,
-            "records": 388
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 129021101,
-            "records": 35
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 86581143,
-            "records": 5
-          },
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 49736338,
-            "records": 12
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 1426135414,
-            "records": 13
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 608164229,
-            "records": 21
-          },
-          {
-            "category": "insurance violation",
-            "penalty": 402721476,
-            "records": 363
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 104734249,
-            "records": 5
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 64225000,
-            "records": 4
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 221,
@@ -27308,8 +23027,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -27357,70 +23075,7 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "cigna",
-        "matchedName": "Cigna",
-        "totalPenalty": 885383339,
-        "totalRecords": 240,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 400697750,
-            "records": 9
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 324127257,
-            "records": 194
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 93052532,
-            "records": 21
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 63620388,
-            "records": 3
-          },
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 3815049,
-            "records": 8
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 400697750,
-            "records": 9
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 301591000,
-            "records": 16
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 85634207,
-            "records": 3
-          },
-          {
-            "category": "kickbacks and bribery",
-            "penalty": 60870388,
-            "records": 2
-          },
-          {
-            "category": "insurance violation",
-            "penalty": 22536257,
-            "records": 178
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 224,
@@ -27481,8 +23136,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Comparably",
-        "Indeed",
-        "Violation Tracker (verified)"
+        "Indeed"
       ]
     },
     "dei": {
@@ -27534,70 +23188,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "humana",
-        "matchedName": "Humana",
-        "totalPenalty": 332187993,
-        "totalRecords": 93,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 118750000,
-            "records": 4
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 100000000,
-            "records": 1
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 73821205,
-            "records": 64
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 34145002,
-            "records": 16
-          },
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 5458766,
-            "records": 6
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 118750000,
-            "records": 4
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 100000000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 58800000,
-            "records": 2
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 31075002,
-            "records": 13
-          },
-          {
-            "category": "insurance violation",
-            "penalty": 14961205,
-            "records": 60
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 225,
@@ -27657,8 +23248,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "OSHA",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -27709,70 +23299,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "centene",
-        "matchedName": "Centene",
-        "totalPenalty": 1963566795,
-        "totalRecords": 251,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 1133924319,
-            "records": 20
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 303838225,
-            "records": 197
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 228242430,
-            "records": 8
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 210340000,
-            "records": 3
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 80000000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 1133924319,
-            "records": 20
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 251905000,
-            "records": 6
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 215000000,
-            "records": 1
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 210340000,
-            "records": 3
-          },
-          {
-            "category": "fraud",
-            "penalty": 80000000,
-            "records": 1
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 226,
@@ -27832,9 +23359,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "DOL",
-        "Glassdoor",
-        "Violation Tracker",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -27881,65 +23406,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "molina-healthcare",
-        "matchedName": "Molina Healthcare",
-        "totalPenalty": 55608747,
-        "totalRecords": 70,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 49225000,
-            "records": 3
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 4490075,
-            "records": 54
-          },
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 997336,
-            "records": 4
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 896336,
-            "records": 9
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 49225000,
-            "records": 3
-          },
-          {
-            "category": "insurance violation",
-            "penalty": 4465075,
-            "records": 53
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 886335,
-            "records": 8
-          },
-          {
-            "category": "HHS civil monetary penalties",
-            "penalty": 600000,
-            "records": 1
-          },
-          {
-            "category": "Medicare Parts C and D Enforcement Action",
-            "penalty": 397336,
-            "records": 3
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 227,
@@ -28100,8 +23567,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Indeed",
-        "Comparably",
-        "Violation Tracker (verified)"
+        "Comparably"
       ]
     },
     "dei": {
@@ -28148,30 +23614,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "oscar-health-inc",
-        "matchedName": "Oscar Health Inc.",
-        "totalPenalty": 3711250,
-        "totalRecords": 32,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 3711250,
-            "records": 32
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "insurance violation",
-            "penalty": 3711250,
-            "records": 32
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 229,
@@ -28332,8 +23775,7 @@ export const COMPANIES = [
       "sources": [
         "Department of Labor",
         "Glassdoor",
-        "SEC Proxy Statements",
-        "Violation Tracker (verified)"
+        "SEC Proxy Statements"
       ]
     },
     "dei": {
@@ -28388,70 +23830,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "pfizer",
-        "matchedName": "Pfizer",
-        "totalPenalty": 11282310400,
-        "totalRecords": 108,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 5637014255,
-            "records": 15
-          },
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 3394425000,
-            "records": 11
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 1207937502,
-            "records": 22
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 1028819452,
-            "records": 20
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 6335164,
-            "records": 6
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "drug or medical equipment safety violation",
-            "penalty": 5636840000,
-            "records": 9
-          },
-          {
-            "category": "off-label or unapproved promotion of medical products",
-            "penalty": 3394425000,
-            "records": 11
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 1207937502,
-            "records": 22
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 933902884,
-            "records": 14
-          },
-          {
-            "category": "Foreign Corrupt Practices Act",
-            "penalty": 60216568,
-            "records": 3
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 231,
@@ -28512,8 +23891,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -28567,70 +23945,7 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "abbvie",
-        "matchedName": "AbbVie",
-        "totalPenalty": 7565081404,
-        "totalRecords": 85,
-        "offenseGroups": [
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 5397449298,
-            "records": 16
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 1647685912,
-            "records": 29
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 448190629,
-            "records": 24
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 51676957,
-            "records": 4
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 15000000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "off-label or unapproved promotion of medical products",
-            "penalty": 5397332595,
-            "records": 15
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 1606185912,
-            "records": 26
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 448190629,
-            "records": 24
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 51676957,
-            "records": 4
-          },
-          {
-            "category": "kickbacks and bribery",
-            "penalty": 41500000,
-            "records": 3
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 232,
@@ -28690,8 +24005,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -28745,70 +24059,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "merck",
-        "matchedName": "Merck",
-        "totalPenalty": 10710431781,
-        "totalRecords": 90,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 5427616750,
-            "records": 9
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 2301000000,
-            "records": 2
-          },
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 1391000000,
-            "records": 6
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 796733333,
-            "records": 14
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 538000000,
-            "records": 7
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "drug or medical equipment safety violation",
-            "penalty": 5427450000,
-            "records": 5
-          },
-          {
-            "category": "tax violations",
-            "penalty": 2300000000,
-            "records": 1
-          },
-          {
-            "category": "off-label or unapproved promotion of medical products",
-            "penalty": 1391000000,
-            "records": 6
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 796733333,
-            "records": 14
-          },
-          {
-            "category": "kickbacks and bribery",
-            "penalty": 345000000,
-            "records": 2
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 233,
@@ -28861,8 +24112,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Company policy",
-        "Violation Tracker (verified)"
+        "Company policy"
       ]
     },
     "dei": {
@@ -28914,70 +24164,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "bristol-myers-squibb",
-        "matchedName": "Bristol-Myers Squibb",
-        "totalPenalty": 2968426217,
-        "totalRecords": 53,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 956331200,
-            "records": 17
-          },
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 884500000,
-            "records": 4
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 470338719,
-            "records": 7
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 459086655,
-            "records": 3
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 150006600,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "off-label or unapproved promotion of medical products",
-            "penalty": 884500000,
-            "records": 4
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 612315000,
-            "records": 13
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 470338719,
-            "records": 7
-          },
-          {
-            "category": "product safety violation",
-            "penalty": 458006000,
-            "records": 1
-          },
-          {
-            "category": "fraud",
-            "penalty": 300000000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 234,
@@ -29036,8 +24223,7 @@ export const COMPANIES = [
       "rating": "Average",
       "sources": [
         "Company HR policy",
-        "Sustainability Report",
-        "Violation Tracker (verified)"
+        "Sustainability Report"
       ]
     },
     "dei": {
@@ -29089,70 +24275,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "eli-lilly",
-        "matchedName": "Eli Lilly",
-        "totalPenalty": 3014987327,
-        "totalRecords": 27,
-        "offenseGroups": [
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 1608100000,
-            "records": 9
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 1190000000,
-            "records": 2
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 185337651,
-            "records": 2
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 29398734,
-            "records": 1
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 1905942,
-            "records": 11
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "off-label or unapproved promotion of medical products",
-            "penalty": 1608100000,
-            "records": 9
-          },
-          {
-            "category": "drug or medical equipment safety violation",
-            "penalty": 1190000000,
-            "records": 2
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 185337651,
-            "records": 2
-          },
-          {
-            "category": "Foreign Corrupt Practices Act",
-            "penalty": 29398734,
-            "records": 1
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 1492467,
-            "records": 8
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 235,
@@ -29212,8 +24335,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "ProPublica",
-        "SEC Filings",
-        "Violation Tracker (verified)"
+        "SEC Filings"
       ]
     },
     "dei": {
@@ -29266,70 +24388,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "abbott-laboratories",
-        "matchedName": "Abbott Laboratories",
-        "totalPenalty": 785294091,
-        "totalRecords": 29,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 698547929,
-            "records": 9
-          },
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 27950000,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 27016162,
-            "records": 3
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 18000000,
-            "records": 2
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 13023885,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 698547929,
-            "records": 9
-          },
-          {
-            "category": "drug or medical equipment safety violation",
-            "penalty": 27000000,
-            "records": 1
-          },
-          {
-            "category": "off-label or unapproved promotion of medical products",
-            "penalty": 25000000,
-            "records": 1
-          },
-          {
-            "category": "kickbacks and bribery",
-            "penalty": 18000000,
-            "records": 2
-          },
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 13023885,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 236,
@@ -29390,8 +24449,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "Company policy",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -29443,70 +24501,7 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "amgen",
-        "matchedName": "Amgen",
-        "totalPenalty": 931844837,
-        "totalRecords": 22,
-        "offenseGroups": [
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 833000000,
-            "records": 3
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 76464000,
-            "records": 9
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 19230768,
-            "records": 2
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 3073701,
-            "records": 3
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 70968,
-            "records": 4
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "off-label or unapproved promotion of medical products",
-            "penalty": 833000000,
-            "records": 3
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 76464000,
-            "records": 9
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 19230768,
-            "records": 2
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 2750000,
-            "records": 1
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 283701,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 237,
@@ -29568,8 +24563,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "OSHA/Violation Tracker",
-        "Employee review sites",
-        "Violation Tracker (verified)"
+        "Employee review sites"
       ]
     },
     "dei": {
@@ -29623,60 +24617,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "gilead-sciences",
-        "matchedName": "Gilead Sciences",
-        "totalPenalty": 546015701,
-        "totalRecords": 7,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 299250000,
-            "records": 4
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 246750000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 10001,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 5700,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 299250000,
-            "records": 4
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 246750000,
-            "records": 1
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 10001,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 5700,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 238,
@@ -29738,8 +24679,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "Company policy",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -29791,30 +24731,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "regeneron-pharmaceuticals",
-        "matchedName": "Regeneron Pharmaceuticals",
-        "totalPenalty": 506035,
-        "totalRecords": 1,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 506035,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "tax violations",
-            "penalty": 506035,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 239,
@@ -29865,8 +24782,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "Company ESG Report",
-        "Violation Tracker (verified)"
+        "Company ESG Report"
       ]
     },
     "dei": {
@@ -29918,30 +24834,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "moderna-inc",
-        "matchedName": "Moderna Inc.",
-        "totalPenalty": 6000,
-        "totalRecords": 1,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 6000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 6000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 240,
@@ -30003,8 +24896,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Company CSR",
-        "LinkedIn",
-        "Violation Tracker (verified)"
+        "LinkedIn"
       ]
     },
     "dei": {
@@ -30055,65 +24947,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "biogen",
-        "matchedName": "Biogen",
-        "totalPenalty": 931824034,
-        "totalRecords": 7,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 922000000,
-            "records": 2
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 9806534,
-            "records": 3
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 10000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 7500,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 922000000,
-            "records": 2
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 9750000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 56534,
-            "records": 2
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 10000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 7500,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 241,
@@ -30174,8 +25008,7 @@ export const COMPANIES = [
         "Glassdoor",
         "Indeed",
         "NLRB",
-        "Employee litigation",
-        "Violation Tracker (verified)"
+        "Employee litigation"
       ]
     },
     "dei": {
@@ -30230,55 +25063,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "zoetis",
-        "matchedName": "Zoetis",
-        "totalPenalty": 238545,
-        "totalRecords": 11,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 138756,
-            "records": 5
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 72833,
-            "records": 5
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 26956,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "hazardous waste violation",
-            "penalty": 104019,
-            "records": 3
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 72833,
-            "records": 5
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 34737,
-            "records": 2
-          },
-          {
-            "category": "economic sanction violation",
-            "penalty": 26956,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 242,
@@ -30339,8 +25124,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "DOL",
-        "Disability Equality Index",
-        "Violation Tracker (verified)"
+        "Disability Equality Index"
       ]
     },
     "dei": {
@@ -30394,70 +25178,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "becton-dickinson",
-        "matchedName": "Becton Dickinson",
-        "totalPenalty": 599769128,
-        "totalRecords": 47,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 244198778,
-            "records": 14
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 175000000,
-            "records": 1
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 105360000,
-            "records": 3
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 69323000,
-            "records": 4
-          },
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 3300000,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "drug or medical equipment safety violation",
-            "penalty": 244000000,
-            "records": 2
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 175000000,
-            "records": 1
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 105360000,
-            "records": 3
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 67000000,
-            "records": 2
-          },
-          {
-            "category": "off-label or unapproved promotion of medical products",
-            "penalty": 3300000,
-            "records": 2
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 243,
@@ -30498,9 +25219,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -30526,69 +25245,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "baxter-international",
-        "matchedName": "Baxter International",
-        "totalPenalty": 682708079,
-        "totalRecords": 37,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 539390333,
-            "records": 12
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 103715384,
-            "records": 4
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 18270731,
-            "records": 8
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 18000000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 2730776,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 539390333,
-            "records": 12
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 103715384,
-            "records": 4
-          },
-          {
-            "category": "drug or medical equipment safety violation",
-            "penalty": 18158000,
-            "records": 1
-          },
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 18000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 2730776,
-            "records": 3
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -30650,8 +25306,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -30705,70 +25360,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "medtronic",
-        "matchedName": "Medtronic",
-        "totalPenalty": 531410633,
-        "totalRecords": 46,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 330141375,
-            "records": 17
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 173447947,
-            "records": 10
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 23840750,
-            "records": 4
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 3702834,
-            "records": 7
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 265227,
-            "records": 7
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "drug or medical equipment safety violation",
-            "penalty": 307900000,
-            "records": 4
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 173447947,
-            "records": 10
-          },
-          {
-            "category": "kickbacks and bribery",
-            "penalty": 23827000,
-            "records": 3
-          },
-          {
-            "category": "product safety violation",
-            "penalty": 22000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 3026018,
-            "records": 3
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 245,
@@ -30828,8 +25420,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Company labor policy",
-        "Executive compensation filings",
-        "Violation Tracker (verified)"
+        "Executive compensation filings"
       ]
     },
     "dei": {
@@ -30882,70 +25473,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "boston-scientific-corp",
-        "matchedName": "Boston Scientific Corp.",
-        "totalPenalty": 1647185388,
-        "totalRecords": 19,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 1520438185,
-            "records": 10
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 104150000,
-            "records": 3
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 15200000,
-            "records": 2
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 7040000,
-            "records": 1
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 277017,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "drug or medical equipment safety violation",
-            "penalty": 1520350000,
-            "records": 6
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 104150000,
-            "records": 3
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 15200000,
-            "records": 2
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 7040000,
-            "records": 1
-          },
-          {
-            "category": "economic sanction violation",
-            "penalty": 277017,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 246,
@@ -31000,8 +25528,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Indeed",
-        "OSHA",
-        "Violation Tracker (verified)"
+        "OSHA"
       ]
     },
     "dei": {
@@ -31051,70 +25578,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "stryker",
-        "matchedName": "Stryker",
-        "totalPenalty": 1806795594,
-        "totalRecords": 20,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 1759602840,
-            "records": 8
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 25411219,
-            "records": 4
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 21345000,
-            "records": 3
-          },
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 302000,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 95040,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "drug or medical equipment safety violation",
-            "penalty": 1759560000,
-            "records": 4
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 25411219,
-            "records": 4
-          },
-          {
-            "category": "Foreign Corrupt Practices Act",
-            "penalty": 21000000,
-            "records": 2
-          },
-          {
-            "category": "kickbacks and bribery",
-            "penalty": 345000,
-            "records": 1
-          },
-          {
-            "category": "off-label or unapproved promotion of medical products",
-            "penalty": 302000,
-            "records": 2
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 247,
@@ -31173,8 +25637,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Indeed",
-        "Company careers site",
-        "Violation Tracker (verified)"
+        "Company careers site"
       ]
     },
     "dei": {
@@ -31224,40 +25687,7 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "intuitive-surgical",
-        "matchedName": "Intuitive Surgical",
-        "totalPenalty": 23711,
-        "totalRecords": 2,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 18435,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 5276,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "tax violations",
-            "penalty": 18435,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 5276,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 248,
@@ -31319,8 +25749,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "SEC Filings",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -31373,70 +25802,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "zimmer-biomet",
-        "matchedName": "Zimmer Biomet",
-        "totalPenalty": 1303482814,
-        "totalRecords": 17,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 1050178300,
-            "records": 6
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 196400000,
-            "records": 2
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 49383032,
-            "records": 5
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 7380432,
-            "records": 1
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 82850,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "drug or medical equipment safety violation",
-            "penalty": 1050000000,
-            "records": 2
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 196400000,
-            "records": 2
-          },
-          {
-            "category": "Foreign Corrupt Practices Act",
-            "penalty": 49208032,
-            "records": 4
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 7380432,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 178300,
-            "records": 4
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 249,
@@ -31489,8 +25855,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Glassdoor",
-        "Healthcare Dive",
-        "Violation Tracker (verified)"
+        "Healthcare Dive"
       ]
     },
     "dei": {
@@ -31542,70 +25907,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "kaiser-permanente",
-        "matchedName": "Kaiser Permanente",
-        "totalPenalty": 960513890,
-        "totalRecords": 480,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 568327000,
-            "records": 5
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 259174780,
-            "records": 323
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 61480287,
-            "records": 53
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 50036942,
-            "records": 10
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 19000000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 568327000,
-            "records": 5
-          },
-          {
-            "category": "insurance violation",
-            "penalty": 258419780,
-            "records": 321
-          },
-          {
-            "category": "hazardous waste violation",
-            "penalty": 49010200,
-            "records": 2
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 40438179,
-            "records": 21
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 19000000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 250,
@@ -31655,8 +25957,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "Company CSR",
-        "News reports",
-        "Violation Tracker (verified)"
+        "News reports"
       ]
     },
     "dei": {
@@ -31702,70 +26003,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "mayo-clinic",
-        "matchedName": "Mayo Clinic",
-        "totalPenalty": 60428123,
-        "totalRecords": 7,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 52500000,
-            "records": 1
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 7760000,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 107678,
-            "records": 2
-          },
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 49445,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 11000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "privacy violation",
-            "penalty": 52500000,
-            "records": 1
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 7760000,
-            "records": 2
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 98200,
-            "records": 1
-          },
-          {
-            "category": "nursing home violation",
-            "penalty": 49445,
-            "records": 1
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 11000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 251,
@@ -31818,8 +26056,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Glassdoor",
-        "PayScale",
-        "Violation Tracker (verified)"
+        "PayScale"
       ]
     },
     "dei": {
@@ -31872,50 +26109,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "cleveland-clinic",
-        "matchedName": "Cleveland Clinic",
-        "totalPenalty": 5391905,
-        "totalRecords": 5,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 5340000,
-            "records": 3
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 30000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 21905,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 5340000,
-            "records": 3
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 30000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 21905,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 252,
@@ -31979,8 +26173,7 @@ export const COMPANIES = [
         "NLRB filings",
         "1199 SEIU",
         "Union studies",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -32034,70 +26227,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "hca-healthcare",
-        "matchedName": "HCA Healthcare",
-        "totalPenalty": 1775313026,
-        "totalRecords": 78,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 1537737058,
-            "records": 14
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 220035000,
-            "records": 2
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 8840000,
-            "records": 2
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 7630503,
-            "records": 10
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 466904,
-            "records": 21
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 1537737058,
-            "records": 14
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 220000000,
-            "records": 1
-          },
-          {
-            "category": "kickbacks and bribery",
-            "penalty": 8600000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 4496864,
-            "records": 5
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 3000000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 253,
@@ -32157,8 +26287,7 @@ export const COMPANIES = [
       "rating": "Poor",
       "sources": [
         "NLRB",
-        "OSHA",
-        "Violation Tracker (verified)"
+        "OSHA"
       ]
     },
     "dei": {
@@ -32208,70 +26337,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "tenet-healthcare",
-        "matchedName": "Tenet Healthcare",
-        "totalPenalty": 1845604328,
-        "totalRecords": 70,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 1683459764,
-            "records": 21
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 88097626,
-            "records": 24
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 63000000,
-            "records": 3
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 10000000,
-            "records": 1
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 520000,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 1683459764,
-            "records": 21
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 85904015,
-            "records": 17
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 42000000,
-            "records": 1
-          },
-          {
-            "category": "kickbacks and bribery",
-            "penalty": 21000000,
-            "records": 2
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 10000000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 254,
@@ -32329,8 +26395,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "NLRB",
-        "Company CSR",
-        "Violation Tracker (verified)"
+        "Company CSR"
       ]
     },
     "dei": {
@@ -32375,70 +26440,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "universal-health-services-inc",
-        "matchedName": "Universal Health Services Inc.",
-        "totalPenalty": 197558980,
-        "totalRecords": 53,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 171250000,
-            "records": 7
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 25360773,
-            "records": 17
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 466848,
-            "records": 11
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 369361,
-            "records": 17
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 111998,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 171250000,
-            "records": 7
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 12500000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 10412170,
-            "records": 6
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 2421274,
-            "records": 8
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 439348,
-            "records": 8
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 255,
@@ -32496,8 +26498,7 @@ export const COMPANIES = [
       "rating": "Poor",
       "sources": [
         "NLRB",
-        "National Nurses United",
-        "Violation Tracker (verified)"
+        "National Nurses United"
       ]
     },
     "dei": {
@@ -32543,70 +26544,7 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "community-health-systems",
-        "matchedName": "Community Health Systems",
-        "totalPenalty": 519154316,
-        "totalRecords": 37,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 508996770,
-            "records": 13
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 7850000,
-            "records": 2
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 2192040,
-            "records": 18
-          },
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 90000,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 25506,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 508996770,
-            "records": 13
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 7850000,
-            "records": 2
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 2109502,
-            "records": 16
-          },
-          {
-            "category": "HHS civil monetary penalties",
-            "penalty": 90000,
-            "records": 2
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 72537,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 256,
@@ -32667,8 +26605,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Indeed",
-        "DOJ indictment records",
-        "Violation Tracker (verified)"
+        "DOJ indictment records"
       ]
     },
     "dei": {
@@ -32715,70 +26652,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "davita-inc",
-        "matchedName": "DaVita Inc.",
-        "totalPenalty": 103996046,
-        "totalRecords": 18,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 98187390,
-            "records": 3
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 5529131,
-            "records": 10
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 125000,
-            "records": 1
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 80000,
-            "records": 1
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 58520,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 98187390,
-            "records": 3
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 3435117,
-            "records": 5
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 2020002,
-            "records": 3
-          },
-          {
-            "category": "insurance violation",
-            "penalty": 125000,
-            "records": 1
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 80000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 257,
@@ -32945,8 +26819,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "Fortune 100 Best Companies",
-        "Violation Tracker (verified)"
+        "Fortune 100 Best Companies"
       ]
     },
     "dei": {
@@ -32999,70 +26872,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "encompass-health",
-        "matchedName": "Encompass Health",
-        "totalPenalty": 978182289,
-        "totalRecords": 20,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 545000000,
-            "records": 2
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 404160683,
-            "records": 7
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 28895210,
-            "records": 6
-          },
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 100000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 12324,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 545000000,
-            "records": 2
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 404160683,
-            "records": 7
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 28850000,
-            "records": 1
-          },
-          {
-            "category": "HHS civil monetary penalties",
-            "penalty": 100000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 36223,
-            "records": 4
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 259,
@@ -33123,8 +26933,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -33172,70 +26981,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "jpmorgan-chase",
-        "matchedName": "JPMorgan Chase",
-        "totalPenalty": 40170532209,
-        "totalRecords": 284,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 27799554167,
-            "records": 128
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 8620148178,
-            "records": 66
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 2610274791,
-            "records": 30
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 614000000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 522448562,
-            "records": 50
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "toxic securities abuses",
-            "penalty": 13459785714,
-            "records": 7
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 6754497353,
-            "records": 88
-          },
-          {
-            "category": "mortgage abuses",
-            "penalty": 5362675000,
-            "records": 5
-          },
-          {
-            "category": "banking violation",
-            "penalty": 4900550341,
-            "records": 17
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 3195402428,
-            "records": 44
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 260,
@@ -33294,8 +27040,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "NLRB",
-        "Company reports",
-        "Violation Tracker (verified)"
+        "Company reports"
       ]
     },
     "dei": {
@@ -33341,70 +27086,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "bank-of-america",
-        "matchedName": "Bank of America",
-        "totalPenalty": 87916400772,
-        "totalRecords": 339,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 44280859042,
-            "records": 80
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 41909502096,
-            "records": 161
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 907692037,
-            "records": 67
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 782380585,
-            "records": 21
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 35600000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "mortgage abuses",
-            "penalty": 39950771706,
-            "records": 19
-          },
-          {
-            "category": "toxic securities abuses",
-            "penalty": 23208942857,
-            "records": 11
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 13837373962,
-            "records": 123
-          },
-          {
-            "category": "banking violation",
-            "penalty": 4719937532,
-            "records": 15
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 4285482302,
-            "records": 45
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 261,
@@ -33466,8 +27148,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "OSHA",
-        "Senate Banking Committee",
-        "Violation Tracker (verified)"
+        "Senate Banking Committee"
       ]
     },
     "dei": {
@@ -33515,70 +27196,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "wells-fargo",
-        "matchedName": "Wells Fargo",
-        "totalPenalty": 27974669231,
-        "totalRecords": 274,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 11779992252,
-            "records": 63
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 10771630989,
-            "records": 133
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 3212570000,
-            "records": 6
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 1204046786,
-            "records": 2
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 1006403204,
-            "records": 67
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 6008156743,
-            "records": 42
-          },
-          {
-            "category": "mortgage abuses",
-            "penalty": 5625783671,
-            "records": 7
-          },
-          {
-            "category": "banking violation",
-            "penalty": 4091194886,
-            "records": 18
-          },
-          {
-            "category": "toxic securities abuses",
-            "penalty": 3637750000,
-            "records": 7
-          },
-          {
-            "category": "fraud",
-            "penalty": 3000000000,
-            "records": 1
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 262,
@@ -33640,8 +27258,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Indeed",
-        "Company HR practices",
-        "Violation Tracker (verified)"
+        "Company HR practices"
       ]
     },
     "dei": {
@@ -33693,70 +27310,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "citigroup",
-        "matchedName": "Citigroup",
-        "totalPenalty": 27115311792,
-        "totalRecords": 185,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 19885993935,
-            "records": 108
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 4414386460,
-            "records": 43
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 2689441666,
-            "records": 18
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 125465984,
-            "records": 12
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 17747,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "toxic securities abuses",
-            "penalty": 8772892857,
-            "records": 10
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 8389770730,
-            "records": 71
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 2689381666,
-            "records": 17
-          },
-          {
-            "category": "banking violation",
-            "penalty": 2370143378,
-            "records": 15
-          },
-          {
-            "category": "mortgage abuses",
-            "penalty": 2360975000,
-            "records": 4
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 263,
@@ -33816,8 +27370,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "Company HR policy",
-        "Violation Tracker (verified)"
+        "Company HR policy"
       ]
     },
     "dei": {
@@ -33863,70 +27416,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "goldman-sachs",
-        "matchedName": "Goldman Sachs",
-        "totalPenalty": 17929100116,
-        "totalRecords": 118,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 13140362841,
-            "records": 60
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 3666739743,
-            "records": 13
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 895477261,
-            "records": 11
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 225249003,
-            "records": 5
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 917587,
-            "records": 10
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "toxic securities abuses",
-            "penalty": 8767542857,
-            "records": 6
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 4170429984,
-            "records": 50
-          },
-          {
-            "category": "Foreign Corrupt Practices Act",
-            "penalty": 2921088000,
-            "records": 2
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 745651743,
-            "records": 11
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 491477261,
-            "records": 8
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 264,
@@ -33985,8 +27475,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Labor dispute reports",
-        "Company policy",
-        "Violation Tracker (verified)"
+        "Company policy"
       ]
     },
     "dei": {
@@ -34032,70 +27521,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "morgan-stanley",
-        "matchedName": "Morgan Stanley",
-        "totalPenalty": 10939337443,
-        "totalRecords": 209,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 9924512956,
-            "records": 171
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 407666666,
-            "records": 10
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 339817000,
-            "records": 9
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 265765001,
-            "records": 14
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 1575820,
-            "records": 5
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "toxic securities abuses",
-            "penalty": 5124050000,
-            "records": 11
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 4729462956,
-            "records": 157
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 407666666,
-            "records": 10
-          },
-          {
-            "category": "mortgage abuses",
-            "penalty": 235000000,
-            "records": 2
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 150385000,
-            "records": 6
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 265,
@@ -34148,8 +27574,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Company filings",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -34200,70 +27625,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "us-bancorp",
-        "matchedName": "U.S. Bancorp",
-        "totalPenalty": 1681194826,
-        "totalRecords": 65,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 1084044942,
-            "records": 30
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 320902325,
-            "records": 20
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 200000000,
-            "records": 1
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 38735000,
-            "records": 4
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 37503784,
-            "records": 9
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "anti-money-laundering deficiencies",
-            "penalty": 629600000,
-            "records": 5
-          },
-          {
-            "category": "banking violation",
-            "penalty": 404185088,
-            "records": 14
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 265613500,
-            "records": 11
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 200000000,
-            "records": 1
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 50227441,
-            "records": 8
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 266,
@@ -34326,8 +27688,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Company CSR",
-        "Banking Dive",
-        "Violation Tracker (verified)"
+        "Banking Dive"
       ]
     },
     "dei": {
@@ -34375,65 +27736,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "truist-financial",
-        "matchedName": "Truist Financial",
-        "totalPenalty": 1748203907,
-        "totalRecords": 60,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 894112112,
-            "records": 14
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 501000000,
-            "records": 2
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 321017090,
-            "records": 33
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 32074705,
-            "records": 11
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 569926112,
-            "records": 9
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 501000000,
-            "records": 2
-          },
-          {
-            "category": "mortgage abuses",
-            "penalty": 320050000,
-            "records": 3
-          },
-          {
-            "category": "banking violation",
-            "penalty": 191666522,
-            "records": 6
-          },
-          {
-            "category": "toxic securities abuses",
-            "penalty": 65000000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 267,
@@ -34494,8 +27797,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Company careers portal",
-        "Brandon Hall Group Awards",
-        "Violation Tracker (verified)"
+        "Brandon Hall Group Awards"
       ]
     },
     "dei": {
@@ -34546,70 +27848,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "pnc-financial-services",
-        "matchedName": "PNC Financial Services",
-        "totalPenalty": 727911992,
-        "totalRecords": 62,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 401330771,
-            "records": 27
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 182087700,
-            "records": 12
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 123274866,
-            "records": 19
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 21200000,
-            "records": 3
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 18655,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "banking violation",
-            "penalty": 235559773,
-            "records": 10
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 171817700,
-            "records": 7
-          },
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 115000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 74004977,
-            "records": 13
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 49100000,
-            "records": 2
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 268,
@@ -34670,8 +27909,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Indeed",
-        "Great Place to Work",
-        "Violation Tracker (verified)"
+        "Great Place to Work"
       ]
     },
     "dei": {
@@ -34719,65 +27957,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "capital-one-financial",
-        "matchedName": "Capital One Financial",
-        "totalPenalty": 3038090118,
-        "totalRecords": 39,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 1890063752,
-            "records": 11
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 1141817966,
-            "records": 25
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 6200000,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 8400,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "banking violation",
-            "penalty": 1494205032,
-            "records": 6
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 970913238,
-            "records": 20
-          },
-          {
-            "category": "anti-money-laundering deficiencies",
-            "penalty": 390000000,
-            "records": 2
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 168005000,
-            "records": 3
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 6200000,
-            "records": 2
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 269,
@@ -34837,8 +28017,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Company Sustainability Report",
-        "Court filings",
-        "Violation Tracker (verified)"
+        "Court filings"
       ]
     },
     "dei": {
@@ -34885,60 +28064,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "american-express",
-        "matchedName": "American Express",
-        "totalPenalty": 675129717,
-        "totalRecords": 36,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 568396900,
-            "records": 17
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 106671424,
-            "records": 16
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 61393,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 568145000,
-            "records": 11
-          },
-          {
-            "category": "anti-money-laundering deficiencies",
-            "penalty": 55000000,
-            "records": 1
-          },
-          {
-            "category": "banking violation",
-            "penalty": 45750000,
-            "records": 7
-          },
-          {
-            "category": "economic sanction violation",
-            "penalty": 5906454,
-            "records": 7
-          },
-          {
-            "category": "insurance violation",
-            "penalty": 251900,
-            "records": 6
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 270,
@@ -35111,8 +28237,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Indeed",
-        "Company reports",
-        "Violation Tracker (verified)"
+        "Company reports"
       ]
     },
     "dei": {
@@ -35165,40 +28290,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "synchrony-financial",
-        "matchedName": "Synchrony Financial",
-        "totalPenalty": 262958300,
-        "totalRecords": 5,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 262936000,
-            "records": 4
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 22300,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 262936000,
-            "records": 4
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 22300,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 272,
@@ -35258,8 +28350,7 @@ export const COMPANIES = [
       "rating": "Good",
       "sources": [
         "Company CSR",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -35311,50 +28402,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "visa",
-        "matchedName": "Visa",
-        "totalPenalty": 6432177525,
-        "totalRecords": 8,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 6330150000,
-            "records": 5
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 102020000,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 7525,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 6330150000,
-            "records": 5
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 102020000,
-            "records": 2
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 7525,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 273,
@@ -35414,8 +28462,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "OSHA",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -35466,55 +28513,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "mastercard",
-        "matchedName": "MasterCard",
-        "totalPenalty": 3442510777,
-        "totalRecords": 10,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 3302630000,
-            "records": 5
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 113875000,
-            "records": 3
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 26005777,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 3302630000,
-            "records": 5
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 113875000,
-            "records": 3
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 26000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 5777,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 274,
@@ -35574,8 +28573,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "Company Benefits",
-        "Violation Tracker (verified)"
+        "Company Benefits"
       ]
     },
     "dei": {
@@ -35625,55 +28623,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "paypal-holdings",
-        "matchedName": "PayPal Holdings",
-        "totalPenalty": 78682300,
-        "totalRecords": 14,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 41024000,
-            "records": 12
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 30000000,
-            "records": 1
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 7658300,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 38849000,
-            "records": 10
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 30000000,
-            "records": 1
-          },
-          {
-            "category": "economic sanction violation",
-            "penalty": 7658300,
-            "records": 1
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 2175000,
-            "records": 2
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 275,
@@ -36142,8 +29092,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -36193,60 +29142,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "charles-schwab-corp",
-        "matchedName": "Charles Schwab Corp.",
-        "totalPenalty": 1081282884,
-        "totalRecords": 60,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 837546134,
-            "records": 54
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 237436750,
-            "records": 4
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 6300000,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "investor protection violation",
-            "penalty": 836946134,
-            "records": 53
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 237406750,
-            "records": 3
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 6300000,
-            "records": 2
-          },
-          {
-            "category": "anti-money-laundering deficiencies",
-            "penalty": 600000,
-            "records": 1
-          },
-          {
-            "category": "discriminatory practices (non-employment)",
-            "penalty": 30000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 280,
@@ -36298,8 +29194,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Indeed",
-        "CareerBliss",
-        "Violation Tracker (verified)"
+        "CareerBliss"
       ]
     },
     "dei": {
@@ -36347,65 +29242,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "fidelity-investments",
-        "matchedName": "Fidelity Investments",
-        "totalPenalty": 54068354,
-        "totalRecords": 14,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 24060001,
-            "records": 4
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 22001353,
-            "records": 8
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 8000000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 7000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 22860001,
-            "records": 3
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 21937500,
-            "records": 7
-          },
-          {
-            "category": "kickbacks and bribery",
-            "penalty": 8000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 1200000,
-            "records": 1
-          },
-          {
-            "category": "economic sanction violation",
-            "penalty": 63853,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 281,
@@ -36464,8 +29301,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Company Reports",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -36515,40 +29351,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "vanguard-group",
-        "matchedName": "Vanguard Group",
-        "totalPenalty": 181233480,
-        "totalRecords": 8,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 180433480,
-            "records": 6
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 800000,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "investor protection violation",
-            "penalty": 180433480,
-            "records": 6
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 800000,
-            "records": 2
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 282,
@@ -36609,8 +29412,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "Company reports",
-        "Violation Tracker (verified)"
+        "Company reports"
       ]
     },
     "dei": {
@@ -36659,40 +29461,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "blackrock",
-        "matchedName": "BlackRock",
-        "totalPenalty": 30001093,
-        "totalRecords": 9,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 20351093,
-            "records": 8
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 9650000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "investor protection violation",
-            "penalty": 20351093,
-            "records": 8
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 9650000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 283,
@@ -36755,8 +29524,7 @@ export const COMPANIES = [
       "sources": [
         "Company History",
         "SEC Filings",
-        "News Reports",
-        "Violation Tracker (verified)"
+        "News Reports"
       ]
     },
     "dei": {
@@ -36805,65 +29573,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "state-street-corp",
-        "matchedName": "State Street Corp.",
-        "totalPenalty": 1237471675,
-        "totalRecords": 23,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 857679501,
-            "records": 13
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 172742174,
-            "records": 6
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 147300000,
-            "records": 2
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 59750000,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "investor protection violation",
-            "penalty": 838205000,
-            "records": 10
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 164050000,
-            "records": 4
-          },
-          {
-            "category": "fraud",
-            "penalty": 147300000,
-            "records": 2
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 59750000,
-            "records": 2
-          },
-          {
-            "category": "campaign finance violation",
-            "penalty": 12000000,
-            "records": 1
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 284,
@@ -36915,8 +29625,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "Company sustainability data",
-        "Violation Tracker (verified)"
+        "Company sustainability data"
       ]
     },
     "dei": {
@@ -36968,30 +29677,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "t-rowe-price",
-        "matchedName": "T. Rowe Price",
-        "totalPenalty": 7000000,
-        "totalRecords": 1,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 7000000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 7000000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 285,
@@ -37109,8 +29795,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "Indeed",
-        "Violation Tracker (verified)"
+        "Indeed"
       ]
     },
     "dei": {
@@ -37162,60 +29847,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "raymond-james-financial",
-        "matchedName": "Raymond James Financial",
-        "totalPenalty": 360337686,
-        "totalRecords": 46,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 344674610,
-            "records": 43
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 15000000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 663076,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "toxic securities abuses",
-            "penalty": 200000000,
-            "records": 2
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 127674610,
-            "records": 40
-          },
-          {
-            "category": "anti-money-laundering deficiencies",
-            "penalty": 17000000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 15000000,
-            "records": 1
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 633715,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 287,
@@ -37276,8 +29908,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Company Reports",
-        "News Coverage",
-        "Violation Tracker (verified)"
+        "News Coverage"
       ]
     },
     "dei": {
@@ -37329,45 +29960,7 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "lpl-financial",
-        "matchedName": "LPL Financial",
-        "totalPenalty": 158655651,
-        "totalRecords": 73,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 156655651,
-            "records": 72
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 2000000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "investor protection violation",
-            "penalty": 138655651,
-            "records": 71
-          },
-          {
-            "category": "anti-money-laundering deficiencies",
-            "penalty": 18000000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 2000000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 288,
@@ -37426,9 +30019,7 @@ export const COMPANIES = [
       "s": "Ameriprise settled a 2016 OFCCP discrimination case paying $128K in back wages to 20 Black employees. The company reports historical regulatory violations totaling $390M since 2000 across its subsidiaries, though recent data on labor practices is limited.",
       "rating": "Below Average",
       "sources": [
-        "OFCCP",
-        "Violation Tracker",
-        "Violation Tracker (verified)"
+        "OFCCP"
       ]
     },
     "dei": {
@@ -37475,60 +30066,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "ameriprise-financial",
-        "matchedName": "Ameriprise Financial",
-        "totalPenalty": 390039885,
-        "totalRecords": 60,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 325532572,
-            "records": 45
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 58813200,
-            "records": 4
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 5694113,
-            "records": 11
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "investor protection violation",
-            "penalty": 325532572,
-            "records": 45
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 31128200,
-            "records": 2
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 27500000,
-            "records": 1
-          },
-          {
-            "category": "insurance violation",
-            "penalty": 5484113,
-            "records": 9
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 210000,
-            "records": 2
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 289,
@@ -37588,9 +30126,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "OSHA",
-        "NLRB",
-        "Violation Tracker",
-        "Violation Tracker (verified)"
+        "NLRB"
       ]
     },
     "dei": {
@@ -37640,70 +30176,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "berkshire-hathaway",
-        "matchedName": "Berkshire Hathaway",
-        "totalPenalty": 2802573718,
-        "totalRecords": 3630,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 1005926191,
-            "records": 326
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 945957134,
-            "records": 3128
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 393770500,
-            "records": 9
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 320437253,
-            "records": 102
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 113816281,
-            "records": 8
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "utility safety violation",
-            "penalty": 877768625,
-            "records": 18
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 640468583,
-            "records": 94
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 285500000,
-            "records": 3
-          },
-          {
-            "category": "water pollution violation",
-            "penalty": 196972524,
-            "records": 15
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 157186000,
-            "records": 12
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 290,
@@ -37763,8 +30236,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -37812,65 +30284,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "allstate",
-        "matchedName": "Allstate",
-        "totalPenalty": 348641145,
-        "totalRecords": 144,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 215993217,
-            "records": 127
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 132407128,
-            "records": 14
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 171300,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 69500,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "insurance violation",
-            "penalty": 143246439,
-            "records": 114
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 127907128,
-            "records": 13
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 56516778,
-            "records": 10
-          },
-          {
-            "category": "discriminatory practices (non-employment)",
-            "penalty": 11720000,
-            "records": 1
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 4510000,
-            "records": 2
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 291,
@@ -37930,8 +30344,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "Company Policy",
-        "Violation Tracker (verified)"
+        "Company Policy"
       ]
     },
     "dei": {
@@ -37977,70 +30390,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "state-farm-insurance",
-        "matchedName": "State Farm Insurance",
-        "totalPenalty": 1489407037,
-        "totalRecords": 94,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 1248718890,
-            "records": 86
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 140057787,
-            "records": 4
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 100000000,
-            "records": 1
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 622200,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 8160,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 863930368,
-            "records": 12
-          },
-          {
-            "category": "insurance violation",
-            "penalty": 384788522,
-            "records": 74
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 140000000,
-            "records": 2
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 100000000,
-            "records": 1
-          },
-          {
-            "category": "banking violation",
-            "penalty": 547200,
-            "records": 1
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 292,
@@ -38205,8 +30555,7 @@ export const COMPANIES = [
       "rating": "Good",
       "sources": [
         "Glassdoor",
-        "Company Culture Data",
-        "Violation Tracker (verified)"
+        "Company Culture Data"
       ]
     },
     "dei": {
@@ -38257,65 +30606,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "progressive",
-        "matchedName": "Progressive",
-        "totalPenalty": 107038134,
-        "totalRecords": 76,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 99519134,
-            "records": 70
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 5446000,
-            "records": 2
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 2000000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 73000,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 69476196,
-            "records": 5
-          },
-          {
-            "category": "insurance violation",
-            "penalty": 26792938,
-            "records": 64
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 5446000,
-            "records": 2
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 3250000,
-            "records": 1
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 2000000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 294,
@@ -38375,8 +30666,7 @@ export const COMPANIES = [
       "rating": "Good",
       "sources": [
         "Glassdoor",
-        "Company Reports",
-        "Violation Tracker (verified)"
+        "Company Reports"
       ]
     },
     "dei": {
@@ -38421,65 +30711,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "liberty-mutual-insurance",
-        "matchedName": "Liberty Mutual Insurance",
-        "totalPenalty": 66968818,
-        "totalRecords": 209,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 37089956,
-            "records": 8
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 19444502,
-            "records": 197
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 10426360,
-            "records": 3
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 8000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 30000000,
-            "records": 1
-          },
-          {
-            "category": "insurance violation",
-            "penalty": 10579502,
-            "records": 189
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 6563780,
-            "records": 5
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 4700000,
-            "records": 2
-          },
-          {
-            "category": "Foreign Corrupt Practices Act",
-            "penalty": 4699088,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 295,
@@ -38540,8 +30772,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Great Place to Work",
-        "Wikipedia",
-        "Violation Tracker (verified)"
+        "Wikipedia"
       ]
     },
     "dei": {
@@ -38590,60 +30821,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "farmers-insurance-exchange",
-        "matchedName": "Farmers Insurance Exchange",
-        "totalPenalty": 242053860,
-        "totalRecords": 39,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 126589652,
-            "records": 30
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 115449208,
-            "records": 7
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 15000,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "insurance violation",
-            "penalty": 123224652,
-            "records": 27
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 109084208,
-            "records": 5
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 6365000,
-            "records": 2
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 2775000,
-            "records": 1
-          },
-          {
-            "category": "telecommunications violation",
-            "penalty": 575000,
-            "records": 1
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 296,
@@ -38704,8 +30882,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "OSHA",
-        "Company benefits data",
-        "Violation Tracker (verified)"
+        "Company benefits data"
       ]
     },
     "dei": {
@@ -38753,65 +30930,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "nationwide",
-        "matchedName": "Nationwide",
-        "totalPenalty": 244738975,
-        "totalRecords": 131,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 160391096,
-            "records": 9
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 76341729,
-            "records": 120
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 8000000,
-            "records": 1
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 6150,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 140000000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 46407000,
-            "records": 4
-          },
-          {
-            "category": "insurance violation",
-            "penalty": 24434729,
-            "records": 115
-          },
-          {
-            "category": "Fair Credit Reporting Act violation",
-            "penalty": 19250000,
-            "records": 1
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 8000000,
-            "records": 1
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 297,
@@ -38872,8 +30991,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Company awards",
-        "Employee reviews",
-        "Violation Tracker (verified)"
+        "Employee reviews"
       ]
     },
     "dei": {
@@ -38927,60 +31045,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "usaa",
-        "matchedName": "USAA",
-        "totalPenalty": 379955409,
-        "totalRecords": 60,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 225382500,
-            "records": 4
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 153709125,
-            "records": 54
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 863784,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "anti-money-laundering deficiencies",
-            "penalty": 140000000,
-            "records": 2
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 137624396,
-            "records": 8
-          },
-          {
-            "category": "banking violation",
-            "penalty": 85382500,
-            "records": 2
-          },
-          {
-            "category": "insurance violation",
-            "penalty": 12784729,
-            "records": 44
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 3250000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 298,
@@ -39040,8 +31105,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "Company reports",
-        "Violation Tracker (verified)"
+        "Company reports"
       ]
     },
     "dei": {
@@ -39088,70 +31152,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "travelers",
-        "matchedName": "Travelers",
-        "totalPenalty": 233361875,
-        "totalRecords": 131,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 86727272,
-            "records": 3
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 67500000,
-            "records": 1
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 43338320,
-            "records": 122
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 31325000,
-            "records": 3
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 4471283,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 86727272,
-            "records": 3
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 67500000,
-            "records": 1
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 31325000,
-            "records": 3
-          },
-          {
-            "category": "insurance violation",
-            "penalty": 23787934,
-            "records": 116
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 10000386,
-            "records": 2
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 299,
@@ -39192,9 +31193,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -39220,69 +31219,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "ford-motor",
-        "matchedName": "Ford Motor",
-        "totalPenalty": 1204330366,
-        "totalRecords": 117,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 743362533,
-            "records": 37
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 365000000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 48133313,
-            "records": 39
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 40572516,
-            "records": 7
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 6562004,
-            "records": 32
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "product safety violation",
-            "penalty": 399200000,
-            "records": 4
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 365000000,
-            "records": 1
-          },
-          {
-            "category": "motor vehicle safety violation",
-            "penalty": 343862500,
-            "records": 5
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 45094760,
-            "records": 7
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 27334421,
-            "records": 4
-          }
-        ],
-        "rating": "mixed"
-      }
     }
   },
   {
@@ -39344,8 +31280,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "UAW",
-        "Violation Tracker (verified)"
+        "UAW"
       ]
     },
     "dei": {
@@ -39392,70 +31327,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "general-motors",
-        "matchedName": "General Motors",
-        "totalPenalty": 2161593497,
-        "totalRecords": 133,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 1548411162,
-            "records": 68
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 417084471,
-            "records": 10
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 134818964,
-            "records": 25
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 39440400,
-            "records": 26
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 15088500,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "motor vehicle safety violation",
-            "penalty": 1072496000,
-            "records": 10
-          },
-          {
-            "category": "product safety violation",
-            "penalty": 475200000,
-            "records": 5
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 404256171,
-            "records": 6
-          },
-          {
-            "category": "fuel economy (CAFE) violation",
-            "penalty": 128236685,
-            "records": 1
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 37500000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 301,
@@ -39506,8 +31378,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Company reports",
-        "News sources",
-        "Violation Tracker (verified)"
+        "News sources"
       ]
     },
     "dei": {
@@ -39553,70 +31424,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "stellantis",
-        "matchedName": "Stellantis",
-        "totalPenalty": 2555313626,
-        "totalRecords": 139,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 2239327382,
-            "records": 48
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 207407650,
-            "records": 52
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 49532500,
-            "records": 3
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 47809142,
-            "records": 3
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 9675000,
-            "records": 4
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "air pollution violation",
-            "penalty": 1304968386,
-            "records": 12
-          },
-          {
-            "category": "fuel economy (CAFE) violation",
-            "penalty": 628352460,
-            "records": 24
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 306006536,
-            "records": 12
-          },
-          {
-            "category": "motor vehicle safety violation",
-            "penalty": 175495000,
-            "records": 4
-          },
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 40000000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 302,
@@ -39668,9 +31476,7 @@ export const COMPANIES = [
       "rating": "Below Average",
       "sources": [
         "NLRB",
-        "Violation Tracker",
-        "Good Jobs First",
-        "Violation Tracker (verified)"
+        "Good Jobs First"
       ]
     },
     "dei": {
@@ -39721,70 +31527,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "toyota",
-        "matchedName": "Toyota",
-        "totalPenalty": 9110758182,
-        "totalRecords": 62,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 6607713139,
-            "records": 30
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 2355191874,
-            "records": 20
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 101736526,
-            "records": 5
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 35000000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 11093243,
-            "records": 5
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "product safety violation",
-            "penalty": 5312750000,
-            "records": 5
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 1822038466,
-            "records": 8
-          },
-          {
-            "category": "motor vehicle safety violation",
-            "penalty": 1294775000,
-            "records": 6
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 532594908,
-            "records": 9
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 89500000,
-            "records": 3
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 303,
@@ -39835,8 +31578,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "NLRB",
-        "OSHA",
-        "Violation Tracker (verified)"
+        "OSHA"
       ]
     },
     "dei": {
@@ -39879,70 +31621,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-16",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "honda",
-        "matchedName": "Honda",
-        "totalPenalty": 1093625520,
-        "totalRecords": 58,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 739374271,
-            "records": 25
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 331420981,
-            "records": 12
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 19140637,
-            "records": 17
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 3602376,
-            "records": 3
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 87255,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "product safety violation",
-            "penalty": 664114623,
-            "records": 6
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 322995481,
-            "records": 10
-          },
-          {
-            "category": "motor vehicle safety violation",
-            "penalty": 75044000,
-            "records": 3
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 18333937,
-            "records": 13
-          },
-          {
-            "category": "discriminatory practices (non-employment)",
-            "penalty": 7793000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-16"
   },
   {
     "id": 304,
@@ -40286,8 +31965,7 @@ export const COMPANIES = [
       "rating": "Poor",
       "sources": [
         "NLRB",
-        "In These Times",
-        "Violation Tracker (verified)"
+        "In These Times"
       ]
     },
     "dei": {
@@ -40327,70 +32005,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "volkswagen",
-        "matchedName": "Volkswagen",
-        "totalPenalty": 26293327955,
-        "totalRecords": 119,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 21738941695,
-            "records": 71
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 4103512000,
-            "records": 7
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 333436088,
-            "records": 21
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 56250000,
-            "records": 2
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 50000000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "air pollution violation",
-            "penalty": 21624427075,
-            "records": 32
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 4100012000,
-            "records": 6
-          },
-          {
-            "category": "product safety violation",
-            "penalty": 332250000,
-            "records": 7
-          },
-          {
-            "category": "fuel economy (CAFE) violation",
-            "penalty": 60394436,
-            "records": 28
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 56250000,
-            "records": 2
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 308,
@@ -40442,8 +32057,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -40485,70 +32099,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "bmw",
-        "matchedName": "BMW",
-        "totalPenalty": 304375342,
-        "totalRecords": 23,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 164034900,
-            "records": 5
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 117945055,
-            "records": 14
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 18000000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 2229869,
-            "records": 2
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 2165518,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "product safety violation",
-            "penalty": 161000000,
-            "records": 2
-          },
-          {
-            "category": "fuel economy (CAFE) violation",
-            "penalty": 111853055,
-            "records": 12
-          },
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 18000000,
-            "records": 1
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 6000000,
-            "records": 1
-          },
-          {
-            "category": "motor vehicle safety violation",
-            "penalty": 3000000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 309,
@@ -41497,8 +33048,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Indeed",
-        "Comparably",
-        "Violation Tracker (verified)"
+        "Comparably"
       ]
     },
     "dei": {
@@ -41545,65 +33095,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "autonation",
-        "matchedName": "AutoNation",
-        "totalPenalty": 4285215,
-        "totalRecords": 9,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 3380000,
-            "records": 1
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 855000,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 35238,
-            "records": 4
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 14977,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "hazardous waste violation",
-            "penalty": 3380000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 650000,
-            "records": 1
-          },
-          {
-            "category": "insurance violation",
-            "penalty": 205000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 35238,
-            "records": 4
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 9317,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 319,
@@ -41658,10 +33150,8 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "OSHA",
-        "Violation Tracker",
         "Glassdoor",
-        "Indeed",
-        "Violation Tracker (verified)"
+        "Indeed"
       ]
     },
     "dei": {
@@ -41712,30 +33202,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "penske-automotive",
-        "matchedName": "Penske Automotive",
-        "totalPenalty": 3275000,
-        "totalRecords": 1,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 3275000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 3275000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 320,
@@ -41785,8 +33252,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -41829,60 +33295,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "lithia-motors",
-        "matchedName": "Lithia Motors",
-        "totalPenalty": 8553751,
-        "totalRecords": 26,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 7512500,
-            "records": 3
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 800000,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 241251,
-            "records": 21
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 6500000,
-            "records": 1
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 1012500,
-            "records": 2
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 800000,
-            "records": 2
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 226251,
-            "records": 20
-          },
-          {
-            "category": "aviation safety violation",
-            "penalty": 15000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 321,
@@ -41932,8 +33345,7 @@ export const COMPANIES = [
       "rating": "Good",
       "sources": [
         "Glassdoor",
-        "Company CSR",
-        "Violation Tracker (verified)"
+        "Company CSR"
       ]
     },
     "dei": {
@@ -41982,65 +33394,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "carmax",
-        "matchedName": "CarMax",
-        "totalPenalty": 4952590,
-        "totalRecords": 22,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 3025860,
-            "records": 5
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 1864619,
-            "records": 12
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 41165,
-            "records": 3
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 20946,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 2839380,
-            "records": 4
-          },
-          {
-            "category": "hazardous waste violation",
-            "penalty": 1608100,
-            "records": 2
-          },
-          {
-            "category": "discriminatory practices (non-employment)",
-            "penalty": 186480,
-            "records": 1
-          },
-          {
-            "category": "water pollution violation",
-            "penalty": 119440,
-            "records": 1
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 95755,
-            "records": 5
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 322,
@@ -42092,8 +33446,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Comparably",
-        "Forbes",
-        "Violation Tracker (verified)"
+        "Forbes"
       ]
     },
     "dei": {
@@ -42145,60 +33498,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "carvana-co",
-        "matchedName": "Carvana Co.",
-        "totalPenalty": 3095084,
-        "totalRecords": 26,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 2467375,
-            "records": 3
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 327009,
-            "records": 17
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 300700,
-            "records": 6
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 2467375,
-            "records": 3
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 291409,
-            "records": 14
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 250800,
-            "records": 3
-          },
-          {
-            "category": "motor vehicle safety violation",
-            "penalty": 35600,
-            "records": 3
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 27500,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 323,
@@ -42721,8 +34021,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Glassdoor",
-        "Comparably",
-        "Violation Tracker (verified)"
+        "Comparably"
       ]
     },
     "dei": {
@@ -42773,70 +34072,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "hertz",
-        "matchedName": "Hertz",
-        "totalPenalty": 48983866,
-        "totalRecords": 203,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 17932465,
-            "records": 185
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 16000000,
-            "records": 1
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 14719500,
-            "records": 4
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 236600,
-            "records": 5
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 95301,
-            "records": 8
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "investor protection violation",
-            "penalty": 16000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 15829735,
-            "records": 173
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 14660000,
-            "records": 3
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 1795000,
-            "records": 2
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 173000,
-            "records": 2
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 329,
@@ -42999,8 +34235,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Comparably",
-        "Company Culture Report",
-        "Violation Tracker (verified)"
+        "Company Culture Report"
       ]
     },
     "dei": {
@@ -43049,70 +34284,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "avis-budget-group",
-        "matchedName": "Avis Budget Group",
-        "totalPenalty": 101587015,
-        "totalRecords": 33,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 79483613,
-            "records": 6
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 11407194,
-            "records": 10
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 10100000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 386981,
-            "records": 8
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 209227,
-            "records": 8
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 79483613,
-            "records": 6
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 10100000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 8117254,
-            "records": 5
-          },
-          {
-            "category": "employment screening violation",
-            "penalty": 2699440,
-            "records": 1
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 572500,
-            "records": 3
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 331,
@@ -43153,9 +34325,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -43181,69 +34351,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "avis-budget-group",
-        "matchedName": "Avis Budget Group",
-        "totalPenalty": 101587015,
-        "totalRecords": 33,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 79483613,
-            "records": 6
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 11407194,
-            "records": 10
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 10100000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 386981,
-            "records": 8
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 209227,
-            "records": 8
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 79483613,
-            "records": 6
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 10100000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 8117254,
-            "records": 5
-          },
-          {
-            "category": "employment screening violation",
-            "penalty": 2699440,
-            "records": 1
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 572500,
-            "records": 3
-          }
-        ],
-        "rating": "mixed"
-      }
     }
   },
   {
@@ -43432,9 +34539,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -43460,34 +34565,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "alamo-group",
-        "matchedName": "Alamo Group",
-        "totalPenalty": 178103,
-        "totalRecords": 13,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 178103,
-            "records": 13
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 163303,
-            "records": 12
-          },
-          {
-            "category": "motor vehicle safety violation",
-            "penalty": 14800,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -43927,8 +35004,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Company reports",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -43979,70 +35055,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "chevron",
-        "matchedName": "Chevron",
-        "totalPenalty": 1376440872,
-        "totalRecords": 701,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 985096500,
-            "records": 482
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 217173365,
-            "records": 14
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 122334071,
-            "records": 6
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 34160487,
-            "records": 4
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 9153786,
-            "records": 11
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "air pollution violation",
-            "penalty": 736518932,
-            "records": 166
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 213769584,
-            "records": 7
-          },
-          {
-            "category": "tax violations",
-            "penalty": 120320000,
-            "records": 4
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 109942177,
-            "records": 209
-          },
-          {
-            "category": "MTBE violation",
-            "penalty": 82233334,
-            "records": 7
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 340,
@@ -44083,9 +35096,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -44111,69 +35122,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "conocophillips",
-        "matchedName": "ConocoPhillips",
-        "totalPenalty": 609228843,
-        "totalRecords": 192,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 439005508,
-            "records": 144
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 144732798,
-            "records": 8
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 15800007,
-            "records": 2
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 5000000,
-            "records": 1
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 4393000,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "air pollution violation",
-            "penalty": 361855500,
-            "records": 34
-          },
-          {
-            "category": "federal leasing royalty violation",
-            "penalty": 97835322,
-            "records": 4
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 74432008,
-            "records": 91
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 46897476,
-            "records": 4
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 15800007,
-            "records": 2
-          }
-        ],
-        "rating": "mixed"
-      }
     }
   },
   {
@@ -44282,9 +35230,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -44310,69 +35256,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "marathon-petroleum",
-        "matchedName": "Marathon Petroleum",
-        "totalPenalty": 1588003787,
-        "totalRecords": 396,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 1452062762,
-            "records": 243
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 51342966,
-            "records": 13
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 41086404,
-            "records": 136
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 22500000,
-            "records": 1
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 20011655,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "air pollution violation",
-            "penalty": 1294160314,
-            "records": 96
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 151638341,
-            "records": 112
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 40206439,
-            "records": 62
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 35020881,
-            "records": 6
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 22500000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
     }
   },
   {
@@ -44435,8 +35318,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "Cal/OSHA",
-        "Company Safety Reports",
-        "Violation Tracker (verified)"
+        "Company Safety Reports"
       ]
     },
     "dei": {
@@ -44482,70 +35364,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "valero-energy",
-        "matchedName": "Valero Energy",
-        "totalPenalty": 1194845521,
-        "totalRecords": 350,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 1192437050,
-            "records": 272
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 1926886,
-            "records": 73
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 426500,
-            "records": 3
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 35000,
-            "records": 1
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 20085,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "air pollution violation",
-            "penalty": 818235003,
-            "records": 72
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 280304402,
-            "records": 181
-          },
-          {
-            "category": "underground storage tank violation",
-            "penalty": 40820735,
-            "records": 6
-          },
-          {
-            "category": "water pollution violation",
-            "penalty": 25263338,
-            "records": 5
-          },
-          {
-            "category": "MTBE violation",
-            "penalty": 18791667,
-            "records": 3
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 344,
@@ -44603,8 +35422,7 @@ export const COMPANIES = [
       "s": "Phillips 66 has a mixed labor record with major historical violations (1989 Houston Chemical Complex explosion killing 23 workers, largest OSHA penalty at the time) but recent recognition for safety excellence at several facilities. Some sites achieved OSHA Voluntary Protection Program status and SHARP certification. Overall demonstrates improvement but legacy of serious safety failures.",
       "rating": "Mixed",
       "sources": [
-        "OSHA",
-        "Violation Tracker (verified)"
+        "OSHA"
       ]
     },
     "dei": {
@@ -44648,70 +35466,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "phillips-66",
-        "matchedName": "Phillips 66",
-        "totalPenalty": 819979668,
-        "totalRecords": 444,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 797700570,
-            "records": 345
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 8039360,
-            "records": 2
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 6391798,
-            "records": 12
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 4079900,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 3768040,
-            "records": 83
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "air pollution violation",
-            "penalty": 610872908,
-            "records": 109
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 135163502,
-            "records": 201
-          },
-          {
-            "category": "MTBE violation",
-            "penalty": 39661667,
-            "records": 3
-          },
-          {
-            "category": "water pollution violation",
-            "penalty": 9794897,
-            "records": 8
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 8000000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 345,
@@ -44827,8 +35582,7 @@ export const COMPANIES = [
       "s": "OSHA investigation of 2008 Tyler refinery explosion killed 2 workers, injured 3 others, revealing systemic process safety management failures and substandard pipes. 2008 inspections cited multiple safety violations. Workplace injury history indicates below-average safety culture.",
       "rating": "Below Average",
       "sources": [
-        "OSHA",
-        "Violation Tracker (verified)"
+        "OSHA"
       ]
     },
     "dei": {
@@ -44871,60 +35625,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "delek",
-        "matchedName": "Delek",
-        "totalPenalty": 34418751,
-        "totalRecords": 112,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 33131518,
-            "records": 58
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 1104655,
-            "records": 47
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 182578,
-            "records": 7
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "air pollution violation",
-            "penalty": 25376781,
-            "records": 20
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 7528987,
-            "records": 35
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 853475,
-            "records": 21
-          },
-          {
-            "category": "railroad safety violation",
-            "penalty": 251180,
-            "records": 26
-          },
-          {
-            "category": "pipeline safety violation",
-            "penalty": 220000,
-            "records": 2
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 347,
@@ -44975,8 +35676,7 @@ export const COMPANIES = [
       "rating": "Below Average",
       "sources": [
         "OSHA",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -45024,65 +35724,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "calumet-specialty-products",
-        "matchedName": "Calumet Specialty Products",
-        "totalPenalty": 5800430,
-        "totalRecords": 54,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 2708132,
-            "records": 15
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 2100000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 742298,
-            "records": 37
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 250000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "environmental violation",
-            "penalty": 2443642,
-            "records": 10
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 2100000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 481073,
-            "records": 13
-          },
-          {
-            "category": "railroad safety violation",
-            "penalty": 261225,
-            "records": 24
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 254490,
-            "records": 4
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 348,
@@ -45247,8 +35889,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "Department of Labor",
-        "NRDC reports",
-        "Violation Tracker (verified)"
+        "NRDC reports"
       ]
     },
     "dei": {
@@ -45290,70 +35931,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "bp",
-        "matchedName": "BP",
-        "totalPenalty": 36493357157,
-        "totalRecords": 442,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 34588857765,
-            "records": 310
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 669467567,
-            "records": 6
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 525000000,
-            "records": 1
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 408000000,
-            "records": 8
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 160001800,
-            "records": 5
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "oil spill",
-            "penalty": 32622146081,
-            "records": 10
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 1402861518,
-            "records": 68
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 669315000,
-            "records": 4
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 525000000,
-            "records": 1
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 390250000,
-            "records": 6
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 350,
@@ -45580,8 +36158,7 @@ export const COMPANIES = [
         "Glassdoor",
         "OSHA",
         "NLRB",
-        "Employee reviews",
-        "Violation Tracker (verified)"
+        "Employee reviews"
       ]
     },
     "dei": {
@@ -45635,70 +36212,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "nextera-energy",
-        "matchedName": "NextEra Energy",
-        "totalPenalty": 31109012,
-        "totalRecords": 34,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 25486724,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 2709552,
-            "records": 13
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 2346632,
-            "records": 5
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 460104,
-            "records": 10
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 106000,
-            "records": 4
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "energy market violation",
-            "penalty": 25486724,
-            "records": 2
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 2632977,
-            "records": 10
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 1350000,
-            "records": 2
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 979521,
-            "records": 2
-          },
-          {
-            "category": "nuclear safety violation",
-            "penalty": 360000,
-            "records": 3
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 353,
@@ -45760,8 +36274,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "AFL-CIO Paywatch",
-        "SEC Proxy",
-        "Violation Tracker (verified)"
+        "SEC Proxy"
       ]
     },
     "dei": {
@@ -45810,70 +36323,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "duke-energy",
-        "matchedName": "Duke Energy",
-        "totalPenalty": 2953511848,
-        "totalRecords": 111,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 2535058269,
-            "records": 64
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 343396667,
-            "records": 11
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 43100000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 30171000,
-            "records": 5
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 1185912,
-            "records": 29
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "air pollution violation",
-            "penalty": 1529014297,
-            "records": 22
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 902689775,
-            "records": 31
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 331741667,
-            "records": 6
-          },
-          {
-            "category": "water pollution violation",
-            "penalty": 103142223,
-            "records": 5
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 43100000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 354,
@@ -45914,9 +36364,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -45942,69 +36390,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "dominion-energy",
-        "matchedName": "Dominion Energy",
-        "totalPenalty": 3951779024,
-        "totalRecords": 73,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 2528607182,
-            "records": 5
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 1247785887,
-            "records": 46
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 141750000,
-            "records": 2
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 24800000,
-            "records": 2
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 5342181,
-            "records": 4
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 2528607182,
-            "records": 5
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 1232459090,
-            "records": 6
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 141750000,
-            "records": 2
-          },
-          {
-            "category": "energy market violation",
-            "penalty": 24800000,
-            "records": 2
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 14884617,
-            "records": 31
-          }
-        ],
-        "rating": "mixed"
-      }
     }
   },
   {
@@ -46067,8 +36452,7 @@ export const COMPANIES = [
       "sources": [
         "Company Reports",
         "DiversityInc",
-        "Compensation Analysis",
-        "Violation Tracker (verified)"
+        "Compensation Analysis"
       ]
     },
     "dei": {
@@ -46115,70 +36499,7 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "southern-company",
-        "matchedName": "Southern Company",
-        "totalPenalty": 237454828,
-        "totalRecords": 87,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 207328552,
-            "records": 43
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 17320211,
-            "records": 7
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 10000000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 2206065,
-            "records": 34
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 350000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "air pollution violation",
-            "penalty": 200212462,
-            "records": 6
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 15000000,
-            "records": 1
-          },
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 10000000,
-            "records": 1
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 5895430,
-            "records": 21
-          },
-          {
-            "category": "utility safety violation",
-            "penalty": 1866150,
-            "records": 21
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 356,
@@ -46219,9 +36540,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -46247,69 +36566,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "exelon",
-        "matchedName": "Exelon",
-        "totalPenalty": 376745114,
-        "totalRecords": 95,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 247743486,
-            "records": 5
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 69578606,
-            "records": 34
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 48295391,
-            "records": 12
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 9150842,
-            "records": 8
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 1976789,
-            "records": 36
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "kickbacks and bribery",
-            "penalty": 200000000,
-            "records": 1
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 67318006,
-            "records": 28
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 46354800,
-            "records": 5
-          },
-          {
-            "category": "fraud",
-            "penalty": 46200000,
-            "records": 1
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 7665000,
-            "records": 2
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -46369,8 +36625,7 @@ export const COMPANIES = [
       "rating": "Average",
       "sources": [
         "NLRB",
-        "Company HR",
-        "Violation Tracker (verified)"
+        "Company HR"
       ]
     },
     "dei": {
@@ -46415,70 +36670,7 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "entergy",
-        "matchedName": "Entergy",
-        "totalPenalty": 327959852,
-        "totalRecords": 56,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 300562100,
-            "records": 15
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 15000000,
-            "records": 2
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 9631144,
-            "records": 6
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 2590143,
-            "records": 18
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 135783,
-            "records": 13
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 300085000,
-            "records": 2
-          },
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 12000000,
-            "records": 1
-          },
-          {
-            "category": "energy market violation",
-            "penalty": 9631144,
-            "records": 6
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 3000000,
-            "records": 1
-          },
-          {
-            "category": "nuclear safety violation",
-            "penalty": 2470000,
-            "records": 8
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 358,
@@ -46539,8 +36731,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Company Labor Relations",
-        "News Reports",
-        "Violation Tracker (verified)"
+        "News Reports"
       ]
     },
     "dei": {
@@ -46591,70 +36782,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "at-and-t",
-        "matchedName": "AT&T",
-        "totalPenalty": 1192043906,
-        "totalRecords": 309,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 740948093,
-            "records": 80
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 306656459,
-            "records": 129
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 86897124,
-            "records": 26
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 28150000,
-            "records": 3
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 18240846,
-            "records": 5
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "telecommunications violation",
-            "penalty": 350592800,
-            "records": 29
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 294708293,
-            "records": 42
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 148675000,
-            "records": 4
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 139201930,
-            "records": 41
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 70160000,
-            "records": 4
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 359,
@@ -46695,9 +36823,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -46723,69 +36849,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "verizon-communications",
-        "matchedName": "Verizon Communications",
-        "totalPenalty": 3089112207,
-        "totalRecords": 348,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 1772857950,
-            "records": 99
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 927017909,
-            "records": 5
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 224126881,
-            "records": 84
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 140786727,
-            "records": 6
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 14680863,
-            "records": 44
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "telecommunications violation",
-            "penalty": 1127977926,
-            "records": 33
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 573176024,
-            "records": 48
-          },
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 511700000,
-            "records": 2
-          },
-          {
-            "category": "tax violations",
-            "penalty": 415317909,
-            "records": 3
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 140786727,
-            "records": 6
-          }
-        ],
-        "rating": "poor"
-      }
     }
   },
   {
@@ -46827,9 +36890,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -46855,69 +36916,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "t-mobile-us",
-        "matchedName": "T-Mobile US",
-        "totalPenalty": 1888077562,
-        "totalRecords": 104,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 1332691207,
-            "records": 53
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 330000000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 141704150,
-            "records": 41
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 75500000,
-            "records": 2
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 5565250,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "telecommunications violation",
-            "penalty": 609989000,
-            "records": 18
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 446860000,
-            "records": 5
-          },
-          {
-            "category": "tax violations",
-            "penalty": 330000000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 272037207,
-            "records": 27
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 63511406,
-            "records": 5
-          }
-        ],
-        "rating": "poor"
-      }
     }
   },
   {
@@ -46959,9 +36957,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -46987,69 +36983,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "comcast",
-        "matchedName": "Comcast",
-        "totalPenalty": 320183640,
-        "totalRecords": 138,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 115500000,
-            "records": 3
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 96462515,
-            "records": 16
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 50000000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 31361377,
-            "records": 52
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 26195628,
-            "records": 11
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 115500000,
-            "records": 3
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 54625515,
-            "records": 4
-          },
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 50000000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 38575000,
-            "records": 8
-          },
-          {
-            "category": "hazardous waste violation",
-            "penalty": 25958780,
-            "records": 2
-          }
-        ],
-        "rating": "mixed"
-      }
     }
   },
   {
@@ -47110,8 +37043,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "NLRB",
-        "Company filings",
-        "Violation Tracker (verified)"
+        "Company filings"
       ]
     },
     "dei": {
@@ -47164,70 +37096,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "charter-communications",
-        "matchedName": "Charter Communications",
-        "totalPenalty": 284679385,
-        "totalRecords": 93,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 229556020,
-            "records": 16
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 29549683,
-            "records": 30
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 25006900,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 480269,
-            "records": 42
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 86513,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 199050020,
-            "records": 9
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 27442699,
-            "records": 16
-          },
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 25000000,
-            "records": 1
-          },
-          {
-            "category": "telecommunications violation",
-            "penalty": 17206000,
-            "records": 4
-          },
-          {
-            "category": "utility service violation",
-            "penalty": 13000000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 363,
@@ -47575,8 +37444,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Company ESG Report",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -47630,70 +37498,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "lumen-technologies",
-        "matchedName": "Lumen Technologies",
-        "totalPenalty": 491855291,
-        "totalRecords": 114,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 269000000,
-            "records": 2
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 161926800,
-            "records": 47
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 39187355,
-            "records": 24
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 13047843,
-            "records": 2
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 8200000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 269000000,
-            "records": 2
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 103932550,
-            "records": 20
-          },
-          {
-            "category": "telecommunications violation",
-            "penalty": 44138500,
-            "records": 20
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 36200000,
-            "records": 2
-          },
-          {
-            "category": "utility service violation",
-            "penalty": 13855750,
-            "records": 7
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 367,
@@ -47753,8 +37558,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "NLRB",
-        "Company Awards",
-        "Violation Tracker (verified)"
+        "Company Awards"
       ]
     },
     "dei": {
@@ -47805,65 +37609,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "windstream",
-        "matchedName": "Windstream",
-        "totalPenalty": 4054498,
-        "totalRecords": 14,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 3943000,
-            "records": 4
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 61100,
-            "records": 6
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 39065,
-            "records": 3
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 11333,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "telecommunications violation",
-            "penalty": 3718000,
-            "records": 3
-          },
-          {
-            "category": "utility service violation",
-            "penalty": 225000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 61100,
-            "records": 6
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 39065,
-            "records": 3
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 11333,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 368,
@@ -47924,8 +37670,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Corporate Research Project",
-        "Violation Tracker (verified)"
+        "Corporate Research Project"
       ]
     },
     "dei": {
@@ -47974,70 +37719,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "walt-disney",
-        "matchedName": "Walt Disney",
-        "totalPenalty": 418664696,
-        "totalRecords": 81,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 285956883,
-            "records": 25
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 114950000,
-            "records": 3
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 16591976,
-            "records": 7
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 630677,
-            "records": 37
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 496110,
-            "records": 8
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 240854129,
-            "records": 10
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 114950000,
-            "records": 3
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 43250000,
-            "records": 1
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 13000000,
-            "records": 2
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 2750000,
-            "records": 1
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 369,
@@ -48078,9 +37760,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -48106,49 +37786,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "netflix",
-        "matchedName": "Netflix",
-        "totalPenalty": 10451000,
-        "totalRecords": 6,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 9000000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 1395000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 56000,
-            "records": 4
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "privacy violation",
-            "penalty": 9000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 1395000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 56000,
-            "records": 4
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -48190,9 +37827,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -48218,69 +37853,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "warner-bros-discovery-inc",
-        "matchedName": "Warner Bros. Discovery Inc.",
-        "totalPenalty": 81294247,
-        "totalRecords": 18,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 78920287,
-            "records": 7
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 2293000,
-            "records": 4
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 44060,
-            "records": 4
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 29400,
-            "records": 2
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 7500,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "labor relations violation",
-            "penalty": 76037000,
-            "records": 3
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 2638787,
-            "records": 3
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 2000000,
-            "records": 1
-          },
-          {
-            "category": "telecommunications violation",
-            "penalty": 293000,
-            "records": 3
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 244500,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
     }
   },
   {
@@ -48476,8 +38048,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Glassdoor",
-        "Company code of conduct",
-        "Violation Tracker (verified)"
+        "Company code of conduct"
       ]
     },
     "dei": {
@@ -48529,70 +38100,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "sony",
-        "matchedName": "Sony",
-        "totalPenalty": 230758877,
-        "totalRecords": 34,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 166000000,
-            "records": 9
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 35000000,
-            "records": 10
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 29655000,
-            "records": 7
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 87627,
-            "records": 6
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 16250,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 156000000,
-            "records": 8
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 29550000,
-            "records": 5
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 21500000,
-            "records": 3
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 13100000,
-            "records": 6
-          },
-          {
-            "category": "kickbacks and bribery",
-            "penalty": 10000000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 374,
@@ -48633,9 +38141,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -48661,49 +38167,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "lions-gate-entertainment",
-        "matchedName": "Lions Gate Entertainment",
-        "totalPenalty": 8853752,
-        "totalRecords": 3,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 7500000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 1341752,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 12000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 7500000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 1341752,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 12000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -48863,8 +38326,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -48912,50 +38374,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "fox-corporation",
-        "matchedName": "Fox Corporation",
-        "totalPenalty": 824500000,
-        "totalRecords": 5,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 787500000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 31000000,
-            "records": 3
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 6000000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 787500000,
-            "records": 1
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 31000000,
-            "records": 3
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 6000000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 377,
@@ -49479,8 +38898,7 @@ export const COMPANIES = [
       "rating": "Below Average",
       "sources": [
         "News reports",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -49526,45 +38944,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "tidalhealth-inc",
-        "matchedName": "Tidalhealth, Inc.",
-        "totalPenalty": 4724000,
-        "totalRecords": 5,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 4700000,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 24000,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 4700000,
-            "records": 2
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 14000,
-            "records": 2
-          },
-          {
-            "category": "hazardous waste violation",
-            "penalty": 10000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 383,
@@ -49614,8 +38994,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "Company reports",
-        "Violation Tracker (verified)"
+        "Company reports"
       ]
     },
     "dei": {
@@ -49667,50 +39046,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "iheartmedia",
-        "matchedName": "iHeartMedia",
-        "totalPenalty": 7812762,
-        "totalRecords": 10,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 7405000,
-            "records": 5
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 407762,
-            "records": 5
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "telecommunications violation",
-            "penalty": 7005000,
-            "records": 4
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 400000,
-            "records": 1
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 257762,
-            "records": 4
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 150000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 384,
@@ -50037,8 +39373,7 @@ export const COMPANIES = [
       "sources": [
         "Company CSR",
         "SEC proxy",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -50090,70 +39425,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "microsoft",
-        "matchedName": "Microsoft",
-        "totalPenalty": 1590084462,
-        "totalRecords": 23,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 1296283959,
-            "records": 6
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 202330841,
-            "records": 9
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 53100000,
-            "records": 4
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 38327896,
-            "records": 3
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 41766,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 1270967014,
-            "records": 4
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 104355841,
-            "records": 3
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 91225000,
-            "records": 5
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 35000000,
-            "records": 1
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 33000000,
-            "records": 2
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 388,
@@ -50396,9 +39668,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -50424,69 +39694,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "oracle",
-        "matchedName": "Oracle",
-        "totalPenalty": 718261405,
-        "totalRecords": 28,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 458490000,
-            "records": 6
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 119231280,
-            "records": 14
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 115000000,
-            "records": 1
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 25280000,
-            "records": 5
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 250000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 458490000,
-            "records": 6
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 117321279,
-            "records": 12
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 115000000,
-            "records": 1
-          },
-          {
-            "category": "Foreign Corrupt Practices Act",
-            "penalty": 25000000,
-            "records": 2
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 1860000,
-            "records": 1
-          }
-        ],
-        "rating": "poor"
-      }
     }
   },
   {
@@ -50553,8 +39760,7 @@ export const COMPANIES = [
         "OSHA",
         "Glassdoor",
         "Great Place To Work",
-        "HR Dive",
-        "Violation Tracker (verified)"
+        "HR Dive"
       ]
     },
     "dei": {
@@ -50609,40 +39815,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "salesforcecom",
-        "matchedName": "Salesforce.com",
-        "totalPenalty": 1503591,
-        "totalRecords": 4,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 1503591,
-            "records": 4
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 1360001,
-            "records": 2
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 132581,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 11009,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 392,
@@ -50695,8 +39868,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Company Benefits",
-        "SEC Filings",
-        "Violation Tracker (verified)"
+        "SEC Filings"
       ]
     },
     "dei": {
@@ -50749,65 +39921,7 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "adobe-systems",
-        "matchedName": "Adobe Systems",
-        "totalPenalty": 257758044,
-        "totalRecords": 5,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 151000000,
-            "records": 2
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 103750000,
-            "records": 1
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 3000000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 8044,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 150000000,
-            "records": 1
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 103750000,
-            "records": 1
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 3000000,
-            "records": 1
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 1000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 8044,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 393,
@@ -50848,9 +39962,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -50876,64 +39988,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "sap",
-        "matchedName": "SAP",
-        "totalPenalty": 235536267,
-        "totalRecords": 10,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 224190000,
-            "records": 4
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 7272174,
-            "records": 2
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 2200000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 1874093,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "Foreign Corrupt Practices Act",
-            "penalty": 220900000,
-            "records": 3
-          },
-          {
-            "category": "economic sanction violation",
-            "penalty": 7272174,
-            "records": 2
-          },
-          {
-            "category": "export control violation",
-            "penalty": 3290000,
-            "records": 1
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 2200000,
-            "records": 1
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 1842943,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -51142,9 +40196,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -51170,59 +40222,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "uber-technologies",
-        "matchedName": "Uber Technologies",
-        "totalPenalty": 932772633,
-        "totalRecords": 46,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 645365224,
-            "records": 23
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 287361059,
-            "records": 20
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 46350,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 620927853,
-            "records": 17
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 175120000,
-            "records": 4
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 109982559,
-            "records": 14
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 14407500,
-            "records": 3
-          },
-          {
-            "category": "employment screening violation",
-            "penalty": 10000000,
-            "records": 2
-          }
-        ],
-        "rating": "poor"
-      }
     }
   },
   {
@@ -51276,8 +40275,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "OSHA",
-        "Labor Commissioner CA",
-        "Violation Tracker (verified)"
+        "Labor Commissioner CA"
       ]
     },
     "dei": {
@@ -51329,65 +40327,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "lyft-inc",
-        "matchedName": "Lyft Inc.",
-        "totalPenalty": 107087681,
-        "totalRecords": 18,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 94150681,
-            "records": 6
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 10000000,
-            "records": 1
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 2897000,
-            "records": 9
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 40000,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 94150681,
-            "records": 6
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 10000000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 2812000,
-            "records": 7
-          },
-          {
-            "category": "discriminatory practices (non-employment)",
-            "penalty": 45000,
-            "records": 1
-          },
-          {
-            "category": "Americans with Disabilities Act",
-            "penalty": 40000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 398,
@@ -51440,8 +40380,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "NY Attorney General",
-        "DCWP",
-        "Violation Tracker (verified)"
+        "DCWP"
       ]
     },
     "dei": {
@@ -51493,45 +40432,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "doordash",
-        "matchedName": "DoorDash",
-        "totalPenalty": 61168822,
-        "totalRecords": 11,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 31493822,
-            "records": 8
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 29675000,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 31418822,
-            "records": 7
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 29675000,
-            "records": 3
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 75000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 399,
@@ -52077,8 +40978,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Company ESG Report",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -52130,45 +41030,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "airbnb-inc",
-        "matchedName": "Airbnb Inc.",
-        "totalPenalty": 116672,
-        "totalRecords": 3,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 91172,
-            "records": 1
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 25500,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "economic sanction violation",
-            "penalty": 91172,
-            "records": 1
-          },
-          {
-            "category": "insurance violation",
-            "penalty": 20000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 5500,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 405,
@@ -52322,8 +41184,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "SEC proxy",
-        "Labor litigation records",
-        "Violation Tracker (verified)"
+        "Labor litigation records"
       ]
     },
     "dei": {
@@ -52375,70 +41236,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "marriott-international",
-        "matchedName": "Marriott International",
-        "totalPenalty": 90219006,
-        "totalRecords": 133,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 53634000,
-            "records": 8
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 33621223,
-            "records": 48
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 1059428,
-            "records": 11
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 1050000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 770355,
-            "records": 63
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "privacy violation",
-            "penalty": 52000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 32353191,
-            "records": 28
-          },
-          {
-            "category": "telecommunications violation",
-            "penalty": 1104000,
-            "records": 2
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 1050000,
-            "records": 1
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 993920,
-            "records": 18
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 407,
@@ -52496,8 +41294,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -52545,70 +41342,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "hilton-worldwide",
-        "matchedName": "Hilton Worldwide",
-        "totalPenalty": 7112805,
-        "totalRecords": 42,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 4607355,
-            "records": 22
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 1335407,
-            "records": 2
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 1025000,
-            "records": 3
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 138043,
-            "records": 14
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 7000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 4433006,
-            "records": 12
-          },
-          {
-            "category": "economic sanction violation",
-            "penalty": 735407,
-            "records": 1
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 700000,
-            "records": 1
-          },
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 600000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 300000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 408,
@@ -52649,9 +41383,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -52677,59 +41409,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "hyatt-hotels",
-        "matchedName": "Hyatt Hotels",
-        "totalPenalty": 4457136,
-        "totalRecords": 24,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 2815100,
-            "records": 2
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 1466066,
-            "records": 11
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 175970,
-            "records": 11
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "privacy violation",
-            "penalty": 1565100,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 1255674,
-            "records": 5
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 1250000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 175970,
-            "records": 11
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 110392,
-            "records": 5
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -52896,8 +41575,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "Company DEI report",
-        "Violation Tracker (verified)"
+        "Company DEI report"
       ]
     },
     "dei": {
@@ -52945,65 +41623,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "wyndham-hotels-and-resorts",
-        "matchedName": "Wyndham Hotels & Resorts",
-        "totalPenalty": 2625622,
-        "totalRecords": 52,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 2160396,
-            "records": 31
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 254732,
-            "records": 4
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 174778,
-            "records": 15
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 35716,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 2131396,
-            "records": 29
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 254732,
-            "records": 4
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 174778,
-            "records": 15
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 25000,
-            "records": 1
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 20000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 411,
@@ -53056,8 +41676,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Glassdoor",
-        "Legal filings",
-        "Violation Tracker (verified)"
+        "Legal filings"
       ]
     },
     "dei": {
@@ -53109,60 +41728,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "choice-hotels-international",
-        "matchedName": "Choice Hotels International",
-        "totalPenalty": 603420,
-        "totalRecords": 33,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 500982,
-            "records": 22
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 87938,
-            "records": 10
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 14500,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 483599,
-            "records": 20
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 87938,
-            "records": 10
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 14500,
-            "records": 1
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 11883,
-            "records": 1
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 5500,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 412,
@@ -53423,8 +41989,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Glassdoor",
-        "Company statements",
-        "Violation Tracker (verified)"
+        "Company statements"
       ]
     },
     "dei": {
@@ -53473,70 +42038,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "delta-air-lines",
-        "matchedName": "Delta Air Lines",
-        "totalPenalty": 133821106,
-        "totalRecords": 628,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 56056693,
-            "records": 12
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 38000000,
-            "records": 1
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 18600000,
-            "records": 2
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 10065000,
-            "records": 25
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 9270172,
-            "records": 570
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 38000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 37200444,
-            "records": 7
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 18600000,
-            "records": 2
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 16000000,
-            "records": 1
-          },
-          {
-            "category": "aviation safety violation",
-            "penalty": 8943000,
-            "records": 540
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 415,
@@ -53597,8 +42099,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Company filing",
-        "Labor news sources",
-        "Violation Tracker (verified)"
+        "Labor news sources"
       ]
     },
     "dei": {
@@ -53648,70 +42149,7 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "united-airlines-holdings",
-        "matchedName": "United Airlines Holdings",
-        "totalPenalty": 210670015,
-        "totalRecords": 567,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 121067881,
-            "records": 20
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 51719102,
-            "records": 3
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 24519316,
-            "records": 506
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 8278400,
-            "records": 24
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 2685316,
-            "records": 13
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 69127612,
-            "records": 7
-          },
-          {
-            "category": "fraud",
-            "penalty": 49458102,
-            "records": 1
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 46684817,
-            "records": 11
-          },
-          {
-            "category": "aviation safety violation",
-            "penalty": 23831971,
-            "records": 468
-          },
-          {
-            "category": "aviation consumer protection violation",
-            "penalty": 8212000,
-            "records": 22
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 416,
@@ -53772,8 +42210,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "OSHA",
-        "Labor news",
-        "Violation Tracker (verified)"
+        "Labor news"
       ]
     },
     "dei": {
@@ -53825,70 +42262,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "american-airlines",
-        "matchedName": "American Airlines",
-        "totalPenalty": 324434117,
-        "totalRecords": 837,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 111770214,
-            "records": 767
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 80525000,
-            "records": 31
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 50000000,
-            "records": 2
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 48527496,
-            "records": 19
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 22100000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "aviation safety violation",
-            "penalty": 110848944,
-            "records": 702
-          },
-          {
-            "category": "aviation consumer protection violation",
-            "penalty": 63175000,
-            "records": 29
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 50000000,
-            "records": 2
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 32200000,
-            "records": 3
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 22100000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 417,
@@ -53949,8 +42323,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Glassdoor",
-        "Company reports",
-        "Violation Tracker (verified)"
+        "Company reports"
       ]
     },
     "dei": {
@@ -54002,70 +42375,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "southwest-airlines",
-        "matchedName": "Southwest Airlines",
-        "totalPenalty": 262916359,
-        "totalRecords": 318,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 173770000,
-            "records": 18
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 52542423,
-            "records": 292
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 21570903,
-            "records": 4
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 15000000,
-            "records": 1
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 33033,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "aviation consumer protection violation",
-            "penalty": 143670000,
-            "records": 16
-          },
-          {
-            "category": "aviation safety violation",
-            "penalty": 52314925,
-            "records": 270
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 30100000,
-            "records": 2
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 20555000,
-            "records": 2
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 15000000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 418,
@@ -54207,9 +42517,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -54235,54 +42543,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "jetblue-airways",
-        "matchedName": "JetBlue Airways",
-        "totalPenalty": 3623860,
-        "totalRecords": 35,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 3080000,
-            "records": 11
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 400077,
-            "records": 23
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 143783,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "aviation consumer protection violation",
-            "penalty": 3080000,
-            "records": 11
-          },
-          {
-            "category": "aviation safety violation",
-            "penalty": 356950,
-            "records": 19
-          },
-          {
-            "category": "workplace whistleblower retaliation",
-            "penalty": 143783,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 43127,
-            "records": 4
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -54324,9 +42584,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -54352,54 +42610,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "spirit-airlines",
-        "matchedName": "Spirit Airlines",
-        "totalPenalty": 17875294,
-        "totalRecords": 40,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 16845000,
-            "records": 10
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 930294,
-            "records": 29
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 100000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 15750000,
-            "records": 2
-          },
-          {
-            "category": "aviation consumer protection violation",
-            "penalty": 1095000,
-            "records": 8
-          },
-          {
-            "category": "aviation safety violation",
-            "penalty": 930294,
-            "records": 29
-          },
-          {
-            "category": "economic sanction violation",
-            "penalty": 100000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -54766,9 +42976,7 @@ export const COMPANIES = [
       "rating": "Below Average",
       "sources": [
         "OSHA",
-        "Violation Tracker",
-        "Good Jobs First",
-        "Violation Tracker (verified)"
+        "Good Jobs First"
       ]
     },
     "dei": {
@@ -54820,70 +43028,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "fedex",
-        "matchedName": "FedEx",
-        "totalPenalty": 704909025,
-        "totalRecords": 355,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 631365281,
-            "records": 56
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 35300000,
-            "records": 1
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 21582550,
-            "records": 7
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 9576912,
-            "records": 264
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 6159282,
-            "records": 23
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 530763617,
-            "records": 25
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 82870342,
-            "records": 19
-          },
-          {
-            "category": "tax violations",
-            "penalty": 35300000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 21500000,
-            "records": 1
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 13325000,
-            "records": 1
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 425,
@@ -54924,9 +43069,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -54952,29 +43095,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "upstream-rehabilitation",
-        "matchedName": "Upstream Rehabilitation",
-        "totalPenalty": 7000000,
-        "totalRecords": 1,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 7000000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 7000000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -55303,8 +43423,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Glassdoor",
-        "Media reports",
-        "Violation Tracker (verified)"
+        "Media reports"
       ]
     },
     "dei": {
@@ -55355,70 +43474,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "xpo-logistics",
-        "matchedName": "XPO Logistics",
-        "totalPenalty": 78204537,
-        "totalRecords": 100,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 51374679,
-            "records": 28
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 14431765,
-            "records": 25
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 10000000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 2098093,
-            "records": 45
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 300000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 50745051,
-            "records": 19
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 10000000,
-            "records": 1
-          },
-          {
-            "category": "hazardous waste violation",
-            "penalty": 8083120,
-            "records": 8
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 6308720,
-            "records": 14
-          },
-          {
-            "category": "aviation safety violation",
-            "penalty": 1560250,
-            "records": 7
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 430,
@@ -55459,9 +43515,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -55487,69 +43541,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "ch-robinson",
-        "matchedName": "C.H. Robinson",
-        "totalPenalty": 23408347,
-        "totalRecords": 14,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 23014057,
-            "records": 4
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 257690,
-            "records": 1
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 62000,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 49200,
-            "records": 5
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 25400,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "employment discrimination",
-            "penalty": 15000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 8014057,
-            "records": 3
-          },
-          {
-            "category": "economic sanction violation",
-            "penalty": 257690,
-            "records": 1
-          },
-          {
-            "category": "export control violation",
-            "penalty": 37000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 31200,
-            "records": 3
-          }
-        ],
-        "rating": "mixed"
-      }
     }
   },
   {
@@ -55609,8 +43600,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "Company CSR",
-        "Violation Tracker (verified)"
+        "Company CSR"
       ]
     },
     "dei": {
@@ -55656,60 +43646,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "werner-enterprises",
-        "matchedName": "Werner Enterprises",
-        "totalPenalty": 20027703,
-        "totalRecords": 6,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 19952069,
-            "records": 3
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 65000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 10634,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "employment discrimination",
-            "penalty": 18037500,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 1914569,
-            "records": 2
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 65000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 5594,
-            "records": 1
-          },
-          {
-            "category": "motor vehicle safety violation",
-            "penalty": 5040,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 432,
@@ -55760,8 +43697,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "Court Documents",
-        "Company Safety Reports",
-        "Violation Tracker (verified)"
+        "Company Safety Reports"
       ]
     },
     "dei": {
@@ -55806,65 +43742,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "jb-hunt-transport-services",
-        "matchedName": "J.B. Hunt Transport Services",
-        "totalPenalty": 26376715,
-        "totalRecords": 28,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 26102170,
-            "records": 9
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 194545,
-            "records": 15
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 50000,
-            "records": 2
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 30000,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 25805263,
-            "records": 7
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 260000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 165545,
-            "records": 11
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 50000,
-            "records": 2
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 36907,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 433,
@@ -55927,8 +43805,7 @@ export const COMPANIES = [
         "NLRB records",
         "Company ESG reports",
         "Salary.com",
-        "Comparably",
-        "Violation Tracker (verified)"
+        "Comparably"
       ]
     },
     "dei": {
@@ -55980,60 +43857,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "old-dominion-freight-line",
-        "matchedName": "Old Dominion Freight Line",
-        "totalPenalty": 10250079,
-        "totalRecords": 26,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 8390153,
-            "records": 13
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 1685000,
-            "records": 3
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 174926,
-            "records": 10
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 6261295,
-            "records": 3
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 1900000,
-            "records": 1
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 1685000,
-            "records": 3
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 164926,
-            "records": 9
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 119612,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 434,
@@ -56074,9 +43898,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -56102,59 +43924,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "union-pacific",
-        "matchedName": "Union Pacific",
-        "totalPenalty": 193247916,
-        "totalRecords": 4105,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 149831080,
-            "records": 4036
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 40870226,
-            "records": 56
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 2546610,
-            "records": 13
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "utility safety violation",
-            "penalty": 102100000,
-            "records": 2
-          },
-          {
-            "category": "railroad safety violation",
-            "penalty": 47611776,
-            "records": 4021
-          },
-          {
-            "category": "water pollution violation",
-            "penalty": 33552705,
-            "records": 8
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 2525647,
-            "records": 28
-          },
-          {
-            "category": "hazardous waste violation",
-            "penalty": 2427450,
-            "records": 4
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -56323,8 +44092,7 @@ export const COMPANIES = [
       "rating": "Poor",
       "sources": [
         "OSHA",
-        "NLRB",
-        "Violation Tracker (verified)"
+        "NLRB"
       ]
     },
     "dei": {
@@ -56371,60 +44139,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "csx",
-        "matchedName": "CSX",
-        "totalPenalty": 259880859,
-        "totalRecords": 2137,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 229549082,
-            "records": 59
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 23081849,
-            "records": 2065
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 7249928,
-            "records": 13
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "environmental violation",
-            "penalty": 225407103,
-            "records": 42
-          },
-          {
-            "category": "railroad safety violation",
-            "penalty": 22791250,
-            "records": 2054
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 5308611,
-            "records": 2
-          },
-          {
-            "category": "water pollution violation",
-            "penalty": 3482360,
-            "records": 8
-          },
-          {
-            "category": "workplace whistleblower retaliation",
-            "penalty": 1850226,
-            "records": 6
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 437,
@@ -56465,9 +44180,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -56493,59 +44206,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "norfolk-southern",
-        "matchedName": "Norfolk Southern",
-        "totalPenalty": 984166099,
-        "totalRecords": 2012,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 932340789,
-            "records": 28
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 32998790,
-            "records": 10
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 18826520,
-            "records": 1974
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "environmental violation",
-            "penalty": 610020756,
-            "records": 17
-          },
-          {
-            "category": "water pollution violation",
-            "penalty": 321437933,
-            "records": 6
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 31908521,
-            "records": 7
-          },
-          {
-            "category": "railroad safety violation",
-            "penalty": 18697350,
-            "records": 1967
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 1000000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
     }
   },
   {
@@ -57268,9 +44928,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -57296,59 +44954,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "ace-hardware-corporation",
-        "matchedName": "Ace Hardware Corporation",
-        "totalPenalty": 1097776,
-        "totalRecords": 29,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 898780,
-            "records": 13
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 179025,
-            "records": 14
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 19971,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "air pollution violation",
-            "penalty": 687300,
-            "records": 5
-          },
-          {
-            "category": "pesticide violation",
-            "penalty": 159170,
-            "records": 6
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 154025,
-            "records": 12
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 52310,
-            "records": 2
-          },
-          {
-            "category": "aviation safety violation",
-            "penalty": 20000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -57390,9 +44995,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -57418,64 +45021,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "best-buy",
-        "matchedName": "Best Buy",
-        "totalPenalty": 22384418,
-        "totalRecords": 47,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 17170921,
-            "records": 12
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 4130106,
-            "records": 31
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 883570,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 199821,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "employment discrimination",
-            "penalty": 10199999,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 6679639,
-            "records": 6
-          },
-          {
-            "category": "product safety violation",
-            "penalty": 3800000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 633570,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 324606,
-            "records": 29
-          }
-        ],
-        "rating": "mixed"
-      }
     }
   },
   {
@@ -57529,8 +45074,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "Department of Labor",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -57581,70 +45125,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "sherwin-williams",
-        "matchedName": "Sherwin-Williams",
-        "totalPenalty": 209067791,
-        "totalRecords": 110,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 101706552,
-            "records": 4
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 83681820,
-            "records": 3
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 16000000,
-            "records": 1
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 5693549,
-            "records": 56
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 1000000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 101682052,
-            "records": 2
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 80000000,
-            "records": 1
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 16000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 3681820,
-            "records": 2
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 2543457,
-            "records": 19
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 449,
@@ -57917,8 +45398,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -57969,70 +45449,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "ppg-industries",
-        "matchedName": "PPG Industries",
-        "totalPenalty": 113932770,
-        "totalRecords": 148,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 87025000,
-            "records": 6
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 10230291,
-            "records": 12
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 9228260,
-            "records": 62
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 6500000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 949219,
-            "records": 67
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 83000000,
-            "records": 2
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 7490858,
-            "records": 5
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 7342147,
-            "records": 41
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 6500000,
-            "records": 1
-          },
-          {
-            "category": "export control violation",
-            "penalty": 4025000,
-            "records": 4
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 452,
@@ -58085,8 +45502,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "OECD",
-        "UFCW",
-        "Violation Tracker (verified)"
+        "UFCW"
       ]
     },
     "dei": {
@@ -58135,50 +45551,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "ikea",
-        "matchedName": "Ikea",
-        "totalPenalty": 14411324,
-        "totalRecords": 13,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 13817000,
-            "records": 3
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 594324,
-            "records": 10
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 13250000,
-            "records": 2
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 567000,
-            "records": 1
-          },
-          {
-            "category": "product safety violation",
-            "penalty": 500000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 94324,
-            "records": 9
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 453,
@@ -58437,7 +45810,6 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "OSHA",
-        "Violation Tracker",
         "Glassdoor"
       ]
     },
@@ -58526,9 +45898,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -58554,54 +45924,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "rh-restoration-hardware",
-        "matchedName": "RH (Restoration Hardware)",
-        "totalPenalty": 1822014,
-        "totalRecords": 13,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 1561633,
-            "records": 5
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 206321,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 54060,
-            "records": 6
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 1561633,
-            "records": 5
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 191621,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 54060,
-            "records": 6
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 14700,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -58654,8 +45976,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "SEC proxy",
-        "Violation Tracker (verified)"
+        "SEC proxy"
       ]
     },
     "dei": {
@@ -58706,45 +46027,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "wayfair-inc",
-        "matchedName": "Wayfair Inc.",
-        "totalPenalty": 64667,
-        "totalRecords": 5,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 34318,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 30349,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 30349,
-            "records": 3
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 17600,
-            "records": 1
-          },
-          {
-            "category": "pesticide violation",
-            "penalty": 16718,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 458,
@@ -58898,8 +46181,7 @@ export const COMPANIES = [
       "rating": "Poor",
       "sources": [
         "OSHA",
-        "Department of Labor",
-        "Violation Tracker (verified)"
+        "Department of Labor"
       ]
     },
     "dei": {
@@ -58942,45 +46224,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "ashley-furniture",
-        "matchedName": "Ashley Furniture",
-        "totalPenalty": 3668538,
-        "totalRecords": 21,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 3654815,
-            "records": 19
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 13723,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 3654815,
-            "records": 19
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 7723,
-            "records": 1
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 6000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 460,
@@ -59029,8 +46273,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "NLRB",
-        "Company Career Site",
-        "Violation Tracker (verified)"
+        "Company Career Site"
       ]
     },
     "dei": {
@@ -59081,60 +46324,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "la-z-boy",
-        "matchedName": "La-Z-Boy",
-        "totalPenalty": 309305,
-        "totalRecords": 13,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 200838,
-            "records": 4
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 89910,
-            "records": 7
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 18557,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "employment discrimination",
-            "penalty": 173698,
-            "records": 2
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 59910,
-            "records": 6
-          },
-          {
-            "category": "motor vehicle safety violation",
-            "penalty": 30000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 27140,
-            "records": 2
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 18557,
-            "records": 2
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 461,
@@ -59188,8 +46378,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Glassdoor",
-        "Company press releases",
-        "Violation Tracker (verified)"
+        "Company press releases"
       ]
     },
     "dei": {
@@ -59242,55 +46431,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "ethan-allen-interiors",
-        "matchedName": "Ethan Allen Interiors",
-        "totalPenalty": 225392,
-        "totalRecords": 16,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 139882,
-            "records": 13
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 79197,
-            "records": 2
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 6313,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 139882,
-            "records": 13
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 73852,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 6313,
-            "records": 1
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 5345,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 462,
@@ -59348,8 +46489,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -59400,65 +46540,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "best-buy",
-        "matchedName": "Best Buy",
-        "totalPenalty": 22384418,
-        "totalRecords": 47,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 17170921,
-            "records": 12
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 4130106,
-            "records": 31
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 883570,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 199821,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "employment discrimination",
-            "penalty": 10199999,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 6679639,
-            "records": 6
-          },
-          {
-            "category": "product safety violation",
-            "penalty": 3800000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 633570,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 324606,
-            "records": 29
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 463,
@@ -60098,8 +47180,7 @@ export const COMPANIES = [
       "rating": "Below Average",
       "sources": [
         "Glassdoor",
-        "Employee Reviews",
-        "Violation Tracker (verified)"
+        "Employee Reviews"
       ]
     },
     "dei": {
@@ -60151,55 +47232,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "gamestop",
-        "matchedName": "GameStop",
-        "totalPenalty": 4232547,
-        "totalRecords": 10,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 3450000,
-            "records": 2
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 730000,
-            "records": 3
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 52547,
-            "records": 5
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 3450000,
-            "records": 2
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 695000,
-            "records": 2
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 52547,
-            "records": 5
-          },
-          {
-            "category": "insurance violation",
-            "penalty": 35000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 471,
@@ -60404,8 +47437,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Company DEI Report",
-        "News reports",
-        "Violation Tracker (verified)"
+        "News reports"
       ]
     },
     "dei": {
@@ -60444,70 +47476,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "microsoft",
-        "matchedName": "Microsoft",
-        "totalPenalty": 1590084462,
-        "totalRecords": 23,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 1296283959,
-            "records": 6
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 202330841,
-            "records": 9
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 53100000,
-            "records": 4
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 38327896,
-            "records": 3
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 41766,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 1270967014,
-            "records": 4
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 104355841,
-            "records": 3
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 91225000,
-            "records": 5
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 35000000,
-            "records": 1
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 33000000,
-            "records": 2
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 474,
@@ -60560,8 +47529,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Company Labor Policy",
-        "International Labor Organizations",
-        "Violation Tracker (verified)"
+        "International Labor Organizations"
       ]
     },
     "dei": {
@@ -60600,60 +47568,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "samsung",
-        "matchedName": "Samsung",
-        "totalPenalty": 1113201,
-        "totalRecords": 4,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 1000000,
-            "records": 1
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 64600,
-            "records": 1
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 40000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 8601,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 1000000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 64600,
-            "records": 1
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 40000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 8601,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 475,
@@ -60704,8 +47619,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "OSHA",
-        "Company labor policy",
-        "Violation Tracker (verified)"
+        "Company labor policy"
       ]
     },
     "dei": {
@@ -60744,40 +47658,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "lg",
-        "matchedName": "LG",
-        "totalPenalty": 4021840,
-        "totalRecords": 2,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 4000000,
-            "records": 1
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 21840,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "investor protection violation",
-            "penalty": 4000000,
-            "records": 1
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 21840,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 476,
@@ -60818,9 +47699,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -60846,69 +47725,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "sony",
-        "matchedName": "Sony",
-        "totalPenalty": 230758877,
-        "totalRecords": 34,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 166000000,
-            "records": 9
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 35000000,
-            "records": 10
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 29655000,
-            "records": 7
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 87627,
-            "records": 6
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 16250,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 156000000,
-            "records": 8
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 29550000,
-            "records": 5
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 21500000,
-            "records": 3
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 13100000,
-            "records": 6
-          },
-          {
-            "category": "kickbacks and bribery",
-            "penalty": 10000000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
     }
   },
   {
@@ -60950,9 +47766,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -60978,69 +47792,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "panasonic",
-        "matchedName": "Panasonic",
-        "totalPenalty": 657907789,
-        "totalRecords": 50,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 655519551,
-            "records": 25
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 1672778,
-            "records": 4
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 275000,
-            "records": 1
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 243423,
-            "records": 10
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 197037,
-            "records": 10
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 375119551,
-            "records": 23
-          },
-          {
-            "category": "Foreign Corrupt Practices Act",
-            "penalty": 280400000,
-            "records": 2
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 1500000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 275000,
-            "records": 1
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 219423,
-            "records": 6
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -61425,8 +48176,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Company 10-K",
-        "Company ESG Reports",
-        "Violation Tracker (verified)"
+        "Company ESG Reports"
       ]
     },
     "dei": {
@@ -61478,45 +48228,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "peloton-interactive",
-        "matchedName": "Peloton Interactive",
-        "totalPenalty": 19102564,
-        "totalRecords": 3,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 19072700,
-            "records": 2
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 29864,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "product safety violation",
-            "penalty": 19065000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 29864,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 7700,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 483,
@@ -62004,8 +48716,7 @@ export const COMPANIES = [
         "Glassdoor",
         "OSHA",
         "NLRB",
-        "Indeed",
-        "Violation Tracker (verified)"
+        "Indeed"
       ]
     },
     "dei": {
@@ -62058,50 +48769,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "planet-fitness-inc",
-        "matchedName": "Planet Fitness Inc.",
-        "totalPenalty": 116314,
-        "totalRecords": 4,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 50000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 36180,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 30134,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 50000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 36180,
-            "records": 2
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 30134,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 489,
@@ -62209,9 +48877,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -62237,49 +48903,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "24-hour-fitness",
-        "matchedName": "24 Hour Fitness",
-        "totalPenalty": 66553310,
-        "totalRecords": 10,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 55448500,
-            "records": 2
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 11029000,
-            "records": 3
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 75810,
-            "records": 5
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 55448500,
-            "records": 2
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 11029000,
-            "records": 3
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 75810,
-            "records": 5
-          }
-        ],
-        "rating": "mixed"
-      }
     }
   },
   {
@@ -62526,8 +49149,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Class Action Lawsuits",
-        "Wage Records",
-        "Violation Tracker (verified)"
+        "Wage Records"
       ]
     },
     "dei": {
@@ -62568,50 +49190,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "24-hour-fitness",
-        "matchedName": "24 Hour Fitness",
-        "totalPenalty": 66553310,
-        "totalRecords": 10,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 55448500,
-            "records": 2
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 11029000,
-            "records": 3
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 75810,
-            "records": 5
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 55448500,
-            "records": 2
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 11029000,
-            "records": 3
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 75810,
-            "records": 5
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 494,
@@ -63368,8 +49947,7 @@ export const COMPANIES = [
       "sources": [
         "Company Policy",
         "Glassdoor",
-        "OSHA",
-        "Violation Tracker (verified)"
+        "OSHA"
       ]
     },
     "dei": {
@@ -63423,60 +50001,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "dicks-sporting-goods",
-        "matchedName": "Dick's Sporting Goods",
-        "totalPenalty": 334641617,
-        "totalRecords": 50,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 334074317,
-            "records": 15
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 507966,
-            "records": 32
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 59334,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 290000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 40456817,
-            "records": 11
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 3580000,
-            "records": 2
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 476466,
-            "records": 30
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 59334,
-            "records": 3
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 503,
@@ -63529,8 +50054,7 @@ export const COMPANIES = [
         "EEOC",
         "HR Dive",
         "Comparably",
-        "Forbes",
-        "Violation Tracker (verified)"
+        "Forbes"
       ]
     },
     "dei": {
@@ -63579,70 +50103,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "bass-pro",
-        "matchedName": "Bass Pro",
-        "totalPenalty": 29813231,
-        "totalRecords": 40,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 15467725,
-            "records": 4
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 12550000,
-            "records": 4
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 1480000,
-            "records": 4
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 299406,
-            "records": 26
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 16100,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "banking violation",
-            "penalty": 11550000,
-            "records": 3
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 10500000,
-            "records": 1
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 4950000,
-            "records": 1
-          },
-          {
-            "category": "export control violation",
-            "penalty": 1480000,
-            "records": 4
-          },
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 1000000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 504,
@@ -63785,9 +50246,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -63813,29 +50272,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "academy-sports-and-outdoors-inc",
-        "matchedName": "Academy Sports and Outdoors Inc.",
-        "totalPenalty": 37774,
-        "totalRecords": 4,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 37774,
-            "records": 4
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 37774,
-            "records": 4
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -63886,8 +50322,7 @@ export const COMPANIES = [
       "rating": "Poor",
       "sources": [
         "Glassdoor",
-        "NLRB",
-        "Violation Tracker (verified)"
+        "NLRB"
       ]
     },
     "dei": {
@@ -63937,45 +50372,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "big-5-sporting-goods",
-        "matchedName": "Big 5 Sporting Goods",
-        "totalPenalty": 2626455,
-        "totalRecords": 6,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 2606000,
-            "records": 3
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 20455,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 2600000,
-            "records": 2
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 20455,
-            "records": 3
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 6000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 507,
@@ -64349,8 +50746,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Comparably",
-        "Company CSR",
-        "Violation Tracker (verified)"
+        "Company CSR"
       ]
     },
     "dei": {
@@ -64401,40 +50797,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "callaway-golf-company",
-        "matchedName": "Callaway Golf Company",
-        "totalPenalty": 63575,
-        "totalRecords": 4,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 57825,
-            "records": 3
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 5750,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 57825,
-            "records": 3
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 5750,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 512,
@@ -64743,9 +51106,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -64771,54 +51132,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "cosco-shipping",
-        "matchedName": "COSCO Shipping",
-        "totalPenalty": 1107202,
-        "totalRecords": 8,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 999800,
-            "records": 2
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 78277,
-            "records": 3
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 29125,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "air pollution violation",
-            "penalty": 999800,
-            "records": 2
-          },
-          {
-            "category": "Jones Act violation",
-            "penalty": 78277,
-            "records": 3
-          },
-          {
-            "category": "railroad safety violation",
-            "penalty": 24125,
-            "records": 2
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 5000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -65568,9 +51881,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -65596,59 +51907,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "diamondback-energy",
-        "matchedName": "Diamondback Energy",
-        "totalPenalty": 6959347,
-        "totalRecords": 24,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 5697517,
-            "records": 19
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 1207800,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 54030,
-            "records": 4
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "air pollution violation",
-            "penalty": 4069036,
-            "records": 5
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 1628481,
-            "records": 14
-          },
-          {
-            "category": "federal leasing royalty violation",
-            "penalty": 1207800,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 44030,
-            "records": 3
-          },
-          {
-            "category": "railroad safety violation",
-            "penalty": 10000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -66428,8 +52686,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Salary.com",
-        "Company headcount data",
-        "Violation Tracker (verified)"
+        "Company headcount data"
       ]
     },
     "dei": {
@@ -66480,30 +52737,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "forvis-mazars",
-        "matchedName": "Forvis Mazars",
-        "totalPenalty": 60000,
-        "totalRecords": 1,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 60000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 60000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 535,
@@ -67591,7 +53825,6 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "OSHA",
-        "Violation Tracker",
         "Glassdoor DEI ratings"
       ]
     },
@@ -67793,8 +54026,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "Indeed",
-        "Violation Tracker (verified)"
+        "Indeed"
       ]
     },
     "dei": {
@@ -67842,65 +54074,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "nationwide",
-        "matchedName": "Nationwide",
-        "totalPenalty": 244738975,
-        "totalRecords": 131,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 160391096,
-            "records": 9
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 76341729,
-            "records": 120
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 8000000,
-            "records": 1
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 6150,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 140000000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 46407000,
-            "records": 4
-          },
-          {
-            "category": "insurance violation",
-            "penalty": 24434729,
-            "records": 115
-          },
-          {
-            "category": "Fair Credit Reporting Act violation",
-            "penalty": 19250000,
-            "records": 1
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 8000000,
-            "records": 1
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 550,
@@ -68700,8 +54874,7 @@ export const COMPANIES = [
       "sources": [
         "Company careers site",
         "Glassdoor",
-        "Company sustainability report",
-        "Violation Tracker (verified)"
+        "Company sustainability report"
       ]
     },
     "dei": {
@@ -68746,70 +54919,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "metlife",
-        "matchedName": "MetLife",
-        "totalPenalty": 953591146,
-        "totalRecords": 77,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 542748986,
-            "records": 36
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 199500000,
-            "records": 2
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 132753989,
-            "records": 22
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 64588171,
-            "records": 15
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 14000000,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "insurance violation",
-            "penalty": 312388986,
-            "records": 30
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 199500000,
-            "records": 2
-          },
-          {
-            "category": "discriminatory practices (non-employment)",
-            "penalty": 160000000,
-            "records": 1
-          },
-          {
-            "category": "banking violation",
-            "penalty": 81736455,
-            "records": 2
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 70350000,
-            "records": 4
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 559,
@@ -69563,9 +55673,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -69591,59 +55699,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "h-and-r-block",
-        "matchedName": "H&R Block",
-        "totalPenalty": 202129777,
-        "totalRecords": 18,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 156560000,
-            "records": 8
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 44544777,
-            "records": 8
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 1025000,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "discriminatory practices (non-employment)",
-            "penalty": 125000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 44544777,
-            "records": 8
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 31545000,
-            "records": 6
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 1025000,
-            "records": 2
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 15000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
     }
   },
   {
@@ -69865,8 +55920,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "New Jersey Attorney General",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -69915,50 +55969,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "jackson-hewitt",
-        "matchedName": "Jackson Hewitt",
-        "totalPenalty": 16120553,
-        "totalRecords": 5,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 10800000,
-            "records": 1
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 5312000,
-            "records": 3
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 8553,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 10800000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 5312000,
-            "records": 3
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 8553,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 572,
@@ -70442,8 +56453,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "Company reports",
-        "Violation Tracker (verified)"
+        "Company reports"
       ]
     },
     "dei": {
@@ -70494,55 +56504,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "intuit",
-        "matchedName": "Intuit",
-        "totalPenalty": 157390985,
-        "totalRecords": 7,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 143840800,
-            "records": 4
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 11000000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 2550185,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 143840800,
-            "records": 4
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 11000000,
-            "records": 1
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 1995000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 555185,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 579,
@@ -70881,8 +56843,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "Company Reports",
-        "Violation Tracker (verified)"
+        "Company Reports"
       ]
     },
     "dei": {
@@ -70934,65 +56895,7 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "xerox",
-        "matchedName": "Xerox",
-        "totalPenalty": 332667004,
-        "totalRecords": 23,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 322521032,
-            "records": 13
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 10005207,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 84000,
-            "records": 3
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 56765,
-            "records": 5
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 301325000,
-            "records": 4
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 12033387,
-            "records": 2
-          },
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 10000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 9162645,
-            "records": 7
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 79000,
-            "records": 2
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 583,
@@ -71285,9 +57188,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -71313,34 +57214,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "benchmark-electronics",
-        "matchedName": "Benchmark Electronics",
-        "totalPenalty": 71070,
-        "totalRecords": 3,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 71070,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "aviation safety violation",
-            "penalty": 58500,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 12570,
-            "records": 2
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -71382,9 +57255,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -71410,69 +57281,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "pilot-corporation",
-        "matchedName": "Pilot Corporation",
-        "totalPenalty": 112529708,
-        "totalRecords": 156,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 102000000,
-            "records": 2
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 6654378,
-            "records": 54
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 3487067,
-            "records": 79
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 210000,
-            "records": 4
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 178263,
-            "records": 17
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "fraud",
-            "penalty": 92000000,
-            "records": 1
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 10000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 6591978,
-            "records": 53
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 2827337,
-            "records": 49
-          },
-          {
-            "category": "water pollution violation",
-            "penalty": 298885,
-            "records": 12
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -71878,9 +57686,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -71906,64 +57712,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "dxc-technology",
-        "matchedName": "DXC Technology",
-        "totalPenalty": 299489959,
-        "totalRecords": 25,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 198000000,
-            "records": 2
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 89278920,
-            "records": 8
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 12188989,
-            "records": 12
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 22050,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 198000000,
-            "records": 2
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 89278920,
-            "records": 8
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 11342988,
-            "records": 9
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 650000,
-            "records": 1
-          },
-          {
-            "category": "workplace whistleblower retaliation",
-            "penalty": 186000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
     }
   },
   {
@@ -72872,8 +58620,7 @@ export const COMPANIES = [
       "s": "Based on Glassdoor data, Color Health employees report mixed satisfaction with compensation (3.9/5 stars). Average salaries range from approximately $43,000-$167,000 depending on role. No major OSHA or NLRB violations reported. Employees cite good benefits and work-life balance but some mention past layoffs.",
       "rating": "Mixed",
       "sources": [
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -72916,60 +58663,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "uchealth-university-of-colorado-hospital",
-        "matchedName": "UCHealth University of Colorado Hospital",
-        "totalPenalty": 23796699,
-        "totalRecords": 5,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 23747199,
-            "records": 2
-          },
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 35000,
-            "records": 1
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 8500,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 6000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 23747199,
-            "records": 2
-          },
-          {
-            "category": "HHS civil monetary penalties",
-            "penalty": 35000,
-            "records": 1
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 8500,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 6000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 605,
@@ -73679,9 +59373,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -73707,69 +59399,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "brinks",
-        "matchedName": "Brink's",
-        "totalPenalty": 43219179,
-        "totalRecords": 33,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 42400000,
-            "records": 3
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 383854,
-            "records": 10
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 260400,
-            "records": 5
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 130425,
-            "records": 13
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 44500,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "anti-money-laundering deficiencies",
-            "penalty": 42000000,
-            "records": 2
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 400000,
-            "records": 1
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 234484,
-            "records": 6
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 183375,
-            "records": 2
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 130425,
-            "records": 13
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -74292,9 +59921,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -74320,59 +59947,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "air-products-and-chemicals",
-        "matchedName": "Air Products & Chemicals",
-        "totalPenalty": 3080778,
-        "totalRecords": 64,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 2589517,
-            "records": 42
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 282940,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 208321,
-            "records": 20
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "hazardous waste violation",
-            "penalty": 1485000,
-            "records": 2
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 645559,
-            "records": 24
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 438958,
-            "records": 15
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 282940,
-            "records": 2
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 96341,
-            "records": 9
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -74923,9 +60497,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -74951,69 +60523,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "caterpillar-inc",
-        "matchedName": "Caterpillar Inc.",
-        "totalPenalty": 110279651,
-        "totalRecords": 125,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 61017007,
-            "records": 78
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 29601392,
-            "records": 29
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 19576902,
-            "records": 13
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 40000,
-            "records": 3
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 26350,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "product safety violation",
-            "penalty": 60000000,
-            "records": 1
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 25627455,
-            "records": 10
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 16500000,
-            "records": 1
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 3692183,
-            "records": 13
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 1844100,
-            "records": 5
-          }
-        ],
-        "rating": "mixed"
-      }
     }
   },
   {
@@ -75076,8 +60585,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "DOL",
-        "NLRB",
-        "Violation Tracker (verified)"
+        "NLRB"
       ]
     },
     "dei": {
@@ -75124,70 +60632,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "deere",
-        "matchedName": "Deere",
-        "totalPenalty": 21980545,
-        "totalRecords": 40,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 9900000,
-            "records": 1
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 8538000,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 1864905,
-            "records": 10
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 1388333,
-            "records": 3
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 289307,
-            "records": 24
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "Foreign Corrupt Practices Act",
-            "penalty": 9900000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 8500000,
-            "records": 1
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 1234000,
-            "records": 5
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 1105000,
-            "records": 1
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 630905,
-            "records": 5
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 630,
@@ -75237,8 +60682,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "Company Code of Conduct",
-        "Violation Tracker (verified)"
+        "Company Code of Conduct"
       ]
     },
     "dei": {
@@ -75279,50 +60723,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "kubota",
-        "matchedName": "Kubota",
-        "totalPenalty": 2137027,
-        "totalRecords": 12,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 2000000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 103627,
-            "records": 9
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 33400,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 2000000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 103627,
-            "records": 9
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 33400,
-            "records": 2
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 631,
@@ -75383,8 +60784,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Glassdoor",
-        "Employee Reviews",
-        "Violation Tracker (verified)"
+        "Employee Reviews"
       ]
     },
     "dei": {
@@ -75434,65 +60834,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "cnh-industrial",
-        "matchedName": "CNH Industrial",
-        "totalPenalty": 2808985,
-        "totalRecords": 20,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 2600000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 164069,
-            "records": 15
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 38956,
-            "records": 3
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 5960,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 2600000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 164069,
-            "records": 15
-          },
-          {
-            "category": "pesticide violation",
-            "penalty": 27956,
-            "records": 2
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 11000,
-            "records": 1
-          },
-          {
-            "category": "Family and Medical Leave Act",
-            "penalty": 5960,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 632,
@@ -75742,8 +61084,7 @@ export const COMPANIES = [
       "s": "Limited NLRB enforcement history with closed cases documented. Company emphasizes workplace safety and human rights commitment but sparse public data on labor relations. Two NLRB cases on record (2001 and 2023) provide minimal detail.",
       "rating": "Mixed",
       "sources": [
-        "NLRB",
-        "Violation Tracker (verified)"
+        "NLRB"
       ]
     },
     "dei": {
@@ -75785,45 +61126,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "manitowoc",
-        "matchedName": "Manitowoc",
-        "totalPenalty": 85242000,
-        "totalRecords": 3,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 85200000,
-            "records": 2
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 42000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "environmental violation",
-            "penalty": 42600000,
-            "records": 1
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 42600000,
-            "records": 1
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 42000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 635,
@@ -75875,8 +61178,7 @@ export const COMPANIES = [
       "sources": [
         "Company website",
         "Glassdoor",
-        "Indeed",
-        "Violation Tracker (verified)"
+        "Indeed"
       ]
     },
     "dei": {
@@ -75928,65 +61230,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "terex",
-        "matchedName": "Terex",
-        "totalPenalty": 10744146,
-        "totalRecords": 22,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 8007000,
-            "records": 2
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 2527000,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 137120,
-            "records": 13
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 73026,
-            "records": 5
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 8000000,
-            "records": 1
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 2500000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 137120,
-            "records": 13
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 73026,
-            "records": 5
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 27000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 636,
@@ -76160,8 +61404,7 @@ export const COMPANIES = [
       "rating": "Below Average",
       "sources": [
         "OSHA",
-        "Department of Labor",
-        "Violation Tracker (verified)"
+        "Department of Labor"
       ]
     },
     "dei": {
@@ -76212,65 +61455,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "paccar",
-        "matchedName": "Paccar",
-        "totalPenalty": 4658719,
-        "totalRecords": 14,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 2539200,
-            "records": 1
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 1934325,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 113481,
-            "records": 8
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 71713,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "air pollution violation",
-            "penalty": 2539200,
-            "records": 1
-          },
-          {
-            "category": "economic sanction violation",
-            "penalty": 1709325,
-            "records": 1
-          },
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 225000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 113481,
-            "records": 8
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 71713,
-            "records": 3
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 638,
@@ -76329,9 +61514,7 @@ export const COMPANIES = [
       "s": "<cite index=\"31-1\">Boeing has been hit with 32 whistleblower complaints since 2020, according to a report of the Occupational Safety and Health Administration (OSHA)</cite>. <cite index=\"31-16,31-17,31-18\">The FAA's Organization Designation Authorization Expert Review Panel reviewed Boeing's safety management processes and found numerous deficiencies in its safety culture, criticizing it for a lack of awareness of safety-related metrics at all levels</cite>. <cite index=\"34-1\">Boeing has accumulated penalty totals of $4,912,024,372 since 2000 across 128 records</cite>.",
       "rating": "Poor",
       "sources": [
-        "OSHA",
-        "Violation Tracker",
-        "Violation Tracker (verified)"
+        "OSHA"
       ]
     },
     "dei": {
@@ -76377,70 +61560,7 @@ export const COMPANIES = [
     },
     "ab": "#2a1a05",
     "ac": "#f0a030",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "boeing",
-        "matchedName": "Boeing",
-        "totalPenalty": 4916146389,
-        "totalRecords": 154,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 2596610000,
-            "records": 8
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 987403633,
-            "records": 15
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 849004568,
-            "records": 83
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 239817124,
-            "records": 22
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 200000000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "fraud",
-            "penalty": 2513600000,
-            "records": 1
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 987403633,
-            "records": 15
-          },
-          {
-            "category": "aviation safety violation",
-            "penalty": 848154097,
-            "records": 38
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 200000000,
-            "records": 1
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 183000000,
-            "records": 3
-          }
-        ],
-        "rating": "poor"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 639,
@@ -76500,8 +61620,7 @@ export const COMPANIES = [
       "rating": "Good",
       "sources": [
         "OSHA",
-        "DOL",
-        "Violation Tracker (verified)"
+        "DOL"
       ]
     },
     "dei": {
@@ -76553,70 +61672,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "lockheed-martin",
-        "matchedName": "Lockheed Martin",
-        "totalPenalty": 334158791,
-        "totalRecords": 106,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 233641437,
-            "records": 17
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 78500087,
-            "records": 46
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 15000000,
-            "records": 3
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 5587709,
-            "records": 19
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 1429558,
-            "records": 21
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 233641437,
-            "records": 17
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 62000000,
-            "records": 1
-          },
-          {
-            "category": "export control violation",
-            "penalty": 15000000,
-            "records": 3
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 8631136,
-            "records": 13
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 5439062,
-            "records": 12
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 640,
@@ -76743,8 +61799,7 @@ export const COMPANIES = [
       "rating": "Below Average",
       "sources": [
         "OSHA",
-        "NLRB",
-        "Violation Tracker (verified)"
+        "NLRB"
       ]
     },
     "dei": {
@@ -76795,70 +61850,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "northrop-grumman",
-        "matchedName": "Northrop Grumman",
-        "totalPenalty": 778606304,
-        "totalRecords": 101,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 690577160,
-            "records": 13
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 67727620,
-            "records": 22
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 15400000,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 4139399,
-            "records": 28
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 762125,
-            "records": 36
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 690577160,
-            "records": 13
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 65250000,
-            "records": 2
-          },
-          {
-            "category": "export control violation",
-            "penalty": 15400000,
-            "records": 2
-          },
-          {
-            "category": "hazardous waste violation",
-            "penalty": 2629191,
-            "records": 5
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 2274246,
-            "records": 14
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 642,
@@ -76919,8 +61911,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "OSHA",
-        "Comparably",
-        "Violation Tracker (verified)"
+        "Comparably"
       ]
     },
     "dei": {
@@ -76972,70 +61963,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "general-dynamics",
-        "matchedName": "General Dynamics",
-        "totalPenalty": 269094964,
-        "totalRecords": 181,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 209751962,
-            "records": 7
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 47891492,
-            "records": 29
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 5006600,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 3399453,
-            "records": 32
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 3045457,
-            "records": 111
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 209751962,
-            "records": 7
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 30274532,
-            "records": 24
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 15150000,
-            "records": 1
-          },
-          {
-            "category": "export control violation",
-            "penalty": 5006600,
-            "records": 2
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 2400000,
-            "records": 2
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 643,
@@ -77095,9 +62023,7 @@ export const COMPANIES = [
       "rating": "Below Average",
       "sources": [
         "NLRB",
-        "Violation Tracker",
-        "Federal Court Records",
-        "Violation Tracker (verified)"
+        "Federal Court Records"
       ]
     },
     "dei": {
@@ -77148,70 +62074,7 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "l3harris-technologies",
-        "matchedName": "L3Harris Technologies",
-        "totalPenalty": 253548770,
-        "totalRecords": 98,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 133318819,
-            "records": 8
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 57533000,
-            "records": 9
-          },
-          {
-            "category": "miscellaneous offenses",
-            "penalty": 50000000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 8954632,
-            "records": 45
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 1600000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 133318819,
-            "records": 8
-          },
-          {
-            "category": "misuse of classified data",
-            "penalty": 50000000,
-            "records": 1
-          },
-          {
-            "category": "export control violation",
-            "penalty": 29033000,
-            "records": 7
-          },
-          {
-            "category": "Foreign Corrupt Practices Act",
-            "penalty": 28500000,
-            "records": 2
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 5522031,
-            "records": 29
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 644,
@@ -77252,9 +62115,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -77280,69 +62141,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "textron",
-        "matchedName": "Textron",
-        "totalPenalty": 21104914,
-        "totalRecords": 87,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 6164673,
-            "records": 12
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 4685040,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 4157111,
-            "records": 50
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 4004842,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 2093248,
-            "records": 21
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 4375000,
-            "records": 1
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 4004842,
-            "records": 2
-          },
-          {
-            "category": "Foreign Corrupt Practices Act",
-            "penalty": 3535040,
-            "records": 1
-          },
-          {
-            "category": "aviation safety violation",
-            "penalty": 3218980,
-            "records": 27
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 1984948,
-            "records": 18
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -77402,8 +62200,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "OSHA",
-        "Company reports",
-        "Violation Tracker (verified)"
+        "Company reports"
       ]
     },
     "dei": {
@@ -77445,70 +62242,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "bae-systems",
-        "matchedName": "BAE Systems",
-        "totalPenalty": 548986374,
-        "totalRecords": 116,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 496092200,
-            "records": 5
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 37300000,
-            "records": 3
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 12376144,
-            "records": 23
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 2415117,
-            "records": 40
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 802913,
-            "records": 45
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "Foreign Corrupt Practices Act",
-            "penalty": 415990000,
-            "records": 3
-          },
-          {
-            "category": "export control violation",
-            "penalty": 80102200,
-            "records": 2
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 37300000,
-            "records": 3
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 7444678,
-            "records": 15
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 4883900,
-            "records": 4
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 646,
@@ -77569,8 +62303,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -77621,55 +62354,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "leidos",
-        "matchedName": "Leidos",
-        "totalPenalty": 2089270,
-        "totalRecords": 12,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 1500000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 578815,
-            "records": 10
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 10455,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 1500000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 381961,
-            "records": 8
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 196854,
-            "records": 2
-          },
-          {
-            "category": "tax violations",
-            "penalty": 10455,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 647,
@@ -77720,9 +62405,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "OSHA",
-        "Violation Tracker",
-        "News reports",
-        "Violation Tracker (verified)"
+        "News reports"
       ]
     },
     "dei": {
@@ -77768,65 +62451,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "mosaic-co",
-        "matchedName": "Mosaic Co.",
-        "totalPenalty": 899157851,
-        "totalRecords": 125,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 853945857,
-            "records": 52
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 43750000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 815133,
-            "records": 68
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 646861,
-            "records": 4
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "hazardous waste violation",
-            "penalty": 811650000,
-            "records": 3
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 43750000,
-            "records": 1
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 41831682,
-            "records": 39
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 632875,
-            "records": 2
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 579933,
-            "records": 52
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 648,
@@ -77867,9 +62492,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -77895,69 +62518,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "space-exploration-technologies-spacex",
-        "matchedName": "Space Exploration Technologies (SpaceX)",
-        "totalPenalty": 155168525,
-        "totalRecords": 18,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 150000000,
-            "records": 1
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 3975000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 991495,
-            "records": 10
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 102030,
-            "records": 5
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 100000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "privacy violation",
-            "penalty": 150000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 3975000,
-            "records": 1
-          },
-          {
-            "category": "aviation safety violation",
-            "penalty": 808009,
-            "records": 2
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 183486,
-            "records": 8
-          },
-          {
-            "category": "campaign finance violation",
-            "penalty": 100000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -78019,8 +62579,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -78070,45 +62629,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "blue-origin-llc",
-        "matchedName": "Blue Origin LLC",
-        "totalPenalty": 86082,
-        "totalRecords": 5,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 53823,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 32259,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 53823,
-            "records": 2
-          },
-          {
-            "category": "water pollution violation",
-            "penalty": 25200,
-            "records": 2
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 7059,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 650,
@@ -78322,9 +62843,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -78350,39 +62869,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "united-launch-alliance",
-        "matchedName": "United Launch Alliance",
-        "totalPenalty": 111000,
-        "totalRecords": 3,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 100000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 11000,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "kickbacks and bribery",
-            "penalty": 100000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 11000,
-            "records": 2
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -78841,8 +63327,7 @@ export const COMPANIES = [
       "rating": "Poor",
       "sources": [
         "OSHA",
-        "NLRB",
-        "Violation Tracker (verified)"
+        "NLRB"
       ]
     },
     "dei": {
@@ -78893,70 +63378,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "3m-company",
-        "matchedName": "3M Company",
-        "totalPenalty": 20123261844,
-        "totalRecords": 146,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 14006333336,
-            "records": 59
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 6001201067,
-            "records": 71
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 75175000,
-            "records": 4
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 21708964,
-            "records": 9
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 9743477,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "PFAS violation",
-            "penalty": 13999700000,
-            "records": 11
-          },
-          {
-            "category": "product safety violation",
-            "penalty": 6000000000,
-            "records": 1
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 68550000,
-            "records": 2
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 15000000,
-            "records": 2
-          },
-          {
-            "category": "economic sanction violation",
-            "penalty": 9743477,
-            "records": 2
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 659,
@@ -79017,8 +63439,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "PR Watch",
-        "Violation Tracker (verified)"
+        "PR Watch"
       ]
     },
     "dei": {
@@ -79069,70 +63490,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "honeywell-international",
-        "matchedName": "Honeywell International",
-        "totalPenalty": 446230811,
-        "totalRecords": 214,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 179073500,
-            "records": 9
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 164225531,
-            "records": 83
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 90647076,
-            "records": 31
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 9950000,
-            "records": 3
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 2334704,
-            "records": 88
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "Foreign Corrupt Practices Act",
-            "penalty": 162950000,
-            "records": 4
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 72599908,
-            "records": 19
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 52241562,
-            "records": 51
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 45425000,
-            "records": 3
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 40995389,
-            "records": 11
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 660,
@@ -79173,9 +63531,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -79201,69 +63557,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "emerson-electric",
-        "matchedName": "Emerson Electric",
-        "totalPenalty": 949214,
-        "totalRecords": 21,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 450905,
-            "records": 1
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 218000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 156428,
-            "records": 11
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 73719,
-            "records": 6
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 50162,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "economic sanction violation",
-            "penalty": 450905,
-            "records": 1
-          },
-          {
-            "category": "export control violation",
-            "penalty": 218000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 156428,
-            "records": 11
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 52952,
-            "records": 4
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 50162,
-            "records": 2
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -79305,9 +63598,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -79333,64 +63624,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "parker-hannifin",
-        "matchedName": "Parker-Hannifin",
-        "totalPenalty": 39377815,
-        "totalRecords": 137,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 31593750,
-            "records": 8
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 3644319,
-            "records": 10
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 2368216,
-            "records": 46
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 1771530,
-            "records": 73
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "export control violation",
-            "penalty": 25185000,
-            "records": 2
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 6408750,
-            "records": 6
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 3322106,
-            "records": 5
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 1696426,
-            "records": 31
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 1100550,
-            "records": 60
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -79452,8 +63685,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -79507,70 +63739,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "illinois-tool-works",
-        "matchedName": "Illinois Tool Works",
-        "totalPenalty": 6147627,
-        "totalRecords": 77,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 4305181,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 802962,
-            "records": 20
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 650484,
-            "records": 51
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 369000,
-            "records": 3
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 20000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 4200000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 635484,
-            "records": 50
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 503520,
-            "records": 6
-          },
-          {
-            "category": "export control violation",
-            "penalty": 369000,
-            "records": 3
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 265284,
-            "records": 13
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 663,
@@ -79630,8 +63799,7 @@ export const COMPANIES = [
       "sources": [
         "NLRB",
         "Wikipedia",
-        "Company policies",
-        "Violation Tracker (verified)"
+        "Company policies"
       ]
     },
     "dei": {
@@ -79675,65 +63843,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "eaton",
-        "matchedName": "Eaton",
-        "totalPenalty": 2467090,
-        "totalRecords": 67,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 1258368,
-            "records": 47
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 1024997,
-            "records": 13
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 170067,
-            "records": 6
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 13658,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 702968,
-            "records": 42
-          },
-          {
-            "category": "aviation safety violation",
-            "penalty": 548200,
-            "records": 4
-          },
-          {
-            "category": "hazardous waste violation",
-            "penalty": 537997,
-            "records": 4
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 482000,
-            "records": 8
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 148700,
-            "records": 5
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 664,
@@ -79886,8 +63996,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "Company Benefits",
-        "Violation Tracker (verified)"
+        "Company Benefits"
       ]
     },
     "dei": {
@@ -79939,40 +64048,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "roper-technologies",
-        "matchedName": "Roper Technologies",
-        "totalPenalty": 431848,
-        "totalRecords": 2,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 422000,
-            "records": 1
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 9848,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "export control violation",
-            "penalty": 422000,
-            "records": 1
-          },
-          {
-            "category": "tax violations",
-            "penalty": 9848,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 666,
@@ -80023,8 +64099,7 @@ export const COMPANIES = [
       "rating": "Good",
       "sources": [
         "Company sustainability report",
-        "OSHA",
-        "Violation Tracker (verified)"
+        "OSHA"
       ]
     },
     "dei": {
@@ -80074,65 +64149,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "ametek",
-        "matchedName": "Ametek",
-        "totalPenalty": 2172935,
-        "totalRecords": 49,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 1200000,
-            "records": 1
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 527810,
-            "records": 17
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 401925,
-            "records": 30
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 43200,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 1200000,
-            "records": 1
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 491510,
-            "records": 16
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 242925,
-            "records": 24
-          },
-          {
-            "category": "aviation safety violation",
-            "penalty": 159000,
-            "records": 6
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 43200,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 667,
@@ -80173,9 +64190,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -80201,59 +64216,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "watts-water-technologies-inc",
-        "matchedName": "Watts Water Technologies Inc.",
-        "totalPenalty": 40354889,
-        "totalRecords": 11,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 37050258,
-            "records": 5
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 2955815,
-            "records": 1
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 348816,
-            "records": 5
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "product safety violation",
-            "penalty": 37000000,
-            "records": 2
-          },
-          {
-            "category": "Foreign Corrupt Practices Act",
-            "penalty": 2955815,
-            "records": 1
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 288258,
-            "records": 4
-          },
-          {
-            "category": "pesticide violation",
-            "penalty": 60558,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 50258,
-            "records": 3
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -80310,8 +64272,7 @@ export const COMPANIES = [
       "s": "DuPont has had multiple NLRB unfair labor practice proceedings, including disputes over unilateral implementation of benefits changes, union bargaining rights, and worker retaliation claims. Historical cases show findings of coercive conduct and discriminatory discharge, though some recent cases were resolved in company's favor under different NLRB standards.",
       "rating": "Mixed",
       "sources": [
-        "NLRB",
-        "Violation Tracker (verified)"
+        "NLRB"
       ]
     },
     "dei": {
@@ -80358,65 +64319,7 @@ export const COMPANIES = [
     },
     "ab": "#0d1f35",
     "ac": "#4a90e2",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "dupont-de-nemours",
-        "matchedName": "DuPont de Nemours",
-        "totalPenalty": 1619825183,
-        "totalRecords": 76,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 1499015235,
-            "records": 46
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 109400000,
-            "records": 2
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 11142816,
-            "records": 4
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 267132,
-            "records": 24
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "PFAS violation",
-            "penalty": 1409500000,
-            "records": 5
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 109400000,
-            "records": 2
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 71519458,
-            "records": 26
-          },
-          {
-            "category": "lead violation",
-            "penalty": 10000000,
-            "records": 1
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 7938277,
-            "records": 10
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 669,
@@ -80562,9 +64465,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -80590,69 +64491,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "basf",
-        "matchedName": "BASF",
-        "totalPenalty": 587167866,
-        "totalRecords": 276,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 406724308,
-            "records": 157
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 178122167,
-            "records": 8
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 988375,
-            "records": 102
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 856516,
-            "records": 7
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 416000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "PFAS violation",
-            "penalty": 316500000,
-            "records": 1
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 178122167,
-            "records": 8
-          },
-          {
-            "category": "asbestos violation",
-            "penalty": 57100000,
-            "records": 1
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 22479195,
-            "records": 26
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 10442878,
-            "records": 120
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -80705,8 +64543,7 @@ export const COMPANIES = [
       "rating": "Below Average",
       "sources": [
         "OSHA",
-        "NLRB",
-        "Violation Tracker (verified)"
+        "NLRB"
       ]
     },
     "dei": {
@@ -80756,65 +64593,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "lyondellbasell-industries",
-        "matchedName": "LyondellBasell Industries",
-        "totalPenalty": 375466555,
-        "totalRecords": 284,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 373623825,
-            "records": 227
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 1239744,
-            "records": 4
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 563336,
-            "records": 52
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 39650,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "environmental violation",
-            "penalty": 309382894,
-            "records": 199
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 60196851,
-            "records": 24
-          },
-          {
-            "category": "MTBE violation",
-            "penalty": 4000000,
-            "records": 1
-          },
-          {
-            "category": "workplace whistleblower retaliation",
-            "penalty": 764444,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 391300,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 672,
@@ -80874,8 +64653,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "OSHA",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -80922,65 +64700,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "eastman-chemical",
-        "matchedName": "Eastman Chemical",
-        "totalPenalty": 144037249,
-        "totalRecords": 184,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 121507191,
-            "records": 132
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 22016000,
-            "records": 2
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 433476,
-            "records": 49
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 80582,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "PCB violation",
-            "penalty": 83333333,
-            "records": 2
-          },
-          {
-            "category": "water pollution violation",
-            "penalty": 25443906,
-            "records": 4
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 22000000,
-            "records": 1
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 11466982,
-            "records": 84
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 1169970,
-            "records": 40
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 673,
@@ -81134,9 +64854,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -81162,69 +64880,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "rpm-international",
-        "matchedName": "RPM International",
-        "totalPenalty": 77699432,
-        "totalRecords": 88,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 60900000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 10153676,
-            "records": 39
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 2966360,
-            "records": 43
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 2022500,
-            "records": 1
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 1500000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 60900000,
-            "records": 1
-          },
-          {
-            "category": "product safety violation",
-            "penalty": 9300000,
-            "records": 1
-          },
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 2022500,
-            "records": 1
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 1542095,
-            "records": 24
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 1500000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -81276,8 +64931,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Company sustainability reports",
-        "Violation Tracker (verified)"
+        "Company sustainability reports"
       ]
     },
     "dei": {
@@ -81327,55 +64981,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "hb-fuller",
-        "matchedName": "H.B. Fuller",
-        "totalPenalty": 851365,
-        "totalRecords": 33,
-        "offenseGroups": [
-          {
-            "category": "safety-related offenses",
-            "penalty": 555863,
-            "records": 20
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 295502,
-            "records": 13
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 550863,
-            "records": 19
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 146050,
-            "records": 7
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 123219,
-            "records": 4
-          },
-          {
-            "category": "pesticide violation",
-            "penalty": 21033,
-            "records": 1
-          },
-          {
-            "category": "hazardous waste violation",
-            "penalty": 5200,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 676,
@@ -81637,8 +65243,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "Company Safety Reports",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -81689,70 +65294,7 @@ export const COMPANIES = [
     },
     "ab": "#1e1535",
     "ac": "#9b8ff0",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "weyerhaeuser",
-        "matchedName": "Weyerhaeuser",
-        "totalPenalty": 217296952,
-        "totalRecords": 123,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 96011586,
-            "records": 62
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 82295000,
-            "records": 2
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 36440000,
-            "records": 3
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 1587563,
-            "records": 9
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 962803,
-            "records": 47
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "air pollution violation",
-            "penalty": 94374632,
-            "records": 21
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 82295000,
-            "records": 2
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 36440000,
-            "records": 3
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 1340854,
-            "records": 28
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 1145365,
-            "records": 6
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 679,
@@ -81812,8 +65354,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "Company reports",
-        "Violation Tracker (verified)"
+        "Company reports"
       ]
     },
     "dei": {
@@ -81858,60 +65399,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "rayonier",
-        "matchedName": "Rayonier",
-        "totalPenalty": 4703214,
-        "totalRecords": 28,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 3000000,
-            "records": 2
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 1508144,
-            "records": 13
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 195070,
-            "records": 13
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 3000000,
-            "records": 2
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 1197547,
-            "records": 6
-          },
-          {
-            "category": "water pollution violation",
-            "penalty": 225000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 174395,
-            "records": 10
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 85597,
-            "records": 6
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 680,
@@ -82154,9 +65642,7 @@ export const COMPANIES = [
     "labor": {
       "s": "Data pending.",
       "rating": "Mixed",
-      "sources": [
-        "Violation Tracker (verified)"
-      ]
+      "sources": []
     },
     "dei": {
       "s": "Data pending.",
@@ -82182,59 +65668,6 @@ export const COMPANIES = [
       "s": "Data pending.",
       "ratio": "N/A",
       "sources": []
-    },
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "clearwater-paper",
-        "matchedName": "Clearwater Paper",
-        "totalPenalty": 2092914,
-        "totalRecords": 30,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 1613169,
-            "records": 14
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 396388,
-            "records": 14
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 83357,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "environmental violation",
-            "penalty": 1158781,
-            "records": 7
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 437908,
-            "records": 6
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 396388,
-            "records": 14
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 83357,
-            "records": 2
-          },
-          {
-            "category": "hazardous waste violation",
-            "penalty": 16480,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
     }
   },
   {
@@ -82297,8 +65730,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "Company safety policy",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -82345,65 +65777,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "boise-cascade",
-        "matchedName": "Boise Cascade",
-        "totalPenalty": 29295245,
-        "totalRecords": 30,
-        "offenseGroups": [
-          {
-            "category": "environment-related offenses",
-            "penalty": 22657156,
-            "records": 14
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 6382000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 216089,
-            "records": 13
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 40000,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "air pollution violation",
-            "penalty": 22286300,
-            "records": 4
-          },
-          {
-            "category": "trade violations",
-            "penalty": 6382000,
-            "records": 1
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 370856,
-            "records": 10
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 216089,
-            "records": 13
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 40000,
-            "records": 2
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 684,
@@ -82453,8 +65827,7 @@ export const COMPANIES = [
       "s": "PCA has a documented poor safety record with over 100 OSHA violations cited at its facilities in a five-year period. In 2014, the company was cited for five repeat safety violations including lack of machine guarding and lockout/tagout procedures. OSHA stated the company's culture does not value safety.",
       "rating": "Poor",
       "sources": [
-        "OSHA",
-        "Violation Tracker (verified)"
+        "OSHA"
       ]
     },
     "dei": {
@@ -82499,65 +65872,7 @@ export const COMPANIES = [
     },
     "ab": "#0d2318",
     "ac": "#4caf82",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "packaging-corporation-of-america",
-        "matchedName": "Packaging Corporation of America",
-        "totalPenalty": 58569358,
-        "totalRecords": 110,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 51600000,
-            "records": 2
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 2988280,
-            "records": 9
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 2716125,
-            "records": 16
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 1264953,
-            "records": 83
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 51600000,
-            "records": 2
-          },
-          {
-            "category": "air pollution violation",
-            "penalty": 2538545,
-            "records": 5
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 1300000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 1139853,
-            "records": 67
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 1132562,
-            "records": 3
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 685,
@@ -82619,9 +65934,7 @@ export const COMPANIES = [
       "sources": [
         "OSHA",
         "NLRB",
-        "Violation Tracker",
-        "AFL-CIO Paywatch",
-        "Violation Tracker (verified)"
+        "AFL-CIO Paywatch"
       ]
     },
     "dei": {
@@ -82671,65 +65984,7 @@ export const COMPANIES = [
     },
     "ab": "#2a0d0d",
     "ac": "#e24a4a",
-    "dataLastUpdated": "2026-05-17",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "international-paper",
-        "matchedName": "International Paper",
-        "totalPenalty": 498320951,
-        "totalRecords": 291,
-        "offenseGroups": [
-          {
-            "category": "competition-related offenses",
-            "penalty": 445600000,
-            "records": 8
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 36325577,
-            "records": 29
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 13869622,
-            "records": 86
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 2525752,
-            "records": 168
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 445600000,
-            "records": 8
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 30000000,
-            "records": 1
-          },
-          {
-            "category": "environmental violation",
-            "penalty": 9376007,
-            "records": 49
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 4528010,
-            "records": 3
-          },
-          {
-            "category": "water pollution violation",
-            "penalty": 3546250,
-            "records": 5
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-17"
   },
   {
     "id": 686,
@@ -82783,8 +66038,7 @@ export const COMPANIES = [
       "sources": [
         "UNITE HERE",
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -82828,70 +66082,7 @@ export const COMPANIES = [
     },
     "ab": "#1a1a2e",
     "ac": "#8B1C1C",
-    "dataLastUpdated": "2026-05-22",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "marriott-international",
-        "matchedName": "Marriott International",
-        "totalPenalty": 90219006,
-        "totalRecords": 133,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 53634000,
-            "records": 8
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 33621223,
-            "records": 48
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 1059428,
-            "records": 11
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 1050000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 770355,
-            "records": 63
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "privacy violation",
-            "penalty": 52000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 32353191,
-            "records": 28
-          },
-          {
-            "category": "telecommunications violation",
-            "penalty": 1104000,
-            "records": 2
-          },
-          {
-            "category": "price-fixing or anti-competitive practices",
-            "penalty": 1050000,
-            "records": 1
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 993920,
-            "records": 18
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-22"
   },
   {
     "id": 687,
@@ -82944,8 +66135,7 @@ export const COMPANIES = [
       "sources": [
         "Fortune",
         "UNITE HERE",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -82987,70 +66177,7 @@ export const COMPANIES = [
     },
     "ab": "#0d1b2a",
     "ac": "#003580",
-    "dataLastUpdated": "2026-05-22",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "hilton-worldwide",
-        "matchedName": "Hilton Worldwide",
-        "totalPenalty": 7112805,
-        "totalRecords": 42,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 4607355,
-            "records": 22
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 1335407,
-            "records": 2
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 1025000,
-            "records": 3
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 138043,
-            "records": 14
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 7000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 4433006,
-            "records": 12
-          },
-          {
-            "category": "economic sanction violation",
-            "penalty": 735407,
-            "records": 1
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 700000,
-            "records": 1
-          },
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 600000,
-            "records": 1
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 300000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-22"
   },
   {
     "id": 688,
@@ -83101,8 +66228,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "UNITE HERE",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -83142,60 +66268,7 @@ export const COMPANIES = [
     },
     "ab": "#1a1a1a",
     "ac": "#c9a84c",
-    "dataLastUpdated": "2026-05-22",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "hyatt-hotels",
-        "matchedName": "Hyatt Hotels",
-        "totalPenalty": 4457136,
-        "totalRecords": 24,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 2815100,
-            "records": 2
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 1466066,
-            "records": 11
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 175970,
-            "records": 11
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "privacy violation",
-            "penalty": 1565100,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 1255674,
-            "records": 5
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 1250000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 175970,
-            "records": 11
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 110392,
-            "records": 5
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-22"
   },
   {
     "id": 689,
@@ -83432,8 +66505,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "Great Place to Work",
-        "Violation Tracker (verified)"
+        "Great Place to Work"
       ]
     },
     "dei": {
@@ -83475,60 +66547,7 @@ export const COMPANIES = [
     },
     "ab": "#0d1b2a",
     "ac": "#86bc25",
-    "dataLastUpdated": "2026-05-22",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "deloitte",
-        "matchedName": "Deloitte",
-        "totalPenalty": 301697673,
-        "totalRecords": 32,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 161100885,
-            "records": 3
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 138750016,
-            "records": 26
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 1846772,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 161100885,
-            "records": 3
-          },
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 108850016,
-            "records": 24
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 19900000,
-            "records": 1
-          },
-          {
-            "category": "anti-money-laundering deficiencies",
-            "penalty": 10000000,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 1571772,
-            "records": 2
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-22"
   },
   {
     "id": 692,
@@ -83580,8 +66599,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "DOJ",
-        "SEC",
-        "Violation Tracker (verified)"
+        "SEC"
       ]
     },
     "dei": {
@@ -83622,70 +66640,7 @@ export const COMPANIES = [
     },
     "ab": "#001a3a",
     "ac": "#00a3e0",
-    "dataLastUpdated": "2026-05-22",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "kpmg",
-        "matchedName": "KPMG",
-        "totalPenalty": 607499642,
-        "totalRecords": 45,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 584092986,
-            "records": 35
-          },
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 11770000,
-            "records": 2
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 11621656,
-            "records": 6
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 10000,
-            "records": 1
-          },
-          {
-            "category": "environment-related offenses",
-            "penalty": 5000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "tax violations",
-            "penalty": 456000000,
-            "records": 1
-          },
-          {
-            "category": "accounting fraud or deficiencies",
-            "penalty": 128092986,
-            "records": 34
-          },
-          {
-            "category": "False Claims Act and related",
-            "penalty": 11770000,
-            "records": 2
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 10971656,
-            "records": 5
-          },
-          {
-            "category": "benefit plan administrator violation",
-            "penalty": 650000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-22"
   },
   {
     "id": 693,
@@ -83737,8 +66692,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "DOJ settlement",
-        "Violation Tracker (verified)"
+        "DOJ settlement"
       ]
     },
     "dei": {
@@ -83779,70 +66733,7 @@ export const COMPANIES = [
     },
     "ab": "#0a1628",
     "ac": "#002f6c",
-    "dataLastUpdated": "2026-05-22",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "mckinsey",
-        "matchedName": "McKinsey",
-        "totalPenalty": 1734555828,
-        "totalRecords": 11,
-        "offenseGroups": [
-          {
-            "category": "healthcare-related offenses",
-            "penalty": 1492500000,
-            "records": 5
-          },
-          {
-            "category": "competition-related offenses",
-            "penalty": 122850000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 103000000,
-            "records": 2
-          },
-          {
-            "category": "financial offenses",
-            "penalty": 15009255,
-            "records": 2
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 1196573,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "off-label or unapproved promotion of medical products",
-            "penalty": 842500000,
-            "records": 4
-          },
-          {
-            "category": "Controlled Substances Act violation",
-            "penalty": 650000000,
-            "records": 1
-          },
-          {
-            "category": "Foreign Corrupt Practices Act",
-            "penalty": 122850000,
-            "records": 1
-          },
-          {
-            "category": "product safety violation",
-            "penalty": 78000000,
-            "records": 1
-          },
-          {
-            "category": "utility safety violation",
-            "penalty": 25000000,
-            "records": 1
-          }
-        ],
-        "rating": "mixed"
-      }
-    }
+    "dataLastUpdated": "2026-05-22"
   },
   {
     "id": 694,
@@ -83893,8 +66784,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "Reuters",
-        "Violation Tracker (verified)"
+        "Reuters"
       ]
     },
     "dei": {
@@ -83937,45 +66827,7 @@ export const COMPANIES = [
     },
     "ab": "#0a0a1a",
     "ac": "#a100ff",
-    "dataLastUpdated": "2026-05-22",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "accenture",
-        "matchedName": "Accenture",
-        "totalPenalty": 67082173,
-        "totalRecords": 5,
-        "offenseGroups": [
-          {
-            "category": "government-contracting-related offenses",
-            "penalty": 65419559,
-            "records": 2
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 1662614,
-            "records": 3
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "False Claims Act and related",
-            "penalty": 65419559,
-            "records": 2
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 1025000,
-            "records": 1
-          },
-          {
-            "category": "employment discrimination",
-            "penalty": 637614,
-            "records": 2
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-22"
   },
   {
     "id": 695,
@@ -85033,8 +67885,7 @@ export const COMPANIES = [
       "sources": [
         "FINRA",
         "Glassdoor",
-        "Reuters",
-        "Violation Tracker (verified)"
+        "Reuters"
       ]
     },
     "dei": {
@@ -85075,50 +67926,7 @@ export const COMPANIES = [
     },
     "ab": "#0a1a0a",
     "ac": "#00c805",
-    "dataLastUpdated": "2026-05-22",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "robinhood-markets",
-        "matchedName": "Robinhood Markets",
-        "totalPenalty": 301953000,
-        "totalRecords": 17,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 258940000,
-            "records": 10
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 43013000,
-            "records": 7
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "investor protection violation",
-            "penalty": 202940000,
-            "records": 8
-          },
-          {
-            "category": "anti-money-laundering deficiencies",
-            "penalty": 56000000,
-            "records": 2
-          },
-          {
-            "category": "privacy violation",
-            "penalty": 29000000,
-            "records": 2
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 14013000,
-            "records": 5
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-22"
   },
   {
     "id": 707,
@@ -85171,8 +67979,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Armstrong memo",
-        "Reuters",
-        "Violation Tracker (verified)"
+        "Reuters"
       ]
     },
     "dei": {
@@ -85215,45 +68022,7 @@ export const COMPANIES = [
     },
     "ab": "#0a1628",
     "ac": "#0052ff",
-    "dataLastUpdated": "2026-05-22",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "coinbase-global-inc",
-        "matchedName": "Coinbase Global Inc.",
-        "totalPenalty": 114291750,
-        "totalRecords": 7,
-        "offenseGroups": [
-          {
-            "category": "financial offenses",
-            "penalty": 111500000,
-            "records": 3
-          },
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 2791750,
-            "records": 4
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "anti-money-laundering deficiencies",
-            "penalty": 100000000,
-            "records": 1
-          },
-          {
-            "category": "investor protection violation",
-            "penalty": 11500000,
-            "records": 2
-          },
-          {
-            "category": "consumer protection violation",
-            "penalty": 2791750,
-            "records": 4
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-22"
   },
   {
     "id": 708,
@@ -85572,8 +68341,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "NLRB",
-        "Glassdoor",
-        "Violation Tracker (verified)"
+        "Glassdoor"
       ]
     },
     "dei": {
@@ -85613,55 +68381,7 @@ export const COMPANIES = [
     },
     "ab": "#0a1a0a",
     "ac": "#ff6b00",
-    "dataLastUpdated": "2026-05-22",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "sunrun-inc",
-        "matchedName": "Sunrun Inc.",
-        "totalPenalty": 5518029,
-        "totalRecords": 47,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 4300000,
-            "records": 1
-          },
-          {
-            "category": "safety-related offenses",
-            "penalty": 1106680,
-            "records": 44
-          },
-          {
-            "category": "employment-related offenses",
-            "penalty": 111349,
-            "records": 2
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "consumer protection violation",
-            "penalty": 4300000,
-            "records": 1
-          },
-          {
-            "category": "workplace safety or health violation",
-            "penalty": 1106680,
-            "records": 44
-          },
-          {
-            "category": "labor relations violation",
-            "penalty": 57682,
-            "records": 1
-          },
-          {
-            "category": "wage and hour violation",
-            "penalty": 53667,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-22"
   },
   {
     "id": 712,
@@ -85711,8 +68431,7 @@ export const COMPANIES = [
       "sources": [
         "Glassdoor",
         "Reuters",
-        "Bankruptcy filing",
-        "Violation Tracker (verified)"
+        "Bankruptcy filing"
       ]
     },
     "dei": {
@@ -85755,30 +68474,7 @@ export const COMPANIES = [
     },
     "ab": "#0a0a0a",
     "ac": "#ffffff",
-    "dataLastUpdated": "2026-05-22",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "wework",
-        "matchedName": "WeWork",
-        "totalPenalty": 6575,
-        "totalRecords": 1,
-        "offenseGroups": [
-          {
-            "category": "employment-related offenses",
-            "penalty": 6575,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "wage and hour violation",
-            "penalty": 6575,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-22"
   },
   {
     "id": 713,
@@ -86104,8 +68800,7 @@ export const COMPANIES = [
       "rating": "Mixed",
       "sources": [
         "Glassdoor",
-        "Reuters",
-        "Violation Tracker (verified)"
+        "Reuters"
       ]
     },
     "dei": {
@@ -86148,30 +68843,7 @@ export const COMPANIES = [
     },
     "ab": "#0a1628",
     "ac": "#2d8cff",
-    "dataLastUpdated": "2026-05-22",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "zoom-video-communications",
-        "matchedName": "Zoom Video Communications",
-        "totalPenalty": 85000000,
-        "totalRecords": 1,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 85000000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "privacy violation",
-            "penalty": 85000000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-22"
   },
   {
     "id": 717,
@@ -86316,8 +68988,7 @@ export const COMPANIES = [
       "sources": [
         "Reuters",
         "Glassdoor",
-        "Bloomberg",
-        "Violation Tracker (verified)"
+        "Bloomberg"
       ]
     },
     "dei": {
@@ -86359,29 +69030,6 @@ export const COMPANIES = [
     },
     "ab": "#0a0a1a",
     "ac": "#313131",
-    "dataLastUpdated": "2026-05-22",
-    "laborAPI": {
-      "violationTracker": {
-        "slug": "epic-games-inc",
-        "matchedName": "Epic Games Inc.",
-        "totalPenalty": 520000000,
-        "totalRecords": 1,
-        "offenseGroups": [
-          {
-            "category": "consumer-protection-related offenses",
-            "penalty": 520000000,
-            "records": 1
-          }
-        ],
-        "primaryOffenses": [
-          {
-            "category": "privacy violation",
-            "penalty": 520000000,
-            "records": 1
-          }
-        ],
-        "rating": "good"
-      }
-    }
+    "dataLastUpdated": "2026-05-22"
   }
 ];

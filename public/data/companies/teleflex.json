@@ -26,7 +26,6 @@
     "s": "6 federal penalties totaling $583K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $14K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -152,59 +150,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Teleflex",
-    "slug": "teleflex",
-    "ownership": "publicly traded (ticker symbol TFX)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "medical equipment and supplies",
-    "specificIndustry": "medical devices",
-    "totalPenalty": 582525,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 520000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 48725,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 13800,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 520000,
-        "records": 1
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 30000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 18725,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 13800,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:25:30.771Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

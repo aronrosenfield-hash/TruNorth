@@ -26,7 +26,6 @@
     "s": "11 federal penalties totaling $223K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "hazardous waste violation: $30K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -120,59 +118,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Insteel Industries",
-    "slug": "insteel-industries",
-    "ownership": "publicly traded (ticker symbol IIIN)",
-    "hq": "North Carolina",
-    "majorIndustry": "metals",
-    "specificIndustry": "steel reinforcing products",
-    "totalPenalty": 223106,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 104841,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 68005,
-        "records": 6
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 50260,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "labor relations violation",
-        "penalty": 104841,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 68005,
-        "records": 6
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 29760,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 20500,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:29:59.972Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

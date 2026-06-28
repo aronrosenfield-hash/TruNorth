@@ -28,7 +28,6 @@
     "s": "21 federal penalties totaling $558.7M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "air pollution violation: $509.0M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -145,74 +143,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Evergy Inc.",
-    "slug": "evergy-inc",
-    "ownership": "publicly traded (ticker symbol EVRG)",
-    "hq": "Missouri",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 558721014,
-    "totalRecords": 21,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 509551620,
-        "records": 6
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 29267682,
-        "records": 4
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 19832532,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 49180,
-        "records": 5
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 20000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 509000000,
-        "records": 1
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 27513846,
-        "records": 2
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 19750000,
-        "records": 2
-      },
-      {
-        "category": "energy market violation",
-        "penalty": 1753836,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 551620,
-        "records": 5
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:09:49.501Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00111310",

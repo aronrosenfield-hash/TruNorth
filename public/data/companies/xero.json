@@ -43,15 +43,13 @@
     "s": "environmental violation: $79K in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "23 federal penalties totaling $332.7M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -97,64 +95,6 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "dataLastUpdated": "2026-05-28",
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "xerox",
-      "matchedName": "Xerox",
-      "totalPenalty": 332667004,
-      "totalRecords": 23,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 322521032,
-          "records": 13
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 10005207,
-          "records": 2
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 84000,
-          "records": 3
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 56765,
-          "records": 5
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 301325000,
-          "records": 4
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 12033387,
-          "records": 2
-        },
-        {
-          "category": "accounting fraud or deficiencies",
-          "penalty": 10000000,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 9162645,
-          "records": 7
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 79000,
-          "records": 2
-        }
-      ],
-      "rating": "poor"
-    }
-  },
   "competitors": [
     "freshbooks",
     "wave-accounting",
@@ -231,69 +171,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Xerox",
-    "slug": "xerox",
-    "ownership": "publicly traded (ticker symbol XRX)",
-    "hq": "Connecticut",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "document processing",
-    "totalPenalty": 332667004,
-    "totalRecords": 23,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 322521032,
-        "records": 13
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 10005207,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 84000,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 56765,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 301325000,
-        "records": 4
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 12033387,
-        "records": 2
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 10000000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 9162645,
-        "records": 7
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 79000,
-        "records": 2
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00207258",

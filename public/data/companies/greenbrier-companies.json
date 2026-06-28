@@ -26,7 +26,6 @@
     "s": "55 federal penalties totaling $2.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $691K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -125,69 +123,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Greenbrier Companies",
-    "slug": "greenbrier-companies",
-    "ownership": "publicly traded (ticker symbol GBX)",
-    "hq": "Oregon",
-    "majorIndustry": "heavy equipment",
-    "specificIndustry": "transporation equipment",
-    "totalPenalty": 2497910,
-    "totalRecords": 55,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 1000000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 732341,
-        "records": 13
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 625709,
-        "records": 38
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 139860,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 1000000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 690701,
-        "records": 9
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 531109,
-        "records": 28
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 115821,
-        "records": 2
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 94600,
-        "records": 10
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:02:57.871Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -27,7 +27,6 @@
     "s": "69 federal penalties totaling $65.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "water pollution violation: $12.2M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -139,74 +137,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Expand Energy Corporation",
-    "slug": "expand-energy-corporation",
-    "ownership": "publicly traded (ticker symbol EXE)",
-    "hq": "Oklahoma",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 65240080,
-    "totalRecords": 69,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 31950000,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 24067443,
-        "records": 49
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 5550000,
-        "records": 2
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 3312300,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 312102,
-        "records": 10
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 31950000,
-        "records": 2
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 12219700,
-        "records": 5
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 10482208,
-        "records": 38
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 5550000,
-        "records": 2
-      },
-      {
-        "category": "federal leasing royalty violation",
-        "penalty": 3312300,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:13:07.981Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00389288",

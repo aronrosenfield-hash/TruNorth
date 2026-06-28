@@ -38,15 +38,13 @@
     "s": "environmental violation: $98K in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "7 federal penalties totaling $60.4M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -97,69 +95,6 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "dataLastUpdated": "2026-05-28",
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "mayo-clinic",
-      "matchedName": "Mayo Clinic",
-      "totalPenalty": 60428123,
-      "totalRecords": 7,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 52500000,
-          "records": 1
-        },
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 7760000,
-          "records": 2
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 107678,
-          "records": 2
-        },
-        {
-          "category": "healthcare-related offenses",
-          "penalty": 49445,
-          "records": 1
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 11000,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "privacy violation",
-          "penalty": 52500000,
-          "records": 1
-        },
-        {
-          "category": "False Claims Act and related",
-          "penalty": 7760000,
-          "records": 2
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 98200,
-          "records": 1
-        },
-        {
-          "category": "nursing home violation",
-          "penalty": 49445,
-          "records": 1
-        },
-        {
-          "category": "labor relations violation",
-          "penalty": 11000,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
-  },
   "competitors": [
     "cleveland-clinic"
   ],
@@ -233,74 +168,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Mayo Clinic",
-    "slug": "mayo-clinic",
-    "ownership": "non-profit",
-    "hq": "Minnesota",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "healthcare services",
-    "totalPenalty": 60428123,
-    "totalRecords": 7,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 52500000,
-        "records": 1
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 7760000,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 107678,
-        "records": 2
-      },
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 49445,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 11000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "privacy violation",
-        "penalty": 52500000,
-        "records": 1
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 7760000,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 98200,
-        "records": 1
-      },
-      {
-        "category": "nursing home violation",
-        "penalty": 49445,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 11000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

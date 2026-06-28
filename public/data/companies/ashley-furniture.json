@@ -36,15 +36,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "21 federal penalties totaling $3.7M since 2000 (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -87,44 +85,6 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "dataLastUpdated": "2026-05-28",
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "ashley-furniture",
-      "matchedName": "Ashley Furniture",
-      "totalPenalty": 3668538,
-      "totalRecords": 21,
-      "offenseGroups": [
-        {
-          "category": "safety-related offenses",
-          "penalty": 3654815,
-          "records": 19
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 13723,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 3654815,
-          "records": 19
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 7723,
-          "records": 1
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 6000,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
-  },
   "competitors": [
     "wayfair",
     "bob-s-discount-furniture"
@@ -186,49 +146,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ashley Furniture",
-    "slug": "ashley-furniture",
-    "ownership": "privately held",
-    "hq": "Wisconsin",
-    "majorIndustry": "housewares and home furnishings",
-    "specificIndustry": "furniture",
-    "totalPenalty": 3668538,
-    "totalRecords": 21,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 3654815,
-        "records": 19
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 13723,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 3654815,
-        "records": 19
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 7723,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 6000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

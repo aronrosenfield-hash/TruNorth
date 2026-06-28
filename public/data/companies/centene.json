@@ -46,15 +46,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "251 federal penalties totaling $2.0B since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -103,69 +101,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "centene",
-      "matchedName": "Centene",
-      "totalPenalty": 1963566795,
-      "totalRecords": 251,
-      "offenseGroups": [
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 1133924319,
-          "records": 20
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 303838225,
-          "records": 197
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 228242430,
-          "records": 8
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 210340000,
-          "records": 3
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 80000000,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "False Claims Act and related",
-          "penalty": 1133924319,
-          "records": 20
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 251905000,
-          "records": 6
-        },
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 215000000,
-          "records": 1
-        },
-        {
-          "category": "investor protection violation",
-          "penalty": 210340000,
-          "records": 3
-        },
-        {
-          "category": "fraud",
-          "penalty": 80000000,
-          "records": 1
-        }
-      ],
-      "rating": "poor"
-    }
   },
   "competitors": [
     "unitedhealth-group",
@@ -255,74 +190,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Centene",
-    "slug": "centene",
-    "ownership": "publicly traded (ticker symbol CNC)",
-    "hq": "Missouri",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "managed care",
-    "totalPenalty": 1963566795,
-    "totalRecords": 251,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 1133924319,
-        "records": 20
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 303838225,
-        "records": 197
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 228242430,
-        "records": 8
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 210340000,
-        "records": 3
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 80000000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 1133924319,
-        "records": 20
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 251905000,
-        "records": 6
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 215000000,
-        "records": 1
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 210340000,
-        "records": 3
-      },
-      {
-        "category": "fraud",
-        "penalty": 80000000,
-        "records": 1
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00397851",

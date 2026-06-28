@@ -26,7 +26,6 @@
     "s": "8 federal penalties totaling $544K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "environmental violation: $0 in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -125,49 +123,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Hydrofarm",
-    "slug": "hydrofarm",
-    "ownership": "privately held",
-    "hq": "California",
-    "majorIndustry": "agribusiness",
-    "specificIndustry": "agricultural equipment",
-    "totalPenalty": 543580,
-    "totalRecords": 8,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 532260,
-        "records": 7
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 11320,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "pesticide violation",
-        "penalty": 532260,
-        "records": 6
-      },
-      {
-        "category": "motor vehicle safety violation",
-        "penalty": 11320,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 0,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:52:39.756Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -27,7 +27,6 @@
     "s": "111 federal penalties totaling $199.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "environmental violation: $155.2M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -115,64 +113,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "J.R. Simplot",
-    "slug": "jr-simplot",
-    "ownership": "privately held",
-    "hq": "Idaho",
-    "majorIndustry": "agribusiness",
-    "specificIndustry": "agribusiness",
-    "totalPenalty": 199552608,
-    "totalRecords": 111,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 198585919,
-        "records": 34
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 961307,
-        "records": 76
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 5382,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 155233886,
-        "records": 17
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 42423540,
-        "records": 9
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 786900,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 505332,
-        "records": 37
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 288125,
-        "records": 36
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T02:20:08.617Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00120873",

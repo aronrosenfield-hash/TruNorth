@@ -38,15 +38,13 @@
     "s": "air pollution violation: $146K in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "33 federal penalties totaling $851K since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -98,54 +96,6 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "hb-fuller",
-      "matchedName": "H.B. Fuller",
-      "totalPenalty": 851365,
-      "totalRecords": 33,
-      "offenseGroups": [
-        {
-          "category": "safety-related offenses",
-          "penalty": 555863,
-          "records": 20
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 295502,
-          "records": 13
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 550863,
-          "records": 19
-        },
-        {
-          "category": "air pollution violation",
-          "penalty": 146050,
-          "records": 7
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 123219,
-          "records": 4
-        },
-        {
-          "category": "pesticide violation",
-          "penalty": 21033,
-          "records": 1
-        },
-        {
-          "category": "hazardous waste violation",
-          "penalty": 5200,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "3m",
@@ -220,59 +170,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "H.B. Fuller",
-    "slug": "hb-fuller",
-    "ownership": "publicly traded (ticker symbol FUL)",
-    "hq": "Minnesota",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 851365,
-    "totalRecords": 33,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 555863,
-        "records": 20
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 295502,
-        "records": 13
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 550863,
-        "records": 19
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 146050,
-        "records": 7
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 123219,
-        "records": 4
-      },
-      {
-        "category": "pesticide violation",
-        "penalty": 21033,
-        "records": 1
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 5200,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

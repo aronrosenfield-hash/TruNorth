@@ -36,15 +36,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "3 federal penalties totaling $71K since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -83,34 +81,6 @@
     "sources": [
       "Claude AI synthesis"
     ]
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "benchmark-electronics",
-      "matchedName": "Benchmark Electronics",
-      "totalPenalty": 71070,
-      "totalRecords": 3,
-      "offenseGroups": [
-        {
-          "category": "safety-related offenses",
-          "penalty": 71070,
-          "records": 3
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "aviation safety violation",
-          "penalty": 58500,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 12570,
-          "records": 2
-        }
-      ],
-      "rating": "good"
-    }
   },
   "dataLastUpdated": "2026-05-28",
   "competitors": [
@@ -167,39 +137,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Benchmark Electronics",
-    "slug": "benchmark-electronics",
-    "ownership": "publicly traded (ticker symbol BHE)",
-    "hq": "Texas",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "electronics manufacturing services",
-    "totalPenalty": 71070,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 71070,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "aviation safety violation",
-        "penalty": 58500,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 12570,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

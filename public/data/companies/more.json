@@ -26,7 +26,6 @@
     "s": "40 federal penalties totaling $620K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "mining environmental violation: $46K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -128,49 +126,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Westmoreland Mining LLC",
-    "slug": "westmoreland-mining-llc",
-    "ownership": "privately held",
-    "hq": "Colorado",
-    "majorIndustry": "mining and minerals",
-    "specificIndustry": "coal mining",
-    "totalPenalty": 619895,
-    "totalRecords": 40,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 567145,
-        "records": 38
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 52750,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 567145,
-        "records": 38
-      },
-      {
-        "category": "mining environmental violation",
-        "penalty": 45600,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 7150,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T01:22:06.782Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

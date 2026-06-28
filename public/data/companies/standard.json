@@ -27,7 +27,6 @@
     "s": "16 federal penalties totaling $2.0B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -131,59 +129,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Standard Chartered",
-    "slug": "standard-chartered",
-    "ownership": "publicly traded",
-    "hq": "United Kingdom",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking",
-    "totalPenalty": 1985483443,
-    "totalRecords": 16,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 1919563443,
-        "records": 12
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 65920000,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "economic sanction violation",
-        "penalty": 1009226443,
-        "records": 7
-      },
-      {
-        "category": "anti-money-laundering deficiencies",
-        "penalty": 640000000,
-        "records": 2
-      },
-      {
-        "category": "banking violation",
-        "penalty": 264000000,
-        "records": 2
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 65920000,
-        "records": 4
-      },
-      {
-        "category": "tax violations",
-        "penalty": 6337000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T02:43:04.731Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00594127",

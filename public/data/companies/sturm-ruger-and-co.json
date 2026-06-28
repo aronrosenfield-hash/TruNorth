@@ -25,7 +25,6 @@
     "s": "10 federal penalties totaling $1.9M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $108K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -149,74 +147,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Sturm, Ruger & Company",
-    "slug": "sturm-ruger-and-company",
-    "ownership": "publicly traded (ticker symbol RGR)",
-    "hq": "Connecticut",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "firearms",
-    "totalPenalty": 1868518,
-    "totalRecords": 10,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 1500000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 224018,
-        "records": 6
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 107500,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 26000,
-        "records": 1
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 11000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "privacy violation",
-        "penalty": 1500000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 224018,
-        "records": 6
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 107500,
-        "records": 1
-      },
-      {
-        "category": "tax violations",
-        "penalty": 26000,
-        "records": 1
-      },
-      {
-        "category": "export control violation",
-        "penalty": 11000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T01:17:33.499Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

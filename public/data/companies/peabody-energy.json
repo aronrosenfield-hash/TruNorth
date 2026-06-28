@@ -27,7 +27,6 @@
     "s": "1332 federal penalties totaling $17.9M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $245K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -144,64 +142,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Peabody Energy",
-    "slug": "peabody-energy",
-    "ownership": "publicly traded (ticker symbol BTU)",
-    "hq": "Missouri",
-    "majorIndustry": "mining and minerals",
-    "specificIndustry": "mining",
-    "totalPenalty": 17947480,
-    "totalRecords": 1332,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 16777365,
-        "records": 1323
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 890139,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 279976,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 16777365,
-        "records": 1323
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 809993,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 244976,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 49809,
-        "records": 1
-      },
-      {
-        "category": "solid waste violation",
-        "penalty": 25000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:05:09.987Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00110478",

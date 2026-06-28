@@ -26,7 +26,6 @@
     "s": "31 federal penalties totaling $285.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "air pollution violation: $61.0M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -123,69 +121,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ameren",
-    "slug": "ameren",
-    "ownership": "publicly traded (ticker symbol AEE)",
-    "hq": "Missouri",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 285593185,
-    "totalRecords": 31,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 181289240,
-        "records": 12
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 88652616,
-        "records": 13
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 15000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 651329,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "utility safety violation",
-        "penalty": 181188000,
-        "records": 8
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 61012471,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 27560145,
-        "records": 9
-      },
-      {
-        "category": "energy market violation",
-        "penalty": 15000000,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 559000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:47:54.357Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -26,7 +26,6 @@
     "s": "6 federal penalties totaling $102K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $14K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -145,54 +143,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Freshpet Inc.",
-    "slug": "freshpet-inc",
-    "ownership": "publicly traded (ticker symbol FRPT)",
-    "hq": "New Jersey",
-    "majorIndustry": "food products",
-    "specificIndustry": "pet food",
-    "totalPenalty": 102010,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 60002,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 27611,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 14397,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 60002,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 27611,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 14397,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:31:43.295Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

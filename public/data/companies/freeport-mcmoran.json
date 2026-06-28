@@ -26,7 +26,6 @@
     "s": "341 federal penalties totaling $166.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "environmental violation: $152.8M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -123,74 +121,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Freeport-McMoRan",
-    "slug": "freeport-mcmoran",
-    "ownership": "publicly traded (ticker symbol FCX)",
-    "hq": "Arizona",
-    "majorIndustry": "mining and minerals",
-    "specificIndustry": "mining",
-    "totalPenalty": 166568146,
-    "totalRecords": 341,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 163112992,
-        "records": 73
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 2496954,
-        "records": 264
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 899200,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 50000,
-        "records": 1
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 9000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 152814813,
-        "records": 23
-      },
-      {
-        "category": "mining environmental violation",
-        "penalty": 6900000,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 2453954,
-        "records": 259
-      },
-      {
-        "category": "oil or gas drilling violation",
-        "penalty": 1779350,
-        "records": 34
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 1604329,
-        "records": 12
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:31:25.670Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

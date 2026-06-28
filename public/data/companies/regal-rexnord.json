@@ -26,7 +26,6 @@
     "s": "39 federal penalties totaling $1.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $142K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -145,69 +143,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Regal Rexnord",
-    "slug": "regal-rexnord",
-    "ownership": "publicly traded (ticker symbol RXX)",
-    "hq": "Wisconsin",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "industrial equipment",
-    "totalPenalty": 1094343,
-    "totalRecords": 39,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 444333,
-        "records": 26
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 291500,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 206710,
-        "records": 8
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 151800,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 444333,
-        "records": 26
-      },
-      {
-        "category": "export control violation",
-        "penalty": 291500,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 149670,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 142000,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 32040,
-        "records": 4
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:21:48.692Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

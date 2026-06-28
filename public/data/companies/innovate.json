@@ -27,7 +27,6 @@
     "s": "12 federal penalties totaling $754K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "environmental violation: $58K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -141,64 +139,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Innovate Corp.",
-    "slug": "innovate-corp",
-    "ownership": "publicly traded (ticker symbol VATE)",
-    "hq": "New York",
-    "majorIndustry": "diversified",
-    "specificIndustry": "diversified",
-    "totalPenalty": 753644,
-    "totalRecords": 12,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 529742,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 166240,
-        "records": 7
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 57662,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment discrimination",
-        "penalty": 500000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 166240,
-        "records": 7
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 57662,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 21742,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 8000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:28:30.465Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00564187",

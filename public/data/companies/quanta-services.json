@@ -27,7 +27,6 @@
     "s": "128 federal penalties totaling $5.9M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $14K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -156,64 +154,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Quanta Services",
-    "slug": "quanta-services",
-    "ownership": "publicly traded (ticker symbol PWR)",
-    "hq": "Texas",
-    "majorIndustry": "construction and engineering",
-    "specificIndustry": "construction &amp; engineering",
-    "totalPenalty": 5914448,
-    "totalRecords": 128,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 4217070,
-        "records": 21
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 1661321,
-        "records": 103
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 36057,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 4110612,
-        "records": 19
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 1656321,
-        "records": 102
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 100001,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 14057,
-        "records": 2
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 12500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:16:07.458Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00720920",

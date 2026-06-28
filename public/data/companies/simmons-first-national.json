@@ -27,7 +27,6 @@
     "s": "1 federal penalties totaling $360K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -112,34 +110,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Simmons First National Corp.",
-    "slug": "simmons-first-national-corp",
-    "ownership": "publicly traded (ticker symbol SFNC)",
-    "hq": "Arkansas",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking",
-    "totalPenalty": 360187,
-    "totalRecords": 1,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 360187,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment discrimination",
-        "penalty": 360187,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:47:28.956Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00123885",

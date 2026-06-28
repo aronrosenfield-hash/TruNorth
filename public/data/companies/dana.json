@@ -27,7 +27,6 @@
     "s": "39 federal penalties totaling $897K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $113K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -140,64 +138,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Dana Inc.",
-    "slug": "dana-inc",
-    "ownership": "publicly traded (ticker symbol DAN)",
-    "hq": "Ohio",
-    "majorIndustry": "automotive parts",
-    "specificIndustry": "automotive parts",
-    "totalPenalty": 896727,
-    "totalRecords": 39,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 501963,
-        "records": 9
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 245656,
-        "records": 22
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 149108,
-        "records": 8
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace whistleblower retaliation",
-        "penalty": 274922,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 245656,
-        "records": 22
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 183240,
-        "records": 7
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 112850,
-        "records": 5
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 43801,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:04:07.697Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00239749",

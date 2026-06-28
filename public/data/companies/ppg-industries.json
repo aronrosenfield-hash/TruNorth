@@ -46,15 +46,13 @@
     "s": "environmental violation: $7.3M in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "148 federal penalties totaling $113.9M since 2000 (Violation Tracker).",
     "rating": "Below Average",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -107,69 +105,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "ppg-industries",
-      "matchedName": "PPG Industries",
-      "totalPenalty": 113932770,
-      "totalRecords": 148,
-      "offenseGroups": [
-        {
-          "category": "competition-related offenses",
-          "penalty": 87025000,
-          "records": 6
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 10230291,
-          "records": 12
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 9228260,
-          "records": 62
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 6500000,
-          "records": 1
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 949219,
-          "records": 67
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 83000000,
-          "records": 2
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 7490858,
-          "records": 5
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 7342147,
-          "records": 41
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 6500000,
-          "records": 1
-        },
-        {
-          "category": "export control violation",
-          "penalty": 4025000,
-          "records": 4
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "sherwin-williams",
@@ -250,74 +185,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "PPG Industries",
-    "slug": "ppg-industries",
-    "ownership": "publicly traded (ticker symbol PPG)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 113932770,
-    "totalRecords": 148,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 87025000,
-        "records": 6
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 10230291,
-        "records": 12
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 9228260,
-        "records": 62
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 6500000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 949219,
-        "records": 67
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 83000000,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 7490858,
-        "records": 5
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 7342147,
-        "records": 41
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 6500000,
-        "records": 1
-      },
-      {
-        "category": "export control violation",
-        "penalty": 4025000,
-        "records": 4
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00034298",

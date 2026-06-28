@@ -26,7 +26,6 @@
     "s": "8 federal penalties totaling $1.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $36K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -164,59 +162,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Moog Inc.",
-    "slug": "moog-inc",
-    "ownership": "publicly traded (ticker symbol MOG.A)",
-    "hq": "New York",
-    "majorIndustry": "aerospace and military contracting",
-    "specificIndustry": "aerospace &amp; military contracting",
-    "totalPenalty": 1237526,
-    "totalRecords": 8,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 1100000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 102026,
-        "records": 6
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 35500,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 1100000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 67026,
-        "records": 5
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 35500,
-        "records": 1
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 35000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:14:28.640Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

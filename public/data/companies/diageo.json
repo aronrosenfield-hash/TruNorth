@@ -28,7 +28,6 @@
     "s": "17 federal penalties totaling $22.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "air pollution violation: $195K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -160,69 +158,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Diageo",
-    "slug": "diageo",
-    "ownership": "publicly traded",
-    "hq": "United Kingdom",
-    "majorIndustry": "beverages",
-    "specificIndustry": "beverages",
-    "totalPenalty": 22533403,
-    "totalRecords": 17,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 16527153,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 5750000,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 212700,
-        "records": 6
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 43550,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 16373820,
-        "records": 1
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 5000000,
-        "records": 1
-      },
-      {
-        "category": "tax violations",
-        "penalty": 750000,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 195000,
-        "records": 5
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 153333,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:19:15.408Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00034470",

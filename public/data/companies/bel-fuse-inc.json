@@ -26,7 +26,6 @@
     "s": "5 federal penalties totaling $137K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "environmental violation: $63K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -103,44 +101,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Bel Fuse",
-    "slug": "bel-fuse",
-    "ownership": "publicly traded (ticker symbol BELFB)",
-    "hq": "New Jersey",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "electronic equipment",
-    "totalPenalty": 137459,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 74594,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 62865,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 74594,
-        "records": 4
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 62865,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:03:29.825Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

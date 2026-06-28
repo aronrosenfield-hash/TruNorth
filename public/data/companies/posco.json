@@ -26,7 +26,6 @@
     "s": "2 federal penalties totaling $22K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $14K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -123,39 +121,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "POSCO",
-    "slug": "posco",
-    "ownership": "publicly traded (ticker symbol PKX)",
-    "hq": "South Korea",
-    "majorIndustry": "metals",
-    "specificIndustry": "steel",
-    "totalPenalty": 22025,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 22025,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 14025,
-        "records": 1
-      },
-      {
-        "category": "energy conservation violation",
-        "penalty": 8000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:42:09.841Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

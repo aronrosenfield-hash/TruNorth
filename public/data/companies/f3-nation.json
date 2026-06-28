@@ -25,7 +25,6 @@
     "s": "9 federal penalties totaling $4.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -40,8 +39,7 @@
   "environment": {
     "s": "hazardous waste violation: $3.4M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -113,69 +111,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "AutoNation",
-    "slug": "autonation",
-    "ownership": "publicly traded (ticker symbol AN)",
-    "hq": "Florida",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-automotive",
-    "totalPenalty": 4285215,
-    "totalRecords": 9,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 3380000,
-        "records": 1
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 855000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 35238,
-        "records": 4
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 14977,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "hazardous waste violation",
-        "penalty": 3380000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 650000,
-        "records": 1
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 205000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 35238,
-        "records": 4
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 9317,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T23:34:30.559Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

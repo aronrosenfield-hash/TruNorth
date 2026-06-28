@@ -28,7 +28,6 @@
     "s": "148 federal penalties totaling $20.0B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "environmental violation: $251.4M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -174,69 +172,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "PG&E Corp.",
-    "slug": "pg-and-e-corp",
-    "ownership": "publicly traded (ticker symbol PCG)",
-    "hq": "California",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 20009594306,
-    "totalRecords": 148,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 19275669664,
-        "records": 88
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 550572646,
-        "records": 19
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 160514247,
-        "records": 37
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 22837749,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "utility safety violation",
-        "penalty": 19273072000,
-        "records": 42
-      },
-      {
-        "category": "drinking water violation",
-        "penalty": 295000000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 251398273,
-        "records": 12
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 158046147,
-        "records": 34
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 22827748,
-        "records": 3
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:07:43.008Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00082008",

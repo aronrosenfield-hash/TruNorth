@@ -39,15 +39,13 @@
     "s": "environmental violation: $6K in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "4 federal penalties totaling $64K since 2000 (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -99,39 +97,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "callaway-golf-company",
-      "matchedName": "Callaway Golf Company",
-      "totalPenalty": 63575,
-      "totalRecords": 4,
-      "offenseGroups": [
-        {
-          "category": "safety-related offenses",
-          "penalty": 57825,
-          "records": 3
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 5750,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 57825,
-          "records": 3
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 5750,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "titleist-acushnet",
@@ -204,44 +169,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Callaway Golf Company",
-    "slug": "callaway-golf-company",
-    "ownership": "publicly traded (ticker symbol CALY)",
-    "hq": "California",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "golf clubs",
-    "totalPenalty": 63575,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 57825,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 5750,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 57825,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 5750,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

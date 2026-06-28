@@ -26,7 +26,6 @@
     "s": "5 federal penalties totaling $89K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $9K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -147,49 +145,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Helen of Troy Ltd.",
-    "slug": "helen-of-troy-ltd",
-    "ownership": "publicly traded (ticker symbol HELE)",
-    "hq": "Bermuda",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "personal care products",
-    "totalPenalty": 89008,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 76908,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 12100,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "pesticide violation",
-        "penalty": 68208,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 12100,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 8700,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:14:38.013Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

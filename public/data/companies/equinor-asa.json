@@ -26,7 +26,6 @@
     "s": "12 federal penalties totaling $27.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "environmental violation: $222K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -131,69 +129,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Equinor",
-    "slug": "equinor",
-    "ownership": "publicly traded (ticker symbol EQNR)",
-    "hq": "Norway",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 27419150,
-    "totalRecords": 12,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 14500000,
-        "records": 2
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 10500000,
-        "records": 1
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 1989560,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 429590,
-        "records": 8
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 14500000,
-        "records": 2
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 10500000,
-        "records": 1
-      },
-      {
-        "category": "federal leasing royalty violation",
-        "penalty": 1989560,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 221940,
-        "records": 3
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 122650,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:07:35.592Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

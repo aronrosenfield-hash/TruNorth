@@ -26,7 +26,6 @@
     "s": "31 federal penalties totaling $14.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "environmental violation: $14.0M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -115,54 +113,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Shin-Etsu Chemical",
-    "slug": "shin-etsu-chemical",
-    "ownership": "publicly traded",
-    "hq": "Japan",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 14154517,
-    "totalRecords": 31,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 14068773,
-        "records": 22
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 85744,
-        "records": 9
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 14000314,
-        "records": 21
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 73244,
-        "records": 7
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 68459,
-        "records": 1
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 12500,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:43:14.097Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -26,7 +26,6 @@
     "s": "15 federal penalties totaling $883K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "air pollution violation: $10K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -117,69 +115,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Black Hills Corp.",
-    "slug": "black-hills-corp",
-    "ownership": "publicly traded (ticker symbol BKH)",
-    "hq": "South Dakota",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 883059,
-    "totalRecords": 15,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 350000,
-        "records": 2
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 325000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 186759,
-        "records": 10
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 21300,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "energy market violation",
-        "penalty": 350000,
-        "records": 2
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 325000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 186759,
-        "records": 10
-      },
-      {
-        "category": "pipeline safety violation",
-        "penalty": 11300,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 10000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:11:34.819Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

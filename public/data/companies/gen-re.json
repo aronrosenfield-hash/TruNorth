@@ -27,7 +27,6 @@
     "s": "22 federal penalties totaling $931.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -126,74 +125,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Amgen",
-    "slug": "amgen",
-    "ownership": "publicly traded (ticker symbol AMGN)",
-    "hq": "California",
-    "majorIndustry": "pharmaceuticals",
-    "specificIndustry": "pharmaceuticals",
-    "totalPenalty": 931844837,
-    "totalRecords": 22,
-    "offenseGroups": [
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 833000000,
-        "records": 3
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 76464000,
-        "records": 9
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 19230768,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 3073701,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 70968,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "off-label or unapproved promotion of medical products",
-        "penalty": 833000000,
-        "records": 3
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 76464000,
-        "records": 9
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 19230768,
-        "records": 2
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 2750000,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 283701,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T23:57:22.970Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00823500",

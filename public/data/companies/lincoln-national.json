@@ -27,7 +27,6 @@
     "s": "40 federal penalties totaling $263.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -159,59 +157,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Lincoln National",
-    "slug": "lincoln-national",
-    "ownership": "publicly traded (ticker symbol LNC)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "financial services",
-    "specificIndustry": "financial services",
-    "totalPenalty": 263374549,
-    "totalRecords": 40,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 252291785,
-        "records": 28
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 11065197,
-        "records": 11
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 17567,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 183707440,
-        "records": 2
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 68584345,
-        "records": 26
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 11065197,
-        "records": 11
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 17567,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:56:51.528Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00110577",

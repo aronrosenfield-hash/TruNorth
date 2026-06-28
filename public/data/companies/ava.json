@@ -27,7 +27,6 @@
     "s": "21 federal penalties totaling $1.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -140,54 +138,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Alfa Laval",
-    "slug": "alfa-laval",
-    "ownership": "publicly traded",
-    "hq": "Sweden",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "industrial equipment",
-    "totalPenalty": 1289019,
-    "totalRecords": 21,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 641179,
-        "records": 18
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 432840,
-        "records": 2
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 215000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 641179,
-        "records": 18
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 432840,
-        "records": 2
-      },
-      {
-        "category": "export control violation",
-        "penalty": 215000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T22:01:16.907Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00406801",

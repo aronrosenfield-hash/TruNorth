@@ -28,7 +28,6 @@
     "s": "32 federal penalties totaling $24.2M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "air pollution violation: $525K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -143,64 +141,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Century Aluminum",
-    "slug": "century-aluminum",
-    "ownership": "publicly traded (ticker symbol CENX)",
-    "hq": "Illinois",
-    "majorIndustry": "metals",
-    "specificIndustry": "metals",
-    "totalPenalty": 24188357,
-    "totalRecords": 32,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 23051513,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 954400,
-        "records": 14
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 182444,
-        "records": 15
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 23000000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 524500,
-        "records": 6
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 417900,
-        "records": 7
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 182444,
-        "records": 15
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 51513,
-        "records": 2
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T22:39:25.109Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00361741",

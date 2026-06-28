@@ -28,7 +28,6 @@
     "s": "3 federal penalties totaling $2.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -128,49 +126,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Bruker",
-    "slug": "bruker",
-    "ownership": "publicly traded (ticker symbol BRKR)",
-    "hq": "Massachusetts",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "scientific equipment",
-    "totalPenalty": 2425137,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 2407500,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 17637,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 2400000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 17637,
-        "records": 1
-      },
-      {
-        "category": "export control violation",
-        "penalty": 7500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:53:34.578Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

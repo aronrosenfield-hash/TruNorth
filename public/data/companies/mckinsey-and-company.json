@@ -39,7 +39,6 @@
     "rating": "Mixed",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "climate-coalitions"
     ]
   },
@@ -47,7 +46,6 @@
     "s": "11 federal penalties totaling $1.7B since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -88,69 +86,6 @@
   "ab": "#1e1535",
   "ac": "#9b8ff0",
   "dataLastUpdated": "2026-05-28",
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "mckinsey",
-      "matchedName": "McKinsey",
-      "totalPenalty": 1734555828,
-      "totalRecords": 11,
-      "offenseGroups": [
-        {
-          "category": "healthcare-related offenses",
-          "penalty": 1492500000,
-          "records": 5
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 122850000,
-          "records": 1
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 103000000,
-          "records": 2
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 15009255,
-          "records": 2
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 1196573,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "off-label or unapproved promotion of medical products",
-          "penalty": 842500000,
-          "records": 4
-        },
-        {
-          "category": "Controlled Substances Act violation",
-          "penalty": 650000000,
-          "records": 1
-        },
-        {
-          "category": "Foreign Corrupt Practices Act",
-          "penalty": 122850000,
-          "records": 1
-        },
-        {
-          "category": "product safety violation",
-          "penalty": 78000000,
-          "records": 1
-        },
-        {
-          "category": "utility safety violation",
-          "penalty": 25000000,
-          "records": 1
-        }
-      ],
-      "rating": "mixed"
-    }
-  },
   "competitors": [
     "goldman-sachs",
     "morgan-stanley",
@@ -226,74 +161,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "McKinsey",
-    "slug": "mckinsey",
-    "ownership": "privately held",
-    "hq": "New York",
-    "majorIndustry": "business services",
-    "specificIndustry": "management consulting",
-    "totalPenalty": 1734555828,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 1492500000,
-        "records": 5
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 122850000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 103000000,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 15009255,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1196573,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "off-label or unapproved promotion of medical products",
-        "penalty": 842500000,
-        "records": 4
-      },
-      {
-        "category": "Controlled Substances Act violation",
-        "penalty": 650000000,
-        "records": 1
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 122850000,
-        "records": 1
-      },
-      {
-        "category": "product safety violation",
-        "penalty": 78000000,
-        "records": 1
-      },
-      {
-        "category": "utility safety violation",
-        "penalty": 25000000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

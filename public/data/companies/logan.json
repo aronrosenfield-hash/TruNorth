@@ -26,7 +26,6 @@
     "s": "4 federal penalties totaling $24.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -139,54 +137,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Logan Health",
-    "slug": "logan-health",
-    "ownership": "non-profit",
-    "hq": "Montana",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "hospitals",
-    "totalPenalty": 24107697,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 24000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 84697,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 23000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 24000000,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 84697,
-        "records": 1
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 23000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T00:44:04.412Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

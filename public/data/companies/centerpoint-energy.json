@@ -27,7 +27,6 @@
     "s": "81 federal penalties totaling $83.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "air pollution violation: $33.2M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -159,74 +157,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "CenterPoint Energy",
-    "slug": "centerpoint-energy",
-    "ownership": "publicly traded (ticker symbol CNP)",
-    "hq": "Texas",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 83018713,
-    "totalRecords": 81,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 34185100,
-        "records": 18
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 25028250,
-        "records": 17
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 17945959,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 5576764,
-        "records": 38
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 282640,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 33184350,
-        "records": 7
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 24210000,
-        "records": 4
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 14750000,
-        "records": 1
-      },
-      {
-        "category": "utility safety violation",
-        "penalty": 5317250,
-        "records": 17
-      },
-      {
-        "category": "energy market violation",
-        "penalty": 3195959,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:45:41.024Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00333534",

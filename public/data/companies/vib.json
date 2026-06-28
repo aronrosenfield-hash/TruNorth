@@ -26,7 +26,6 @@
     "s": "52 federal penalties totaling $40.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "environmental violation: $14K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -127,69 +125,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Vibra Healthcare",
-    "slug": "vibra-healthcare",
-    "ownership": "privately held",
-    "hq": "Pennsylvania",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "hospitals (for-profit)",
-    "totalPenalty": 40223804,
-    "totalRecords": 52,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 38950000,
-        "records": 2
-      },
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 785682,
-        "records": 24
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 474222,
-        "records": 25
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 13900,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 38950000,
-        "records": 2
-      },
-      {
-        "category": "nursing home violation",
-        "penalty": 785682,
-        "records": 24
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 454220,
-        "records": 23
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 20002,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 13900,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T03:19:03.336Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

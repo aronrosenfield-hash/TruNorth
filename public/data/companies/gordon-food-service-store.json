@@ -25,7 +25,6 @@
     "s": "19 federal penalties totaling $2.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -40,8 +39,7 @@
   "environment": {
     "s": "environmental violation: $119K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -104,64 +102,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Gordon Food Service",
-    "slug": "gordon-food-service",
-    "ownership": "privately held",
-    "hq": "Michigan",
-    "majorIndustry": "restaurants and foodservice",
-    "specificIndustry": "foodservice",
-    "totalPenalty": 2601015,
-    "totalRecords": 19,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 2371387,
-        "records": 7
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 118599,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 111029,
-        "records": 9
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment discrimination",
-        "penalty": 1850000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 473387,
-        "records": 4
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 118599,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 57029,
-        "records": 8
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 54000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T00:01:40.593Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

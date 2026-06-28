@@ -26,7 +26,6 @@
     "s": "3 federal penalties totaling $31K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "mining environmental violation: $16K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -127,39 +125,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Crescent Energy Company",
-    "slug": "crescent-energy-company",
-    "ownership": "publicly traded (ticker symbol CRGY)",
-    "hq": "Texas",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 31363,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 31363,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "mining environmental violation",
-        "penalty": 16167,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 15196,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:03:47.987Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

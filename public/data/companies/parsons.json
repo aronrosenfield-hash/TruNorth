@@ -27,7 +27,6 @@
     "s": "9 federal penalties totaling $5.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -152,59 +150,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Parsons Corporation",
-    "slug": "parsons-corporation",
-    "ownership": "employee-owned",
-    "hq": "California",
-    "majorIndustry": "construction and engineering",
-    "specificIndustry": "construction &amp; engineering",
-    "totalPenalty": 5672874,
-    "totalRecords": 9,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 3800000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1605874,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 267000,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 3800000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 1605874,
-        "records": 5
-      },
-      {
-        "category": "nuclear safety violation",
-        "penalty": 260000,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 7000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:03:57.965Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00103549",

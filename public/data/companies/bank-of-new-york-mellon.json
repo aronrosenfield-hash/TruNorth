@@ -28,7 +28,6 @@
     "s": "42 federal penalties totaling $1.7B since 2000 (Violation Tracker).",
     "rating": "poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -162,74 +160,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Bank of New York Mellon",
-    "slug": "bank-of-new-york-mellon",
-    "ownership": "publicly traded (ticker symbol BK)",
-    "hq": "New York",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking",
-    "totalPenalty": 1650805839,
-    "totalRecords": 42,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 1095514397,
-        "records": 30
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 423313037,
-        "records": 5
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 82500000,
-        "records": 2
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 34630405,
-        "records": 2
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 14830000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "banking violation",
-        "penalty": 890516000,
-        "records": 5
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 421200000,
-        "records": 3
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 166752280,
-        "records": 17
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 82500000,
-        "records": 2
-      },
-      {
-        "category": "anti-money-laundering deficiencies",
-        "penalty": 38000000,
-        "records": 1
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:57:58.617Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00494534",

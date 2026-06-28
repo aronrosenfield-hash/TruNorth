@@ -25,7 +25,6 @@
     "s": "6 federal penalties totaling $76K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $21K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -116,44 +114,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "L.B. Foster Co.",
-    "slug": "lb-foster-co",
-    "ownership": "publicly traded (ticker symbol FSTR)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "industrial equipment",
-    "totalPenalty": 75948,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 54948,
-        "records": 5
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 21000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 54948,
-        "records": 5
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 21000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:29:30.347Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

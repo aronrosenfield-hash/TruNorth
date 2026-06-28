@@ -38,15 +38,13 @@
     "s": "No public record found.",
     "rating": "Below Average",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "15 federal penalties totaling $16.4M since 2000 (Violation Tracker).",
     "rating": "Below Average",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -100,44 +98,6 @@
     "courtlistener": "2026-06-11T14:35:43.162Z",
     "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "papa-johns-international",
-      "matchedName": "Papa John's International",
-      "totalPenalty": 16400324,
-      "totalRecords": 15,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 16297949,
-          "records": 11
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 102375,
-          "records": 4
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "wage and hour violation",
-          "penalty": 16122949,
-          "records": 10
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 175000,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 102375,
-          "records": 4
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "domino-s",
@@ -334,49 +294,6 @@
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Papa John's International",
-    "slug": "papa-johns-international",
-    "ownership": "publicly traded (ticker symbol PZZA)",
-    "hq": "Kentucky",
-    "majorIndustry": "restaurants and foodservice",
-    "specificIndustry": "pizza restaurants",
-    "totalPenalty": 16400324,
-    "totalRecords": 15,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 16297949,
-        "records": 11
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 102375,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 16122949,
-        "records": 10
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 175000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 102375,
-        "records": 4
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

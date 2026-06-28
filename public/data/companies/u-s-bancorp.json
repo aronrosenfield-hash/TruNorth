@@ -38,15 +38,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "65 federal penalties totaling $1.7B since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -95,69 +93,6 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "us-bancorp",
-      "matchedName": "U.S. Bancorp",
-      "totalPenalty": 1681194826,
-      "totalRecords": 65,
-      "offenseGroups": [
-        {
-          "category": "financial offenses",
-          "penalty": 1084044942,
-          "records": 30
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 320902325,
-          "records": 20
-        },
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 200000000,
-          "records": 1
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 38735000,
-          "records": 4
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 37503784,
-          "records": 9
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "anti-money-laundering deficiencies",
-          "penalty": 629600000,
-          "records": 5
-        },
-        {
-          "category": "banking violation",
-          "penalty": 404185088,
-          "records": 14
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 265613500,
-          "records": 11
-        },
-        {
-          "category": "False Claims Act and related",
-          "penalty": 200000000,
-          "records": 1
-        },
-        {
-          "category": "investor protection violation",
-          "penalty": 50227441,
-          "records": 8
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "jpmorgan-chase",
@@ -245,74 +180,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "U.S. Bancorp",
-    "slug": "us-bancorp",
-    "ownership": "publicly traded (ticker symbol USB)",
-    "hq": "Minnesota",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking",
-    "totalPenalty": 1681194826,
-    "totalRecords": 65,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 1084044942,
-        "records": 30
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 320902325,
-        "records": 20
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 200000000,
-        "records": 1
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 38735000,
-        "records": 4
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 37503784,
-        "records": 9
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "anti-money-laundering deficiencies",
-        "penalty": 629600000,
-        "records": 5
-      },
-      {
-        "category": "banking violation",
-        "penalty": 404185088,
-        "records": 14
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 265613500,
-        "records": 11
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 200000000,
-        "records": 1
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 50227441,
-        "records": 8
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

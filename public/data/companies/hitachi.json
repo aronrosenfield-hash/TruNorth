@@ -26,7 +26,6 @@
     "s": "144 federal penalties totaling $785.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "air pollution violation: $559K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -171,74 +169,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Hitachi",
-    "slug": "hitachi",
-    "ownership": "publicly traded",
-    "hq": "Japan",
-    "majorIndustry": "diversified",
-    "specificIndustry": "diversified",
-    "totalPenalty": 785368853,
-    "totalRecords": 144,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 772115950,
-        "records": 47
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 10896924,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 1374199,
-        "records": 77
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 634328,
-        "records": 10
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 347452,
-        "records": 9
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 753115950,
-        "records": 46
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 19000000,
-        "records": 1
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 10896924,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 1374199,
-        "records": 77
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 559328,
-        "records": 9
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:06:53.917Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -28,7 +28,6 @@
     "s": "34 federal penalties totaling $1.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $583K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -140,69 +138,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "General Mills",
-    "slug": "general-mills",
-    "ownership": "publicly traded (ticker symbol GIS)",
-    "hq": "Minnesota",
-    "majorIndustry": "food products",
-    "specificIndustry": "food products",
-    "totalPenalty": 1454783,
-    "totalRecords": 34,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 695925,
-        "records": 10
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 375000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 305358,
-        "records": 20
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 78500,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 583148,
-        "records": 7
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 375000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 265358,
-        "records": 19
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 86212,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 72500,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T21:50:42.264Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00432856",

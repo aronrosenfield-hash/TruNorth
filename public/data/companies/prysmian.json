@@ -28,7 +28,6 @@
     "s": "34 federal penalties totaling $76.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $149K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -132,74 +130,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Prysmian Group",
-    "slug": "prysmian-group",
-    "ownership": "publicly traded",
-    "hq": "Italy",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "electronic equipment",
-    "totalPenalty": 76812255,
-    "totalRecords": 34,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 75000000,
-        "records": 2
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 920000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 392997,
-        "records": 22
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 343719,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 155539,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 75000000,
-        "records": 2
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 920000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 392997,
-        "records": 22
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 298458,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 148649,
-        "records": 4
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:42:13.237Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

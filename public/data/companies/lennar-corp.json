@@ -26,7 +26,6 @@
     "s": "66 federal penalties totaling $24.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $7.1M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -133,74 +131,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Lennar",
-    "slug": "lennar",
-    "ownership": "publicly traded (ticker symbol LEN)",
-    "hq": "Florida",
-    "majorIndustry": "construction and engineering",
-    "specificIndustry": "homebuilding",
-    "totalPenalty": 24200727,
-    "totalRecords": 66,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 13200000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 7736009,
-        "records": 31
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 2919709,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 331509,
-        "records": 30
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 13500,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 13200000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 7092768,
-        "records": 27
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 2919709,
-        "records": 2
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 636241,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 331509,
-        "records": 30
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:55:02.830Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

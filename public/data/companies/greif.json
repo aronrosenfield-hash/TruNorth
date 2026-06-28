@@ -26,7 +26,6 @@
     "s": "77 federal penalties totaling $2.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "air pollution violation: $541K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -147,64 +145,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Greif Inc.",
-    "slug": "greif-inc",
-    "ownership": "publicly traded (ticker symbol GEF)",
-    "hq": "Ohio",
-    "majorIndustry": "paper and packaging",
-    "specificIndustry": "packaging",
-    "totalPenalty": 2718195,
-    "totalRecords": 77,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 1406722,
-        "records": 52
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1091149,
-        "records": 18
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 220324,
-        "records": 7
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 1406722,
-        "records": 52
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 541000,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 540149,
-        "records": 14
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 194690,
-        "records": 5
-      },
-      {
-        "category": "Family and Medical Leave Act",
-        "penalty": 15000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:05:00.837Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -45,15 +45,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "1 federal penalties totaling $506K since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -104,29 +102,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "regeneron-pharmaceuticals",
-      "matchedName": "Regeneron Pharmaceuticals",
-      "totalPenalty": 506035,
-      "totalRecords": 1,
-      "offenseGroups": [
-        {
-          "category": "financial offenses",
-          "penalty": 506035,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "tax violations",
-          "penalty": 506035,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "amgen",
@@ -206,34 +181,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Regeneron Pharmaceuticals",
-    "slug": "regeneron-pharmaceuticals",
-    "ownership": "publicly traded (ticker symbol REGN)",
-    "hq": "New York",
-    "majorIndustry": "pharmaceuticals",
-    "specificIndustry": "pharmaceuticals",
-    "totalPenalty": 506035,
-    "totalRecords": 1,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 506035,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "tax violations",
-        "penalty": 506035,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00562264",

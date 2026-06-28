@@ -26,7 +26,6 @@
     "s": "30 federal penalties totaling $3.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "air pollution violation: $2.3M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -126,69 +124,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Select Water Solutions Inc.",
-    "slug": "select-water-solutions-inc",
-    "ownership": "publicly traded (ticker symbol WTTR)",
-    "hq": "Texas",
-    "majorIndustry": "oilfield services and supplies",
-    "specificIndustry": "oilfield services",
-    "totalPenalty": 3094566,
-    "totalRecords": 30,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 2553386,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 290160,
-        "records": 19
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 213945,
-        "records": 5
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 37075,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 2300000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 253386,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 248730,
-        "records": 16
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 137347,
-        "records": 3
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 76598,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:38:03.863Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

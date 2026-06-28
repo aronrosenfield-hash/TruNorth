@@ -26,7 +26,6 @@
     "s": "1 federal penalties totaling $20K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -116,34 +114,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "BancFirst",
-    "slug": "bancfirst",
-    "ownership": "publicly traded (ticker symbol BANF)",
-    "hq": "Oklahoma",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking",
-    "totalPenalty": 20229,
-    "totalRecords": 1,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 20229,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 20229,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:57:00.911Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

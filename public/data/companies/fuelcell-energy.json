@@ -27,7 +27,6 @@
     "s": "2 federal penalties totaling $16K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -127,34 +125,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "FuelCell Energy",
-    "slug": "fuelcell-energy",
-    "ownership": "publicly traded (ticker symbol FCEL)",
-    "hq": "Connecticut",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "power systems",
-    "totalPenalty": 16116,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 16116,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 16116,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:05:51.663Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00204180",

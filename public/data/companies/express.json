@@ -44,15 +44,13 @@
     "s": "environmental violation: $12K in federal penalties (Violation Tracker).",
     "rating": "Very Poor",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "7 federal penalties totaling $32.3M since 2000 (Violation Tracker).",
     "rating": "Below Average",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -100,54 +98,6 @@
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
   "dataLastUpdated": "2026-05-28",
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "nippon-express",
-      "matchedName": "Nippon Express",
-      "totalPenalty": 32272234,
-      "totalRecords": 7,
-      "offenseGroups": [
-        {
-          "category": "competition-related offenses",
-          "penalty": 32243507,
-          "records": 3
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 16927,
-          "records": 2
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 11800,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 32226507,
-          "records": 2
-        },
-        {
-          "category": "export control violation",
-          "penalty": 17000,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 16927,
-          "records": 2
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 11800,
-          "records": 2
-        }
-      ],
-      "rating": "good"
-    }
-  },
   "competitors": [
     "handm",
     "zara-inditex",
@@ -242,59 +192,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Nippon Express",
-    "slug": "nippon-express",
-    "ownership": "publicly traded",
-    "hq": "Japan",
-    "majorIndustry": "freight and logistics",
-    "specificIndustry": "logistics",
-    "totalPenalty": 32272234,
-    "totalRecords": 7,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 32243507,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 16927,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 11800,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 32226507,
-        "records": 2
-      },
-      {
-        "category": "export control violation",
-        "penalty": 17000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 16927,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 11800,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00040535",

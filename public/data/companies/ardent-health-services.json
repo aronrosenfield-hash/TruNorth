@@ -26,7 +26,6 @@
     "s": "1 federal penalties totaling $20K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -104,34 +102,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ardent Health Services",
-    "slug": "ardent-health-services",
-    "ownership": "privately held",
-    "hq": "Tennessee",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "healthcare services",
-    "totalPenalty": 20000,
-    "totalRecords": 1,
-    "offenseGroups": [
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 20000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "HHS civil monetary penalties",
-        "penalty": 20000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T21:55:38.326Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -45,15 +45,13 @@
     "s": "No public record found.",
     "rating": "Poor",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "133 federal penalties totaling $2.2B since 2000 (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -114,69 +112,6 @@
     "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
     "secLitigation": "2026-06-22T17:33:19.578Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "general-motors",
-      "matchedName": "General Motors",
-      "totalPenalty": 2161593497,
-      "totalRecords": 133,
-      "offenseGroups": [
-        {
-          "category": "safety-related offenses",
-          "penalty": 1548411162,
-          "records": 68
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 417084471,
-          "records": 10
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 134818964,
-          "records": 25
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 39440400,
-          "records": 26
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 15088500,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "motor vehicle safety violation",
-          "penalty": 1072496000,
-          "records": 10
-        },
-        {
-          "category": "product safety violation",
-          "penalty": 475200000,
-          "records": 5
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 404256171,
-          "records": 6
-        },
-        {
-          "category": "fuel economy (CAFE) violation",
-          "penalty": 128236685,
-          "records": 1
-        },
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 37500000,
-          "records": 1
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "ford-motor",
@@ -323,74 +258,6 @@
     "source": "courtlistener-recap"
   },
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "General Motors",
-    "slug": "general-motors",
-    "ownership": "publicly traded (ticker symbol GM)",
-    "hq": "Michigan",
-    "majorIndustry": "motor vehicles",
-    "specificIndustry": "motor vehicles",
-    "totalPenalty": 2161593497,
-    "totalRecords": 133,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 1548411162,
-        "records": 68
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 417084471,
-        "records": 10
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 134818964,
-        "records": 25
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 39440400,
-        "records": 26
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 15088500,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "motor vehicle safety violation",
-        "penalty": 1072496000,
-        "records": 10
-      },
-      {
-        "category": "product safety violation",
-        "penalty": 475200000,
-        "records": 5
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 404256171,
-        "records": 6
-      },
-      {
-        "category": "fuel economy (CAFE) violation",
-        "penalty": 128236685,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 37500000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00076810",

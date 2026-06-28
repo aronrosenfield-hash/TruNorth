@@ -27,7 +27,6 @@
     "s": "23 federal penalties totaling $6.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,7 +47,6 @@
     "s": "Insure Our Future 2024 scorecard: 0.4/10 (very-weak). Sub-scores: coal underwriting very-weak; oil & gas underwriting very-weak. W. R. Berkley: among the lowest scorecard tiers — no public coal, oil, or gas underwriting restrictions; named as a landmark laggard.",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "insure-our-future"
     ]
   },
@@ -130,44 +128,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "W.R. Berkley",
-    "slug": "wr-berkley",
-    "ownership": "publicly traded (ticker symbol WRB)",
-    "hq": "Connecticut",
-    "majorIndustry": "financial services",
-    "specificIndustry": "insurance",
-    "totalPenalty": 6674592,
-    "totalRecords": 23,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 6669592,
-        "records": 22
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "insurance violation",
-        "penalty": 6669592,
-        "records": 22
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:03:56.836Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00383307",

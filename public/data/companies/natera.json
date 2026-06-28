@@ -26,7 +26,6 @@
     "s": "7 federal penalties totaling $10.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -147,49 +145,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Natera Inc.",
-    "slug": "natera-inc",
-    "ownership": "publicly traded (ticker symbol NTRA)",
-    "hq": "California",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "genetic diagnostics",
-    "totalPenalty": 10794163,
-    "totalRecords": 7,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 10635615,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 158548,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 10635615,
-        "records": 2
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 130004,
-        "records": 4
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 28544,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:29:30.835Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -26,7 +26,6 @@
     "s": "167 federal penalties totaling $291.9M since 2000 (Violation Tracker).",
     "rating": "poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -129,64 +127,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "ABM Industries",
-    "slug": "abm-industries",
-    "ownership": "publicly traded (ticker symbol ABM)",
-    "hq": "New York",
-    "majorIndustry": "business services",
-    "specificIndustry": "business services",
-    "totalPenalty": 291943793,
-    "totalRecords": 167,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 291185094,
-        "records": 106
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 713699,
-        "records": 60
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 45000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 277547578,
-        "records": 76
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 12195676,
-        "records": 9
-      },
-      {
-        "category": "employment screening violation",
-        "penalty": 975000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 698549,
-        "records": 59
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 395792,
-        "records": 15
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:08:52.353Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

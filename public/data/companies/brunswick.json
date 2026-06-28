@@ -27,7 +27,6 @@
     "s": "33 federal penalties totaling $9.9M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "environmental violation: $355K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -148,64 +146,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Brunswick Corp.",
-    "slug": "brunswick-corp",
-    "ownership": "publicly traded (ticker symbol BC)",
-    "hq": "Illinois",
-    "majorIndustry": "diversified",
-    "specificIndustry": "diversified",
-    "totalPenalty": 9932955,
-    "totalRecords": 33,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 9142990,
-        "records": 19
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 413965,
-        "records": 11
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 376000,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "product safety violation",
-        "penalty": 8950000,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 355330,
-        "records": 7
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 295000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 145090,
-        "records": 16
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 81000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:25:10.114Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00110262",

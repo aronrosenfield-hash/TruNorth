@@ -26,7 +26,6 @@
     "s": "7 federal penalties totaling $27.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $68K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -147,74 +145,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Innospec",
-    "slug": "innospec",
-    "ownership": "publicly traded (ticker symbol IOSP)",
-    "hq": "Colorado",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "specialty chemicals",
-    "totalPenalty": 27590851,
-    "totalRecords": 7,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 25300000,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 2200000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 68000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 12850,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 10001,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 25300000,
-        "records": 2
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 2200000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 68000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 12850,
-        "records": 2
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 10001,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:28:20.333Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

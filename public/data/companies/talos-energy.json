@@ -26,7 +26,6 @@
     "s": "56 federal penalties totaling $7.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $4.9M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -147,64 +145,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Talos Energy",
-    "slug": "talos-energy",
-    "ownership": "publicly traded (ticker symbol TALO)",
-    "hq": "Texas",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil and gas",
-    "totalPenalty": 7597747,
-    "totalRecords": 56,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 7453598,
-        "records": 54
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 136000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 8149,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 4901544,
-        "records": 10
-      },
-      {
-        "category": "oil or gas drilling violation",
-        "penalty": 2366154,
-        "records": 40
-      },
-      {
-        "category": "federal leasing royalty violation",
-        "penalty": 136000,
-        "records": 1
-      },
-      {
-        "category": "pipeline safety violation",
-        "penalty": 135900,
-        "records": 3
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 50000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T01:24:53.228Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

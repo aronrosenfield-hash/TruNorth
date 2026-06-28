@@ -26,7 +26,6 @@
     "s": "5 federal penalties totaling $48K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $15K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -141,44 +139,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "CECO Environmental Corp.",
-    "slug": "ceco-environmental-corp",
-    "ownership": "publicly traded (ticker symbol CECO)",
-    "hq": "Ohio",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "environmental and energy technologies",
-    "totalPenalty": 48465,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 33465,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 15000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 33465,
-        "records": 4
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 15000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:44:21.693Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

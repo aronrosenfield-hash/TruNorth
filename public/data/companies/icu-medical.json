@@ -28,7 +28,6 @@
     "s": "7 federal penalties totaling $71K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "environmental violation: $20K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -184,44 +182,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "ICU Medical Inc.",
-    "slug": "icu-medical-inc",
-    "ownership": "publicly traded (ticker symbol ICUI)",
-    "hq": "California",
-    "majorIndustry": "medical equipment and supplies",
-    "specificIndustry": "medical equipment",
-    "totalPenalty": 70922,
-    "totalRecords": 7,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 51022,
-        "records": 6
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 19900,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 51022,
-        "records": 6
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 19900,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:25:42.325Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00777706",

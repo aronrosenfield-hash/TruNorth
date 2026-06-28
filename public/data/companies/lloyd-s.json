@@ -29,7 +29,6 @@
     "s": "5 federal penalties totaling $566.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -142,44 +140,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Lloyds Banking Group",
-    "slug": "lloyds-banking-group",
-    "ownership": "publicly traded",
-    "hq": "United Kingdom",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking",
-    "totalPenalty": 566250000,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 350000000,
-        "records": 2
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 216250000,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "economic sanction violation",
-        "penalty": 350000000,
-        "records": 2
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 216250000,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T00:43:46.499Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00134783",

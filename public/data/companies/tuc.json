@@ -28,7 +28,6 @@
     "s": "16 federal penalties totaling $693.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "air pollution violation: $662.5M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -106,59 +104,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "East Kentucky Power Cooperative",
-    "slug": "east-kentucky-power-cooperative",
-    "ownership": "cooperative",
-    "hq": "Kentucky",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "power generation",
-    "totalPenalty": 693292582,
-    "totalRecords": 16,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 693278207,
-        "records": 14
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 14375,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 662456000,
-        "records": 7
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 30792607,
-        "records": 4
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 29600,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 9375,
-        "records": 1
-      },
-      {
-        "category": "utility safety violation",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:03:18.448Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00165639",

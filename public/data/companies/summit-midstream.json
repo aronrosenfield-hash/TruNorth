@@ -26,7 +26,6 @@
     "s": "6 federal penalties totaling $35.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $35.0M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -133,64 +131,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Summit Midstream Partners",
-    "slug": "summit-midstream-partners",
-    "ownership": "publicly traded (ticker symbol SMLP)",
-    "hq": "Texas",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 35170410,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 35132909,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 27500,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 10001,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 35000000,
-        "records": 2
-      },
-      {
-        "category": "oil or gas drilling violation",
-        "penalty": 85484,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 47425,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 27500,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 10001,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T01:17:45.709Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

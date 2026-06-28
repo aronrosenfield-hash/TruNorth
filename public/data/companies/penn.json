@@ -27,7 +27,6 @@
     "s": "23 federal penalties totaling $10.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -129,54 +127,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Penn Mutual",
-    "slug": "penn-mutual",
-    "ownership": "mutual",
-    "hq": "Pennsylvania",
-    "majorIndustry": "financial services",
-    "specificIndustry": "insurance and investment management",
-    "totalPenalty": 10634952,
-    "totalRecords": 23,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 7246368,
-        "records": 18
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 2880000,
-        "records": 1
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 508584,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 7246368,
-        "records": 18
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 2880000,
-        "records": 1
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 508584,
-        "records": 4
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T01:47:21.108Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00851998",

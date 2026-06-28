@@ -37,15 +37,13 @@
     "s": "environmental violation: $73K in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "22 federal penalties totaling $10.7M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -98,64 +96,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "terex",
-      "matchedName": "Terex",
-      "totalPenalty": 10744146,
-      "totalRecords": 22,
-      "offenseGroups": [
-        {
-          "category": "financial offenses",
-          "penalty": 8007000,
-          "records": 2
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 2527000,
-          "records": 2
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 137120,
-          "records": 13
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 73026,
-          "records": 5
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "accounting fraud or deficiencies",
-          "penalty": 8000000,
-          "records": 1
-        },
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 2500000,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 137120,
-          "records": 13
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 73026,
-          "records": 5
-        },
-        {
-          "category": "labor relations violation",
-          "penalty": 27000,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "caterpillar",
@@ -240,69 +180,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Terex",
-    "slug": "terex",
-    "ownership": "publicly traded (ticker symbol TEX)",
-    "hq": "Connecticut",
-    "majorIndustry": "heavy equipment",
-    "specificIndustry": "construction equipment",
-    "totalPenalty": 10744146,
-    "totalRecords": 22,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 8007000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 2527000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 137120,
-        "records": 13
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 73026,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 8000000,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 2500000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 137120,
-        "records": 13
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 73026,
-        "records": 5
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 27000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -26,7 +26,6 @@
     "s": "10 federal penalties totaling $25.9M since 2000 (Violation Tracker). Supply-chain signals: CHRB 18.2/26; AU MS statement; EITI supporter.",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB",
       "chrb",
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $690K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -119,64 +117,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "BHP Group",
-    "slug": "bhp-group",
-    "ownership": "publicly traded (ticker symbol BHP)",
-    "hq": "Australia",
-    "majorIndustry": "mining and minerals",
-    "specificIndustry": "mining",
-    "totalPenalty": 25911850,
-    "totalRecords": 10,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 25000000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 766850,
-        "records": 6
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 145000,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 25000000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 690000,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 145000,
-        "records": 3
-      },
-      {
-        "category": "oil or gas drilling violation",
-        "penalty": 58100,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 18750,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:04:27.583Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

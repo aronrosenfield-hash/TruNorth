@@ -27,7 +27,6 @@
     "s": "56 federal penalties totaling $42.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "air pollution violation: $19.0M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -130,64 +128,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "APA Corporation",
-    "slug": "apa-corporation",
-    "ownership": "publicly traded (ticker symbol APA)",
-    "hq": "Texas",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 42012382,
-    "totalRecords": 56,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 26994382,
-        "records": 53
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 15000000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 18000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 19005151,
-        "records": 3
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 15000000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 4542231,
-        "records": 12
-      },
-      {
-        "category": "oil or gas drilling violation",
-        "penalty": 3447000,
-        "records": 38
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 18000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:32:27.716Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00522094",

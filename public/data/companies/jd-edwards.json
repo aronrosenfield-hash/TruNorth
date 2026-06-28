@@ -27,7 +27,6 @@
     "s": "2 federal penalties totaling $269K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "hazardous waste Violation: $250K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -123,39 +121,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Edwards Lifesciences",
-    "slug": "edwards-lifesciences",
-    "ownership": "publicly traded (ticker symbol EW)",
-    "hq": "California",
-    "majorIndustry": "medical equipment and supplies",
-    "specificIndustry": "medical supplies",
-    "totalPenalty": 268774,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 268774,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "hazardous waste Violation",
-        "penalty": 250000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 18774,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T00:19:39.626Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

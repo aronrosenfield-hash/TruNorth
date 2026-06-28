@@ -27,7 +27,6 @@
     "s": "112 federal penalties totaling $37.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "environmental violation: $2.3M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -156,69 +154,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Owens Corning",
-    "slug": "owens-corning",
-    "ownership": "publicly traded (ticker symbol OC)",
-    "hq": "Ohio",
-    "majorIndustry": "building materials",
-    "specificIndustry": "building materials",
-    "totalPenalty": 37354433,
-    "totalRecords": 112,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 30800000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 3261923,
-        "records": 58
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 2671103,
-        "records": 6
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 621407,
-        "records": 47
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 30800000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 2525000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 2339196,
-        "records": 36
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 775475,
-        "records": 17
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 621407,
-        "records": 47
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:18:59.356Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00200089",

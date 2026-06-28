@@ -26,7 +26,6 @@
     "s": "144 federal penalties totaling $2.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "environmental violation: $182K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -141,44 +139,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Sprott Mining",
-    "slug": "sprott-mining",
-    "ownership": "privately held",
-    "hq": "Canada",
-    "majorIndustry": "mining and minerals",
-    "specificIndustry": "mining",
-    "totalPenalty": 2729170,
-    "totalRecords": 144,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 2547170,
-        "records": 142
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 182000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 2547170,
-        "records": 142
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 182000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T01:04:15.226Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

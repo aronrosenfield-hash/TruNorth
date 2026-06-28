@@ -26,7 +26,6 @@
     "s": "57 federal penalties totaling $6.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "air pollution violation: $423K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -139,74 +137,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "SGS S.A.",
-    "slug": "sgs-sa",
-    "ownership": "publicly traded",
-    "hq": "Switzerland",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "testing and product control",
-    "totalPenalty": 6107920,
-    "totalRecords": 57,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 3000000,
-        "records": 1
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 2000000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 605375,
-        "records": 8
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 462463,
-        "records": 45
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 40082,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "fraud",
-        "penalty": 3000000,
-        "records": 1
-      },
-      {
-        "category": "Americans with Disabilities Act",
-        "penalty": 2000000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 422500,
-        "records": 2
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 322150,
-        "records": 38
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 163375,
-        "records": 5
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:43:12.615Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

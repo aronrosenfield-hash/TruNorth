@@ -27,7 +27,6 @@
     "s": "17 federal penalties totaling $634.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "environmental violation: $1.6M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -136,69 +134,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Carrier Global Corporation",
-    "slug": "carrier-global-corporation",
-    "ownership": "publicly traded (ticker symbol CARR)",
-    "hq": "Florida",
-    "majorIndustry": "building materials",
-    "specificIndustry": "air conditioning equipment",
-    "totalPenalty": 634765412,
-    "totalRecords": 17,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 616588750,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 18134430,
-        "records": 9
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 30232,
-        "records": 3
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 12000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "PFAS violation",
-        "penalty": 615000000,
-        "records": 1
-      },
-      {
-        "category": "product safety violation",
-        "penalty": 12000000,
-        "records": 1
-      },
-      {
-        "category": "motor vehicle safety violation",
-        "penalty": 6010000,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 1588750,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 114980,
-        "records": 5
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:36:25.414Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00740704",

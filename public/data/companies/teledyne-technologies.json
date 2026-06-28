@@ -27,7 +27,6 @@
     "s": "20 federal penalties totaling $45.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -143,74 +141,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Teledyne Technologies",
-    "slug": "teledyne-technologies",
-    "ownership": "publicly traded (ticker symbol TDY)",
-    "hq": "California",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "telecommunications equipment",
-    "totalPenalty": 44966133,
-    "totalRecords": 20,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 40899422,
-        "records": 6
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 2325000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1482315,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 216511,
-        "records": 8
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 30385,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "export control violation",
-        "penalty": 31399422,
-        "records": 5
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 9500000,
-        "records": 1
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 2325000,
-        "records": 2
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 1382315,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 167511,
-        "records": 7
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:25:26.677Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00357285",

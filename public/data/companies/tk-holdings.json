@@ -27,7 +27,6 @@
     "s": "12 federal penalties totaling $68.9M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "environmental violation: $184K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -117,64 +115,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "SK Holdings",
-    "slug": "sk-holdings",
-    "ownership": "publicly traded",
-    "hq": "South Korea",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "semiconductors",
-    "totalPenalty": 68869564,
-    "totalRecords": 12,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 68400000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 379274,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 90290,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 68400000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 184395,
-        "records": 3
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 125000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 90290,
-        "records": 6
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 69879,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T02:55:10.831Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00459693",

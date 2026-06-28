@@ -26,7 +26,6 @@
     "s": "55 federal penalties totaling $23.4M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -140,49 +138,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Old Republic International",
-    "slug": "old-republic-international",
-    "ownership": "publicly traded (ticker symbol ORI)",
-    "hq": "Illinois",
-    "majorIndustry": "financial services",
-    "specificIndustry": "insurance",
-    "totalPenalty": 23356322,
-    "totalRecords": 55,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 13000000,
-        "records": 2
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 10356322,
-        "records": 53
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 13000000,
-        "records": 2
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 8496963,
-        "records": 3
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 1859359,
-        "records": 50
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:54:34.488Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

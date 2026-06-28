@@ -43,15 +43,13 @@
     "s": "environmental violation: $1.2M in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "28 federal penalties totaling $4.7M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -104,59 +102,6 @@
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "rayonier",
-      "matchedName": "Rayonier",
-      "totalPenalty": 4703214,
-      "totalRecords": 28,
-      "offenseGroups": [
-        {
-          "category": "competition-related offenses",
-          "penalty": 3000000,
-          "records": 2
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 1508144,
-          "records": 13
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 195070,
-          "records": 13
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 3000000,
-          "records": 2
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 1197547,
-          "records": 6
-        },
-        {
-          "category": "water pollution violation",
-          "penalty": 225000,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 174395,
-          "records": 10
-        },
-        {
-          "category": "air pollution violation",
-          "penalty": 85597,
-          "records": 6
-        }
-      ],
-      "rating": "good"
-    }
-  },
   "competitors": [
     "weyerhaeuser",
     "potlatch-deltic"
@@ -207,64 +152,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Rayonier",
-    "slug": "rayonier",
-    "ownership": "publicly traded (ticker symbol RYN)",
-    "hq": "Florida",
-    "majorIndustry": "real estate",
-    "specificIndustry": "real estate",
-    "totalPenalty": 4703214,
-    "totalRecords": 28,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 3000000,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1508144,
-        "records": 13
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 195070,
-        "records": 13
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 3000000,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 1197547,
-        "records": 6
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 225000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 174395,
-        "records": 10
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 85597,
-        "records": 6
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00451757",

@@ -26,7 +26,6 @@
     "s": "12 federal penalties totaling $34.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $13.1M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -148,44 +146,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Antero Resources",
-    "slug": "antero-resources",
-    "ownership": "publicly traded (ticker symbol AR)",
-    "hq": "Colorado",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 33963750,
-    "totalRecords": 12,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 33963750,
-        "records": 12
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 13144500,
-        "records": 7
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 11150000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 9669250,
-        "records": 4
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:31:57.326Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

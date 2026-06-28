@@ -28,7 +28,6 @@
     "s": "9 federal penalties totaling $95.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "environmental violation: $13K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -149,74 +147,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Smith & Nephew",
-    "slug": "smith-and-nephew",
-    "ownership": "publicly traded",
-    "hq": "United Kingdom",
-    "majorIndustry": "medical equipment and supplies",
-    "specificIndustry": "medical equipment",
-    "totalPenalty": 95346510,
-    "totalRecords": 9,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 37207410,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 31500000,
-        "records": 2
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 22200000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 4420000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 19100,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 37207410,
-        "records": 2
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 31500000,
-        "records": 2
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 22200000,
-        "records": 2
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 4420000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 12500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:21:35.342Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00374066",

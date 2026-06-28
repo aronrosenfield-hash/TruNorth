@@ -26,7 +26,6 @@
     "s": "5 federal penalties totaling $702K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $266K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -146,54 +144,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Formfactor Inc.",
-    "slug": "formfactor-inc",
-    "ownership": "publicly traded (ticker symbol FORM)",
-    "hq": "California",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "semiconductor components",
-    "totalPenalty": 701940,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 531940,
-        "records": 4
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 170000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 265970,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 258170,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 170000,
-        "records": 1
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 7800,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:25:55.758Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

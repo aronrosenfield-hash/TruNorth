@@ -25,7 +25,6 @@
     "s": "8 federal penalties totaling $624.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -144,49 +142,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Mitsubishi UFJ Financial Group",
-    "slug": "mitsubishi-ufj-financial-group",
-    "ownership": "publicly traded",
-    "hq": "Japan",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking",
-    "totalPenalty": 624491634,
-    "totalRecords": 8,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 583991634,
-        "records": 6
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 40500000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "economic sanction violation",
-        "penalty": 573571634,
-        "records": 3
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 40500000,
-        "records": 2
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 10420000,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:08:24.639Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

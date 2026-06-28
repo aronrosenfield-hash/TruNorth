@@ -26,7 +26,6 @@
     "s": "19 federal penalties totaling $36.7M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -118,64 +116,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Jackson Financial",
-    "slug": "jackson-financial",
-    "ownership": "publicly traded (ticker symbol JXN)",
-    "hq": "Michigan",
-    "majorIndustry": "financial services",
-    "specificIndustry": "insurance",
-    "totalPenalty": 36722534,
-    "totalRecords": 19,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 20561834,
-        "records": 3
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 15676700,
-        "records": 15
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 484000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment discrimination",
-        "penalty": 20500000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 11200000,
-        "records": 1
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 4476700,
-        "records": 14
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 484000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 61834,
-        "records": 2
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:42:21.751Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

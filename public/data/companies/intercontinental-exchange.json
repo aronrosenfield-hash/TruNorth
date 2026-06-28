@@ -28,7 +28,6 @@
     "s": "7 federal penalties totaling $65.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -156,34 +154,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "IntercontinentalExchange Group",
-    "slug": "intercontinentalexchange-group",
-    "ownership": "publicly traded (ticker symbol ICE)",
-    "hq": "Georgia",
-    "majorIndustry": "financial services",
-    "specificIndustry": "financial services",
-    "totalPenalty": 65500000,
-    "totalRecords": 7,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 65500000,
-        "records": 7
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 65500000,
-        "records": 7
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:31:42.673Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00443168",

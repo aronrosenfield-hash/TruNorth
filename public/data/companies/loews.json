@@ -27,7 +27,6 @@
     "s": "125 federal penalties totaling $81.4M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -159,74 +157,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Loews Corp.",
-    "slug": "loews-corp",
-    "ownership": "publicly traded (ticker symbol L)",
-    "hq": "New York",
-    "majorIndustry": "diversified",
-    "specificIndustry": "diversified",
-    "totalPenalty": 81429882,
-    "totalRecords": 125,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 58128450,
-        "records": 4
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 11648875,
-        "records": 76
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 5750000,
-        "records": 1
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 3727272,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 2010076,
-        "records": 35
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 33000000,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 25000000,
-        "records": 1
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 6798875,
-        "records": 75
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 5750000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 4850000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:04:12.225Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00416495",

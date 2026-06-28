@@ -44,15 +44,13 @@
     "s": "environmental violation: $2.7M in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "10 federal penalties totaling $3.3M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -103,69 +101,6 @@
     "legacy": "2026-05-28",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
   },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "bacardi-limited",
-      "matchedName": "Bacardi Limited",
-      "totalPenalty": 3285835,
-      "totalRecords": 10,
-      "offenseGroups": [
-        {
-          "category": "environment-related offenses",
-          "penalty": 2682500,
-          "records": 3
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 320000,
-          "records": 3
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 153333,
-          "records": 1
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 110000,
-          "records": 1
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 20002,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "environmental violation",
-          "penalty": 2682500,
-          "records": 3
-        },
-        {
-          "category": "tax violations",
-          "penalty": 320000,
-          "records": 3
-        },
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 153333,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 110000,
-          "records": 1
-        },
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 20002,
-          "records": 2
-        }
-      ],
-      "rating": "good"
-    }
-  },
   "competitors": [
     "diageo",
     "brown-forman",
@@ -213,74 +148,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Bacardi Limited",
-    "slug": "bacardi-limited",
-    "ownership": "privately held",
-    "hq": "Bermuda",
-    "majorIndustry": "beverages",
-    "specificIndustry": "beverages",
-    "totalPenalty": 3285835,
-    "totalRecords": 10,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 2682500,
-        "records": 3
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 320000,
-        "records": 3
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 153333,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 110000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 20002,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 2682500,
-        "records": 3
-      },
-      {
-        "category": "tax violations",
-        "penalty": 320000,
-        "records": 3
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 153333,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 110000,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 20002,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00160838",

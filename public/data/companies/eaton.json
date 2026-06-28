@@ -44,15 +44,13 @@
     "s": "hazardous waste violation: $538K in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "67 federal penalties totaling $2.5M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -105,64 +103,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "eaton",
-      "matchedName": "Eaton",
-      "totalPenalty": 2467090,
-      "totalRecords": 67,
-      "offenseGroups": [
-        {
-          "category": "safety-related offenses",
-          "penalty": 1258368,
-          "records": 47
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 1024997,
-          "records": 13
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 170067,
-          "records": 6
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 13658,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 702968,
-          "records": 42
-        },
-        {
-          "category": "aviation safety violation",
-          "penalty": 548200,
-          "records": 4
-        },
-        {
-          "category": "hazardous waste violation",
-          "penalty": 537997,
-          "records": 4
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 482000,
-          "records": 8
-        },
-        {
-          "category": "labor relations violation",
-          "penalty": 148700,
-          "records": 5
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "abb",
@@ -255,69 +195,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Eaton",
-    "slug": "eaton",
-    "ownership": "publicly traded (ticker symbol ETN)",
-    "hq": "Ireland",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "industrial equipment",
-    "totalPenalty": 2467090,
-    "totalRecords": 67,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 1258368,
-        "records": 47
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1024997,
-        "records": 13
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 170067,
-        "records": 6
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 13658,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 702968,
-        "records": 42
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 548200,
-        "records": 4
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 537997,
-        "records": 4
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 482000,
-        "records": 8
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 148700,
-        "records": 5
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00034827",

@@ -26,7 +26,6 @@
     "s": "6 federal penalties totaling $2.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $2.0M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -147,59 +145,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Modine Manufacturing",
-    "slug": "modine-manufacturing",
-    "ownership": "publicly traded (ticker symbol MOD)",
-    "hq": "Wisconsin",
-    "majorIndustry": "automotive parts",
-    "specificIndustry": "automotive parts",
-    "totalPenalty": 2044336,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 2005000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 25336,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 14000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 2005000,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 16336,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 14000,
-        "records": 1
-      },
-      {
-        "category": "motor vehicle safety violation",
-        "penalty": 9000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:23:20.350Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -26,7 +26,6 @@
     "s": "35 federal penalties totaling $1.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $282K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -122,54 +120,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Kinross Gold",
-    "slug": "kinross-gold",
-    "ownership": "publicly traded (ticker symbol KGC)",
-    "hq": "Canada",
-    "majorIndustry": "mining and minerals",
-    "specificIndustry": "mining",
-    "totalPenalty": 1649308,
-    "totalRecords": 35,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 950000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 416870,
-        "records": 32
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 282438,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 950000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 416870,
-        "records": 32
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 282438,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:50:13.954Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

@@ -27,7 +27,6 @@
     "s": "83 federal penalties totaling $1.8B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "air pollution violation: $1.1B in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -157,74 +155,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "FirstEnergy",
-    "slug": "firstenergy",
-    "ownership": "publicly traded (ticker symbol FE)",
-    "hq": "Ohio",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 1848539264,
-    "totalRecords": 83,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1143865795,
-        "records": 36
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 301700000,
-        "records": 8
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 233860000,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 100000000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 36175164,
-        "records": 25
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 1133700000,
-        "records": 7
-      },
-      {
-        "category": "utility service violation",
-        "penalty": 250700000,
-        "records": 1
-      },
-      {
-        "category": "kickbacks and bribery",
-        "penalty": 230000000,
-        "records": 1
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 100000000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 51000000,
-        "records": 7
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:21:04.044Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00140855",

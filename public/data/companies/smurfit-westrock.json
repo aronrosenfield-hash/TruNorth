@@ -27,7 +27,6 @@
     "s": "320 federal penalties totaling $121.0M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $5.4M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -156,69 +154,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Smurfit Westrock PLC",
-    "slug": "smurfit-westrock-plc",
-    "ownership": "publicly traded (ticker symbol SW)",
-    "hq": "Ireland",
-    "majorIndustry": "paper and packaging",
-    "specificIndustry": "packaging",
-    "totalPenalty": 121043786,
-    "totalRecords": 320,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 92500000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 19418817,
-        "records": 48
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 6459586,
-        "records": 94
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 2665383,
-        "records": 177
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 92500000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 8612603,
-        "records": 5
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 7750000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 5382625,
-        "records": 60
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 2503863,
-        "records": 162
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:57:36.150Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00117424",

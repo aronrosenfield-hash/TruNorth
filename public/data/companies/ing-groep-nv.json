@@ -25,7 +25,6 @@
     "s": "4 federal penalties totaling $629.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -40,8 +39,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -122,44 +120,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "ING",
-    "slug": "ing",
-    "ownership": "publicly traded (ticker symbol ING)",
-    "hq": "Netherlands",
-    "majorIndustry": "financial services",
-    "specificIndustry": "financial services",
-    "totalPenalty": 629490000,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 619000000,
-        "records": 3
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 10490000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "economic sanction violation",
-        "penalty": 619000000,
-        "records": 3
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 10490000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:27:35.618Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

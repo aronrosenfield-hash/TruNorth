@@ -27,7 +27,6 @@
     "s": "22 federal penalties totaling $29.0M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "environmental violation: $33K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -157,64 +155,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Darden Restaurants",
-    "slug": "darden-restaurants",
-    "ownership": "publicly traded (ticker symbol DRI)",
-    "hq": "Florida",
-    "majorIndustry": "restaurants and foodservice",
-    "specificIndustry": "restaurants",
-    "totalPenalty": 29044552,
-    "totalRecords": 22,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 28984281,
-        "records": 17
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 33466,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 26805,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 24599656,
-        "records": 11
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 4340000,
-        "records": 4
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 44625,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 33466,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 26805,
-        "records": 3
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:17:20.444Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00108282",

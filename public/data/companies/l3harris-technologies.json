@@ -45,15 +45,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "98 federal penalties totaling $253.5M since 2000 (Violation Tracker).",
     "rating": "Below Average",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -106,69 +104,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "l3harris-technologies",
-      "matchedName": "L3Harris Technologies",
-      "totalPenalty": 253548770,
-      "totalRecords": 98,
-      "offenseGroups": [
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 133318819,
-          "records": 8
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 57533000,
-          "records": 9
-        },
-        {
-          "category": "miscellaneous offenses",
-          "penalty": 50000000,
-          "records": 1
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 8954632,
-          "records": 45
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 1600000,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "False Claims Act and related",
-          "penalty": 133318819,
-          "records": 8
-        },
-        {
-          "category": "misuse of classified data",
-          "penalty": 50000000,
-          "records": 1
-        },
-        {
-          "category": "export control violation",
-          "penalty": 29033000,
-          "records": 7
-        },
-        {
-          "category": "Foreign Corrupt Practices Act",
-          "penalty": 28500000,
-          "records": 2
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 5522031,
-          "records": 29
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "lockheed-martin",
@@ -268,74 +203,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "L3Harris Technologies",
-    "slug": "l3harris-technologies",
-    "ownership": "publicly traded (ticker symbol LHX)",
-    "hq": "Florida",
-    "majorIndustry": "aerospace and military contracting",
-    "specificIndustry": "aerospace &amp; military contracting",
-    "totalPenalty": 253548770,
-    "totalRecords": 98,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 133318819,
-        "records": 8
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 57533000,
-        "records": 9
-      },
-      {
-        "category": "miscellaneous offenses",
-        "penalty": 50000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 8954632,
-        "records": 45
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 1600000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 133318819,
-        "records": 8
-      },
-      {
-        "category": "misuse of classified data",
-        "penalty": 50000000,
-        "records": 1
-      },
-      {
-        "category": "export control violation",
-        "penalty": 29033000,
-        "records": 7
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 28500000,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 5522031,
-        "records": 29
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00100321",

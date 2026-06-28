@@ -26,7 +26,6 @@
     "s": "13 federal penalties totaling $242K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $66K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -153,54 +151,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "NN Inc.",
-    "slug": "nn-inc",
-    "ownership": "publicly traded (ticker symbol NNBR)",
-    "hq": "Tennessee",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "industrial products",
-    "totalPenalty": 242234,
-    "totalRecords": 13,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 118683,
-        "records": 9
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 66373,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 57178,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 118683,
-        "records": 9
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 66373,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 57178,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:40:30.057Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -27,7 +27,6 @@
     "s": "5 federal penalties totaling $17.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -150,49 +148,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "IAC/InterActiveCorp",
-    "slug": "iacinteractivecorp",
-    "ownership": "publicly traded (ticker symbol IAC)",
-    "hq": "New York",
-    "majorIndustry": "information technology",
-    "specificIndustry": "internet services",
-    "totalPenalty": 17435000,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 14295000,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 3140000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 14295000,
-        "records": 3
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 2950000,
-        "records": 1
-      },
-      {
-        "category": "employment screening violation",
-        "penalty": 190000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:25:07.610Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00371088",

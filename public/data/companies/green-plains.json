@@ -27,7 +27,6 @@
     "s": "44 federal penalties totaling $2.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "air pollution violation: $704K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -147,64 +145,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Green Plains Inc.",
-    "slug": "green-plains-inc",
-    "ownership": "publicly traded (ticker symbol GPRE)",
-    "hq": "Nebraska",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "energy generation",
-    "totalPenalty": 2173282,
-    "totalRecords": 44,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1052581,
-        "records": 18
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 947059,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 173642,
-        "records": 25
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "energy market violation",
-        "penalty": 947059,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 704235,
-        "records": 9
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 334171,
-        "records": 8
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 153875,
-        "records": 22
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 19767,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:02:40.705Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00713669",

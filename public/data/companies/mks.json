@@ -26,7 +26,6 @@
     "s": "5 federal penalties totaling $58K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $27K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -144,49 +142,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "MKS Instruments",
-    "slug": "mks-instruments",
-    "ownership": "publicly traded (ticker symbol MKSI)",
-    "hq": "Massachusetts",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "scientific equipment",
-    "totalPenalty": 58279,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 41030,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 17249,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 27430,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 17249,
-        "records": 2
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 13600,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:14:04.362Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

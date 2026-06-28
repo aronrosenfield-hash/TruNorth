@@ -47,15 +47,13 @@
     "s": "No public record found.",
     "rating": "Neutral",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "70 federal penalties totaling $55.6M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -105,64 +103,6 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "molina-healthcare",
-      "matchedName": "Molina Healthcare",
-      "totalPenalty": 55608747,
-      "totalRecords": 70,
-      "offenseGroups": [
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 49225000,
-          "records": 3
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 4490075,
-          "records": 54
-        },
-        {
-          "category": "healthcare-related offenses",
-          "penalty": 997336,
-          "records": 4
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 896336,
-          "records": 9
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "False Claims Act and related",
-          "penalty": 49225000,
-          "records": 3
-        },
-        {
-          "category": "insurance violation",
-          "penalty": 4465075,
-          "records": 53
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 886335,
-          "records": 8
-        },
-        {
-          "category": "HHS civil monetary penalties",
-          "penalty": 600000,
-          "records": 1
-        },
-        {
-          "category": "Medicare Parts C and D Enforcement Action",
-          "penalty": 397336,
-          "records": 3
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "unitedhealth-group",
@@ -241,69 +181,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Molina Healthcare",
-    "slug": "molina-healthcare",
-    "ownership": "publicly traded (ticker symbol MOH)",
-    "hq": "California",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "health insurance",
-    "totalPenalty": 55608747,
-    "totalRecords": 70,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 49225000,
-        "records": 3
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 4490075,
-        "records": 54
-      },
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 997336,
-        "records": 4
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 896336,
-        "records": 9
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 49225000,
-        "records": 3
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 4465075,
-        "records": 53
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 886335,
-        "records": 8
-      },
-      {
-        "category": "HHS civil monetary penalties",
-        "penalty": 600000,
-        "records": 1
-      },
-      {
-        "category": "Medicare Parts C and D Enforcement Action",
-        "penalty": 397336,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00430256",

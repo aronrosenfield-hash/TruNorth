@@ -27,7 +27,6 @@
     "s": "22 federal penalties totaling $718.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -160,69 +158,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ally Financial",
-    "slug": "ally-financial",
-    "ownership": "publicly traded (ticker symbol ALLY)",
-    "hq": "Michigan",
-    "majorIndustry": "financial services",
-    "specificIndustry": "financial services",
-    "totalPenalty": 718085100,
-    "totalRecords": 22,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 456490222,
-        "records": 13
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 259000000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 2531623,
-        "records": 5
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 63255,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "mortgage abuses",
-        "penalty": 309600000,
-        "records": 2
-      },
-      {
-        "category": "banking violation",
-        "penalty": 207000000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 137290222,
-        "records": 10
-      },
-      {
-        "category": "toxic securities abuses",
-        "penalty": 52000000,
-        "records": 1
-      },
-      {
-        "category": "discriminatory practices (non-employment)",
-        "penalty": 9600000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:25:21.089Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00579540",

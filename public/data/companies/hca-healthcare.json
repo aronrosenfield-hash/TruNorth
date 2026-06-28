@@ -47,15 +47,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "78 federal penalties totaling $1.8B since 2000 (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -109,69 +107,6 @@
     "courtlistener": "2026-06-11T14:35:43.162Z",
     "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "hca-healthcare",
-      "matchedName": "HCA Healthcare",
-      "totalPenalty": 1775313026,
-      "totalRecords": 78,
-      "offenseGroups": [
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 1537737058,
-          "records": 14
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 220035000,
-          "records": 2
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 8840000,
-          "records": 2
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 7630503,
-          "records": 10
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 466904,
-          "records": 21
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "False Claims Act and related",
-          "penalty": 1537737058,
-          "records": 14
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 220000000,
-          "records": 1
-        },
-        {
-          "category": "kickbacks and bribery",
-          "penalty": 8600000,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 4496864,
-          "records": 5
-        },
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 3000000,
-          "records": 1
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "tenet-healthcare",
@@ -300,74 +235,6 @@
     "source": "courtlistener-recap"
   },
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "HCA Healthcare",
-    "slug": "hca-healthcare",
-    "ownership": "publicly traded (ticker symbol HCA)",
-    "hq": "Tennessee",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "hospitals (for-profit)",
-    "totalPenalty": 1775313026,
-    "totalRecords": 78,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 1537737058,
-        "records": 14
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 220035000,
-        "records": 2
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 8840000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 7630503,
-        "records": 10
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 466904,
-        "records": 21
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 1537737058,
-        "records": 14
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 220000000,
-        "records": 1
-      },
-      {
-        "category": "kickbacks and bribery",
-        "penalty": 8600000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 4496864,
-        "records": 5
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 3000000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00067231",

@@ -45,15 +45,13 @@
     "s": "environmental violation: $1.2M in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "40 federal penalties totaling $22.0M since 2000 (Violation Tracker).",
     "rating": "Below Average",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -105,69 +103,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "deere",
-      "matchedName": "Deere",
-      "totalPenalty": 21980545,
-      "totalRecords": 40,
-      "offenseGroups": [
-        {
-          "category": "competition-related offenses",
-          "penalty": 9900000,
-          "records": 1
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 8538000,
-          "records": 2
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 1864905,
-          "records": 10
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 1388333,
-          "records": 3
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 289307,
-          "records": 24
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "Foreign Corrupt Practices Act",
-          "penalty": 9900000,
-          "records": 1
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 8500000,
-          "records": 1
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 1234000,
-          "records": 5
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 1105000,
-          "records": 1
-        },
-        {
-          "category": "air pollution violation",
-          "penalty": 630905,
-          "records": 5
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "agco-corporation",
@@ -252,74 +187,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Deere",
-    "slug": "deere",
-    "ownership": "publicly traded (ticker symbol DE)",
-    "hq": "Illinois",
-    "majorIndustry": "agribusiness",
-    "specificIndustry": "agricultural equipment",
-    "totalPenalty": 21980545,
-    "totalRecords": 40,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 9900000,
-        "records": 1
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 8538000,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1864905,
-        "records": 10
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1388333,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 289307,
-        "records": 24
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 9900000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 8500000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 1234000,
-        "records": 5
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 1105000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 630905,
-        "records": 5
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00204099",

@@ -26,7 +26,6 @@
     "s": "28 federal penalties totaling $10.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -142,49 +140,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Stewart Information Services",
-    "slug": "stewart-information-services",
-    "ownership": "publicly traded (ticker symbol STC)",
-    "hq": "Texas",
-    "majorIndustry": "financial services",
-    "specificIndustry": "financial services",
-    "totalPenalty": 9965930,
-    "totalRecords": 28,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 7465930,
-        "records": 27
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 2500000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "insurance violation",
-        "penalty": 4965930,
-        "records": 26
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 2500000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 2500000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T01:10:55.461Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

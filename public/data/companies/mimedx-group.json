@@ -27,7 +27,6 @@
     "s": "2 federal penalties totaling $8.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -148,44 +146,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "MiMedx Group, Inc",
-    "slug": "mimedx-group-inc",
-    "ownership": "publicly traded (ticker symbol MDXG)",
-    "hq": "Georgia",
-    "majorIndustry": "medical equipment and supplies",
-    "specificIndustry": "therapeutic biologics",
-    "totalPenalty": 8000000,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 6500000,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 1500000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 6500000,
-        "records": 1
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 1500000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:21:44.067Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00557298",

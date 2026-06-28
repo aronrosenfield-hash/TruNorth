@@ -26,7 +26,6 @@
     "s": "6 federal penalties totaling $602K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $5K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -126,54 +124,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Otter Tail Corp.",
-    "slug": "otter-tail-corp",
-    "ownership": "publicly traded (ticker symbol OTTR)",
-    "hq": "Minnesota",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 602217,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 546832,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 50327,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 5058,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "energy market violation",
-        "penalty": 546832,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 50327,
-        "records": 4
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 5058,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:00:52.923Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

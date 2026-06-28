@@ -28,7 +28,6 @@
     "s": "46 federal penalties totaling $9.7B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -178,74 +176,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "McKesson",
-    "slug": "mckesson",
-    "ownership": "publicly traded (ticker symbol MCK)",
-    "hq": "California",
-    "majorIndustry": "wholesalers",
-    "specificIndustry": "wholesalers-medical supplies",
-    "totalPenalty": 9669176864,
-    "totalRecords": 46,
-    "offenseGroups": [
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 8508250000,
-        "records": 7
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 456081115,
-        "records": 9
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 432000000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 246857609,
-        "records": 14
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 25988140,
-        "records": 14
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "off-label or unapproved promotion of medical products",
-        "penalty": 8307000000,
-        "records": 3
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 456081115,
-        "records": 9
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 432000000,
-        "records": 2
-      },
-      {
-        "category": "product safety violation",
-        "penalty": 246666666,
-        "records": 2
-      },
-      {
-        "category": "Controlled Substances Act violation",
-        "penalty": 201250000,
-        "records": 4
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:11:39.610Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00108035",

@@ -26,7 +26,6 @@
     "s": "23 federal penalties totaling $1.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "air pollution violation: $315K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -119,69 +117,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Constellium",
-    "slug": "constellium",
-    "ownership": "publicly traded (ticker symbol CSTM)",
-    "hq": "Netherlands",
-    "majorIndustry": "metals",
-    "specificIndustry": "metals",
-    "totalPenalty": 1625897,
-    "totalRecords": 23,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 1035732,
-        "records": 6
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 370840,
-        "records": 6
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 135000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 84325,
-        "records": 10
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment discrimination",
-        "penalty": 500000,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 435732,
-        "records": 4
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 315000,
-        "records": 3
-      },
-      {
-        "category": "telecommunications violation",
-        "penalty": 135000,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 100000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:00:16.085Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

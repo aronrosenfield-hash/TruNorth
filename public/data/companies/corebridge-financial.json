@@ -26,7 +26,6 @@
     "s": "34 federal penalties totaling $268.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -141,59 +139,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Corebridge Financial Inc.",
-    "slug": "corebridge-financial-inc",
-    "ownership": "publicly traded (ticker symbol CRBG)",
-    "hq": "Texas",
-    "majorIndustry": "financial services",
-    "specificIndustry": "insurance",
-    "totalPenalty": 268434414,
-    "totalRecords": 34,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 226784414,
-        "records": 32
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 41650000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "discriminatory practices (non-employment)",
-        "penalty": 214000000,
-        "records": 1
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 41650000,
-        "records": 2
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 12008414,
-        "records": 29
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 760000,
-        "records": 1
-      },
-      {
-        "category": "privacy violation",
-        "penalty": 16000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:02:01.113Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

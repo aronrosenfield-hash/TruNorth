@@ -27,7 +27,6 @@
     "s": "10 federal penalties totaling $321K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "air pollution violation: $50K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -150,59 +148,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Brown-Forman",
-    "slug": "brown-forman",
-    "ownership": "publicly traded (ticker symbol BF.B)",
-    "hq": "Kentucky",
-    "majorIndustry": "beverages",
-    "specificIndustry": "beverages",
-    "totalPenalty": 321433,
-    "totalRecords": 10,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 153333,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 118400,
-        "records": 7
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 49700,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 153333,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 103900,
-        "records": 5
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 49700,
-        "records": 2
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 14500,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:24:48.455Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00059733",

@@ -27,7 +27,6 @@
     "s": "10 federal penalties totaling $229.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -125,59 +123,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Gen Digital Inc.",
-    "slug": "gen-digital-inc",
-    "ownership": "publicly traded (ticker symbol GEN)",
-    "hq": "Arizona",
-    "majorIndustry": "information technology",
-    "specificIndustry": "cyber security products",
-    "totalPenalty": 229240002,
-    "totalRecords": 10,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 174075000,
-        "records": 6
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 55100000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 65002,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 174075000,
-        "records": 6
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 55100000,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 60002,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:39:08.938Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

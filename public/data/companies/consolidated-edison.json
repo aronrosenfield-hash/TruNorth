@@ -27,7 +27,6 @@
     "s": "37 federal penalties totaling $547.1M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -153,69 +151,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Consolidated Edison",
-    "slug": "consolidated-edison",
-    "ownership": "publicly traded (ticker symbol ED)",
-    "hq": "New York",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 547148730,
-    "totalRecords": 37,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 327354500,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 201430236,
-        "records": 17
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 18114588,
-        "records": 5
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 249406,
-        "records": 10
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "utility safety violation",
-        "penalty": 200900000,
-        "records": 3
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 171554500,
-        "records": 2
-      },
-      {
-        "category": "utility service violation",
-        "penalty": 155800000,
-        "records": 3
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 18109088,
-        "records": 4
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 442236,
-        "records": 13
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:00:02.049Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00407635",

@@ -26,7 +26,6 @@
     "s": "8 federal penalties totaling $144K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $40K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -137,59 +135,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "ESAB Corporation",
-    "slug": "esab-corporation",
-    "ownership": "publicly traded (ticker symbol ESAB)",
-    "hq": "Maryland",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "welding and cutting equipment",
-    "totalPenalty": 143853,
-    "totalRecords": 8,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 70620,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 50000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 23233,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "labor relations violation",
-        "penalty": 50000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 39620,
-        "records": 1
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 31000,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 23233,
-        "records": 4
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:08:15.525Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

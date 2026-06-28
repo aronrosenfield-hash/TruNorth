@@ -29,7 +29,6 @@
     "s": "58 federal penalties totaling $566.9M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -50,8 +49,7 @@
   "environment": {
     "s": "environmental violation: $779K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -160,74 +158,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "ABB Ltd.",
-    "slug": "abb-ltd",
-    "ownership": "publicly traded (ticker symbol ABB)",
-    "hq": "Switzerland",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "power systems",
-    "totalPenalty": 566945866,
-    "totalRecords": 58,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 507200000,
-        "records": 6
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 57976541,
-        "records": 9
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1193815,
-        "records": 11
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 560510,
-        "records": 31
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 15000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 454200000,
-        "records": 5
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 55000000,
-        "records": 1
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 53000000,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 2698610,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 778650,
-        "records": 6
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:09:51.481Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

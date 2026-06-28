@@ -28,7 +28,6 @@
     "s": "46 federal penalties totaling $117.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "air pollution violation: $1.7M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -133,74 +131,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Corning Inc.",
-    "slug": "corning-inc",
-    "ownership": "publicly traded (ticker symbol GLW)",
-    "hq": "New York",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "glass &amp; ceramic products",
-    "totalPenalty": 116955965,
-    "totalRecords": 46,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 109083333,
-        "records": 5
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 5650000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1963598,
-        "records": 33
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 201374,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 57660,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 109083333,
-        "records": 5
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 5650000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 1661410,
-        "records": 21
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 261188,
-        "records": 9
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 120000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T22:51:07.563Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00033589",

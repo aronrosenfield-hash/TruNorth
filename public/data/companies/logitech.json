@@ -27,7 +27,6 @@
     "s": "2 federal penalties totaling $7.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "environmental violation: $261K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -143,44 +141,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Logitech International",
-    "slug": "logitech-international",
-    "ownership": "publicly traded",
-    "hq": "Switzerland",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "electronic equipment",
-    "totalPenalty": 7761000,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 7500000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 261000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 7500000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 261000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T00:44:08.745Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

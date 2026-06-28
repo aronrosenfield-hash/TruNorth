@@ -28,7 +28,6 @@
     "s": "5 federal penalties totaling $9.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -138,64 +136,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Crawford & Co.",
-    "slug": "crawford-and-co",
-    "ownership": "publicly traded (ticker symbol CRD.B)",
-    "hq": "Georgia",
-    "majorIndustry": "financial services",
-    "specificIndustry": "claims management services",
-    "totalPenalty": 9441704,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 8000000,
-        "records": 1
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 1363204,
-        "records": 1
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 50000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 28500,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "fraud",
-        "penalty": 8000000,
-        "records": 1
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 1363204,
-        "records": 1
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 50000,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 28500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:28:17.662Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -27,7 +27,6 @@
     "s": "151 federal penalties totaling $740.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "air pollution violation: $339.6M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -127,69 +125,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Alcoa",
-    "slug": "alcoa",
-    "ownership": "publicly traded (ticker symbol AA)",
-    "hq": "New York",
-    "majorIndustry": "metals",
-    "specificIndustry": "metals",
-    "totalPenalty": 740409210,
-    "totalRecords": 151,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 384000000,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 354407742,
-        "records": 35
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 1656840,
-        "records": 103
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 344628,
-        "records": 11
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 384000000,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 339550342,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 14806650,
-        "records": 28
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 1646340,
-        "records": 101
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 263628,
-        "records": 9
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T21:48:39.761Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00501106",

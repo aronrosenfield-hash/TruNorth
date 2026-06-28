@@ -26,7 +26,6 @@
     "s": "4 federal penalties totaling $153K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -140,44 +138,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Graco",
-    "slug": "graco",
-    "ownership": "publicly traded (ticker symbol GGG)",
-    "hq": "Minnesota",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "industrial equipment",
-    "totalPenalty": 153000,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 137000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 16000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "export control violation",
-        "penalty": 137000,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 16000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:58:18.152Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

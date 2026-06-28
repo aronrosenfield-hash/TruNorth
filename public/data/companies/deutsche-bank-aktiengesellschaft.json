@@ -25,7 +25,6 @@
     "s": "101 federal penalties totaling $20.0B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -130,74 +128,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Deutsche Bank",
-    "slug": "deutsche-bank",
-    "ownership": "publicly traded",
-    "hq": "Germany",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking &amp; securities",
-    "totalPenalty": 20020067563,
-    "totalRecords": 101,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 15642617278,
-        "records": 69
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 4289973607,
-        "records": 28
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 65571428,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 21900000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 5250,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "toxic securities abuses",
-        "penalty": 9584421897,
-        "records": 7
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 4310816828,
-        "records": 46
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 4143703333,
-        "records": 25
-      },
-      {
-        "category": "tax violations",
-        "penalty": 679659153,
-        "records": 3
-      },
-      {
-        "category": "anti-money-laundering deficiencies",
-        "penalty": 656000000,
-        "records": 4
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:19:00.492Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

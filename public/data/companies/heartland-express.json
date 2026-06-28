@@ -26,7 +26,6 @@
     "s": "7 federal penalties totaling $4.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "environmental violation: $65K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -119,59 +117,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Heartland Express",
-    "slug": "heartland-express",
-    "ownership": "publicly traded (ticker symbol HTLD)",
-    "hq": "Iowa",
-    "majorIndustry": "freight and logistics",
-    "specificIndustry": "freight services",
-    "totalPenalty": 4057633,
-    "totalRecords": 7,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 3985238,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 64985,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 7410,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 3750238,
-        "records": 2
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 235000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 64985,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 7410,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:14:33.324Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

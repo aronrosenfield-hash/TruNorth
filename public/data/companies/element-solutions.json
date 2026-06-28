@@ -26,7 +26,6 @@
     "s": "13 federal penalties totaling $3.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "hazardous waste violation: $1.1M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -143,59 +141,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Element Solutions Inc.",
-    "slug": "element-solutions-inc",
-    "ownership": "publicly traded (ticker symbol ESI)",
-    "hq": "Florida",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 3847157,
-    "totalRecords": 13,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 2226624,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1590808,
-        "records": 9
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 29725,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 2226624,
-        "records": 1
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 1136769,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 454039,
-        "records": 7
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 29725,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:50:25.793Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

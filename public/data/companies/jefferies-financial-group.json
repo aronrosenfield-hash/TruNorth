@@ -25,7 +25,6 @@
     "s": "22 federal penalties totaling $168.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "air pollution violation: $7K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -134,69 +132,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Jefferies Financial Group",
-    "slug": "jefferies-financial-group",
-    "ownership": "publicly traded (ticker symbol JEF)",
-    "hq": "New York",
-    "majorIndustry": "diversified",
-    "specificIndustry": "diversified",
-    "totalPenalty": 168752064,
-    "totalRecords": 22,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 164474587,
-        "records": 16
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 4200000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 70877,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 6600,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 139474587,
-        "records": 15
-      },
-      {
-        "category": "toxic securities abuses",
-        "penalty": 25000000,
-        "records": 1
-      },
-      {
-        "category": "kickbacks and bribery",
-        "penalty": 4200000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 70877,
-        "records": 4
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 6600,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:29:19.238Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

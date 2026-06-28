@@ -26,7 +26,6 @@
     "s": "24 federal penalties totaling $481K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $50K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -143,64 +141,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "American Woodmark",
-    "slug": "american-woodmark",
-    "ownership": "publicly traded (ticker symbol AMWD)",
-    "hq": "Virginia",
-    "majorIndustry": "building materials",
-    "specificIndustry": "kitchen cabinets",
-    "totalPenalty": 481261,
-    "totalRecords": 24,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 259182,
-        "records": 11
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 130838,
-        "records": 6
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 91241,
-        "records": 7
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 259182,
-        "records": 11
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 73462,
-        "records": 4
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 49641,
-        "records": 3
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 41600,
-        "records": 4
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 32376,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:29:18.482Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

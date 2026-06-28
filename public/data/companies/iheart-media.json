@@ -38,15 +38,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "10 federal penalties totaling $7.8M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -94,49 +92,6 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "dataLastUpdated": "2026-05-28",
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "iheartmedia",
-      "matchedName": "iHeartMedia",
-      "totalPenalty": 7812762,
-      "totalRecords": 10,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 7405000,
-          "records": 5
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 407762,
-          "records": 5
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "telecommunications violation",
-          "penalty": 7005000,
-          "records": 4
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 400000,
-          "records": 1
-        },
-        {
-          "category": "labor relations violation",
-          "penalty": 257762,
-          "records": 4
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 150000,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
-  },
   "competitors": [
     "spotify",
     "siriusxm",
@@ -213,54 +168,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "iHeartMedia",
-    "slug": "iheartmedia",
-    "ownership": "publicly traded (ticker symbol IHRT)",
-    "hq": "Texas",
-    "majorIndustry": "media",
-    "specificIndustry": "broadcasting",
-    "totalPenalty": 7812762,
-    "totalRecords": 10,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 7405000,
-        "records": 5
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 407762,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "telecommunications violation",
-        "penalty": 7005000,
-        "records": 4
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 400000,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 257762,
-        "records": 4
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 150000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

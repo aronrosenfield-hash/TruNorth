@@ -28,7 +28,6 @@
     "s": "67 federal penalties totaling $111.9M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "environmental violation: $2.5M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -157,69 +155,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Celanese",
-    "slug": "celanese",
-    "ownership": "publicly traded (ticker symbol CE)",
-    "hq": "Texas",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 111913211,
-    "totalRecords": 67,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 107000000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 2551950,
-        "records": 28
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 2055000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 306261,
-        "records": 37
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 107000000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 2463721,
-        "records": 22
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 2055000,
-        "records": 1
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 233000,
-        "records": 33
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 88229,
-        "records": 6
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:44:30.254Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00084871",

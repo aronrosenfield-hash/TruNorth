@@ -25,7 +25,6 @@
     "s": "11 federal penalties totaling $171K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -40,8 +39,7 @@
   "environment": {
     "s": "environmental violation: $72K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -117,44 +115,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "National Frozen Foods",
-    "slug": "national-frozen-foods",
-    "ownership": "privately held",
-    "hq": "Washington",
-    "majorIndustry": "food products",
-    "specificIndustry": "food products",
-    "totalPenalty": 171100,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 98648,
-        "records": 7
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 72452,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 98648,
-        "records": 7
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 72452,
-        "records": 4
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:26:48.184Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

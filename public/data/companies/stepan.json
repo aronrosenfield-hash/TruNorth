@@ -27,7 +27,6 @@
     "s": "65 federal penalties totaling $3.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $1.1M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -146,59 +144,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Stepan",
-    "slug": "stepan",
-    "ownership": "publicly traded (ticker symbol SCL)",
-    "hq": "Illinois",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 3577894,
-    "totalRecords": 65,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 3378296,
-        "records": 35
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 199598,
-        "records": 30
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "pesticide violation",
-        "penalty": 1739122,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 1097959,
-        "records": 25
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 402765,
-        "records": 3
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 170800,
-        "records": 26
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 123750,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T01:08:40.721Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00181792",

@@ -26,7 +26,6 @@
     "s": "9 federal penalties totaling $23.9M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $3.7M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -139,69 +137,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Royal Caribbean Cruises",
-    "slug": "royal-caribbean-cruises",
-    "ownership": "publicly traded (ticker symbol RCL)",
-    "hq": "Florida",
-    "majorIndustry": "entertainment",
-    "specificIndustry": "cruise line",
-    "totalPenalty": 23917851,
-    "totalRecords": 9,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 14200000,
-        "records": 1
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 5566666,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 4136185,
-        "records": 5
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 15000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 14200000,
-        "records": 1
-      },
-      {
-        "category": "privacy violation",
-        "penalty": 4166666,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 3662500,
-        "records": 4
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 1400000,
-        "records": 1
-      },
-      {
-        "category": "solid waste violation",
-        "penalty": 473685,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:26:30.776Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

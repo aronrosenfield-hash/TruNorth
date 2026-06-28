@@ -27,7 +27,6 @@
     "s": "21 federal penalties totaling $105.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -145,64 +143,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Huntington Bancshares",
-    "slug": "huntington-bancshares",
-    "ownership": "publicly traded (ticker symbol HBAN)",
-    "hq": "Ohio",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking",
-    "totalPenalty": 105051541,
-    "totalRecords": 21,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 72645000,
-        "records": 5
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 27743500,
-        "records": 9
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 4663041,
-        "records": 7
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 56500000,
-        "records": 3
-      },
-      {
-        "category": "banking violation",
-        "penalty": 20023500,
-        "records": 7
-      },
-      {
-        "category": "mortgage abuses",
-        "penalty": 10600000,
-        "records": 1
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 7500000,
-        "records": 1
-      },
-      {
-        "category": "discriminatory practices (non-employment)",
-        "penalty": 5545000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:19:15.840Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00165589",

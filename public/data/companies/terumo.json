@@ -27,7 +27,6 @@
     "s": "5 federal penalties totaling $105K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "air pollution violation: $68K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -133,44 +131,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Terumo",
-    "slug": "terumo",
-    "ownership": "publicly traded",
-    "hq": "Japan",
-    "majorIndustry": "medical equipment and supplies",
-    "specificIndustry": "medical supplies",
-    "totalPenalty": 104550,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 67500,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 37050,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 67500,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 37050,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:45:34.063Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00388652",

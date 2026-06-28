@@ -37,15 +37,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "18 federal penalties totaling $155.2M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -80,69 +78,6 @@
     "sources": [
       "Claude AI synthesis"
     ]
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "space-exploration-technologies-spacex",
-      "matchedName": "Space Exploration Technologies (SpaceX)",
-      "totalPenalty": 155168525,
-      "totalRecords": 18,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 150000000,
-          "records": 1
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 3975000,
-          "records": 1
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 991495,
-          "records": 10
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 102030,
-          "records": 5
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 100000,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "privacy violation",
-          "penalty": 150000000,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 3975000,
-          "records": 1
-        },
-        {
-          "category": "aviation safety violation",
-          "penalty": 808009,
-          "records": 2
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 183486,
-          "records": 8
-        },
-        {
-          "category": "campaign finance violation",
-          "penalty": 100000,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "dataLastUpdated": "2026-05-28",
   "competitors": [
@@ -214,74 +149,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Space Exploration Technologies (SpaceX)",
-    "slug": "space-exploration-technologies-spacex",
-    "ownership": "privately held",
-    "hq": "California",
-    "majorIndustry": "aerospace and military contracting",
-    "specificIndustry": "aerospace &amp; military contracting",
-    "totalPenalty": 155168525,
-    "totalRecords": 18,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 150000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 3975000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 991495,
-        "records": 10
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 102030,
-        "records": 5
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 100000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "privacy violation",
-        "penalty": 150000000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 3975000,
-        "records": 1
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 808009,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 183486,
-        "records": 8
-      },
-      {
-        "category": "campaign finance violation",
-        "penalty": 100000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

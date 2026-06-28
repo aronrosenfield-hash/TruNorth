@@ -26,7 +26,6 @@
     "s": "4 federal penalties totaling $309K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "environmental violation: $80K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -126,54 +124,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "IDEXX Laboratories",
-    "slug": "idexx-laboratories",
-    "ownership": "publicly traded (ticker symbol IDXX)",
-    "hq": "Maine",
-    "majorIndustry": "pharmaceuticals",
-    "specificIndustry": "veterinary medical products",
-    "totalPenalty": 308910,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 200000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 80000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 28910,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment discrimination",
-        "penalty": 200000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 80000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 28910,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:07:31.485Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

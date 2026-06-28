@@ -27,7 +27,6 @@
     "s": "10 federal penalties totaling $40.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -99,64 +97,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Mattel",
-    "slug": "mattel",
-    "ownership": "publicly traded (ticker symbol MAT)",
-    "hq": "California",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "toys",
-    "totalPenalty": 40009850,
-    "totalRecords": 10,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 23395850,
-        "records": 5
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 13020000,
-        "records": 3
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 3594000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "product safety violation",
-        "penalty": 23375000,
-        "records": 4
-      },
-      {
-        "category": "lead violation",
-        "penalty": 13000000,
-        "records": 2
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 3500000,
-        "records": 1
-      },
-      {
-        "category": "campaign finance violation",
-        "penalty": 94000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 20850,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T00:59:28.799Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -29,7 +29,6 @@
     "s": "2 federal penalties totaling $1.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -150,39 +148,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Palantir Technologies",
-    "slug": "palantir-technologies",
-    "ownership": "publicly traded (ticker symbol PLTR)",
-    "hq": "California",
-    "majorIndustry": "information technology",
-    "specificIndustry": "software",
-    "totalPenalty": 1669435,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 1669435,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment discrimination",
-        "penalty": 1659434,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 10001,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:02:24.762Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00498691",

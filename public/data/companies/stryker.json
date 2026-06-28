@@ -38,15 +38,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "20 federal penalties totaling $1.8B since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -101,69 +99,6 @@
     "msha": "2026-06-11T14:35:43.462Z",
     "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "stryker",
-      "matchedName": "Stryker",
-      "totalPenalty": 1806795594,
-      "totalRecords": 20,
-      "offenseGroups": [
-        {
-          "category": "safety-related offenses",
-          "penalty": 1759602840,
-          "records": 8
-        },
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 25411219,
-          "records": 4
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 21345000,
-          "records": 3
-        },
-        {
-          "category": "healthcare-related offenses",
-          "penalty": 302000,
-          "records": 2
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 95040,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "drug or medical equipment safety violation",
-          "penalty": 1759560000,
-          "records": 4
-        },
-        {
-          "category": "False Claims Act and related",
-          "penalty": 25411219,
-          "records": 4
-        },
-        {
-          "category": "Foreign Corrupt Practices Act",
-          "penalty": 21000000,
-          "records": 2
-        },
-        {
-          "category": "kickbacks and bribery",
-          "penalty": 345000,
-          "records": 1
-        },
-        {
-          "category": "off-label or unapproved promotion of medical products",
-          "penalty": 302000,
-          "records": 2
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "medtronic",
@@ -357,74 +292,6 @@
     "source": "courtlistener-recap"
   },
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Stryker",
-    "slug": "stryker",
-    "ownership": "publicly traded (ticker symbol SYK)",
-    "hq": "Michigan",
-    "majorIndustry": "medical equipment and supplies",
-    "specificIndustry": "medical supplies",
-    "totalPenalty": 1806795594,
-    "totalRecords": 20,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 1759602840,
-        "records": 8
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 25411219,
-        "records": 4
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 21345000,
-        "records": 3
-      },
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 302000,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 95040,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "drug or medical equipment safety violation",
-        "penalty": 1759560000,
-        "records": 4
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 25411219,
-        "records": 4
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 21000000,
-        "records": 2
-      },
-      {
-        "category": "kickbacks and bribery",
-        "penalty": 345000,
-        "records": 1
-      },
-      {
-        "category": "off-label or unapproved promotion of medical products",
-        "penalty": 302000,
-        "records": 2
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

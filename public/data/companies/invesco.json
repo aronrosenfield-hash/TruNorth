@@ -29,7 +29,6 @@
     "s": "45 federal penalties totaling $698.7M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "environmental violation: $73K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -156,69 +154,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Invesco",
-    "slug": "invesco",
-    "ownership": "publicly traded (ticker symbol IVZ)",
-    "hq": "Georgia",
-    "majorIndustry": "financial services",
-    "specificIndustry": "investment management",
-    "totalPenalty": 698703207,
-    "totalRecords": 45,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 687994000,
-        "records": 12
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 10275377,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 296209,
-        "records": 25
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 137621,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 687994000,
-        "records": 12
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 10270000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 296209,
-        "records": 25
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 72621,
-        "records": 4
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 65000,
-        "records": 2
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:35:09.214Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00253369",

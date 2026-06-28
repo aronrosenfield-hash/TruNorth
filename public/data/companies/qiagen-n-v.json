@@ -26,7 +26,6 @@
     "s": "2 federal penalties totaling $105K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $53K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -144,44 +142,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Qiagen",
-    "slug": "qiagen",
-    "ownership": "publicly traded (ticker symbol QGEN)",
-    "hq": "Netherlands",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "pharmaceutical services",
-    "totalPenalty": 105400,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 53400,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 52000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 53400,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 52000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:14:44.507Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -50,7 +50,6 @@
     "rating": "Good",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "cdp-climate"
     ]
   },
@@ -58,7 +57,6 @@
     "s": "81 federal penalties totaling $418.7M since 2000 (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -124,69 +122,6 @@
     "oshaSevereInjury": "2026-06-11T14:35:44.423Z",
     "phmsa": "2026-06-11T14:35:44.580Z",
     "finra": "2026-06-23T12:57:34.337Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "walt-disney",
-      "matchedName": "Walt Disney",
-      "totalPenalty": 418664696,
-      "totalRecords": 81,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 285956883,
-          "records": 25
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 114950000,
-          "records": 3
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 16591976,
-          "records": 7
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 630677,
-          "records": 37
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 496110,
-          "records": 8
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "wage and hour violation",
-          "penalty": 240854129,
-          "records": 10
-        },
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 114950000,
-          "records": 3
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 43250000,
-          "records": 1
-        },
-        {
-          "category": "privacy violation",
-          "penalty": 13000000,
-          "records": 2
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 2750000,
-          "records": 1
-        }
-      ],
-      "rating": "poor"
-    }
   },
   "competitors": [
     "warner-bros-discovery",
@@ -331,74 +266,6 @@
     "source": "courtlistener-recap"
   },
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Walt Disney",
-    "slug": "walt-disney",
-    "ownership": "publicly traded (ticker symbol DIS)",
-    "hq": "California",
-    "majorIndustry": "entertainment",
-    "specificIndustry": "entertainment",
-    "totalPenalty": 418664696,
-    "totalRecords": 81,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 285956883,
-        "records": 25
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 114950000,
-        "records": 3
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 16591976,
-        "records": 7
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 630677,
-        "records": 37
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 496110,
-        "records": 8
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 240854129,
-        "records": 10
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 114950000,
-        "records": 3
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 43250000,
-        "records": 1
-      },
-      {
-        "category": "privacy violation",
-        "penalty": 13000000,
-        "records": 2
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 2750000,
-        "records": 1
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00197749",

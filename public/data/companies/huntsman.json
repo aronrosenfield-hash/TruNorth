@@ -27,7 +27,6 @@
     "s": "127 federal penalties totaling $62.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $11.1M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -140,69 +138,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Huntsman Corp.",
-    "slug": "huntsman-corp",
-    "ownership": "publicly traded (ticker symbol HUN)",
-    "hq": "Utah",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 61964365,
-    "totalRecords": 127,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 40375000,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 20907869,
-        "records": 77
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 394600,
-        "records": 45
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 286896,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 40375000,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 11080989,
-        "records": 69
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 9623380,
-        "records": 5
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 286896,
-        "records": 2
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 276000,
-        "records": 41
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:07:06.566Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00363838",

@@ -26,7 +26,6 @@
     "s": "89 federal penalties totaling $12.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $510K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -136,74 +134,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Quad/Graphics",
-    "slug": "quadgraphics",
-    "ownership": "publicly traded (ticker symbol QUAD)",
-    "hq": "Wisconsin",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "printing",
-    "totalPenalty": 12605561,
-    "totalRecords": 89,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 9895334,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 943711,
-        "records": 40
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 750000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 630428,
-        "records": 38
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 386088,
-        "records": 9
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 9895334,
-        "records": 1
-      },
-      {
-        "category": "privacy violation",
-        "penalty": 750000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 630428,
-        "records": 38
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 510325,
-        "records": 18
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 395949,
-        "records": 19
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:15:51.284Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -27,7 +27,6 @@
     "s": "18 federal penalties totaling $4.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "water pollution violation: $2.1M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -150,69 +148,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Avista",
-    "slug": "avista",
-    "ownership": "publicly traded (ticker symbol AVA)",
-    "hq": "Washington",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 4753095,
-    "totalRecords": 18,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 2307625,
-        "records": 3
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 2100000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 336340,
-        "records": 13
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 9130,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "water pollution violation",
-        "penalty": 2100000,
-        "records": 1
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 2100000,
-        "records": 1
-      },
-      {
-        "category": "utility safety violation",
-        "penalty": 275000,
-        "records": 7
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 207625,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 54068,
-        "records": 5
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:43:50.713Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00041038",

@@ -26,7 +26,6 @@
     "s": "13 federal penalties totaling $31.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $29.0M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -138,74 +136,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "BorgWarner",
-    "slug": "borgwarner",
-    "ownership": "publicly traded (ticker symbol BWA)",
-    "hq": "Michigan",
-    "majorIndustry": "automotive parts",
-    "specificIndustry": "automotive parts",
-    "totalPenalty": 31069578,
-    "totalRecords": 13,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 29046200,
-        "records": 3
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 1000000,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 950000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 55482,
-        "records": 5
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 17896,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 29007200,
-        "records": 2
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 1000000,
-        "records": 2
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 950000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 55482,
-        "records": 5
-      },
-      {
-        "category": "solid waste violation",
-        "penalty": 39000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:53:18.363Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

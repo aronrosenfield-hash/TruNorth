@@ -25,7 +25,6 @@
     "s": "44 federal penalties totaling $8.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -139,69 +137,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Helmerich & Payne",
-    "slug": "helmerich-and-payne",
-    "ownership": "publicly traded (ticker symbol HP)",
-    "hq": "Oklahoma",
-    "majorIndustry": "oilfield services and supplies",
-    "specificIndustry": "oilfield services",
-    "totalPenalty": 8626468,
-    "totalRecords": 44,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 6400000,
-        "records": 1
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 1375681,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 452020,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 398767,
-        "records": 36
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "oil or gas drilling violation",
-        "penalty": 6400000,
-        "records": 1
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 1375681,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 398767,
-        "records": 36
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 349000,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 94202,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:14:45.230Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

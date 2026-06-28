@@ -26,7 +26,6 @@
     "s": "7 federal penalties totaling $911K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "environmental violation: $149K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -119,54 +117,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "MillerKnoll Inc.",
-    "slug": "millerknoll-inc",
-    "ownership": "publicly traded (ticker symbol MLKN)",
-    "hq": "Michigan",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "office furniture",
-    "totalPenalty": 910840,
-    "totalRecords": 7,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 750000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 149090,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 11750,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 750000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 149090,
-        "records": 4
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 11750,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T00:24:28.813Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

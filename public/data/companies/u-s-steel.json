@@ -26,7 +26,6 @@
     "s": "6 federal penalties totaling $44K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -127,44 +125,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Kobe Steel",
-    "slug": "kobe-steel",
-    "ownership": "publicly traded",
-    "hq": "Japan",
-    "majorIndustry": "metals",
-    "specificIndustry": "steel",
-    "totalPenalty": 43726,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 38726,
-        "records": 5
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 38726,
-        "records": 5
-      },
-      {
-        "category": "solid waste violation",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T03:02:57.612Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

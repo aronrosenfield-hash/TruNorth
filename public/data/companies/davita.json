@@ -44,15 +44,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "18 federal penalties totaling $104.0M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -105,69 +103,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "davita-inc",
-      "matchedName": "DaVita Inc.",
-      "totalPenalty": 103996046,
-      "totalRecords": 18,
-      "offenseGroups": [
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 98187390,
-          "records": 3
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 5529131,
-          "records": 10
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 125000,
-          "records": 1
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 80000,
-          "records": 1
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 58520,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "False Claims Act and related",
-          "penalty": 98187390,
-          "records": 3
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 3435117,
-          "records": 5
-        },
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 2020002,
-          "records": 3
-        },
-        {
-          "category": "insurance violation",
-          "penalty": 125000,
-          "records": 1
-        },
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 80000,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "baxter-international"
@@ -264,74 +199,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "DaVita Inc.",
-    "slug": "davita-inc",
-    "ownership": "publicly traded (ticker symbol DVA)",
-    "hq": "Colorado",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "healthcare services",
-    "totalPenalty": 103996046,
-    "totalRecords": 18,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 98187390,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 5529131,
-        "records": 10
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 125000,
-        "records": 1
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 80000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 58520,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 98187390,
-        "records": 3
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 3435117,
-        "records": 5
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 2020002,
-        "records": 3
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 125000,
-        "records": 1
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 80000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00340943",

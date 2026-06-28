@@ -26,7 +26,6 @@
     "s": "32 federal penalties totaling $1.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "hazardous waste violation: $1.1M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -101,59 +99,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Stella-Jones",
-    "slug": "stella-jones",
-    "ownership": "publicly traded",
-    "hq": "Canada",
-    "majorIndustry": "building materials",
-    "specificIndustry": "wood products",
-    "totalPenalty": 1722195,
-    "totalRecords": 32,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1439187,
-        "records": 14
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 283008,
-        "records": 18
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "hazardous waste violation",
-        "penalty": 1122125,
-        "records": 5
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 283008,
-        "records": 18
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 163500,
-        "records": 4
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 139459,
-        "records": 4
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 14103,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T01:06:41.649Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

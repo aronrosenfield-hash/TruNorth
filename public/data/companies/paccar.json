@@ -46,15 +46,13 @@
     "s": "air pollution violation: $2.5M in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "14 federal penalties totaling $4.7M since 2000 (Violation Tracker).",
     "rating": "Below Average",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -106,64 +104,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "paccar",
-      "matchedName": "Paccar",
-      "totalPenalty": 4658719,
-      "totalRecords": 14,
-      "offenseGroups": [
-        {
-          "category": "environment-related offenses",
-          "penalty": 2539200,
-          "records": 1
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 1934325,
-          "records": 2
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 113481,
-          "records": 8
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 71713,
-          "records": 3
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "air pollution violation",
-          "penalty": 2539200,
-          "records": 1
-        },
-        {
-          "category": "economic sanction violation",
-          "penalty": 1709325,
-          "records": 1
-        },
-        {
-          "category": "accounting fraud or deficiencies",
-          "penalty": 225000,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 113481,
-          "records": 8
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 71713,
-          "records": 3
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "da",
@@ -227,69 +167,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Paccar",
-    "slug": "paccar",
-    "ownership": "publicly traded (ticker symbol PCAR)",
-    "hq": "Washington",
-    "majorIndustry": "motor vehicles",
-    "specificIndustry": "motor vehicles",
-    "totalPenalty": 4658719,
-    "totalRecords": 14,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 2539200,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 1934325,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 113481,
-        "records": 8
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 71713,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 2539200,
-        "records": 1
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 1709325,
-        "records": 1
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 225000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 113481,
-        "records": 8
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 71713,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00034355",

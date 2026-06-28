@@ -25,7 +25,6 @@
     "s": "59 federal penalties totaling $7.5B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -142,64 +140,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Barclays",
-    "slug": "barclays",
-    "ownership": "publicly traded",
-    "hq": "United Kingdom",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking",
-    "totalPenalty": 7531277861,
-    "totalRecords": 59,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 3760163070,
-        "records": 26
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 3756105084,
-        "records": 31
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 15009707,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 3753854344,
-        "records": 25
-      },
-      {
-        "category": "toxic securities abuses",
-        "penalty": 2654742857,
-        "records": 6
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 789907699,
-        "records": 19
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 300510967,
-        "records": 5
-      },
-      {
-        "category": "workplace whistleblower retaliation",
-        "penalty": 15000000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:48:53.875Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

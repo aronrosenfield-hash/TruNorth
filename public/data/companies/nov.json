@@ -27,7 +27,6 @@
     "s": "71 federal penalties totaling $29.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $836K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -123,74 +121,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "NOV Inc.",
-    "slug": "nov-inc",
-    "ownership": "publicly traded (ticker symbol NOV)",
-    "hq": "Texas",
-    "majorIndustry": "oilfield services and supplies",
-    "specificIndustry": "oilfield equipment",
-    "totalPenalty": 29021804,
-    "totalRecords": 71,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 25442128,
-        "records": 4
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 1600000,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 889673,
-        "records": 25
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 539096,
-        "records": 33
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 518882,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "economic sanction violation",
-        "penalty": 25442128,
-        "records": 4
-      },
-      {
-        "category": "export control violation",
-        "penalty": 1600000,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 835709,
-        "records": 22
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 539096,
-        "records": 33
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 313442,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:42:41.953Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00378695",

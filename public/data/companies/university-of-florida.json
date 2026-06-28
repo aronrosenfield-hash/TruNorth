@@ -26,7 +26,6 @@
     "s": "4 federal penalties totaling $26.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "hazardous waste violation: $23K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -142,59 +140,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "University of Florida Health",
-    "slug": "university-of-florida-health",
-    "ownership": "non-profit",
-    "hq": "Florida",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "hospitals",
-    "totalPenalty": 26044886,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 26000000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 34735,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 10151,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 26000000,
-        "records": 1
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 23145,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 11590,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 10151,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T03:09:13.200Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

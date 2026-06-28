@@ -38,15 +38,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "3 federal penalties totaling $19.1M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -95,44 +93,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "peloton-interactive",
-      "matchedName": "Peloton Interactive",
-      "totalPenalty": 19102564,
-      "totalRecords": 3,
-      "offenseGroups": [
-        {
-          "category": "safety-related offenses",
-          "penalty": 19072700,
-          "records": 2
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 29864,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "product safety violation",
-          "penalty": 19065000,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 29864,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 7700,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "apple"
@@ -209,49 +169,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Peloton Interactive",
-    "slug": "peloton-interactive",
-    "ownership": "publicly traded (ticker symbol PTON)",
-    "hq": "New York",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "interactive fitness platform",
-    "totalPenalty": 19102564,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 19072700,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 29864,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "product safety violation",
-        "penalty": 19065000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 29864,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 7700,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

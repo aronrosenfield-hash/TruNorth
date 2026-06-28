@@ -27,7 +27,6 @@
     "s": "703 federal penalties totaling $18.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $1.5M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -103,69 +101,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Canadian National Railway",
-    "slug": "canadian-national-railway",
-    "ownership": "publicly traded",
-    "hq": "Canada",
-    "majorIndustry": "railroads",
-    "specificIndustry": "railroads",
-    "totalPenalty": 18275549,
-    "totalRecords": 703,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 7348944,
-        "records": 681
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 5250000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 3882065,
-        "records": 6
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1794540,
-        "records": 15
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "railroad safety violation",
-        "penalty": 7258044,
-        "records": 674
-      },
-      {
-        "category": "telecommunications violation",
-        "penalty": 5250000,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 3000000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 1467500,
-        "records": 5
-      },
-      {
-        "category": "workplace whistleblower retaliation",
-        "penalty": 862063,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T21:53:29.600Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00079046",

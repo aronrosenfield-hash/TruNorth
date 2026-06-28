@@ -27,7 +27,6 @@
     "s": "47 federal penalties totaling $35.3M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -143,69 +141,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "GEO Group",
-    "slug": "geo-group",
-    "ownership": "publicly traded (ticker symbol GEO)",
-    "hq": "Florida",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "private prisons",
-    "totalPenalty": 35286166,
-    "totalRecords": 47,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 30483465,
-        "records": 34
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 4550000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 199728,
-        "records": 10
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 52973,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 28051704,
-        "records": 19
-      },
-      {
-        "category": "kickbacks and bribery",
-        "penalty": 4550000,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 1000000,
-        "records": 4
-      },
-      {
-        "category": "employment screening violation",
-        "penalty": 900000,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 531761,
-        "records": 10
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:06:17.927Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00399196",

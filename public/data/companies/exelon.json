@@ -39,15 +39,13 @@
     "s": "environmental violation: $67.3M in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "95 federal penalties totaling $376.7M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -85,69 +83,6 @@
     "sources": [
       "Claude AI synthesis"
     ]
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "exelon",
-      "matchedName": "Exelon",
-      "totalPenalty": 376745114,
-      "totalRecords": 95,
-      "offenseGroups": [
-        {
-          "category": "competition-related offenses",
-          "penalty": 247743486,
-          "records": 5
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 69578606,
-          "records": 34
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 48295391,
-          "records": 12
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 9150842,
-          "records": 8
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 1976789,
-          "records": 36
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "kickbacks and bribery",
-          "penalty": 200000000,
-          "records": 1
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 67318006,
-          "records": 28
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 46354800,
-          "records": 5
-        },
-        {
-          "category": "fraud",
-          "penalty": 46200000,
-          "records": 1
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 7665000,
-          "records": 2
-        }
-      ],
-      "rating": "good"
-    }
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
@@ -298,74 +233,6 @@
     "source": "courtlistener-recap"
   },
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Exelon",
-    "slug": "exelon",
-    "ownership": "publicly traded (ticker symbol EXC)",
-    "hq": "Illinois",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 376745114,
-    "totalRecords": 95,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 247743486,
-        "records": 5
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 69578606,
-        "records": 34
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 48295391,
-        "records": 12
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 9150842,
-        "records": 8
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 1976789,
-        "records": 36
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "kickbacks and bribery",
-        "penalty": 200000000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 67318006,
-        "records": 28
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 46354800,
-        "records": 5
-      },
-      {
-        "category": "fraud",
-        "penalty": 46200000,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 7665000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

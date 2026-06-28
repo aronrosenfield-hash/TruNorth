@@ -27,7 +27,6 @@
     "s": "31 federal penalties totaling $721.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -150,74 +148,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "KBR",
-    "slug": "kbr",
-    "ownership": "publicly traded (ticker symbol KBR)",
-    "hq": "Texas",
-    "majorIndustry": "construction and engineering",
-    "specificIndustry": "construction &amp; engineering",
-    "totalPenalty": 721528404,
-    "totalRecords": 31,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 579108342,
-        "records": 3
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 130420000,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 9039064,
-        "records": 10
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 2630000,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 200000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 579000000,
-        "records": 2
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 130420000,
-        "records": 3
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 8514064,
-        "records": 9
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 2500000,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 525000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:45:06.112Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00431114",

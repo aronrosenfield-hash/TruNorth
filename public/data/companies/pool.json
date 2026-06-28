@@ -26,7 +26,6 @@
     "s": "4 federal penalties totaling $136K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "air pollution violation: $5K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -146,44 +144,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Pool Corp.",
-    "slug": "pool-corp",
-    "ownership": "publicly traded (ticker symbol POOL)",
-    "hq": "Louisiana",
-    "majorIndustry": "wholesalers",
-    "specificIndustry": "wholesalers-swimming pool supplies",
-    "totalPenalty": 136237,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 131237,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 131237,
-        "records": 3
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:09:46.846Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

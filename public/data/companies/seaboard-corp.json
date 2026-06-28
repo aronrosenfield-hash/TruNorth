@@ -26,7 +26,6 @@
     "s": "41 federal penalties totaling $17.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "environmental violation: $565K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -124,74 +122,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Seaboard Corp.",
-    "slug": "seaboard-corp",
-    "ownership": "publicly traded (ticker symbol SEB)",
-    "hq": "Kansas",
-    "majorIndustry": "food products",
-    "specificIndustry": "food products",
-    "totalPenalty": 17499306,
-    "totalRecords": 41,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 14910000,
-        "records": 3
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 1075000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 913617,
-        "records": 11
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 356689,
-        "records": 24
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 244000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 14710000,
-        "records": 2
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 1075000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 564617,
-        "records": 6
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 356689,
-        "records": 24
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 305000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:35:59.147Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

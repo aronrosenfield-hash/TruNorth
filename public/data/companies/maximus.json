@@ -27,7 +27,6 @@
     "s": "19 federal penalties totaling $48.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -125,64 +123,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Maximus",
-    "slug": "maximus",
-    "ownership": "publicly traded (ticker symbol MMS)",
-    "hq": "Virginia",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "outsourced government services",
-    "totalPenalty": 48460693,
-    "totalRecords": 19,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 41000000,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 6937893,
-        "records": 14
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 522800,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 41000000,
-        "records": 3
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 6862610,
-        "records": 11
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 500000,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 70000,
-        "records": 2
-      },
-      {
-        "category": "tax violations",
-        "penalty": 22800,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:11:16.358Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00343707",

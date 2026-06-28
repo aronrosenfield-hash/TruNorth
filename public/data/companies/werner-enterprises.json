@@ -43,15 +43,13 @@
     "s": "environmental violation: $65K in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "6 federal penalties totaling $20.0M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -102,59 +100,6 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "werner-enterprises",
-      "matchedName": "Werner Enterprises",
-      "totalPenalty": 20027703,
-      "totalRecords": 6,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 19952069,
-          "records": 3
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 65000,
-          "records": 1
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 10634,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "employment discrimination",
-          "penalty": 18037500,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 1914569,
-          "records": 2
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 65000,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 5594,
-          "records": 1
-        },
-        {
-          "category": "motor vehicle safety violation",
-          "penalty": 5040,
-          "records": 1
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "competitors": [
     "schneider-national",
@@ -240,64 +185,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Werner Enterprises",
-    "slug": "werner-enterprises",
-    "ownership": "publicly traded (ticker symbol WERN)",
-    "hq": "Nebraska",
-    "majorIndustry": "freight and logistics",
-    "specificIndustry": "logistics",
-    "totalPenalty": 20027703,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 19952069,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 65000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 10634,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment discrimination",
-        "penalty": 18037500,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 1914569,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 65000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 5594,
-        "records": 1
-      },
-      {
-        "category": "motor vehicle safety violation",
-        "penalty": 5040,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00236034",

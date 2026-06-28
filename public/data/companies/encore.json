@@ -27,7 +27,6 @@
     "s": "16 federal penalties totaling $103.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -145,54 +143,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Encore Capital Group",
-    "slug": "encore-capital-group",
-    "ownership": "publicly traded (ticker symbol ECPG)",
-    "hq": "California",
-    "majorIndustry": "financial services",
-    "specificIndustry": "debt recovery",
-    "totalPenalty": 103849169,
-    "totalRecords": 16,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 103815308,
-        "records": 12
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 33861,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 103815308,
-        "records": 12
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 16410,
-        "records": 2
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 10001,
-        "records": 1
-      },
-      {
-        "category": "Family and Medical Leave Act",
-        "penalty": 7450,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:53:43.839Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00507392",

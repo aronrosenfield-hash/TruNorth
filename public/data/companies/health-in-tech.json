@@ -27,7 +27,6 @@
     "s": "4 federal penalties totaling $26.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -123,44 +121,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Rotech Healthcare",
-    "slug": "rotech-healthcare",
-    "ownership": "privately held",
-    "hq": "Florida",
-    "majorIndustry": "medical equipment and supplies",
-    "specificIndustry": "medical equipment",
-    "totalPenalty": 26687766,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 26680000,
-        "records": 3
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 7766,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 26680000,
-        "records": 3
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 7766,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:14:10.891Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00830208",

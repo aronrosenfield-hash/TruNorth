@@ -25,7 +25,6 @@
     "s": "10 federal penalties totaling $3.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -127,49 +125,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Oil States International",
-    "slug": "oil-states-international",
-    "ownership": "publicly traded (ticker symbol OIS)",
-    "hq": "Texas",
-    "majorIndustry": "oilfield services and supplies",
-    "specificIndustry": "oilfield equipment",
-    "totalPenalty": 3167824,
-    "totalRecords": 10,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 3130256,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 37568,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 3065256,
-        "records": 4
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 65000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 37568,
-        "records": 5
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:53:10.999Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -27,7 +27,6 @@
     "s": "11 federal penalties totaling $2.2B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -154,59 +152,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Navient",
-    "slug": "navient",
-    "ownership": "publicly traded (ticker symbol NAVI)",
-    "hq": "Delaware",
-    "majorIndustry": "financial services",
-    "specificIndustry": "financial services",
-    "totalPenalty": 2210319559,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 2176307304,
-        "records": 8
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 33312255,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 700000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 2176307304,
-        "records": 8
-      },
-      {
-        "category": "banking violation",
-        "penalty": 33300000,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 700000,
-        "records": 1
-      },
-      {
-        "category": "tax violations",
-        "penalty": 12255,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:35:40.047Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00331835",

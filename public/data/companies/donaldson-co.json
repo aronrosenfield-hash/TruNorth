@@ -26,7 +26,6 @@
     "s": "28 federal penalties totaling $2.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "air pollution violation: $813K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -126,69 +124,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Donaldson Co.",
-    "slug": "donaldson-co",
-    "ownership": "publicly traded (ticker symbol DCI)",
-    "hq": "Minnesota",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "industrial equipment",
-    "totalPenalty": 2552967,
-    "totalRecords": 28,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 1218750,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 1098264,
-        "records": 8
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 132918,
-        "records": 12
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 103035,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 1218750,
-        "records": 4
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 813300,
-        "records": 5
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 274564,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 102318,
-        "records": 11
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 77493,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:21:47.509Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

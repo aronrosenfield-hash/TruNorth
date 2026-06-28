@@ -27,7 +27,6 @@
     "s": "113 federal penalties totaling $2.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $1.1M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -128,69 +126,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Essential Utilities Inc.",
-    "slug": "essential-utilities-inc",
-    "ownership": "publicly traded (ticker symbol WTRG)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 2849579,
-    "totalRecords": 113,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1536016,
-        "records": 88
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 962913,
-        "records": 17
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 330650,
-        "records": 7
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 20000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 1115469,
-        "records": 68
-      },
-      {
-        "category": "utility safety violation",
-        "penalty": 880000,
-        "records": 12
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 383558,
-        "records": 16
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 277150,
-        "records": 5
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 82913,
-        "records": 5
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:08:49.559Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00340455",

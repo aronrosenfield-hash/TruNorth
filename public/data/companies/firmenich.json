@@ -26,7 +26,6 @@
     "s": "13 federal penalties totaling $2.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "air pollution violation: $2.1M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -134,49 +132,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "DSM-Firmenich",
-    "slug": "dsm-firmenich",
-    "ownership": "publicly traded",
-    "hq": "Switzerland",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 2410999,
-    "totalRecords": 13,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 2332155,
-        "records": 8
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 78844,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 2073414,
-        "records": 4
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 258741,
-        "records": 4
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 78844,
-        "records": 5
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:37:43.444Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

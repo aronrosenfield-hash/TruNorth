@@ -27,7 +27,6 @@
     "s": "2 federal penalties totaling $64K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -128,34 +126,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Mettler-Toledo International",
-    "slug": "mettler-toledo-international",
-    "ownership": "publicly traded (ticker symbol MTD)",
-    "hq": "Ohio",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "scientific equipment",
-    "totalPenalty": 63600,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 63600,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 63600,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T02:55:33.928Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00154088",

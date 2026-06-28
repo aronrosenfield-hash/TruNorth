@@ -36,15 +36,13 @@
     "s": "environmental violation: $192K in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "13 federal penalties totaling $1.8M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -83,54 +81,6 @@
     "sources": [
       "Claude AI synthesis"
     ]
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "rh-restoration-hardware",
-      "matchedName": "RH (Restoration Hardware)",
-      "totalPenalty": 1822014,
-      "totalRecords": 13,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 1561633,
-          "records": 5
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 206321,
-          "records": 2
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 54060,
-          "records": 6
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "wage and hour violation",
-          "penalty": 1561633,
-          "records": 5
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 191621,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 54060,
-          "records": 6
-        },
-        {
-          "category": "air pollution violation",
-          "penalty": 14700,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "dataLastUpdated": "2026-05-28",
   "competitors": [
@@ -174,59 +124,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "RH (Restoration Hardware)",
-    "slug": "rh-restoration-hardware",
-    "ownership": "publicly traded (ticker symbol RH)",
-    "hq": "California",
-    "majorIndustry": "housewares and home furnishings",
-    "specificIndustry": "home furnishings",
-    "totalPenalty": 1822014,
-    "totalRecords": 13,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 1561633,
-        "records": 5
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 206321,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 54060,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 1561633,
-        "records": 5
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 191621,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 54060,
-        "records": 6
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 14700,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

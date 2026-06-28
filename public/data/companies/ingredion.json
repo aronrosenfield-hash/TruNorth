@@ -25,7 +25,6 @@
     "s": "26 federal penalties totaling $10.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $10.3M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -137,54 +135,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ingredion",
-    "slug": "ingredion",
-    "ownership": "publicly traded (ticker symbol INGR)",
-    "hq": "Illinois",
-    "majorIndustry": "agribusiness",
-    "specificIndustry": "agribusiness",
-    "totalPenalty": 10533941,
-    "totalRecords": 26,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 10363715,
-        "records": 9
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 170226,
-        "records": 17
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 10344715,
-        "records": 7
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 87176,
-        "records": 8
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 83050,
-        "records": 9
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 19000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:07:52.573Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

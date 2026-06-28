@@ -46,7 +46,6 @@
     "rating": "Mixed",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "gfanz"
     ]
   },
@@ -54,7 +53,6 @@
     "s": "23 federal penalties totaling $1.2B since 2000 (Violation Tracker).",
     "rating": "Below Average",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -106,64 +104,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "state-street-corp",
-      "matchedName": "State Street Corp.",
-      "totalPenalty": 1237471675,
-      "totalRecords": 23,
-      "offenseGroups": [
-        {
-          "category": "financial offenses",
-          "penalty": 857679501,
-          "records": 13
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 172742174,
-          "records": 6
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 147300000,
-          "records": 2
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 59750000,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "investor protection violation",
-          "penalty": 838205000,
-          "records": 10
-        },
-        {
-          "category": "benefit plan administrator violation",
-          "penalty": 164050000,
-          "records": 4
-        },
-        {
-          "category": "fraud",
-          "penalty": 147300000,
-          "records": 2
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 59750000,
-          "records": 2
-        },
-        {
-          "category": "campaign finance violation",
-          "penalty": 12000000,
-          "records": 1
-        }
-      ],
-      "rating": "poor"
-    }
   },
   "competitors": [
     "bny-mellon-strategic-municipals",
@@ -257,69 +197,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "State Street Corp.",
-    "slug": "state-street-corp",
-    "ownership": "publicly traded (ticker symbol STT)",
-    "hq": "Massachusetts",
-    "majorIndustry": "financial services",
-    "specificIndustry": "financial services",
-    "totalPenalty": 1237471675,
-    "totalRecords": 23,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 857679501,
-        "records": 13
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 172742174,
-        "records": 6
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 147300000,
-        "records": 2
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 59750000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 838205000,
-        "records": 10
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 164050000,
-        "records": 4
-      },
-      {
-        "category": "fraud",
-        "penalty": 147300000,
-        "records": 2
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 59750000,
-        "records": 2
-      },
-      {
-        "category": "campaign finance violation",
-        "penalty": 12000000,
-        "records": 1
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00009639",

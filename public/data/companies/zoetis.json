@@ -44,15 +44,13 @@
     "s": "hazardous waste violation: $104K in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "11 federal penalties totaling $239K since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -102,54 +100,6 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "zoetis",
-      "matchedName": "Zoetis",
-      "totalPenalty": 238545,
-      "totalRecords": 11,
-      "offenseGroups": [
-        {
-          "category": "environment-related offenses",
-          "penalty": 138756,
-          "records": 5
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 72833,
-          "records": 5
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 26956,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "hazardous waste violation",
-          "penalty": 104019,
-          "records": 3
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 72833,
-          "records": 5
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 34737,
-          "records": 2
-        },
-        {
-          "category": "economic sanction violation",
-          "penalty": 26956,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "elanco-animal-health",
@@ -220,59 +170,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Zoetis",
-    "slug": "zoetis",
-    "ownership": "publicly traded (ticker symbol ZTS)",
-    "hq": "New Jersey",
-    "majorIndustry": "pharmaceuticals",
-    "specificIndustry": "animal health products",
-    "totalPenalty": 238545,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 138756,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 72833,
-        "records": 5
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 26956,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "hazardous waste violation",
-        "penalty": 104019,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 72833,
-        "records": 5
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 34737,
-        "records": 2
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 26956,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00541177",

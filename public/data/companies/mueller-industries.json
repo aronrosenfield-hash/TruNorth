@@ -26,7 +26,6 @@
     "s": "59 federal penalties totaling $2.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $610K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -125,64 +123,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Mueller Industries",
-    "slug": "mueller-industries",
-    "ownership": "publicly traded (ticker symbol MLI)",
-    "hq": "Tennessee",
-    "majorIndustry": "metals",
-    "specificIndustry": "metal products",
-    "totalPenalty": 2650469,
-    "totalRecords": 59,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 1042605,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 919967,
-        "records": 45
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 687897,
-        "records": 11
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment discrimination",
-        "penalty": 1000000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 919967,
-        "records": 45
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 610037,
-        "records": 8
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 60260,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 42605,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:28:14.296Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

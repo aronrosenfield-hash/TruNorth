@@ -26,7 +26,6 @@
     "s": "14 federal penalties totaling $171K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "air pollution violation: $5K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -128,44 +126,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Patrick Industries",
-    "slug": "patrick-industries",
-    "ownership": "publicly traded (ticker symbol PATK)",
-    "hq": "Indiana",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "recreational vehicle and manufactured housing components",
-    "totalPenalty": 171201,
-    "totalRecords": 14,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 166201,
-        "records": 13
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 166201,
-        "records": 13
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:04:07.324Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

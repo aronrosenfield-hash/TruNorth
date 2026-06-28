@@ -26,7 +26,6 @@
     "s": "11 federal penalties totaling $3.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "air pollution violation: $121K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -123,59 +121,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Magna International",
-    "slug": "magna-international",
-    "ownership": "publicly traded (ticker symbol MGA)",
-    "hq": "Canada",
-    "majorIndustry": "automotive parts",
-    "specificIndustry": "automotive parts",
-    "totalPenalty": 3110652,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 2929906,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 120694,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 60052,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 2900000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 120694,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 60052,
-        "records": 6
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 29906,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:13:26.235Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

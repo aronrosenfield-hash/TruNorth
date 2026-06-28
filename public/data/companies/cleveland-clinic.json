@@ -38,15 +38,13 @@
     "s": "environmental violation: $30K in federal penalties (Violation Tracker).",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "5 federal penalties totaling $5.4M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -94,49 +92,6 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "dataLastUpdated": "2026-05-28",
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "cleveland-clinic",
-      "matchedName": "Cleveland Clinic",
-      "totalPenalty": 5391905,
-      "totalRecords": 5,
-      "offenseGroups": [
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 5340000,
-          "records": 3
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 30000,
-          "records": 1
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 21905,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "False Claims Act and related",
-          "penalty": 5340000,
-          "records": 3
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 30000,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 21905,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
-  },
   "competitors": [
     "mayo-clinic",
     "stem"
@@ -204,54 +159,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Cleveland Clinic",
-    "slug": "cleveland-clinic",
-    "ownership": "non-profit",
-    "hq": "Ohio",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "healthcare services",
-    "totalPenalty": 5391905,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 5340000,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 30000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 21905,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 5340000,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 30000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 21905,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

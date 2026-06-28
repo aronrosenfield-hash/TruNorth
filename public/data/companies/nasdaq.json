@@ -27,7 +27,6 @@
     "s": "5 federal penalties totaling $38.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -161,39 +159,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Nasdaq Inc.",
-    "slug": "nasdaq-inc",
-    "ownership": "publicly traded (ticker symbol NDAQ)",
-    "hq": "New York",
-    "majorIndustry": "financial services",
-    "specificIndustry": "financial services",
-    "totalPenalty": 38285923,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 38285923,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 34245000,
-        "records": 4
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 4040923,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:14:38.017Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00366013",

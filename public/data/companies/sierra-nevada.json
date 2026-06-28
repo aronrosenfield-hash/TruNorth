@@ -45,15 +45,13 @@
     "s": "No public record found.",
     "rating": "Neutral",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "3 federal penalties totaling $15.0M since 2000 (Violation Tracker).",
     "rating": "Average",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -101,44 +99,6 @@
   "ab": "#2a0d0d",
   "ac": "#e24a4a",
   "dataLastUpdated": "2026-05-28",
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "sierra-nevada",
-      "matchedName": "Sierra Nevada",
-      "totalPenalty": 14975793,
-      "totalRecords": 3,
-      "offenseGroups": [
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 14900000,
-          "records": 1
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 75793,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "False Claims Act and related",
-          "penalty": 14900000,
-          "records": 1
-        },
-        {
-          "category": "aviation safety violation",
-          "penalty": 50000,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 25793,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
-  },
   "competitors": [
     "new-belgium-brewing"
   ],
@@ -198,49 +158,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Sierra Nevada",
-    "slug": "sierra-nevada",
-    "ownership": "privately held",
-    "hq": "Nevada",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "electronic systems",
-    "totalPenalty": 14975793,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 14900000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 75793,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 14900000,
-        "records": 1
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 50000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 25793,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00367995",

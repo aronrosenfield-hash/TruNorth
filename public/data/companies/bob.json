@@ -27,7 +27,6 @@
     "s": "9 federal penalties totaling $1.2B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -132,59 +130,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Rabobank",
-    "slug": "rabobank",
-    "ownership": "cooperative",
-    "hq": "Netherlands",
-    "majorIndustry": "financial services",
-    "specificIndustry": "financial services",
-    "totalPenalty": 1245786259,
-    "totalRecords": 9,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 825250000,
-        "records": 3
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 419259259,
-        "records": 4
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 1277000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 825250000,
-        "records": 3
-      },
-      {
-        "category": "anti-money-laundering deficiencies",
-        "penalty": 419201259,
-        "records": 3
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 1277000,
-        "records": 2
-      },
-      {
-        "category": "banking violation",
-        "penalty": 58000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:49:10.506Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00146886",

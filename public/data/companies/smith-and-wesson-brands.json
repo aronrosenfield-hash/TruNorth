@@ -25,7 +25,6 @@
     "s": "11 federal penalties totaling $3.9M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $79K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -151,69 +149,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Smith & Wesson",
-    "slug": "smith-and-wesson",
-    "ownership": "publicly traded (ticker symbol SWBI)",
-    "hq": "Massachusetts",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "firearms",
-    "totalPenalty": 3891032,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 2025000,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 1729000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 79236,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 57796,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 2000000,
-        "records": 1
-      },
-      {
-        "category": "tax violations",
-        "penalty": 1729000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 79236,
-        "records": 4
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 57796,
-        "records": 4
-      },
-      {
-        "category": "export control violation",
-        "penalty": 25000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:57:09.114Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

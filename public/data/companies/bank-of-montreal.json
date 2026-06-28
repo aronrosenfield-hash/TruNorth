@@ -24,7 +24,6 @@
     "s": "22 federal penalties totaling $191.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -41,8 +40,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -111,69 +109,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Bank of Montreal",
-    "slug": "bank-of-montreal",
-    "ownership": "publicly traded (ticker symbol BMO)",
-    "hq": "Canada",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking",
-    "totalPenalty": 191283637,
-    "totalRecords": 22,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 144510200,
-        "records": 10
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 31400000,
-        "records": 3
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 10000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 5373437,
-        "records": 8
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 144026000,
-        "records": 7
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 31400000,
-        "records": 3
-      },
-      {
-        "category": "fraud",
-        "penalty": 10000000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 4639533,
-        "records": 4
-      },
-      {
-        "category": "banking violation",
-        "penalty": 484200,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:57:45.285Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

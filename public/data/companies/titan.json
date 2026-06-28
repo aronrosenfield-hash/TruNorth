@@ -27,7 +27,6 @@
     "s": "76 federal penalties totaling $1.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $378K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -145,64 +143,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Titan S.A.",
-    "slug": "titan-sa",
-    "ownership": "publicly traded",
-    "hq": "Greece",
-    "majorIndustry": "building materials",
-    "specificIndustry": "building materials",
-    "totalPenalty": 1546547,
-    "totalRecords": 76,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 897341,
-        "records": 58
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 642706,
-        "records": 17
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 6500,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 897341,
-        "records": 58
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 377651,
-        "records": 13
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 204203,
-        "records": 2
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 60852,
-        "records": 2
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 6500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T02:54:51.390Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00334805",

@@ -27,7 +27,6 @@
     "s": "54 federal penalties totaling $891K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $112K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -129,64 +127,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Reliance Inc.",
-    "slug": "reliance-inc",
-    "ownership": "publicly traded (ticker symbol RS)",
-    "hq": "California",
-    "majorIndustry": "metals",
-    "specificIndustry": "metals",
-    "totalPenalty": 891377,
-    "totalRecords": 54,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 558436,
-        "records": 44
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 157681,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 112260,
-        "records": 2
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 63000,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 558436,
-        "records": 44
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 157681,
-        "records": 4
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 112260,
-        "records": 2
-      },
-      {
-        "category": "export control violation",
-        "penalty": 63000,
-        "records": 4
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:22:17.650Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00157842",

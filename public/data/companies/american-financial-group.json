@@ -27,7 +27,6 @@
     "s": "30 federal penalties totaling $2.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -142,44 +140,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "American Financial Group",
-    "slug": "american-financial-group",
-    "ownership": "publicly traded (ticker symbol AFG)",
-    "hq": "Ohio",
-    "majorIndustry": "financial services",
-    "specificIndustry": "insurance",
-    "totalPenalty": 2263673,
-    "totalRecords": 30,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 1279273,
-        "records": 2
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 984400,
-        "records": 28
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 1279273,
-        "records": 2
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 984400,
-        "records": 28
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:28:00.240Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00074757",

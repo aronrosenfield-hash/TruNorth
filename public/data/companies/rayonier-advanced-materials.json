@@ -27,7 +27,6 @@
     "s": "18 federal penalties totaling $303K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "air pollution violation: $160K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -144,54 +142,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Rayonier Advanced Materials",
-    "slug": "rayonier-advanced-materials",
-    "ownership": "publicly traded (ticker symbol RYAM)",
-    "hq": "Florida",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "performance fibers",
-    "totalPenalty": 303108,
-    "totalRecords": 18,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 205828,
-        "records": 9
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 97280,
-        "records": 9
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 159792,
-        "records": 5
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 97280,
-        "records": 9
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 40987,
-        "records": 3
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 5049,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:20:49.466Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00566760",

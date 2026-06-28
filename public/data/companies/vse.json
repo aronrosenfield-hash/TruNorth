@@ -26,7 +26,6 @@
     "s": "10 federal penalties totaling $571K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $7K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -131,64 +129,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "VSE Corp.",
-    "slug": "vse-corp",
-    "ownership": "publicly traded (ticker symbol VSEC)",
-    "hq": "Virginia",
-    "majorIndustry": "freight and logistics",
-    "specificIndustry": "logistics",
-    "totalPenalty": 570929,
-    "totalRecords": 10,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 270833,
-        "records": 5
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 250000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 43346,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 6750,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 270833,
-        "records": 5
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 250000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 43346,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 6750,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:28:06.490Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

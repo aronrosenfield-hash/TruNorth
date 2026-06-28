@@ -27,7 +27,6 @@
     "s": "16 federal penalties totaling $1.0B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "air pollution violation: $1.0B in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -156,64 +154,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Alliant Energy",
-    "slug": "alliant-energy",
-    "ownership": "publicly traded (ticker symbol LNT)",
-    "hq": "Wisconsin",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 1027644497,
-    "totalRecords": 16,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1018594020,
-        "records": 7
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 8957824,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 92653,
-        "records": 7
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 1010950000,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 8936437,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 7644020,
-        "records": 6
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 60153,
-        "records": 4
-      },
-      {
-        "category": "railroad safety violation",
-        "penalty": 32500,
-        "records": 3
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:24:54.466Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00132092",

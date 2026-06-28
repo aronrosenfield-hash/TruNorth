@@ -27,7 +27,6 @@
     "s": "6 federal penalties totaling $539.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -145,54 +143,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Perdoceo Education Corporation",
-    "slug": "perdoceo-education-corporation",
-    "ownership": "publicly traded (ticker symbol PRDO)",
-    "hq": "Illinois",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "educational services",
-    "totalPenalty": 539030825,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 538971200,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 47205,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 12420,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 538971200,
-        "records": 4
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 47205,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 12420,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:06:02.142Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00461574",

@@ -37,15 +37,13 @@
     "s": "No public record found.",
     "rating": "Good",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "4 federal penalties totaling $116K since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -96,49 +94,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "planet-fitness-inc",
-      "matchedName": "Planet Fitness Inc.",
-      "totalPenalty": 116314,
-      "totalRecords": 4,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 50000,
-          "records": 1
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 36180,
-          "records": 2
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 30134,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "consumer protection violation",
-          "penalty": 50000,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 36180,
-          "records": 2
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 30134,
-          "records": 1
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "la-fitness",
@@ -263,54 +218,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Planet Fitness Inc.",
-    "slug": "planet-fitness-inc",
-    "ownership": "publicly traded (ticker symbol PLNT)",
-    "hq": "New Hampshire",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "fitness centers",
-    "totalPenalty": 116314,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 50000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 36180,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 30134,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 50000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 36180,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 30134,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

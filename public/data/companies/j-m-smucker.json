@@ -26,7 +26,6 @@
     "s": "29 federal penalties totaling $1.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $6K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -164,64 +162,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "J.M. Smucker Co.",
-    "slug": "jm-smucker-co",
-    "ownership": "publicly traded (ticker symbol SJM)",
-    "hq": "Ohio",
-    "majorIndustry": "food products",
-    "specificIndustry": "food products",
-    "totalPenalty": 1027954,
-    "totalRecords": 29,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 675424,
-        "records": 24
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 346230,
-        "records": 4
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 6300,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 675424,
-        "records": 24
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 200000,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 140000,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 6300,
-        "records": 1
-      },
-      {
-        "category": "Family and Medical Leave Act",
-        "penalty": 6230,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:42:01.687Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

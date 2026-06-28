@@ -26,7 +26,6 @@
     "s": "13 federal penalties totaling $17.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $78K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -132,74 +130,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "United Parks and Resorts Inc.",
-    "slug": "united-parks-and-resorts-inc",
-    "ownership": "publicly traded (ticker symbol PRKS)",
-    "hq": "Florida",
-    "majorIndustry": "entertainment",
-    "specificIndustry": "entertainment",
-    "totalPenalty": 17011493,
-    "totalRecords": 13,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 11500000,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 4000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1260324,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 157160,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 94009,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 11500000,
-        "records": 1
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 4000000,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 1250000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 94009,
-        "records": 6
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 78000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T03:05:19.629Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -26,7 +26,6 @@
     "s": "20 federal penalties totaling $12.4M since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "environmental violation: $36K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -125,69 +123,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Casey's General Stores",
-    "slug": "caseys-general-stores",
-    "ownership": "publicly traded (ticker symbol CASY)",
-    "hq": "Iowa",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-convenience stores",
-    "totalPenalty": 12448764,
-    "totalRecords": 20,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 12225273,
-        "records": 6
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 173505,
-        "records": 11
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 30000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 19986,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 11725273,
-        "records": 5
-      },
-      {
-        "category": "employment screening violation",
-        "penalty": 500000,
-        "records": 1
-      },
-      {
-        "category": "underground storage tank violation",
-        "penalty": 125505,
-        "records": 7
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 36000,
-        "records": 3
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 30000,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:38:21.174Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -26,7 +26,6 @@
     "s": "53 federal penalties totaling $134.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -132,74 +130,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "AECOM",
-    "slug": "aecom",
-    "ownership": "publicly traded (ticker symbol ACM)",
-    "hq": "California",
-    "majorIndustry": "construction and engineering",
-    "specificIndustry": "construction &amp; engineering",
-    "totalPenalty": 134332610,
-    "totalRecords": 53,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 110955000,
-        "records": 7
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 20230917,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 2605894,
-        "records": 16
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 496299,
-        "records": 27
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 44500,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 110955000,
-        "records": 7
-      },
-      {
-        "category": "fraud",
-        "penalty": 20230917,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 2470775,
-        "records": 13
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 383799,
-        "records": 26
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 135119,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:10:10.319Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

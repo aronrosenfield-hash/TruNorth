@@ -27,7 +27,6 @@
     "s": "4 federal penalties totaling $2.1M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -146,54 +144,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "BOK Financial",
-    "slug": "bok-financial",
-    "ownership": "publicly traded (ticker symbol BOKF)",
-    "hq": "Oklahoma",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking",
-    "totalPenalty": 2100521,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 1865521,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 230000,
-        "records": 1
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 1865521,
-        "records": 2
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 230000,
-        "records": 1
-      },
-      {
-        "category": "insurance violation",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:17:17.835Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00317297",

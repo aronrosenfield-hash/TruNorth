@@ -27,7 +27,6 @@
     "s": "18 federal penalties totaling $365K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $41K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -107,69 +105,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Barry Callebaut",
-    "slug": "barry-callebaut",
-    "ownership": "publicly traded",
-    "hq": "Switzerland",
-    "majorIndustry": "food products",
-    "specificIndustry": "food products",
-    "totalPenalty": 364866,
-    "totalRecords": 18,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 224243,
-        "records": 12
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 67757,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 41014,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 31852,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 224243,
-        "records": 12
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 67757,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 41014,
-        "records": 2
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 25000,
-        "records": 1
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 6852,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:01:54.573Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

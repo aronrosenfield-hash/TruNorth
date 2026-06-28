@@ -26,7 +26,6 @@
     "s": "1058 federal penalties totaling $446.2M since 2000 (Violation Tracker).",
     "rating": "poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "air pollution violation: $111.8M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -148,74 +146,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Cleveland-Cliffs",
-    "slug": "cleveland-cliffs",
-    "ownership": "publicly traded (ticker symbol CLF)",
-    "hq": "Ohio",
-    "majorIndustry": "mining and minerals",
-    "specificIndustry": "mining",
-    "totalPenalty": 446231064,
-    "totalRecords": 1058,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 266563608,
-        "records": 25
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 164451482,
-        "records": 149
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 9365974,
-        "records": 882
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 5800000,
-        "records": 1
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 50000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 256261105,
-        "records": 9
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 111752058,
-        "records": 57
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 22890729,
-        "records": 75
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 16516400,
-        "records": 5
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 12387573,
-        "records": 8
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:53:45.626Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

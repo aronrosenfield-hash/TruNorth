@@ -27,7 +27,6 @@
     "s": "4 federal penalties totaling $20.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "environmental violation: $12.2M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -145,54 +143,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Noble Corp.",
-    "slug": "noble-corp",
-    "ownership": "publicly traded (ticker symbol NE)",
-    "hq": "United Kingdom",
-    "majorIndustry": "oilfield services and supplies",
-    "specificIndustry": "oilfield services",
-    "totalPenalty": 20374998,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 12200000,
-        "records": 1
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 8166998,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 8000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 12200000,
-        "records": 1
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 8166998,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 8000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:14:57.765Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00479873",

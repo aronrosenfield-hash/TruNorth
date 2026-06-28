@@ -27,7 +27,6 @@
     "s": "5 federal penalties totaling $582K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -48,8 +47,7 @@
   "environment": {
     "s": "air pollution violation: $390K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -144,74 +142,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "EnPro Industries",
-    "slug": "enpro-industries",
-    "ownership": "publicly traded (ticker symbol NPO)",
-    "hq": "North Carolina",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "engineered industrial products",
-    "totalPenalty": 581916,
-    "totalRecords": 5,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 390000,
-        "records": 1
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 110000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 53791,
-        "records": 1
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 16875,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 11250,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 390000,
-        "records": 1
-      },
-      {
-        "category": "export control violation",
-        "penalty": 110000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 53791,
-        "records": 1
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 16875,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 11250,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:01:51.618Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00379784",

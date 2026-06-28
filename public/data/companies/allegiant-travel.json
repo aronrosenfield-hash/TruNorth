@@ -29,7 +29,6 @@
     "s": "32 federal penalties totaling $4.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -51,8 +50,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -152,59 +150,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Allegiant Travel",
-    "slug": "allegiant-travel",
-    "ownership": "publicly traded (ticker symbol ALGT)",
-    "hq": "Nevada",
-    "majorIndustry": "airlines",
-    "specificIndustry": "airlines",
-    "totalPenalty": 4177620,
-    "totalRecords": 32,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 1777620,
-        "records": 25
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1700000,
-        "records": 1
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 700000,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "aviation safety violation",
-        "penalty": 1769620,
-        "records": 24
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 1700000,
-        "records": 1
-      },
-      {
-        "category": "aviation consumer protection violation",
-        "penalty": 700000,
-        "records": 6
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 8000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:24:33.084Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00516039",

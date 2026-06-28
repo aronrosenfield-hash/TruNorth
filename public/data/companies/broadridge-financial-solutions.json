@@ -25,7 +25,6 @@
     "s": "3 federal penalties totaling $30K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "air pollution violation: $7K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -151,44 +149,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Broadridge Financial Solutions",
-    "slug": "broadridge-financial-solutions",
-    "ownership": "publicly traded (ticker symbol BR)",
-    "hq": "New York",
-    "majorIndustry": "financial services",
-    "specificIndustry": "financial services",
-    "totalPenalty": 30357,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 23857,
-        "records": 2
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 6500,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 23857,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 6500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:24:14.956Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

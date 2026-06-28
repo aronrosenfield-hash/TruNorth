@@ -39,15 +39,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "37 federal penalties totaling $682.7M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -85,69 +83,6 @@
     "sources": [
       "Claude AI synthesis"
     ]
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "baxter-international",
-      "matchedName": "Baxter International",
-      "totalPenalty": 682708079,
-      "totalRecords": 37,
-      "offenseGroups": [
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 539390333,
-          "records": 12
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 103715384,
-          "records": 4
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 18270731,
-          "records": 8
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 18000000,
-          "records": 1
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 2730776,
-          "records": 3
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "False Claims Act and related",
-          "penalty": 539390333,
-          "records": 12
-        },
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 103715384,
-          "records": 4
-        },
-        {
-          "category": "drug or medical equipment safety violation",
-          "penalty": 18158000,
-          "records": 1
-        },
-        {
-          "category": "accounting fraud or deficiencies",
-          "penalty": 18000000,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 2730776,
-          "records": 3
-        }
-      ],
-      "rating": "good"
-    }
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
@@ -235,74 +170,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Baxter International",
-    "slug": "baxter-international",
-    "ownership": "publicly traded (ticker symbol BAX)",
-    "hq": "Illinois",
-    "majorIndustry": "medical equipment and supplies",
-    "specificIndustry": "medical supplies",
-    "totalPenalty": 682708079,
-    "totalRecords": 37,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 539390333,
-        "records": 12
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 103715384,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 18270731,
-        "records": 8
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 18000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 2730776,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 539390333,
-        "records": 12
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 103715384,
-        "records": 4
-      },
-      {
-        "category": "drug or medical equipment safety violation",
-        "penalty": 18158000,
-        "records": 1
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 18000000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 2730776,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

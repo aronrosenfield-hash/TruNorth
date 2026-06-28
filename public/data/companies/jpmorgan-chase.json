@@ -49,15 +49,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "284 federal penalties totaling $40.2B since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -124,69 +122,6 @@
     "finra": "2026-06-23T12:57:34.337Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z",
     "fedReserve": "2026-06-27T21:34:23.374Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "jpmorgan-chase",
-      "matchedName": "JPMorgan Chase",
-      "totalPenalty": 40170532209,
-      "totalRecords": 284,
-      "offenseGroups": [
-        {
-          "category": "financial offenses",
-          "penalty": 27799554167,
-          "records": 128
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 8620148178,
-          "records": 66
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 2610274791,
-          "records": 30
-        },
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 614000000,
-          "records": 1
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 522448562,
-          "records": 50
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "toxic securities abuses",
-          "penalty": 13459785714,
-          "records": 7
-        },
-        {
-          "category": "investor protection violation",
-          "penalty": 6754497353,
-          "records": 88
-        },
-        {
-          "category": "mortgage abuses",
-          "penalty": 5362675000,
-          "records": 5
-        },
-        {
-          "category": "banking violation",
-          "penalty": 4900550341,
-          "records": 17
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 3195402428,
-          "records": 44
-        }
-      ],
-      "rating": "poor"
-    }
   },
   "competitors": [
     "bank-of-america",
@@ -335,74 +270,6 @@
     "source": "courtlistener-recap"
   },
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "JPMorgan Chase",
-    "slug": "jpmorgan-chase",
-    "ownership": "publicly traded (ticker symbol JPM)",
-    "hq": "New York",
-    "majorIndustry": "financial services",
-    "specificIndustry": "banking &amp; securities",
-    "totalPenalty": 40170532209,
-    "totalRecords": 284,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 27799554167,
-        "records": 128
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 8620148178,
-        "records": 66
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 2610274791,
-        "records": 30
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 614000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 522448562,
-        "records": 50
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "toxic securities abuses",
-        "penalty": 13459785714,
-        "records": 7
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 6754497353,
-        "records": 88
-      },
-      {
-        "category": "mortgage abuses",
-        "penalty": 5362675000,
-        "records": 5
-      },
-      {
-        "category": "banking violation",
-        "penalty": 4900550341,
-        "records": 17
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 3195402428,
-        "records": 44
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00104299",

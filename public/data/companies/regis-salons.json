@@ -37,15 +37,13 @@
     "s": "air pollution violation: $19K in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "12 federal penalties totaling $12.3M since 2000 (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -86,54 +84,6 @@
   "ab": "#0d2318",
   "ac": "#4caf82",
   "dataLastUpdated": "2026-05-28",
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "regis",
-      "matchedName": "Regis",
-      "totalPenalty": 12257055,
-      "totalRecords": 12,
-      "offenseGroups": [
-        {
-          "category": "employment-related offenses",
-          "penalty": 12237855,
-          "records": 11
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 19200,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "wage and hour violation",
-          "penalty": 8450000,
-          "records": 3
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 3719750,
-          "records": 5
-        },
-        {
-          "category": "labor relations violation",
-          "penalty": 61476,
-          "records": 2
-        },
-        {
-          "category": "air pollution violation",
-          "penalty": 19200,
-          "records": 1
-        },
-        {
-          "category": "Family and Medical Leave Act",
-          "penalty": 6629,
-          "records": 1
-        }
-      ],
-      "rating": "mixed"
-    }
-  },
   "competitors": [
     "great-clips",
     "supercuts",
@@ -183,59 +133,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Regis",
-    "slug": "regis",
-    "ownership": "publicly traded (ticker symbol RGS)",
-    "hq": "Minnesota",
-    "majorIndustry": "miscellaneous services",
-    "specificIndustry": "hair salons",
-    "totalPenalty": 12257055,
-    "totalRecords": 12,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 12237855,
-        "records": 11
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 19200,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 8450000,
-        "records": 3
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 3719750,
-        "records": 5
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 61476,
-        "records": 2
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 19200,
-        "records": 1
-      },
-      {
-        "category": "Family and Medical Leave Act",
-        "penalty": 6629,
-        "records": 1
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

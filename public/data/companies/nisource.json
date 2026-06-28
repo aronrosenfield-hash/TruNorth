@@ -27,7 +27,6 @@
     "s": "66 federal penalties totaling $689.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $613.0M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -149,74 +147,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "NiSource",
-    "slug": "nisource",
-    "ownership": "publicly traded (ticker symbol NI)",
-    "hq": "Indiana",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "energy generation",
-    "totalPenalty": 689261420,
-    "totalRecords": 66,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 613288525,
-        "records": 10
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 56005000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 10845490,
-        "records": 47
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 7700000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1422405,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 613009300,
-        "records": 4
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 56005000,
-        "records": 2
-      },
-      {
-        "category": "utility safety violation",
-        "penalty": 10831490,
-        "records": 46
-      },
-      {
-        "category": "energy market violation",
-        "penalty": 7700000,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 1000000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:39:55.960Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00051979",

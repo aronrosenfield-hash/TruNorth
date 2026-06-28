@@ -44,15 +44,13 @@
     "s": "water pollution violation: $25.4M in federal penalties (Violation Tracker).",
     "rating": "Poor",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "184 federal penalties totaling $144.0M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -104,64 +102,6 @@
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "eastman-chemical",
-      "matchedName": "Eastman Chemical",
-      "totalPenalty": 144037249,
-      "totalRecords": 184,
-      "offenseGroups": [
-        {
-          "category": "environment-related offenses",
-          "penalty": 121507191,
-          "records": 132
-        },
-        {
-          "category": "competition-related offenses",
-          "penalty": 22016000,
-          "records": 2
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 433476,
-          "records": 49
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 80582,
-          "records": 1
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "PCB violation",
-          "penalty": 83333333,
-          "records": 2
-        },
-        {
-          "category": "water pollution violation",
-          "penalty": 25443906,
-          "records": 4
-        },
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 22000000,
-          "records": 1
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 11466982,
-          "records": 84
-        },
-        {
-          "category": "air pollution violation",
-          "penalty": 1169970,
-          "records": 40
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "lyondellbasell",
@@ -249,69 +189,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Eastman Chemical",
-    "slug": "eastman-chemical",
-    "ownership": "publicly traded (ticker symbol EMN)",
-    "hq": "Tennessee",
-    "majorIndustry": "chemicals",
-    "specificIndustry": "chemicals",
-    "totalPenalty": 144037249,
-    "totalRecords": 184,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 121507191,
-        "records": 132
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 22016000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 433476,
-        "records": 49
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 80582,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "PCB violation",
-        "penalty": 83333333,
-        "records": 2
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 25443906,
-        "records": 4
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 22000000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 11466982,
-        "records": 84
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 1169970,
-        "records": 40
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00113159",

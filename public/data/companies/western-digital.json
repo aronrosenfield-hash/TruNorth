@@ -26,7 +26,6 @@
     "s": "7 federal penalties totaling $10.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "hazardous waste violation: $195K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -132,54 +130,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Western Digital Corp.",
-    "slug": "western-digital-corp",
-    "ownership": "publicly traded (ticker symbol WDC)",
-    "hq": "California",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "computer peripherals",
-    "totalPenalty": 10040172,
-    "totalRecords": 7,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 9844813,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 195359,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "employment discrimination",
-        "penalty": 7750000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 2094813,
-        "records": 2
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 195359,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 0,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:28:13.616Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

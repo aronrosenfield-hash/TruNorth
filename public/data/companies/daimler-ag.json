@@ -26,7 +26,6 @@
     "s": "53 federal penalties totaling $538.3M since 2000 (Violation Tracker).",
     "rating": "poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "air pollution violation: $28.5M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -115,69 +113,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Daimler Truck AG",
-    "slug": "daimler-truck-ag",
-    "ownership": "publicly traded",
-    "hq": "Germany",
-    "majorIndustry": "motor vehicles",
-    "specificIndustry": "trucks",
-    "totalPenalty": 538279102,
-    "totalRecords": 53,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 480728911,
-        "records": 14
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 41930558,
-        "records": 14
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 15469633,
-        "records": 24
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 150000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 480030003,
-        "records": 4
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 28520625,
-        "records": 3
-      },
-      {
-        "category": "motor vehicle safety violation",
-        "penalty": 15000000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 13322085,
-        "records": 8
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 469633,
-        "records": 23
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:01:47.143Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

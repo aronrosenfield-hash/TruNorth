@@ -36,15 +36,13 @@
     "s": "No public record found.",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "3 federal penalties totaling $111K since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -81,39 +79,6 @@
     "sources": [
       "Claude AI synthesis"
     ]
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "united-launch-alliance",
-      "matchedName": "United Launch Alliance",
-      "totalPenalty": 111000,
-      "totalRecords": 3,
-      "offenseGroups": [
-        {
-          "category": "competition-related offenses",
-          "penalty": 100000,
-          "records": 1
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 11000,
-          "records": 2
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "kickbacks and bribery",
-          "penalty": 100000,
-          "records": 1
-        },
-        {
-          "category": "workplace safety or health violation",
-          "penalty": 11000,
-          "records": 2
-        }
-      ],
-      "rating": "good"
-    }
   },
   "dataLastUpdated": "2026-05-28",
   "competitors": [
@@ -180,44 +145,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "United Launch Alliance",
-    "slug": "united-launch-alliance",
-    "ownership": "joint venture (owned 50-50 by Lockheed Martin and Boeing)",
-    "hq": "Colorado",
-    "majorIndustry": "aerospace and military contracting",
-    "specificIndustry": "aerospace &amp; military contracting",
-    "totalPenalty": 111000,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 100000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 11000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "kickbacks and bribery",
-        "penalty": 100000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 11000,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

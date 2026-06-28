@@ -27,7 +27,6 @@
     "s": "43 federal penalties totaling $1.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $322K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -144,49 +142,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Argos",
-    "slug": "argos",
-    "ownership": "publicly traded",
-    "hq": "Colombia",
-    "majorIndustry": "building materials",
-    "specificIndustry": "building materials",
-    "totalPenalty": 1024638,
-    "totalRecords": 43,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 633168,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 391470,
-        "records": 41
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 391470,
-        "records": 41
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 322168,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 311000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T21:55:44.666Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

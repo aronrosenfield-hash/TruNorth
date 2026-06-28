@@ -26,7 +26,6 @@
     "s": "6 federal penalties totaling $180K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "air pollution violation: $12K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -143,64 +141,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Light & Wonder Inc.",
-    "slug": "light-and-wonder-inc",
-    "ownership": "publicly traded (ticker symbol LNW)",
-    "hq": "Nevada",
-    "majorIndustry": "entertainment",
-    "specificIndustry": "gambling systems",
-    "totalPenalty": 179977,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 155000,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 12000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 7577,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 5400,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "gambling industry violation",
-        "penalty": 155000,
-        "records": 3
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 12000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 7577,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 5400,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:56:31.077Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

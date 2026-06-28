@@ -48,15 +48,13 @@
     "s": "environmental violation: $10.3M in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "177 federal penalties totaling $2.8B since 2000 (Violation Tracker). Supply-chain signals: KnowTheChain 33/100; CHRB 9.4/26; UK MS statement; AU MS statement.",
     "rating": "Poor",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB",
       "knowthechain",
@@ -129,69 +127,6 @@
     "secLitigation": "2026-06-22T17:33:19.578Z",
     "federalContracts": "2026-06-11T23:51:18.870Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "amazoncom",
-      "matchedName": "Amazon.com",
-      "totalPenalty": 2788983667,
-      "totalRecords": 177,
-      "offenseGroups": [
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 2643182230,
-          "records": 23
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 112995533,
-          "records": 26
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 20061128,
-          "records": 27
-        },
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 5790000,
-          "records": 1
-        },
-        {
-          "category": "safety-related offenses",
-          "penalty": 4270253,
-          "records": 97
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "consumer protection violation",
-          "penalty": 2516279468,
-          "records": 17
-        },
-        {
-          "category": "privacy violation",
-          "penalty": 126902762,
-          "records": 6
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 104786494,
-          "records": 13
-        },
-        {
-          "category": "environmental violation",
-          "penalty": 10320867,
-          "records": 13
-        },
-        {
-          "category": "employment screening violation",
-          "penalty": 5802720,
-          "records": 2
-        }
-      ],
-      "rating": "poor"
-    }
   },
   "competitors": [
     "walmart",
@@ -398,74 +333,6 @@
   "ownership_wikidata": null,
   "privacy_hibp_breaches": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Amazon.com",
-    "slug": "amazoncom",
-    "ownership": "publicly traded (ticker symbol AMZN)",
-    "hq": "Washington",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-internet",
-    "totalPenalty": 2788983667,
-    "totalRecords": 177,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 2643182230,
-        "records": 23
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 112995533,
-        "records": 26
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 20061128,
-        "records": 27
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 5790000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 4270253,
-        "records": 97
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 2516279468,
-        "records": 17
-      },
-      {
-        "category": "privacy violation",
-        "penalty": 126902762,
-        "records": 6
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 104786494,
-        "records": 13
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 10320867,
-        "records": 13
-      },
-      {
-        "category": "employment screening violation",
-        "penalty": 5802720,
-        "records": 2
-      }
-    ],
-    "rating": "poor",
-    "lastChecked": "2026-05-26",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00360354",

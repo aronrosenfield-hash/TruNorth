@@ -26,7 +26,6 @@
     "s": "41 federal penalties totaling $3.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $281K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -126,74 +124,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Algonquin Power & Utilities",
-    "slug": "algonquin-power-and-utilities",
-    "ownership": "publicly traded",
-    "hq": "Canada",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 3612986,
-    "totalRecords": 41,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 2119073,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 943913,
-        "records": 34
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 311000,
-        "records": 3
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 189000,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 50000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "energy market violation",
-        "penalty": 2119073,
-        "records": 1
-      },
-      {
-        "category": "utility safety violation",
-        "penalty": 897600,
-        "records": 31
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 281000,
-        "records": 2
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 150000,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 50000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:23:57.719Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

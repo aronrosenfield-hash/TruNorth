@@ -26,7 +26,6 @@
     "s": "2 federal penalties totaling $41K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $35K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -147,44 +145,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Enerpac Tool Group",
-    "slug": "enerpac-tool-group",
-    "ownership": "publicly traded (ticker symbol EPAC)",
-    "hq": "Wisconsin",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "miscellaneous manufacturing",
-    "totalPenalty": 41484,
-    "totalRecords": 2,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 35394,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 6090,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 35394,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 6090,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:00:56.208Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -27,7 +27,6 @@
     "s": "47 federal penalties totaling $3.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -42,8 +41,7 @@
   "environment": {
     "s": "environmental violation: $460K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -124,64 +122,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Waste Connections Inc.",
-    "slug": "waste-connections-inc",
-    "ownership": "publicly traded (ticker symbol WCN)",
-    "hq": "Texas",
-    "majorIndustry": "waste management and environmental services",
-    "specificIndustry": "waste management",
-    "totalPenalty": 2969043,
-    "totalRecords": 47,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 2016298,
-        "records": 8
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 687706,
-        "records": 15
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 265039,
-        "records": 24
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 1095935,
-        "records": 3
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 628977,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 460280,
-        "records": 8
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 291386,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 215719,
-        "records": 20
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:04:48.236Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00564799",

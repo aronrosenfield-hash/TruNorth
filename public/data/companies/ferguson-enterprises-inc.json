@@ -26,7 +26,6 @@
     "s": "38 federal penalties totaling $3.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "air pollution violation: $225K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -151,64 +149,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ferguson Enterprises Inc.",
-    "slug": "ferguson-enterprises-inc",
-    "ownership": "publicly traded (ticker symbol FERG)",
-    "hq": "Virginia",
-    "majorIndustry": "wholesalers",
-    "specificIndustry": "wholesalers-construction materials",
-    "totalPenalty": 3275074,
-    "totalRecords": 38,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 2676634,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 353724,
-        "records": 30
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 244716,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 2250000,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 406634,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 309724,
-        "records": 29
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 224500,
-        "records": 2
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 44000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:17:53.836Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -26,7 +26,6 @@
     "s": "12 federal penalties totaling $207K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $34K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -106,59 +104,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "RBC Bearings Inc.",
-    "slug": "rbc-bearings-inc",
-    "ownership": "publicly traded (ticker symbol ROLL)",
-    "hq": "Connecticut",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "industrial products",
-    "totalPenalty": 207420,
-    "totalRecords": 12,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 136127,
-        "records": 8
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 71293,
-        "records": 4
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 126127,
-        "records": 7
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 33600,
-        "records": 1
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 24193,
-        "records": 1
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 13500,
-        "records": 2
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 10000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:21:00.542Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -27,7 +27,6 @@
     "s": "4 federal penalties totaling $1.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $1.8M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -128,44 +126,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Gem Manufacturing LLC",
-    "slug": "gem-manufacturing-llc",
-    "ownership": "privately held",
-    "hq": "Virgin Islands",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "jewelry",
-    "totalPenalty": 1834797,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1808750,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 26047,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 1808750,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 26047,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-30",
-    "fetchedAt": "2026-05-30T23:57:16.775Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00018747",

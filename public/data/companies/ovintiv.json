@@ -27,7 +27,6 @@
     "s": "71 federal penalties totaling $31.8M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "air pollution violation: $17.2M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -156,64 +154,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ovintiv Inc.",
-    "slug": "ovintiv-inc",
-    "ownership": "publicly traded (ticker symbol OVV)",
-    "hq": "Colorado",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 31829802,
-    "totalRecords": 71,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 24380802,
-        "records": 64
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 7400000,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 49000,
-        "records": 5
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 17194802,
-        "records": 39
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 7400000,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 6339000,
-        "records": 19
-      },
-      {
-        "category": "drinking water violation",
-        "penalty": 600000,
-        "records": 1
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 175000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:01:25.862Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00431932",

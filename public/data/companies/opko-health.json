@@ -26,7 +26,6 @@
     "s": "4 federal penalties totaling $21.5M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "environmental violation: $18K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -132,54 +130,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "OPKO Health",
-    "slug": "opko-health",
-    "ownership": "publicly traded (ticker symbol OPK)",
-    "hq": "Florida",
-    "majorIndustry": "healthcare services",
-    "specificIndustry": "healthcare diagnostics",
-    "totalPenalty": 21517700,
-    "totalRecords": 4,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 11500000,
-        "records": 2
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 10000000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 17700,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 11500000,
-        "records": 2
-      },
-      {
-        "category": "kickbacks and bribery",
-        "penalty": 10000000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 17700,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:59:08.888Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

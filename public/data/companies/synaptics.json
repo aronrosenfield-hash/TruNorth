@@ -26,7 +26,6 @@
     "s": "3 federal penalties totaling $3.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "air pollution violation: $5K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -147,49 +145,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Synaptics Inc.",
-    "slug": "synaptics-inc",
-    "ownership": "publicly traded (ticker symbol SYNA)",
-    "hq": "California",
-    "majorIndustry": "information technology",
-    "specificIndustry": "human interface products",
-    "totalPenalty": 3260000,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 3250000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 10000,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 3250000,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 5000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T01:23:58.438Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

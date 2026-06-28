@@ -27,7 +27,6 @@
     "s": "817 federal penalties totaling $231.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "water pollution violation: $215.1M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -129,64 +127,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Core Natural Resources Inc.",
-    "slug": "core-natural-resources-inc",
-    "ownership": "publicly traded (ticker symbol CNR)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "mining and minerals",
-    "specificIndustry": "mining",
-    "totalPenalty": 231374614,
-    "totalRecords": 817,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 220883590,
-        "records": 75
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 8833630,
-        "records": 739
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1657394,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "water pollution violation",
-        "penalty": 215125030,
-        "records": 19
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 8803630,
-        "records": 738
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 5632760,
-        "records": 42
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 1051117,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 586860,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:01:53.735Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00279331",

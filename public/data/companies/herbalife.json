@@ -27,7 +27,6 @@
     "s": "6 federal penalties totaling $345.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -45,8 +44,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -124,64 +122,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Herbalife",
-    "slug": "herbalife",
-    "ownership": "publicly traded (ticker symbol HLF)",
-    "hq": "Cayman Islands",
-    "majorIndustry": "food products",
-    "specificIndustry": "nutritional products",
-    "totalPenalty": 345018000,
-    "totalRecords": 6,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 203000000,
-        "records": 2
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 122000000,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 20000000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 18000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "consumer protection violation",
-        "penalty": 203000000,
-        "records": 2
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 122000000,
-        "records": 2
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 20000000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 18000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T22:15:25.753Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00393298",

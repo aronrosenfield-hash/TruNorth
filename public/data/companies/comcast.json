@@ -39,15 +39,13 @@
     "s": "hazardous waste violation: $26.0M in federal penalties (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "labor": {
     "s": "138 federal penalties totaling $320.2M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -87,69 +85,6 @@
     "s": "SEC litigation releases: 1 on record (insider trading, accounting fraud, or disclosure violations).",
     "ratio": "N/A",
     "sources": []
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "comcast",
-      "matchedName": "Comcast",
-      "totalPenalty": 320183640,
-      "totalRecords": 138,
-      "offenseGroups": [
-        {
-          "category": "competition-related offenses",
-          "penalty": 115500000,
-          "records": 3
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 96462515,
-          "records": 16
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 50000000,
-          "records": 1
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 31361377,
-          "records": 52
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 26195628,
-          "records": 11
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "price-fixing or anti-competitive practices",
-          "penalty": 115500000,
-          "records": 3
-        },
-        {
-          "category": "privacy violation",
-          "penalty": 54625515,
-          "records": 4
-        },
-        {
-          "category": "accounting fraud or deficiencies",
-          "penalty": 50000000,
-          "records": 1
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 38575000,
-          "records": 8
-        },
-        {
-          "category": "hazardous waste violation",
-          "penalty": 25958780,
-          "records": 2
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
@@ -294,74 +229,6 @@
     "source": "courtlistener-recap"
   },
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Comcast",
-    "slug": "comcast",
-    "ownership": "publicly traded (ticker symbol CMCSA)",
-    "hq": "Pennsylvania",
-    "majorIndustry": "telecommunications",
-    "specificIndustry": "telecommunications; media",
-    "totalPenalty": 320183640,
-    "totalRecords": 138,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 115500000,
-        "records": 3
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 96462515,
-        "records": 16
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 50000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 31361377,
-        "records": 52
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 26195628,
-        "records": 11
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 115500000,
-        "records": 3
-      },
-      {
-        "category": "privacy violation",
-        "penalty": 54625515,
-        "records": 4
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 50000000,
-        "records": 1
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 38575000,
-        "records": 8
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 25958780,
-        "records": 2
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

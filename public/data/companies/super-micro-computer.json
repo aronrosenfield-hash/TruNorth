@@ -26,7 +26,6 @@
     "s": "3 federal penalties totaling $17.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -151,49 +149,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Super Micro Computer Inc.",
-    "slug": "super-micro-computer-inc",
-    "ownership": "publicly traded (ticker symbol SMCI)",
-    "hq": "California",
-    "majorIndustry": "electrical and electronic equipment",
-    "specificIndustry": "computers",
-    "totalPenalty": 17705197,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 17679327,
-        "records": 2
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 25870,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 17500000,
-        "records": 1
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 179327,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 25870,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:30:47.923Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -28,7 +28,6 @@
     "s": "3 federal penalties totaling $148K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -43,8 +42,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -141,44 +139,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Sun Communities",
-    "slug": "sun-communities",
-    "ownership": "publicly traded (ticker symbol SUI)",
-    "hq": "Michigan",
-    "majorIndustry": "real estate",
-    "specificIndustry": "real estate",
-    "totalPenalty": 148280,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 135000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 13280,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 135000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 13280,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-31",
-    "fetchedAt": "2026-05-31T02:45:16.154Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00386524",

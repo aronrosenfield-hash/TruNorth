@@ -27,7 +27,6 @@
     "s": "51 federal penalties totaling $17.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -163,74 +161,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Thermo Fisher Scientific",
-    "slug": "thermo-fisher-scientific",
-    "ownership": "publicly traded (ticker symbol TMO)",
-    "hq": "Massachusetts",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "scientific equipment",
-    "totalPenalty": 17352966,
-    "totalRecords": 51,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 11581750,
-        "records": 5
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 4850001,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 336171,
-        "records": 28
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 328290,
-        "records": 13
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 231754,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 11000000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 4700000,
-        "records": 1
-      },
-      {
-        "category": "export control violation",
-        "penalty": 581750,
-        "records": 4
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 263671,
-        "records": 23
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 231754,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:27:24.839Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00292318",

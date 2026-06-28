@@ -28,7 +28,6 @@
     "s": "109 federal penalties totaling $304.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -50,7 +49,6 @@
     "s": "Forest 500 2024: score 55/100 — partial deforestation policy / implementation gaps on supply-chain. Exposed to soy, palm, beef, pulp.",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "forest500"
     ]
   },
@@ -166,74 +164,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ahold Delhaize",
-    "slug": "ahold-delhaize",
-    "ownership": "publicly traded",
-    "hq": "Netherlands",
-    "majorIndustry": "retailing",
-    "specificIndustry": "retail-supermarkets",
-    "totalPenalty": 304274290,
-    "totalRecords": 109,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 297000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 5408017,
-        "records": 29
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 666500,
-        "records": 7
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 591648,
-        "records": 57
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 325325,
-        "records": 13
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 297000000,
-        "records": 1
-      },
-      {
-        "category": "employment screening violation",
-        "penalty": 3227433,
-        "records": 2
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 1492934,
-        "records": 17
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 625000,
-        "records": 5
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 591648,
-        "records": 57
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:35:05.710Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00214304",

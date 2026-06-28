@@ -39,7 +39,6 @@
     "rating": "Positive",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "the-climate-pledge"
     ]
   },
@@ -47,7 +46,6 @@
     "s": "32 federal penalties totaling $301.7M since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -91,59 +89,6 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "federalContracts": "2026-06-11T23:51:18.870Z"
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "deloitte",
-      "matchedName": "Deloitte",
-      "totalPenalty": 301697673,
-      "totalRecords": 32,
-      "offenseGroups": [
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 161100885,
-          "records": 3
-        },
-        {
-          "category": "financial offenses",
-          "penalty": 138750016,
-          "records": 26
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 1846772,
-          "records": 3
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "False Claims Act and related",
-          "penalty": 161100885,
-          "records": 3
-        },
-        {
-          "category": "accounting fraud or deficiencies",
-          "penalty": 108850016,
-          "records": 24
-        },
-        {
-          "category": "investor protection violation",
-          "penalty": 19900000,
-          "records": 1
-        },
-        {
-          "category": "anti-money-laundering deficiencies",
-          "penalty": 10000000,
-          "records": 1
-        },
-        {
-          "category": "wage and hour violation",
-          "penalty": 1571772,
-          "records": 2
-        }
-      ],
-      "rating": "good"
-    }
   },
   "competitors": [
     "pwc",
@@ -220,64 +165,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Deloitte",
-    "slug": "deloitte",
-    "ownership": "privately held",
-    "hq": "United Kingdom",
-    "majorIndustry": "business services",
-    "specificIndustry": "accounting services",
-    "totalPenalty": 301697673,
-    "totalRecords": 32,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 161100885,
-        "records": 3
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 138750016,
-        "records": 26
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 1846772,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 161100885,
-        "records": 3
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 108850016,
-        "records": 24
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 19900000,
-        "records": 1
-      },
-      {
-        "category": "anti-money-laundering deficiencies",
-        "penalty": 10000000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 1571772,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

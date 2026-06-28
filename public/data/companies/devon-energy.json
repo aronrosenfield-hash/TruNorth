@@ -27,7 +27,6 @@
     "s": "50 federal penalties totaling $441.3M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "water pollution violation: $1.3M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -153,69 +151,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Devon Energy",
-    "slug": "devon-energy",
-    "ownership": "publicly traded (ticker symbol DVN)",
-    "hq": "Oklahoma",
-    "majorIndustry": "oil and gas",
-    "specificIndustry": "oil &amp; gas",
-    "totalPenalty": 441256900,
-    "totalRecords": 50,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 417000000,
-        "records": 1
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 21542463,
-        "records": 3
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 2593469,
-        "records": 34
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 120968,
-        "records": 12
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 417000000,
-        "records": 1
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 21542463,
-        "records": 3
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 1306800,
-        "records": 3
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 771669,
-        "records": 13
-      },
-      {
-        "category": "oil or gas drilling violation",
-        "penalty": 254200,
-        "records": 9
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:04:26.210Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00354753",

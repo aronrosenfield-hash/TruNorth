@@ -26,7 +26,6 @@
     "s": "20 federal penalties totaling $2.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $1.5M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -144,59 +142,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Perma-Fix Environmental Services",
-    "slug": "perma-fix-environmental-services",
-    "ownership": "publicly traded (ticker symbol PESI)",
-    "hq": "Georgia",
-    "majorIndustry": "waste management and environmental services",
-    "specificIndustry": "waste management",
-    "totalPenalty": 1996984,
-    "totalRecords": 20,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 1904134,
-        "records": 17
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 92850,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 1520889,
-        "records": 9
-      },
-      {
-        "category": "hazardous waste violation",
-        "penalty": 383245,
-        "records": 8
-      },
-      {
-        "category": "nuclear safety violation",
-        "penalty": 55000,
-        "records": 1
-      },
-      {
-        "category": "motor vehicle safety violation",
-        "penalty": 32500,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 5350,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T00:06:28.277Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

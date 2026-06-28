@@ -27,7 +27,6 @@
     "s": "7 federal penalties totaling $33.6M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -153,59 +151,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "GE HealthCare Technologies",
-    "slug": "ge-healthcare-technologies",
-    "ownership": "publicly traded (ticker symbol GEHC)",
-    "hq": "Illinois",
-    "majorIndustry": "medical equipment and supplies",
-    "specificIndustry": "medical technology",
-    "totalPenalty": 33597383,
-    "totalRecords": 7,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 30000000,
-        "records": 1
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 3558500,
-        "records": 3
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 38883,
-        "records": 3
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 30000000,
-        "records": 1
-      },
-      {
-        "category": "Foreign Corrupt Practices Act",
-        "penalty": 3400000,
-        "records": 1
-      },
-      {
-        "category": "export control violation",
-        "penalty": 158500,
-        "records": 2
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 38883,
-        "records": 3
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:37:53.879Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00830208",

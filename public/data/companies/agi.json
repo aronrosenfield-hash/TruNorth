@@ -27,7 +27,6 @@
     "s": "24 federal penalties totaling $121.4M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -124,74 +122,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Agility",
-    "slug": "agility",
-    "ownership": "publicly traded",
-    "hq": "Kuwait",
-    "majorIndustry": "freight and logistics",
-    "specificIndustry": "logistics",
-    "totalPenalty": 121399598,
-    "totalRecords": 24,
-    "offenseGroups": [
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 95000000,
-        "records": 1
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 17813200,
-        "records": 2
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 8282925,
-        "records": 4
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 298473,
-        "records": 16
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 5000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "False Claims Act and related",
-        "penalty": 95000000,
-        "records": 1
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 17800000,
-        "records": 1
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 8227925,
-        "records": 3
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 271473,
-        "records": 15
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 55000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:20:00.090Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00370023",

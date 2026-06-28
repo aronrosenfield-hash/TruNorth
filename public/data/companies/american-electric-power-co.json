@@ -27,7 +27,6 @@
     "s": "117 federal penalties totaling $4.8B since 2000 (Violation Tracker).",
     "rating": "mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -49,8 +48,7 @@
   "environment": {
     "s": "air pollution violation: $4.7B in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -159,74 +157,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "American Electric Power",
-    "slug": "american-electric-power",
-    "ownership": "publicly traded (ticker symbol AEP)",
-    "hq": "Ohio",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 4817474815,
-    "totalRecords": 117,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 4696292971,
-        "records": 27
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 92150000,
-        "records": 5
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 19000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 6585964,
-        "records": 7
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 2882860,
-        "records": 49
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "air pollution violation",
-        "penalty": 4687625500,
-        "records": 8
-      },
-      {
-        "category": "energy market violation",
-        "penalty": 81000000,
-        "records": 3
-      },
-      {
-        "category": "investor protection violation",
-        "penalty": 19000000,
-        "records": 1
-      },
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 11150000,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 8667471,
-        "records": 19
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T18:27:54.600Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00096842",

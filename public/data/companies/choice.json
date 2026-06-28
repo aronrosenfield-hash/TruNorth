@@ -27,7 +27,6 @@
     "s": "33 federal penalties totaling $603K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -123,64 +121,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Choice Hotels International",
-    "slug": "choice-hotels-international",
-    "ownership": "publicly traded (ticker symbol CHH)",
-    "hq": "Maryland",
-    "majorIndustry": "hotels",
-    "specificIndustry": "hotels",
-    "totalPenalty": 603420,
-    "totalRecords": 33,
-    "offenseGroups": [
-      {
-        "category": "employment-related offenses",
-        "penalty": 500982,
-        "records": 22
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 87938,
-        "records": 10
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 14500,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "wage and hour violation",
-        "penalty": 483599,
-        "records": 20
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 87938,
-        "records": 10
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 14500,
-        "records": 1
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 11883,
-        "records": 1
-      },
-      {
-        "category": "labor relations violation",
-        "penalty": 5500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T16:46:33.277Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00381806",

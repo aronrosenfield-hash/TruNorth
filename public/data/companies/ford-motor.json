@@ -35,7 +35,6 @@
     "rating": "Mixed",
     "sources": [
       "EPA",
-      "Violation Tracker",
       "climate-coalitions"
     ]
   },
@@ -43,7 +42,6 @@
     "s": "117 federal penalties totaling $1.2B since 2000 (Violation Tracker).",
     "rating": "Mixed",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -81,69 +79,6 @@
     "sources": [
       "Claude AI synthesis"
     ]
-  },
-  "laborAPI": {
-    "violationTracker": {
-      "slug": "ford-motor",
-      "matchedName": "Ford Motor",
-      "totalPenalty": 1204330366,
-      "totalRecords": 117,
-      "offenseGroups": [
-        {
-          "category": "safety-related offenses",
-          "penalty": 743362533,
-          "records": 37
-        },
-        {
-          "category": "government-contracting-related offenses",
-          "penalty": 365000000,
-          "records": 1
-        },
-        {
-          "category": "employment-related offenses",
-          "penalty": 48133313,
-          "records": 39
-        },
-        {
-          "category": "consumer-protection-related offenses",
-          "penalty": 40572516,
-          "records": 7
-        },
-        {
-          "category": "environment-related offenses",
-          "penalty": 6562004,
-          "records": 32
-        }
-      ],
-      "primaryOffenses": [
-        {
-          "category": "product safety violation",
-          "penalty": 399200000,
-          "records": 4
-        },
-        {
-          "category": "False Claims Act and related",
-          "penalty": 365000000,
-          "records": 1
-        },
-        {
-          "category": "motor vehicle safety violation",
-          "penalty": 343862500,
-          "records": 5
-        },
-        {
-          "category": "employment discrimination",
-          "penalty": 45094760,
-          "records": 7
-        },
-        {
-          "category": "consumer protection violation",
-          "penalty": 27334421,
-          "records": 4
-        }
-      ],
-      "rating": "mixed"
-    }
   },
   "dataLastUpdated": {
     "legacy": "2026-05-28",
@@ -245,74 +180,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Ford Motor",
-    "slug": "ford-motor",
-    "ownership": "publicly traded (ticker symbol F)",
-    "hq": "Michigan",
-    "majorIndustry": "motor vehicles",
-    "specificIndustry": "motor vehicles",
-    "totalPenalty": 1204330366,
-    "totalRecords": 117,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 743362533,
-        "records": 37
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 365000000,
-        "records": 1
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 48133313,
-        "records": 39
-      },
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 40572516,
-        "records": 7
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 6562004,
-        "records": 32
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "product safety violation",
-        "penalty": 399200000,
-        "records": 4
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 365000000,
-        "records": 1
-      },
-      {
-        "category": "motor vehicle safety violation",
-        "penalty": 343862500,
-        "records": 5
-      },
-      {
-        "category": "employment discrimination",
-        "penalty": 45094760,
-        "records": 7
-      },
-      {
-        "category": "consumer protection violation",
-        "penalty": 27334421,
-        "records": 4
-      }
-    ],
-    "rating": "mixed",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T02:11:50.926Z"
-  },
   "fec": null,
   "sec": null,
   "osha": null,

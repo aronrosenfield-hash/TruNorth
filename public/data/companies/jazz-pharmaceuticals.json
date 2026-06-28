@@ -27,7 +27,6 @@
     "s": "3 federal penalties totaling $222.0M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -47,8 +46,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -142,54 +140,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Jazz Pharmaceuticals",
-    "slug": "jazz-pharmaceuticals",
-    "ownership": "publicly traded (ticker symbol JAZZ)",
-    "hq": "Ireland",
-    "majorIndustry": "pharmaceuticals",
-    "specificIndustry": "pharmaceuticals",
-    "totalPenalty": 222000000,
-    "totalRecords": 3,
-    "offenseGroups": [
-      {
-        "category": "competition-related offenses",
-        "penalty": 145000000,
-        "records": 1
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 57000000,
-        "records": 1
-      },
-      {
-        "category": "healthcare-related offenses",
-        "penalty": 20000000,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "price-fixing or anti-competitive practices",
-        "penalty": 145000000,
-        "records": 1
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 57000000,
-        "records": 1
-      },
-      {
-        "category": "off-label or unapproved promotion of medical products",
-        "penalty": 20000000,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T17:08:41.122Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00721811",

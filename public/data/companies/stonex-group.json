@@ -26,7 +26,6 @@
     "s": "11 federal penalties totaling $3.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -145,49 +143,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "StoneX Group",
-    "slug": "stonex-group",
-    "ownership": "publicly traded (ticker symbol SNEX)",
-    "hq": "New York",
-    "majorIndustry": "financial services",
-    "specificIndustry": "commodities brokerage",
-    "totalPenalty": 3740002,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "financial offenses",
-        "penalty": 3680000,
-        "records": 9
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 60002,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "investor protection violation",
-        "penalty": 3530000,
-        "records": 8
-      },
-      {
-        "category": "accounting fraud or deficiencies",
-        "penalty": 150000,
-        "records": 1
-      },
-      {
-        "category": "benefit plan administrator violation",
-        "penalty": 60002,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-28",
-    "fetchedAt": "2026-05-28T01:11:24.951Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -27,7 +27,6 @@
     "s": "127 federal penalties totaling $5.2M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "environmental violation: $2.0M in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -132,69 +130,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Darling Ingredients",
-    "slug": "darling-ingredients",
-    "ownership": "publicly traded (ticker symbol DAR)",
-    "hq": "Texas",
-    "majorIndustry": "food products",
-    "specificIndustry": "food products",
-    "totalPenalty": 5170908,
-    "totalRecords": 127,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 2457747,
-        "records": 42
-      },
-      {
-        "category": "government-contracting-related offenses",
-        "penalty": 1400000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 1297289,
-        "records": 82
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 15872,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "environmental violation",
-        "penalty": 2000556,
-        "records": 18
-      },
-      {
-        "category": "False Claims Act and related",
-        "penalty": 1400000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 1283689,
-        "records": 81
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 407817,
-        "records": 21
-      },
-      {
-        "category": "water pollution violation",
-        "penalty": 40174,
-        "records": 2
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T20:17:37.488Z"
-  },
   "fec": {
     "source": "FEC API",
     "committeeId": "C00777458",

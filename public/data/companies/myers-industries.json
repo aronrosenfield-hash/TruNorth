@@ -26,7 +26,6 @@
     "s": "17 federal penalties totaling $322K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -44,8 +43,7 @@
   "environment": {
     "s": "No public record found.",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -122,54 +120,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Myers Industries",
-    "slug": "myers-industries",
-    "ownership": "publicly traded (ticker symbol MYE)",
-    "hq": "Ohio",
-    "majorIndustry": "miscellaneous manufacturing",
-    "specificIndustry": "plastic products",
-    "totalPenalty": 321959,
-    "totalRecords": 17,
-    "offenseGroups": [
-      {
-        "category": "safety-related offenses",
-        "penalty": 269458,
-        "records": 14
-      },
-      {
-        "category": "employment-related offenses",
-        "penalty": 36251,
-        "records": 2
-      },
-      {
-        "category": "financial offenses",
-        "penalty": 16250,
-        "records": 1
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 269458,
-        "records": 14
-      },
-      {
-        "category": "wage and hour violation",
-        "penalty": 36251,
-        "records": 2
-      },
-      {
-        "category": "economic sanction violation",
-        "penalty": 16250,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T23:28:58.617Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

@@ -27,7 +27,6 @@
     "s": "14 federal penalties totaling $3.7M since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -50,8 +49,7 @@
   "environment": {
     "s": "environmental violation: $33K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -150,69 +148,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Fortive",
-    "slug": "fortive",
-    "ownership": "publicly traded (ticker symbol FTV)",
-    "hq": "Washington",
-    "majorIndustry": "industrial equipment",
-    "specificIndustry": "industrial equipment",
-    "totalPenalty": 3670846,
-    "totalRecords": 14,
-    "offenseGroups": [
-      {
-        "category": "consumer-protection-related offenses",
-        "penalty": 3000000,
-        "records": 1
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 500310,
-        "records": 10
-      },
-      {
-        "category": "competition-related offenses",
-        "penalty": 125000,
-        "records": 1
-      },
-      {
-        "category": "environment-related offenses",
-        "penalty": 45536,
-        "records": 2
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "privacy violation",
-        "penalty": 3000000,
-        "records": 1
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 252250,
-        "records": 8
-      },
-      {
-        "category": "aviation safety violation",
-        "penalty": 225000,
-        "records": 1
-      },
-      {
-        "category": "export control violation",
-        "penalty": 125000,
-        "records": 1
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 33353,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T21:26:33.802Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",

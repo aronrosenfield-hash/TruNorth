@@ -26,7 +26,6 @@
     "s": "11 federal penalties totaling $201K since 2000 (Violation Tracker).",
     "rating": "good",
     "sources": [
-      "Violation Tracker",
       "OSHA",
       "NLRB"
     ]
@@ -46,8 +45,7 @@
   "environment": {
     "s": "environmental violation: $10K in federal penalties (Violation Tracker).",
     "sources": [
-      "EPA",
-      "Violation Tracker"
+      "EPA"
     ]
   },
   "dei": {
@@ -140,59 +138,6 @@
   "privacy_hibp_breaches": null,
   "litigation_courtlistener": null,
   "labor_dol_whd": null,
-  "violationTracker": {
-    "source": "Violation Tracker",
-    "matchedName": "Chesapeake Utilities",
-    "slug": "chesapeake-utilities",
-    "ownership": "publicly traded (ticker symbol CPK)",
-    "hq": "Delaware",
-    "majorIndustry": "utilities and power generation",
-    "specificIndustry": "utilities",
-    "totalPenalty": 201136,
-    "totalRecords": 11,
-    "offenseGroups": [
-      {
-        "category": "environment-related offenses",
-        "penalty": 128544,
-        "records": 5
-      },
-      {
-        "category": "safety-related offenses",
-        "penalty": 72592,
-        "records": 6
-      }
-    ],
-    "primaryOffenses": [
-      {
-        "category": "pipeline safety violation",
-        "penalty": 112500,
-        "records": 3
-      },
-      {
-        "category": "utility safety violation",
-        "penalty": 58712,
-        "records": 4
-      },
-      {
-        "category": "workplace safety or health violation",
-        "penalty": 13880,
-        "records": 2
-      },
-      {
-        "category": "environmental violation",
-        "penalty": 9544,
-        "records": 1
-      },
-      {
-        "category": "air pollution violation",
-        "penalty": 6500,
-        "records": 1
-      }
-    ],
-    "rating": "good",
-    "lastChecked": "2026-05-27",
-    "fetchedAt": "2026-05-27T19:48:56.317Z"
-  },
   "fec": null,
   "sec": {
     "source": "SEC EDGAR",
