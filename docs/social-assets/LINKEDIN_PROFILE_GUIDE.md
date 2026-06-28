@@ -18,14 +18,15 @@ Founder @ TruNorth · Conscious-consumer shopping app · 200+ public-record sour
 Founder @ TruNorth · Just launched: the conscious-shopping app with ~2,900 brands graded (12,000+ tracked) sourced from 200+ public records · Live on the App Store + Product Hunt
 ```
 
-### One week after launch (swap Jun 30, regardless of PH rank)
+### One week after launch (swap Jun 30, regardless of PH rank) — ✅ P-8 ready-to-paste
 ```
-Founder @ TruNorth · Conscious-consumer shopping app · ~2,900 brands graded from 200+ public-record sources, 12,000+ tracked · iOS live, Android next · [PH #X] [add metric: "5k downloads," etc. only if real]
+Founder @ TruNorth · Conscious-consumer shopping app · ~2,900 brands graded from 200+ public-record sources · 12,000+ tracked · Live on iOS, Android next
 ```
+> Paste as-is (≈150 / 220 chars). If you have a **real** metric, append one and only one: ` · #N on Product Hunt` **or** ` · 5k+ downloads`. Don't pad with vanity numbers. Leave the "share with network" toggle **OFF**.
 
 ### One month after launch (swap ~Jul 23)
 ```
-Founder @ TruNorth · The conscious-shopping app where every brand grade traces back to a primary public record · ~2,900 graded · 12,000+ tracked · 100 sources · iOS + Android
+Founder @ TruNorth · The conscious-shopping app where every brand grade traces back to a primary public record · ~2,900 graded · 12,000+ tracked · 200+ sources · iOS + Android
 ```
 
 > **Reminder:** Task #125 is set to nudge you to make the launch-day swap on Jun 23. Don't broadcast the headline update — leave the "share with network" toggle OFF.
