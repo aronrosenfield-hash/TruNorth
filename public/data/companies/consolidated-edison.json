@@ -34,7 +34,8 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
-    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+    "enrichedAugments": "2026-06-26T16:16:39.453Z",
+    "itepTax": "2026-06-28T22:31:53.352Z"
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
@@ -225,6 +226,19 @@
       "year": 2024,
       "cik": 1047862,
       "source": "SEC EDGAR XBRL"
+    },
+    "tax": {
+      "effectiveFederalTaxRate": 0.012393681652490888,
+      "zeroTaxYears": 2,
+      "totalProfits": 8230,
+      "federalTaxesPaid": 102,
+      "studyYears": 5,
+      "reportEdition": "2024",
+      "sourceUrl": "https://itep.org/corporate-tax-avoidance-trump-tax-law/",
+      "_license": "Institute on Taxation & Economic Policy (ITEP)",
+      "citation": "Verified source: Institute on Taxation & Economic Policy (ITEP)",
+      "citeUrl": "https://itep.org/corporate-tax-avoidance/",
+      "reportPdf": "https://sfo2.digitaloceanspaces.com/itep/ITEP-Corporate-Tax-Avoidance-in-the-First-Five-Years-of-the-Trump-Tax-Law.pdf"
     }
   },
   "csc": {

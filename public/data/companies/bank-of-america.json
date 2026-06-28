@@ -122,7 +122,8 @@
     "secLitigation": "2026-06-22T17:33:19.578Z",
     "finra": "2026-06-23T12:57:34.337Z",
     "enrichedAugments": "2026-06-26T16:16:39.453Z",
-    "fedReserve": "2026-06-27T21:34:23.374Z"
+    "fedReserve": "2026-06-27T21:34:23.374Z",
+    "itepTax": "2026-06-28T22:31:53.352Z"
   },
   "competitors": [
     "jpmorgan-chase",
@@ -722,6 +723,19 @@
       "lastUpdated": "2026-06-27T21:34:23.374Z",
       "source": "fed-reserve",
       "sourceUrl": "https://www.federalreserve.gov/apps/enforcementactions/search.aspx?Party=Bank%20of%20America"
+    },
+    "tax": {
+      "effectiveFederalTaxRate": 0.03798835225432111,
+      "zeroTaxYears": 0,
+      "totalProfits": 138911,
+      "federalTaxesPaid": 5277,
+      "studyYears": 5,
+      "reportEdition": "2024",
+      "sourceUrl": "https://itep.org/corporate-tax-avoidance-trump-tax-law/",
+      "_license": "Institute on Taxation & Economic Policy (ITEP)",
+      "citation": "Verified source: Institute on Taxation & Economic Policy (ITEP)",
+      "citeUrl": "https://itep.org/corporate-tax-avoidance/",
+      "reportPdf": "https://sfo2.digitaloceanspaces.com/itep/ITEP-Corporate-Tax-Avoidance-in-the-First-Five-Years-of-the-Trump-Tax-Law.pdf"
     }
   },
   "flags": {

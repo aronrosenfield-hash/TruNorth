@@ -32,7 +32,8 @@
   "dataLastUpdated": {
     "legacy": "2026-05-28",
     "execPay": "2026-06-11T03:48:51.753Z",
-    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+    "enrichedAugments": "2026-06-26T16:16:39.453Z",
+    "itepTax": "2026-06-28T22:31:53.352Z"
   },
   "charity": {
     "s": "$15M reported corporate giving in 2024 (~0.10% of revenue) via Principal Foundation. Operates the Principal Financial Group Foundation Inc: $15.0M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
@@ -218,6 +219,19 @@
       "year": 2024,
       "cik": 1126328,
       "source": "SEC EDGAR XBRL"
+    },
+    "tax": {
+      "effectiveFederalTaxRate": 0.00383256932441572,
+      "zeroTaxYears": 2,
+      "totalProfits": 11976.3,
+      "federalTaxesPaid": 45.9,
+      "studyYears": 5,
+      "reportEdition": "2024",
+      "sourceUrl": "https://itep.org/corporate-tax-avoidance-trump-tax-law/",
+      "_license": "Institute on Taxation & Economic Policy (ITEP)",
+      "citation": "Verified source: Institute on Taxation & Economic Policy (ITEP)",
+      "citeUrl": "https://itep.org/corporate-tax-avoidance/",
+      "reportPdf": "https://sfo2.digitaloceanspaces.com/itep/ITEP-Corporate-Tax-Avoidance-in-the-First-Five-Years-of-the-Trump-Tax-Law.pdf"
     }
   },
   "csc": {

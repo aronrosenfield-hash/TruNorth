@@ -28,7 +28,10 @@
       "Claude AI synthesis"
     ]
   },
-  "dataLastUpdated": "2026-05-28",
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "itepTax": "2026-06-28T22:31:53.352Z"
+  },
   "charity": {
     "s": "Operates the Manpowergroup Foundation Inc: $616K in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF).",
     "sources": [
@@ -200,5 +203,20 @@
     "pctMinorityMgmt": 15.8,
     "source": "DOL OFCCP FOIA — Type 2 EEO-1",
     "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "tax": {
+      "effectiveFederalTaxRate": 0.10149363369245838,
+      "zeroTaxYears": 0,
+      "totalProfits": 816.8,
+      "federalTaxesPaid": 82.9,
+      "studyYears": 5,
+      "reportEdition": "2024",
+      "sourceUrl": "https://itep.org/corporate-tax-avoidance-trump-tax-law/",
+      "_license": "Institute on Taxation & Economic Policy (ITEP)",
+      "citation": "Verified source: Institute on Taxation & Economic Policy (ITEP)",
+      "citeUrl": "https://itep.org/corporate-tax-avoidance/",
+      "reportPdf": "https://sfo2.digitaloceanspaces.com/itep/ITEP-Corporate-Tax-Avoidance-in-the-First-Five-Years-of-the-Trump-Tax-Law.pdf"
+    }
   }
 }
