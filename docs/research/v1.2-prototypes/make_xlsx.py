@@ -81,7 +81,7 @@ POL=[("Progressive","prog"),("Neutral",None),("Conservative","cons")]
 DEI=[("Value DEI","pro"),("Neutral",None),("Avoid DEI","anti")]
 ANI=[("Care",True),("Neutral",False)]
 GUN=[("Avoid","avoid"),("Neutral",None),("Support","support")]
-PRI=[("—",None),("Environment","environment"),("Labor","labor"),("Privacy","privacy")]
+PRI=[("—",None),("Environment","environment"),("Labor","labor"),("Charity","charity"),("Privacy","privacy"),("Exec pay","execPay"),("Governance","governance")]
 heads=["Political","DEI","Animals","Guns","Priority issue"]
 for j,h in enumerate(heads,1):
     c=ws.cell(1,j,h); c.fill=HEAD; c.font=HF; c.alignment=CEN; c.border=BORD
