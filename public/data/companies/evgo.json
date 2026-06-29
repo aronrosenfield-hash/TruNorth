@@ -3,8 +3,8 @@
   "legalName": "EVgo Inc.",
   "cat": "Professional Services",
   "init": "EVGO",
-  "overall": 33.2,
-  "realCats": 1,
+  "overall": null,
+  "realCats": 0,
   "isPublic": true,
   "ticker": "EVGO",
   "cik": 1821159,
@@ -15,7 +15,7 @@
     "political": "neutral",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "poor",
+    "labor": "neutral",
     "dei": "neutral",
     "animals": "neutral",
     "guns": "neutral",
@@ -36,10 +36,8 @@
     "sources": []
   },
   "labor": {
-    "s": "Via parent company NRG ENERGY: 113 federal penalties totaling $1.4B since 2000 (Violation Tracker).",
-    "sources": [
-      "parent-inheritance"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "dei": {
     "s": "No public record found.",
@@ -69,7 +67,6 @@
   "ac": "#cfa959",
   "competitors": [],
   "slug": "evgo",
-  "inheritedFrom": "nrg-energy",
   "flags": {
     "animals": {
       "na": true
@@ -93,9 +90,6 @@
       "_inferred": true,
       "basis": "Professional Services"
     }
-  },
-  "csc": {
-    "labor": 8
   },
   "enriched": {
     "secTax": {

@@ -2,12 +2,12 @@
   "name": "Jet",
   "cat": "Retail",
   "init": "JET",
-  "overall": 40.1,
+  "overall": 50,
   "isPublic": true,
   "sc": {
     "political": "neutral",
     "charity": "neutral",
-    "environment": "poor",
+    "environment": "neutral",
     "labor": "mixed",
     "dei": "neutral",
     "animals": "na",
@@ -40,10 +40,8 @@
     ]
   },
   "environment": {
-    "s": "Via parent company Phillips 66: air pollution violation: $610.9M in federal penalties (Violation Tracker).",
-    "sources": [
-      "parent-inheritance"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "dei": {
     "s": "No public record found.",
@@ -152,20 +150,14 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-31T00:20:11.163Z",
-  "realCats": 3,
+  "realCats": 2,
   "industry_flags": {
     "tobacco": false,
-    "fossil_fuel": true,
+    "fossil_fuel": false,
     "firearms_industry": false,
     "alcohol": false,
-    "sources": {
-      "fossil_fuel": {
-        "matchBasis": "parent_map",
-        "role": "refining",
-        "parent": "phillips-66"
-      }
-    },
-    "lastUpdated": "2026-06-09T22:28:27.024Z"
+    "sources": {},
+    "lastUpdated": "2026-06-28T23:16:41.778Z"
   },
   "flags": {
     "health": {
@@ -178,10 +170,8 @@
       "notDisclosed": true
     }
   },
-  "inheritedFrom": "phillips-66",
   "csc": {
     "charity": 50,
-    "environment": 8,
     "labor": 50
   }
 }
