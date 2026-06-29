@@ -2,7 +2,7 @@
 
 > **Single source of truth** for every data source TruNorth pulls from. Mirrored by `SOURCES_DATA` in `src/App.jsx`, which renders the in-app Sources tab. Any time we add or remove a source, both this doc + that array stay in sync.
 
-**Last updated:** 2026-06-27. This registry lists the ~105 curated, named sources that render in the in-app Sources tab (mirrors `SOURCES_DATA`). The full pipeline is larger — **200+ sources across 168 cron workflows / 225 fetch scripts** — including the Build-76 footprint additions noted below. *(2026-06-07: Leaping Bunny + PETA BWB upgraded to a live quarterly pipeline.)*
+**Last updated:** 2026-06-29. This registry lists the ~105 curated, named sources that render in the in-app Sources tab (mirrors `SOURCES_DATA`). The full pipeline is larger — **200+ sources across 168 cron workflows / 225 fetch scripts** — including the Build-76 footprint additions, now itemized in their own section below. *(2026-06-07: Leaping Bunny + PETA BWB upgraded to a live quarterly pipeline. 2026-06-28: ITEP corporate-tax data activated live, 306 brands.)*
 
 ---
 
@@ -19,7 +19,7 @@
 
 > **2026-06-04 milestone:** Hit the 100-source mark. All Tier 1-7 integrations shipped in the Jun 3-4 push (46 baseline + 54 new). Tier 8 (California Prop 65 + CARB) was deferred per product decision.
 >
-> **2026-06-26 (Build 76):** +10 footprint sources, not yet itemized row-by-row below — 3 revived fetchers (EPA TRI, ITEP corporate tax, EPA GHGRP) + 7 license-clean `enriched.*` pipelines (SEC effective tax, SEC Form SD conflict minerals, OpenFDA recalls, CA/WA breach + CPPA broker, CMS Open Payments + opioid, state WARN, vegan/humane certs). Display-only footprint card; **not yet read by scoring (B-23)**.
+> **2026-06-26 (Build 76):** +10 footprint sources — 3 revived fetchers (EPA TRI, ITEP corporate tax, EPA GHGRP) + 7 license-clean `enriched.*` pipelines (SEC effective tax, SEC Form SD conflict minerals, OpenFDA recalls, CA/WA breach + CPPA broker, CMS Open Payments + opioid, state WARN, vegan/humane certs). **Now itemized in the "Build-76 public-record footprint" section below.** Display-only footprint card; **not read by scoring except `animalCerts`** (wired 2026-06-27, B-23). ITEP went live 2026-06-28 (306 brands).
 
 ---
 
@@ -223,6 +223,28 @@
 | Google News RSS | https://news.google.com | Daily | US news per brand across 1,000+ outlets |
 | AllSides Media Bias | https://www.allsides.com/media-bias | Quarterly | Bias ratings for 33+ outlets (left → right) |
 | GDELT Project | https://www.gdeltproject.org | Weekly | Global news + events in 100+ languages |
+
+---
+
+## 🛰️ Build-76 public-record footprint (`enriched.*` — display-only)
+
+> Shipped 2026-06-26 (data label "Build 76"). These fold into `company.enriched.*` via `apply-enriched-augments.mjs` and render in the reveal **"public-record footprint"** card. **Display-only — not read by scoring**, except `animalCerts` (wired 2026-06-27, B-23). Coverage = brand-match counts as of 2026-06-29. Refreshed weekly by `enriched-augments-refresh.yml`.
+
+| Source | URL | License | `enriched.*` field | Coverage | Notes |
+|---|---|---|---|---|---|
+| ITEP Corporate Tax Avoidance | https://itep.org/corporate-tax-avoidance/ | Citation + commercial OK (A. Hanauer, ITEP, 2026-06-14) | `tax` | 306 | **LIVE 2026-06-28** — 5-yr federal effective rate + $0-tax-year count; "Verified source: ITEP" cited per datapoint |
+| SEC EDGAR XBRL effective tax | https://www.sec.gov/edgar | Public domain | `secTax` | 3,418 | GAAP effective rate (fallback when ITEP absent) |
+| EPA TRI (Toxics Release Inventory) | https://www.epa.gov/toxics-release-inventory-tri-program | Public domain | `environment` | 464 | Facility toxic releases (lbs) via Envirofacts |
+| EPA GHGRP (Greenhouse Gas Reporting) | https://www.epa.gov/ghgreporting | Public domain | `environment` | — | Facility GHG emissions (t CO₂e) |
+| SEC Form SD (conflict minerals) | https://www.sec.gov/edgar | Public domain | `supplyChain` | 872 | 3TG conflict-minerals disclosure filer |
+| OpenFDA recalls | https://open.fda.gov | CC0 | `openfdaRecalls` | 363 | Food/drug/device recalls + Class I count |
+| CA/WA breach + CPPA data-broker | https://oag.ca.gov/privacy | Public record | `privacy` | 345 | State AG breach filings + registered data brokers |
+| CMS Open Payments + opioid settlements | https://openpaymentsdata.cms.gov | Public domain | `pharmaConduct` | 211 | Physician payments + national opioid settlement $ |
+| State WARN + DOL WHISARD | https://www.dol.gov/agencies/eta/layoffs/warn | Public record | `laborWages` | 48 | Mass-layoff notices + back-wages owed |
+| Vegan/Humane certifications | https://www.leapingbunny.org | Per-certifier | `animalCerts` | 19 | **Scored** (stance-gated, B-23) — cruelty-free / humane certs |
+| Federal Reserve enforcement | https://www.federalreserve.gov/supervisionreg/enforcementactions.htm | Public domain | `fedReserve` | 23 | Bank holding-co penalties — gov-only enforcement card (NB-9) |
+
+> **Roadmap:** the next expansion wave (139 net-new license-gated candidates) is catalogued in `docs/research/data-sources-discovery-2026-06-28.md`. Highest-leverage clean-license picks: GLEIF (ownership backbone), WBA Social Benchmark, EU Safety Gate/RAPEX, EEA E-PRTR, FTC cases, openFDA cluster.
 
 ---
 
