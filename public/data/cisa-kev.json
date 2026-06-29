@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-22T18:06:40.600Z",
-  "catalog_version": "2026.06.18",
-  "catalog_released": "2026-06-18T16:00:20.1905Z",
-  "total_cve_count": 1623,
-  "vendor_count": 268,
+  "generated_at": "2026-06-29T05:21:51.287Z",
+  "catalog_version": "2026.06.25",
+  "catalog_released": "2026-06-25T19:03:21.8037Z",
+  "total_cve_count": 1629,
+  "vendor_count": 270,
   "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
   "vendors": [
     {
@@ -154,6 +154,153 @@
       ]
     },
     {
+      "vendor": "Cisco",
+      "total_cve_count": 93,
+      "recent_12mo_count": 17,
+      "ransomware_count": 6,
+      "product_breakdown": [
+        {
+          "label": "IOS and IOS XE Software",
+          "count": 14
+        },
+        {
+          "label": "Adaptive Security Appliance (ASA) and Firepower Threat Defense (FTD)",
+          "count": 6
+        },
+        {
+          "label": "IOS XR",
+          "count": 6
+        },
+        {
+          "label": "IOS software",
+          "count": 6
+        },
+        {
+          "label": "Small Business RV160, RV260, RV340, and RV345 Series Routers",
+          "count": 5
+        },
+        {
+          "label": "Catalyst SD-WAN Manager",
+          "count": 4
+        },
+        {
+          "label": "IOS and IOS XE",
+          "count": 4
+        },
+        {
+          "label": "Adaptive Security Appliance (ASA)",
+          "count": 4
+        },
+        {
+          "label": "IOS Software",
+          "count": 4
+        },
+        {
+          "label": "IOS Software and Cisco IOS XE Software",
+          "count": 3
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-20230",
+          "product": "Unified Communications Manager",
+          "vulnerabilityName": "Cisco Unified Communications Manager Server-Side Request Forgery (SSRF) Vulnerability",
+          "dateAdded": "2026-06-25",
+          "dueDate": "2026-06-28",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Cisco Unified Communications Manager (Unified CM) and Cisco Unified Communications Manager Session Management Edition (Unified CM SME) contain a server-side request forgery (SSRF) Vulnerability that could allow an unauthenticated, remote attacker to write files to the underlying operating system that could be used later to elevate to root.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20230"
+        },
+        {
+          "cveID": "CVE-2026-20262",
+          "product": "Catalyst SD-WAN Manager",
+          "vulnerabilityName": "Cisco Catalyst SD-WAN Manager Directory or Path Traversal Vulnerability",
+          "dateAdded": "2026-06-15",
+          "dueDate": "2026-06-29",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Cisco Catalyst SD-WAN Manager contains a directory or path traversal vulnerability that could allow an authenticated, remote attacker to create a file or overwrite any file on the filesystem of an affected system.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20262"
+        },
+        {
+          "cveID": "CVE-2026-20245",
+          "product": "Catalyst SD-WAN Manager",
+          "vulnerabilityName": "Cisco Catalyst SD-WAN Manager Improper Encoding or Escaping of Output Vulnerability",
+          "dateAdded": "2026-06-09",
+          "dueDate": "2026-06-23",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Cisco Catalyst SD-WAN Manager formerly SD-WAN vManage contains an improper encoding or escaping of output vulnerability. This vulnerability could allow an authenticated, local attacker to execute arbitrary commands as root by supplying a crafted file to the affected system.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20245"
+        },
+        {
+          "cveID": "CVE-2026-20182",
+          "product": "Catalyst SD-WAN",
+          "vulnerabilityName": "Cisco Catalyst SD-WAN Controller Authentication Bypass Vulnerability",
+          "dateAdded": "2026-05-14",
+          "dueDate": "2026-05-17",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Cisco Catalyst SD-WAN Controller & Manager contain an authentication bypass vulnerability that allows an unauthenticated, remote attacker to bypass authentication and obtain administrative privileges on an affected system.",
+          "requiredAction": "Please adhere to CISA’s guidelines to assess exposure and mitigate risks associated with Cisco SD-WAN devices as outlined in CISA’s Emergency Directive 26-03 (URL listed below in Notes) and CISA’s Hunt & Hardening Guidance for Cisco SD-WAN Devices (URL listed below in Notes). Adhere to the applicable BOD 22-01 guidance for cloud services or discontinue use of the product if mitigations are not available.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20182"
+        },
+        {
+          "cveID": "CVE-2026-20122",
+          "product": "Catalyst SD-WAN Manger",
+          "vulnerabilityName": "Cisco Catalyst SD-WAN Manager Incorrect Use of Privileged APIs Vulnerability",
+          "dateAdded": "2026-04-20",
+          "dueDate": "2026-04-23",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Cisco Catalyst SD-WAN Manager contains an incorrect use of privileged APIs vulnerability due to improper file handling on the API interface of an affected system. An attacker could exploit this vulnerability by uploading a malicious file on the local file system. A successful exploit could allow the attacker to overwrite arbitrary files on the affected system and gain vmanage user privileges.",
+          "requiredAction": "Please adhere to CISA’s guidelines to assess exposure and mitigate risks associated with Cisco SD-WAN devices as outlines in CISA’s Emergency Directive 26-03 (URL listed below in Notes) and CISA’s “Hunt & Hardening Guidance for Cisco SD-WAN Devices (URL listed below in Notes). Adhere to the applicable BOD 22-01 guidance for cloud services or discontinue use of the product if mitigations are not available.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20122"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2026-20131",
+          "product": "Secure Firewall Management Center (FMC)",
+          "vulnerabilityName": "Cisco Secure Firewall Management Center (FMC) Software and Cisco Security Cloud Control (SCC) Firewall Management Deserialization of Untrusted Data Vulnerability",
+          "dateAdded": "2026-03-19",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20131"
+        },
+        {
+          "cveID": "CVE-2020-3259",
+          "product": "Adaptive Security Appliance (ASA) and Firepower Threat Defense (FTD)",
+          "vulnerabilityName": "Cisco ASA and FTD Information Disclosure Vulnerability",
+          "dateAdded": "2024-02-15",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-3259"
+        },
+        {
+          "cveID": "CVE-2023-20269",
+          "product": "Adaptive Security Appliance and Firepower Threat Defense",
+          "vulnerabilityName": "Cisco Adaptive Security Appliance and Firepower Threat Defense Unauthorized Access Vulnerability",
+          "dateAdded": "2023-09-13",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-20269"
+        },
+        {
+          "cveID": "CVE-2026-20230",
+          "product": "Unified Communications Manager",
+          "vulnerabilityName": "Cisco Unified Communications Manager Server-Side Request Forgery (SSRF) Vulnerability",
+          "dateAdded": "2026-06-25",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20230"
+        },
+        {
+          "cveID": "CVE-2026-20262",
+          "product": "Catalyst SD-WAN Manager",
+          "vulnerabilityName": "Cisco Catalyst SD-WAN Manager Directory or Path Traversal Vulnerability",
+          "dateAdded": "2026-06-15",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20262"
+        }
+      ]
+    },
+    {
       "vendor": "Apple",
       "total_cve_count": 93,
       "recent_12mo_count": 10,
@@ -269,153 +416,6 @@
           "dateAdded": "2026-03-20",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-43520"
-        }
-      ]
-    },
-    {
-      "vendor": "Cisco",
-      "total_cve_count": 92,
-      "recent_12mo_count": 16,
-      "ransomware_count": 6,
-      "product_breakdown": [
-        {
-          "label": "IOS and IOS XE Software",
-          "count": 14
-        },
-        {
-          "label": "Adaptive Security Appliance (ASA) and Firepower Threat Defense (FTD)",
-          "count": 6
-        },
-        {
-          "label": "IOS XR",
-          "count": 6
-        },
-        {
-          "label": "IOS software",
-          "count": 6
-        },
-        {
-          "label": "Small Business RV160, RV260, RV340, and RV345 Series Routers",
-          "count": 5
-        },
-        {
-          "label": "Catalyst SD-WAN Manager",
-          "count": 4
-        },
-        {
-          "label": "IOS and IOS XE",
-          "count": 4
-        },
-        {
-          "label": "Adaptive Security Appliance (ASA)",
-          "count": 4
-        },
-        {
-          "label": "IOS Software",
-          "count": 4
-        },
-        {
-          "label": "IOS Software and Cisco IOS XE Software",
-          "count": 3
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2026-20262",
-          "product": "Catalyst SD-WAN Manager",
-          "vulnerabilityName": "Cisco Catalyst SD-WAN Manager Directory or Path Traversal Vulnerability",
-          "dateAdded": "2026-06-15",
-          "dueDate": "2026-06-29",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Cisco Catalyst SD-WAN Manager contains a directory or path traversal vulnerability that could allow an authenticated, remote attacker to create a file or overwrite any file on the filesystem of an affected system.",
-          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20262"
-        },
-        {
-          "cveID": "CVE-2026-20245",
-          "product": "Catalyst SD-WAN Manager",
-          "vulnerabilityName": "Cisco Catalyst SD-WAN Manager Improper Encoding or Escaping of Output Vulnerability",
-          "dateAdded": "2026-06-09",
-          "dueDate": "2026-06-23",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Cisco Catalyst SD-WAN Manager formerly SD-WAN vManage contains an improper encoding or escaping of output vulnerability. This vulnerability could allow an authenticated, local attacker to execute arbitrary commands as root by supplying a crafted file to the affected system.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20245"
-        },
-        {
-          "cveID": "CVE-2026-20182",
-          "product": "Catalyst SD-WAN",
-          "vulnerabilityName": "Cisco Catalyst SD-WAN Controller Authentication Bypass Vulnerability",
-          "dateAdded": "2026-05-14",
-          "dueDate": "2026-05-17",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Cisco Catalyst SD-WAN Controller & Manager contain an authentication bypass vulnerability that allows an unauthenticated, remote attacker to bypass authentication and obtain administrative privileges on an affected system.",
-          "requiredAction": "Please adhere to CISA’s guidelines to assess exposure and mitigate risks associated with Cisco SD-WAN devices as outlined in CISA’s Emergency Directive 26-03 (URL listed below in Notes) and CISA’s Hunt & Hardening Guidance for Cisco SD-WAN Devices (URL listed below in Notes). Adhere to the applicable BOD 22-01 guidance for cloud services or discontinue use of the product if mitigations are not available.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20182"
-        },
-        {
-          "cveID": "CVE-2026-20122",
-          "product": "Catalyst SD-WAN Manger",
-          "vulnerabilityName": "Cisco Catalyst SD-WAN Manager Incorrect Use of Privileged APIs Vulnerability",
-          "dateAdded": "2026-04-20",
-          "dueDate": "2026-04-23",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Cisco Catalyst SD-WAN Manager contains an incorrect use of privileged APIs vulnerability due to improper file handling on the API interface of an affected system. An attacker could exploit this vulnerability by uploading a malicious file on the local file system. A successful exploit could allow the attacker to overwrite arbitrary files on the affected system and gain vmanage user privileges.",
-          "requiredAction": "Please adhere to CISA’s guidelines to assess exposure and mitigate risks associated with Cisco SD-WAN devices as outlines in CISA’s Emergency Directive 26-03 (URL listed below in Notes) and CISA’s “Hunt & Hardening Guidance for Cisco SD-WAN Devices (URL listed below in Notes). Adhere to the applicable BOD 22-01 guidance for cloud services or discontinue use of the product if mitigations are not available.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20122"
-        },
-        {
-          "cveID": "CVE-2026-20133",
-          "product": "Catalyst SD-WAN Manager",
-          "vulnerabilityName": "Cisco Catalyst SD-WAN Manager Exposure of Sensitive Information to an Unauthorized Actor Vulnerability",
-          "dateAdded": "2026-04-20",
-          "dueDate": "2026-04-23",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Cisco Catalyst SD-WAN Manager contains an exposure of sensitive information to an unauthorized actor vulnerability that could allow remote attackers to view sensitive information on affected systems.",
-          "requiredAction": "Please adhere to CISA’s guidelines to assess exposure and mitigate risks associated with Cisco SD-WAN devices as outlines in CISA’s Emergency Directive 26-03 (URL listed below in Notes) and CISA’s “Hunt & Hardening Guidance for Cisco SD-WAN Devices (URL listed below in Notes). Adhere to the applicable BOD 22-01 guidance for cloud services or discontinue use of the product if mitigations are not available.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20133"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2026-20131",
-          "product": "Secure Firewall Management Center (FMC)",
-          "vulnerabilityName": "Cisco Secure Firewall Management Center (FMC) Software and Cisco Security Cloud Control (SCC) Firewall Management Deserialization of Untrusted Data Vulnerability",
-          "dateAdded": "2026-03-19",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20131"
-        },
-        {
-          "cveID": "CVE-2020-3259",
-          "product": "Adaptive Security Appliance (ASA) and Firepower Threat Defense (FTD)",
-          "vulnerabilityName": "Cisco ASA and FTD Information Disclosure Vulnerability",
-          "dateAdded": "2024-02-15",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-3259"
-        },
-        {
-          "cveID": "CVE-2023-20269",
-          "product": "Adaptive Security Appliance and Firepower Threat Defense",
-          "vulnerabilityName": "Cisco Adaptive Security Appliance and Firepower Threat Defense Unauthorized Access Vulnerability",
-          "dateAdded": "2023-09-13",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-20269"
-        },
-        {
-          "cveID": "CVE-2026-20262",
-          "product": "Catalyst SD-WAN Manager",
-          "vulnerabilityName": "Cisco Catalyst SD-WAN Manager Directory or Path Traversal Vulnerability",
-          "dateAdded": "2026-06-15",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20262"
-        },
-        {
-          "cveID": "CVE-2026-20245",
-          "product": "Catalyst SD-WAN Manager",
-          "vulnerabilityName": "Cisco Catalyst SD-WAN Manager Improper Encoding or Escaping of Output Vulnerability",
-          "dateAdded": "2026-06-09",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20245"
         }
       ]
     },
@@ -1236,7 +1236,7 @@
     {
       "vendor": "D-Link",
       "total_cve_count": 26,
-      "recent_12mo_count": 6,
+      "recent_12mo_count": 5,
       "ransomware_count": 2,
       "product_breakdown": [
         {
@@ -1375,7 +1375,7 @@
     {
       "vendor": "Fortinet",
       "total_cve_count": 26,
-      "recent_12mo_count": 8,
+      "recent_12mo_count": 7,
       "ransomware_count": 13,
       "product_breakdown": [
         {
@@ -5307,6 +5307,86 @@
           "dateAdded": "2022-03-25",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-4344"
+        }
+      ]
+    },
+    {
+      "vendor": "Ubiquiti",
+      "total_cve_count": 4,
+      "recent_12mo_count": 3,
+      "ransomware_count": 0,
+      "product_breakdown": [
+        {
+          "label": "UniFi OS",
+          "count": 3
+        },
+        {
+          "label": "AirOS",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-34910",
+          "product": "UniFi OS",
+          "vulnerabilityName": "Ubiquiti UniFi OS Improper Input Validation Vulnerability",
+          "dateAdded": "2026-06-23",
+          "dueDate": "2026-06-26",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Ubiquiti UniFi OS contains an improper input validation vulnerability which could allow a malicious actor with access to the network to conduct command injection.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34910"
+        },
+        {
+          "cveID": "CVE-2026-34909",
+          "product": "UniFi OS",
+          "vulnerabilityName": "Ubiquiti UniFi OS Path Traversal Vulnerability",
+          "dateAdded": "2026-06-23",
+          "dueDate": "2026-06-26",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Ubiquiti UniFi OS contains a path traversal vulnerability which could allow a malicious actor with access to the network to access files on the underlying system that could be manipulated to access an underlying account.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34909"
+        },
+        {
+          "cveID": "CVE-2026-34908",
+          "product": "UniFi OS",
+          "vulnerabilityName": "Ubiquiti UniFi OS Improper Access Control Vulnerability",
+          "dateAdded": "2026-06-23",
+          "dueDate": "2026-06-26",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Ubiquiti UniFi OS contains an improper access control vulnerability which could allow a malicious actor with access to the network to make unauthorized changes to the system.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34908"
+        },
+        {
+          "cveID": "CVE-2010-5330",
+          "product": "AirOS",
+          "vulnerabilityName": "Ubiquiti AirOS Command Injection Vulnerability",
+          "dateAdded": "2022-04-15",
+          "dueDate": "2022-05-06",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Certain Ubiquiti devices contain a command injection vulnerability via a GET request to stainfo.cgi.",
+          "requiredAction": "Apply updates per vendor instructions.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-5330"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2026-34910",
+          "product": "UniFi OS",
+          "vulnerabilityName": "Ubiquiti UniFi OS Improper Input Validation Vulnerability",
+          "dateAdded": "2026-06-23",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34910"
+        },
+        {
+          "cveID": "CVE-2026-34909",
+          "product": "UniFi OS",
+          "vulnerabilityName": "Ubiquiti UniFi OS Path Traversal Vulnerability",
+          "dateAdded": "2026-06-23",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34909"
         }
       ]
     },
@@ -10926,6 +11006,76 @@
       ]
     },
     {
+      "vendor": "PTC",
+      "total_cve_count": 1,
+      "recent_12mo_count": 1,
+      "ransomware_count": 0,
+      "product_breakdown": [
+        {
+          "label": "Windchill and FlexPLM",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-12569",
+          "product": "Windchill and FlexPLM",
+          "vulnerabilityName": "PTC Windchill and FlexPLM Improper Input Validation Vulnerability",
+          "dateAdded": "2026-06-25",
+          "dueDate": "2026-06-28",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "PTC Windchill and FlexPLM contains an improper input validation vulnerability allowing an unauthenticated, remote attacker to execute arbitrary code by sending a malicious request to the network.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12569"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2026-12569",
+          "product": "Windchill and FlexPLM",
+          "vulnerabilityName": "PTC Windchill and FlexPLM Improper Input Validation Vulnerability",
+          "dateAdded": "2026-06-25",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12569"
+        }
+      ]
+    },
+    {
+      "vendor": "Lantronix",
+      "total_cve_count": 1,
+      "recent_12mo_count": 1,
+      "ransomware_count": 0,
+      "product_breakdown": [
+        {
+          "label": "EDS5000",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2025-67038",
+          "product": "EDS5000",
+          "vulnerabilityName": "Lantronix EDS5000 Code Injection Vulnerability",
+          "dateAdded": "2026-06-23",
+          "dueDate": "2026-06-26",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Lantronix EDS5000 contains a code injection vulnerability that could allow attackers to inject arbitrary OS commands into the username parameter. Injected commands are executed with root privileges.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-67038"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2025-67038",
+          "product": "EDS5000",
+          "vulnerabilityName": "Lantronix EDS5000 Code Injection Vulnerability",
+          "dateAdded": "2026-06-23",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-67038"
+        }
+      ]
+    },
+    {
       "vendor": "Splunk",
       "total_cve_count": 1,
       "recent_12mo_count": 1,
@@ -12118,7 +12268,7 @@
     {
       "vendor": "AMI",
       "total_cve_count": 1,
-      "recent_12mo_count": 1,
+      "recent_12mo_count": 0,
       "ransomware_count": 0,
       "product_breakdown": [
         {
@@ -14282,41 +14432,6 @@
           "dateAdded": "2022-04-15",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2014-0780"
-        }
-      ]
-    },
-    {
-      "vendor": "Ubiquiti",
-      "total_cve_count": 1,
-      "recent_12mo_count": 0,
-      "ransomware_count": 0,
-      "product_breakdown": [
-        {
-          "label": "AirOS",
-          "count": 1
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2010-5330",
-          "product": "AirOS",
-          "vulnerabilityName": "Ubiquiti AirOS Command Injection Vulnerability",
-          "dateAdded": "2022-04-15",
-          "dueDate": "2022-05-06",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Certain Ubiquiti devices contain a command injection vulnerability via a GET request to stainfo.cgi.",
-          "requiredAction": "Apply updates per vendor instructions.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-5330"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2010-5330",
-          "product": "AirOS",
-          "vulnerabilityName": "Ubiquiti AirOS Command Injection Vulnerability",
-          "dateAdded": "2022-04-15",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-5330"
         }
       ]
     },

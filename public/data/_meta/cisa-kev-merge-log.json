@@ -1,9 +1,9 @@
 {
-  "merged_at": "2026-06-22T18:06:40.648Z",
+  "merged_at": "2026-06-29T05:21:51.338Z",
   "source_file": "public/data/cisa-kev.json",
-  "total_vendors": 268,
-  "merged_count": 1,
-  "skipped_count": 35,
+  "total_vendors": 270,
+  "merged_count": 4,
+  "skipped_count": 34,
   "orphan_count": 232,
   "error_count": 0,
   "merged_vendors": [
@@ -11,7 +11,25 @@
       "vendor": "Cisco",
       "target": "cisco",
       "routed_via": "override",
-      "cves": 92
+      "cves": 93
+    },
+    {
+      "vendor": "Ubiquiti",
+      "target": "ubiquiti",
+      "routed_via": "direct",
+      "cves": 4
+    },
+    {
+      "vendor": "PTC",
+      "target": "ptc",
+      "routed_via": "direct",
+      "cves": 1
+    },
+    {
+      "vendor": "Lantronix",
+      "target": "lantronix",
+      "routed_via": "direct",
+      "cves": 1
     }
   ],
   "top_orphans": [
