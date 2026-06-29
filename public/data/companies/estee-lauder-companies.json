@@ -4,6 +4,8 @@
   "init": "ESTE",
   "overall": 60.8,
   "isPublic": true,
+  "ticker": "EL",
+  "cik": 1001250,
   "sc": {
     "political": "bipartisan",
     "charity": "positive",
@@ -176,12 +178,38 @@
       },
       "lastUpdated": "2026-06-26T16:14:03.164Z"
     },
+    "newsweekMrc": {
+      "rank": 26,
+      "score": 84.6,
+      "year": 2025,
+      "sourceUrl": "https://www.newsweek.com/rankings/americas-most-responsible-companies",
+      "lastUpdated": "2026-06-11T14:35:43.707Z",
+      "source": "newsweek-mrc"
+    },
+    "secTax": {
+      "effectiveTaxRate": 0.47,
+      "taxExpenseUsd": 363000000,
+      "pretaxIncomeUsd": 772000000,
+      "year": 2024,
+      "cik": 1001250,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "1001250",
+        "displayName": "ESTEE LAUDER COMPANIES INC"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    },
     "privacy": {
       "breaches": {
-        "count": 1,
-        "mostRecent": "2015-05-20",
-        "maxAffected": null,
-        "causes": []
+        "count": 2,
+        "mostRecent": "2023-08-20",
+        "maxAffected": 150535,
+        "causes": [
+          "Other"
+        ]
       },
       "lastUpdated": "2026-06-26T16:14:48.292Z"
     }
