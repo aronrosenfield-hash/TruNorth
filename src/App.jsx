@@ -5493,6 +5493,11 @@ useEffect(() => {
 
   // Phase 5.y / UX 7B: barcode scanner modal state. Opened from the search bar.
   const [showScanner, setShowScanner] = useState(false);
+  // R-next: one-time "scan any barcode" coachmark on the home — the in-store
+  // habit the reveal planted. Persists until the scanner is opened once (or
+  // dismissed), then never returns.
+  const [scanCoachSeen, setScanCoachSeen] = useState(() => { try { return localStorage.getItem("tn_scanCoach") === "1"; } catch { return false; } });
+  const dismissScanCoach = () => { setScanCoachSeen(true); try { localStorage.setItem("tn_scanCoach", "1"); } catch {} };
 
   // Deep-link slug: parsed from /company/<slug>. CompanyCard reads it and
   // auto-expands the matching row on first render so shared links open the
@@ -5934,6 +5939,7 @@ useEffect(() => {
   const TAB_LABELS = {search:"Search",browse:"Browse",top:"Top picks",library:"Library",account:"Account"};
   // Which sub-tab is active inside Library. Defaults to "saved".
   const [librarySubtab, setLibrarySubtab] = useState("saved");
+  const [editingSwitch, setEditingSwitch] = useState(null); // R-next: inline-edit a logged switch's monthly amount in the Ledger
   // Phase 5.as (QA friction #6): saved sort + category filter
   const [savedSortMode, setSavedSortMode] = useState("recent");
   const [savedCategoryFilter, setSavedCategoryFilter] = useState("all");
@@ -6533,7 +6539,7 @@ if (screen === "basket") {
               {queryRaw && <button onClick={()=>{setQueryRaw("");setQuery("");}} style={{ background:"none", border:"none", color:T.txt3, fontSize:18, cursor:"pointer", minWidth:44, minHeight:44, display:"flex", alignItems:"center", justifyContent:"center" }} aria-label="Clear search">×</button>}
               {typeof navigator !== "undefined" && navigator.mediaDevices?.getUserMedia && (
                 <button
-                  onClick={() => { setShowScanner(true); track("scanner_open", { tab }); }}
+                  onClick={() => { setShowScanner(true); dismissScanCoach(); track("scanner_open", { tab }); }}
                   aria-label="Scan barcode"
                   title="Scan a product barcode"
                   style={{ background:"none", border:"none", color:T.accent2, fontSize:20, cursor:"pointer", padding:"6px 0", minWidth:44, minHeight:44, display:"flex", alignItems:"center", justifyContent:"center" }}
@@ -6542,6 +6548,16 @@ if (screen === "basket") {
                 </button>
               )}
             </div>
+            {/* R-next: one-time scan coachmark — the in-store habit the reveal
+                planted. Sits under the search bar (pointing at the scan icon)
+                until the scanner's opened once or dismissed. Camera-gated. */}
+            {!scanCoachSeen && typeof navigator !== "undefined" && navigator.mediaDevices?.getUserMedia && (
+              <div style={{ display:"flex", alignItems:"center", gap:8, marginTop:8, padding:"8px 11px", background:T.accentBg, border:`1px solid ${T.accent}`, borderRadius:10 }}>
+                <i className="ti ti-barcode" style={{ color:T.accent2, fontSize:18, flexShrink:0 }} aria-hidden="true" />
+                <span style={{ fontSize:12, color:T.accent2, flex:1, lineHeight:1.35 }}>Shopping? Tap <i className="ti ti-scan" style={{ fontSize:13, verticalAlign:"-2px" }} aria-hidden="true" /> to scan any barcode for its grade.</span>
+                <button onClick={dismissScanCoach} aria-label="Dismiss" style={{ background:"none", border:"none", color:T.txt3, fontSize:17, lineHeight:1, cursor:"pointer", padding:"2px 4px", flexShrink:0 }}>×</button>
+              </div>
+            )}
             {/* Phase 5.au (QA round 2 #4): inline typeahead dropdown. The
                 MiniSearch index was wired for filtering in Phase 5.as but the
                 UX asked for a 5-row suggestion list while typing. Renders
@@ -7291,13 +7307,40 @@ if (screen === "basket") {
                 </div>
                 {switches.length > 0 && (
                   <div style={{ marginTop:10, marginBottom:10 }}>
-                    {switches.slice(-3).reverse().map((sw, i, arr) => (
-                      <div key={i} style={{ display:"flex", alignItems:"baseline", gap:8, padding:"5px 2px", fontFamily:MONO, fontSize:11, color:T.txt2, borderBottom: i < arr.length - 1 ? `1px dashed ${T.border}` : "none" }}>
+                    {switches.slice(-3).reverse().map((sw, i, arr) => {
+                      const isEd = editingSwitch && editingSwitch.from === sw.from && editingSwitch.to === sw.to;
+                      const saveEdit = () => {
+                        try {
+                          const list = JSON.parse(localStorage.getItem("tn_switches") || "[]");
+                          const idx = list.findIndex(x => x && x.from === sw.from && x.to === sw.to);
+                          if (idx >= 0) { list[idx] = { ...list[idx], monthly: Number(editingSwitch.val) || 0 }; localStorage.setItem("tn_switches", JSON.stringify(list)); }
+                        } catch {}
+                        setEditingSwitch(null);
+                      };
+                      return (
+                      <div key={i} style={{ display:"flex", alignItems:"center", gap:8, padding:"5px 2px", fontFamily:MONO, fontSize:11, color:T.txt2, borderBottom: i < arr.length - 1 ? `1px dashed ${T.border}` : "none" }}>
                         <span style={{ color:T.txt3 }}>{new Date(sw.at).toLocaleDateString(undefined, { month:"short", day:"numeric" })}</span>
                         <span style={{ overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap" }}>{sw.fromName} → <span style={{ color:T.accent2 }}>{sw.toName}</span></span>
-                        <span style={{ marginLeft:"auto", color:T.gold }}>{sw.monthly ? `$${sw.monthly}/mo` : ""}</span>
+                        {isEd ? (
+                          <span style={{ marginLeft:"auto", display:"inline-flex", alignItems:"center", gap:3 }}>
+                            <span style={{ color:T.txt3 }}>$</span>
+                            <input type="number" inputMode="numeric" min="0" autoFocus
+                              value={editingSwitch.val}
+                              onChange={(e) => { const v = e.target.value; setEditingSwitch(s => ({ ...s, val: v === "" ? "" : Math.max(0, Math.round(Number(v) || 0)) })); }}
+                              onKeyDown={(e) => { if (e.key === "Enter") saveEdit(); }}
+                              style={{ width:48, background:T.bg2, border:`1px solid ${T.gold}`, borderRadius:6, color:T.gold, fontFamily:MONO, fontSize:11, padding:"3px 5px", outline:"none" }} />
+                            <button aria-label="Save amount" onClick={saveEdit} style={{ background:"none", border:"none", color:"#38C0CE", cursor:"pointer", padding:"2px", fontSize:15, display:"inline-flex" }}><i className="ti ti-check" aria-hidden="true" /></button>
+                          </span>
+                        ) : (
+                          <button onClick={() => setEditingSwitch({ from: sw.from, to: sw.to, val: sw.monthly || 0 })}
+                            aria-label="Edit monthly amount"
+                            style={{ marginLeft:"auto", background:"none", border:"none", color:T.gold, fontFamily:MONO, fontSize:11, cursor:"pointer", padding:0, display:"inline-flex", alignItems:"center", gap:3 }}>
+                            {sw.monthly ? `$${sw.monthly}/mo` : "add $"} <i className="ti ti-pencil" style={{ fontSize:10, opacity:0.6 }} aria-hidden="true" />
+                          </button>
+                        )}
                       </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 )}
               </div>
