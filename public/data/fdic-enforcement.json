@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16T18:52:20.649Z",
+  "generated_at": "2026-06-30T06:08:37.961Z",
   "smoke_mode": false,
   "brand_count": 528,
   "with_enforcement_count": 0,
@@ -339,22 +339,22 @@
       "status": "edos_unreachable",
       "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
       "bank_cert_numbers": [
-        34585,
         28818,
+        34585,
         26325
       ],
       "bank_names": [
         {
-          "cert": 34585,
-          "name": "Pacific Crest Bank",
-          "state": "WA",
+          "cert": 28818,
+          "name": "Crest Savings Bank",
+          "state": "NJ",
           "active": 1,
           "bkclass": "SI"
         },
         {
-          "cert": 28818,
-          "name": "Crest Savings Bank",
-          "state": "NJ",
+          "cert": 34585,
+          "name": "Pacific Crest Bank",
+          "state": "WA",
           "active": 1,
           "bkclass": "SI"
         },
@@ -469,11 +469,18 @@
       "status": "edos_unreachable",
       "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
       "bank_cert_numbers": [
+        21798,
         22755,
-        23425,
-        21798
+        23425
       ],
       "bank_names": [
+        {
+          "cert": 21798,
+          "name": "Norwest Bank Wyoming Gillette, National Association",
+          "state": "WY",
+          "active": 0,
+          "bkclass": "N"
+        },
         {
           "cert": 22755,
           "name": "Key Bank of Wyoming - Seventh and Douglas Highway, Gillette, Wyoming 827",
@@ -487,13 +494,6 @@
           "state": "WY",
           "active": 0,
           "bkclass": "NM"
-        },
-        {
-          "cert": 21798,
-          "name": "Norwest Bank Wyoming Gillette, National Association",
-          "state": "WY",
-          "active": 0,
-          "bkclass": "N"
         }
       ]
     },
@@ -2010,8 +2010,8 @@
         27595,
         10600,
         4768,
-        17438,
-        9575
+        9575,
+        17438
       ],
       "bank_names": [
         {
@@ -2078,17 +2078,17 @@
           "bkclass": "N"
         },
         {
-          "cert": 17438,
-          "name": "First National Bank of America",
-          "state": "MI",
-          "active": 1,
-          "bkclass": "N"
-        },
-        {
           "cert": 9575,
           "name": "Bank of America Utah, National Association",
           "state": "UT",
           "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 17438,
+          "name": "First National Bank of America",
+          "state": "MI",
+          "active": 1,
           "bkclass": "N"
         }
       ]
@@ -2111,7 +2111,6 @@
         27930,
         14533,
         18694,
-        2843,
         13849,
         16309,
         16853,
@@ -2122,6 +2121,7 @@
         4448,
         5208,
         5457,
+        2843,
         2210,
         15277
       ],
@@ -2211,13 +2211,6 @@
           "bkclass": "N"
         },
         {
-          "cert": 2843,
-          "name": "Wells Fargo Bank of Arizona, National Association",
-          "state": "AZ",
-          "active": 0,
-          "bkclass": "N"
-        },
-        {
           "cert": 13849,
           "name": "Wells Fargo Bank Indiana, National Association",
           "state": "IN",
@@ -2288,6 +2281,13 @@
           "bkclass": "N"
         },
         {
+          "cert": 2843,
+          "name": "Wells Fargo Bank of Arizona, National Association",
+          "state": "AZ",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
           "cert": 2210,
           "name": "Wells Fargo Bank Wyoming, National Association",
           "state": "WY",
@@ -2329,12 +2329,11 @@
       "bank_cert_numbers": [
         6548,
         5134,
-        1304,
         26441,
-        34590,
+        1304,
         2268,
+        34590,
         23922,
-        2976,
         1277,
         2162
       ],
@@ -2354,13 +2353,6 @@
           "bkclass": "N"
         },
         {
-          "cert": 1304,
-          "name": "U.S. Bank of California",
-          "state": "CA",
-          "active": 0,
-          "bkclass": "NM"
-        },
-        {
           "cert": 26441,
           "name": "U.S. Bank of Utah",
           "state": "UT",
@@ -2368,11 +2360,11 @@
           "bkclass": "NM"
         },
         {
-          "cert": 34590,
-          "name": "U.S. Bank National Association ND",
-          "state": "ND",
+          "cert": 1304,
+          "name": "U.S. Bank of California",
+          "state": "CA",
           "active": 0,
-          "bkclass": "N"
+          "bkclass": "NM"
         },
         {
           "cert": 2268,
@@ -2382,16 +2374,16 @@
           "bkclass": "SM"
         },
         {
-          "cert": 23922,
-          "name": "U.S. Bank National Association OR",
-          "state": "OR",
+          "cert": 34590,
+          "name": "U.S. Bank National Association ND",
+          "state": "ND",
           "active": 0,
           "bkclass": "N"
         },
         {
-          "cert": 2976,
-          "name": "U.S. Bank of Idaho, National Association",
-          "state": "ID",
+          "cert": 23922,
+          "name": "U.S. Bank National Association OR",
+          "state": "OR",
           "active": 0,
           "bkclass": "N"
         },
@@ -2426,8 +2418,8 @@
         34425,
         7740,
         742,
-        7944,
         10513,
+        7944,
         31435,
         2688
       ],
@@ -2496,18 +2488,18 @@
           "bkclass": "N"
         },
         {
-          "cert": 7944,
-          "name": "PNC Bank, National Association",
-          "state": "PA",
-          "active": 0,
-          "bkclass": "N"
-        },
-        {
           "cert": 10513,
           "name": "PNC Bank, Kentucky, Inc.",
           "state": "KY",
           "active": 0,
           "bkclass": "SM"
+        },
+        {
+          "cert": 7944,
+          "name": "PNC Bank, National Association",
+          "state": "PA",
+          "active": 0,
+          "bkclass": "N"
         },
         {
           "cert": 31435,
