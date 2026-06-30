@@ -3575,28 +3575,57 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                       option is staring at you. Spend is asked ONCE, about the
                       brand being left — that's the dollars redirected. */}
                   {onCommitSwitch && (
-                    switchSheet === "done" ? (
-                      <div style={{ marginTop:10, padding:"10px 12px", borderRadius:10, background:T.accentBg, border:`1px solid ${T.accent}`, fontSize:12, color:T.accent2, fontWeight:600, display:"flex", alignItems:"center", gap:7 }}>
-                        <i className="ti ti-check" aria-hidden="true" /> Switch logged — counted in your Basket.
-                      </div>
-                    ) : switchSheet ? (
-                      <div style={{ marginTop:10, padding:"10px 12px", borderRadius:10, background:T.bg3, border:`1px solid ${T.border2}` }}>
-                        <div style={{ fontSize:12, color:T.txt2, marginBottom:8 }}>About how much do you spend on <strong style={{ color:T.txt }}>{enriched.name}</strong> a month?</div>
-                        <div style={{ display:"flex", gap:6 }}>
-                          {[10, 25, 50, 100].map(amt => (
-                            <button key={amt}
-                              onClick={(e) => { e.stopPropagation(); onCommitSwitch(enriched.slug || enriched.id, enriched.name, switchSheet.to, switchSheet.toName, amt); setSwitchSheet("done"); }}
-                              style={{ flex:1, padding:"9px 4px", borderRadius:9, background:T.bg2, border:`1px solid ${T.border}`, color:T.txt, fontFamily:MONO, fontSize:13, fontWeight:600, cursor:"pointer" }}>
-                              ${amt}
-                            </button>
-                          ))}
+                    switchSheet?.done ? (
+                      <div style={{ marginTop:10, padding:"10px 12px", borderRadius:10, background:T.accentBg, border:`1px solid ${T.accent}` }}>
+                        <div style={{ fontSize:12, color:T.accent2, fontWeight:600, display:"flex", alignItems:"center", gap:7 }}>
+                          <i className="ti ti-check" aria-hidden="true" /> Switch logged{switchSheet.amt ? ` · $${switchSheet.amt}/mo` : ""} — counted in your Basket.
                         </div>
-                        <button onClick={(e) => { e.stopPropagation(); onCommitSwitch(enriched.slug || enriched.id, enriched.name, switchSheet.to, switchSheet.toName, 0); setSwitchSheet("done"); }}
-                          style={{ marginTop:7, background:"none", border:"none", color:T.txt3, fontSize:11, cursor:"pointer", padding:0, textDecoration:"underline" }}>
+                        <button onClick={(e) => { e.stopPropagation(); setSwitchSheet({ ...switchSheet, done:false }); }}
+                          style={{ marginTop:6, background:"none", border:"none", color:T.accent2, fontSize:11, cursor:"pointer", padding:0, textDecoration:"underline" }}>
+                          Change amount
+                        </button>
+                      </div>
+                    ) : switchSheet ? (() => {
+                      const PRESETS = [25, 50, 100, 200];
+                      const sel = switchSheet.amt;
+                      const isCustom = typeof sel === "number" && !PRESETS.includes(sel);
+                      const setAmt = (v) => setSwitchSheet({ ...switchSheet, amt: v });
+                      const commit = (amt) => { onCommitSwitch(enriched.slug || enriched.id, enriched.name, switchSheet.to, switchSheet.toName, amt); setSwitchSheet({ ...switchSheet, amt, done:true }); };
+                      return (
+                      <div style={{ marginTop:10, padding:"10px 12px", borderRadius:10, background:T.bg3, border:`1px solid ${T.border2}` }} onClick={(e) => e.stopPropagation()}>
+                        <div style={{ fontSize:12, color:T.txt2, marginBottom:8 }}>About how much do you spend on <strong style={{ color:T.txt }}>{enriched.name}</strong> <strong style={{ color:T.txt }}>per month</strong>?</div>
+                        <div style={{ display:"flex", gap:6 }}>
+                          {PRESETS.map(amt => {
+                            const on = sel === amt;
+                            return (
+                            <button key={amt}
+                              onClick={(e) => { e.stopPropagation(); setAmt(amt); }}
+                              style={{ flex:1, padding:"9px 2px", borderRadius:9, background: on ? T.accentBg : T.bg2, border:`1px solid ${on ? T.accent : T.border}`, color: on ? T.accent2 : T.txt, fontFamily:MONO, fontSize:12.5, fontWeight:700, cursor:"pointer" }}>
+                              ${amt}<span style={{ fontSize:9, opacity:0.65 }}>/mo</span>
+                            </button>
+                            );
+                          })}
+                        </div>
+                        <div style={{ display:"flex", alignItems:"center", gap:6, marginTop:7, background:T.bg2, border:`1px solid ${isCustom ? T.accent : T.border}`, borderRadius:9, padding:"0 10px" }}>
+                          <span style={{ color:T.txt3, fontFamily:MONO, fontSize:13 }}>$</span>
+                          <input type="number" inputMode="numeric" min="0" placeholder="Custom amount"
+                            value={isCustom ? sel : ""}
+                            onChange={(e) => { const raw = e.target.value; setAmt(raw === "" ? undefined : Math.max(0, Math.round(Number(raw) || 0))); }}
+                            style={{ flex:1, minWidth:0, width:"100%", background:"none", border:"none", color:T.txt, fontFamily:MONO, fontSize:14, padding:"9px 0", outline:"none" }} />
+                          <span style={{ color:T.txt3, fontSize:11 }}>/mo</span>
+                        </div>
+                        <button onClick={(e) => { e.stopPropagation(); if (typeof sel === "number") commit(sel); }}
+                          aria-disabled={typeof sel !== "number"}
+                          style={{ marginTop:8, width:"100%", padding:"10px", borderRadius:9, background: typeof sel === "number" ? T.accent2 : T.bg2, border:"none", color: typeof sel === "number" ? "#000" : T.txt3, fontSize:13, fontWeight:700, cursor: typeof sel === "number" ? "pointer" : "default" }}>
+                          {typeof sel === "number" ? `Log switch · $${sel}/mo` : "Pick or enter an amount"}
+                        </button>
+                        <button onClick={(e) => { e.stopPropagation(); commit(0); }}
+                          style={{ marginTop:7, width:"100%", background:"none", border:"none", color:T.txt3, fontSize:11, cursor:"pointer", padding:0, textDecoration:"underline", textAlign:"center" }}>
                           Not sure — log it without an amount
                         </button>
                       </div>
-                    ) : (
+                      );
+                    })() : (
                       <button
                         onClick={(e) => { e.stopPropagation(); const best = display[0].co; setSwitchSheet({ to: best.slug || best.id, toName: best.name }); track("switch_started", { from: enriched.slug || enriched.id, to: best.slug || best.id }); }}
                         style={{ marginTop:10, width:"100%", padding:"12px 10px", borderRadius:11, background:"#EDE9E0", border:"none", color:"#111", fontSize:13.5, fontWeight:700, cursor:"pointer" }}>
@@ -5342,7 +5371,11 @@ useEffect(() => {
     tapMedium();
     try {
       const list = JSON.parse(localStorage.getItem("tn_switches") || "[]");
-      list.push({ from, fromName, to, toName, monthly: Number(monthly) || 0, at: Date.now() });
+      // R-next: upsert by (from, to) so re-logging the same switch EDITS the
+      // monthly amount instead of pushing a duplicate (Aron: "can't change it").
+      const idx = list.findIndex(s => s && s.from === from && s.to === to);
+      if (idx >= 0) list[idx] = { ...list[idx], fromName, toName, monthly: Number(monthly) || 0, at: Date.now() };
+      else list.push({ from, fromName, to, toName, monthly: Number(monthly) || 0, at: Date.now() });
       localStorage.setItem("tn_switches", JSON.stringify(list));
     } catch {}
     setSavedSet(prev => {
@@ -6087,6 +6120,16 @@ if (screen === "basket") {
       : [];
     const basketView = savedCos.length ? basketVerdict(savedCos, profile, companies || []) : null;
     const hasBasketPayoff = !!(basketView && basketView.graded > 0);
+    // R-next (post-quiz activation): name the user's top 1-2 weighted values so
+    // the "tuned to you" line is concrete, not vague. Null when weights are
+    // undifferentiated (user didn't lean) → fall back to the generic line.
+    const topValueLabels = (() => {
+      const w = { ...PROFILE_DEFAULT_WEIGHTS, ...(profile?.weights || {}) };
+      const LBL = { environment:"environment", labor:"labor", privacy:"privacy", execPay:"exec pay", charity:"charity" };
+      const ranked = Object.entries(w).filter(([k]) => LBL[k]).sort((a,b) => b[1] - a[1]);
+      if (ranked.length < 2 || ranked[0][1] === ranked[ranked.length - 1][1]) return null;
+      return ranked.slice(0, 2).map(([k]) => LBL[k]);
+    })();
     return (
       <div style={{ height:"100dvh", maxWidth:"var(--app-max, 430px)", margin:"0 auto", display:"flex", flexDirection:"column", overflow:"hidden", background:T.bg, paddingTop:"env(safe-area-inset-top,0px)" }}>
         <div style={{ flex:1, overflowY:"auto", padding:"32px 20px 12px", display:"flex", flexDirection:"column", alignItems:"center", boxSizing:"border-box", width:"100%" }}>
@@ -6171,7 +6214,9 @@ if (screen === "basket") {
               maxWidth:340 (not 100%) so the italic "you" can't overflow on narrow
               iPhones — the 2026-06-01 fix. */}
           <div style={{ fontSize:14, color:T.txt2, textAlign:"center", marginBottom:22, lineHeight:1.4, maxWidth:340, width:"100%", paddingLeft:8, paddingRight:8, boxSizing:"border-box" }}>
-            Every grade you see is now tailored to <em style={{ color:T.accent2, fontStyle:"normal", fontWeight:600 }}>you</em>.
+            {topValueLabels
+              ? <>Your grades are now tuned to <em style={{ color:T.accent2, fontStyle:"normal", fontWeight:600 }}>{topValueLabels[0]}</em> and <em style={{ color:T.accent2, fontStyle:"normal", fontWeight:600 }}>{topValueLabels[1]}</em>.</>
+              : <>Every grade you see is now tailored to <em style={{ color:T.accent2, fontStyle:"normal", fontWeight:600 }}>you</em>.</>}
           </div>
           {/* R2 review: the top match is the payoff ONLY when there's no basket
               clash to lead with — otherwise the clash card above is the hook, and
@@ -6298,11 +6343,18 @@ if (screen === "basket") {
             <i className="ti ti-share" aria-hidden="true" /> Share my values
           </button>
           <button
-            onClick={() => setScreen("main")}
-            style={{ width:"100%", padding:14, borderRadius:12, border:"none", background:T.accent2, color:"#000", fontSize:15, fontWeight:700, cursor:"pointer" }}
+            onClick={() => { setScreen("main"); setTab("search"); track("reveal_cta_search", {}); }}
+            style={{ width:"100%", padding:14, borderRadius:12, border:"none", background:T.accent2, color:"#000", fontSize:15, fontWeight:700, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:8 }}
           >
-            Explore all 12,000+ brands →
+            Search a brand you buy <i className="ti ti-arrow-right" aria-hidden="true" />
           </button>
+          {/* R-next: plant the in-store scan habit. Passive on the couch (they're
+              not shopping yet); becomes the dismissible coachmark on the home scan
+              button later. Not tappable here — opening a camera to nothing is worse
+              than a quiet hint. */}
+          <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:7, color:T.txt3, fontSize:12 }}>
+            <i className="ti ti-barcode" style={{ color:T.gold, fontSize:16 }} aria-hidden="true" /> Shopping? Scan any barcode for its grade.
+          </div>
         </div>
       </div>
     );
