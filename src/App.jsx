@@ -1768,8 +1768,9 @@ function FilterPanel({ leanFilter, setLeanFilter, catFilters, setCatFilters, tog
 const chipStyle = () => ({ flexShrink:0, padding:"5px 10px", borderRadius:12, fontSize:11, fontWeight:600, background:T.accentBg, color:T.accent2, border:`1px solid ${T.accent}`, cursor:"pointer", whiteSpace:"nowrap" });
 
 function FilterSheet({ onClose, leanFilter, setLeanFilter, catFilters, toggleCat, flagFilters, toggleFlag, lc }) {
+  const dialogRef = useModalA11y({ isOpen: true, onClose });
   return (
-    <div ref={dialogRef} onClick={onClose} role="dialog" aria-modal="true" aria-label="Barcode scanner" style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.65)", zIndex:200, display:"flex", flexDirection:"column", justifyContent:"flex-end" }}>
+    <div ref={dialogRef} onClick={onClose} role="dialog" aria-modal="true" aria-label="Filters" style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.65)", zIndex:200, display:"flex", flexDirection:"column", justifyContent:"flex-end" }}>
       <div onClick={e=>e.stopPropagation()} style={{ background:T.bg, borderTopLeftRadius:20, borderTopRightRadius:20, padding:"6px 16px 24px", paddingBottom:"calc(24px + env(safe-area-inset-bottom, 0px))", maxHeight:"82dvh", overflowY:"auto" }}>
         <div style={{ width:38, height:4, background:T.border2, borderRadius:2, margin:"6px auto 14px" }} />
         <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:14 }}>
@@ -1872,7 +1873,7 @@ function RevealEmailCapture() {
   return (
     <div style={{
       width:"100%", maxWidth:340, marginTop:18, marginBottom:8,
-      padding:"14px 16px",
+      padding:"14px 16px", boxSizing:"border-box",
       background:T.bg2, border:`1px solid ${T.border}`, borderRadius:14,
       textAlign:"center",
     }}>
@@ -2238,7 +2239,7 @@ function WhatsNewModal({ companyCount }) {
   if (!show) return null;
   return (
     <div ref={dialogRef} onClick={dismiss} role="dialog" aria-modal="true" aria-label="What's new" style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:200, padding:"32px 12px", display:"flex", alignItems:"center", justifyContent:"center" }}>
-      <div onClick={e=>e.stopPropagation()} style={{ maxWidth:400, width:"100%", background:T.bg, border:`1px solid ${T.border}`, borderRadius:16, padding:20, color:T.txt }}>
+      <div onClick={e=>e.stopPropagation()} style={{ maxWidth:400, width:"100%", boxSizing:"border-box", background:T.bg, border:`1px solid ${T.border}`, borderRadius:16, padding:20, color:T.txt }}>
         {/* 2026-06-01: Launch-mode rewrite. The pre-launch "what's new" was
             a dev-internal changelog ("5,000+ new companies", "new filter
             drawer"). Re-cast as a welcome / value-prop card for the wave of
@@ -6344,13 +6345,13 @@ if (screen === "basket") {
             /* R2 review: ONE primary CTA. Share is the growth loop but it was a
                second co-equal filled button competing with Explore — demoted to a
                subordinate ghost link so the eye lands on the primary action. */
-            style={{ width:"100%", padding:"10px 14px", borderRadius:12, border:"none", background:"transparent", color:T.txt3, fontSize:13, fontWeight:500, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:8 }}
+            style={{ width:"100%", boxSizing:"border-box", padding:"10px 14px", borderRadius:12, border:"none", background:"transparent", color:T.txt3, fontSize:13, fontWeight:500, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:8 }}
           >
             <i className="ti ti-share" aria-hidden="true" /> Share my values
           </button>
           <button
             onClick={() => { setScreen("main"); setTab("search"); track("reveal_cta_search", {}); }}
-            style={{ width:"100%", padding:14, borderRadius:12, border:"none", background:T.accent2, color:"#000", fontSize:15, fontWeight:700, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:8 }}
+            style={{ width:"100%", boxSizing:"border-box", padding:14, borderRadius:12, border:"none", background:T.accent2, color:"#000", fontSize:15, fontWeight:700, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:8 }}
           >
             Search a brand you buy <i className="ti ti-arrow-right" aria-hidden="true" />
           </button>
