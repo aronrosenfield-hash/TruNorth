@@ -1,0 +1,71 @@
+{
+  "merged_at": "2026-07-01T17:27:06.986Z",
+  "source_file": "public/data/osv.json",
+  "total_vendors": 10,
+  "merged_count": 9,
+  "skipped_count": 0,
+  "orphan_count": 1,
+  "error_count": 0,
+  "merged_vendors": [
+    {
+      "vendor": "Google",
+      "target": "google-alphabet",
+      "routed_via": "override",
+      "vulns": 99
+    },
+    {
+      "vendor": "Meta",
+      "target": "meta-facebook",
+      "routed_via": "override",
+      "vulns": 45
+    },
+    {
+      "vendor": "Oracle",
+      "target": "oracle-cloud",
+      "routed_via": "parent",
+      "vulns": 9
+    },
+    {
+      "vendor": "Amazon",
+      "target": "amazon",
+      "routed_via": "override",
+      "vulns": 8
+    },
+    {
+      "vendor": "Microsoft",
+      "target": "microsoft",
+      "routed_via": "override",
+      "vulns": 2
+    },
+    {
+      "vendor": "Red Hat",
+      "target": "red-hat",
+      "routed_via": "override",
+      "vulns": 0
+    },
+    {
+      "vendor": "Apple",
+      "target": "apple",
+      "routed_via": "override",
+      "vulns": 0
+    },
+    {
+      "vendor": "IBM",
+      "target": "ibm",
+      "routed_via": "override",
+      "vulns": 0
+    },
+    {
+      "vendor": "Adobe",
+      "target": "adobe",
+      "routed_via": "override",
+      "vulns": 0
+    }
+  ],
+  "orphans": [
+    {
+      "vendor": "Mozilla",
+      "vendor_slug": "mozilla"
+    }
+  ]
+}

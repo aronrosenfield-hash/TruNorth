@@ -1,0 +1,445 @@
+{
+  "generated_at": "2026-07-01T17:27:06.947Z",
+  "source": "osv.dev",
+  "source_url": "https://osv.dev",
+  "vendor_count": 10,
+  "vendors": [
+    {
+      "vendor": "Mozilla",
+      "total_vulnerabilities": 1078,
+      "recent_24mo": 318,
+      "critical_count": 1,
+      "sample_top_vulns": [
+        {
+          "id": "GHSA-gj48-438w-jh9v",
+          "summary": "Bleach clean() / Cleaner() fails to sanitize dangerous URI schemes in allowed formaction attributes",
+          "published": "2026-06-16T14:07:49Z",
+          "modified": "2026-06-18T18:29:26.517334064Z",
+          "aliases": [],
+          "url": "https://osv.dev/vulnerability/GHSA-gj48-438w-jh9v"
+        },
+        {
+          "id": "GHSA-g75f-g53v-794x",
+          "summary": "Bleach linkify(parse_email=True) CPU exhaustion via unbounded email regex scanning",
+          "published": "2026-06-16T14:07:30Z",
+          "modified": "2026-06-16T14:15:07.999448951Z",
+          "aliases": [],
+          "url": "https://osv.dev/vulnerability/GHSA-g75f-g53v-794x"
+        },
+        {
+          "id": "GHSA-8rfp-98v4-mmr6",
+          "summary": "Bleach: URI sanitization allows disallowed URI schemes with Unicode > U+00A0 in output",
+          "published": "2026-06-16T14:06:29Z",
+          "modified": "2026-06-18T13:29:27.505774604Z",
+          "aliases": [],
+          "url": "https://osv.dev/vulnerability/GHSA-8rfp-98v4-mmr6"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-12330",
+          "summary": "",
+          "published": "2026-06-16T13:16:33.747Z",
+          "modified": "2026-06-22T10:00:08.276198242Z",
+          "aliases": [],
+          "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-12330"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-12329",
+          "summary": "",
+          "published": "2026-06-16T13:16:33.657Z",
+          "modified": "2026-06-22T10:00:08.331846625Z",
+          "aliases": [],
+          "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-12329"
+        }
+      ],
+      "package_breakdown": [
+        {
+          "label": "Debian:12/firefox-esr",
+          "count": 1000
+        },
+        {
+          "label": "Debian:12/nss",
+          "count": 84
+        },
+        {
+          "label": "PyPI/bleach",
+          "count": 13
+        }
+      ],
+      "packages_queried": 5
+    },
+    {
+      "vendor": "Google",
+      "total_vulnerabilities": 99,
+      "recent_24mo": 39,
+      "critical_count": 1,
+      "sample_top_vulns": [
+        {
+          "id": "GO-2026-5025",
+          "summary": "Invoking incorrect handling of namespaced elements in foreign content in golang.org/x/net/html",
+          "published": "2026-05-22T02:46:43Z",
+          "modified": "2026-05-30T05:14:17.563517047Z",
+          "aliases": [
+            "CVE-2026-42506"
+          ],
+          "url": "https://osv.dev/vulnerability/GO-2026-5025"
+        },
+        {
+          "id": "GO-2026-5026",
+          "summary": "Invoking failure to reject ASCII-only Punycode-encoded labels in golang.org/x/net/idna",
+          "published": "2026-05-22T02:46:43Z",
+          "modified": "2026-06-30T11:14:29.198693603Z",
+          "aliases": [
+            "CVE-2026-39821"
+          ],
+          "url": "https://osv.dev/vulnerability/GO-2026-5026"
+        },
+        {
+          "id": "GO-2026-5027",
+          "summary": "Invoking incorrect handling of HTML elements in foreign content in golang.org/x/net/html",
+          "published": "2026-05-22T02:46:43Z",
+          "modified": "2026-05-30T05:14:17.859851842Z",
+          "aliases": [
+            "CVE-2026-42502"
+          ],
+          "url": "https://osv.dev/vulnerability/GO-2026-5027"
+        },
+        {
+          "id": "GO-2026-5028",
+          "summary": "Invoking denial of service when parsing arbitrary HTML in golang.org/x/net/html",
+          "published": "2026-05-22T02:46:43Z",
+          "modified": "2026-05-30T05:14:18.140371162Z",
+          "aliases": [
+            "CVE-2026-25680"
+          ],
+          "url": "https://osv.dev/vulnerability/GO-2026-5028"
+        },
+        {
+          "id": "GO-2026-5029",
+          "summary": "Invoking incorrect handling of character references in DOCTYPE nodes in golang.org/x/net/html",
+          "published": "2026-05-22T02:46:43Z",
+          "modified": "2026-05-30T05:14:17.199855080Z",
+          "aliases": [
+            "CVE-2026-25681"
+          ],
+          "url": "https://osv.dev/vulnerability/GO-2026-5029"
+        }
+      ],
+      "package_breakdown": [
+        {
+          "label": "Go/golang.org/x/net",
+          "count": 49
+        },
+        {
+          "label": "Go/golang.org/x/crypto",
+          "count": 41
+        },
+        {
+          "label": "Maven/com.google.protobuf:protobuf-java",
+          "count": 5
+        },
+        {
+          "label": "Maven/com.google.guava:guava",
+          "count": 3
+        },
+        {
+          "label": "npm/googleapis",
+          "count": 1
+        }
+      ],
+      "packages_queried": 6
+    },
+    {
+      "vendor": "Meta",
+      "total_vulnerabilities": 45,
+      "recent_24mo": 34,
+      "critical_count": 2,
+      "sample_top_vulns": [
+        {
+          "id": "PYSEC-2026-139",
+          "summary": "",
+          "published": "2026-03-22T05:16:20.273Z",
+          "modified": "2026-05-21T15:00:31.962442644Z",
+          "aliases": [
+            "BIT-pytorch-2026-4538",
+            "CVE-2026-4538"
+          ],
+          "url": "https://osv.dev/vulnerability/PYSEC-2026-139"
+        },
+        {
+          "id": "PYSEC-2025-210",
+          "summary": "",
+          "published": "2025-11-12T21:15:52.397Z",
+          "modified": "2026-05-21T15:00:31.925271484Z",
+          "aliases": [
+            "BIT-pytorch-2025-63396",
+            "CVE-2025-63396"
+          ],
+          "url": "https://osv.dev/vulnerability/PYSEC-2025-210"
+        },
+        {
+          "id": "PYSEC-2025-209",
+          "summary": "",
+          "published": "2025-09-25T16:15:35.197Z",
+          "modified": "2026-05-20T09:19:20.117285Z",
+          "aliases": [
+            "BIT-pytorch-2025-55560",
+            "CVE-2025-55560"
+          ],
+          "url": "https://osv.dev/vulnerability/PYSEC-2025-209"
+        },
+        {
+          "id": "PYSEC-2025-208",
+          "summary": "",
+          "published": "2025-09-25T16:15:34.960Z",
+          "modified": "2026-05-20T09:19:20.054109Z",
+          "aliases": [
+            "BIT-pytorch-2025-55558",
+            "CVE-2025-55558"
+          ],
+          "url": "https://osv.dev/vulnerability/PYSEC-2025-208"
+        },
+        {
+          "id": "PYSEC-2025-207",
+          "summary": "",
+          "published": "2025-09-25T16:15:34.833Z",
+          "modified": "2026-05-20T09:19:19.989717Z",
+          "aliases": [
+            "BIT-pytorch-2025-55557",
+            "CVE-2025-55557"
+          ],
+          "url": "https://osv.dev/vulnerability/PYSEC-2025-207"
+        }
+      ],
+      "package_breakdown": [
+        {
+          "label": "PyPI/torch",
+          "count": 41
+        },
+        {
+          "label": "npm/react",
+          "count": 2
+        },
+        {
+          "label": "npm/react-native",
+          "count": 1
+        },
+        {
+          "label": "npm/graphql",
+          "count": 1
+        }
+      ],
+      "packages_queried": 4
+    },
+    {
+      "vendor": "Oracle",
+      "total_vulnerabilities": 9,
+      "recent_24mo": 0,
+      "critical_count": 0,
+      "sample_top_vulns": [
+        {
+          "id": "GHSA-m6vm-37g8-gqvh",
+          "summary": "MySQL Connectors takeover vulnerability",
+          "published": "2023-10-18T00:31:42Z",
+          "modified": "2026-02-04T03:46:43.169210Z",
+          "aliases": [
+            "CVE-2023-22102"
+          ],
+          "url": "https://osv.dev/vulnerability/GHSA-m6vm-37g8-gqvh"
+        },
+        {
+          "id": "GHSA-w6f2-8wx4-47r5",
+          "summary": "Incorrect Authorization in MySQL Connector Java",
+          "published": "2022-05-24T19:18:20Z",
+          "modified": "2023-11-08T04:05:14.605604Z",
+          "aliases": [
+            "CVE-2021-2471"
+          ],
+          "url": "https://osv.dev/vulnerability/GHSA-w6f2-8wx4-47r5"
+        },
+        {
+          "id": "GHSA-gc43-g62c-99g2",
+          "summary": "Improper Access Control in MySQL Connectors Java",
+          "published": "2022-05-17T00:25:07Z",
+          "modified": "2024-12-05T05:42:05.017267Z",
+          "aliases": [
+            "CVE-2015-2575"
+          ],
+          "url": "https://osv.dev/vulnerability/GHSA-gc43-g62c-99g2"
+        },
+        {
+          "id": "GHSA-4vrv-ch96-6h42",
+          "summary": "Improper Privilege Management in MySQL Connectors Java",
+          "published": "2022-05-13T01:52:26Z",
+          "modified": "2024-02-20T05:34:07.091553Z",
+          "aliases": [
+            "CVE-2018-3258"
+          ],
+          "url": "https://osv.dev/vulnerability/GHSA-4vrv-ch96-6h42"
+        },
+        {
+          "id": "GHSA-cjcf-wm2p-59h5",
+          "summary": "Exposure of Sensitive Information to an Unauthorized Actor in Oracle MySQL Connectors Java",
+          "published": "2022-05-13T01:45:42Z",
+          "modified": "2023-11-08T03:59:21.268032Z",
+          "aliases": [
+            "CVE-2017-3589"
+          ],
+          "url": "https://osv.dev/vulnerability/GHSA-cjcf-wm2p-59h5"
+        }
+      ],
+      "package_breakdown": [
+        {
+          "label": "Maven/mysql:mysql-connector-java",
+          "count": 9
+        }
+      ],
+      "packages_queried": 3
+    },
+    {
+      "vendor": "Amazon",
+      "total_vulnerabilities": 8,
+      "recent_24mo": 2,
+      "critical_count": 0,
+      "sample_top_vulns": [
+        {
+          "id": "GHSA-j965-2qgj-vjmq",
+          "summary": "JavaScript SDK v2 users should add validation to the region parameter value in or migrate to v3",
+          "published": "2026-01-08T22:04:26Z",
+          "modified": "2026-02-03T03:15:14.714233Z",
+          "aliases": [],
+          "url": "https://osv.dev/vulnerability/GHSA-j965-2qgj-vjmq"
+        },
+        {
+          "id": "GO-2022-0635",
+          "summary": "In-band key negotiation issue in AWS S3 Crypto SDK for golang in github.com/aws/aws-sdk-go",
+          "published": "2024-12-12T22:00:07Z",
+          "modified": "2026-02-04T02:41:58.893164Z",
+          "aliases": [
+            "CVE-2020-8912",
+            "GHSA-7f33-f4f5-xwgw"
+          ],
+          "url": "https://osv.dev/vulnerability/GO-2022-0635"
+        },
+        {
+          "id": "GHSA-6jvc-q2x7-pchv",
+          "summary": "AWS S3 Crypto SDK sends an unencrypted hash of the plaintext alongside the ciphertext as a metadata field",
+          "published": "2022-12-28T00:30:23Z",
+          "modified": "2026-02-04T03:26:16.065477Z",
+          "aliases": [
+            "CVE-2022-2582",
+            "GHSA-76wf-9vgp-pj7w",
+            "GO-2022-0391"
+          ],
+          "url": "https://osv.dev/vulnerability/GHSA-6jvc-q2x7-pchv"
+        },
+        {
+          "id": "GO-2022-0391",
+          "summary": "Exposure of unencrypted plaintext hash in github.com/aws/aws-sdk-go",
+          "published": "2022-07-01T20:10:56Z",
+          "modified": "2026-02-04T03:52:10.915035Z",
+          "aliases": [
+            "CVE-2022-2582",
+            "GHSA-6jvc-q2x7-pchv",
+            "GHSA-76wf-9vgp-pj7w"
+          ],
+          "url": "https://osv.dev/vulnerability/GO-2022-0391"
+        },
+        {
+          "id": "GHSA-f5pg-7wfw-84q9",
+          "summary": "CBC padding oracle issue in AWS S3 Crypto SDK for golang",
+          "published": "2022-02-11T23:26:26Z",
+          "modified": "2026-05-04T08:45:48.805079057Z",
+          "aliases": [
+            "CVE-2020-8911",
+            "GO-2022-0646"
+          ],
+          "url": "https://osv.dev/vulnerability/GHSA-f5pg-7wfw-84q9"
+        }
+      ],
+      "package_breakdown": [
+        {
+          "label": "Go/github.com/aws/aws-sdk-go",
+          "count": 6
+        },
+        {
+          "label": "npm/aws-sdk",
+          "count": 2
+        }
+      ],
+      "packages_queried": 4
+    },
+    {
+      "vendor": "Microsoft",
+      "total_vulnerabilities": 2,
+      "recent_24mo": 0,
+      "critical_count": 0,
+      "sample_top_vulns": [
+        {
+          "id": "GHSA-98g6-xh36-x2p7",
+          "summary": "Microsoft.Data.SqlClient and System.Data.SqlClient vulnerable to SQL Data Provider Security Feature Bypass ",
+          "published": "2024-01-09T18:30:27Z",
+          "modified": "2024-05-31T20:48:39.831563Z",
+          "aliases": [
+            "BIT-dotnet-2024-0056",
+            "BIT-dotnet-sdk-2024-0056",
+            "CVE-2024-0056"
+          ],
+          "url": "https://osv.dev/vulnerability/GHSA-98g6-xh36-x2p7"
+        },
+        {
+          "id": "GHSA-8g2p-5pqh-5jmc",
+          "summary": ".NET Information Disclosure Vulnerability",
+          "published": "2022-11-08T23:00:22Z",
+          "modified": "2024-12-03T06:08:56.648050Z",
+          "aliases": [
+            "CVE-2022-41064"
+          ],
+          "url": "https://osv.dev/vulnerability/GHSA-8g2p-5pqh-5jmc"
+        }
+      ],
+      "package_breakdown": [
+        {
+          "label": "NuGet/Microsoft.Data.SqlClient",
+          "count": 2
+        }
+      ],
+      "packages_queried": 4
+    },
+    {
+      "vendor": "Red Hat",
+      "total_vulnerabilities": 0,
+      "recent_24mo": 0,
+      "critical_count": 0,
+      "sample_top_vulns": [],
+      "package_breakdown": [],
+      "packages_queried": 4
+    },
+    {
+      "vendor": "Apple",
+      "total_vulnerabilities": 0,
+      "recent_24mo": 0,
+      "critical_count": 0,
+      "sample_top_vulns": [],
+      "package_breakdown": [],
+      "packages_queried": 3
+    },
+    {
+      "vendor": "IBM",
+      "total_vulnerabilities": 0,
+      "recent_24mo": 0,
+      "critical_count": 0,
+      "sample_top_vulns": [],
+      "package_breakdown": [],
+      "packages_queried": 3
+    },
+    {
+      "vendor": "Adobe",
+      "total_vulnerabilities": 0,
+      "recent_24mo": 0,
+      "critical_count": 0,
+      "sample_top_vulns": [],
+      "package_breakdown": [],
+      "packages_queried": 2
+    }
+  ]
+}
