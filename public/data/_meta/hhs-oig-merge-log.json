@@ -1,9 +1,9 @@
 {
-  "merged_at": "2026-06-11T14:35:42.256Z",
+  "merged_at": "2026-07-01T12:50:43.602Z",
   "source_file": "public/data/hhs-oig.json",
   "total_brands": 528,
-  "merged_count": 41,
-  "skipped_count": 485,
+  "merged_count": 55,
+  "skipped_count": 471,
   "orphan_count": 2,
   "error_count": 0,
   "orphans": [
@@ -11,6 +11,22 @@
     "sofi"
   ],
   "merged_brands": [
+    {
+      "brand": "coca-cola",
+      "target": "coca-cola",
+      "routed_via": "direct",
+      "isExcluded": true,
+      "exclusionCount": 19,
+      "recentActions24mo": 14
+    },
+    {
+      "brand": "pepsi",
+      "target": "pepsi",
+      "routed_via": "direct",
+      "isExcluded": false,
+      "exclusionCount": 0,
+      "recentActions24mo": 2
+    },
     {
       "brand": "modelo",
       "target": "modelo",
@@ -44,12 +60,20 @@
       "recentActions24mo": 0
     },
     {
+      "brand": "hershey",
+      "target": "hershey",
+      "routed_via": "direct",
+      "isExcluded": true,
+      "exclusionCount": 13,
+      "recentActions24mo": 38
+    },
+    {
       "brand": "mars",
       "target": "mars",
       "routed_via": "direct",
       "isExcluded": true,
-      "exclusionCount": 3,
-      "recentActions24mo": 7
+      "exclusionCount": 11,
+      "recentActions24mo": 8
     },
     {
       "brand": "heinz",
@@ -58,6 +82,30 @@
       "isExcluded": true,
       "exclusionCount": 1,
       "recentActions24mo": 0
+    },
+    {
+      "brand": "general-mills",
+      "target": "general-mills",
+      "routed_via": "direct",
+      "isExcluded": true,
+      "exclusionCount": 15,
+      "recentActions24mo": 9
+    },
+    {
+      "brand": "pepsico",
+      "target": "pepsico",
+      "routed_via": "direct",
+      "isExcluded": true,
+      "exclusionCount": 36,
+      "recentActions24mo": 2
+    },
+    {
+      "brand": "unilever",
+      "target": "unilever",
+      "routed_via": "direct",
+      "isExcluded": true,
+      "exclusionCount": 24,
+      "recentActions24mo": 19
     },
     {
       "brand": "crest",
@@ -84,12 +132,44 @@
       "recentActions24mo": 0
     },
     {
+      "brand": "colgate-palmolive",
+      "target": "colgate-palmolive",
+      "routed_via": "direct",
+      "isExcluded": false,
+      "exclusionCount": 0,
+      "recentActions24mo": 1
+    },
+    {
+      "brand": "kimberly-clark",
+      "target": "kimberly-clark",
+      "routed_via": "direct",
+      "isExcluded": true,
+      "exclusionCount": 7,
+      "recentActions24mo": 4
+    },
+    {
+      "brand": "starbucks",
+      "target": "starbucks",
+      "routed_via": "direct",
+      "isExcluded": true,
+      "exclusionCount": 3,
+      "recentActions24mo": 0
+    },
+    {
       "brand": "sonic",
       "target": "sonic-drive-in",
       "routed_via": "parent",
       "isExcluded": true,
       "exclusionCount": 1,
       "recentActions24mo": 0
+    },
+    {
+      "brand": "walmart",
+      "target": "walmart",
+      "routed_via": "direct",
+      "isExcluded": true,
+      "exclusionCount": 4,
+      "recentActions24mo": 1
     },
     {
       "brand": "target",
@@ -104,16 +184,16 @@
       "target": "amazon",
       "routed_via": "direct",
       "isExcluded": true,
-      "exclusionCount": 1,
-      "recentActions24mo": 0
+      "exclusionCount": 43,
+      "recentActions24mo": 87
     },
     {
       "brand": "aldi",
       "target": "aldi",
       "routed_via": "direct",
       "isExcluded": true,
-      "exclusionCount": 1,
-      "recentActions24mo": 0
+      "exclusionCount": 10,
+      "recentActions24mo": 5
     },
     {
       "brand": "burlington",
@@ -137,7 +217,7 @@
       "routed_via": "direct",
       "isExcluded": true,
       "exclusionCount": 1,
-      "recentActions24mo": 2
+      "recentActions24mo": 0
     },
     {
       "brand": "coach",
@@ -170,6 +250,14 @@
       "isExcluded": false,
       "exclusionCount": 0,
       "recentActions24mo": 3
+    },
+    {
+      "brand": "cisco",
+      "target": "cisco",
+      "routed_via": "direct",
+      "isExcluded": false,
+      "exclusionCount": 0,
+      "recentActions24mo": 1
     },
     {
       "brand": "dell",
@@ -268,12 +356,20 @@
       "recentActions24mo": 1
     },
     {
+      "brand": "stellantis",
+      "target": "stellantis",
+      "routed_via": "direct",
+      "isExcluded": true,
+      "exclusionCount": 2,
+      "recentActions24mo": 1
+    },
+    {
       "brand": "audi",
       "target": "volkswagen-usa",
       "routed_via": "parent",
       "isExcluded": true,
       "exclusionCount": 6,
-      "recentActions24mo": 48
+      "recentActions24mo": 51
     },
     {
       "brand": "pfizer",
@@ -316,6 +412,14 @@
       "recentActions24mo": 8
     },
     {
+      "brand": "best-western",
+      "target": "best-western",
+      "routed_via": "direct",
+      "isExcluded": true,
+      "exclusionCount": 165,
+      "recentActions24mo": 84
+    },
+    {
       "brand": "enterprise",
       "target": "enterprise-rent-a-car",
       "routed_via": "parent",
@@ -338,6 +442,14 @@
       "isExcluded": true,
       "exclusionCount": 1,
       "recentActions24mo": 0
+    },
+    {
+      "brand": "hasbro",
+      "target": "hasbro",
+      "routed_via": "direct",
+      "isExcluded": false,
+      "exclusionCount": 0,
+      "recentActions24mo": 1
     }
   ]
 }

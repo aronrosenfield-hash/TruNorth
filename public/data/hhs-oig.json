@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-03T20:00:53.442Z",
+  "generated_at": "2026-07-01T12:50:43.552Z",
   "brand_count": 528,
   "leie_rows": 3401,
-  "enforcement_actions_24mo": 1690,
-  "excluded_brand_count": 33,
-  "with_recent_action_count": 21,
+  "enforcement_actions_24mo": 1671,
+  "excluded_brand_count": 43,
+  "with_recent_action_count": 35,
   "sources": {
     "leie": "https://oig.hhs.gov/exclusions/downloadables/UPDATED.csv",
     "enforcement_index": "https://oig.hhs.gov/fraud/enforcement/"
@@ -13,11 +13,83 @@
     {
       "slug": "coca-cola",
       "name": "Coca-Cola",
-      "is_excluded": false,
-      "exclusion_count": 0,
-      "exclusion_sample": [],
-      "recent_fraud_actions_24mo": 0,
-      "sample_actions": []
+      "is_excluded": true,
+      "exclusion_count": 19,
+      "exclusion_sample": [
+        {
+          "busname": "ALBERT ADES, M D, P A",
+          "exclDate": "20170620",
+          "exclType": "1128b8",
+          "city": "MIAMI",
+          "state": "FL"
+        },
+        {
+          "busname": "BELLEGLADES CLINIC & DIAG CTR",
+          "exclDate": "19980120",
+          "exclType": "1128b8",
+          "city": "MIAMI",
+          "state": "FL"
+        },
+        {
+          "busname": "COLORADO NEUROSURGERY, P C",
+          "exclDate": "20010618",
+          "exclType": "1128b7",
+          "city": "DENVER",
+          "state": "CO"
+        },
+        {
+          "busname": "COSMETIC PLASTIC SURGERY CTR O",
+          "exclDate": "20050920",
+          "exclType": "1128b8",
+          "city": "SARASOTA",
+          "state": "FL"
+        },
+        {
+          "busname": "COSTA MESA CHIROPRACTIC CLINIC",
+          "exclDate": "20041020",
+          "exclType": "1128b8",
+          "city": "GLENDALE",
+          "state": "CA"
+        }
+      ],
+      "recent_fraud_actions_24mo": 14,
+      "sample_actions": [
+        {
+          "date": "May 22, 2026",
+          "title": "Georgian Citizen Sentenced to Over Three Years in Prison for International Money Laundering Conspiracy",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/georgian-citizen-sentenced-to-over-three-years-in-prison-for-international-money-laundering-conspiracy/"
+        },
+        {
+          "date": "April 29, 2026",
+          "title": "PSA Ambulatory Surgery Center of Killeen Agreed to Pay $46,000 for Allegedly Violating the Civil Monetary Penalties Law by Submitting Claims for Services Provided by an Unlicensed Individual",
+          "action_type": "Fraud Self-Disclosures",
+          "fine_amount": 46000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/psa-ambulatory-surgery-center-of-killeen-agreed-to-pay-46000-for-allegedly-violating-the-civil-monetary-penalties-law-by-submitting-claims-for-services-provided-by-an-unlicensed-individual/"
+        },
+        {
+          "date": "April 17, 2026",
+          "title": "Metro Detroit Surgeon Was Sentenced to a Year in Prison in $7 Million Dollar Medicare Fraud Scheme",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": 7000000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/metro-detroit-surgeon-was-sentenced-to-a-year-in-prison-in-7-million-dollar-medicare-fraud-scheme/"
+        },
+        {
+          "date": "March 9, 2026",
+          "title": "Pennsylvania Brothers Convicted of Decades Long Racketeering Conspiracy",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/pennsylvania-brothers-convicted-of-decades-long-racketeering-conspiracy/"
+        },
+        {
+          "date": "Jan. 23, 2026",
+          "title": "Georgia Chiropractor Convicted Of Health Care Fraud",
+          "action_type": "COVID-19",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/georgia-chiropractor-convicted-of-health-care-fraud/"
+        }
+      ]
     },
     {
       "slug": "pepsi",
@@ -25,8 +97,23 @@
       "is_excluded": false,
       "exclusion_count": 0,
       "exclusion_sample": [],
-      "recent_fraud_actions_24mo": 0,
-      "sample_actions": []
+      "recent_fraud_actions_24mo": 2,
+      "sample_actions": [
+        {
+          "date": "July 18, 2025",
+          "title": "Attorney General Ken Paxton&#x27;s Medicaid Fraud Control Unit Plays Key Role in Largest Dismantling of Health Care Fraud in U.S. History. U.S.",
+          "action_type": "State Enforcement Agencies",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/attorney-general-ken-paxtons-medicaid-fraud-control-unit-plays-key-role-in-largest-dismantling-of-health-care-fraud-in-us-history-us/"
+        },
+        {
+          "date": "Nov. 25, 2024",
+          "title": "Attorney General Ken Paxton’s Medicaid Fraud Control Unit Plays Key Role in Largest Ever Criminal Enforcement Action Targeting Opioid Distributors",
+          "action_type": "State Enforcement Agencies",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/attorney-general-ken-paxtons-medicaid-fraud-control-unit-plays-key-role-in-largest-ever-criminal-enforcement-action-targeting-opioid-distributors/"
+        }
+      ]
     },
     {
       "slug": "sprite",
@@ -297,18 +384,111 @@
     {
       "slug": "hershey",
       "name": "Hershey's",
-      "is_excluded": false,
-      "exclusion_count": 0,
-      "exclusion_sample": [],
-      "recent_fraud_actions_24mo": 0,
-      "sample_actions": []
+      "is_excluded": true,
+      "exclusion_count": 13,
+      "exclusion_sample": [
+        {
+          "busname": "ADVANCED NEUROLOGICAL CARE",
+          "exclDate": "19980120",
+          "exclType": "1128b8",
+          "city": "MIAMI",
+          "state": "FL"
+        },
+        {
+          "busname": "BURLINGTON UROLOGY PC",
+          "exclDate": "20081020",
+          "exclType": "1128b8",
+          "city": "BURLINGTON",
+          "state": "IA"
+        },
+        {
+          "busname": "CAROLINA UROLOGICAL CONSULTANT",
+          "exclDate": "20010711",
+          "exclType": "1128a1",
+          "city": "CONWAY",
+          "state": "SC"
+        },
+        {
+          "busname": "CENTER FOR NEUROLOGY & SLEEP M",
+          "exclDate": "20071018",
+          "exclType": "1128b8",
+          "city": "JUPITER",
+          "state": "FL"
+        },
+        {
+          "busname": "COLORADO CHIROPRACTIC NEUROLOG",
+          "exclDate": "20100720",
+          "exclType": "1128b8",
+          "city": "COLORADO SPRINGS",
+          "state": "CO"
+        }
+      ],
+      "recent_fraud_actions_24mo": 38,
+      "sample_actions": [
+        {
+          "date": "June 25, 2026",
+          "title": "New York City Woman Pleads Guilty for Role in Multi-State Prescription Fraud Ring",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/new-york-city-woman-pleads-guilty-for-role-in-multi-state-prescription-fraud-ring/"
+        },
+        {
+          "date": "June 25, 2026",
+          "title": "U.S. Attorney Announces $2.2 Million Settlement With Urologists For Submitting False Claims To Medicare",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": 2200000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/us-attorney-announces-22-million-settlement-with-urologists-for-submitting-false-claims-to-medicare/"
+        },
+        {
+          "date": "June 24, 2026",
+          "title": "Attorney General James and Comptroller DiNapoli Announce Takedown of $9 Million Medicaid Fraud Scheme in New York City",
+          "action_type": "State Enforcement Agencies",
+          "fine_amount": 9000000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/attorney-general-james-and-comptroller-dinapoli-announce-takedown-of-9-million-medicaid-fraud-scheme-in-new-york-city/"
+        },
+        {
+          "date": "May 18, 2026",
+          "title": "New York Business Owner Sentenced to Prison for Using Shell Companies to Launder Health Care Fraud Proceeds for Transnational Criminal Organization",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/new-york-business-owner-sentenced-to-prison-for-using-shell-companies-to-launder-health-care-fraud-proceeds-for-transnational-criminal-organization/"
+        },
+        {
+          "date": "April 2, 2026",
+          "title": "Advanced Urology and Jitesh Patel will pay $14 million to settle False Claims Act case involving allegations of fraudulent billing and unnecessary medical procedures",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": 14000000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/advanced-urology-and-jitesh-patel-will-pay-14-million-to-settle-false-claims-act-case-involving-allegations-of-fraudulent-billing-and-unnecessary-medical-procedures/"
+        }
+      ]
     },
     {
       "slug": "mars",
       "name": "Mars",
       "is_excluded": true,
-      "exclusion_count": 3,
+      "exclusion_count": 11,
       "exclusion_sample": [
+        {
+          "busname": "CESAR E PEREZ, MD, PA",
+          "exclDate": "20050920",
+          "exclType": "1128b8",
+          "city": "ST PETERSBURG BEACH",
+          "state": "FL"
+        },
+        {
+          "busname": "DOVE HEALTHCARE, INC",
+          "exclDate": "20041020",
+          "exclType": "1128b8",
+          "city": "N OLMSTEAD",
+          "state": "OH"
+        },
+        {
+          "busname": "GALAXY MEDICAL & DIAGNOSTIC",
+          "exclDate": "19991020",
+          "exclType": "1128b8",
+          "city": "EGLIN AFB",
+          "state": "FL"
+        },
         {
           "busname": "GARY MARSHALL & ASSOCIATES",
           "exclDate": "19990120",
@@ -317,31 +497,31 @@
           "state": "GA"
         },
         {
-          "busname": "MARSHALL G TASCMAN, MD, PA",
-          "exclDate": "20060620",
+          "busname": "KIRTLEY EXTRA CARE INC",
+          "exclDate": "19961211",
           "exclType": "1128b8",
-          "city": "STUART",
-          "state": "FL"
-        },
-        {
-          "busname": "MARSHALL NEWSOME ENTERPRISE",
-          "exclDate": "20010419",
-          "exclType": "1128b8",
-          "city": "RIVERDALE",
-          "state": "GA"
+          "city": "LITTLE ROCK",
+          "state": "AR"
         }
       ],
-      "recent_fraud_actions_24mo": 7,
+      "recent_fraud_actions_24mo": 8,
       "sample_actions": [
         {
-          "date": "August 26, 2025",
+          "date": "May 8, 2026",
+          "title": "Autism researcher extradited from Germany to face federal charges of stealing CDC grant money",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/autism-researcher-extradited-from-germany-to-face-federal-charges-of-stealing-cdc-grant-money/"
+        },
+        {
+          "date": "Aug. 26, 2025",
           "title": "Attorney General Marshall Announces Conviction of Former State Employee for the Theft of Over $100,000 from Alabama Medicaid Agency",
           "action_type": "State Enforcement Agencies",
           "fine_amount": 100000,
           "url": "https://oig.hhs.gov/fraud/enforcement/attorney-general-marshall-announces-conviction-of-former-state-employee-for-the-theft-of-over-100000-from-alabama-medicaid-agency/"
         },
         {
-          "date": "August 14, 2025",
+          "date": "Aug. 14, 2025",
           "title": "Marshalltown Woman Sentenced to Six Months in Federal Prison for Drug Diversion and False Statements in Medical Records",
           "action_type": "Criminal and Civil Actions",
           "fine_amount": null,
@@ -360,13 +540,6 @@
           "action_type": "State Enforcement Agencies",
           "fine_amount": 100000,
           "url": "https://oig.hhs.gov/fraud/enforcement/attorney-general-steve-marshall-announces-indictment-of-former-state-employee-for-theft-of-over-100000-from-alabama-medicaid-agency/"
-        },
-        {
-          "date": "March 14, 2025",
-          "title": "Marshalltown Woman Pleads Guilty To Charges Related To Drug Diversion",
-          "action_type": "Criminal and Civil Actions",
-          "fine_amount": null,
-          "url": "https://oig.hhs.gov/fraud/enforcement/marshalltown-woman-pleads-guilty-to-charges-related-to-drug-diversion/"
         }
       ]
     },
@@ -462,11 +635,83 @@
     {
       "slug": "general-mills",
       "name": "General Mills",
-      "is_excluded": false,
-      "exclusion_count": 0,
-      "exclusion_sample": [],
-      "recent_fraud_actions_24mo": 0,
-      "sample_actions": []
+      "is_excluded": true,
+      "exclusion_count": 15,
+      "exclusion_sample": [
+        {
+          "busname": "BLUE FRONT TRANSPORTATION CO",
+          "exclDate": "19980720",
+          "exclType": "1128a1",
+          "city": "W PALM BEACH",
+          "state": "FL"
+        },
+        {
+          "busname": "BLUE MED HEALTH, INC",
+          "exclDate": "19980520",
+          "exclType": "1128b8",
+          "city": "GLADE VALLEY",
+          "state": "NC"
+        },
+        {
+          "busname": "BLUE SKIES AND CANDY",
+          "exclDate": "20030420",
+          "exclType": "1128b8",
+          "city": "STOCKBRIDGE",
+          "state": "GA"
+        },
+        {
+          "busname": "BLUESTONE'S PHARMACY",
+          "exclDate": "19910722",
+          "exclType": "1128b4",
+          "city": "PITTSBURGH",
+          "state": "PA"
+        },
+        {
+          "busname": "LIBERTY CONVALESCENT TRANSPORT",
+          "exclDate": "19940426",
+          "exclType": "1128b8",
+          "city": "HINESVILLE",
+          "state": "GA"
+        }
+      ],
+      "recent_fraud_actions_24mo": 9,
+      "sample_actions": [
+        {
+          "date": "June 3, 2026",
+          "title": "Matrix, HealthFair, and HealthFair Founder Agree to Pay $56.5M to Resolve False Claims Act Allegations",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": 56500000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/matrix-healthfair-and-healthfair-founder-agree-to-pay-565m-to-resolve-false-claims-act-allegations/"
+        },
+        {
+          "date": "Feb. 26, 2026",
+          "title": "Milton Man Sentenced to a Total of Five Years in the House of Corrections and Ordered to Pay Restitution for Practicing Dentistry Without A License, Illegally Prescribing Controlled Substances, and Medicaid Fraud",
+          "action_type": "State Enforcement Agencies",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/milton-man-sentenced-to-a-total-of-five-years-in-the-house-of-corrections-and-ordered-to-pay-restitution-for-practicing-dentistry-without-a-license-illegally-prescribing-controlled-substances-and-medicaid-fraud/"
+        },
+        {
+          "date": "Dec. 16, 2025",
+          "title": "Carr: Owners of Behavioral Health Facility Indicted in DeKalb County for Medicaid Fraud Totaling Over $1.4 Million",
+          "action_type": "State Enforcement Agencies",
+          "fine_amount": 1400000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/carr-owners-of-behavioral-health-facility-indicted-in-dekalb-county-for-medicaid-fraud-totaling-over-14-million/"
+        },
+        {
+          "date": "Nov. 19, 2025",
+          "title": "Little Rock Psychologist Indicted by Federal Grand Jury for Defrauding Medicare and Arkansas Blue Cross Blue Shield",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/little-rock-psychologist-indicted-by-federal-grand-jury-for-defrauding-medicare-and-arkansas-blue-cross-blue-shield/"
+        },
+        {
+          "date": "July 1, 2025",
+          "title": "Eastern District of Louisiana: National Health Care Fraud Takedown Results in 324 Defendants Charged in Fraud Scheme Totaling Over $14.6 Billion",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": 14600000000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/eastern-district-of-louisiana-national-health-care-fraud-takedown-results-in-324-defendants-charged-in-fraud-scheme-totaling-over-146-billion/"
+        }
+      ]
     },
     {
       "slug": "nestle",
@@ -480,20 +725,143 @@
     {
       "slug": "pepsico",
       "name": "PepsiCo",
-      "is_excluded": false,
-      "exclusion_count": 0,
-      "exclusion_sample": [],
-      "recent_fraud_actions_24mo": 0,
-      "sample_actions": []
+      "is_excluded": true,
+      "exclusion_count": 36,
+      "exclusion_sample": [
+        {
+          "busname": "ABUNDANT LIFE CENTER, INC",
+          "exclDate": "19891018",
+          "exclType": "1128b2",
+          "city": "BALTIMORE",
+          "state": "MD"
+        },
+        {
+          "busname": "ADLIFE HEALTH CARE",
+          "exclDate": "20140420",
+          "exclType": "1128a1",
+          "city": "FRAMINGHAM",
+          "state": "MA"
+        },
+        {
+          "busname": "BALANCED LIFE, S C",
+          "exclDate": "20111220",
+          "exclType": "1128b8",
+          "city": "PALATINE",
+          "state": "IL"
+        },
+        {
+          "busname": "BRIGHTER LIFE, LLC",
+          "exclDate": "20260420",
+          "exclType": "1128a1",
+          "city": "PHOENIX",
+          "state": "AZ"
+        },
+        {
+          "busname": "HEALTH ESTEEM INCORPORATED",
+          "exclDate": "19980319",
+          "exclType": "1128b8",
+          "city": "N MIAMI BEACH",
+          "state": "FL"
+        }
+      ],
+      "recent_fraud_actions_24mo": 2,
+      "sample_actions": [
+        {
+          "date": "April 30, 2026",
+          "title": "PA Lifesharing, LCC Agrees to Pay $1.2M To Settle False Claims Act Allegations",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": 1200000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/pa-lifesharing-lcc-agrees-to-pay-12m-to-settle-false-claims-act-allegations/"
+        },
+        {
+          "date": "Nov. 26, 2024",
+          "title": "Classic Lifeguard Agreed to Pay $370,000 for Allegedly Violating the Civil Monetary Penalties Law by Paying Remuneration in the Form of Purported Compensation",
+          "action_type": "Fraud Self-Disclosures",
+          "fine_amount": 370000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/classic-lifeguard-agreed-to-pay-370000-for-allegedly-violating-the-civil-monetary-penalties-law-by-paying-remuneration-in-the-form-of-purported-compensation/"
+        }
+      ]
     },
     {
       "slug": "unilever",
       "name": "Unilever",
-      "is_excluded": false,
-      "exclusion_count": 0,
-      "exclusion_sample": [],
-      "recent_fraud_actions_24mo": 0,
-      "sample_actions": []
+      "is_excluded": true,
+      "exclusion_count": 24,
+      "exclusion_sample": [
+        {
+          "busname": "ALBERTO QUIRANTES, C.P.O., INC",
+          "exclDate": "19910317",
+          "exclType": "1128a1",
+          "city": "MIAMI",
+          "state": "FL"
+        },
+        {
+          "busname": "ASSURE HOLDINGS CORP",
+          "exclDate": "20250320",
+          "exclType": "BRCH SA",
+          "city": "DENVER",
+          "state": "CO"
+        },
+        {
+          "busname": "ASSURE NEUROMONITORING LLC",
+          "exclDate": "20250320",
+          "exclType": "BRCH SA",
+          "city": "ENGLEWOOD",
+          "state": "CO"
+        },
+        {
+          "busname": "CLASSIC COMFORT, INC",
+          "exclDate": "20030320",
+          "exclType": "1128b8",
+          "city": "RESEDA",
+          "state": "CA"
+        },
+        {
+          "busname": "CLEARWATER CLINICAL LAB, INC",
+          "exclDate": "20010920",
+          "exclType": "1128a1",
+          "city": "CLEARWATER",
+          "state": "FL"
+        }
+      ],
+      "recent_fraud_actions_24mo": 19,
+      "sample_actions": [
+        {
+          "date": "June 23, 2026",
+          "title": "Attorney General Phil Weiser announces charges in Medicaid adult daycare kickback case",
+          "action_type": "State Enforcement Agencies",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/attorney-general-phil-weiser-announces-charges-in-medicaid-adult-daycare-kickback-case/"
+        },
+        {
+          "date": "June 23, 2026",
+          "title": "Attorney General Phil Weiser charges two Jefferson County men in $12 million Medicaid vision fraud investigation",
+          "action_type": "State Enforcement Agencies",
+          "fine_amount": 12000000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/attorney-general-phil-weiser-charges-two-jefferson-county-men-in-12-million-medicaid-vision-fraud-investigation/"
+        },
+        {
+          "date": "April 7, 2026",
+          "title": "Business Owner Convicted of $1.9M Medicare, Medicaid, and Private Insurer Fraud Scheme",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": 1900000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/business-owner-convicted-of-19m-medicare-medicaid-and-private-insurer-fraud-scheme/"
+        },
+        {
+          "date": "Feb. 24, 2026",
+          "title": "Pharmacist and Business Owner Convicted of $3M Medicare, Medicaid, and Private Insurer Fraud Scheme",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": 3000000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/pharmacist-and-business-owner-convicted-of-3m-medicare-medicaid-and-private-insurer-fraud-scheme/"
+        },
+        {
+          "date": "Jan. 22, 2026",
+          "title": "Traditions Health Agrees to Pay $34M to Resolve False Claims Act Liability Relating to Home Health Services Following Self Disclosure",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": 34000000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/traditions-health-agrees-to-pay-34m-to-resolve-false-claims-act-liability-relating-to-home-health-services-following-self-disclosure/"
+        }
+      ]
     },
     {
       "slug": "mondelez",
@@ -693,7 +1061,7 @@
       "recent_fraud_actions_24mo": 1,
       "sample_actions": [
         {
-          "date": "September 29, 2025",
+          "date": "Sept. 29, 2025",
           "title": "Symphony Crestwood, Symphony Chicago West, and Symphony Midway Agreed to Pay $107,000 for Allegedly Violating the Civil Monetary Penalties Law by Employing an Excluded Individual",
           "action_type": "CMP and Affirmative Exclusions",
           "fine_amount": 107000,
@@ -1011,17 +1379,90 @@
       "is_excluded": false,
       "exclusion_count": 0,
       "exclusion_sample": [],
-      "recent_fraud_actions_24mo": 0,
-      "sample_actions": []
+      "recent_fraud_actions_24mo": 1,
+      "sample_actions": [
+        {
+          "date": "Dec. 16, 2025",
+          "title": "RST-Sanexas, Inc. and Its Owners Agree to Pay $1.5 Million to Resolve Allegations That They Caused False Claims and Accepted and Paid Illegal Kickbacks",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": 1500000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/rst-sanexas-inc-and-its-owners-agree-to-pay-15-million-to-resolve-allegations-that-they-caused-false-claims-and-accepted-and-paid-illegal-kickbacks/"
+        }
+      ]
     },
     {
       "slug": "kimberly-clark",
       "name": "Kimberly-Clark",
-      "is_excluded": false,
-      "exclusion_count": 0,
-      "exclusion_sample": [],
-      "recent_fraud_actions_24mo": 0,
-      "sample_actions": []
+      "is_excluded": true,
+      "exclusion_count": 7,
+      "exclusion_sample": [
+        {
+          "busname": "CENTER FOR INDEPENDENT LIVING",
+          "exclDate": "20111020",
+          "exclType": "1128b5",
+          "city": "GARDEN CITY",
+          "state": "KS"
+        },
+        {
+          "busname": "INDEPENDENCE EMS, INC",
+          "exclDate": "20000518",
+          "exclType": "1128a1",
+          "city": "LEWISBURG",
+          "state": "PA"
+        },
+        {
+          "busname": "INDEPENDENCE HOME HEALTHCARE,",
+          "exclDate": "20240108",
+          "exclType": "1128b7",
+          "city": "GARDENA",
+          "state": "CA"
+        },
+        {
+          "busname": "INDEPENDENT HOME MEDICAL",
+          "exclDate": "20000320",
+          "exclType": "1128a3",
+          "city": "COEBURN",
+          "state": "VA"
+        },
+        {
+          "busname": "INDEPENDENT HOMECARE, INC",
+          "exclDate": "20020919",
+          "exclType": "1128a1",
+          "city": "STANDISH",
+          "state": "ME"
+        }
+      ],
+      "recent_fraud_actions_24mo": 4,
+      "sample_actions": [
+        {
+          "date": "June 10, 2026",
+          "title": "Sarcone Leads Revival of NDNY Health Care Fraud Task Force",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/sarcone-leads-revival-of-ndny-health-care-fraud-task-force/"
+        },
+        {
+          "date": "Dec. 20, 2024",
+          "title": "Medicare Advantage Provider Independent Health to Pay Up To $98M to Settle False Claims Act Suit",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": 98000000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/medicare-advantage-provider-independent-health-to-pay-up-to-98m-to-settle-false-claims-act-suit/"
+        },
+        {
+          "date": "Dec. 2, 2024",
+          "title": "American Health Imaging, Inc. and Scott Arant to Pay Over $5 Million to Resolve Allegations of Healthcare Kickbacks",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": 5000000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/american-health-imaging-inc-and-scott-arant-to-pay-over-5-million-to-resolve-allegations-of-healthcare-kickbacks/"
+        },
+        {
+          "date": "Oct. 29, 2024",
+          "title": "AG&#x27;s Office Reaches Settlement With Swampscott-Based Medical Transportation Company To Resolve False Billing Allegations",
+          "action_type": "State Enforcement Agencies",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/ags-office-reaches-settlement-with-swampscott-based-medical-transportation-company-to-resolve-false-billing-allegations/"
+        }
+      ]
     },
     {
       "slug": "johnson-johnson",
@@ -1107,9 +1548,31 @@
     {
       "slug": "starbucks",
       "name": "Starbucks",
-      "is_excluded": false,
-      "exclusion_count": 0,
-      "exclusion_sample": [],
+      "is_excluded": true,
+      "exclusion_count": 3,
+      "exclusion_sample": [
+        {
+          "busname": "PRINCIPAL NURSING SERVICES",
+          "exclDate": "19950910",
+          "exclType": "1128Aa",
+          "city": "MIAMI",
+          "state": "FL"
+        },
+        {
+          "busname": "PRINCIPAL PHARMACY, INC",
+          "exclDate": "19900507",
+          "exclType": "1128a1",
+          "city": "HIALEAH",
+          "state": "FL"
+        },
+        {
+          "busname": "PRINCIPLE MEDICAL MGMT, INC",
+          "exclDate": "20030520",
+          "exclType": "1128b8",
+          "city": "HOLLYWOOD",
+          "state": "CA"
+        }
+      ],
       "recent_fraud_actions_24mo": 0,
       "sample_actions": []
     },
@@ -1340,11 +1803,48 @@
     {
       "slug": "walmart",
       "name": "Walmart",
-      "is_excluded": false,
-      "exclusion_count": 0,
-      "exclusion_sample": [],
-      "recent_fraud_actions_24mo": 0,
-      "sample_actions": []
+      "is_excluded": true,
+      "exclusion_count": 4,
+      "exclusion_sample": [
+        {
+          "busname": "GEORGE H ILODI, D P M, INC",
+          "exclDate": "20030919",
+          "exclType": "1128a1",
+          "city": "E CLEVELAND",
+          "state": "OH"
+        },
+        {
+          "busname": "GEORGE K REESE PROFESSIONAL CH",
+          "exclDate": "20190820",
+          "exclType": "1128a3",
+          "city": "SAN DIEGO",
+          "state": "CA"
+        },
+        {
+          "busname": "GEORGETOWN PHARMACY",
+          "exclDate": "19881118",
+          "exclType": "1128a1",
+          "city": "STOCKTON",
+          "state": "CA"
+        },
+        {
+          "busname": "LAKE GEORGE MENTAL HEALTH",
+          "exclDate": "19880831",
+          "exclType": "1128a1",
+          "city": "MARION",
+          "state": "IL"
+        }
+      ],
+      "recent_fraud_actions_24mo": 1,
+      "sample_actions": [
+        {
+          "date": "Dec. 10, 2025",
+          "title": "Recovery Centers of America Agrees to Pay $2 Million to Resolve Allegations That It Violated the Controlled Substances Act and the False Claims Act by Mishandling Controlled Substances and Providing Inadequate Treatment Services",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": 2000000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/recovery-centers-of-america-agrees-to-pay-2-million-to-resolve-allegations-that-it-violated-the-controlled-substances-act-and-the-false-claims-act-by-mishandling-controlled-substances-and-providing-inadequate-treatment-services/"
+        }
+      ]
     },
     {
       "slug": "target",
@@ -1413,18 +1913,82 @@
       "slug": "amazon",
       "name": "Amazon",
       "is_excluded": true,
-      "exclusion_count": 1,
+      "exclusion_count": 43,
       "exclusion_sample": [
+        {
+          "busname": "A CARING ALTERNATIVE, INC",
+          "exclDate": "20130320",
+          "exclType": "1128a1",
+          "city": "CLEVELAND",
+          "state": "OH"
+        },
+        {
+          "busname": "ALL CARING NURSES, INC",
+          "exclDate": "20120320",
+          "exclType": "1128b5",
+          "city": "PAINTSVILLE",
+          "state": "KY"
+        },
         {
           "busname": "AMAZON HEALTH CENTER, INC",
           "exclDate": "20100120",
           "exclType": "1128b8",
           "city": "HOUSTON",
           "state": "TX"
+        },
+        {
+          "busname": "ASSURE NEUROMONITORING LLC",
+          "exclDate": "20250320",
+          "exclType": "BRCH SA",
+          "city": "ENGLEWOOD",
+          "state": "CO"
+        },
+        {
+          "busname": "BAKEN PARK HEARING AID CENTER",
+          "exclDate": "19980120",
+          "exclType": "1128b8",
+          "city": "RAPID CITY",
+          "state": "SD"
         }
       ],
-      "recent_fraud_actions_24mo": 0,
-      "sample_actions": []
+      "recent_fraud_actions_24mo": 87,
+      "sample_actions": [
+        {
+          "date": "June 25, 2026",
+          "title": "New York City Woman Pleads Guilty for Role in Multi-State Prescription Fraud Ring",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/new-york-city-woman-pleads-guilty-for-role-in-multi-state-prescription-fraud-ring/"
+        },
+        {
+          "date": "June 11, 2026",
+          "title": "CHI St. Vincent Medical Group Hot Springs Agreed to Pay $160,000 for Allegedly Violating the Civil Monetary Penalties Law by Submitting False Claims for Facet Joint Injections",
+          "action_type": "CMP and Affirmative Exclusions",
+          "fine_amount": 160000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/chi-st-vincent-medical-group-hot-springs-agreed-to-pay-160000-for-allegedly-violating-the-civil-monetary-penalties-law-by-submitting-false-claims-for-facet-joint-injections/"
+        },
+        {
+          "date": "June 11, 2026",
+          "title": "Nurse Sentenced to Two Years in Prison for Tampering with and Stealing Controlled Substances at Tampa Bay Area Hospital",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/nurse-sentenced-to-two-years-in-prison-for-tampering-with-and-stealing-controlled-substances-at-tampa-bay-area-hospital/"
+        },
+        {
+          "date": "June 1, 2026",
+          "title": "Three Sentenced to Prison for Laundering Medicare Fraud Proceeds",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/three-sentenced-to-prison-for-laundering-medicare-fraud-proceeds2026/"
+        },
+        {
+          "date": "May 22, 2026",
+          "title": "Georgian Citizen Sentenced to Over Three Years in Prison for International Money Laundering Conspiracy",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/georgian-citizen-sentenced-to-over-three-years-in-prison-for-international-money-laundering-conspiracy/"
+        }
+      ]
     },
     {
       "slug": "home-depot",
@@ -1556,7 +2120,7 @@
       "slug": "aldi",
       "name": "Aldi",
       "is_excluded": true,
-      "exclusion_count": 1,
+      "exclusion_count": 10,
       "exclusion_sample": [
         {
           "busname": "ALDINE BENDER CHIROPRACTIC",
@@ -1564,10 +2128,74 @@
           "exclType": "1128b8",
           "city": "HOUSTON",
           "state": "TX"
+        },
+        {
+          "busname": "FALL RIVER WALK-IN EMERGENCY M",
+          "exclDate": "20060320",
+          "exclType": "1128a1",
+          "city": "BARRINGTON",
+          "state": "RI"
+        },
+        {
+          "busname": "GOLD RIVER HEALTHCARE SALES",
+          "exclDate": "20010920",
+          "exclType": "1128b8",
+          "city": "SACRAMENTO",
+          "state": "CA"
+        },
+        {
+          "busname": "INDIAN RIVER YELLOW CAB",
+          "exclDate": "19980618",
+          "exclType": "1128b8",
+          "city": "W MELBOURNE",
+          "state": "FL"
+        },
+        {
+          "busname": "RED RIVER EYE ASSOCIATES",
+          "exclDate": "19941214",
+          "exclType": "1128Aa",
+          "city": "TEXARKANA",
+          "state": "TX"
         }
       ],
-      "recent_fraud_actions_24mo": 0,
-      "sample_actions": []
+      "recent_fraud_actions_24mo": 5,
+      "sample_actions": [
+        {
+          "date": "Nov. 4, 2025",
+          "title": "AG&#x27;s Office Secures $175,000 from Fall River Pediatrician for Submitting False Claims to MassHealth",
+          "action_type": "State Enforcement Agencies",
+          "fine_amount": 175000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/ags-office-secures-175000-from-fall-river-pediatrician-for-submitting-false-claims-to-masshealth/"
+        },
+        {
+          "date": "June 11, 2025",
+          "title": "Riverside Recovery Services Was Excluded for Defaulting on Payment Obligations",
+          "action_type": "CMP and Affirmative Exclusions",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/riverside-recovery-services-was-excluded-for-defaulting-on-payment-obligations/"
+        },
+        {
+          "date": "March 24, 2025",
+          "title": "River Hills Man Sentenced To 21 Months’ Imprisonment For Paying Healthcare Kickbacks",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/river-hills-man-sentenced-to-21-months-imprisonment-for-paying-healthcare-kickbacks/"
+        },
+        {
+          "date": "Dec. 16, 2024",
+          "title": "Attorney General Bonta Secures Sentencing In Riverside Elder Abuse Case",
+          "action_type": "State Enforcement Agencies",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/attorney-general-bonta-secures-sentencing-in-riverside-elder-abuse-case/"
+        },
+        {
+          "date": "July 23, 2024",
+          "title": "Riverside County Chiropractor Agrees To Pay $180,00 To Resolve Allegations Of Health Care Fraud",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/riverside-county-chiropractor-agrees-to-pay-18000-to-resolve-allegations-of-health-care-fraud/"
+        }
+      ]
     },
     {
       "slug": "lidl",
@@ -1968,14 +2596,14 @@
           "url": "https://oig.hhs.gov/fraud/enforcement/walgreens-agrees-to-pay-nearly-98-million-to-resolve-allegations-it-billed-the-government-for-uncollected-prescriptions/"
         },
         {
-          "date": "January 17, 2025",
+          "date": "Jan. 17, 2025",
           "title": "Justice Department Files Nationwide Lawsuit Alleging Walgreens Knowingly Filled Millions of Prescriptions that Lacked a Legitimate Medical Purpose",
           "action_type": "Criminal and Civil Actions",
           "fine_amount": null,
           "url": "https://oig.hhs.gov/fraud/enforcement/justice-department-files-nationwide-lawsuit-alleging-walgreens-knowingly-filled-millions-of-prescriptions-that-lacked-a-legitimate-medical-purpose/"
         },
         {
-          "date": "September 13, 2024",
+          "date": "Sept. 13, 2024",
           "title": "Walgreens Agrees To Pay $106.8M To Resolve Allegations It Billed The Government For Prescriptions Never Dispensed",
           "action_type": "Criminal and Civil Actions",
           "fine_amount": 106800000,
@@ -1997,23 +2625,8 @@
           "state": "FL"
         }
       ],
-      "recent_fraud_actions_24mo": 2,
-      "sample_actions": [
-        {
-          "date": "July 10, 2024",
-          "title": "Rite Aid Corporation And Affiliates Agree To Settle False Claims Act And Controlled Substance Act Allegations Related To Opioid Dispensing",
-          "action_type": "Criminal and Civil Actions",
-          "fine_amount": null,
-          "url": "https://oig.hhs.gov/fraud/enforcement/rite-aid-corporation-and-affiliates-agree-to-settle-false-claims-act-and-controlled-substance-act-allegations-related-to-opioid-dispensing/"
-        },
-        {
-          "date": "July 10, 2024",
-          "title": "Rite Aid Corporation And Elixir Insurance Company Agree To Pay $101M To Resolve Allegations Of Falsely Reporting Rebates",
-          "action_type": "Criminal and Civil Actions",
-          "fine_amount": 101000000,
-          "url": "https://oig.hhs.gov/fraud/enforcement/rite-aid-corporation-and-elixir-insurance-company-agree-to-pay-101m-to-resolve-allegations-of-falsely-reporting-rebates/"
-        }
-      ]
+      "recent_fraud_actions_24mo": 0,
+      "sample_actions": []
     },
     {
       "slug": "duane-reade",
@@ -2697,21 +3310,21 @@
       "recent_fraud_actions_24mo": 3,
       "sample_actions": [
         {
-          "date": "November 7, 2025",
+          "date": "Nov. 7, 2025",
           "title": "AG Murrill’s Medicaid Fraud Control Unit Secures Guilty Plea Against Man Who Hit An Intellectually Disabled Person With A Broomstick Multiple Times",
           "action_type": "State Enforcement Agencies",
           "fine_amount": null,
           "url": "https://oig.hhs.gov/fraud/enforcement/ag-murrills-medicaid-fraud-control-unit-secures-guilty-plea-against-man-who-hit-an-intellectually-disabled-person-with-a-broomstick-multiple-times/"
         },
         {
-          "date": "September 8, 2025",
+          "date": "Sept. 8, 2025",
           "title": "Owner of Facility for Intellectually Disabled Adults Pleads Guilty to Health Care Fraud",
           "action_type": "Criminal and Civil Actions",
           "fine_amount": null,
           "url": "https://oig.hhs.gov/fraud/enforcement/owner-of-facility-for-intellectually-disabled-adults-pleads-guilty-to-health-care-fraud/"
         },
         {
-          "date": "September 8, 2025",
+          "date": "Sept. 8, 2025",
           "title": "Office of Attorney General’s Role in Investigating Owner of Pittsburgh Facility for Intellectually Disabled Adults Leads to Federal Plea to Health Care Fraud",
           "action_type": "State Enforcement Agencies",
           "fine_amount": null,
@@ -2752,8 +3365,16 @@
       "is_excluded": false,
       "exclusion_count": 0,
       "exclusion_sample": [],
-      "recent_fraud_actions_24mo": 0,
-      "sample_actions": []
+      "recent_fraud_actions_24mo": 1,
+      "sample_actions": [
+        {
+          "date": "June 10, 2026",
+          "title": "San Francisco Company Agrees to Pay Over Three Million Dollars to Resolve Allegations That They Submitted False Claims for Healthcare Payments",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/san-francisco-company-agrees-to-pay-over-three-million-dollars-to-resolve-allegations-that-they-submitted-false-claims-for-healthcare-payments/"
+        }
+      ]
     },
     {
       "slug": "hp",
@@ -2802,21 +3423,21 @@
           "url": "https://oig.hhs.gov/fraud/enforcement/slidell-doctor-sentenced-for-66-million-in-health-care-fraud/"
         },
         {
-          "date": "January 28, 2026",
+          "date": "Jan. 28, 2026",
           "title": "Slidell Chiropractor Sentenced for Health Care Fraud",
           "action_type": "COVID-19",
           "fine_amount": null,
           "url": "https://oig.hhs.gov/fraud/enforcement/slidell-chiropractor-sentenced-for-health-care-fraud/"
         },
         {
-          "date": "January 27, 2026",
+          "date": "Jan. 27, 2026",
           "title": "Cordell Memorial Hospital Agreed to Pay $40,000 for Allegedly Violating Patient Dumping Statute by Failing to Provide an Appropriate Medical Screening Examination",
           "action_type": "CMP and Affirmative Exclusions",
           "fine_amount": 40000,
           "url": "https://oig.hhs.gov/fraud/enforcement/cordell-memorial-hospital-agreed-to-pay-40000-for-allegedly-violating-patient-dumping-statute-by-failing-to-provide-an-appropriate-medical-screening-examination/"
         },
         {
-          "date": "August 15, 2025",
+          "date": "Aug. 15, 2025",
           "title": "AG Murrill&#x27;s Medicaid Fraud Control Unit Arrests Slidell Woman For Cruel Attack On An Individual With A Disability Under Her Care",
           "action_type": "State Enforcement Agencies",
           "fine_amount": null,
@@ -3603,7 +4224,7 @@
           "url": "https://oig.hhs.gov/fraud/enforcement/russian-citizen-charged-with-laundering-over-12m-connected-to-400m-in-fraudulent-medicare-claims/"
         },
         {
-          "date": "December 9, 2025",
+          "date": "Dec. 9, 2025",
           "title": "Honduras Citizen Sentenced to Prison for Fourth Illegal Reentry into the U.S., Social Security Fraud, and Identity Theft",
           "action_type": "Criminal and Civil Actions",
           "fine_amount": null,
@@ -3710,7 +4331,7 @@
       "recent_fraud_actions_24mo": 1,
       "sample_actions": [
         {
-          "date": "November 12, 2024",
+          "date": "Nov. 12, 2024",
           "title": "Montgomery County Man, N.J. Woman Sentenced for Conspiracy to Commit Visa Fraud, Conspiracy to Obstruct Justice, Respectively",
           "action_type": "Criminal and Civil Actions",
           "fine_amount": null,
@@ -3922,28 +4543,28 @@
           "url": "https://oig.hhs.gov/fraud/enforcement/largest-ever-nationwide-healthcare-fraud-takedown-includes-two-cases-from-western-washington/"
         },
         {
-          "date": "January 17, 2025",
+          "date": "Jan. 17, 2025",
           "title": "Justice Department Files Nationwide Lawsuit Alleging Walgreens Knowingly Filled Millions of Prescriptions that Lacked a Legitimate Medical Purpose",
           "action_type": "Criminal and Civil Actions",
           "fine_amount": null,
           "url": "https://oig.hhs.gov/fraud/enforcement/justice-department-files-nationwide-lawsuit-alleging-walgreens-knowingly-filled-millions-of-prescriptions-that-lacked-a-legitimate-medical-purpose/"
         },
         {
-          "date": "December 18, 2024",
+          "date": "Dec. 18, 2024",
           "title": "Justice Department Files Nationwide Lawsuit Alleging CVS Knowingly Dispensed Controlled Substances In Violation Of The Controlled Substances Act And The False Claims Act",
           "action_type": "Criminal and Civil Actions",
           "fine_amount": null,
           "url": "https://oig.hhs.gov/fraud/enforcement/justice-department-files-nationwide-lawsuit-alleging-cvs-knowingly-dispensed-controlled-substances-in-violation-of-the-controlled-substances-act-and-the-false-claims-act/"
         },
         {
-          "date": "November 18, 2024",
+          "date": "Nov. 18, 2024",
           "title": "U.S. Attorney Totten Announces Second Wave Of Enforcement In Nationwide Telemedicine Fraud Schemes",
           "action_type": "Criminal and Civil Actions",
           "fine_amount": null,
           "url": "https://oig.hhs.gov/fraud/enforcement/us-attorney-totten-announces-second-wave-of-enforcement-in-nationwide-telemedicine-fraud-schemes/"
         },
         {
-          "date": "August 20, 2024",
+          "date": "Aug. 20, 2024",
           "title": "Nationwide Home Healthcare And Hospice Provider To Pay $3.85M To Resolve False Claims Act Allegations",
           "action_type": "Criminal and Civil Actions",
           "fine_amount": 3850000,
@@ -4144,7 +4765,7 @@
       "recent_fraud_actions_24mo": 1,
       "sample_actions": [
         {
-          "date": "September 3, 2025",
+          "date": "Sept. 3, 2025",
           "title": "Opal Mullings and Optimum Faith Lab Corp. Were Excluded for 10 Years",
           "action_type": "CMP and Affirmative Exclusions",
           "fine_amount": null,
@@ -4346,6 +4967,13 @@
       "recent_fraud_actions_24mo": 27,
       "sample_actions": [
         {
+          "date": "June 16, 2026",
+          "title": "AG&#x27;s Office Secures More Than $460,000 from New Bedford Retail Pharmacy for Submitting False Claims to MassHealth",
+          "action_type": "State Enforcement Agencies",
+          "fine_amount": 460000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/ags-office-secures-more-than-460000-from-new-bedford-retail-pharmacy-for-submitting-false-claims-to-masshealth/"
+        },
+        {
           "date": "April 23, 2026",
           "title": "Attorney General Ford Announces 69 Felony Charges in Alleged Scheme Involving Medicaid Fraud and Identity Theft of Seniors",
           "action_type": "State Enforcement Agencies",
@@ -4372,13 +5000,6 @@
           "action_type": "Fraud Self-Disclosures",
           "fine_amount": 5300000,
           "url": "https://oig.hhs.gov/fraud/enforcement/henry-ford-st-john-hospital-and-henry-ford-warren-hospital-agreed-to-pay-53-million-for-allegedly-violating-the-civil-monetary-penalties-law-by-submitting-claims-for-medically-unnecessary-procedures-and-paying-improper-remuneration/"
-        },
-        {
-          "date": "February 18, 2026",
-          "title": "President of Insurance Brokerage Firm and CEO of Marketing Company Sentenced in $233M Affordable Care Act Enrollment Fraud Scheme that Preyed on Vulnerable Consumers",
-          "action_type": "Criminal and Civil Actions",
-          "fine_amount": 233000000,
-          "url": "https://oig.hhs.gov/fraud/enforcement/president-of-insurance-brokerage-firm-and-ceo-of-marketing-company-sentenced-in-233m-affordable-care-act-enrollment-fraud-scheme-that-preyed-on-vulnerable-consumers/"
         }
       ]
     },
@@ -4447,11 +5068,34 @@
     {
       "slug": "stellantis",
       "name": "Stellantis",
-      "is_excluded": false,
-      "exclusion_count": 0,
-      "exclusion_sample": [],
-      "recent_fraud_actions_24mo": 0,
-      "sample_actions": []
+      "is_excluded": true,
+      "exclusion_count": 2,
+      "exclusion_sample": [
+        {
+          "busname": "PROPELLED THERAPEUTIC SERVICES",
+          "exclDate": "20030820",
+          "exclType": "1128a1",
+          "city": "DETROIT",
+          "state": "MI"
+        },
+        {
+          "busname": "S.H.E. DBA OPELIKA HEALTH CARE",
+          "exclDate": "19970316",
+          "exclType": "1128a1",
+          "city": "OPELIKA",
+          "state": "AL"
+        }
+      ],
+      "recent_fraud_actions_24mo": 1,
+      "sample_actions": [
+        {
+          "date": "May 2, 2025",
+          "title": "Nurse Practitioner from Opelousas Convicted of Medicare Fraud by Federal Jury",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/nurse-practitioner-from-opelousas-convicted-of-medicare-fraud-by-federal-jury/"
+        }
+      ]
     },
     {
       "slug": "toyota",
@@ -4576,8 +5220,29 @@
           "state": "NY"
         }
       ],
-      "recent_fraud_actions_24mo": 48,
+      "recent_fraud_actions_24mo": 51,
       "sample_actions": [
+        {
+          "date": "June 24, 2026",
+          "title": "Two Charged for Allegedly Defrauding Wisconsin Medicaid in Separate Cases",
+          "action_type": "State Enforcement Agencies",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/two-charged-for-allegedly-defrauding-wisconsin-medicaid-in-separate-cases/"
+        },
+        {
+          "date": "June 9, 2026",
+          "title": "Attorney General James Secures $36.5 Million from CVS for Defrauding Medicaid",
+          "action_type": "State Enforcement Agencies",
+          "fine_amount": 36500000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/attorney-general-james-secures-365-million-from-cvs-for-defrauding-medicaid/"
+        },
+        {
+          "date": "May 29, 2026",
+          "title": "AG Campbell Sues United Healthcare for Defrauding MassHealth Out of $100 Million",
+          "action_type": "State Enforcement Agencies",
+          "fine_amount": 100000000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/ag-campbell-sues-united-healthcare-for-defrauding-masshealth-out-of-100-million/"
+        },
         {
           "date": "May 26, 2026",
           "title": "Rochester Man Sentenced For Defrauding Medicare",
@@ -4591,27 +5256,6 @@
           "action_type": "Criminal and Civil Actions",
           "fine_amount": null,
           "url": "https://oig.hhs.gov/fraud/enforcement/aprn-charged-with-defrauding-connecticuts-medicaid-program/"
-        },
-        {
-          "date": "May 13, 2026",
-          "title": "AG’s Office Indicts Bowling Green Pair for Defrauding Medicaid",
-          "action_type": "State Enforcement Agencies",
-          "fine_amount": null,
-          "url": "https://oig.hhs.gov/fraud/enforcement/ags-office-indicts-bowling-green-pair-for-defrauding-medicaid/"
-        },
-        {
-          "date": "May 7, 2026",
-          "title": "Brentwood Woman Pleads Guilty to Defrauding Taxpayers Out of $6.9 Million",
-          "action_type": "Criminal and Civil Actions",
-          "fine_amount": 6900000,
-          "url": "https://oig.hhs.gov/fraud/enforcement/brentwood-woman-pleads-guilty-to-defrauding-taxpayers-out-of-69-million/"
-        },
-        {
-          "date": "May 6, 2026",
-          "title": "Milwaukee Woman Charged for Allegedly Defrauding Wisconsin Medicaid of Nearly $2.2 Million, Illegally Obtaining PPP Loan, and Money Laundering",
-          "action_type": "State Enforcement Agencies",
-          "fine_amount": 2200000,
-          "url": "https://oig.hhs.gov/fraud/enforcement/milwaukee-woman-charged-for-allegedly-defrauding-wisconsin-medicaid-of-nearly-22-million-illegally-obtaining-ppp-loan-and-money-laundering/"
         }
       ]
     },
@@ -4705,28 +5349,28 @@
       "recent_fraud_actions_24mo": 4,
       "sample_actions": [
         {
-          "date": "February 5, 2025",
+          "date": "Feb. 5, 2025",
           "title": "Florida Attorney General’s Office Secures More Than $2.3 Million in Multistate Action from Pfizer-Owned Biohaven Pharmaceutical Company",
           "action_type": "State Enforcement Agencies",
           "fine_amount": 2300000,
           "url": "https://oig.hhs.gov/fraud/enforcement/florida-attorney-generals-office-secures-more-than-23-million-in-multistate-action-from-pfizer-owned-biohaven-pharmaceutical-company/"
         },
         {
-          "date": "February 3, 2025",
+          "date": "Feb. 3, 2025",
           "title": "Attorney General Bonta Announces Nearly $60 Million Settlement Against Pfizer-Owned Pharmaceutical Holding Company, Biohaven",
           "action_type": "State Enforcement Agencies",
           "fine_amount": 60000000,
           "url": "https://oig.hhs.gov/fraud/enforcement/attorney-general-bonta-announces-nearly-60-million-settlement-against-pfizer-owned-pharmaceutical-holding-company-biohaven/"
         },
         {
-          "date": "February 3, 2025",
+          "date": "Feb. 3, 2025",
           "title": "AG Nessel Secures $59.7 Million Settlement Over Kickback Allegations Against Pfizer Subsidiary",
           "action_type": "State Enforcement Agencies",
           "fine_amount": 59700000,
           "url": "https://oig.hhs.gov/fraud/enforcement/ag-nessel-secures-597-million-settlement-over-kickback-allegations-against-pfizer-subsidiary/"
         },
         {
-          "date": "January 24, 2025",
+          "date": "Jan. 24, 2025",
           "title": "Pfizer Agrees to Pay Nearly 60M to Resolve False Claims Allegations Relating to Improper Physician Payments by Subsidiary",
           "action_type": "Criminal and Civil Actions",
           "fine_amount": null,
@@ -4859,7 +5503,7 @@
       "recent_fraud_actions_24mo": 1,
       "sample_actions": [
         {
-          "date": "January 14, 2026",
+          "date": "Jan. 14, 2026",
           "title": "Kaiser Permanente Affiliates Pay $556 Million to Resolve False Claims Act Allegations",
           "action_type": "Criminal and Civil Actions",
           "fine_amount": 556000000,
@@ -4903,7 +5547,7 @@
       "recent_fraud_actions_24mo": 1,
       "sample_actions": [
         {
-          "date": "January 2, 2025",
+          "date": "Jan. 2, 2025",
           "title": "LabCorp and University Health System Agree To Pay $388,667 To Resolve Alleged False Claims Act Violations",
           "action_type": "Criminal and Civil Actions",
           "fine_amount": 388667,
@@ -4929,7 +5573,7 @@
       "recent_fraud_actions_24mo": 8,
       "sample_actions": [
         {
-          "date": "September 24, 2025",
+          "date": "Sept. 24, 2025",
           "title": "Attorney General James Uthmeier Announces $3 Million Settlement Agreement With Gilead Sciences To Resolve Improper Promotion Of HIV Drugs",
           "action_type": "State Enforcement Agencies",
           "fine_amount": 3000000,
@@ -5139,11 +5783,83 @@
     {
       "slug": "best-western",
       "name": "Best Western",
-      "is_excluded": false,
-      "exclusion_count": 0,
-      "exclusion_sample": [],
-      "recent_fraud_actions_24mo": 0,
-      "sample_actions": []
+      "is_excluded": true,
+      "exclusion_count": 165,
+      "exclusion_sample": [
+        {
+          "busname": "A GENTLE DENTAL HOMECARE GROUP",
+          "exclDate": "19980603",
+          "exclType": "1128b6",
+          "city": "BEDFORD",
+          "state": "OH"
+        },
+        {
+          "busname": "A-COMMUNITY HOME HEALTH, INC",
+          "exclDate": "19980319",
+          "exclType": "1128b8",
+          "city": "N MIAMI BEACH",
+          "state": "FL"
+        },
+        {
+          "busname": "A-COMMUNITY HOME HEALTH, INC",
+          "exclDate": "20030320",
+          "exclType": "1128b8",
+          "city": "MIAMI",
+          "state": "FL"
+        },
+        {
+          "busname": "AAA PLUS HOME HEALTH CARE, LLC",
+          "exclDate": "20170620",
+          "exclType": "1128a1",
+          "city": "MINNEAPOLIS",
+          "state": "MN"
+        },
+        {
+          "busname": "ADIRONDACK HOME CARE, INC",
+          "exclDate": "19920706",
+          "exclType": "1128a1",
+          "city": "CLIFTON PARK",
+          "state": "NY"
+        }
+      ],
+      "recent_fraud_actions_24mo": 84,
+      "sample_actions": [
+        {
+          "date": "May 20, 2026",
+          "title": "Attorney General Raoul Charges Kane County Man With Theft Of Thousands Of Dollars For Home Services Not Rendered",
+          "action_type": "State Enforcement Agencies",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/attorney-general-raoul-charges-kane-county-man-with-theft-of-thousands-of-dollars-for-home-services-not-rendered/"
+        },
+        {
+          "date": "May 15, 2026",
+          "title": "Michigan Home Health Care Agency Owner Convicted of $1.6M Medicare Fraud Scheme and Kickback Conspiracy",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": 1600000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/michigan-home-health-care-agency-owner-convicted-of-16m-medicare-fraud-scheme-and-kickback-conspiracy/"
+        },
+        {
+          "date": "March 30, 2026",
+          "title": "American Health Companies, dba American Health Partners, Agrees to Pay Over Two Million Dollars to Resolve False Claims Act Liability Involving a Tennessee Nursing Home",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/american-health-companies-dba-american-health-partners-agrees-to-pay-over-two-million-dollars-to-resolve-false-claims-act-liability-involving-a-tennessee-nursing-home/"
+        },
+        {
+          "date": "March 20, 2026",
+          "title": "Home Health Care Operator Admits Defrauding Missouri Medicaid",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/home-health-care-operator-admits-defrauding-missouri-medicaid/"
+        },
+        {
+          "date": "March 16, 2026",
+          "title": "AG Murrill&#x27;s Medicaid Fraud Control Unit Arrests Woman For Pushing A Victim In The Back Of The Head While Working As A Direct Service Worker At A Home For Individuals With Developmental Disabilities",
+          "action_type": "State Enforcement Agencies",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/ag-murrills-medicaid-fraud-control-unit-arrests-woman-for-pushing-a-victim-in-the-back-of-the-head-while-working-as-a-direct-service-worker-at-a-home-for-individuals-with-developmental-disabilities/"
+        }
+      ]
     },
     {
       "slug": "choice-hotels",
@@ -5298,14 +6014,14 @@
       "recent_fraud_actions_24mo": 2,
       "sample_actions": [
         {
-          "date": "November 14, 2025",
+          "date": "Nov. 14, 2025",
           "title": "VRA Enterprises Agrees To Pay Over $17 Million For Allegedly Billing Medicare For Over-The-Counter COVID-19 Tests That Were Not Provided To Beneficiaries, Or That Were Sent To Beneficiaries Months After Being Billed To Medicare",
           "action_type": "COVID-19",
           "fine_amount": 17000000,
           "url": "https://oig.hhs.gov/fraud/enforcement/vra-enterprises-agrees-to-pay-over-17-million-for-allegedly-billing-medicare-for-over-the-counter-covid-19-tests-that-were-not-provided-to-beneficiaries-or-that-were-sent-to-beneficiaries-months-after-being-billed-to-medicare/"
         },
         {
-          "date": "November 6, 2024",
+          "date": "Nov. 6, 2024",
           "title": "Paul Lafferty and Lafferty Enterprises Were Excluded for Defaulting on Payment Obligations",
           "action_type": "CMP and Affirmative Exclusions",
           "fine_amount": null,
@@ -5675,8 +6391,16 @@
       "is_excluded": false,
       "exclusion_count": 0,
       "exclusion_sample": [],
-      "recent_fraud_actions_24mo": 0,
-      "sample_actions": []
+      "recent_fraud_actions_24mo": 1,
+      "sample_actions": [
+        {
+          "date": "Jan. 20, 2026",
+          "title": "Lake Minnetonka Shores Agreed to Pay $113,000 for Allegedly Violating the Civil Monetary Penalties Law by Submitting Claims for Services Provided by an Unlicensed Individual",
+          "action_type": "Fraud Self-Disclosures",
+          "fine_amount": 113000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/lake-minnetonka-shores-agreed-to-pay-113000-for-allegedly-violating-the-civil-monetary-penalties-law-by-submitting-claims-for-services-provided-by-an-unlicensed-individual/"
+        }
+      ]
     },
     {
       "slug": "mattel",
