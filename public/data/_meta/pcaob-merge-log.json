@@ -1,0 +1,44 @@
+{
+  "merged_at": "2026-07-01T22:24:20.888Z",
+  "source_file": "public/data/pcaob-enforcement.json",
+  "total_brands": 528,
+  "merged_count": 5,
+  "skipped_count": 522,
+  "orphan_count": 1,
+  "error_count": 0,
+  "orphans": [
+    "ram"
+  ],
+  "merged": [
+    {
+      "brand": "slack",
+      "target": "salesforce",
+      "routed_via": "parent",
+      "totalActionsLifetime": 1
+    },
+    {
+      "brand": "ford",
+      "target": "ford",
+      "routed_via": "direct",
+      "totalActionsLifetime": 2
+    },
+    {
+      "brand": "hilton",
+      "target": "hilton",
+      "routed_via": "direct",
+      "totalActionsLifetime": 1
+    },
+    {
+      "brand": "enterprise",
+      "target": "enterprise-rent-a-car",
+      "routed_via": "parent",
+      "totalActionsLifetime": 1
+    },
+    {
+      "brand": "avis",
+      "target": "avis",
+      "routed_via": "direct",
+      "totalActionsLifetime": 1
+    }
+  ]
+}
