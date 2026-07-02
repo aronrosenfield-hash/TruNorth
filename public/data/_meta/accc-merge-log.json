@@ -1,0 +1,63 @@
+{
+  "merged_at": "2026-07-02T13:22:03.746Z",
+  "source_file": "public/data/accc-enforcement.json",
+  "total_brands": 529,
+  "merged_count": 7,
+  "skipped_count": 521,
+  "orphan_count": 1,
+  "error_count": 0,
+  "orphans": [
+    "coles"
+  ],
+  "merged": [
+    {
+      "brand": "apple",
+      "target": "apple",
+      "routed_via": "direct",
+      "actions": 1,
+      "fines_aud": 500000
+    },
+    {
+      "brand": "google",
+      "target": "google-alphabet",
+      "routed_via": "alias",
+      "actions": 1,
+      "fines_aud": 60000000
+    },
+    {
+      "brand": "meta",
+      "target": "meta-platforms",
+      "routed_via": "parent",
+      "actions": 2,
+      "fines_aud": 20000000
+    },
+    {
+      "brand": "facebook",
+      "target": "meta-platforms",
+      "routed_via": "parent",
+      "actions": 1,
+      "fines_aud": 20000000
+    },
+    {
+      "brand": "samsung",
+      "target": "samsung-usa",
+      "routed_via": "parent",
+      "actions": 1,
+      "fines_aud": 14000000
+    },
+    {
+      "brand": "volkswagen",
+      "target": "volkswagen-usa",
+      "routed_via": "alias",
+      "actions": 1,
+      "fines_aud": 125000000
+    },
+    {
+      "brand": "mercedes-benz",
+      "target": "mercedes-benz-usa",
+      "routed_via": "alias",
+      "actions": 1,
+      "fines_aud": 12500000
+    }
+  ]
+}
