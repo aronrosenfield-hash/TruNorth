@@ -3579,7 +3579,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                     switchSheet?.done ? (
                       <div style={{ marginTop:10, padding:"10px 12px", borderRadius:10, background:T.accentBg, border:`1px solid ${T.accent}` }}>
                         <div style={{ fontSize:12, color:T.accent2, fontWeight:600, display:"flex", alignItems:"center", gap:7 }}>
-                          <i className="ti ti-check" aria-hidden="true" /> Switch logged{switchSheet.amt ? ` · $${switchSheet.amt}/mo` : ""} — counted in your Basket.
+                          <i className="ti ti-check" aria-hidden="true" /> Switch logged{switchSheet.amt ? ` · $${switchSheet.amt.toLocaleString()}/mo` : ""} — counted in your Basket.
                         </div>
                         <button onClick={(e) => { e.stopPropagation(); setSwitchSheet({ ...switchSheet, done:false }); }}
                           style={{ marginTop:6, background:"none", border:"none", color:T.accent2, fontSize:11, cursor:"pointer", padding:0, textDecoration:"underline" }}>
@@ -3589,36 +3589,42 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                     ) : switchSheet ? (() => {
                       const PRESETS = [25, 50, 100, 200];
                       const sel = switchSheet.amt;
-                      const isCustom = typeof sel === "number" && !PRESETS.includes(sel);
-                      const setAmt = (v) => setSwitchSheet({ ...switchSheet, amt: v });
+                      // R-next fix: the custom box tracks its OWN raw text (switchSheet.custom) so
+                      // typing THROUGH a preset value (100 on the way to 1000) no longer blanks the
+                      // field. Aron: "won't let me add $1,000+".
+                      const custom = switchSheet.custom;
+                      const boxValue = custom != null ? custom : (typeof sel === "number" && !PRESETS.includes(sel) ? String(sel) : "");
+                      const customActive = boxValue !== "";
+                      const setPreset = (v) => setSwitchSheet({ ...switchSheet, amt: v, custom: undefined });
+                      const setCustom = (raw) => setSwitchSheet({ ...switchSheet, amt: raw === "" ? undefined : Math.max(0, Math.round(Number(raw) || 0)), custom: raw });
                       const commit = (amt) => { onCommitSwitch(enriched.slug || enriched.id, enriched.name, switchSheet.to, switchSheet.toName, amt); setSwitchSheet({ ...switchSheet, amt, done:true }); };
                       return (
                       <div style={{ marginTop:10, padding:"10px 12px", borderRadius:10, background:T.bg3, border:`1px solid ${T.border2}` }} onClick={(e) => e.stopPropagation()}>
                         <div style={{ fontSize:12, color:T.txt2, marginBottom:8 }}>About how much do you spend on <strong style={{ color:T.txt }}>{enriched.name}</strong> <strong style={{ color:T.txt }}>per month</strong>?</div>
                         <div style={{ display:"flex", gap:6 }}>
                           {PRESETS.map(amt => {
-                            const on = sel === amt;
+                            const on = sel === amt && custom == null;
                             return (
                             <button key={amt}
-                              onClick={(e) => { e.stopPropagation(); setAmt(amt); }}
+                              onClick={(e) => { e.stopPropagation(); setPreset(amt); }}
                               style={{ flex:1, padding:"9px 2px", borderRadius:9, background: on ? T.accentBg : T.bg2, border:`1px solid ${on ? T.accent : T.border}`, color: on ? T.accent2 : T.txt, fontFamily:MONO, fontSize:12.5, fontWeight:700, cursor:"pointer" }}>
                               ${amt}<span style={{ fontSize:9, opacity:0.65 }}>/mo</span>
                             </button>
                             );
                           })}
                         </div>
-                        <div style={{ display:"flex", alignItems:"center", gap:6, marginTop:7, background:T.bg2, border:`1px solid ${isCustom ? T.accent : T.border}`, borderRadius:9, padding:"0 10px" }}>
+                        <div style={{ display:"flex", alignItems:"center", gap:6, marginTop:7, background:T.bg2, border:`1px solid ${customActive ? T.accent : T.border}`, borderRadius:9, padding:"0 10px" }}>
                           <span style={{ color:T.txt3, fontFamily:MONO, fontSize:13 }}>$</span>
                           <input type="number" inputMode="numeric" min="0" placeholder="Custom amount"
-                            value={isCustom ? sel : ""}
-                            onChange={(e) => { const raw = e.target.value; setAmt(raw === "" ? undefined : Math.max(0, Math.round(Number(raw) || 0))); }}
+                            value={boxValue}
+                            onChange={(e) => setCustom(e.target.value)}
                             style={{ flex:1, minWidth:0, width:"100%", background:"none", border:"none", color:T.txt, fontFamily:MONO, fontSize:14, padding:"9px 0", outline:"none" }} />
                           <span style={{ color:T.txt3, fontSize:11 }}>/mo</span>
                         </div>
                         <button onClick={(e) => { e.stopPropagation(); if (typeof sel === "number") commit(sel); }}
                           aria-disabled={typeof sel !== "number"}
                           style={{ marginTop:8, width:"100%", padding:"10px", borderRadius:9, background: typeof sel === "number" ? T.accent2 : T.bg2, border:"none", color: typeof sel === "number" ? "#000" : T.txt3, fontSize:13, fontWeight:700, cursor: typeof sel === "number" ? "pointer" : "default" }}>
-                          {typeof sel === "number" ? `Log switch · $${sel}/mo` : "Pick or enter an amount"}
+                          {typeof sel === "number" ? `Log switch · $${sel.toLocaleString()}/mo` : "Pick or enter an amount"}
                         </button>
                         <button onClick={(e) => { e.stopPropagation(); commit(0); }}
                           style={{ marginTop:7, width:"100%", background:"none", border:"none", color:T.txt3, fontSize:11, cursor:"pointer", padding:0, textDecoration:"underline", textAlign:"center" }}>
@@ -7301,8 +7307,8 @@ if (screen === "basket") {
                   {switches.length > 0 && (
                     <div style={{ flex:1, padding:"12px 14px", background:T.bg3, borderRadius:14, border:`1px solid ${T.gold}` }}>
                       <div style={{ fontSize:10, color:T.gold, textTransform:"uppercase", letterSpacing:"0.08em", fontWeight:600 }}>Redirected</div>
-                      <div style={{ fontFamily:MONO, fontSize:26, fontWeight:700, color:T.txt }}>{monthly ? `$${monthly}` : "—"}<span style={{ fontSize:11, color:T.txt3, fontWeight:500 }}>{monthly ? "/mo" : ""}</span></div>
-                      <div style={{ fontSize:10.5, color:T.txt3, marginTop:2 }}>{monthly ? `$${monthly * 12}/yr · ` : ""}{switches.length} {switches.length === 1 ? "switch" : "switches"}</div>
+                      <div style={{ fontFamily:MONO, fontSize:26, fontWeight:700, color:T.txt }}>{monthly ? `$${monthly.toLocaleString()}` : "—"}<span style={{ fontSize:11, color:T.txt3, fontWeight:500 }}>{monthly ? "/mo" : ""}</span></div>
+                      <div style={{ fontSize:10.5, color:T.txt3, marginTop:2 }}>{monthly ? `$${(monthly * 12).toLocaleString()}/yr · ` : ""}{switches.length} {switches.length === 1 ? "switch" : "switches"}</div>
                     </div>
                   )}
                 </div>
@@ -7336,7 +7342,7 @@ if (screen === "basket") {
                           <button onClick={() => setEditingSwitch({ from: sw.from, to: sw.to, val: sw.monthly || 0 })}
                             aria-label="Edit monthly amount"
                             style={{ marginLeft:"auto", background:"none", border:"none", color:T.gold, fontFamily:MONO, fontSize:11, cursor:"pointer", padding:0, display:"inline-flex", alignItems:"center", gap:3 }}>
-                            {sw.monthly ? `$${sw.monthly}/mo` : "add $"} <i className="ti ti-pencil" style={{ fontSize:10, opacity:0.6 }} aria-hidden="true" />
+                            {sw.monthly ? `$${sw.monthly.toLocaleString()}/mo` : "add $"} <i className="ti ti-pencil" style={{ fontSize:10, opacity:0.6 }} aria-hidden="true" />
                           </button>
                         )}
                       </div>
