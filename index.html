@@ -12,6 +12,13 @@
          ability to pinch-zoom on the marketing landing — net a11y win. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
+    <!-- Native WKWebView safety net (2026-07-02): INLINE (not the bundled
+         index.css) so the WKWebView cannot skip it. Global border-box + a
+         document-level overflow-x clamp — the bundled rule is empirically not
+         reaching some inline-styled cards in native, causing the recurring
+         right-edge cutoff (re-reported on the basket screens, Build 77). -->
+    <style>*,*::before,*::after{box-sizing:border-box}html,body,#root{overflow-x:hidden;max-width:100%}</style>
+
     <!-- PWA / Home Screen -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />

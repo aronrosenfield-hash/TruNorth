@@ -73,3 +73,18 @@ test("guard: cards (width:100% + maxWidth + padding) declare EXPLICIT box-sizing
   assert.equal(offenders.length, 0,
     `Card(s) with width:100%+maxWidth+padding missing explicit boxSizing (reveal right-edge cutoff pattern — see reveal-screen-overflow-guard):\n  ${offenders.join("\n  ")}`);
 });
+
+test("guard: index.html carries the INLINE native-WKWebView overflow safety net", () => {
+  // 2026-07-02: the bundled index.css box-sizing rule is empirically NOT reaching
+  // some inline-styled cards in the native WKWebView → content-box → ~30px right-
+  // edge cutoff that cascades to every screen (Aron re-reported on Build 77 basket
+  // screens). The fix is an INLINE <style> in index.html <head> (can't be missed
+  // like the bundle) + a document-level overflow-x clamp. Removing it brings the
+  // whole-app-sideways-shift back on device even though the web preview looks fine.
+  const html = fs.readFileSync("index.html", "utf8");
+  const head = html.slice(0, html.indexOf("</head>"));
+  assert.match(head, /<style>[^<]*box-sizing:\s*border-box/,
+    "index.html <head> lost its INLINE box-sizing rule — the native WKWebView right-edge cutoff returns (bundled index.css doesn't reliably reach native).");
+  assert.match(head, /<style>[^<]*overflow-x:\s*hidden/,
+    "index.html <head> lost its INLINE overflow-x:hidden clamp — a wide card can shift the whole app sideways in native again.");
+});

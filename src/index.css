@@ -8,6 +8,15 @@
    refuse to ship if this rule is removed. */
 *, *::before, *::after { box-sizing: border-box; }
 
+/* Native WKWebView safety net (2026-07-02): the box-sizing rule above is honored
+   in the web preview but empirically does NOT reach some inline-styled cards in
+   the native WKWebView, which then render content-box and overflow ~30px past the
+   viewport (the recurring right-edge cutoff — Aron re-reported it on the basket
+   screens in Build 77). This clamps horizontal overflow at the document level so
+   no card can EVER shift the whole app sideways. Vertical scroll is untouched
+   (the app scrolls via inner overflow-y:auto containers). */
+html, body, #root { overflow-x: hidden; max-width: 100%; }
+
 /* QA-10: gentle card-in motion (Match cards, etc.). Reduced-motion → no movement. */
 @keyframes cardIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {

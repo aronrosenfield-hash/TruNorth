@@ -6420,7 +6420,7 @@ if (screen === "basket") {
   }
 
   return (
-    <div style={{ height:"100%", width:"100%", maxWidth:"var(--app-max, 430px)", margin:"0 auto", background:T.bg2, display:"flex", flexDirection:"column" }}>
+    <div style={{ height:"100%", width:"100%", maxWidth:"var(--app-max, 430px)", margin:"0 auto", background:T.bg2, display:"flex", flexDirection:"column", boxSizing:"border-box", overflowX:"hidden" }}>
       {showPaywall && !IAP_SAFE_MODE && <PaywallScreen initialEmail={currentUser?.email||""} onSubscribe={(paidEmail)=>{
         setIsPaid(true);
         // Phase 5.as (#11): persist paywall email to Account.
@@ -6477,7 +6477,7 @@ if (screen === "basket") {
 
       {/* Header — Phase 5.y: title is true-centered now (3-column grid) so the
           Pro/Upgrade chip width on the right can't shift it off-center. */}
-      <div style={{ padding:"calc(env(safe-area-inset-top, 0px) + 12px) 16px 12px", background:T.bg, flexShrink:0, zIndex:10, borderBottom:`1px solid ${T.border}` }}>
+      <div style={{ padding:"calc(env(safe-area-inset-top, 0px) + 12px) 16px 12px", background:T.bg, flexShrink:0, zIndex:10, borderBottom:`1px solid ${T.border}`, boxSizing:"border-box" }}>
         {/* 2026-06-01 (user feedback): logo + 'TruNorth' wordmark were
             visually separated by a 3-column grid (logo left / title center /
             upgrade right) — looked disjointed. Now grouped as a single
@@ -6617,7 +6617,7 @@ if (screen === "basket") {
           preventing the body / outer WebView from interpreting the drag.
           overscrollBehavior contain stops momentum from escaping upward
           to body even on iOS where it likes to ignore the rule. */}
-      <div ref={tabScrollRef} style={{ flex:1, overflowY:"auto", WebkitOverflowScrolling:"touch", overscrollBehavior:"contain", touchAction:"pan-y", background:T.bg }}>
+      <div ref={tabScrollRef} style={{ flex:1, overflowY:"auto", overflowX:"hidden", WebkitOverflowScrolling:"touch", overscrollBehavior:"contain", touchAction:"pan-y", background:T.bg, boxSizing:"border-box", width:"100%" }}>
 
       {/* Profile strip — locked to v4 (centered pill) on 2026-06-01 per
           user pick. Other variants stripped. Edit takes user back to the
