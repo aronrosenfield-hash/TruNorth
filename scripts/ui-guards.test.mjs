@@ -112,3 +112,26 @@ test("guard: no two brands share a name with CONTRADICTORY grades (the 'Exxon is
   assert.equal(offenders.length, 0,
     `Duplicate companies with contradictory grades (run scripts/dedup-brands.mjs):\n${offenders.join("\n")}`);
 });
+
+test("guard: landing + onboarding DEMO grades match the live data (no marketing/app drift)", () => {
+  // 2026-07-03 (diligence): the landing DemoCard + OnboardingFlow demo showed
+  // Costco A / Shein D while the app actually graded them B / C — a trust
+  // product with provably-wrong sample grades on its own front door. This locks
+  // the demo top-line grades to index.json so they can't silently drift again.
+  const idx = JSON.parse(fs.readFileSync("public/data/index.json", "utf8"));
+  const arr = Array.isArray(idx) ? idx : (idx.companies || Object.values(idx));
+  const bySlug = Object.fromEntries(arr.map(c => [c.slug, c]));
+  const DEMOS = { Costco: "costco", Tesla: "tesla", Shein: "shein" };
+  const mismatches = [];
+  for (const f of ["src/MarketingLanding.jsx", "src/OnboardingFlow.jsx"]) {
+    const src = fs.readFileSync(f, "utf8");
+    for (const [name, slug] of Object.entries(DEMOS)) {
+      const m = src.match(new RegExp(`name:\\s*"${name}"[^}]*?grade:\\s*"([A-F])"`));
+      if (!m) continue; // brand isn't used as a demo in this file
+      const real = bySlug[slug]?.grade;
+      if (real && m[1] !== real) mismatches.push(`${f}: ${name} shows ${m[1]}, data says ${real}`);
+    }
+  }
+  assert.equal(mismatches.length, 0,
+    `Marketing/onboarding demo grades drifted from index.json:\n  ${mismatches.join("\n  ")}`);
+});

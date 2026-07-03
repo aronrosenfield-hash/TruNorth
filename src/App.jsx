@@ -1548,7 +1548,7 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
           {[
             { feat: "View brand names + grade",       free: true,  pro: true  },
             { feat: "45-second values Match",          free: true,  pro: true  },
-            { feat: "Browse 12,000+ companies",       free: true,  pro: true  },
+            { feat: "Browse 12,000+ brands (2,800+ graded)", free: true,  pro: true  },
             { feat: "Personalized scores",            free: false, pro: true, hi: true },
             { feat: "Full grade breakdowns",          free: false, pro: true  },
             { feat: "All 9 value categories",         free: false, pro: true  },
@@ -2259,12 +2259,12 @@ function WhatsNewModal({ companyCount }) {
           </div>
         </div>
         <div style={{ background:T.accentBg, border:`1px solid ${T.accent}`, borderRadius:10, padding:"14px 16px", marginBottom:14 }}>
-          <div style={{ fontSize:28, fontWeight:800, color:T.accent2, lineHeight:1.1 }}>12,000+</div>
-          {/* 2026-06-01 (user feedback + audit H2): honest framing — we
-              TRACK 12,000+ companies but only grade the ones with
-              verified public-record signal. Top brands have full coverage. */}
+          <div style={{ fontSize:28, fontWeight:800, color:T.accent2, lineHeight:1.1 }}>2,800+</div>
+          {/* 2026-07-03 (diligence): lead with the HONEST graded number, not the
+              12,000+ tracked figure — "12,000+" as the headline read as an
+              over-promise when a first search hit a "?". Graded is the promise. */}
           <div style={{ fontSize:13, color:T.txt2, marginTop:4, lineHeight:1.4 }}>
-            Companies tracked. Top brands have full grades across 9 categories using US public records — campaign finance (FEC), environment (EPA), worker safety (OSHA), labor disputes (NLRB), and corporate filings (SEC).
+            brands fully graded across 9 categories from US public records — campaign finance (FEC), environment (EPA), worker safety (OSHA), labor disputes (NLRB), and corporate filings (SEC). 12,000+ more tracked; ungraded brands show a “?”, never a fake grade.
           </div>
         </div>
         <ul style={{ listStyle:"none", padding:0, margin:0, fontSize:13.5, color:T.txt2, lineHeight:1.65 }}>
@@ -5206,6 +5206,36 @@ useEffect(() => {
     _setIsPaidRaw(val);
     try { localStorage.setItem("tn_isPaid", val ? "1" : "0"); } catch {}
   };
+  // Server-side entitlement reconciliation (2026-07-03, diligence C5). isPaid
+  // initializes from the tn_isPaid localStorage CACHE, but RevenueCat/Apple is
+  // the source of truth. On boot + every foreground, verify the "TruNorth Pro"
+  // entitlement and reconcile: true → grant, false → revoke (handles cancels /
+  // refunds / lapses), null → web / offline / SDK error → KEEP local state (never
+  // revoke on an inconclusive answer). Closes the "unlock Pro with one console
+  // command / cancelled users keep Pro forever" gap — payments.js had the
+  // verifier but nothing ever called it.
+  useEffect(() => {
+    if (IAP_SAFE_MODE) return; // everything already unlocked — nothing to verify
+    let cancelled = false;
+    const reconcile = async () => {
+      try {
+        const { configurePayments, hasProEntitlement } = await import("./lib/payments");
+        await configurePayments();
+        const ent = await hasProEntitlement(); // true | false | null
+        if (!cancelled && ent != null) setIsPaid(ent === true);
+      } catch { /* keep local state on any failure */ }
+    };
+    reconcile();
+    let listener;
+    (async () => {
+      try {
+        const { App: CapApp } = await import("@capacitor/app");
+        listener = await CapApp.addListener("resume", reconcile);
+      } catch { /* web / plugin absent — reconcile-on-boot is enough */ }
+    })();
+    return () => { cancelled = true; if (listener) listener.remove?.(); };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const [showPaywall, setShowPaywall] = useState(false);
   // H3 (2026-06-11): true when the live catalog failed and we fell back to
   // the build-time snapshot (src/companies.js) — grades may be outdated and

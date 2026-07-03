@@ -6,8 +6,8 @@ import { useState } from "react";
 // + detail rows below now mirror public/data/index.json. If a rebake moves
 // any of these brands a letter, update this array.
 const COMPANIES = [
-  { emoji:"🛍️", bg:"#1a2e1a", name:"Costco",    meta:"Retail · Warehouse",     grade:"A", gradeStyle:{background:"#0E2126",color:"#38C0CE"}, details:[{label:"🌿 Environment",pct:80,color:"#38C0CE",grade:"B+"},{label:"🏳️ DEI",pct:82,color:"#38C0CE",grade:"A-"},{label:"❤️ Charity",pct:78,color:"#38C0CE",grade:"B+"}] },
-  { emoji:"🚗", bg:"#1a1a2e", name:"Tesla",     meta:"Automotive · EVs",       grade:"B", gradeStyle:{background:"#19230F",color:"#9CC98A"}, details:[{label:"🌿 Environment",pct:78,color:"#38C0CE",grade:"B+"},{label:"🏳️ DEI",pct:65,color:"#9CC98A",grade:"B"},{label:"⚖️ Labor",pct:35,color:"#E0524D",grade:"D"}] },
+  { emoji:"🛍️", bg:"#1a2e1a", name:"Costco",    meta:"Retail · Warehouse",     grade:"B", gradeStyle:{background:"#19230F",color:"#9CC98A"}, details:[{label:"🌿 Environment",pct:72,color:"#9CC98A",grade:"B"},{label:"🏳️ DEI",pct:78,color:"#38C0CE",grade:"B+"},{label:"❤️ Charity",pct:70,color:"#9CC98A",grade:"B"}] },
+  { emoji:"🚗", bg:"#1a1a2e", name:"Tesla",     meta:"Automotive · EVs",       grade:"C", gradeStyle:{background:"#1F2228",color:"#E8A04C"}, details:[{label:"🌿 Environment",pct:70,color:"#9CC98A",grade:"B"},{label:"🏳️ DEI",pct:55,color:"#E8A04C",grade:"C"},{label:"⚖️ Labor",pct:35,color:"#E0524D",grade:"D"}] },
   { emoji:"👗", bg:"#2e1a1a", name:"Shein",     meta:"Apparel · Fast Fashion", grade:"C", gradeStyle:{background:"#2e2a1a",color:"#E8A04C"}, details:[{label:"🔒 Privacy",pct:25,color:"#E0524D",grade:"F"},{label:"🐰 Animals",pct:30,color:"#E0524D",grade:"D"},{label:"⚖️ Labor",pct:48,color:"#E8A04C",grade:"C"}] },
 ];
 

@@ -104,9 +104,12 @@ function Lead({ children, style }) {
 
 // ─── demo brands (mirrors OnboardingFlow slide 1) ───────────────────────────
 const DEMO_BRANDS = [
-  { name:"Costco",  meta:"Retail · Warehouse",    grade:"A", color:C.good, bg:"#1a3a2a", emoji:"🛍️" },
+  // Grades mirror the live baseline data (index.json) — asserted by the
+  // "landing demo grades match data" guard in scripts/ui-guards.test.mjs so
+  // the marketing samples can never drift from the app again.
+  { name:"Costco",  meta:"Retail · Warehouse",    grade:"B", color:C.good, bg:"#1a3a2a", emoji:"🛍️" },
   { name:"Tesla",   meta:"Automotive · EVs",      grade:"C", color:C.warn, bg:"#2e2a1a", emoji:"🚗" },
-  { name:"Shein",   meta:"Apparel · Fast Fashion", grade:"D", color:C.bad,  bg:"#2e1e1a", emoji:"👗" },
+  { name:"Shein",   meta:"Apparel · Fast Fashion", grade:"C", color:C.warn, bg:"#2e2a1a", emoji:"👗" },
 ];
 
 function DemoCard() {
@@ -363,7 +366,7 @@ export default function MarketingLanding({ onOpenPrivacy }) {
               }}>See every brand's record.</span>
             </h1>
             <Lead style={{ marginBottom:28 }}>
-              TruNorth tracks 12,000+ companies. Where public records exist, we grade them across 9 categories — campaign finance (FEC), environment (EPA), worker safety (OSHA), labor disputes (NLRB), data privacy (CISA, NIST NVD), corporate enforcement (DOJ, SEC, CFPB), product safety (NHTSA, CPSC, OpenFDA), and 190+ more. <strong style={{color:C.text}}>200+ public-records sources</strong> in total. Real records, not opinions.
+              TruNorth tracks 12,000+ companies and fully grades 2,800+ of them across 9 categories — campaign finance (FEC), environment (EPA), worker safety (OSHA), labor disputes (NLRB), data privacy (CISA, NIST NVD), corporate enforcement (DOJ, SEC, CFPB), product safety (NHTSA, CPSC, OpenFDA), and 190+ more. <strong style={{color:C.text}}>200+ public-records sources</strong> in total. Real records, not opinions.
             </Lead>
             <div className="tn-cta-row">
               {/* The iOS CTA points at the live App Store listing (APP_STORE_URL).
