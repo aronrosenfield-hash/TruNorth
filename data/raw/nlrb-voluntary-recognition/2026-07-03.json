@@ -1,0 +1,35 @@
+{
+  "_license": "US Government work — public domain (17 U.S.C. § 105).",
+  "_source_url": "https://www.nlrb.gov/reports/graphs-data/recent-filings",
+  "_search_url": "https://www.nlrb.gov/reports/graphs-data/recent-filings?f%5B0%5D=case_type%3AR&date_start=07%2F03%2F2025&date_end=07%2F03%2F2026",
+  "_generated_at": "2026-07-03T15:35:49.422Z",
+  "_status": "empty",
+  "_empty_reason": "fetch_ok_no_vr_dispositions",
+  "_note": "Fetched 2111 representation cases for 07/03/2025–07/03/2026 but the public CATS close-method vocabulary (see _stats.close_methods) contains no voluntary-recognition disposition — the NLRB stopped publishing VR outcomes after the 2020 Election Protection Rule's notification requirement was rescinded. Not a fetch failure.",
+  "_signal": "positive",
+  "_sources": [
+    {
+      "url": "https://www.nlrb.gov/reports/graphs-data/recent-filings?f%5B0%5D=case_type%3AR&date_start=07%2F03%2F2025&date_end=07%2F03%2F2026",
+      "count": 0,
+      "status": "empty"
+    }
+  ],
+  "_stats": {
+    "total": 0,
+    "candidate_rows": 2111,
+    "close_methods": {
+      "Withdrawal Non-adjusted": 492,
+      "Certific. of Representative": 777,
+      "Certification of Results": 321,
+      "Withdrawal Adjusted": 17,
+      "Dismissal Non-adjusted": 31,
+      "Unit Clarification": 7,
+      "Dismissal Adjusted": 1
+    },
+    "skipped": 325,
+    "unique_employers": 0,
+    "date_range": null,
+    "by_case_type": {}
+  },
+  "entries": []
+}
