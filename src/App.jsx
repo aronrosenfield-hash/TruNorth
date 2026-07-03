@@ -11,7 +11,7 @@ import PrivacyPolicy from "./PrivacyPolicy";
 import Methodology from "./Methodology";
 import { initAnalytics, track } from "./lib/analytics";
 import { ErrorBoundary } from "./lib/ErrorBoundary";
-import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail, loadSearchIndex, loadBrandParentMap, loadUpcCache, loadFeatureFlags, featureFlagsEnabled, fetchAppData, getNativeDataSource, apiUrl } from "./lib/dataSource";
+import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail, loadSearchIndex, loadBrandParentMap, loadUpcCache, loadFeatureFlags, featureFlagsEnabled, fetchAppData, getNativeDataSource, apiUrl, getAliasMap } from "./lib/dataSource";
 import { getCategoryFlagRender, isCategoryExcludedByFlags } from "./lib/scoringFlags";
 import { computeFingerprint, persistFingerprint, getStoredFingerprint } from "./lib/fingerprint";
 import { useConfirm, usePrompt, useAlert } from "./components/ConfirmModal";
@@ -1624,7 +1624,7 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
         </button>
 
         {purchaseError && (
-          <div role="alert" style={{ fontSize:12, color:T.bad, textAlign:"center", margin:"2px 0 8px", lineHeight:1.45 }}>{purchaseError}</div>
+          <div role="alert" style={{ fontSize:12, color:T.rep, textAlign:"center", margin:"2px 0 8px", lineHeight:1.45 }}>{purchaseError}</div>
         )}
 
         {/* Apple 3.1.2 point-of-sale disclosure: price + length + auto-renew
@@ -1994,7 +1994,7 @@ function BrandOfDayCard({ editorial, deduped, profile, openBrand }) {
               <div style={{ fontSize:10, color:flavor.color, fontWeight:700, textTransform:"uppercase", letterSpacing:0.6 }}>Brand of the day · {story.tag || "Worth knowing"}</div>
               <div style={{ fontSize:15, fontWeight:700, color:T.txt, marginTop:2, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{story.name || co.name}</div>
             </div>
-            <div style={{ padding:"6px 12px", borderRadius:10, background:flavor.chipBg, color:flavor.color, fontSize:18, fontWeight:800, flexShrink:0 }}>{profile ? pickGrade : "?"}</div>
+            <div style={{ padding:"6px 12px", borderRadius:10, background:flavor.chipBg, color:flavor.color, fontSize:18, fontWeight:800, flexShrink:0 }}>{pickGrade}</div>
           </div>
           <div style={{ fontSize:14, fontWeight:600, color:T.txt2, marginBottom:6, lineHeight:1.35 }}>{story.headline}</div>
           <div style={{ fontSize:12.5, color:T.txt3, lineHeight:1.55 }}>{story.blurb}</div>
@@ -2038,7 +2038,7 @@ function BrandOfDayCard({ editorial, deduped, profile, openBrand }) {
         <div style={{ fontSize:15, fontWeight:700, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis", marginTop:2 }}>{pick.name}</div>
         <div style={{ fontSize:11, color:T.txt3, marginTop:1, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{pick.cat}</div>
       </div>
-      <div style={{ padding:"6px 12px", borderRadius:10, background: pickGrade === "A" ? "#0E2126" : pickGrade === "B" ? "#19230F" : pickGrade === "C" ? "#1F2228" : pickGrade === "D" ? "#241B0D" : "#291110", color: fl.color, fontSize:18, fontWeight:800, flexShrink:0 }}>{profile ? pickGrade : "?"}</div>
+      <div style={{ padding:"6px 12px", borderRadius:10, background: pickGrade === "A" ? "#0E2126" : pickGrade === "B" ? "#19230F" : pickGrade === "C" ? "#1F2228" : pickGrade === "D" ? "#241B0D" : "#291110", color: fl.color, fontSize:18, fontWeight:800, flexShrink:0 }}>{pickGrade}</div>
     </div>
   );
 }
@@ -2430,7 +2430,7 @@ function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPai
                     <div style={{ fontSize:14, fontWeight:700, color:T.txt, lineHeight:1.2 }}>{co.name}</div>
                     <div style={{ fontSize:11, color:T.txt3, marginTop:2 }}>{co.cat || ""}</div>
                     <div style={{ display:"flex", alignItems:"baseline", gap:6, marginTop:8 }}>
-                      <div style={{ fontSize:28, fontWeight:800, color:profile ? T.txt : T.txt3, lineHeight:1 }}>{profile ? grade : "?"}</div>
+                      <div style={{ fontSize:28, fontWeight:800, color:profile ? T.txt : T.txt3, lineHeight:1 }}>{grade}</div>
                       {isPaid && profile && ps != null && <div style={{ fontSize:12, color:T.txt3 }}>{ps}/100</div>}
                       {!profile && <div style={{ fontSize:11, color:T.txt3 }}>take the Match</div>}
                     </div>
@@ -3244,10 +3244,10 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
               F: { bg:"#291110", border:"#4A1E1E", text:"#E0524D" },
               "?": { bg:T.bg3, border:T.border2, text:T.txt3 },
             };
-            const rc = gradeRowColors[profile ? grade : "?"];
+            const rc = gradeRowColors[grade];
             return (
-              <div style={{ width:38, height:38, borderRadius:10, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", background:rc.bg, border:`1px solid ${rc.border}` }} title={profile ? "Your personalized grade" : "Take the Match to see grades"}>
-                <div style={{ fontSize:isPaid?17:22, fontWeight:700, color:rc.text, lineHeight:1 }}>{profile ? grade : "?"}</div>
+              <div style={{ width:38, height:38, borderRadius:10, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", background:rc.bg, border:`1px solid ${rc.border}` }} title={profile ? "Your personalized grade" : (grade === "?" ? "No public record yet — we don't guess" : "Baseline grade — take the Match to personalize")}>
+                <div style={{ fontSize:isPaid?17:22, fontWeight:700, color:rc.text, lineHeight:1, opacity: profile || grade === "?" ? 1 : 0.82 }}>{grade}</div>
                 {isPaid && profile && <div style={{ fontSize:10, color:rc.text, opacity:0.7 }}>{ps}</div>}
               </div>
             );
@@ -3680,7 +3680,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
               F: { bg:"#291110", border:"#E0524D", text:"#E0524D" },
               "?": { bg:T.bg3, border:T.border2, text:T.txt3 },
             };
-            const gc = gradeColors[profile ? grade : "?"];
+            const gc = gradeColors[grade];
             return (
               <div style={{ display:"flex", alignItems:"center", gap:14, marginBottom:18, padding:"14px 14px 16px", background:T.bg3, borderRadius:14, border:`1px solid ${T.border}` }}>
                 {/* R1 (Compass redesign): the verdict SEAL replaces the grade
@@ -3705,8 +3705,8 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                   }
                   return (
                     <div style={{ flexShrink:0 }}>
-                      <CompassSeal values={sealValues} grade={profile ? grade : "?"} size={86}
-                        title={profile ? `Your verdict: grade ${grade}` : "Take the Match to strike your compass"} />
+                      <CompassSeal values={sealValues} grade={grade} size={86}
+                        title={profile ? `Your verdict: grade ${grade}` : (grade === "?" ? "Take the Match to strike your compass" : `Baseline grade ${grade} — take the Match to personalize`)} />
                     </div>
                   );
                 })()}
@@ -5660,7 +5660,13 @@ useEffect(() => {
   // the card surfaces and CompanyCard's initiallyOpen prop expands it.
   useEffect(() => {
     if (!deepLinkSlug || !companies) return;
-    const co = companies.find(c => (c.slug || c.id) === deepLinkSlug);
+    let co = companies.find(c => (c.slug || c.id) === deepLinkSlug);
+    if (!co) {
+      // Merged/legacy slug? Resolve via the alias map (e.g. a shared
+      // /company/exxon link → exxon-mobil after the 2026-07 dedup).
+      const canon = getAliasMap()[deepLinkSlug];
+      if (canon) co = companies.find(c => (c.slug || c.id) === canon);
+    }
     if (!co) {
       console.warn("[deep-link] slug not found:", deepLinkSlug);
       setDeepLinkSlug(null);
@@ -6577,11 +6583,13 @@ if (screen === "basket") {
               return (
                 <div style={{ position:"absolute", top:"calc(100% + 4px)", left:0, right:0, background:T.bg2, border:`1px solid ${T.border}`, borderRadius:12, boxShadow:"0 8px 24px rgba(0,0,0,0.4)", zIndex:50, overflow:"hidden" }}>
                   {suggestions.map(co => {
-                    // 2026-06-13 (review): the typeahead leaked baseline letters
-                    // while every other surface gates grades behind the Match
-                    // (`profile ? grade : "?"`). Respect the gate — and show the
-                    // PERSONALIZED grade for quizzed users, like the shelf/rows.
-                    const g = profile ? scoreGrade(computeScore(co, profile), userRelevantRealCats(co, profile)) : "?";
+                    // 2026-07-03 (diligence review — gate REVERSED): show the
+                    // baked BASELINE grade to un-quizzed users instead of "?".
+                    // The "?" wall read as "no data / broken" and hid a real,
+                    // record-based grade (computeScore(co,null) === co.overall).
+                    // The Match now personalizes an existing number, not reveals
+                    // a hidden one.
+                    const g = scoreGrade(computeScore(co, profile), userRelevantRealCats(co, profile));
                     const gradeColor = { A:"#38C0CE", B:"#9CC98A", C:"#E8A04C", D:"#E8A04C", F:"#E0524D" }[g] || T.txt3;
                     return (
                       <button
@@ -6801,14 +6809,14 @@ if (screen === "basket") {
                     <div style={{ fontSize: 11, color: T.txt3, marginBottom: 12 }}>Today's shelf · rotates daily</div>
                     <div style={{ display: "flex", gap: 8 }}>
                       {shelf.map(({ co }) => {
-                        const g = profile ? scoreGrade(computeScore(co, profile), userRelevantRealCats(co, profile)) : "?";
+                        const g = scoreGrade(computeScore(co, profile), userRelevantRealCats(co, profile));
                         const gcol = { A: "#38C0CE", B: "#9CC98A", C: T.txt2, D: "#E8A04C", F: "#E0524D", "?": T.txt3 }[g];
                         return (
                           <button key={co.slug || co.id} onClick={() => openBrand(co.slug || co.id)}
                             style={{ flex: 1, minWidth: 0, background: T.bg3, border: `1px solid ${T.border2}`, borderRadius: 12, padding: "10px 4px 8px", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
                             <CompanyLogo company={co} size={34} />
                             <div style={{ fontSize: 10, color: T.txt2, fontWeight: 600, maxWidth: "100%", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{co.name}</div>
-                            <div style={{ fontFamily: SERIF, fontSize: 15, fontWeight: 600, color: gcol }}>{g}</div>
+                            <div style={{ fontFamily: SERIF, fontSize: 15, fontWeight: 600, color: gcol, opacity: profile || g === "?" ? 1 : 0.82 }}>{g}</div>
                           </button>
                         );
                       })}
@@ -7496,7 +7504,7 @@ if (screen === "basket") {
                         </div>
                         <div style={{ fontSize:11, color:T.txt3, marginTop:1, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{co.cat}</div>
                       </div>
-                      <div style={{ fontSize:14, fontWeight:700, color: colors[profile ? g : "?"], marginLeft:8 }}>{profile ? g : "?"}</div>
+                      <div style={{ fontSize:14, fontWeight:700, color: colors[g], marginLeft:8 }}>{g}</div>
                       <button
                         onClick={(e) => { e.stopPropagation(); toggleSaved(co.slug || co.id, co.name); }}
                         style={{ background:"none", border:"none", color:T.gold, fontSize:18, cursor:"pointer", padding:"0 4px" }}
@@ -7570,7 +7578,7 @@ if (screen === "basket") {
                           const ps = computeScore(fullCo, profile);
                           const g = scoreGrade(ps, userRelevantRealCats(fullCo, profile));
                           const colors = { A:"#38C0CE", B:"#9CC98A", C:"#E8A04C", D:"#E8A04C", F:"#E0524D", "?":T.txt3 };
-                          return <div style={{ fontSize:14, fontWeight:700, color: colors[profile ? g : "?"], marginLeft:8 }}>{profile ? g : "?"}</div>;
+                          return <div style={{ fontSize:14, fontWeight:700, color: colors[g], marginLeft:8 }}>{g}</div>;
                         })()}
                         <i className="ti ti-chevron-right" style={{ fontSize:12, color:T.txt3 }} aria-hidden="true" />
                       </button>

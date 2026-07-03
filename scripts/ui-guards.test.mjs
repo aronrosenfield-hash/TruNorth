@@ -88,3 +88,27 @@ test("guard: index.html carries the INLINE native-WKWebView overflow safety net"
   assert.match(head, /<style>[^<]*overflow-x:\s*hidden/,
     "index.html <head> lost its INLINE overflow-x:hidden clamp — a wide card can shift the whole app sideways in native again.");
 });
+
+test("guard: no two brands share a name with CONTRADICTORY grades (the 'Exxon is a D and a B' bug)", () => {
+  // 2026-07-03 (diligence review): ExxonMobil shipped as exxon=F / exxon-mobil=D
+  // / exxonmobil=B — the SAME company at three grades. One search screenshot
+  // refutes the "objective public records" positioning. dedup-brands.mjs merged
+  // them (canonical = best-evidenced entry). This guard fails the build if any
+  // two index entries normalize to the same company name AND carry divergent
+  // non-"?" letter grades, so the class can never ship again. Same-name entries
+  // that AGREE (or are "?") are allowed — only contradictions fail.
+  const idx = JSON.parse(fs.readFileSync("public/data/index.json", "utf8"));
+  const arr = Array.isArray(idx) ? idx : (idx.companies || Object.values(idx));
+  const norm = (s) => String(s || "").toLowerCase().replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, " ").trim()
+    .replace(/\b(incorporated|inc|corp|corporation|company|co|holdings|holding|group|plc|ltd|limited|llc|the)\b/g, " ")
+    .replace(/\s+/g, "");
+  const byName = {};
+  for (const c of arr) { const n = norm(c.name); if (n && n.length >= 3) (byName[n] = byName[n] || []).push(c); }
+  const offenders = Object.entries(byName)
+    .map(([k, v]) => [k, [...new Set(v.filter(c => c.grade && c.grade !== "?").map(c => c.grade))], v])
+    .filter(([, grades]) => grades.length > 1)
+    .map(([k, grades, v]) => `  "${k}" → ${v.map(c => `${c.slug}=${c.grade}`).join(", ")}`);
+  assert.equal(offenders.length, 0,
+    `Duplicate companies with contradictory grades (run scripts/dedup-brands.mjs):\n${offenders.join("\n")}`);
+});

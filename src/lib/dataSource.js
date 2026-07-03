@@ -62,20 +62,34 @@ async function fetchData(path, { timeoutMs = 12_000 } = {}) {
 
 let indexPromise = null;
 let searchPromise = null;
+let aliasMap = {};   // legacy/duplicate slug -> canonical slug (slug-aliases.json)
 const detailCache = new Map();
 
 export function isSplitBundleEnabled() {
   return ENABLED;
 }
 
-/** Load the compact list of all companies. Renders the home screen quickly. */
+/** Legacy/merged slug → canonical slug. Loaded with the index. The client used
+ *  to ignore slug-aliases.json (it was pipeline-only), so merged duplicates and
+ *  old deep-links (e.g. /company/exxon → exxon-mobil after the 2026-07 dedup)
+ *  404'd to home. Now the client resolves them. */
+export function getAliasMap() { return aliasMap; }
+export function resolveAlias(slug) { return (slug && aliasMap[slug]) || slug; }
+
+/** Load the compact list of all companies. Renders the home screen quickly.
+ *  Also loads the small slug-alias map so deep-link resolution has it ready by
+ *  the time the company list renders (awaited together — aliases are tiny). */
 export async function loadCompanyIndex() {
   if (!indexPromise) {
-    indexPromise = fetchData("/data/index.json")
-      .then(r => {
+    indexPromise = Promise.all([
+      fetchData("/data/index.json").then(r => {
         if (!r.ok) throw new Error(`index.json HTTP ${r.status}`);
         return r.json();
-      });
+      }),
+      fetchData("/data/_meta/slug-aliases.json")
+        .then(r => (r.ok ? r.json() : {}))
+        .catch(() => ({})),
+    ]).then(([idx, aliases]) => { aliasMap = aliases || {}; return idx; });
   }
   return indexPromise;
 }
@@ -103,18 +117,19 @@ export async function loadSearchIndex() {
 /** Lazy-load full detail for one company. Cached in-memory for the session. */
 export async function loadCompanyDetail(slug) {
   if (!slug) return null;
-  if (detailCache.has(slug)) return detailCache.get(slug);
-  const p = fetchData(`/data/companies/${slug}.json`)
+  const canon = aliasMap[slug] || slug;   // redirect merged/legacy slugs to canonical
+  if (detailCache.has(canon)) return detailCache.get(canon);
+  const p = fetchData(`/data/companies/${canon}.json`)
     .then(r => {
-      if (!r.ok) throw new Error(`${slug}.json HTTP ${r.status}`);
+      if (!r.ok) throw new Error(`${canon}.json HTTP ${r.status}`);
       return r.json();
     })
     .catch(err => {
       // Don't poison the cache on transient failures
-      detailCache.delete(slug);
+      detailCache.delete(canon);
       throw err;
     });
-  detailCache.set(slug, p);
+  detailCache.set(canon, p);
   return p;
 }
 

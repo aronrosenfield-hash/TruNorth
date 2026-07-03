@@ -202,7 +202,7 @@ const SOURCES = ["SEC EDGAR", "FEC", "EPA ECHO", "OSHA", "OpenFDA", "CFPB", "NHT
 const FAQ = [
   {
     q:"Is it free?",
-    a:"Yes, the app is fully free to use. A one-time Pro upgrade unlocks personalized scoring across all categories, the complete source list per company, and supports the project.",
+    a:"Yes — the app is fully free to use. TruNorth Pro is an optional subscription ($14.99/year or $1.99/month, auto-renews, cancel anytime in your App Store settings) that unlocks personalized scoring across all nine categories, the full source list behind every grade, and supports the project.",
   },
   {
     q:"How do you score companies?",
@@ -495,6 +495,10 @@ export default function MarketingLanding({ onOpenPrivacy }) {
         </div>
       </Section>
 
+      {/* Methodology anchor — the footer "Methodology" link (#methodology)
+          targets this: the public-records source list + the "How do you score
+          companies?" FAQ directly below are the methodology on the landing. */}
+      <div id="methodology" />
       {/* ── Data sources strip ── */}
       <Section style={{ padding:"40px 24px", textAlign:"center" }}>
         <div style={{
