@@ -3970,6 +3970,9 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                   >
                     Know a verifiable record we missed? Report it <i className="ti ti-arrow-right" aria-hidden="true" />
                   </a>
+                  <div style={{ marginTop:11, paddingTop:11, borderTop:`1px solid ${T.border}` }}>
+                    <SuggestBrandButton query={enriched.name} context="graded" />
+                  </div>
                 </div>
               );
             }
@@ -3979,9 +3982,10 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                   <i className="ti ti-file-search" aria-hidden="true" style={{ marginRight:5 }} />
                   No public records found yet
                 </div>
-                <div style={{ fontSize:12, color:T.txt3, lineHeight:1.5 }}>
+                <div style={{ fontSize:12, color:T.txt3, lineHeight:1.5, marginBottom:10 }}>
                   None of our 200+ public-records sources currently report on this brand. Records are added as regulators publish them.
                 </div>
+                <SuggestBrandButton query={enriched.name} context="graded" />
               </div>
             );
           })()}
@@ -4932,7 +4936,7 @@ function PoliticalSpectrum({ lean }) {
 //   idle  → button "Suggest 'X'"
 //   form  → email input + Submit (email optional — can skip)
 //   done  → "Thanks — we'll email you when X is added" (or generic if no email)
-function SuggestBrandButton({ query }) {
+function SuggestBrandButton({ query, context = "added" }) {
   const prefilledEmail = getStoredEmail();
   const [phase, setPhase] = useState(() => {
     try {
@@ -4944,6 +4948,23 @@ function SuggestBrandButton({ query }) {
   });
   const [email, setEmail] = useState(prefilledEmail || "");
   const [loading, setLoading] = useState(false);
+  // Context adapts the copy: "added" = brand missing from the catalog (failed
+  // search); "graded" = brand is IN the catalog but has no records yet (the "?"
+  // dead-end). Both capture an email + demand signal → a guaranteed return event
+  // when the brand lands. (2026-07-03, retention Tier 3.)
+  const CTX = context === "graded" ? {
+    source: "brand_grade_notify", ev: "brand_grade_notify",
+    idle: `Notify me when we grade “${query}”`, idleIcon: "ti-bell",
+    formQ: <>Email me the moment <strong style={{ color:T.txt }}>&ldquo;{query}&rdquo;</strong> gets a grade? (Optional)</>,
+    doneEmail: `Done — we'll email you the moment “${query}” is graded`,
+    doneAnon: `Got it — we'll prioritize grading “${query}”`,
+  } : {
+    source: "failed_search_notify", ev: "failed_search_suggest",
+    idle: `Suggest “${query}” to be added`, idleIcon: "ti-plus",
+    formQ: <>Want us to email you when <strong style={{ color:T.txt }}>&ldquo;{query}&rdquo;</strong> is added? (Optional)</>,
+    doneEmail: `Thanks — we'll email you when “${query}” is added`,
+    doneAnon: `Thanks — we'll look at adding it`,
+  };
 
   // Persist the suggestion locally + fire analytics. Email is optional.
   const finalize = async (withEmail) => {
@@ -4958,13 +4979,13 @@ function SuggestBrandButton({ query }) {
         localStorage.setItem("tn_pendingSubmits", JSON.stringify(pending.slice(-50)));
       }
     } catch {}
-    track("failed_search_suggest", { query, hasEmail: !!withEmail });
+    track(CTX.ev, { query, hasEmail: !!withEmail });
 
     if (withEmail && email) {
       setLoading(true);
       // brand=<query> tag lets MailerLite segment + send a targeted email
       // to ONLY the people who asked for that brand when it lands.
-      await subscribeEmail(email, "failed_search_notify", {
+      await subscribeEmail(email, CTX.source, {
         brand: query,
         intendsBrandNotification: true,
       });
@@ -4979,7 +5000,7 @@ function SuggestBrandButton({ query }) {
     return (
       <div style={{ fontSize:13, color:"#38C0CE", display:"flex", alignItems:"center", justifyContent:"center", gap:6, padding:"4px 8px" }}>
         <i className="ti ti-mail-check" aria-hidden="true" />
-        Thanks — we'll email you when &ldquo;{query}&rdquo; is added
+        {CTX.doneEmail}
       </div>
     );
   }
@@ -4987,7 +5008,7 @@ function SuggestBrandButton({ query }) {
     return (
       <div style={{ fontSize:13, color:"#38C0CE", display:"flex", alignItems:"center", justifyContent:"center", gap:6 }}>
         <i className="ti ti-check" aria-hidden="true" />
-        Thanks — we'll look at adding it
+        {CTX.doneAnon}
       </div>
     );
   }
@@ -5000,7 +5021,7 @@ function SuggestBrandButton({ query }) {
         textAlign:"left",
       }}>
         <div style={{ fontSize:13, color:T.txt2, marginBottom:10, lineHeight:1.4 }}>
-          Want us to email you when <strong style={{ color:T.txt }}>&ldquo;{query}&rdquo;</strong> is added? (Optional)
+          {CTX.formQ}
         </div>
         <input
           type="email"
@@ -5054,8 +5075,8 @@ function SuggestBrandButton({ query }) {
       background:T.accentBg, color:T.accent2, fontSize:13, fontWeight:600, cursor:"pointer",
       display:"inline-flex", alignItems:"center", gap:6
     }}>
-      <i className="ti ti-plus" aria-hidden="true" />
-      Suggest &ldquo;{query}&rdquo; to be added
+      <i className={`ti ${CTX.idleIcon}`} aria-hidden="true" />
+      {CTX.idle}
     </button>
   );
 }
