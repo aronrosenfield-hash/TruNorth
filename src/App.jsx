@@ -3596,7 +3596,14 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                       const boxValue = custom != null ? custom : (typeof sel === "number" && !PRESETS.includes(sel) ? String(sel) : "");
                       const customActive = boxValue !== "";
                       const setPreset = (v) => setSwitchSheet({ ...switchSheet, amt: v, custom: undefined });
-                      const setCustom = (raw) => setSwitchSheet({ ...switchSheet, amt: raw === "" ? undefined : Math.max(0, Math.round(Number(raw) || 0)), custom: raw });
+                      const setCustom = (raw) => {
+                        // Clamp to a sane ceiling so an absurd entry can't blow up
+                        // the Ledger ($99,999,999 → "$1.2B/yr"). $100k/mo is far
+                        // above any real consumer spend. custom mirrors amt so the
+                        // box shows the clamped value.
+                        const n = raw === "" ? undefined : Math.min(100000, Math.max(0, Math.round(Number(raw) || 0)));
+                        setSwitchSheet({ ...switchSheet, amt: n, custom: n == null ? "" : String(n) });
+                      };
                       const commit = (amt) => { onCommitSwitch(enriched.slug || enriched.id, enriched.name, switchSheet.to, switchSheet.toName, amt); setSwitchSheet({ ...switchSheet, amt, done:true }); };
                       return (
                       <div style={{ marginTop:10, padding:"10px 12px", borderRadius:10, background:T.bg3, border:`1px solid ${T.border2}` }} onClick={(e) => e.stopPropagation()}>
@@ -7395,7 +7402,7 @@ if (screen === "basket") {
                     /* B68 (A+C): clash count leads; aligned/neutral are the
                        quiet sublines. The old aligned-% met every strong-
                        stance user with "0%" — see basketVerdict(). */
-                    <div style={{ flex:1, padding:"12px 14px", background:T.bg3, borderRadius:14, border:`1px solid ${bv.clashes.length ? "#4A1E1E" : T.border}` }}>
+                    <div style={{ flex:1, minWidth:0, overflow:"hidden", padding:"12px 14px", background:T.bg3, borderRadius:14, border:`1px solid ${bv.clashes.length ? "#4A1E1E" : T.border}` }}>
                       <div style={{ fontSize:10, color:T.txt3, textTransform:"uppercase", letterSpacing:"0.08em", fontWeight:600 }}>On the record</div>
                       <div style={{ display:"flex", alignItems:"baseline", gap:8 }}>
                         <span style={{ fontFamily:MONO, fontSize:26, fontWeight:700, color: bv.clashes.length ? "#E0524D" : T.txt }}>{bv.clashes.length}</span>
@@ -7406,13 +7413,20 @@ if (screen === "basket") {
                       </div>
                     </div>
                   )}
-                  {switches.length > 0 && (
-                    <div style={{ flex:1, padding:"12px 14px", background:T.bg3, borderRadius:14, border:`1px solid ${T.gold}` }}>
+                  {switches.length > 0 && (() => {
+                    const monStr = monthly ? `$${monthly.toLocaleString()}` : "—";
+                    // Shrink the big number for large totals so it never overflows
+                    // the card → horizontal overflow → native zoom (Aron hit this at
+                    // $10,000: the whole screen froze zoomed + cut off).
+                    const redFont = monStr.length >= 9 ? 17 : monStr.length >= 7 ? 21 : 26;
+                    return (
+                    <div style={{ flex:1, minWidth:0, overflow:"hidden", padding:"12px 14px", background:T.bg3, borderRadius:14, border:`1px solid ${T.gold}` }}>
                       <div style={{ fontSize:10, color:T.gold, textTransform:"uppercase", letterSpacing:"0.08em", fontWeight:600 }}>Redirected</div>
-                      <div style={{ fontFamily:MONO, fontSize:26, fontWeight:700, color:T.txt }}>{monthly ? `$${monthly.toLocaleString()}` : "—"}<span style={{ fontSize:11, color:T.txt3, fontWeight:500 }}>{monthly ? "/mo" : ""}</span></div>
-                      <div style={{ fontSize:10.5, color:T.txt3, marginTop:2 }}>{monthly ? `$${(monthly * 12).toLocaleString()}/yr · ` : ""}{switches.length} {switches.length === 1 ? "switch" : "switches"}</div>
+                      <div style={{ fontFamily:MONO, fontSize:redFont, fontWeight:700, color:T.txt, whiteSpace:"nowrap" }}>{monStr}<span style={{ fontSize:11, color:T.txt3, fontWeight:500 }}>{monthly ? "/mo" : ""}</span></div>
+                      <div style={{ fontSize:10.5, color:T.txt3, marginTop:2, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{monthly ? `$${(monthly * 12).toLocaleString()}/yr · ` : ""}{switches.length} {switches.length === 1 ? "switch" : "switches"}</div>
                     </div>
-                  )}
+                    );
+                  })()}
                 </div>
                 {switches.length > 0 && (
                   <div style={{ marginTop:10, marginBottom:10 }}>
@@ -7428,14 +7442,14 @@ if (screen === "basket") {
                       };
                       return (
                       <div key={i} style={{ display:"flex", alignItems:"center", gap:8, padding:"5px 2px", fontFamily:MONO, fontSize:11, color:T.txt2, borderBottom: i < arr.length - 1 ? `1px dashed ${T.border}` : "none" }}>
-                        <span style={{ color:T.txt3 }}>{new Date(sw.at).toLocaleDateString(undefined, { month:"short", day:"numeric" })}</span>
-                        <span style={{ overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap" }}>{sw.fromName} → <span style={{ color:T.accent2 }}>{sw.toName}</span></span>
+                        <span style={{ flexShrink:0, color:T.txt3 }}>{new Date(sw.at).toLocaleDateString(undefined, { month:"short", day:"numeric" })}</span>
+                        <span style={{ flex:1, minWidth:0, overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap" }}>{sw.fromName} → <span style={{ color:T.accent2 }}>{sw.toName}</span></span>
                         {isEd ? (
                           <span style={{ marginLeft:"auto", display:"inline-flex", alignItems:"center", gap:3 }}>
                             <span style={{ color:T.txt3 }}>$</span>
                             <input type="number" inputMode="numeric" min="0" autoFocus
                               value={editingSwitch.val}
-                              onChange={(e) => { const v = e.target.value; setEditingSwitch(s => ({ ...s, val: v === "" ? "" : Math.max(0, Math.round(Number(v) || 0)) })); }}
+                              onChange={(e) => { const v = e.target.value; setEditingSwitch(s => ({ ...s, val: v === "" ? "" : Math.min(100000, Math.max(0, Math.round(Number(v) || 0))) })); }}
                               onKeyDown={(e) => { if (e.key === "Enter") saveEdit(); }}
                               style={{ width:48, background:T.bg2, border:`1px solid ${T.gold}`, borderRadius:6, color:T.gold, fontFamily:MONO, fontSize:11, padding:"3px 5px", outline:"none" }} />
                             <button aria-label="Save amount" onClick={saveEdit} style={{ background:"none", border:"none", color:"#38C0CE", cursor:"pointer", padding:"2px", fontSize:15, display:"inline-flex" }}><i className="ti ti-check" aria-hidden="true" /></button>
