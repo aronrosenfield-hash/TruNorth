@@ -6825,17 +6825,25 @@ if (screen === "basket") {
             return (
               <div style={{ padding: "10px 16px 24px", display: "flex", flexDirection: "column", gap: 12 }}>
                 {/* 1 · COMPASS CARD */}
-                {!profile ? (
-                  <button onClick={() => { track("quiz_started", { from: "today_compass_card" }); setScreen("quiz"); }}
+                {!profile ? (() => {
+                  // Resume affordance: a mid-Match draft (DRAFT_V===2, idx>0)
+                  // resumes correctly, but the card read "Start the Match" — which
+                  // looks like start-fresh (diligence). Surface the progress.
+                  let draftIdx = 0;
+                  try { const d = JSON.parse(localStorage.getItem("tn_match_draft") || "{}"); if (d.v === 2 && Number(d.idx) > 0) draftIdx = Number(d.idx); } catch {}
+                  const resuming = draftIdx > 0;
+                  return (
+                  <button onClick={() => { track("quiz_started", { from: "today_compass_card", resuming }); setScreen("quiz"); }}
                     style={{ ...card, textAlign: "left", cursor: "pointer", display: "flex", alignItems: "center", gap: 14 }}>
                     <CompassSeal weights={null} size={64} />
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontFamily: SERIF, fontSize: 19, color: T.txt, lineHeight: 1.25 }}>Find your bearings.</div>
-                      <div style={{ fontSize: 12, color: T.txt2, marginTop: 4, lineHeight: 1.45 }}>A few quick choices shape your compass — then every brand answers to it.</div>
-                      <div style={{ fontSize: 11, color: T.accent2, fontWeight: 600, marginTop: 6 }}>Start the Match · 45 seconds →</div>
+                      <div style={{ fontFamily: SERIF, fontSize: 19, color: T.txt, lineHeight: 1.25 }}>{resuming ? "Pick up where you left off." : "Find your bearings."}</div>
+                      <div style={{ fontSize: 12, color: T.txt2, marginTop: 4, lineHeight: 1.45 }}>{resuming ? "Your Match is saved — finish setting your compass." : "A few quick choices shape your compass — then every brand answers to it."}</div>
+                      <div style={{ fontSize: 11, color: T.accent2, fontWeight: 600, marginTop: 6 }}>{resuming ? `Resume the Match · ${draftIdx} of 11 done →` : "Start the Match · 45 seconds →"}</div>
                     </div>
                   </button>
-                ) : savedCos.length === 0 ? (
+                  );
+                })() : savedCos.length === 0 ? (
                   <button onClick={() => setTab("search")}
                     style={{ ...card, textAlign: "left", cursor: "pointer", display: "flex", alignItems: "center", gap: 14 }}>
                     <CompassSeal weights={profile.weights} size={64} />
