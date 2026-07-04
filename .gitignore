@@ -63,3 +63,7 @@ data/raw/ofccp-eeo1/*.xlsx
 # they were 398MB tracked in git, deployed to Vercel, and bundled into the
 # 521MB iOS .ipa. Fetchers re-download on cache miss (annual/quarterly).
 public/data/_cache/
+
+# stale dev artifacts (2026-07-04 cleanup)
+*.bak
+dev.log
