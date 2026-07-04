@@ -5445,6 +5445,20 @@ useEffect(() => {
     track("switch_committed", { from, to, monthly: Number(monthly) || 0 });
   }, []);
 
+  // Remove a logged switch (diligence: the Ledger was edit-only, so a mis-logged
+  // switch was permanent and the "Redirected" total could only ever grow — which
+  // made the headline stat untrustworthy, killing the retention loop it powers).
+  const removeSwitch = useCallback((from, to) => {
+    try {
+      const list = JSON.parse(localStorage.getItem("tn_switches") || "[]");
+      localStorage.setItem("tn_switches", JSON.stringify(list.filter(s => !(s && s.from === from && s.to === to))));
+    } catch {}
+    track("switch_removed", { from, to });
+    // The Ledger reads tn_switches from localStorage on render — bump savedSet's
+    // reference (content unchanged) to force a re-render + recompute the total.
+    setSavedSet(prev => new Set(prev));
+  }, []);
+
   // 2026-06-01: scroll to top whenever the active tab changes. Bottom-nav
   // tap = "fresh view" intent; preserving scroll across tabs felt buggy.
   const tabScrollRef = React.useRef(null);
@@ -6843,11 +6857,24 @@ if (screen === "basket") {
                     </div>
                     <div style={{ fontFamily: MONO, fontSize: 11, color: T.txt3, marginTop: 8 }}>tap for the receipt ↗</div>
                   </button>
+                ) : savedCos.length === 0 ? (
+                  /* Empty basket: don't show a "nothing happened" watch card to a
+                     brand-new user — it reads as monitoring that hasn't started
+                     (diligence finding). Sell the LOOP instead: saving a brand
+                     starts the watch, and its record changes land here first. */
+                  <button onClick={() => { track("watch_preview_clicked", { from: "today" }); setTab("search"); }}
+                    style={{ ...card, borderLeft: `3px solid ${T.gold}`, textAlign: "left", cursor: "pointer", width: "100%" }}>
+                    <div style={{ fontFamily: MONO, fontSize: 10, color: T.gold, letterSpacing: "0.12em", marginBottom: 7 }}>YOUR RECORD WATCH</div>
+                    <div style={{ fontFamily: SERIF, fontSize: 18, color: T.txt, lineHeight: 1.32 }}>
+                      Save a brand you buy — the moment its public record changes, you'll see it here first.
+                    </div>
+                    <div style={{ fontSize: 11, color: T.accent2, fontWeight: 600, marginTop: 8 }}>Find a brand to watch →</div>
+                  </button>
                 ) : (
                   <div style={{ ...card, borderLeft: `3px solid ${T.border2}` }}>
                     <div style={{ fontFamily: MONO, fontSize: 10, color: T.txt3, letterSpacing: "0.12em", marginBottom: 7 }}>THIS WEEK ON THE RECORD</div>
                     <div style={{ fontFamily: SERIF, fontSize: 17, color: T.txt2, lineHeight: 1.35 }}>
-                      We're watching {savedCos.length ? "your basket" : "the records"} — no grade changes this week.
+                      We're watching your basket — no grade changes this week.
                     </div>
                     <div style={{ fontSize: 11, color: T.txt3, marginTop: 7 }}>Records refresh nightly across 200+ public sources.</div>
                   </div>
@@ -7398,11 +7425,26 @@ if (screen === "basket") {
                             <button aria-label="Save amount" onClick={saveEdit} style={{ background:"none", border:"none", color:"#38C0CE", cursor:"pointer", padding:"2px", fontSize:15, display:"inline-flex" }}><i className="ti ti-check" aria-hidden="true" /></button>
                           </span>
                         ) : (
-                          <button onClick={() => setEditingSwitch({ from: sw.from, to: sw.to, val: sw.monthly || 0 })}
-                            aria-label="Edit monthly amount"
-                            style={{ marginLeft:"auto", background:"none", border:"none", color:T.gold, fontFamily:MONO, fontSize:11, cursor:"pointer", padding:0, display:"inline-flex", alignItems:"center", gap:3 }}>
-                            {sw.monthly ? `$${sw.monthly.toLocaleString()}/mo` : "add $"} <i className="ti ti-pencil" style={{ fontSize:10, opacity:0.6 }} aria-hidden="true" />
-                          </button>
+                          <span style={{ marginLeft:"auto", display:"inline-flex", alignItems:"center", gap:11 }}>
+                            <button onClick={() => setEditingSwitch({ from: sw.from, to: sw.to, val: sw.monthly || 0 })}
+                              aria-label="Edit monthly amount"
+                              style={{ background:"none", border:"none", color:T.gold, fontFamily:MONO, fontSize:11, cursor:"pointer", padding:0, display:"inline-flex", alignItems:"center", gap:3 }}>
+                              {sw.monthly ? `$${sw.monthly.toLocaleString()}/mo` : "add $"} <i className="ti ti-pencil" style={{ fontSize:10, opacity:0.6 }} aria-hidden="true" />
+                            </button>
+                            <button
+                              onClick={async () => {
+                                const ok = await confirm({
+                                  title: "Remove this switch?",
+                                  body: `${sw.fromName} → ${sw.toName}${sw.monthly ? ` · $${sw.monthly.toLocaleString()}/mo` : ""} will come off your Redirected total.`,
+                                  confirmLabel: "Remove", cancelLabel: "Keep", danger: true,
+                                });
+                                if (ok) removeSwitch(sw.from, sw.to);
+                              }}
+                              aria-label={`Remove switch ${sw.fromName} to ${sw.toName}`}
+                              style={{ background:"none", border:"none", color:T.txt3, cursor:"pointer", padding:0, display:"inline-flex", fontSize:13 }}>
+                              <i className="ti ti-trash" aria-hidden="true" />
+                            </button>
+                          </span>
                         )}
                       </div>
                       );
