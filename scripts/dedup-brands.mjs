@@ -25,7 +25,13 @@ const ALIAS_PATH = "public/data/_meta/slug-aliases.json";
 
 // canonical ← [losers].  name = corrected display name for the canonical.
 const MERGES = [
-  { canonical: "exxon-mobil", losers: ["exxon", "exxonmobil"], name: "ExxonMobil" },
+  // ExxonMobil: the F/D/B triplicate + the ungraded division entities that
+  // cluttered the "Exxon" search under the real ExxonMobil (Aron flagged, 2026-
+  // 07-04). All are ExxonMobil (realCats=0, no scoreable data) → alias to parent.
+  { canonical: "exxon-mobil", losers: ["exxon", "exxonmobil",
+    "exxonmobil-fuels-and-lubricants-company",
+    "exxonmobil-fuels-lubricants-and-specialties-marketing-company",
+    "exxonmobil-refining-and-supply-company"], name: "ExxonMobil" },
   { canonical: "southern-copper-corp", losers: ["southern-copper"], name: "Southern Copper" },
 ];
 
