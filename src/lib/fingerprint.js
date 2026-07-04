@@ -103,13 +103,23 @@ export function computeFingerprint(profile) {
   const spread = sorted[0][1] - sorted[3][1];
   const isBalanced = spread <= 1;
 
+  // Political archetype only when the user's OTHER stances don't CONTRADICT the
+  // lean — a left-leaning user who is anti-DEI + pro-gun + anti-union is cross-
+  // pressured and shouldn't be labeled "The Progressive Consumer" (diligence:
+  // archetype mislabel). Left stances = +1 (pro-DEI / pro-union / avoid-guns),
+  // right = -1; the political label needs the stance cluster to agree (or net-neutral).
+  const stanceScore =
+    (profile.deiLean === "pro" ? 1 : profile.deiLean === "anti" ? -1 : 0) +
+    (profile.unionSupport === "pro" ? 1 : profile.unionSupport === "anti" ? -1 : 0) +
+    (profile.guns === "avoid" ? 1 : profile.guns === "support" ? -1 : 0);
+
   // Pick archetype
   let arch;
   if (isBalanced) {
     arch = ARCHETYPES.find(a => a.id === "balanced-skeptic");
-  } else if (profile.lean === "left" && top[1] >= 4) {
+  } else if (profile.lean === "left" && top[1] >= 4 && stanceScore >= 0) {
     arch = ARCHETYPES.find(a => a.id === "progressive-conscious");
-  } else if (profile.lean === "right" && top[1] >= 4) {
+  } else if (profile.lean === "right" && top[1] >= 4 && stanceScore <= 0) {
     arch = ARCHETYPES.find(a => a.id === "conservative-conscious");
   } else if (top[0] === "climate") {
     // Pragmatist if second axis is also ≥4, climate-first otherwise
