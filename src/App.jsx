@@ -3261,7 +3261,9 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
           <div style={{ fontSize:13, color:T.txt3, marginTop:1, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{company.cat}</div>
         </div>
         <div style={{ flexShrink:0, display:"flex", alignItems:"center", gap:6 }}>
-          {!isPaid && <i className="ti ti-lock" style={{fontSize:11,color:T.txt3}} aria-hidden="true" />}
+          {/* No padlock next to the grade — free users DO see the letter grade;
+              a lock here wrongly implied the grade itself was locked (diligence).
+              Pro is signaled by the Upgrade button + the gated detail rows. */}
           {(() => {
             const gradeRowColors = {
               A: { bg:"#0E2126", border:"#1E444A", text:"#38C0CE" },
