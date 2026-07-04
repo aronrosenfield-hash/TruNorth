@@ -4499,11 +4499,18 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                 onClick={async (e) => {
                   e.stopPropagation();
                   const slug = company.slug || company.id;
-                  const myGrade = profile && grade && grade !== "?" ? grade : null;
-                  const url = `https://www.trunorthapp.com/company/${slug}?${new URLSearchParams({ ...(myGrade ? { g: myGrade } : {}), utm_source: "share", utm_medium: "brand_card" })}`;
+                  // Retention Tier 3 (2026-07-03): lead the share with the GRADE +
+                  // a real receipt — the "records, not opinions" proof is what
+                  // travels (baseline grade included now that un-quizzed shows it).
+                  const _g = grade && grade !== "?" ? grade : null;
+                  const _r0 = receiptLines(enriched)?.[0];
+                  const _topReceipt = _r0 ? (_r0.src + (_r0.date ? " (" + _r0.date + ")" : "") + ": " + _r0.text) : null;
+                  const url = `https://www.trunorthapp.com/company/${slug}?${new URLSearchParams({ ...(_g ? { g: _g } : {}), utm_source: "share", utm_medium: "brand_card" })}`;
                   const shareData = {
-                    title: `${company.name} on TruNorth`,
-                    text: myGrade ? `${company.name} grades ${myGrade} on my values. See what it grades on yours:` : `See how ${company.name} scores on what matters to you:`,
+                    title: _g ? (company.name + ": " + _g + " on TruNorth") : (company.name + " on TruNorth"),
+                    text: _g
+                      ? (company.name + ": " + _g + " on TruNorth" + (_topReceipt ? " — " + _topReceipt : "") + ". Every grade traces to a public record, not opinions.")
+                      : (company.name + " — graded only from public records, not opinions. See the receipts on TruNorth."),
                     url,
                   };
                   let method = "clipboard";
@@ -4511,7 +4518,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                     if (navigator.share && navigator.canShare?.(shareData) !== false) { await navigator.share(shareData); method = "native_share"; }
                     else if (navigator.clipboard?.writeText) { await navigator.clipboard.writeText(url); }
                   } catch (err) { if (err?.name === "AbortError") method = "cancelled"; }
-                  track("brand_card_shared", { slug, grade: myGrade, method });
+                  track("brand_card_shared", { slug, grade: _g, method });
                 }}
                 style={{ flex:1, padding:10, borderRadius:8, fontSize:12, fontWeight:600, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:6, background:T.bg3, border:`1px solid ${T.border}`, color:T.txt2 }}
               >
@@ -4537,13 +4544,13 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
             </div>
           )}
 
-          {/* Share button — UX 2A. Uses Web Share API on iOS Safari/PWA;
-              falls back to copying a URL to the clipboard on desktop browsers.
-              Phase 5.ag (item I): every share URL now carries UTM params +
-              a per-user `from` hash so we can attribute K-factor by channel
-              and by user. Channel inferred from navigator.share availability;
-              `from` is a short stable hash of the user's slug-history so we
-              can spot which users drive the most shares without leaking PII. */}
+          {/* Share button — UX 2A FALLBACK. Only rendered when the Save/Compare
+              action row above (which already has its own Share) is absent, so a
+              card never shows two Share buttons (2026-07-03). Web Share API on iOS
+              Safari/PWA; clipboard fallback on desktop. Phase 5.ag: the share URL
+              carries UTM + a per-user `from` hash for K-factor by channel/user
+              (no PII). */}
+          {!(onToggleSave || onToggleCompare) && (
           <div style={{ display:"flex", gap:8 }}>
             <button
               onClick={async (e) => {
@@ -4564,11 +4571,19 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                   ...(fromHash ? { from: fromHash } : {}),
                 });
                 const shareUrl = `https://www.trunorthapp.com/company/${encodeURIComponent(enriched.slug || enriched.id)}?${utm.toString()}`;
+                // 2026-07-03 (retention Tier 3): lead the share with the GRADE +
+                // a real receipt. The "records, not opinions" wedge is most viral
+                // when the share shows the PROOF, not a generic "check out their
+                // record." receiptLines() is the same citation the card renders.
+                const _r0 = receiptLines(enriched)?.[0];
+                const _topReceipt = _r0 ? (_r0.src + (_r0.date ? " (" + _r0.date + ")" : "") + ": " + _r0.text) : null;
+                const _g = grade && grade !== "?" ? grade : null;
+                const _shareText = _g
+                  ? (enriched.name + ": " + _g + " on TruNorth" + (_topReceipt ? " — " + _topReceipt : "") + ". Every grade traces to a public record, not opinions.")
+                  : (enriched.name + " — graded only from public records, not opinions. See the receipts on TruNorth.");
                 const shareData = {
-                  title: `${enriched.name} on TruNorth`,
-                  text:  profile
-                    ? `Check out ${enriched.name}'s record on TruNorth — politics, labor, environment, and more.`
-                    : `${enriched.name} — see their political donations, labor record, and environmental data on TruNorth.`,
+                  title: _g ? (enriched.name + ": " + _g + " on TruNorth") : (enriched.name + " on TruNorth"),
+                  text:  _shareText,
                   url:   shareUrl,
                 };
                 let method = "unknown";
@@ -4603,6 +4618,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
               Share
             </button>
           </div>
+          )}
 
 
         </div>
