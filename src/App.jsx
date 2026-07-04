@@ -16,6 +16,7 @@ import { getCategoryFlagRender, isCategoryExcludedByFlags } from "./lib/scoringF
 import { computeFingerprint, persistFingerprint, getStoredFingerprint } from "./lib/fingerprint";
 import { useConfirm, usePrompt, useAlert } from "./components/ConfirmModal";
 import { subscribeEmail, getStoredEmail, deleteAccountData } from "./lib/marketing";
+import { writeWidgetSnapshot } from "./lib/widget";
 import { T, SERIF, MONO, GRADE_COLORS } from "./lib/theme";
 import { tapMedium, notifySuccess } from "./lib/haptics";
 import CompassSeal, { COMPASS_AXES } from "./CompassSeal";
@@ -5557,6 +5558,14 @@ useEffect(() => {
         const handle = await App.addListener("appUrlOpen", (event) => {
           try {
             const url = new URL(event.url);
+            // Widget / deep-link scan intent (trunorth://scan?src=widget or ?scan=1)
+            // → open the in-store scanner. The widget's whole value is one tap to
+            // the shelf, so it routes here.
+            if (url.host === "scan" || url.hostname === "scan" || /^\/scan\b/.test(url.pathname) || url.searchParams.get("scan") === "1") {
+              setShowScanner(true);
+              track("scanner_open", { tab: "deeplink", src: url.searchParams.get("src") || "deeplink" });
+              return;
+            }
             // /company/<slug> or /c/<slug>
             const m = url.pathname.match(/^\/(?:company|c)\/([^/?#]+)/);
             if (m && m[1]) {
@@ -5769,6 +5778,24 @@ useEffect(() => {
       const keys = Object.keys(hist).sort().slice(-12);
       localStorage.setItem("tn_alignHist", JSON.stringify(Object.fromEntries(keys.map(k => [k, hist[k]]))));
     } catch {}
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [companies, profile, savedSet]);
+
+  // Keep the Home/Lock-Screen widget's basket snapshot fresh (native-only; a
+  // silent no-op on web and until the App Group is wired — see lib/widget.js +
+  // docs/widget-setup.md). Writes on any basket/profile change.
+  useEffect(() => {
+    if (!companies) return;
+    const savedCos = Array.from(savedSet).map(s => companies.find(c => (c.slug || c.id) === s)).filter(Boolean);
+    const bv = basketVerdict(savedCos, profile, companies);
+    const { pct } = basketAlignment(savedCos, profile);
+    writeWidgetSnapshot({
+      pct,
+      clashes: bv.clashes.length,
+      graded: bv.graded,
+      savedCount: savedSet.size,
+      topClash: bv.clashes[0]?.co?.name || null,
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [companies, profile, savedSet]);
 
