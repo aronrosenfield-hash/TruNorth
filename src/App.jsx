@@ -513,7 +513,19 @@ function BarcodeScanner({ onClose, onMatch, onSearch, companies }) {
                 <i className="ti ti-camera-off" style={{ fontSize:34, color:T.rep, marginBottom:10 }} aria-hidden="true" />
                 <div style={{ fontSize:15, fontWeight:600, marginBottom:6 }}>Can't scan</div>
                 <div style={{ fontSize:12, color:"rgba(255,255,255,0.75)", marginBottom:18, maxWidth:300, lineHeight:1.5 }}>{error}</div>
-                <button onClick={onClose} style={{ padding:"10px 18px", borderRadius:10, border:"none", background:"#fff", color:"#000", fontSize:13, fontWeight:700, cursor:"pointer" }}>Close</button>
+                {/* Recovery, not a dead-end: a denied/absent camera used to offer
+                    only "Close." Let the user pivot straight to name search. */}
+                <div style={{ display:"flex", flexDirection:"column", gap:10, width:"100%", maxWidth:280 }}>
+                  {onSearch && (
+                    <button
+                      onClick={() => onSearch("")}
+                      style={{ padding:"11px 18px", borderRadius:10, border:"none", background:T.accent, color:"#fff", fontSize:13, fontWeight:700, cursor:"pointer", minHeight:44, display:"inline-flex", alignItems:"center", justifyContent:"center", gap:6 }}
+                    >
+                      <i className="ti ti-search" aria-hidden="true" /> Search by name instead
+                    </button>
+                  )}
+                  <button onClick={onClose} style={{ padding:"10px 18px", borderRadius:10, border:"none", background:onSearch ? "rgba(255,255,255,0.12)" : "#fff", color:onSearch ? "#fff" : "#000", fontSize:13, fontWeight:700, cursor:"pointer", minHeight:44 }}>Close</button>
+                </div>
               </>
             )}
           </div>
