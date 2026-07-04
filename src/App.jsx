@@ -2565,9 +2565,11 @@ function CompanyLogo({ company, size = 36, rounded = 10 }) {
   void domain; // retained for guessDomain callers elsewhere
   const [providerIdx, setProviderIdx] = React.useState(0);
   const [errored, setErrored] = React.useState(providers.length === 0);
+  const [loaded, setLoaded] = React.useState(false);
   React.useEffect(() => {
     setErrored(providers.length === 0);
     setProviderIdx(0);
+    setLoaded(false);
   }, [company?.slug || company?.id, company?.logoUrl]); // eslint-disable-line react-hooks/exhaustive-deps
   const initialsAvatar = (
     <div style={{
@@ -2581,22 +2583,30 @@ function CompanyLogo({ company, size = 36, rounded = 10 }) {
   return (
     <div style={{
       width:size, height:size, borderRadius:rounded,
-      background:"#F4F4F5", flexShrink:0,
+      // Show initials on the dark tile until the logo actually decodes. A light
+      // #F4F4F5 tile while the (lazy) image was still pending read as a blank /
+      // broken card (Aron saw empty white squares in his Basket). Swap to the
+      // light logo tile only once the image loads.
+      background: loaded ? "#F4F4F5" : T.bg3, flexShrink:0, position:"relative",
       display:"flex", alignItems:"center", justifyContent:"center",
       overflow:"hidden", border:`1px solid ${T.border}`,
     }} aria-hidden="true">
+      {!loaded && (
+        <span style={{ position:"absolute", inset:0, display:"flex", alignItems:"center", justifyContent:"center", fontSize:Math.max(10, Math.round(size*0.30)), fontWeight:700, color:T.txt2 }}>{company.init}</span>
+      )}
       <img
         src={providers[providerIdx]}
         alt=""
         width={size}
         height={size}
         loading="lazy"
+        onLoad={() => setLoaded(true)}
         onError={() => {
           // Try next provider; fall back to initials when exhausted.
-          if (providerIdx + 1 < providers.length) setProviderIdx(providerIdx + 1);
+          if (providerIdx + 1 < providers.length) { setProviderIdx(providerIdx + 1); setLoaded(false); }
           else setErrored(true);
         }}
-        style={{ width:"86%", height:"86%", objectFit:"contain", filter:"drop-shadow(0 0 0.5px rgba(0,0,0,0.5))" }}
+        style={{ width:"86%", height:"86%", objectFit:"contain", filter:"drop-shadow(0 0 0.5px rgba(0,0,0,0.5))", opacity: loaded ? 1 : 0, transition:"opacity 0.15s ease" }}
       />
     </div>
   );
