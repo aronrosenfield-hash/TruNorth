@@ -6624,7 +6624,7 @@ if (screen === "basket") {
               onClick={()=>setTab("account")}
               aria-label="Account"
               style={{
-                width:40, height:40, borderRadius:"50%",
+                width:44, height:44, minWidth:44, minHeight:44, borderRadius:"50%",
                 background: tab === "account" ? T.accentBg : "transparent",
                 border:`1px solid ${T.accent}`,
                 color: T.accent2,
