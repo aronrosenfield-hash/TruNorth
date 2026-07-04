@@ -7595,10 +7595,17 @@ if (screen === "basket") {
                   const changeCount = weeklyChanges?.changes
                     ? weeklyChanges.changes.filter(c => c.slug === slugKey).length
                     : 0;
+                  // Row is a div role="button", NOT a <button>, because it nests
+                  // the ★ remove <button> — button-in-button is invalid HTML +
+                  // a React hydration error. onKeyDown guards on e.target ===
+                  // e.currentTarget so a focused child button doesn't double-fire.
+                  const openThis = () => openBrand(co.slug || co.id, { trackEvent: "library_saved_clicked", trackProps: { change_count: changeCount } });
                   return (
-                    <button
+                    <div
                       key={co.slug || co.id}
-                      onClick={() => openBrand(co.slug || co.id, { trackEvent: "library_saved_clicked", trackProps: { change_count: changeCount } })}
+                      role="button" tabIndex={0}
+                      onClick={openThis}
+                      onKeyDown={(e) => { if ((e.key === "Enter" || e.key === " ") && e.target === e.currentTarget) { e.preventDefault(); openThis(); } }}
                       style={{ display:"flex", alignItems:"center", gap:10, padding:"10px 16px", background:T.bg2, border:"none", borderBottom:`1px solid ${T.border}`, cursor:"pointer", textAlign:"left", width:"100%" }}
                     >
                       <CompanyLogo company={co} size={32} />
@@ -7620,7 +7627,7 @@ if (screen === "basket") {
                         aria-label="Remove from basket"
                       >★</button>
                       <i className="ti ti-chevron-right" style={{ fontSize:12, color:T.txt3 }} aria-hidden="true" />
-                    </button>
+                    </div>
                   );
                 })}
               </div>
