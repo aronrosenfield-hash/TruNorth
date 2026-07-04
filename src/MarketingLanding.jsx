@@ -90,7 +90,7 @@ const DEMO_BRANDS = [
   // "landing demo grades match data" guard in scripts/ui-guards.test.mjs so
   // the marketing samples can never drift from the app again.
   { name:"Costco",  meta:"Retail · Warehouse",    grade:"B", color:C.good, bg:"#1a3a2a", emoji:"🛍️" },
-  { name:"Tesla",   meta:"Automotive · EVs",      grade:"C", color:C.warn, bg:"#2e2a1a", emoji:"🚗" },
+  { name:"Tesla",   meta:"Automotive · EVs",      grade:"B", color:C.good, bg:"#1a3a2a", emoji:"🚗" },
   { name:"Shein",   meta:"Apparel · Fast Fashion", grade:"C", color:C.warn, bg:"#2e2a1a", emoji:"👗" },
 ];
 

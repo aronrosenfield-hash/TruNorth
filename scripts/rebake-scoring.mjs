@@ -335,10 +335,14 @@ export function baseScoreCat(k, v, d) {
     return null;
   }
   if (k === "charity") {
-    // V3/R3: positive band spread 60–100 by IRS-990 grant totals; enum-only
-    // positives (documented but unquantified giving) sit at 85.
+    // V3/R3: positive band spread 60–100 by IRS-990 grant totals. Enum-only
+    // positives (documented giving but NO quantified IRS-990 total) sit at 65,
+    // not 85 (2026-07-04 diligence + Aron's call). The flat 85 was ~46% of all
+    // charity scores and upside-only, inflating grades on unverified "positive"
+    // enums (it floated polluters toward a B). 65 = "documented but unquantified"
+    // — still positive, but not a full record-backed 85.
     if (["positive", "excellent", "strong", "good", "active_giving"].includes(val)) {
-      return charityGivingScore(d, REVENUE[d?.slug]?.revenue) ?? 85;
+      return charityGivingScore(d, REVENUE[d?.slug]?.revenue) ?? 65;
     }
     if (val === "mixed") return 50;
     if (["negative", "poor", "below average", "very poor"].includes(val)) return 8;
