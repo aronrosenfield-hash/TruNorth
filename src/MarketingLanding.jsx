@@ -209,7 +209,7 @@ const FAQ = [
   },
   {
     q:"How do you score companies?",
-    a:"We only use public records: campaign-finance filings, environmental enforcement actions, labor citations, SEC disclosures, regulatory recalls, and similar primary sources. Every grade can be traced back to its inputs in the in-app Sources tab. No guesses, no scraped opinions.",
+    a:"We only use public records: campaign-finance filings, environmental enforcement actions, labor citations, SEC disclosures, regulatory recalls, and similar primary sources. Every grade traces back to its inputs — Pro members see the per-grade citations on each brand. No guesses, no scraped opinions.",
   },
   {
     q:"Why no streaks or notifications?",
@@ -221,11 +221,11 @@ const FAQ = [
   },
   {
     q:"Where do the scores come from?",
-    a:"Each company profile has a Sources tab listing every primary record we drew from, with publication dates. If a score looks wrong to you, you can see exactly why we gave it.",
+    a:"Every grade is built only from public records. Pro members get a per-grade citation list on each company — every primary record we drew from, with publication dates — so you can see exactly why a grade was given.",
   },
   {
     q:"Can I correct wrong data?",
-    a:"Yes. The Submit tab inside the app lets you flag a mistake or propose a correction. Every submission is reviewed before it changes a grade.",
+    a:"Yes — tap 'Report incorrect info' on any company's profile to flag a mistake or propose a correction. Every submission is reviewed before it changes a grade.",
   },
 ];
 

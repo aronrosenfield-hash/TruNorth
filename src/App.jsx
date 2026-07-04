@@ -1542,7 +1542,7 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
           <div style={{ fontSize:12, color:T.txt3, lineHeight:1.6, maxWidth:300, margin:"0 auto" }}>
             {PRO_WAITLIST_MODE
               ? "We're finalizing payments. Join the waitlist — the first 500 get founder pricing forever ($9/year)."
-              : "Free users see company names and badges. Subscribe to unlock full breakdowns, live updates, and personalized scores."}
+              : "Free gives you a personalized letter grade on every brand. Pro unlocks the exact /100 score, full breakdowns, all 9 categories, and the public records behind each grade."}
           </div>
         </div>
 
@@ -1558,10 +1558,10 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
             <div style={{ fontSize:11, fontWeight:700, color:T.gold, textTransform:"uppercase", letterSpacing:0.6, textAlign:"center" }}>Pro</div>
           </div>
           {[
-            { feat: "View brand names + grade",       free: true,  pro: true  },
+            { feat: "Personalized letter grade",      free: true,  pro: true  },
             { feat: "45-second values Match",          free: true,  pro: true  },
             { feat: "Browse 12,000+ brands (2,800+ graded)", free: true,  pro: true  },
-            { feat: "Personalized scores",            free: false, pro: true, hi: true },
+            { feat: "Exact /100 numeric score",       free: false, pro: true, hi: true },
             { feat: "Full grade breakdowns",          free: false, pro: true  },
             { feat: "All 9 value categories",         free: false, pro: true  },
             { feat: "Per-grade citations",            free: false, pro: true  },
