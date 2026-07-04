@@ -6803,7 +6803,11 @@ if (screen === "basket") {
             // person actually shops (no "Professional Services" staffing
             // firms), with a documentation floor (≥3 record categories) so
             // the shelf surfaces household names, not thin-file mid-caps.
-            const SHELF_BUCKETS = ["Food & Beverage", "Retail", "Apparel & Fashion", "Beauty & Personal Care", "Software & Technology", "Automotive", "Furniture & Home", "Entertainment & Media", "Hospitality & Travel", "Sports & Fitness", "Pet Care"];
+            // "Software & Technology" dropped from the daily shelf lead — it
+            // surfaced B2B/enterprise brands (Atlassian, NVIDIA) that read as
+            // off-positioning for a consumer-shopping app (diligence). Consumer-
+            // shelf buckets only; tech is still reachable via search/browse.
+            const SHELF_BUCKETS = ["Food & Beverage", "Retail", "Apparel & Fashion", "Beauty & Personal Care", "Automotive", "Furniture & Home", "Entertainment & Media", "Hospitality & Travel", "Sports & Fitness", "Pet Care"];
             const day = Math.floor(Date.now() / 864e5);
             const shelfPool = deduped.filter(c => c.consumerFacing !== false && c.overall != null && (c.realCats ?? 0) >= 3);
             const present = SHELF_BUCKETS.filter(b => shelfPool.some(c => getBucket(c.cat || "") === b));
