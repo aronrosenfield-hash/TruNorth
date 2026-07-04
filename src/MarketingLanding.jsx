@@ -160,7 +160,7 @@ const VALUE_PROPS = [
   {
     icon:"✦",
     title:"Personalized to your values",
-    body:"A 30-second quiz weights the nine categories to what you actually care about. The same brand can earn a different grade for you than for your neighbor — and that's the point.",
+    body:"A 45-second quiz weights the nine categories to what you actually care about. The same brand can earn a different grade for you than for your neighbor — and that's the point.",
   },
   {
     icon:"⌕",
@@ -193,7 +193,7 @@ function ValueCard({ icon, title, body }) {
 
 // ─── how it works ───────────────────────────────────────────────────────────
 const STEPS = [
-  { n:1, title:"Take the 30-second quiz",  body:"Pick the values that matter to you. We weight categories accordingly." },
+  { n:1, title:"Take the 45-second quiz",  body:"Pick the values that matter to you. We weight categories accordingly." },
   { n:2, title:"See personalized grades",  body:"Every brand gets a letter grade just for you, with a full source breakdown." },
   { n:3, title:"Shop with confidence",     body:"Search or scan. Find better alternatives in one tap. Done." },
 ];

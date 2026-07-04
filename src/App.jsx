@@ -6430,7 +6430,7 @@ if (screen === "basket") {
               const shareUrl = `https://www.trunorthapp.com/?${combined.toString()}`;
               const shareData = {
                 title: "My TruNorth values",
-                text:  "I just mapped out what I care about as a shopper — see yours in 60 seconds.",
+                text:  "I just mapped out what I care about as a shopper — see yours in 45 seconds.",
                 url:   shareUrl,
               };
               let method = "unknown";
@@ -6820,7 +6820,7 @@ if (screen === "basket") {
                     <CompassSeal weights={null} size={64} />
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ fontFamily: SERIF, fontSize: 19, color: T.txt, lineHeight: 1.25 }}>Find your bearings.</div>
-                      <div style={{ fontSize: 12, color: T.txt2, marginTop: 4, lineHeight: 1.45 }}>Nine quick choices shape your compass — then every brand answers to it.</div>
+                      <div style={{ fontSize: 12, color: T.txt2, marginTop: 4, lineHeight: 1.45 }}>A few quick choices shape your compass — then every brand answers to it.</div>
                       <div style={{ fontSize: 11, color: T.accent2, fontWeight: 600, marginTop: 6 }}>Start the Match · 45 seconds →</div>
                     </div>
                   </button>
@@ -7964,7 +7964,7 @@ if (screen === "basket") {
               </>
             ) : (
               <>
-                <div style={{ fontSize:13, color:T.txt3, marginBottom:12 }}>Run the Match — nine quick choices personalize every grade in the app.</div>
+                <div style={{ fontSize:13, color:T.txt3, marginBottom:12 }}>Run the Match — a few quick choices personalize every grade in the app.</div>
                 <button onClick={()=>{ track("quiz_started", { isPaid, from: "account" }); setScreen("quiz"); }} style={{ width:"100%", padding:11, borderRadius:10, border:`1px solid ${T.accent}`, background:T.accentBg, color:T.accent2, fontSize:14, fontWeight:600, cursor:"pointer" }}>
                   Take the Match {!isPaid && <span style={{ fontSize:11, marginLeft:4, opacity:0.7 }}>(free)</span>}
                 </button>
