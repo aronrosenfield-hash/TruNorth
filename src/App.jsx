@@ -3167,6 +3167,11 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
     // Re-opening an already-viewed company doesn't punish the user.
     if (!isPaid && !open) {
       const slug = company.slug || company.id;
+      // Ungraded ("?") / zero-data brands are FREE — they deliver no paid value,
+      // so don't spend the user's one daily view on them or paywall on them
+      // (diligence: burning the free view on "No scoreable record" then getting
+      // paywalled off a real grade felt like bait-and-switch).
+      const gradeless = grade === "?" || enriched.overall == null;
       const now = new Date();
       // 2026-06-01 (user pick): switched from 1 free view/week → 1 free
       // view/day. Same field name `log.week` retained but it now holds a
@@ -3188,12 +3193,12 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
       const inCooldown = dismissedAt && (Date.now() - dismissedAt) < 7 * 24 * 60 * 60 * 1000;
       const alreadyViewed = log.slugs.includes(slug);
       // 1 free view per week: paywall fires on the 2nd unique tap.
-      if (!alreadyViewed && log.slugs.length >= 1 && !inCooldown) {
+      if (!gradeless && !alreadyViewed && log.slugs.length >= 1 && !inCooldown) {
         track("paywall_shown", { reason: "free_quota_exhausted", slug, viewed_this_week: log.slugs.length });
         onUpgrade();
         return;
       }
-      if (!alreadyViewed) {
+      if (!gradeless && !alreadyViewed) {
         log.slugs.push(slug);
         try { localStorage.setItem("tn_freeViewed", JSON.stringify(log)); } catch {}
       }
