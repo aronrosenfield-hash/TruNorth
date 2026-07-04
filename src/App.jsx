@@ -1991,7 +1991,7 @@ function BrandOfDayCard({ editorial, deduped, profile, openBrand }) {
       const flavor = {
         A: { color:"#38C0CE", bgTint:"rgba(76,175,130,0.08)", borderTint:"rgba(76,175,130,0.4)", chipBg:"#0E2126" },
         B: { color:"#9CC98A", bgTint:"rgba(139,195,74,0.08)", borderTint:"rgba(139,195,74,0.4)", chipBg:"#19230F" },
-        C: { color:"#E8A04C", bgTint:"rgba(240,160,48,0.08)", borderTint:"rgba(240,160,48,0.4)", chipBg:"#1F2228" },
+        C: { color:"#A9A498", bgTint:"rgba(169,164,152,0.08)", borderTint:"rgba(169,164,152,0.4)", chipBg:"#1F2228" },
         D: { color:"#E8A04C", bgTint:"rgba(255,112,67,0.08)", borderTint:"rgba(255,112,67,0.4)", chipBg:"#241B0D" },
         F: { color:"#E0524D", bgTint:"rgba(226,74,74,0.08)", borderTint:"rgba(226,74,74,0.4)", chipBg:"#291110" },
       }[pickGrade] || { color:"#E8A04C", bgTint:"rgba(240,160,48,0.08)", borderTint:"rgba(240,160,48,0.4)", chipBg:"#1F2228" };
@@ -2034,7 +2034,7 @@ function BrandOfDayCard({ editorial, deduped, profile, openBrand }) {
   const flavorByGrade = {
     A: { tag: "Worth knowing", color: "#38C0CE", bgTint: "rgba(76,175,130,0.08)", borderTint: "rgba(76,175,130,0.4)" },
     B: { tag: "Worth knowing", color: "#9CC98A", bgTint: "rgba(139,195,74,0.08)", borderTint: "rgba(139,195,74,0.4)" },
-    C: { tag: "Mixed signal",  color: "#E8A04C", bgTint: "rgba(240,160,48,0.08)", borderTint: "rgba(240,160,48,0.4)" },
+    C: { tag: "Mixed signal",  color: "#A9A498", bgTint: "rgba(169,164,152,0.08)", borderTint: "rgba(169,164,152,0.4)" },
     D: { tag: "Worth a look",  color: "#E8A04C", bgTint: "rgba(255,112,67,0.08)", borderTint: "rgba(255,112,67,0.4)" },
     F: { tag: "Worth a look",  color: "#E0524D", bgTint: "rgba(226,74,74,0.08)", borderTint: "rgba(226,74,74,0.4)" },
   };
@@ -3268,7 +3268,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
             const gradeRowColors = {
               A: { bg:"#0E2126", border:"#1E444A", text:"#38C0CE" },
               B: { bg:"#19230F", border:"#2E4A1E", text:"#9CC98A" },
-              C: { bg:"#1F2228", border:"#2A2E35", text:"#E8A04C" },
+              C: { bg:"#1F2228", border:"#2A2E35", text:"#A9A498" },
               D: { bg:"#241B0D", border:"#4A381E", text:"#E8A04C" },
               F: { bg:"#291110", border:"#4A1E1E", text:"#E0524D" },
               "?": { bg:T.bg3, border:T.border2, text:T.txt3 },
@@ -3711,7 +3711,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
             const gradeColors = {
               A: { bg:"#0E2126", border:"#38C0CE", text:"#38C0CE" },
               B: { bg:"#19230F", border:"#9CC98A", text:"#9CC98A" },
-              C: { bg:"#1F2228", border:"#E8A04C", text:"#E8A04C" },
+              C: { bg:"#1F2228", border:"#A9A498", text:"#A9A498" },
               D: { bg:"#241B0D", border:"#E8A04C", text:"#E8A04C" },
               F: { bg:"#291110", border:"#E0524D", text:"#E0524D" },
               "?": { bg:T.bg3, border:T.border2, text:T.txt3 },
@@ -6378,7 +6378,7 @@ if (screen === "basket") {
                   const palette = {
                     A: { bg:"#0E2126", border:"#1E444A", text:"#38C0CE" },
                     B: { bg:"#19230F", border:"#2E4A1E", text:"#9CC98A" },
-                    C: { bg:"#1F2228", border:"#2A2E35", text:"#E8A04C" },
+                    C: { bg:"#1F2228", border:"#2A2E35", text:"#A9A498" },
                     D: { bg:"#241B0D", border:"#4A381E", text:"#E8A04C" },
                     F: { bg:"#291110", border:"#4A1E1E", text:"#E0524D" },
                   }[wg] || { bg:T.bg3, border:T.border2, text:T.txt3 };
@@ -6707,7 +6707,7 @@ if (screen === "basket") {
                     // The Match now personalizes an existing number, not reveals
                     // a hidden one.
                     const g = scoreGrade(computeScore(co, profile), userRelevantRealCats(co, profile));
-                    const gradeColor = { A:"#38C0CE", B:"#9CC98A", C:"#E8A04C", D:"#E8A04C", F:"#E0524D" }[g] || T.txt3;
+                    const gradeColor = { A:"#38C0CE", B:"#9CC98A", C:"#A9A498", D:"#E8A04C", F:"#E0524D" }[g] || T.txt3;
                     return (
                       <button
                         key={co.slug || co.id}
@@ -7642,7 +7642,7 @@ if (screen === "basket") {
                 ) : savedCos.map(co => {
                   const ps = computeScore(co, profile);
                   const g = scoreGrade(ps, userRelevantRealCats(co, profile));
-                  const colors = { A:"#38C0CE", B:"#9CC98A", C:"#E8A04C", D:"#E8A04C", F:"#E0524D", "?":T.txt3 };
+                  const colors = { A:"#38C0CE", B:"#9CC98A", C:"#A9A498", D:"#E8A04C", F:"#E0524D", "?":T.txt3 };
                   // Phase 5.au (QA #12): "Updates since you saved" badge.
                   // Counts weekly_changes entries for this brand. Promotes
                   // Saved from passive list → active dossier (journalism loop).
@@ -7748,7 +7748,7 @@ if (screen === "basket") {
                         {fullCo && (() => {
                           const ps = computeScore(fullCo, profile);
                           const g = scoreGrade(ps, userRelevantRealCats(fullCo, profile));
-                          const colors = { A:"#38C0CE", B:"#9CC98A", C:"#E8A04C", D:"#E8A04C", F:"#E0524D", "?":T.txt3 };
+                          const colors = { A:"#38C0CE", B:"#9CC98A", C:"#A9A498", D:"#E8A04C", F:"#E0524D", "?":T.txt3 };
                           return <div style={{ fontSize:14, fontWeight:700, color: colors[g], marginLeft:8 }}>{g}</div>;
                         })()}
                         <i className="ti ti-chevron-right" style={{ fontSize:12, color:T.txt3 }} aria-hidden="true" />
@@ -8212,7 +8212,7 @@ if (screen === "basket") {
             {[
               { grade:"A", range:"62–100", desc:"Best of class — strong across a broad, verified record",  color:"#38C0CE", bg:"#0E2126", border:"#1E444A" },
               { grade:"B", range:"50–61",  desc:"Above average — clearly more positive than negative signals",          color:"#9CC98A", bg:"#19230F", border:"#2E4A1E" },
-              { grade:"C", range:"38–49",  desc:"Mixed — meaningful concerns offset by meaningful positives",            color:"#E8A04C", bg:"#1F2228", border:"#2A2E35" },
+              { grade:"C", range:"38–49",  desc:"Mixed — meaningful concerns offset by meaningful positives",            color:"#A9A498", bg:"#1F2228", border:"#2A2E35" },
               { grade:"D", range:"33–37",  desc:"Below average — clear negative signals outweigh the positives",         color:"#E8A04C", bg:"#241B0D", border:"#4A381E" },
               { grade:"F", range:"0–32",   desc:"Substantial negative signals with public-record evidence", color:"#E0524D", bg:"#291110", border:"#4A1E1E" },
             ].map((r) => (

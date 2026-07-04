@@ -135,3 +135,17 @@ test("guard: landing + onboarding DEMO grades match the live data (no marketing/
   assert.equal(mismatches.length, 0,
     `Marketing/onboarding demo grades drifted from index.json:\n  ${mismatches.join("\n  ")}`);
 });
+
+test("guard: the C grade never renders in D's amber (#E8A04C) — C is bone-gray", () => {
+  // 2026-07-04 (diligence): grade badges hand-inlined C and D BOTH as #E8A04C
+  // amber, so a "mixed" C and a "below-average" D were indistinguishable in a
+  // color-coded-grade product. C is now bone-gray (#A9A498 / T.txt2). This bans
+  // C from ever taking D's amber again across the ~9 inlined grade palettes.
+  const src = fs.readFileSync("src/App.jsx", "utf8");
+  const offenders = [];
+  if (/C:\s*"#E8A04C"/.test(src)) offenders.push('flat map  C:"#E8A04C"');
+  if (/C:\s*\{[^}]*(?:text|color):\s*"#E8A04C"/.test(src)) offenders.push('object    C:{ …:"#E8A04C" }');
+  if (/grade:\s*"C"[^}]*color:\s*"#E8A04C"/.test(src)) offenders.push('legend    grade:"C" … color:"#E8A04C"');
+  assert.equal(offenders.length, 0,
+    `C grade is using D's amber (#E8A04C) — it must be bone-gray #A9A498:\n  ${offenders.join("\n  ")}`);
+});
