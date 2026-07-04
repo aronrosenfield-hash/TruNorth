@@ -45,27 +45,9 @@ const FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 // use this; the TestFlight-mailto fallback only applies if it's ever blanked.
 const APP_STORE_URL = "https://apps.apple.com/app/id6775301458";
 
-// Phase 5.az: TestFlight beta testimonials. Replace with real reviewer
-// quotes once the App Store listing has organic feedback. Avoid making
-// these up — these are quoted from actual TestFlight beta feedback
-// + early user emails. Refresh quarterly.
-const TESTIMONIALS = [
-  {
-    quote: "Scanned the dish soap I was about to buy. D for environment. Put it back. Took ten seconds.",
-    name:  "Maya R.",
-    role:  "Climate-first shopper · Austin, TX",
-  },
-  {
-    quote: "I came in skeptical. Every grade I checked was sourced to public records I can pull up myself — EPA enforcement, campaign finance disclosures. Now I trust it.",
-    name:  "Devon K.",
-    role:  "Engineer · Brooklyn, NY",
-  },
-  {
-    quote: "Compare two brands side-by-side took the guesswork out of buying my kid's formula. I'd pay for this.",
-    name:  "Ali P.",
-    role:  "New parent · Minneapolis, MN",
-  },
-];
+// TESTIMONIALS removed 2026-07-04 — were placeholder quotes presented as real
+// (FTC/credibility risk). Re-add a real, attributable array here when genuine
+// App Store/TestFlight quotes exist.
 
 // ─── reusable atoms ─────────────────────────────────────────────────────────
 function Section({ children, style }) {
@@ -445,33 +427,12 @@ export default function MarketingLanding({ onOpenPrivacy }) {
         </div>
       </Section>
 
-      {/* ── Testimonials ── */}
-      {/* Phase 5.az: Beta-tester testimonials. TESTIMONIALS array at top of
-          file — refresh quarterly with real user feedback. */}
-      <Section style={{ background:C.bgSoft, maxWidth:"100%", padding:"56px 0", textAlign:"center" }}>
-        <div style={{ maxWidth:1200, margin:"0 auto", padding:"0 24px" }}>
-          <Eyebrow>What early users say</Eyebrow>
-          <H2>From early users.</H2>
-          <Lead style={{ marginBottom:36, marginLeft:"auto", marginRight:"auto", textAlign:"center" }}>
-            Real quotes from early users and beta testers. We refresh these as more come in.
-          </Lead>
-          <div className="tn-testimonials-grid">
-            {TESTIMONIALS.map((t, i) => (
-              <div key={i} style={{
-                background:C.bgCard, border:`1px solid ${C.border}`, borderRadius:16,
-                padding:24, textAlign:"left",
-              }}>
-                <div style={{ fontSize:28, color:C.accent, lineHeight:1, marginBottom:12, fontFamily:"Georgia, serif" }}>“</div>
-                <div style={{ fontSize:15, lineHeight:1.55, color:C.text, marginBottom:18 }}>
-                  {t.quote}
-                </div>
-                <div style={{ fontSize:13, fontWeight:700, color:C.text }}>{t.name}</div>
-                <div style={{ fontSize:12, color:C.textMute, marginTop:2 }}>{t.role}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
+      {/* ── Testimonials REMOVED 2026-07-04 (Aron: "pull them") ──
+          The "Maya R./Devon K./Ali P." quotes were placeholder beta-scaffolding
+          presented as "real quotes from early users" — an FTC/credibility risk on
+          a "records, not opinions" brand (diligence). Re-add a real, ATTRIBUTABLE
+          testimonials Section only when genuine App Store/TestFlight quotes exist.
+          The .tn-testimonials-grid CSS is retained for that. */}
 
       {/* ── How it works ── */}
       <Section style={{ background:C.bgSoft, maxWidth:"100%", padding:"56px 0" }}>
