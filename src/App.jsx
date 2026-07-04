@@ -1531,7 +1531,7 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
                 <polygon points="24,6 36,30 28,30 28,42 20,42 20,30 12,30" fill="#fff"/>
               </svg>
             </div>
-            <div style={{ fontSize:22, fontWeight:800, color:T.txt, letterSpacing:-0.5 }}>Tru<span style={{ color:T.accent }}>North</span></div>
+            <div style={{ fontSize:22, fontWeight:800, color:T.txt, letterSpacing:-0.5 }}>Tru<span style={{ color:T.accent2 }}>North</span></div>
           </div>
           <div style={{ width:44, height:44, background:T.goldBg, borderRadius:12, display:"flex", alignItems:"center", justifyContent:"center", margin:"0 auto 8px" }}>
             <i className="ti ti-crown" style={{ fontSize:26, color:T.gold }} aria-hidden="true" />
@@ -7592,7 +7592,7 @@ if (screen === "basket") {
             return (
               <div style={{ padding:"0 0 80px" }}>
                 {/* Sort + category filter bar */}
-                <div style={{ padding:"10px 16px", display:"flex", gap:8, alignItems:"center", borderBottom:`1px solid ${T.border}`, background:T.bg2, overflowX:"auto", WebkitOverflowScrolling:"touch" }}>
+                <div style={{ padding:"10px 16px", display:"flex", gap:8, alignItems:"center", borderBottom:`1px solid ${T.border}`, background:T.bg2, overflowX:"auto", WebkitOverflowScrolling:"touch", scrollbarWidth:"none", WebkitMaskImage:"linear-gradient(to right, #000 calc(100% - 22px), transparent)", maskImage:"linear-gradient(to right, #000 calc(100% - 22px), transparent)" }}>
                   <select
                     value={savedSortMode}
                     onChange={e => setSavedSortMode(e.target.value)}
