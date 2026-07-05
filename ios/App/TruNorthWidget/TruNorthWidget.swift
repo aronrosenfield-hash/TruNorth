@@ -184,7 +184,7 @@ struct TruNorthWidgetEntryView: View {
     }
 }
 
-// MARK: - Widget + Bundle
+// MARK: - Widget
 struct TruNorthWidget: Widget {
     let kind = "TruNorthWidget"
     var body: some WidgetConfiguration {
@@ -195,9 +195,4 @@ struct TruNorthWidget: Widget {
         .description("Clashes on the record + a one-tap scan.")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
-}
-
-@main
-struct TruNorthWidgetBundle: WidgetBundle {
-    var body: some Widget { TruNorthWidget() }
 }
