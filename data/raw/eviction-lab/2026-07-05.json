@@ -1,0 +1,184 @@
+{
+  "source": "eviction-lab",
+  "source_urls": {
+    "evictionLab": "https://evictionlab.org/top-evicting-landlords-drive-us-eviction-crisis/",
+    "evictionLabResearch": "https://evictionlab.org/research/",
+    "ftcInvitationHomes": "https://www.ftc.gov/news-events/news/press-releases/2024/09/federal-trade-commission-action-leads-48-million-refunds-renters-harmed-invitation-homes",
+    "dojRealPage": "https://www.justice.gov/opa/pr/justice-department-sues-realpage-algorithmic-pricing-scheme-harms-millions-american-renters",
+    "houseOversight": "https://oversightdemocrats.house.gov/news/press-releases/oversight-subcommittee-releases-staff-report-finding-corporate-landlords",
+    "atlantaFed": "https://www.frbatlanta.org/community-development/publications/discussion-papers/2016/04-corporate-landlords-institutional-investors-and-displacement-12-19-2016"
+  },
+  "generated_at": "2026-07-05T10:54:14.347Z",
+  "snapshot_date": "2026-07-05",
+  "landlord_count": 7,
+  "landlords": [
+    {
+      "slug": "invitation-homes",
+      "name": "Invitation Homes",
+      "landlord_type": "single-family REIT",
+      "est_units": 85000,
+      "eviction_signal": "high",
+      "actions": [
+        {
+          "year": 2024,
+          "type": "FTC consent order",
+          "regulator": "FTC",
+          "summary": "$48M FTC consent order — Invitation Homes refunded 444,131 renters after the agency found 'unfair and deceptive tactics' including hidden fees, unjustly withheld security deposits, and misleading pandemic-era eviction-policy claims.",
+          "penalty_usd": 48000000,
+          "source_url": "https://www.ftc.gov/news-events/news/press-releases/2024/09/federal-trade-commission-action-leads-48-million-refunds-renters-harmed-invitation-homes"
+        },
+        {
+          "year": 2016,
+          "type": "academic study",
+          "regulator": "Atlanta Fed",
+          "summary": "Federal Reserve Bank of Atlanta study found Invitation Homes (and predecessor Starwood Waypoint) evicting at materially higher rates than small landlords — 15% for Invitation Homes and 30% for Starwood Waypoint in the study sample.",
+          "penalty_usd": 0,
+          "source_url": "https://www.frbatlanta.org/community-development/publications/discussion-papers/2016/04-corporate-landlords-institutional-investors-and-displacement-12-19-2016"
+        }
+      ],
+      "notes": "Largest US single-family REIT (~85K homes). Federal-level consumer-protection enforcement and academic-cited eviction-rate disparity."
+    },
+    {
+      "slug": "american-homes-4-rent",
+      "name": "American Homes 4 Rent",
+      "landlord_type": "single-family REIT",
+      "est_units": 60000,
+      "eviction_signal": "moderate",
+      "actions": [
+        {
+          "year": 2022,
+          "type": "Congressional investigation",
+          "regulator": "US House Oversight Subcommittee",
+          "summary": "House Oversight Subcommittee on Economic and Consumer Policy staff report named American Homes 4 Rent among the largest corporate landlords that collectively filed thousands of pandemic-era eviction actions, despite many tenants being protected by the CDC moratorium.",
+          "penalty_usd": 0,
+          "source_url": "https://oversightdemocrats.house.gov/news/press-releases/oversight-subcommittee-releases-staff-report-finding-corporate-landlords"
+        }
+      ],
+      "notes": "Second-largest US single-family rental REIT. Cited by House Oversight investigation."
+    },
+    {
+      "slug": "starwood",
+      "name": "Starwood Capital Group",
+      "landlord_type": "private equity",
+      "est_units": 30000,
+      "eviction_signal": "moderate",
+      "actions": [
+        {
+          "year": 2016,
+          "type": "academic study",
+          "regulator": "Atlanta Fed",
+          "summary": "Federal Reserve Bank of Atlanta study found Starwood Waypoint (the Starwood Capital SFR vehicle that later merged into Invitation Homes) evicting 30% of renters in the study sample — the highest rate among the corporate landlords examined.",
+          "penalty_usd": 0,
+          "source_url": "https://www.frbatlanta.org/community-development/publications/discussion-papers/2016/04-corporate-landlords-institutional-investors-and-displacement-12-19-2016"
+        }
+      ],
+      "notes": "Starwood Waypoint merged into Invitation Homes in 2017. Starwood Capital remains a major SFR/multifamily PE investor."
+    },
+    {
+      "slug": "mid-america-apartment-communities",
+      "name": "Mid-America Apartment Communities (MAA)",
+      "landlord_type": "multifamily REIT",
+      "est_units": 102000,
+      "eviction_signal": "moderate",
+      "actions": [
+        {
+          "year": 2018,
+          "type": "DOJ Fair Housing settlement",
+          "regulator": "DOJ Civil Rights Division",
+          "summary": "$11.3M DOJ settlement — Post Properties (acquired by MAA in 2016) violated Fair Housing Act and ADA design-and-construction requirements across 50 properties.",
+          "penalty_usd": 11300000,
+          "source_url": "https://www.justice.gov/opa/pr/justice-department-secures-113-million-settlement-largest-fair-housing-actadafha-case"
+        },
+        {
+          "year": 2023,
+          "type": "civil antitrust class action",
+          "regulator": "private class action",
+          "summary": "Named co-defendant in the RealPage rent-pricing algorithm class action alleging horizontal collusion across major multifamily landlords; case track moved into the DOJ amended complaint in January 2025.",
+          "penalty_usd": 0,
+          "source_url": "https://www.justice.gov/opa/pr/justice-department-sues-realpage-algorithmic-pricing-scheme-harms-millions-american-renters"
+        }
+      ],
+      "notes": "Largest US multifamily REIT by unit count."
+    },
+    {
+      "slug": "sun-communities",
+      "name": "Sun Communities",
+      "landlord_type": "manufactured housing REIT",
+      "est_units": 180000,
+      "eviction_signal": "moderate",
+      "actions": [
+        {
+          "year": 2024,
+          "type": "advocacy investigation",
+          "regulator": "Private Equity Stakeholder Project / MHAction",
+          "summary": "Private Equity Stakeholder Project and tenant advocates documented rent-hike and lot-fee complaints across Sun Communities manufactured-home parks; MHAction reports tracked tenant organising and state-AG inquiries.",
+          "penalty_usd": 0,
+          "source_url": "https://pestakeholder.org/issues/housing/"
+        }
+      ],
+      "notes": "Largest manufactured-housing REIT. Negative signal is investigative / advocacy rather than federal enforcement — flagged 'mixed' not 'poor'."
+    },
+    {
+      "slug": "greystar",
+      "name": "Greystar Real Estate Partners",
+      "landlord_type": "property manager",
+      "est_units": 800000,
+      "eviction_signal": "high",
+      "actions": [
+        {
+          "year": 2025,
+          "type": "DOJ antitrust",
+          "regulator": "DOJ Antitrust Division",
+          "summary": "DOJ amended complaint vs RealPage (Jan 2025) added Greystar and five other landlords as co-defendants, alleging illegal sharing of competitively sensitive rental information and algorithmic rent fixing.",
+          "penalty_usd": 0,
+          "source_url": "https://www.justice.gov/opa/pr/justice-department-sues-realpage-algorithmic-pricing-scheme-harms-millions-american-renters"
+        },
+        {
+          "year": 2025,
+          "type": "FTC + state AG suit",
+          "regulator": "FTC + Colorado Attorney General",
+          "summary": "FTC and Colorado AG sued Greystar for deceptively advertised lease rates that omitted mandatory hidden fees only revealed after nonrefundable application payments were collected.",
+          "penalty_usd": 0,
+          "source_url": "https://www.ftc.gov/news-events/news/press-releases"
+        },
+        {
+          "year": 2023,
+          "type": "tort verdict",
+          "regulator": "TX state court",
+          "summary": "Texas jury ordered Greystar to pay $860M to 17 plaintiffs over the 2019 Dallas crane collapse on a Greystar-owned development site, finding the company violated safety regulations.",
+          "penalty_usd": 860000000,
+          "source_url": "https://www.star-telegram.com/news/state/texas/article274488475.html"
+        }
+      ],
+      "notes": "Largest US apartment property manager (~800K units). DOJ co-defendant + FTC suit + $860M tort verdict — heaviest negative signal in the dataset."
+    },
+    {
+      "slug": "avalon",
+      "name": "AvalonBay Communities",
+      "landlord_type": "multifamily REIT",
+      "est_units": 95000,
+      "eviction_signal": "moderate",
+      "actions": [
+        {
+          "year": 2025,
+          "type": "state antitrust",
+          "regulator": "NJ Attorney General",
+          "summary": "NJ AG sued AvalonBay and nine other landlords for an 'unlawful conspiracy' using RealPage software to set supracompetitive rents in violation of NJ antitrust law.",
+          "penalty_usd": 0,
+          "source_url": "https://www.njoag.gov/wp-content/uploads/2025/04/RealPage-Complaint.pdf"
+        },
+        {
+          "year": 2025,
+          "type": "civil rights suit",
+          "regulator": "Equal Rights Center",
+          "summary": "Equal Rights Center sued AvalonBay (AVA NoMa, DC) alleging properties listed windowless rooms as bedrooms to evade housing-voucher accommodation requirements under DC code.",
+          "penalty_usd": 0,
+          "source_url": "https://equalrightscenter.org/press-releases/"
+        }
+      ],
+      "notes": "Top-3 US multifamily REIT (~95K apartment units). Multiple 2025 state AG and civil-rights actions."
+    }
+  ],
+  "license": "Public-records compilation. Federal enforcement (FTC, DOJ) is US-Federal public domain. State AG filings and academic studies are linked to original publishers.",
+  "methodology": "Per-landlord rollup of FTC consent orders, DOJ Antitrust Division complaints (incl. Jan 2025 RealPage amended complaint), state-AG suits, US House Oversight 2022 staff report on corporate landlord pandemic evictions, and the Federal Reserve Bank of Atlanta 2016 corporate-landlord eviction study. Each action cites the source URL it was read from."
+}
