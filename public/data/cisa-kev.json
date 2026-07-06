@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-06-29T05:21:51.287Z",
-  "catalog_version": "2026.06.25",
-  "catalog_released": "2026-06-25T19:03:21.8037Z",
-  "total_cve_count": 1629,
+  "generated_at": "2026-07-06T05:02:25.721Z",
+  "catalog_version": "2026.07.01",
+  "catalog_released": "2026-07-01T19:00:06.9016Z",
+  "total_cve_count": 1631,
   "vendor_count": 270,
   "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
   "vendors": [
     {
       "vendor": "Microsoft",
-      "total_cve_count": 377,
-      "recent_12mo_count": 42,
-      "ransomware_count": 103,
+      "total_cve_count": 378,
+      "recent_12mo_count": 43,
+      "ransomware_count": 104,
       "product_breakdown": [
         {
           "label": "Windows",
@@ -41,19 +41,30 @@
           "count": 5
         },
         {
+          "label": "SharePoint Server",
+          "count": 4
+        },
+        {
           "label": "Word",
           "count": 4
         },
         {
           "label": "Open Management Infrastructure (OMI)",
           "count": 4
-        },
-        {
-          "label": "SharePoint Server",
-          "count": 3
         }
       ],
       "top_cves": [
+        {
+          "cveID": "CVE-2026-45659",
+          "product": "SharePoint Server",
+          "vulnerabilityName": "Microsoft SharePoint Server Deserialization of Untrusted Data Vulnerability",
+          "dateAdded": "2026-07-01",
+          "dueDate": "2026-07-04",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Microsoft SharePoint Server contains a deserialization of untrusted data vulnerability which allows an authorized attacker to execute code over a network.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45659"
+        },
         {
           "cveID": "CVE-2008-4250",
           "product": "Windows",
@@ -97,20 +108,17 @@
           "shortDescription": "Microsoft Internet Explorer contains an use-after-free vulnerability that could allow remote attackers to execute arbitrary code via vectors involving access to an invalid pointer after the deletion of an object. The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization.",
           "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-0806"
-        },
-        {
-          "cveID": "CVE-2026-41091",
-          "product": "Defender",
-          "vulnerabilityName": "Microsoft Defender Link Following Vulnerability",
-          "dateAdded": "2026-05-20",
-          "dueDate": "2026-06-03",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Microsoft Defender contains a link following vulnerability that allows an authorized attacker to elevate privileges locally.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-41091"
         }
       ],
       "highest_severity": [
+        {
+          "cveID": "CVE-2026-33825",
+          "product": "Defender",
+          "vulnerabilityName": "Microsoft Defender Insufficient Granularity of Access Control Vulnerability",
+          "dateAdded": "2026-04-22",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33825"
+        },
         {
           "cveID": "CVE-2023-21529",
           "product": "Exchange Server",
@@ -128,12 +136,12 @@
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-49704"
         },
         {
-          "cveID": "CVE-2025-49706",
-          "product": "SharePoint",
-          "vulnerabilityName": "Microsoft SharePoint Improper Authentication Vulnerability",
-          "dateAdded": "2025-07-22",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-49706"
+          "cveID": "CVE-2026-45659",
+          "product": "SharePoint Server",
+          "vulnerabilityName": "Microsoft SharePoint Server Deserialization of Untrusted Data Vulnerability",
+          "dateAdded": "2026-07-01",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45659"
         },
         {
           "cveID": "CVE-2008-4250",
@@ -142,14 +150,6 @@
           "dateAdded": "2026-05-20",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2008-4250"
-        },
-        {
-          "cveID": "CVE-2009-1537",
-          "product": "DirectX",
-          "vulnerabilityName": "Microsoft DirectX NULL Byte Overwrite Vulnerability",
-          "dateAdded": "2026-05-20",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2009-1537"
         }
       ]
     },
@@ -569,7 +569,7 @@
     {
       "vendor": "Google",
       "total_cve_count": 72,
-      "recent_12mo_count": 10,
+      "recent_12mo_count": 9,
       "ransomware_count": 0,
       "product_breakdown": [
         {
@@ -1661,7 +1661,7 @@
     {
       "vendor": "Citrix",
       "total_cve_count": 22,
-      "recent_12mo_count": 6,
+      "recent_12mo_count": 5,
       "ransomware_count": 7,
       "product_breakdown": [
         {
@@ -5311,6 +5311,98 @@
       ]
     },
     {
+      "vendor": "SimpleHelp",
+      "total_cve_count": 4,
+      "recent_12mo_count": 3,
+      "ransomware_count": 3,
+      "product_breakdown": [
+        {
+          "label": "SimpleHelp",
+          "count": 4
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-48558",
+          "product": "SimpleHelp",
+          "vulnerabilityName": "SimpleHelp Authentication Bypass Vulnerability",
+          "dateAdded": "2026-06-29",
+          "dueDate": "2026-07-02",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "SimpleHelp contains an authentication bypass vulnerability in the OIDC authentication flow. When OIDC authentication is configured, identity tokens submitted during login are accepted without verifying their cryptographic signature. In a vulnerable configuration, a remote, unauthenticated attacker can submit a forged token containing arbitrary identity claims to obtain a fully authenticated technician session. In some configurations, this may also allow bypass of multi-factor authentication.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48558"
+        },
+        {
+          "cveID": "CVE-2024-57728",
+          "product": "SimpleHelp",
+          "vulnerabilityName": "SimpleHelp Path Traversal Vulnerability",
+          "dateAdded": "2026-04-24",
+          "dueDate": "2026-05-08",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "SimpleHelp contains a path traversal vulnerability that allows admin users to upload arbitrary files anywhere on the file system by uploading a crafted zip file (i.e. zip slip). This can be exploited to execute arbitrary code on the host in the context of the SimpleHelp server user.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-57728"
+        },
+        {
+          "cveID": "CVE-2024-57726",
+          "product": "SimpleHelp",
+          "vulnerabilityName": "SimpleHelp Missing Authorization Vulnerability",
+          "dateAdded": "2026-04-24",
+          "dueDate": "2026-05-08",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "SimpleHelp contains a missing authorization vulnerability that could allow low-privileged technicians to create API keys with excessive permissions. These API keys can be used to escalate privileges to the server admin role.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-57726"
+        },
+        {
+          "cveID": "CVE-2024-57727",
+          "product": "SimpleHelp",
+          "vulnerabilityName": "SimpleHelp Path Traversal Vulnerability",
+          "dateAdded": "2025-02-13",
+          "dueDate": "2025-03-06",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "SimpleHelp remote support software contains multiple path traversal vulnerabilities that allow unauthenticated remote attackers to download arbitrary files from the SimpleHelp host via crafted HTTP requests. These files may include server configuration files and hashed user passwords.",
+          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-57727"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2024-57728",
+          "product": "SimpleHelp",
+          "vulnerabilityName": "SimpleHelp Path Traversal Vulnerability",
+          "dateAdded": "2026-04-24",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-57728"
+        },
+        {
+          "cveID": "CVE-2024-57726",
+          "product": "SimpleHelp",
+          "vulnerabilityName": "SimpleHelp Missing Authorization Vulnerability",
+          "dateAdded": "2026-04-24",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-57726"
+        },
+        {
+          "cveID": "CVE-2024-57727",
+          "product": "SimpleHelp",
+          "vulnerabilityName": "SimpleHelp Path Traversal Vulnerability",
+          "dateAdded": "2025-02-13",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-57727"
+        },
+        {
+          "cveID": "CVE-2026-48558",
+          "product": "SimpleHelp",
+          "vulnerabilityName": "SimpleHelp Authentication Bypass Vulnerability",
+          "dateAdded": "2026-06-29",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48558"
+        }
+      ]
+    },
+    {
       "vendor": "Ubiquiti",
       "total_cve_count": 4,
       "recent_12mo_count": 3,
@@ -6553,79 +6645,6 @@
       ]
     },
     {
-      "vendor": "SimpleHelp",
-      "total_cve_count": 3,
-      "recent_12mo_count": 2,
-      "ransomware_count": 3,
-      "product_breakdown": [
-        {
-          "label": "SimpleHelp",
-          "count": 3
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2024-57728",
-          "product": "SimpleHelp",
-          "vulnerabilityName": "SimpleHelp Path Traversal Vulnerability",
-          "dateAdded": "2026-04-24",
-          "dueDate": "2026-05-08",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "SimpleHelp contains a path traversal vulnerability that allows admin users to upload arbitrary files anywhere on the file system by uploading a crafted zip file (i.e. zip slip). This can be exploited to execute arbitrary code on the host in the context of the SimpleHelp server user.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-57728"
-        },
-        {
-          "cveID": "CVE-2024-57726",
-          "product": "SimpleHelp",
-          "vulnerabilityName": "SimpleHelp Missing Authorization Vulnerability",
-          "dateAdded": "2026-04-24",
-          "dueDate": "2026-05-08",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "SimpleHelp contains a missing authorization vulnerability that could allow low-privileged technicians to create API keys with excessive permissions. These API keys can be used to escalate privileges to the server admin role.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-57726"
-        },
-        {
-          "cveID": "CVE-2024-57727",
-          "product": "SimpleHelp",
-          "vulnerabilityName": "SimpleHelp Path Traversal Vulnerability",
-          "dateAdded": "2025-02-13",
-          "dueDate": "2025-03-06",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "SimpleHelp remote support software contains multiple path traversal vulnerabilities that allow unauthenticated remote attackers to download arbitrary files from the SimpleHelp host via crafted HTTP requests. These files may include server configuration files and hashed user passwords.",
-          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-57727"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2024-57728",
-          "product": "SimpleHelp",
-          "vulnerabilityName": "SimpleHelp Path Traversal Vulnerability",
-          "dateAdded": "2026-04-24",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-57728"
-        },
-        {
-          "cveID": "CVE-2024-57726",
-          "product": "SimpleHelp",
-          "vulnerabilityName": "SimpleHelp Missing Authorization Vulnerability",
-          "dateAdded": "2026-04-24",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-57726"
-        },
-        {
-          "cveID": "CVE-2024-57727",
-          "product": "SimpleHelp",
-          "vulnerabilityName": "SimpleHelp Path Traversal Vulnerability",
-          "dateAdded": "2025-02-13",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-57727"
-        }
-      ]
-    },
-    {
       "vendor": "PaperCut",
       "total_cve_count": 3,
       "recent_12mo_count": 2,
@@ -7650,7 +7669,7 @@
     {
       "vendor": "TeleMessage",
       "total_cve_count": 3,
-      "recent_12mo_count": 2,
+      "recent_12mo_count": 0,
       "ransomware_count": 0,
       "product_breakdown": [
         {

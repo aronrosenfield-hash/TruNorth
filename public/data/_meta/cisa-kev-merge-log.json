@@ -1,35 +1,17 @@
 {
-  "merged_at": "2026-06-29T05:21:51.338Z",
+  "merged_at": "2026-07-06T05:02:25.781Z",
   "source_file": "public/data/cisa-kev.json",
   "total_vendors": 270,
-  "merged_count": 4,
-  "skipped_count": 34,
+  "merged_count": 1,
+  "skipped_count": 37,
   "orphan_count": 232,
   "error_count": 0,
   "merged_vendors": [
     {
-      "vendor": "Cisco",
-      "target": "cisco",
+      "vendor": "Microsoft",
+      "target": "microsoft",
       "routed_via": "override",
-      "cves": 93
-    },
-    {
-      "vendor": "Ubiquiti",
-      "target": "ubiquiti",
-      "routed_via": "direct",
-      "cves": 4
-    },
-    {
-      "vendor": "PTC",
-      "target": "ptc",
-      "routed_via": "direct",
-      "cves": 1
-    },
-    {
-      "vendor": "Lantronix",
-      "target": "lantronix",
-      "routed_via": "direct",
-      "cves": 1
+      "cves": 378
     }
   ],
   "top_orphans": [
@@ -164,6 +146,11 @@
       "cves": 5
     },
     {
+      "vendor": "SimpleHelp",
+      "vendor_slug": "simplehelp",
+      "cves": 4
+    },
+    {
       "vendor": "Kentico",
       "vendor_slug": "kentico",
       "cves": 4
@@ -176,11 +163,6 @@
     {
       "vendor": "WatchGuard",
       "vendor_slug": "watchguard",
-      "cves": 4
-    },
-    {
-      "vendor": "Gladinet",
-      "vendor_slug": "gladinet",
       "cves": 4
     }
   ]
