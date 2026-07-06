@@ -163,20 +163,30 @@ export default async function handler(req) {
     return new Response("Not found", { status: 404 });
   }
 
-  // Fetch the company JSON from the same deployment
+  // Fetch the company JSON from the same deployment. Distinguish a brand
+  // that DEFINITELY doesn't exist (data file 404) from a transient fetch
+  // failure — they need opposite HTTP statuses below.
   let company = null;
+  let confirmedMissing = false; // true only when the data file is a hard 404
   try {
     const dataUrl = `${url.origin}/data/companies/${encodeURIComponent(slug)}.json`;
     const r = await fetch(dataUrl);
     if (r.ok) company = await r.json();
+    else if (r.status === 404) confirmedMissing = true;
   } catch {}
 
-  // If the company doesn't exist, fall back to the SPA shell so the
-  // app can show its "not found" UX. Still 200 (don't 404 actual SPA loads).
+  // No company → serve the SPA shell so the app can still render its
+  // "not found" UX (the 404 body loads + hydrates fine in a browser).
+  // Status depends on WHY it's missing:
+  //   • confirmed-missing brand → 404. Kills the "Soft 404" signal in
+  //     Search Console and lets Google drop stale/renamed slugs cleanly
+  //     (e.g. the deduped Exxon subsidiaries, estée-lauder→estee-lauder).
+  //   • transient data-fetch failure → 200, so we never deindex a real
+  //     brand page over a momentary blip.
   if (!company) {
     const shellRes = await fetch(`${url.origin}/index.html`);
     return new Response(await shellRes.text(), {
-      status: 200,
+      status: confirmedMissing ? 404 : 200,
       headers: { "Content-Type": "text/html; charset=utf-8" },
     });
   }
