@@ -37,7 +37,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				0C8182D12FFAF9BF004BAADB /* TruNorthWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,7 +177,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				0C8182D02FFAF9BF004BAADB /* PBXTargetDependency */,
 			);
 			name = App;
 			packageProductDependencies = (
@@ -319,7 +317,7 @@
 				INFOPLIST_FILE = TruNorthWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TruNorthWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,7 +361,7 @@
 				INFOPLIST_FILE = TruNorthWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TruNorthWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
