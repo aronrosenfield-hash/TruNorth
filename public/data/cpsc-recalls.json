@@ -1,17 +1,25 @@
 {
-  "generated_at": "2026-07-05T22:09:04.890Z",
+  "generated_at": "2026-07-12T22:03:50.578Z",
   "brand_count": 528,
-  "with_recalls_count": 234,
-  "no_recalls_count": 293,
-  "error_count": 1,
+  "with_recalls_count": 226,
+  "no_recalls_count": 302,
+  "error_count": 0,
   "recalls": [
     {
       "slug": "coca-cola",
       "name": "Coca-Cola",
       "status": "ok",
-      "total_recalls": 2,
+      "total_recalls": 3,
       "recent_24mo_count": 0,
       "top_hazards": [
+        {
+          "label": "The inner wall of the double-walled glasses can break easily, posing a laceration hazard to consumers.",
+          "count": 1
+        },
+        {
+          "label": "There is a burn hazard caused by an electric arc between the metal bottle cap and a human contact point. An electric burn is possible if the distance between t…",
+          "count": 1
+        },
         {
           "label": "Choking",
           "count": 1
@@ -19,16 +27,45 @@
       ],
       "sample_recalls": [
         {
-          "recall_id": 0,
-          "recall_number": null,
-          "recall_date": null,
-          "title": "Error retrieving Recalls: The underlying provider failed on Open.",
-          "description": "",
-          "url": null,
-          "hazards": [],
-          "injuries": [],
-          "products": [],
-          "units": [],
+          "recall_id": 3690,
+          "recall_number": "07268",
+          "recall_date": "2007-08-10T00:00:00",
+          "title": "Formation Inc. Recalls Coca-Cola® Themed Drinking Glasses Due to Laceration Hazard",
+          "description": "This recall involves clear double-walled soda glasses sold in a bell shape. The drinking glasses were sold in two sizes: 16 ounces and 22 ounces, and have various Coca-Cola® graphics printed on the glass.",
+          "url": "https://www.cpsc.gov/Recalls/2007/Formation-Inc-Recalls-Coca-Cola-Themed-Drinking-Glasses-Due-to-Laceration-Hazard",
+          "hazards": [
+            "The inner wall of the double-walled glasses can break easily, posing a laceration hazard to consumers."
+          ],
+          "injuries": [
+            "Formation has received one report of a glass breaking during normal use. No injuries have been reported."
+          ],
+          "products": [
+            "Drinking Glasses"
+          ],
+          "units": [
+            "About 300"
+          ],
+          "remedies": []
+        },
+        {
+          "recall_id": 3229,
+          "recall_number": "06114",
+          "recall_date": "2006-03-15T00:00:00",
+          "title": "Coca-Cola® ElectroPlasma Lamps Sold at Rite Aid Recalled for Burn Hazard",
+          "description": "These lamps are in the shape of a Coca-Cola bottle. They are about 13.5 inches high. The inside of ElectroPlasma lamps simulate lightning bolts. A label on the bottom of the black base of the lamp reads: \"Model No: 23-103,\" and \"Lipan Industrial Co., Ltd.\"",
+          "url": "https://www.cpsc.gov/Recalls/2006/Coca-Cola-ElectroPlasma-Lamps-Sold-at-Rite-Aid-Recalled-for-Burn-Hazard",
+          "hazards": [
+            "There is a burn hazard caused by an electric arc between the metal bottle cap and a human contact point. An electric burn is possible if the distance between t…"
+          ],
+          "injuries": [
+            "The firm has received reports of two incidents involving an electrical arc to the finger, including one report of a minor burn."
+          ],
+          "products": [
+            "Coca-Cola ElectroPlasma Lamps"
+          ],
+          "units": [
+            "About 21,300"
+          ],
           "remedies": []
         },
         {
@@ -49,7 +86,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:50:15.487Z"
+      "scraped_at": "2026-07-12T21:51:32.700Z"
     },
     {
       "slug": "pepsi",
@@ -57,167 +94,72 @@
       "status": "ok",
       "total_recalls": 1,
       "recent_24mo_count": 0,
-      "top_hazards": [],
+      "top_hazards": [
+        {
+          "label": "A small wire can protrude through the fabric of the ears on these headbands, posing a risk of cuts to consumers.",
+          "count": 1
+        }
+      ],
       "sample_recalls": [
         {
-          "recall_id": 0,
-          "recall_number": null,
-          "recall_date": null,
-          "title": "Error retrieving Recalls: The underlying provider failed on Open.",
-          "description": "",
-          "url": null,
-          "hazards": [],
-          "injuries": [],
-          "products": [],
-          "units": [],
+          "recall_id": 3814,
+          "recall_number": "07541",
+          "recall_date": "2007-04-17T00:00:00",
+          "title": "DreamWorks Animation SKG Recalls Shrek Headbands Due to Injury Hazard; Giveaway Product Distributed To Pepsi Employees",
+          "description": "The item is a plastic headband covered in bright green fabric with two ears similar to the character Shrek from the DreamWorks film series. A tag attached to one of the ears reads \"DREAMWORKS\" and \"THE THIRD,\" and shows the top of the Shrek character's head.",
+          "url": "https://www.cpsc.gov/Recalls/2007/DreamWorks-Animation-SKG-Recalls-Shrek-Headbands-Due-to-Injury-Hazard-Giveaway-Product-Distributed-To-Pepsi-Employees",
+          "hazards": [
+            "A small wire can protrude through the fabric of the ears on these headbands, posing a risk of cuts to consumers."
+          ],
+          "injuries": [
+            "None reported."
+          ],
+          "products": [
+            "Shrek Ears Headbands"
+          ],
+          "units": [
+            "About 6,000"
+          ],
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:50:33.088Z"
+      "scraped_at": "2026-07-12T21:51:34.044Z"
     },
     {
       "slug": "sprite",
       "name": "Sprite",
-      "status": "ok",
-      "total_recalls": 1,
-      "recent_24mo_count": 0,
-      "top_hazards": [],
-      "sample_recalls": [
-        {
-          "recall_id": 0,
-          "recall_number": null,
-          "recall_date": null,
-          "title": "Error retrieving Recalls: The underlying provider failed on Open.",
-          "description": "",
-          "url": null,
-          "hazards": [],
-          "injuries": [],
-          "products": [],
-          "units": [],
-          "remedies": []
-        }
-      ],
-      "scraped_at": "2026-07-05T21:50:49.186Z"
+      "status": "no_recalls",
+      "total_recalls": 0
     },
     {
       "slug": "dr-pepper",
       "name": "Dr Pepper",
-      "status": "ok",
-      "total_recalls": 1,
-      "recent_24mo_count": 0,
-      "top_hazards": [],
-      "sample_recalls": [
-        {
-          "recall_id": 0,
-          "recall_number": null,
-          "recall_date": null,
-          "title": "Error retrieving Recalls: The underlying provider failed on Open.",
-          "description": "",
-          "url": null,
-          "hazards": [],
-          "injuries": [],
-          "products": [],
-          "units": [],
-          "remedies": []
-        }
-      ],
-      "scraped_at": "2026-07-05T21:51:05.768Z"
+      "status": "no_recalls",
+      "total_recalls": 0
     },
     {
       "slug": "mountain-dew",
       "name": "Mountain Dew",
-      "status": "ok",
-      "total_recalls": 1,
-      "recent_24mo_count": 0,
-      "top_hazards": [],
-      "sample_recalls": [
-        {
-          "recall_id": 0,
-          "recall_number": null,
-          "recall_date": null,
-          "title": "Error retrieving Recalls: The underlying provider failed on Open.",
-          "description": "",
-          "url": null,
-          "hazards": [],
-          "injuries": [],
-          "products": [],
-          "units": [],
-          "remedies": []
-        }
-      ],
-      "scraped_at": "2026-07-05T21:51:21.842Z"
+      "status": "no_recalls",
+      "total_recalls": 0
     },
     {
       "slug": "gatorade",
       "name": "Gatorade",
-      "status": "ok",
-      "total_recalls": 1,
-      "recent_24mo_count": 0,
-      "top_hazards": [],
-      "sample_recalls": [
-        {
-          "recall_id": 0,
-          "recall_number": null,
-          "recall_date": null,
-          "title": "Error retrieving Recalls: The underlying provider failed on Open.",
-          "description": "",
-          "url": null,
-          "hazards": [],
-          "injuries": [],
-          "products": [],
-          "units": [],
-          "remedies": []
-        }
-      ],
-      "scraped_at": "2026-07-05T21:51:37.919Z"
+      "status": "no_recalls",
+      "total_recalls": 0
     },
     {
       "slug": "red-bull",
       "name": "Red Bull",
-      "status": "ok",
-      "total_recalls": 1,
-      "recent_24mo_count": 0,
-      "top_hazards": [],
-      "sample_recalls": [
-        {
-          "recall_id": 0,
-          "recall_number": null,
-          "recall_date": null,
-          "title": "Error retrieving Recalls: The underlying provider failed on Open.",
-          "description": "",
-          "url": null,
-          "hazards": [],
-          "injuries": [],
-          "products": [],
-          "units": [],
-          "remedies": []
-        }
-      ],
-      "scraped_at": "2026-07-05T21:52:30.845Z"
+      "status": "no_recalls",
+      "total_recalls": 0
     },
     {
       "slug": "monster-energy",
       "name": "Monster Energy",
-      "status": "ok",
-      "total_recalls": 1,
-      "recent_24mo_count": 0,
-      "top_hazards": [],
-      "sample_recalls": [
-        {
-          "recall_id": 0,
-          "recall_number": null,
-          "recall_date": null,
-          "title": "Error retrieving Recalls: The underlying provider failed on Open.",
-          "description": "",
-          "url": null,
-          "hazards": [],
-          "injuries": [],
-          "products": [],
-          "units": [],
-          "remedies": []
-        }
-      ],
-      "scraped_at": "2026-07-05T21:52:47.116Z"
+      "status": "no_recalls",
+      "total_recalls": 0
     },
     {
       "slug": "budweiser",
@@ -228,57 +170,20 @@
     {
       "slug": "bud-light",
       "name": "Bud Light",
-      "status": "ok",
-      "total_recalls": 1,
-      "recent_24mo_count": 0,
-      "top_hazards": [],
-      "sample_recalls": [
-        {
-          "recall_id": 0,
-          "recall_number": null,
-          "recall_date": null,
-          "title": "Error retrieving Recalls: The underlying provider failed on Open.",
-          "description": "",
-          "url": null,
-          "hazards": [],
-          "injuries": [],
-          "products": [],
-          "units": [],
-          "remedies": []
-        }
-      ],
-      "scraped_at": "2026-07-05T21:53:40.769Z"
+      "status": "no_recalls",
+      "total_recalls": 0
     },
     {
       "slug": "coors-light",
       "name": "Coors Light",
-      "status": "error",
-      "error": "HTTP 503",
-      "code": 503
+      "status": "no_recalls",
+      "total_recalls": 0
     },
     {
       "slug": "modelo",
       "name": "Modelo",
-      "status": "ok",
-      "total_recalls": 1,
-      "recent_24mo_count": 0,
-      "top_hazards": [],
-      "sample_recalls": [
-        {
-          "recall_id": 0,
-          "recall_number": null,
-          "recall_date": null,
-          "title": "Error retrieving Recalls: The underlying provider failed on Open.",
-          "description": "",
-          "url": null,
-          "hazards": [],
-          "injuries": [],
-          "products": [],
-          "units": [],
-          "remedies": []
-        }
-      ],
-      "scraped_at": "2026-07-05T21:55:58.412Z"
+      "status": "no_recalls",
+      "total_recalls": 0
     },
     {
       "slug": "corona",
@@ -412,7 +317,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:56:29.766Z"
+      "scraped_at": "2026-07-12T21:51:48.934Z"
     },
     {
       "slug": "heineken",
@@ -457,7 +362,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:56:43.924Z"
+      "scraped_at": "2026-07-12T21:51:53.249Z"
     },
     {
       "slug": "froot-loops",
@@ -641,7 +546,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:57:29.143Z"
+      "scraped_at": "2026-07-12T21:52:09.666Z"
     },
     {
       "slug": "hershey",
@@ -795,7 +700,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T21:57:37.034Z"
+      "scraped_at": "2026-07-12T21:52:12.364Z"
     },
     {
       "slug": "mms",
@@ -955,7 +860,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T21:57:43.903Z"
+      "scraped_at": "2026-07-12T21:52:16.426Z"
     },
     {
       "slug": "kit-kat",
@@ -1000,7 +905,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:57:51.355Z"
+      "scraped_at": "2026-07-12T21:52:20.522Z"
     },
     {
       "slug": "hellmanns",
@@ -1153,7 +1058,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T21:57:54.290Z"
+      "scraped_at": "2026-07-12T21:52:23.283Z"
     },
     {
       "slug": "kellogg",
@@ -1230,7 +1135,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:57:57.280Z"
+      "scraped_at": "2026-07-12T21:52:26.092Z"
     },
     {
       "slug": "nestle",
@@ -1350,7 +1255,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T21:57:58.995Z"
+      "scraped_at": "2026-07-12T21:52:27.513Z"
     },
     {
       "slug": "pepsico",
@@ -1468,7 +1373,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:58:02.019Z"
+      "scraped_at": "2026-07-12T21:52:30.313Z"
     },
     {
       "slug": "mondelez",
@@ -1675,7 +1580,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T21:58:18.529Z"
+      "scraped_at": "2026-07-12T21:52:45.633Z"
     },
     {
       "slug": "clif-bar",
@@ -1747,7 +1652,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:58:24.503Z"
+      "scraped_at": "2026-07-12T21:52:51.019Z"
     },
     {
       "slug": "post",
@@ -1869,7 +1774,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:58:27.056Z"
+      "scraped_at": "2026-07-12T21:52:53.887Z"
     },
     {
       "slug": "crest",
@@ -2016,7 +1921,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:58:28.370Z"
+      "scraped_at": "2026-07-12T21:52:55.275Z"
     },
     {
       "slug": "charmin",
@@ -2049,7 +1954,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:58:29.680Z"
+      "scraped_at": "2026-07-12T21:52:56.620Z"
     },
     {
       "slug": "bounty",
@@ -2075,7 +1980,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:58:30.959Z"
+      "scraped_at": "2026-07-12T21:52:57.957Z"
     },
     {
       "slug": "pampers",
@@ -2114,7 +2019,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T21:58:32.273Z"
+      "scraped_at": "2026-07-12T21:52:59.351Z"
     },
     {
       "slug": "huggies",
@@ -2261,7 +2166,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:58:36.608Z"
+      "scraped_at": "2026-07-12T21:53:03.530Z"
     },
     {
       "slug": "clorox",
@@ -2327,7 +2232,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T21:58:37.912Z"
+      "scraped_at": "2026-07-12T21:53:04.983Z"
     },
     {
       "slug": "lysol",
@@ -2364,7 +2269,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:58:39.411Z"
+      "scraped_at": "2026-07-12T21:53:06.320Z"
     },
     {
       "slug": "febreze",
@@ -2407,7 +2312,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:58:42.048Z"
+      "scraped_at": "2026-07-12T21:53:09.065Z"
     },
     {
       "slug": "dove",
@@ -2554,7 +2459,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T21:58:43.370Z"
+      "scraped_at": "2026-07-12T21:53:10.408Z"
     },
     {
       "slug": "olay",
@@ -2658,7 +2563,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:58:48.549Z"
+      "scraped_at": "2026-07-12T21:53:15.898Z"
     },
     {
       "slug": "suave",
@@ -2695,7 +2600,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:58:49.860Z"
+      "scraped_at": "2026-07-12T21:53:17.254Z"
     },
     {
       "slug": "axe",
@@ -2842,7 +2747,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T21:58:51.137Z"
+      "scraped_at": "2026-07-12T21:53:18.576Z"
     },
     {
       "slug": "aveeno",
@@ -3013,7 +2918,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T21:58:57.681Z"
+      "scraped_at": "2026-07-12T21:53:25.587Z"
     },
     {
       "slug": "sephora",
@@ -3212,7 +3117,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:59:10.803Z"
+      "scraped_at": "2026-07-12T21:53:39.088Z"
     },
     {
       "slug": "colgate-palmolive",
@@ -3273,7 +3178,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:59:12.095Z"
+      "scraped_at": "2026-07-12T21:53:40.440Z"
     },
     {
       "slug": "kimberly-clark",
@@ -3352,7 +3257,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:59:14.723Z"
+      "scraped_at": "2026-07-12T21:53:43.250Z"
     },
     {
       "slug": "philip-morris",
@@ -3385,7 +3290,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:59:16.028Z"
+      "scraped_at": "2026-07-12T21:53:44.595Z"
     },
     {
       "slug": "altria",
@@ -3424,7 +3329,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T21:59:17.334Z"
+      "scraped_at": "2026-07-12T21:53:45.927Z"
     },
     {
       "slug": "marlboro",
@@ -3510,7 +3415,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:59:18.658Z"
+      "scraped_at": "2026-07-12T21:53:47.251Z"
     },
     {
       "slug": "camel",
@@ -3597,7 +3502,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:59:19.961Z"
+      "scraped_at": "2026-07-12T21:53:48.599Z"
     },
     {
       "slug": "mcdonalds",
@@ -3730,7 +3635,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:59:21.257Z"
+      "scraped_at": "2026-07-12T21:53:49.940Z"
     },
     {
       "slug": "burger-king",
@@ -3842,7 +3747,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:59:22.556Z"
+      "scraped_at": "2026-07-12T21:53:51.304Z"
     },
     {
       "slug": "wendys",
@@ -3875,7 +3780,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:59:23.846Z"
+      "scraped_at": "2026-07-12T21:53:52.704Z"
     },
     {
       "slug": "chick-fil-a",
@@ -3912,7 +3817,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:59:25.151Z"
+      "scraped_at": "2026-07-12T21:53:54.068Z"
     },
     {
       "slug": "starbucks",
@@ -4057,7 +3962,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:59:26.454Z"
+      "scraped_at": "2026-07-12T21:53:55.498Z"
     },
     {
       "slug": "dunkin",
@@ -4121,7 +4026,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:59:27.783Z"
+      "scraped_at": "2026-07-12T21:53:56.899Z"
     },
     {
       "slug": "subway",
@@ -4184,7 +4089,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:59:30.386Z"
+      "scraped_at": "2026-07-12T21:53:59.641Z"
     },
     {
       "slug": "kfc",
@@ -4217,7 +4122,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:59:31.684Z"
+      "scraped_at": "2026-07-12T21:54:00.975Z"
     },
     {
       "slug": "pizza-hut",
@@ -4310,7 +4215,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:59:47.515Z"
+      "scraped_at": "2026-07-12T21:54:16.381Z"
     },
     {
       "slug": "dairy-queen",
@@ -4343,7 +4248,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T21:59:48.806Z"
+      "scraped_at": "2026-07-12T21:54:17.722Z"
     },
     {
       "slug": "sonic",
@@ -4490,7 +4395,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T21:59:50.152Z"
+      "scraped_at": "2026-07-12T21:54:19.194Z"
     },
     {
       "slug": "cracker-barrel",
@@ -4637,7 +4542,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T21:59:51.459Z"
+      "scraped_at": "2026-07-12T21:54:20.548Z"
     },
     {
       "slug": "olive-garden",
@@ -4679,12 +4584,16 @@
       "slug": "walmart",
       "name": "Walmart",
       "status": "ok",
-      "total_recalls": 62,
-      "recent_24mo_count": 24,
+      "total_recalls": 63,
+      "recent_24mo_count": 25,
       "top_hazards": [
         {
           "label": "The recalled dressers are unstable if they are not anchored to the wall, posing serious tip-over and entrapment hazards that can result in injuries or death to…",
           "count": 3
+        },
+        {
+          "label": "The recalled infant walkers violate the mandatory standard for infant walkers because they can fit through a standard doorway and fail to stop at the edge of a…",
+          "count": 1
         },
         {
           "label": "The hard plastic outer shell can bubble or partially peel off, resulting in loose pieces of film-like plastic that pose a choking hazard to young children.",
@@ -4697,13 +4606,32 @@
         {
           "label": "The recalled dressers are unstable if they are not anchored to the wall, posing tip-over and entrapment hazards that can result in risks of serious injuries or…",
           "count": 1
-        },
-        {
-          "label": "The magnetic stick figures violate the mandatory standard for toys because they contain loose magnets posing an ingestion hazard to children. When high-powered…",
-          "count": 1
         }
       ],
       "sample_recalls": [
+        {
+          "recall_id": 10857,
+          "recall_number": "26609",
+          "recall_date": "2026-07-09T00:00:00",
+          "title": "WonderStone Infant Walkers Recalled Due to Risk of Serious Injury or Death from Fall Hazard; Violate Mandatory Standard for Infant Walkers; Sold on Walmart.com by Wonder Stone Toys",
+          "description": "This recall involves WonderStone-branded Infant Walkers sold in green and pink. The walkers have a gray fabric seat, a white tray with a detachable music box, six wheels, a foot pad and a white hand lever. \"Model No: 616\" or \"Model No: 616-1\" is printed on a white label located under the tray.",
+          "url": "https://www.cpsc.gov/Recalls/2026/WonderStone-Infant-Walkers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Fall-Hazard-Violate-Mandatory-Standard-for-Infant-Walkers-Sold-on-Walmart-com-by-Wonder-Stone-Toys",
+          "hazards": [
+            "The recalled infant walkers violate the mandatory standard for infant walkers because they can fit through a standard doorway and fail to stop at the edge of a…"
+          ],
+          "injuries": [
+            "None reported"
+          ],
+          "products": [
+            "WonderStone Infant Walkers"
+          ],
+          "units": [
+            "About 70"
+          ],
+          "remedies": [
+            "Refund"
+          ]
+        },
         {
           "recall_id": 10803,
           "recall_number": "26530",
@@ -4796,32 +4724,9 @@
           "remedies": [
             "Refund"
           ]
-        },
-        {
-          "recall_id": 10707,
-          "recall_number": "26401",
-          "recall_date": "2026-04-09T00:00:00",
-          "title": "Shenzhen Shijingjie Network Technology Male-to-Male Extension Cords Recalled Due to Risk of Serious Injury and Death from Electrocution and Carbon Monoxide Poisoning Hazards; Sold on Walmart",
-          "description": "This recall involves male-to-male extension cords, also known as pigtail cables, model numbers RY-US-06 and RY_US-1.5. The recalled, 125V 12AWG, heavy-duty extension cords are generally used to back-feed electricity to a residence during a power outage by connecting a generator to an outlet in the home. The blue or ye…",
-          "url": "https://www.cpsc.gov/Recalls/2026/Shenzhen-Shijingjie-Network-Technology-Male-to-Male-Extension-Cords-Recalled-Due-to-Risk-of-Serious-Injury-and-Death-from-Electrocution-and-Carbon-Monoxide-Poisoning-Hazards-Sold-on-Walmart",
-          "hazards": [
-            "The recalled male-to-male extension cords violate safety requirements because their exposed prongs can become energized when one end is plugged into a generato…"
-          ],
-          "injuries": [
-            "None reported"
-          ],
-          "products": [
-            "Male-to-Male Extension Cords"
-          ],
-          "units": [
-            "About 200"
-          ],
-          "remedies": [
-            "Refund"
-          ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:00.631Z"
+      "scraped_at": "2026-07-12T21:54:30.050Z"
     },
     {
       "slug": "target",
@@ -4968,7 +4873,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:02.224Z"
+      "scraped_at": "2026-07-12T21:54:31.457Z"
     },
     {
       "slug": "costco",
@@ -5115,7 +5020,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:03.862Z"
+      "scraped_at": "2026-07-12T21:54:32.859Z"
     },
     {
       "slug": "sams-club",
@@ -5256,14 +5161,14 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:00:05.161Z"
+      "scraped_at": "2026-07-12T21:54:34.220Z"
     },
     {
       "slug": "amazon",
       "name": "Amazon",
       "status": "ok",
-      "total_recalls": 321,
-      "recent_24mo_count": 191,
+      "total_recalls": 323,
+      "recent_24mo_count": 192,
       "top_hazards": [
         {
           "label": "The recalled dressers are unstable if they are not anchored to the wall, posing serious tip-over and entrapment hazards that can result in injuries or death to…",
@@ -5287,6 +5192,52 @@
         }
       ],
       "sample_recalls": [
+        {
+          "recall_id": 10855,
+          "recall_number": "26607",
+          "recall_date": "2026-07-09T00:00:00",
+          "title": "Biometric Gun Safes Recalled Due to Serious Injury Hazard and Risk of Death; Sold Exclusively on Amazon.com by BBRKIN",
+          "description": "This recall involves BBRKIN and MouTec Biometric Gun Safes with model number QHXP029B. The gray steel safes are used to store firearms and valuables. The safes measure about 14 inches by 12 inches by 57 inches, have one shelf and can store approximately five firearms. The recalled safes have the following serial numbe…",
+          "url": "https://www.cpsc.gov/Recalls/2026/Biometric-Gun-Safes-Recalled-Due-to-Serious-Injury-Hazard-and-Risk-of-Death-Sold-Exclusively-on-Amazon-com-by-BBRKIN",
+          "hazards": [
+            "The biometric lock on the gun safes can be opened by unauthorized users, posing a serious injury hazard and risk of death."
+          ],
+          "injuries": [
+            "None reported"
+          ],
+          "products": [
+            "BBRKIN and MouTec Biometric Firearm Safes"
+          ],
+          "units": [
+            "9,100"
+          ],
+          "remedies": [
+            "Repair"
+          ]
+        },
+        {
+          "recall_id": 10856,
+          "recall_number": "26608",
+          "recall_date": "2026-07-09T00:00:00",
+          "title": "Moodooy Bed Rails Recalled Due to Risk of Serious Injury or Death from Entrapment and Asphyxiation; Violate Mandatory Standard for Adult Portable Bed Rails; Sold on Amazon by Yuezhang",
+          "description": "This recall involves the Moodooy-branded adult portable bed rail. The bed rail has a white frame with black trim and a black storage pocket. The brand name \"Moodooy\" and model \"F311\" are printed on the storage pocket. The bed rail is about 12 inches wide by about 21 inches tall to about 23 inches tall (when extended).",
+          "url": "https://www.cpsc.gov/Recalls/2026/Moodooy-Bed-Rails-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Entrapment-and-Asphyxiation-Violate-Mandatory-Standard-for-Adult-Portable-Bed-Rails-Sold-on-Amazon-by-Yuezhang",
+          "hazards": [
+            "The recalled bed rails violate the mandatory standard for?adult portable bed rails?because users can become entrapped within the bed rail or between the bed ra…"
+          ],
+          "injuries": [
+            "None reported"
+          ],
+          "products": [
+            "Moodooy Adult Portable Bed Rails"
+          ],
+          "units": [
+            "About 228"
+          ],
+          "remedies": [
+            "Refund"
+          ]
+        },
         {
           "recall_id": 10846,
           "recall_number": "26596",
@@ -5355,55 +5306,9 @@
           "remedies": [
             "Refund"
           ]
-        },
-        {
-          "recall_id": 10840,
-          "recall_number": "26582",
-          "recall_date": "2026-06-25T00:00:00",
-          "title": "Combination Smoke and Carbon Monoxide (CO) Detectors Recalled Due to Risk of Serious Injury or Death from Failure to Alert Consumers to Fire; Sold Exclusively on Amazon.com by Treatlife Technology",
-          "description": "This recall involves Treatlife Smoke and Carbon Monoxide (CO) Detectors. The alarms are AA battery operated and have a colored light and test button. The alarms are white and circular in shape. The FCC ID \"2ANDL-XR3\" and the date of manufacture \"2023.DEC.02\" are printed on the bottom side of the alarm.",
-          "url": "https://www.cpsc.gov/Recalls/2026/Combination-Smoke-and-Carbon-Monoxide-CO-Detectors-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Failure-to-Alert-Consumers-to-Fire-Sold-Exclusively-on-Amazon-com-by-Treatlife-Technology",
-          "hazards": [
-            "The recalled detectors can fail to alert consumers of a fire, posing a risk of serious injury or death from smoke inhalation or burns."
-          ],
-          "injuries": [
-            "None reported"
-          ],
-          "products": [
-            "Treatlife Smoke and Carbon Monoxide (CO) Detectors"
-          ],
-          "units": [
-            "About 20"
-          ],
-          "remedies": [
-            "Refund"
-          ]
-        },
-        {
-          "recall_id": 10837,
-          "recall_number": "26579",
-          "recall_date": "2026-06-25T00:00:00",
-          "title": "Montessori Busy Board Toys Recalled Due to Risk of Serious Injury or Death from Magnet Ingestion; Violate Mandatory Standard for Toys; Sold on Amazon by Small Fish",
-          "description": "This recall involves Small Fish Montessori Busy Board toys, model 2512JX02. The busy board consists of a wooden base with six multi-colored removable square activity panels, including flipping mirror, abacus, finger spinner, spinning gear, rain maker and bead maze panels. \"Montessori Busy Board\" and model number \"2512…",
-          "url": "https://www.cpsc.gov/Recalls/2026/Montessori-Busy-Board-Toys-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Magnet-Ingestion-Violate-Mandatory-Standard-for-Toys-Sold-on-Amazon-by-Small-Fish",
-          "hazards": [
-            "The busy boards violate the mandatory safety standard for toys because magnets can detach, posing a deadly ingestion hazard. When high-powered magnets are swal…"
-          ],
-          "injuries": [
-            "None reported"
-          ],
-          "products": [
-            "Small Fish Montessori Busy Board Toys"
-          ],
-          "units": [
-            "About 1,013"
-          ],
-          "remedies": [
-            "Refund"
-          ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:06.745Z"
+      "scraped_at": "2026-07-12T21:54:35.773Z"
     },
     {
       "slug": "home-depot",
@@ -5551,7 +5456,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:08.345Z"
+      "scraped_at": "2026-07-12T21:54:37.134Z"
     },
     {
       "slug": "lowes",
@@ -5699,18 +5604,22 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:09.974Z"
+      "scraped_at": "2026-07-12T21:54:38.476Z"
     },
     {
       "slug": "best-buy",
       "name": "Best Buy",
       "status": "ok",
-      "total_recalls": 13,
-      "recent_24mo_count": 0,
+      "total_recalls": 14,
+      "recent_24mo_count": 1,
       "top_hazards": [
         {
           "label": "Fire & Fire-Related Burn",
           "count": 2
+        },
+        {
+          "label": "The recalled ranges' front-mounted knobs can be activated accidentally by humans or pets, posing a risk of serious injury from a fire hazard.",
+          "count": 1
         },
         {
           "label": "The air fryers can overheat, causing the handles to melt or break, posing fire and burn hazards. Additionally, the air fryer ovens can overheat and the glass o…",
@@ -5723,13 +5632,32 @@
         {
           "label": "The lava rocks can split and eject from the fire table, posing burn and impact injury hazards.",
           "count": 1
-        },
-        {
-          "label": "The air fryers and air fryer ovens can overheat, posing fire and burn hazards.",
-          "count": 1
         }
       ],
       "sample_recalls": [
+        {
+          "recall_id": 10854,
+          "recall_number": "26606",
+          "recall_date": "2026-07-09T00:00:00",
+          "title": "Best Buy Recalls Insignia® Gas Ranges Due to Risk of Serious Injury from a Fire Hazard",
+          "description": "This recall involves Insignia gas ranges with model numbers NS-RGFGSS1 and NS-RGFCGS2. The recalled ranges are stainless steel with five front-knobs on the oven with the \"Insignia\" label on the bottom of the oven door. A label with the model number can be found on the inside of the range's bottom drawer.",
+          "url": "https://www.cpsc.gov/Recalls/2026/Best-Buy-Recalls-Insignia-Gas-Ranges-Due-to-Risk-of-Serious-Injury-from-a-Fire-Hazard",
+          "hazards": [
+            "The recalled ranges' front-mounted knobs can be activated accidentally by humans or pets, posing a risk of serious injury from a fire hazard."
+          ],
+          "injuries": [
+            "The firm has received one report of the knobs being activated by accidental contact. No injuries have been reported."
+          ],
+          "products": [
+            "Insignia Front Control Gas Ranges"
+          ],
+          "units": [
+            "About 3,820 (in addition, about 700 were sold in Canada)"
+          ],
+          "remedies": [
+            "Repair"
+          ]
+        },
         {
           "recall_id": 9892,
           "recall_number": "24159",
@@ -5821,33 +5749,9 @@
           "remedies": [
             "Refund"
           ]
-        },
-        {
-          "recall_id": 1511,
-          "recall_number": "13739",
-          "recall_date": "2013-06-19T00:00:00",
-          "title": "Best Buy Recalls ATG Replacement Batteries for the MacBook Pro Due to Fire, Burn Hazards (Recall Alert)",
-          "description": "This recall involves both black and white ATG lithium-ion replacement batteries for MacBook Pro notebook computers. Model number \"MC-MBOOK13B\" is on the label of the black battery and model number \"MC-BOOK13W\" is on the label of the white battery. The ATG logo is on both batteries.",
-          "url": "https://www.cpsc.gov/Recalls/2013/Best-Buy-Recalls-ATG-Replacement-Batteries-for-the-MacBook-Pro",
-          "hazards": [
-            "The battery can catch fire while charging."
-          ],
-          "injuries": [
-            "The firm has received 13 reports that the battery caught fire, including one report of a serious burn to a consumer's leg."
-          ],
-          "products": [
-            "ATG lithium-ion batteries"
-          ],
-          "units": [
-            "About 5,100"
-          ],
-          "remedies": [
-            "Replace",
-            "Refund"
-          ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:11.333Z"
+      "scraped_at": "2026-07-12T21:54:39.835Z"
     },
     {
       "slug": "trader-joes",
@@ -5886,7 +5790,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:12.714Z"
+      "scraped_at": "2026-07-12T21:54:41.176Z"
     },
     {
       "slug": "whole-foods",
@@ -5985,7 +5889,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:15.695Z"
+      "scraped_at": "2026-07-12T21:54:43.995Z"
     },
     {
       "slug": "publix",
@@ -6024,7 +5928,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:17.143Z"
+      "scraped_at": "2026-07-12T21:54:45.345Z"
     },
     {
       "slug": "heb",
@@ -6171,7 +6075,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:18.503Z"
+      "scraped_at": "2026-07-12T21:54:46.691Z"
     },
     {
       "slug": "kroger",
@@ -6318,7 +6222,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:20.113Z"
+      "scraped_at": "2026-07-12T21:54:48.034Z"
     },
     {
       "slug": "safeway",
@@ -6355,7 +6259,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:00:21.497Z"
+      "scraped_at": "2026-07-12T21:54:49.365Z"
     },
     {
       "slug": "albertsons",
@@ -6400,7 +6304,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:00:25.673Z"
+      "scraped_at": "2026-07-12T21:54:53.600Z"
     },
     {
       "slug": "sprouts",
@@ -6553,7 +6457,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:28.511Z"
+      "scraped_at": "2026-07-12T21:54:56.343Z"
     },
     {
       "slug": "lidl",
@@ -6647,7 +6551,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:29.858Z"
+      "scraped_at": "2026-07-12T21:54:57.687Z"
     },
     {
       "slug": "ikea",
@@ -6796,7 +6700,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:31.364Z"
+      "scraped_at": "2026-07-12T21:54:59.033Z"
     },
     {
       "slug": "wayfair",
@@ -6944,7 +6848,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:32.967Z"
+      "scraped_at": "2026-07-12T21:55:00.412Z"
     },
     {
       "slug": "overstock",
@@ -7010,7 +6914,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:34.492Z"
+      "scraped_at": "2026-07-12T21:55:01.816Z"
     },
     {
       "slug": "qvc",
@@ -7157,7 +7061,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:36.421Z"
+      "scraped_at": "2026-07-12T21:55:03.173Z"
     },
     {
       "slug": "hsn",
@@ -7304,7 +7208,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:37.983Z"
+      "scraped_at": "2026-07-12T21:55:04.580Z"
     },
     {
       "slug": "dollar-general",
@@ -7447,7 +7351,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:00:39.345Z"
+      "scraped_at": "2026-07-12T21:55:05.915Z"
     },
     {
       "slug": "dollar-tree",
@@ -7595,7 +7499,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:40.853Z"
+      "scraped_at": "2026-07-12T21:55:07.273Z"
     },
     {
       "slug": "family-dollar",
@@ -7743,7 +7647,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:42.327Z"
+      "scraped_at": "2026-07-12T21:55:08.656Z"
     },
     {
       "slug": "five-below",
@@ -7863,7 +7767,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:43.588Z"
+      "scraped_at": "2026-07-12T21:55:09.988Z"
     },
     {
       "slug": "big-lots",
@@ -8010,7 +7914,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:45.098Z"
+      "scraped_at": "2026-07-12T21:55:11.330Z"
     },
     {
       "slug": "tj-maxx",
@@ -8133,7 +8037,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:00:46.584Z"
+      "scraped_at": "2026-07-12T21:55:12.741Z"
     },
     {
       "slug": "marshalls",
@@ -8281,7 +8185,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:48.068Z"
+      "scraped_at": "2026-07-12T21:55:14.131Z"
     },
     {
       "slug": "ross",
@@ -8315,7 +8219,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:00:49.343Z"
+      "scraped_at": "2026-07-12T21:55:15.541Z"
     },
     {
       "slug": "burlington",
@@ -8462,7 +8366,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:50.705Z"
+      "scraped_at": "2026-07-12T21:55:17.017Z"
     },
     {
       "slug": "homegoods",
@@ -8609,18 +8513,18 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:52.082Z"
+      "scraped_at": "2026-07-12T21:55:18.357Z"
     },
     {
       "slug": "macys",
       "name": "Macy's",
       "status": "ok",
-      "total_recalls": 19,
+      "total_recalls": 18,
       "recent_24mo_count": 2,
       "top_hazards": [
         {
           "label": "Fire & Fire-Related Burn",
-          "count": 4
+          "count": 3
         },
         {
           "label": "Choking",
@@ -8756,7 +8660,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:53.399Z"
+      "scraped_at": "2026-07-12T21:55:19.735Z"
     },
     {
       "slug": "kohls",
@@ -8899,7 +8803,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:00:54.760Z"
+      "scraped_at": "2026-07-12T21:55:21.273Z"
     },
     {
       "slug": "jcpenney",
@@ -9047,7 +8951,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:00:56.067Z"
+      "scraped_at": "2026-07-12T21:55:22.715Z"
     },
     {
       "slug": "nordstrom",
@@ -9192,18 +9096,18 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:00:57.545Z"
+      "scraped_at": "2026-07-12T21:55:24.087Z"
     },
     {
       "slug": "bloomingdales",
       "name": "Bloomingdale's",
       "status": "ok",
-      "total_recalls": 8,
+      "total_recalls": 7,
       "recent_24mo_count": 0,
       "top_hazards": [
         {
           "label": "Fire & Fire-Related Burn",
-          "count": 5
+          "count": 4
         },
         {
           "label": "The candleholders can tip over, posing a fire and burn hazard to consumers.",
@@ -9238,28 +9142,6 @@
           "units": [
             "300"
           ],
-          "remedies": []
-        },
-        {
-          "recall_id": 875,
-          "recall_number": "00119",
-          "recall_date": "2000-06-07T00:00:00",
-          "title": "Children's Robes Recalled by Federated Department Stores",
-          "description": "Children's Robes Recalled by Federated Department Stores NEWS from CPSC U.S. Consumer Product Safety Commission Office of Information and Public Affairs Washington, DC 20207 FOR IMMEDIATE RELEASE June 7, 2000 Release # 00-119 Federated Recall Hotline: (800) 364-6190 CPSC Consumer Hotline: (800) 638-2772 CPSC Media Con…",
-          "url": "https://www.cpsc.gov/Recalls/2000/CPSC-Federated-Department-Stores-Announce-Recall-of-Childrens-Robes",
-          "hazards": [
-            "Fire & Fire-Related Burn"
-          ],
-          "injuries": [],
-          "products": [
-            "Aegean children's robes",
-            "b kids children's robes",
-            "Baby Monarch children's robes",
-            "Charter Club children's robes",
-            "Club Room children's robes",
-            "Jr. By Monarch children's robes"
-          ],
-          "units": [],
           "remedies": []
         },
         {
@@ -9332,9 +9214,26 @@
           ],
           "units": [],
           "remedies": []
+        },
+        {
+          "recall_id": 5641,
+          "recall_number": "95081",
+          "recall_date": "1995-02-15T00:00:00",
+          "title": "CPSC, Michael Simon Inc. Announce Faux Fur Sweater Recall",
+          "description": "February 15, 1995 Release # 95-081 Washington, D.C. - CPSC, Michael Simon Inc. of New York is recalling 907 faux fur sweaters in four styles, including three cardigans and one pullover. Based on tests conducted by CPSC, the faux fur fabric of the sweaters fails to comply with the flammability standard under the Flamma…",
+          "url": "https://www.cpsc.gov/Recalls/1995/CPSC-Michael-Simon-Inc-Announce-Faux-Fur-Sweater-Recall",
+          "hazards": [
+            "Fire & Fire-Related Burn"
+          ],
+          "injuries": [],
+          "products": [
+            "Michael Simon faux fur sweaters"
+          ],
+          "units": [],
+          "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:00:58.961Z"
+      "scraped_at": "2026-07-12T21:55:25.769Z"
     },
     {
       "slug": "saks",
@@ -9473,7 +9372,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:01:01.621Z"
+      "scraped_at": "2026-07-12T21:55:28.477Z"
     },
     {
       "slug": "nordstrom-rack",
@@ -9537,7 +9436,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:01:03.024Z"
+      "scraped_at": "2026-07-12T21:55:29.909Z"
     },
     {
       "slug": "rei",
@@ -9685,7 +9584,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:01:04.392Z"
+      "scraped_at": "2026-07-12T21:55:31.272Z"
     },
     {
       "slug": "bass-pro-shops",
@@ -9818,7 +9717,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:01:05.815Z"
+      "scraped_at": "2026-07-12T21:55:32.686Z"
     },
     {
       "slug": "cabelas",
@@ -9960,7 +9859,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:01:07.322Z"
+      "scraped_at": "2026-07-12T21:55:34.113Z"
     },
     {
       "slug": "dicks-sporting-goods",
@@ -10107,7 +10006,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:01:08.757Z"
+      "scraped_at": "2026-07-12T21:55:35.541Z"
     },
     {
       "slug": "academy",
@@ -10258,7 +10157,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:01:10.148Z"
+      "scraped_at": "2026-07-12T21:55:36.920Z"
     },
     {
       "slug": "petco",
@@ -10411,7 +10310,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:01:12.837Z"
+      "scraped_at": "2026-07-12T21:55:39.607Z"
     },
     {
       "slug": "gamestop",
@@ -10516,7 +10415,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:01:15.827Z"
+      "scraped_at": "2026-07-12T21:55:42.333Z"
     },
     {
       "slug": "office-depot",
@@ -10663,7 +10562,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:01:17.111Z"
+      "scraped_at": "2026-07-12T21:55:43.678Z"
     },
     {
       "slug": "staples",
@@ -10806,7 +10705,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:01:18.523Z"
+      "scraped_at": "2026-07-12T21:55:45.092Z"
     },
     {
       "slug": "autozone",
@@ -10870,7 +10769,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:01:19.903Z"
+      "scraped_at": "2026-07-12T21:55:46.445Z"
     },
     {
       "slug": "oreilly-auto-parts",
@@ -10913,7 +10812,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:01:22.721Z"
+      "scraped_at": "2026-07-12T21:55:49.203Z"
     },
     {
       "slug": "napa-auto-parts",
@@ -11052,7 +10951,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:01:25.751Z"
+      "scraped_at": "2026-07-12T21:55:51.903Z"
     },
     {
       "slug": "walgreens",
@@ -11199,7 +11098,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:01:27.272Z"
+      "scraped_at": "2026-07-12T21:55:53.257Z"
     },
     {
       "slug": "rite-aid",
@@ -11344,7 +11243,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:01:28.785Z"
+      "scraped_at": "2026-07-12T21:55:54.624Z"
     },
     {
       "slug": "duane-reade",
@@ -11396,7 +11295,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:01:32.730Z"
+      "scraped_at": "2026-07-12T21:55:58.750Z"
     },
     {
       "slug": "sheetz",
@@ -11553,7 +11452,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:01:39.782Z"
+      "scraped_at": "2026-07-12T21:56:05.662Z"
     },
     {
       "slug": "adidas",
@@ -11590,7 +11489,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:01:41.053Z"
+      "scraped_at": "2026-07-12T21:56:07.059Z"
     },
     {
       "slug": "under-armour",
@@ -11681,7 +11580,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:01:42.392Z"
+      "scraped_at": "2026-07-12T21:56:08.559Z"
     },
     {
       "slug": "lululemon",
@@ -11720,7 +11619,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:01:43.733Z"
+      "scraped_at": "2026-07-12T21:56:09.917Z"
     },
     {
       "slug": "puma",
@@ -11759,7 +11658,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:01:45.001Z"
+      "scraped_at": "2026-07-12T21:56:11.345Z"
     },
     {
       "slug": "new-balance",
@@ -11908,7 +11807,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:01:47.573Z"
+      "scraped_at": "2026-07-12T21:56:14.122Z"
     },
     {
       "slug": "asics",
@@ -12055,7 +11954,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:01:48.956Z"
+      "scraped_at": "2026-07-12T21:56:15.537Z"
     },
     {
       "slug": "brooks",
@@ -12098,7 +11997,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:01:51.674Z"
+      "scraped_at": "2026-07-12T21:56:18.515Z"
     },
     {
       "slug": "levis",
@@ -12247,7 +12146,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:01:54.460Z"
+      "scraped_at": "2026-07-12T21:56:21.345Z"
     },
     {
       "slug": "old-navy",
@@ -12361,7 +12260,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:01:56.111Z"
+      "scraped_at": "2026-07-12T21:56:22.728Z"
     },
     {
       "slug": "banana-republic",
@@ -12412,7 +12311,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:02:01.312Z"
+      "scraped_at": "2026-07-12T21:56:26.949Z"
     },
     {
       "slug": "hollister",
@@ -12565,7 +12464,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:02:04.774Z"
+      "scraped_at": "2026-07-12T21:56:29.718Z"
     },
     {
       "slug": "zara",
@@ -12610,7 +12509,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:02:07.623Z"
+      "scraped_at": "2026-07-12T21:56:32.468Z"
     },
     {
       "slug": "forever-21",
@@ -12676,7 +12575,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:02:09.100Z"
+      "scraped_at": "2026-07-12T21:56:33.821Z"
     },
     {
       "slug": "shein",
@@ -12823,14 +12722,14 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:02:10.512Z"
+      "scraped_at": "2026-07-12T21:56:35.195Z"
     },
     {
       "slug": "temu",
       "name": "Temu",
       "status": "ok",
       "total_recalls": 11,
-      "recent_24mo_count": 8,
+      "recent_24mo_count": 5,
       "top_hazards": [
         {
           "label": "The recalled children's pajama sets violate the flammability standards for children's sleepwear, posing a risk of burn injuries to children.",
@@ -12970,7 +12869,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:02:12.089Z"
+      "scraped_at": "2026-07-12T21:56:36.558Z"
     },
     {
       "slug": "fashion-nova",
@@ -13025,7 +12924,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:02:17.648Z"
+      "scraped_at": "2026-07-12T21:56:42.011Z"
     },
     {
       "slug": "patagonia",
@@ -13085,7 +12984,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:02:19.114Z"
+      "scraped_at": "2026-07-12T21:56:43.383Z"
     },
     {
       "slug": "north-face",
@@ -13191,7 +13090,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:02:20.422Z"
+      "scraped_at": "2026-07-12T21:56:44.746Z"
     },
     {
       "slug": "columbia",
@@ -13280,7 +13179,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:02:21.996Z"
+      "scraped_at": "2026-07-12T21:56:46.106Z"
     },
     {
       "slug": "arc-teryx",
@@ -13319,7 +13218,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:02:23.337Z"
+      "scraped_at": "2026-07-12T21:56:47.453Z"
     },
     {
       "slug": "allbirds",
@@ -13430,7 +13329,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:02:26.660Z"
+      "scraped_at": "2026-07-12T21:56:50.286Z"
     },
     {
       "slug": "warby-parker",
@@ -13557,7 +13456,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:02:29.349Z"
+      "scraped_at": "2026-07-12T21:56:53.140Z"
     },
     {
       "slug": "canada-goose",
@@ -13602,7 +13501,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:02:33.297Z"
+      "scraped_at": "2026-07-12T21:56:57.405Z"
     },
     {
       "slug": "tommy-hilfiger",
@@ -13685,7 +13584,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:02:34.633Z"
+      "scraped_at": "2026-07-12T21:56:58.737Z"
     },
     {
       "slug": "calvin-klein",
@@ -13718,7 +13617,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:02:35.950Z"
+      "scraped_at": "2026-07-12T21:57:00.105Z"
     },
     {
       "slug": "gucci",
@@ -13775,7 +13674,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:02:41.155Z"
+      "scraped_at": "2026-07-12T21:57:05.713Z"
     },
     {
       "slug": "hermes",
@@ -13838,7 +13737,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:02:47.725Z"
+      "scraped_at": "2026-07-12T21:57:12.623Z"
     },
     {
       "slug": "apple",
@@ -13985,7 +13884,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:02:49.028Z"
+      "scraped_at": "2026-07-12T21:57:14.003Z"
     },
     {
       "slug": "microsoft",
@@ -14024,7 +13923,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:02:50.352Z"
+      "scraped_at": "2026-07-12T21:57:15.349Z"
     },
     {
       "slug": "google",
@@ -14063,7 +13962,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:02:51.631Z"
+      "scraped_at": "2026-07-12T21:57:16.702Z"
     },
     {
       "slug": "alphabet",
@@ -14159,7 +14058,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:02:52.921Z"
+      "scraped_at": "2026-07-12T21:57:18.085Z"
     },
     {
       "slug": "meta",
@@ -14307,7 +14206,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:02:54.282Z"
+      "scraped_at": "2026-07-12T21:57:19.509Z"
     },
     {
       "slug": "facebook",
@@ -14346,7 +14245,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:02:55.571Z"
+      "scraped_at": "2026-07-12T21:57:20.982Z"
     },
     {
       "slug": "instagram",
@@ -14364,8 +14263,8 @@
       "slug": "x-corp",
       "name": "X",
       "status": "ok",
-      "total_recalls": 2109,
-      "recent_24mo_count": 263,
+      "total_recalls": 2111,
+      "recent_24mo_count": 260,
       "top_hazards": [
         {
           "label": "Fire & Fire-Related Burn",
@@ -14377,7 +14276,7 @@
         },
         {
           "label": "Choking",
-          "count": 27
+          "count": 26
         },
         {
           "label": "Laceration",
@@ -14389,6 +14288,52 @@
         }
       ],
       "sample_recalls": [
+        {
+          "recall_id": 10855,
+          "recall_number": "26607",
+          "recall_date": "2026-07-09T00:00:00",
+          "title": "Biometric Gun Safes Recalled Due to Serious Injury Hazard and Risk of Death; Sold Exclusively on Amazon.com by BBRKIN",
+          "description": "This recall involves BBRKIN and MouTec Biometric Gun Safes with model number QHXP029B. The gray steel safes are used to store firearms and valuables. The safes measure about 14 inches by 12 inches by 57 inches, have one shelf and can store approximately five firearms. The recalled safes have the following serial numbe…",
+          "url": "https://www.cpsc.gov/Recalls/2026/Biometric-Gun-Safes-Recalled-Due-to-Serious-Injury-Hazard-and-Risk-of-Death-Sold-Exclusively-on-Amazon-com-by-BBRKIN",
+          "hazards": [
+            "The biometric lock on the gun safes can be opened by unauthorized users, posing a serious injury hazard and risk of death."
+          ],
+          "injuries": [
+            "None reported"
+          ],
+          "products": [
+            "BBRKIN and MouTec Biometric Firearm Safes"
+          ],
+          "units": [
+            "9,100"
+          ],
+          "remedies": [
+            "Repair"
+          ]
+        },
+        {
+          "recall_id": 10856,
+          "recall_number": "26608",
+          "recall_date": "2026-07-09T00:00:00",
+          "title": "Moodooy Bed Rails Recalled Due to Risk of Serious Injury or Death from Entrapment and Asphyxiation; Violate Mandatory Standard for Adult Portable Bed Rails; Sold on Amazon by Yuezhang",
+          "description": "This recall involves the Moodooy-branded adult portable bed rail. The bed rail has a white frame with black trim and a black storage pocket. The brand name \"Moodooy\" and model \"F311\" are printed on the storage pocket. The bed rail is about 12 inches wide by about 21 inches tall to about 23 inches tall (when extended).",
+          "url": "https://www.cpsc.gov/Recalls/2026/Moodooy-Bed-Rails-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Entrapment-and-Asphyxiation-Violate-Mandatory-Standard-for-Adult-Portable-Bed-Rails-Sold-on-Amazon-by-Yuezhang",
+          "hazards": [
+            "The recalled bed rails violate the mandatory standard for?adult portable bed rails?because users can become entrapped within the bed rail or between the bed ra…"
+          ],
+          "injuries": [
+            "None reported"
+          ],
+          "products": [
+            "Moodooy Adult Portable Bed Rails"
+          ],
+          "units": [
+            "About 228"
+          ],
+          "remedies": [
+            "Refund"
+          ]
+        },
         {
           "recall_id": 10848,
           "recall_number": "26599",
@@ -14458,55 +14403,9 @@
           "remedies": [
             "Refund"
           ]
-        },
-        {
-          "recall_id": 10840,
-          "recall_number": "26582",
-          "recall_date": "2026-06-25T00:00:00",
-          "title": "Combination Smoke and Carbon Monoxide (CO) Detectors Recalled Due to Risk of Serious Injury or Death from Failure to Alert Consumers to Fire; Sold Exclusively on Amazon.com by Treatlife Technology",
-          "description": "This recall involves Treatlife Smoke and Carbon Monoxide (CO) Detectors. The alarms are AA battery operated and have a colored light and test button. The alarms are white and circular in shape. The FCC ID \"2ANDL-XR3\" and the date of manufacture \"2023.DEC.02\" are printed on the bottom side of the alarm.",
-          "url": "https://www.cpsc.gov/Recalls/2026/Combination-Smoke-and-Carbon-Monoxide-CO-Detectors-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Failure-to-Alert-Consumers-to-Fire-Sold-Exclusively-on-Amazon-com-by-Treatlife-Technology",
-          "hazards": [
-            "The recalled detectors can fail to alert consumers of a fire, posing a risk of serious injury or death from smoke inhalation or burns."
-          ],
-          "injuries": [
-            "None reported"
-          ],
-          "products": [
-            "Treatlife Smoke and Carbon Monoxide (CO) Detectors"
-          ],
-          "units": [
-            "About 20"
-          ],
-          "remedies": [
-            "Refund"
-          ]
-        },
-        {
-          "recall_id": 10834,
-          "recall_number": "26576",
-          "recall_date": "2026-06-25T00:00:00",
-          "title": "Southern Telecom Expands Recall of Lomi Waxing Kits Due to Risk of Serious Injury or Death from Fire and Burn Hazards; Additional Model and Reported Incidents",
-          "description": "This recall involves the Lomi Roll-On Waxing Kit with Wax Cartridge & Wax Strips, model numbers LOMB2003PK and LOMB2004PK. The recalled boxed kits included a handheld wax warmer, a wax cartridge, wax strips, a power cord and a user's manual. The Lomi logo is printed on the front of the white and pink warmer and on the…",
-          "url": "https://www.cpsc.gov/Recalls/2026/Southern-Telecom-Expands-Recall-of-Lomi-Waxing-Kits-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards-Additional-Model-and-Reported-Incidents",
-          "hazards": [
-            "The roll-on warmers' power cord can overheat and short circuit, posing a risk of serious injury or death from fire, burn and electrical shock hazards."
-          ],
-          "injuries": [
-            "Southern Telecom has received two additional reports of the warmer power cord overheating. No injuries have been reported."
-          ],
-          "products": [
-            "Lomi Roll-On Waxing Kits"
-          ],
-          "units": [
-            "About 14,700 (Southern Telecom previously recalled the waxing kits on June 13, 2024)"
-          ],
-          "remedies": [
-            "Refund"
-          ]
         }
       ],
-      "scraped_at": "2026-07-05T22:03:01.305Z"
+      "scraped_at": "2026-07-12T21:57:27.420Z"
     },
     {
       "slug": "amazon-web-services",
@@ -14661,7 +14560,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:03:06.593Z"
+      "scraped_at": "2026-07-12T21:57:33.047Z"
     },
     {
       "slug": "intel",
@@ -14808,7 +14707,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:03:07.955Z"
+      "scraped_at": "2026-07-12T21:57:34.391Z"
     },
     {
       "slug": "amd",
@@ -14897,7 +14796,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:03:09.325Z"
+      "scraped_at": "2026-07-12T21:57:35.755Z"
     },
     {
       "slug": "nvidia",
@@ -14963,7 +14862,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:03:10.606Z"
+      "scraped_at": "2026-07-12T21:57:37.094Z"
     },
     {
       "slug": "qualcomm",
@@ -15114,7 +15013,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:03:13.253Z"
+      "scraped_at": "2026-07-12T21:57:39.918Z"
     },
     {
       "slug": "hp",
@@ -15261,7 +15160,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:03:14.552Z"
+      "scraped_at": "2026-07-12T21:57:41.366Z"
     },
     {
       "slug": "dell",
@@ -15404,7 +15303,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:03:15.872Z"
+      "scraped_at": "2026-07-12T21:57:42.748Z"
     },
     {
       "slug": "lenovo",
@@ -15551,7 +15450,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:03:17.194Z"
+      "scraped_at": "2026-07-12T21:57:44.130Z"
     },
     {
       "slug": "asus",
@@ -15590,7 +15489,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:03:18.503Z"
+      "scraped_at": "2026-07-12T21:57:45.500Z"
     },
     {
       "slug": "samsung",
@@ -15741,7 +15640,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:03:19.706Z"
+      "scraped_at": "2026-07-12T21:57:46.837Z"
     },
     {
       "slug": "lg",
@@ -15889,7 +15788,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:03:21.122Z"
+      "scraped_at": "2026-07-12T21:57:48.275Z"
     },
     {
       "slug": "sony",
@@ -16033,7 +15932,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:03:22.492Z"
+      "scraped_at": "2026-07-12T21:57:49.682Z"
     },
     {
       "slug": "xiaomi",
@@ -16193,7 +16092,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:03:32.891Z"
+      "scraped_at": "2026-07-12T21:58:00.996Z"
     },
     {
       "slug": "teams",
@@ -16328,7 +16227,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:03:43.412Z"
+      "scraped_at": "2026-07-12T21:58:11.889Z"
     },
     {
       "slug": "figma",
@@ -16371,7 +16270,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:03:46.082Z"
+      "scraped_at": "2026-07-12T21:58:14.582Z"
     },
     {
       "slug": "canva",
@@ -16464,7 +16363,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:03:47.408Z"
+      "scraped_at": "2026-07-12T21:58:16.021Z"
     },
     {
       "slug": "shopify",
@@ -16536,7 +16435,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:03:49.986Z"
+      "scraped_at": "2026-07-12T21:58:18.747Z"
     },
     {
       "slug": "square",
@@ -16683,7 +16582,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:03:51.335Z"
+      "scraped_at": "2026-07-12T21:58:20.231Z"
     },
     {
       "slug": "block",
@@ -16831,7 +16730,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:03:52.748Z"
+      "scraped_at": "2026-07-12T21:58:21.561Z"
     },
     {
       "slug": "paypal",
@@ -16882,7 +16781,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:03:58.098Z"
+      "scraped_at": "2026-07-12T21:58:27.138Z"
     },
     {
       "slug": "twilio",
@@ -16967,7 +16866,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:04:10.016Z"
+      "scraped_at": "2026-07-12T21:58:39.973Z"
     },
     {
       "slug": "netlify",
@@ -17210,7 +17109,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:04:33.623Z"
+      "scraped_at": "2026-07-12T21:59:04.731Z"
     },
     {
       "slug": "roku",
@@ -17291,7 +17190,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:04:44.107Z"
+      "scraped_at": "2026-07-12T21:59:15.785Z"
     },
     {
       "slug": "linkedin",
@@ -17342,7 +17241,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:04:48.035Z"
+      "scraped_at": "2026-07-12T21:59:19.877Z"
     },
     {
       "slug": "bluesky",
@@ -17432,7 +17331,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:04:55.961Z"
+      "scraped_at": "2026-07-12T21:59:28.203Z"
     },
     {
       "slug": "us-bank",
@@ -17603,7 +17502,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:05:02.617Z"
+      "scraped_at": "2026-07-12T21:59:35.107Z"
     },
     {
       "slug": "american-express",
@@ -17718,7 +17617,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:05:09.167Z"
+      "scraped_at": "2026-07-12T21:59:42.059Z"
     },
     {
       "slug": "charles-schwab",
@@ -17798,7 +17697,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:05:14.479Z"
+      "scraped_at": "2026-07-12T21:59:47.584Z"
     },
     {
       "slug": "ally-bank",
@@ -17859,7 +17758,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:05:21.106Z"
+      "scraped_at": "2026-07-12T21:59:54.441Z"
     },
     {
       "slug": "geico",
@@ -17904,7 +17803,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:05:23.710Z"
+      "scraped_at": "2026-07-12T21:59:57.283Z"
     },
     {
       "slug": "allstate",
@@ -17982,7 +17881,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:05:27.667Z"
+      "scraped_at": "2026-07-12T22:00:01.555Z"
     },
     {
       "slug": "farmers-insurance",
@@ -18072,7 +17971,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:05:34.306Z"
+      "scraped_at": "2026-07-12T22:00:08.521Z"
     },
     {
       "slug": "new-york-life",
@@ -18124,7 +18023,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:05:39.603Z"
+      "scraped_at": "2026-07-12T22:00:14.081Z"
     },
     {
       "slug": "verizon",
@@ -18188,7 +18087,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:05:40.904Z"
+      "scraped_at": "2026-07-12T22:00:15.427Z"
     },
     {
       "slug": "t-mobile",
@@ -18271,7 +18170,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:05:43.491Z"
+      "scraped_at": "2026-07-12T22:00:18.169Z"
     },
     {
       "slug": "us-cellular",
@@ -18409,7 +18308,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:05:50.172Z"
+      "scraped_at": "2026-07-12T22:00:25.206Z"
     },
     {
       "slug": "cox",
@@ -18597,7 +18496,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:06:00.882Z"
+      "scraped_at": "2026-07-12T22:00:35.908Z"
     },
     {
       "slug": "bp",
@@ -18663,7 +18562,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:06:02.281Z"
+      "scraped_at": "2026-07-12T22:00:37.224Z"
     },
     {
       "slug": "conocophillips",
@@ -18765,7 +18664,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:06:11.632Z"
+      "scraped_at": "2026-07-12T22:00:46.871Z"
     },
     {
       "slug": "ford",
@@ -18912,7 +18811,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:06:12.956Z"
+      "scraped_at": "2026-07-12T22:00:48.261Z"
     },
     {
       "slug": "gm",
@@ -18969,7 +18868,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:06:18.123Z"
+      "scraped_at": "2026-07-12T22:00:53.674Z"
     },
     {
       "slug": "jeep",
@@ -19122,7 +19021,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:06:20.762Z"
+      "scraped_at": "2026-07-12T22:00:56.617Z"
     },
     {
       "slug": "stellantis",
@@ -19282,7 +19181,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:06:24.659Z"
+      "scraped_at": "2026-07-12T22:01:00.718Z"
     },
     {
       "slug": "nissan",
@@ -19326,7 +19225,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:06:27.247Z"
+      "scraped_at": "2026-07-12T22:01:03.454Z"
     },
     {
       "slug": "kia",
@@ -19388,7 +19287,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:06:28.538Z"
+      "scraped_at": "2026-07-12T22:01:04.785Z"
     },
     {
       "slug": "mazda",
@@ -19433,7 +19332,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:06:31.216Z"
+      "scraped_at": "2026-07-12T22:01:07.510Z"
     },
     {
       "slug": "mitsubishi",
@@ -19466,7 +19365,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:06:32.514Z"
+      "scraped_at": "2026-07-12T22:01:09.266Z"
     },
     {
       "slug": "volkswagen",
@@ -19621,7 +19520,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:06:35.439Z"
+      "scraped_at": "2026-07-12T22:01:11.986Z"
     },
     {
       "slug": "bmw",
@@ -19658,7 +19557,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:06:36.789Z"
+      "scraped_at": "2026-07-12T22:01:13.346Z"
     },
     {
       "slug": "mercedes-benz",
@@ -19724,7 +19623,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:06:39.328Z"
+      "scraped_at": "2026-07-12T22:01:16.061Z"
     },
     {
       "slug": "volvo",
@@ -19763,7 +19662,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:06:42.005Z"
+      "scraped_at": "2026-07-12T22:01:18.764Z"
     },
     {
       "slug": "lamborghini",
@@ -19848,7 +19747,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:06:48.549Z"
+      "scraped_at": "2026-07-12T22:01:25.537Z"
     },
     {
       "slug": "moderna",
@@ -19893,7 +19792,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:06:51.264Z"
+      "scraped_at": "2026-07-12T22:01:28.230Z"
     },
     {
       "slug": "abbvie",
@@ -19962,7 +19861,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:06:58.927Z"
+      "scraped_at": "2026-07-12T22:01:36.640Z"
     },
     {
       "slug": "anthem",
@@ -20026,7 +19925,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:07:00.208Z"
+      "scraped_at": "2026-07-12T22:01:38.004Z"
     },
     {
       "slug": "elevance",
@@ -20193,7 +20092,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:07:17.328Z"
+      "scraped_at": "2026-07-12T22:01:55.673Z"
     },
     {
       "slug": "gsk",
@@ -20259,7 +20158,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:07:18.662Z"
+      "scraped_at": "2026-07-12T22:01:57.067Z"
     },
     {
       "slug": "sanofi",
@@ -20467,7 +20366,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:07:34.462Z"
+      "scraped_at": "2026-07-12T22:02:15.766Z"
     },
     {
       "slug": "hyatt",
@@ -20674,7 +20573,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:07:48.920Z"
+      "scraped_at": "2026-07-12T22:02:31.157Z"
     },
     {
       "slug": "trivago",
@@ -20726,7 +20625,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:07:52.878Z"
+      "scraped_at": "2026-07-12T22:02:35.560Z"
     },
     {
       "slug": "lyft",
@@ -20885,7 +20784,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:07:56.959Z"
+      "scraped_at": "2026-07-12T22:02:40.016Z"
     },
     {
       "slug": "avis",
@@ -20997,7 +20896,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:07:58.307Z"
+      "scraped_at": "2026-07-12T22:02:41.384Z"
     },
     {
       "slug": "budget",
@@ -21174,7 +21073,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:08:06.659Z"
+      "scraped_at": "2026-07-12T22:02:50.009Z"
     },
     {
       "slug": "my-pillow",
@@ -21250,7 +21149,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:08:10.597Z"
+      "scraped_at": "2026-07-12T22:02:54.583Z"
     },
     {
       "slug": "truth-social",
@@ -21359,7 +21258,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:08:16.018Z"
+      "scraped_at": "2026-07-12T22:03:00.342Z"
     },
     {
       "slug": "sherwin-williams",
@@ -21502,7 +21401,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:08:17.378Z"
+      "scraped_at": "2026-07-12T22:03:01.869Z"
     },
     {
       "slug": "benjamin-moore",
@@ -21659,7 +21558,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:08:21.410Z"
+      "scraped_at": "2026-07-12T22:03:06.058Z"
     },
     {
       "slug": "ge-appliances",
@@ -21806,7 +21705,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:08:22.734Z"
+      "scraped_at": "2026-07-12T22:03:07.427Z"
     },
     {
       "slug": "kitchenaid",
@@ -21920,7 +21819,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:08:24.026Z"
+      "scraped_at": "2026-07-12T22:03:09.055Z"
     },
     {
       "slug": "keurig",
@@ -21959,7 +21858,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:08:25.432Z"
+      "scraped_at": "2026-07-12T22:03:10.383Z"
     },
     {
       "slug": "ninja",
@@ -22040,7 +21939,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:08:26.851Z"
+      "scraped_at": "2026-07-12T22:03:11.973Z"
     },
     {
       "slug": "breville",
@@ -22079,15 +21978,19 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:08:28.157Z"
+      "scraped_at": "2026-07-12T22:03:13.330Z"
     },
     {
       "slug": "cuisinart",
       "name": "Cuisinart",
       "status": "ok",
-      "total_recalls": 4,
-      "recent_24mo_count": 1,
+      "total_recalls": 5,
+      "recent_24mo_count": 2,
       "top_hazards": [
+        {
+          "label": "The tempered glass window in the pizza oven can shatter during use, posing a risk of serious injury from laceration hazard.",
+          "count": 1
+        },
         {
           "label": "Small metal wire bristles can detach from the brushes and stick to the grill or food, posing an ingestion hazard and risk of serious internal injuries that cou…",
           "count": 1
@@ -22106,6 +22009,29 @@
         }
       ],
       "sample_recalls": [
+        {
+          "recall_id": 10853,
+          "recall_number": "26605",
+          "recall_date": "2026-07-09T00:00:00",
+          "title": "Conair Recalls Cuisinart Propel+ Four Burner 3-In-1 Gas Grills Due to Risk of Serious Injury from Laceration Hazard",
+          "description": "This recall includes the stainless-steel Cuisinart Propel+ Four Burner 3-in-1 Gas Grill, featuring a griddle, a stove top burner and a pizza oven with tempered glass located on top of the lid of the grill. The model number CGG-6331 can be found on the label on the inside of the right-hand metal door, along with the se…",
+          "url": "https://www.cpsc.gov/Recalls/2026/Conair-Recalls-Cuisinart-Propel-Four-Burner-3-In-1-Gas-Grills-Due-to-Risk-of-Serious-Injury-from-Laceration-Hazard",
+          "hazards": [
+            "The tempered glass window in the pizza oven can shatter during use, posing a risk of serious injury from laceration hazard."
+          ],
+          "injuries": [
+            "The firm has received 37 reports of shattered glass during use; one fire was reported. No injuries have been reported."
+          ],
+          "products": [
+            "Cuisinart Propel+ Four Burner 3-in-1 Gas Grill with pizza oven"
+          ],
+          "units": [
+            "About 12,660 (In addition, about 83 were sold in Canada)"
+          ],
+          "remedies": [
+            "Refund"
+          ]
+        },
         {
           "recall_id": 10850,
           "recall_number": "26601",
@@ -22199,7 +22125,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:08:29.475Z"
+      "scraped_at": "2026-07-12T22:03:14.925Z"
     },
     {
       "slug": "vitamix",
@@ -22292,7 +22218,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:08:30.801Z"
+      "scraped_at": "2026-07-12T22:03:16.496Z"
     },
     {
       "slug": "dyson",
@@ -22331,7 +22257,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:08:32.107Z"
+      "scraped_at": "2026-07-12T22:03:17.972Z"
     },
     {
       "slug": "roomba",
@@ -22484,7 +22410,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:08:34.797Z"
+      "scraped_at": "2026-07-12T22:03:20.925Z"
     },
     {
       "slug": "dewalt",
@@ -22631,7 +22557,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:08:36.142Z"
+      "scraped_at": "2026-07-12T22:03:22.385Z"
     },
     {
       "slug": "craftsman",
@@ -22779,7 +22705,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:08:37.486Z"
+      "scraped_at": "2026-07-12T22:03:23.833Z"
     },
     {
       "slug": "milwaukee-tools",
@@ -22928,7 +22854,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:08:40.854Z"
+      "scraped_at": "2026-07-12T22:03:26.702Z"
     },
     {
       "slug": "ryobi",
@@ -23075,7 +23001,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:08:42.357Z"
+      "scraped_at": "2026-07-12T22:03:28.161Z"
     },
     {
       "slug": "husqvarna",
@@ -23222,7 +23148,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:08:43.794Z"
+      "scraped_at": "2026-07-12T22:03:29.652Z"
     },
     {
       "slug": "toro",
@@ -23369,7 +23295,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:08:45.270Z"
+      "scraped_at": "2026-07-12T22:03:31.095Z"
     },
     {
       "slug": "john-deere",
@@ -23517,7 +23443,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:08:46.624Z"
+      "scraped_at": "2026-07-12T22:03:32.478Z"
     },
     {
       "slug": "lego",
@@ -23600,7 +23526,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:08:48.166Z"
+      "scraped_at": "2026-07-12T22:03:33.825Z"
     },
     {
       "slug": "hasbro",
@@ -23739,7 +23665,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:08:49.570Z"
+      "scraped_at": "2026-07-12T22:03:35.226Z"
     },
     {
       "slug": "mattel",
@@ -23876,13 +23802,13 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:08:50.913Z"
+      "scraped_at": "2026-07-12T22:03:36.684Z"
     },
     {
       "slug": "fisher-price",
       "name": "Fisher-Price",
       "status": "ok",
-      "total_recalls": 55,
+      "total_recalls": 56,
       "recent_24mo_count": 4,
       "top_hazards": [
         {
@@ -24024,7 +23950,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:08:52.292Z"
+      "scraped_at": "2026-07-12T22:03:38.196Z"
     },
     {
       "slug": "nintendo",
@@ -24101,7 +24027,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:08:54.130Z"
+      "scraped_at": "2026-07-12T22:03:39.603Z"
     },
     {
       "slug": "playstation",
@@ -24138,7 +24064,7 @@
           "remedies": []
         }
       ],
-      "scraped_at": "2026-07-05T22:08:55.555Z"
+      "scraped_at": "2026-07-12T22:03:41.021Z"
     },
     {
       "slug": "xbox",
@@ -24177,7 +24103,7 @@
           ]
         }
       ],
-      "scraped_at": "2026-07-05T22:08:57.169Z"
+      "scraped_at": "2026-07-12T22:03:42.475Z"
     },
     {
       "slug": "ea",
