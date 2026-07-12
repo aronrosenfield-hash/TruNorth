@@ -24,6 +24,8 @@ import {
   sniffDelimiter,
   streamRows,
   SYNTH_ROWS,
+  looksLikeZip,
+  SourceUnavailableError,
 } from "./fmcsa-sms-fetch.mjs";
 
 import {
@@ -142,6 +144,26 @@ test("fixture is parseable + has 12 rows", async () => {
     assert.ok(r.carrierName);
     assert.ok(r.basics);
   }
+});
+
+test("looksLikeZip accepts the three PK signatures, rejects HTML", () => {
+  // Local file header, empty archive, spanned marker.
+  assert.equal(looksLikeZip(Buffer.from([0x50, 0x4b, 0x03, 0x04])), true);
+  assert.equal(looksLikeZip(Buffer.from([0x50, 0x4b, 0x05, 0x06])), true);
+  assert.equal(looksLikeZip(Buffer.from([0x50, 0x4b, 0x07, 0x08])), true);
+  // The exact failure mode we saw in CI: an HTML error page.
+  assert.equal(looksLikeZip(Buffer.from("<!DOCTYPE html>", "utf-8")), false);
+  assert.equal(looksLikeZip(Buffer.from("<HTML><HEAD>", "utf-8")), false);
+  // Too short / empty.
+  assert.equal(looksLikeZip(Buffer.from([0x50, 0x4b])), false);
+  assert.equal(looksLikeZip(Buffer.alloc(0)), false);
+});
+
+test("SourceUnavailableError is tagged for soft-fail handling", () => {
+  const err = new SourceUnavailableError("moved");
+  assert.equal(err.sourceUnavailable, true);
+  assert.equal(err.name, "SourceUnavailableError");
+  assert.ok(err instanceof Error);
 });
 
 test("synthetic preview rows match fixture rowCount", () => {

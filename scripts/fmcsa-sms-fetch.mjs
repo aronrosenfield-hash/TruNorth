@@ -70,6 +70,16 @@
  *                    covering known large carriers (Amazon/FedEx/UPS/...).
  *   --out PATH     — write to PATH instead of the default snapshot path.
  *   --max N        — cap parsed rows at N (for spot-checks; 0 = unlimited).
+ *   --keep-last-on-fail
+ *                  — if the upstream source is unavailable (moved URL / error
+ *                    page / non-ZIP body), keep the most recent snapshot and
+ *                    exit 0 (with a ::warning:: annotation) instead of failing
+ *                    the cron. Still exits non-zero if NO snapshot exists.
+ *                    Also enabled via FMCSA_KEEP_LAST_ON_FAIL=1.
+ *
+ * Env overrides (for when FMCSA moves the bulk files — no code change needed):
+ *   FMCSA_PASS_PROPERTY_URL   — override the Pass/Property ZIP URL.
+ *   FMCSA_CENSUS_URL          — override the Census Carrier Data ZIP URL.
  *
  * Locally:
  *   node scripts/fmcsa-sms-fetch.mjs                  # dry
@@ -98,9 +108,19 @@ const ROOT = path.resolve(__dirname, "..");
 const RAW_DIR = path.join(ROOT, "data/raw/fmcsa-sms");
 
 const LANDING_URL = "https://ai.fmcsa.dot.gov/SMS/";
+
+// SOURCE URL DRIFT (2026-07): FMCSA retired the direct `ai.fmcsa.dot.gov/SMS/
+// files/*.zip` endpoints — they now 302 to `.../SMS/error.html`, and the
+// canonical bulk files route through the Akamai-fronted Data Dissemination
+// Program page (which 403s any non-browser client). When FMCSA republishes a
+// working direct URL, point the workflow at it WITHOUT a code change by
+// setting the FMCSA_PASS_PROPERTY_URL / FMCSA_CENSUS_URL env vars (repo/Action
+// secrets). The old paths remain the default so a fix upstream just works.
 const PASS_PROPERTY_ZIP =
+  process.env.FMCSA_PASS_PROPERTY_URL ||
   "https://ai.fmcsa.dot.gov/SMS/files/SMS_AQ_PassProperty.zip";
 const CENSUS_ZIP =
+  process.env.FMCSA_CENSUS_URL ||
   "https://ai.fmcsa.dot.gov/SMS/files/SMS_AQ_CensusCarrierData.zip";
 
 const UA =
@@ -119,6 +139,13 @@ const APPLY = argv.includes("--apply");
 const DRY = !APPLY;
 const OUT_PATH = flagArg("--out");
 const MAX_ROWS = Number(flagArg("--max") || 0);
+// When the upstream source is unavailable (endpoint moved / returns an error
+// page), keep the last-known-good snapshot and exit 0 instead of red-failing
+// the monthly cron — but still exit non-zero if there's no snapshot to fall
+// back to. Enabled via flag or FMCSA_KEEP_LAST_ON_FAIL=1 (used by the workflow).
+const KEEP_LAST_ON_FAIL =
+  argv.includes("--keep-last-on-fail") ||
+  /^(1|true|yes)$/i.test(process.env.FMCSA_KEEP_LAST_ON_FAIL || "");
 
 // ─────────────────────────── normalization ──────────────────────────
 
@@ -271,6 +298,36 @@ export async function* streamRows(filePath, { maxRows = 0 } = {}) {
 
 // ─────────────────────────── network ────────────────────────────────
 
+/**
+ * Raised when the upstream FMCSA endpoint is reachable but does not return the
+ * expected bulk ZIP (moved URL, error-page redirect, HTML body, truncated
+ * download). Distinguished from ordinary Errors so the runner can choose to
+ * keep the last-known-good snapshot instead of hard-failing the cron.
+ */
+export class SourceUnavailableError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "SourceUnavailableError";
+    this.sourceUnavailable = true;
+  }
+}
+
+/**
+ * A real ZIP begins with one of the PK signatures:
+ *   PK\x03\x04  local file header (normal archive)
+ *   PK\x05\x06  end-of-central-directory (empty archive)
+ *   PK\x07\x08  spanned/split archive marker
+ * An HTML error page ("<!DOCTYPE", "<html", "<HTML>...Object moved") does not.
+ */
+export function looksLikeZip(buf) {
+  return (
+    buf.length >= 4 &&
+    buf[0] === 0x50 && // 'P'
+    buf[1] === 0x4b && // 'K'
+    (buf[2] === 0x03 || buf[2] === 0x05 || buf[2] === 0x07)
+  );
+}
+
 async function fetchWithTimeout(url, opts = {}) {
   const ac = new AbortController();
   const t = setTimeout(() => ac.abort(), REQUEST_TIMEOUT_MS);
@@ -289,19 +346,74 @@ async function fetchWithTimeout(url, opts = {}) {
   } finally { clearTimeout(t); }
 }
 
+// A genuine FMCSA bulk ZIP is tens-to-hundreds of MB. Anything smaller than
+// this is an error page, a stub, or a truncated transfer — never the real file.
+const MIN_ZIP_BYTES = 10_000;
+
 /**
- * Stream-download a URL to disk. Returns { bytes, contentType }.
+ * Stream-download a URL to disk and validate it is actually the expected ZIP.
+ * Returns { bytes, contentType }.
+ *
+ * Throws SourceUnavailableError (rather than a raw unzip crash) when the
+ * endpoint has drifted: a redirect to an error page, an HTML/text body, a
+ * suspiciously small payload, or bytes that don't carry a ZIP signature. This
+ * keeps the failure legible ("the URL moved, set FMCSA_PASS_PROPERTY_URL")
+ * instead of a downstream "End-of-central-directory signature not found".
  */
-async function downloadTo(url, destPath) {
+async function downloadTo(url, destPath, { expectZip = true, label = url } = {}) {
   const res = await fetchWithTimeout(url);
-  if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
-  const ct = res.headers.get("content-type") || "";
-  if (!res.body) throw new Error(`empty body for ${url}`);
+
+  // Even with redirect:"follow", a 302 → error page lands here as a 200 on the
+  // final URL. Catch the known FMCSA error-page landing explicitly.
+  const finalUrl = res.url || url;
+  if (/\/error\.html(\?|#|$)/i.test(finalUrl)) {
+    throw new SourceUnavailableError(
+      `${label}: endpoint redirected to an FMCSA error page (${finalUrl}). ` +
+      `The bulk-file URL has changed — set FMCSA_PASS_PROPERTY_URL / FMCSA_CENSUS_URL to the current location.`,
+    );
+  }
+  if (!res.ok) {
+    throw new SourceUnavailableError(`${label}: HTTP ${res.status} for ${finalUrl}`);
+  }
+  const ct = (res.headers.get("content-type") || "").toLowerCase();
+  if (!res.body) throw new SourceUnavailableError(`${label}: empty response body from ${finalUrl}`);
+  if (expectZip && /text\/html|text\/plain|application\/json|application\/xhtml/.test(ct)) {
+    throw new SourceUnavailableError(
+      `${label}: expected a ZIP but server returned "${ct}" from ${finalUrl}. ` +
+      `The bulk-file URL likely moved — set FMCSA_PASS_PROPERTY_URL / FMCSA_CENSUS_URL.`,
+    );
+  }
+
   const handle = await fs.open(destPath, "w");
   try {
     await pipeline(Readable.fromWeb(res.body), handle.createWriteStream());
   } finally { await handle.close(); }
   const stat = await fs.stat(destPath);
+
+  if (expectZip) {
+    if (stat.size < MIN_ZIP_BYTES) {
+      // Small enough to safely inline a snippet of what we actually got.
+      let snippet = "";
+      try { snippet = (await fs.readFile(destPath, "utf-8")).slice(0, 200).replace(/\s+/g, " ").trim(); } catch {}
+      throw new SourceUnavailableError(
+        `${label}: downloaded only ${stat.size} bytes from ${finalUrl} (expected a multi-MB ZIP)` +
+        (snippet ? ` — body began: "${snippet}"` : "") +
+        `. The bulk-file URL likely moved — set FMCSA_PASS_PROPERTY_URL / FMCSA_CENSUS_URL.`,
+      );
+    }
+    const fh = await fs.open(destPath, "r");
+    try {
+      const head = Buffer.alloc(4);
+      await fh.read(head, 0, 4, 0);
+      if (!looksLikeZip(head)) {
+        throw new SourceUnavailableError(
+          `${label}: payload from ${finalUrl} is not a ZIP (leading bytes ${[...head].map((b) => b.toString(16).padStart(2, "0")).join(" ")}). ` +
+          `Set FMCSA_PASS_PROPERTY_URL / FMCSA_CENSUS_URL to the current bulk-file location.`,
+        );
+      }
+    } finally { await fh.close(); }
+  }
+
   return { bytes: stat.size, contentType: ct };
 }
 
@@ -387,7 +499,7 @@ async function realFetch() {
   try {
     console.log(`  → downloading Pass/Property (~300MB): ${PASS_PROPERTY_ZIP}`);
     const passZip = path.join(tmp, "pass-property.zip");
-    const passMeta = await downloadTo(PASS_PROPERTY_ZIP, passZip);
+    const passMeta = await downloadTo(PASS_PROPERTY_ZIP, passZip, { label: "Pass/Property" });
     console.log(`     ${(passMeta.bytes / 1e6).toFixed(1)}MB, ${passMeta.contentType}`);
     const passTxt = await unzipTo(passZip, tmp);
 
@@ -398,7 +510,7 @@ async function realFetch() {
     const censusZip = path.join(tmp, "census.zip");
     let censusIndex = new Map();
     try {
-      const censusMeta = await downloadTo(CENSUS_ZIP, censusZip);
+      const censusMeta = await downloadTo(CENSUS_ZIP, censusZip, { label: "Census" });
       console.log(`     ${(censusMeta.bytes / 1e6).toFixed(1)}MB, ${censusMeta.contentType}`);
       const censusTxt = await unzipTo(censusZip, tmp);
       censusIndex = await buildCensusIndex(censusTxt, { maxRows: MAX_ROWS });
@@ -461,7 +573,31 @@ async function main() {
       };
     }
   } else {
-    const { rows, sourceUrl: u, sourceKind: k } = await realFetch();
+    let fetched;
+    try {
+      fetched = await realFetch();
+    } catch (err) {
+      // Source unavailable (endpoint moved / error page / non-ZIP). Optionally
+      // keep the last-known-good snapshot so the monthly cron stays green with
+      // a loud warning instead of red-failing every month.
+      if (err && err.sourceUnavailable && KEEP_LAST_ON_FAIL) {
+        const latest = await latestSnapshot();
+        // ::warning:: surfaces a yellow GitHub Actions annotation on an
+        // otherwise-green run so the drift stays visible.
+        console.warn(`::warning title=FMCSA SMS source unavailable::${err.message}`);
+        if (latest) {
+          console.warn(
+            `  keeping last-known-good snapshot ${path.relative(ROOT, latest)} — not overwriting, exiting 0.`,
+          );
+          return;
+        }
+        console.error(
+          "  no prior snapshot to fall back to — failing so the pipeline doesn't ship empty data.",
+        );
+      }
+      throw err;
+    }
+    const { rows, sourceUrl: u, sourceKind: k } = fetched;
     sourceUrl = u;
     sourceKind = k;
     snapshot = {

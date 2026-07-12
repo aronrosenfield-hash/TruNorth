@@ -42,7 +42,17 @@ jobs:
       - name: Fetch monthly FMCSA SMS snapshot (Pass/Property + Census)
         # Large download (~300MB ZIP). The script streams parse so peak RAM
         # stays under a few hundred MB even on the full ~1.2GB extracted TXT.
-        run: node scripts/fmcsa-sms-fetch.mjs --apply
+        #
+        # --keep-last-on-fail: FMCSA retired the direct ai.fmcsa.dot.gov/SMS/
+        # files/*.zip endpoints (they 302 to an error page). Until a working
+        # direct URL is republished, keep the last-known-good snapshot and emit
+        # a ::warning:: annotation instead of red-failing every month. When a
+        # new URL is found, set the FMCSA_PASS_PROPERTY_URL / FMCSA_CENSUS_URL
+        # repository secrets and the fetch resumes automatically.
+        env:
+          FMCSA_PASS_PROPERTY_URL: ${{ secrets.FMCSA_PASS_PROPERTY_URL }}
+          FMCSA_CENSUS_URL: ${{ secrets.FMCSA_CENSUS_URL }}
+        run: node scripts/fmcsa-sms-fetch.mjs --apply --keep-last-on-fail
 
       - name: Merge into augment file
         run: node scripts/fmcsa-sms-merge.mjs --apply
