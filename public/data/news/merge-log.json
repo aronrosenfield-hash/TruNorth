@@ -1,19 +1,51 @@
 {
-  "merged_at": "2026-07-12T07:38:52.969Z",
-  "source_file": "2026-07-12.extracted.json",
-  "total_items": 32,
-  "brand_count": 19,
-  "merged_count": 19,
+  "merged_at": "2026-07-13T08:17:25.533Z",
+  "source_file": "2026-07-13.extracted.json",
+  "total_items": 31,
+  "brand_count": 20,
+  "merged_count": 20,
   "orphan_count": 0,
   "error_count": 0,
   "orphans": [],
   "errors": [],
   "sample_merged": [
     {
-      "slug": "dr-pepper",
+      "slug": "coca-cola",
       "status": "merged",
       "news_added": 1,
-      "events_added": 0,
+      "events_added": 1,
+      "items_total": 6,
+      "events_total": 4,
+      "aggregate": {
+        "mentionCount90d": 6,
+        "avgTone": -0.5,
+        "scandalSignals": [
+          "LEGAL",
+          "LABOR"
+        ],
+        "topArticles": [
+          {
+            "title": "Judge Tosses Suit Against Coca-Cola, Others Over Ultra-Processed Foods - Law.com",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOWGU0VkFaODBla182OEhyMHBVRmdVcFhUQ1dLYkdDaS1pcXZxVVd2Rlcwc29DbVgwcUJacXBYbXo3WmdrdDBWV2hfeXNSZkRXVTFQUUdGRERmNDFnVmw3VUdXQUlNWnRpSmR4Q0dDa1V1aHFseldWUXJOS29fTWJGaTdnZzMwTlNObzhXZDFFTC1lQWZPX0FFYjNoV0I4akx0RVRINy1qLURjOUNwWWJVaGRma3RCMFJfWm5B?oc=5"
+          },
+          {
+            "title": "Coca-Cola, PepsiCo, and Keurig Dr Pepper Just Announced a Major Change to Their Packaging—Here's What to Expect - inc.com",
+            "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPSG1IcktIZE5mMG1NWnpUenRsbzVucF9KVGtnSGNiNDR4UDJLdWJZRWwxZGJzVUlGaFQ1SEZUbHhMY1pYTTY1eGliZDBwWkQwb3B1VHpMUUU1LTlhbGFQRXdHcE1lV3MwaXduSndEYXFvSUJ6eTdmbURsRzV0S3FTd1d1Zm50ZjhjaWlSWm9PUlBSME1ST3JBSmdKWWxPR195Y2lQTi1GS2VTbHF5SUNXVndNQnJPMjBiaHZqWldCYXZQQQ?oc=5"
+          },
+          {
+            "title": "Top Coca-Cola leader in its largest market to depart role - Atlanta Journal-Constitution",
+            "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOcjJZdE9XSDRqMkxfUkdrMDNBczJrWHVJcHRRMU5OU3RWUUluVzJuTTFMNnpkSmVVeFY5YXdjdlhURi1zVXVLVjhKcTdtUjlDVi1Id1VQdHduVHNHeTJESTV1X0VmaTZQXzRFdnl5WUU5QUZjRWljRzhINlVtMmlLUjdqZlVOaVF0VUwyODZjNkUzcGFUTUN4R1hOUQ?oc=5"
+          }
+        ],
+        "lastUpdated": "2026-07-13T08:17:25.551Z",
+        "source": "rss-extraction"
+      }
+    },
+    {
+      "slug": "dr-pepper",
+      "status": "merged",
+      "news_added": 3,
+      "events_added": 1,
       "items_total": 4,
       "events_total": 2,
       "aggregate": {
@@ -36,69 +68,19 @@
             "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPZ2U1MlNKdUlqaER2MG9Xc25LZEdOcDdaZ05sTjVQNU1LV2kxWUU3NjVZZ0JLc3F4bVJNUWE4V1ljTlJuVEZ1c1JEakg2N0ZFOU5BVDFicTdlOHVzckVIdDBpNTV3REQ4SXRqLWo0dkszeUlvZmNCNjc0VGpvRGtSU1lMMWRsd1VpNldfYmU2RFRMSzBMWnZJcTVSdVNwU3hzTzFLM0VRRQ?oc=5"
           }
         ],
-        "lastUpdated": "2026-07-12T07:38:52.987Z",
-        "source": "rss-extraction"
-      }
-    },
-    {
-      "slug": "red-bull",
-      "status": "merged",
-      "news_added": 1,
-      "events_added": 0,
-      "items_total": 1,
-      "events_total": 0,
-      "aggregate": {
-        "mentionCount90d": 1,
-        "avgTone": 0,
-        "scandalSignals": [],
-        "topArticles": [
-          {
-            "title": "Red Bull join McLaren in appealing Pierre Gasly's reinstated podium - sources - ESPN",
-            "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQVjlHRVAtSElCXzFacndqZUdfYnFTcTVxa0I5N3BHQkExU1ZuaTljbWd5SVQ1UUVscUsxcDF0Mm93aTBRQ012NXVUZVZUb3Fja1YwcVBYdzVndkgyOUpzQlFqQmdQOTA3bmNZTXlERjZXc0ExUGhhMHJvbFFpcm5IaXMyb3owS1M5RkdCQ24xSlVMV3RhaDZRMmxJQ2FGRnYtUGNtQnNPbndqYzA3VmZrXzlxWGpYMTQ?oc=5"
-          }
-        ],
-        "lastUpdated": "2026-07-12T07:38:52.988Z",
-        "source": "rss-extraction"
-      }
-    },
-    {
-      "slug": "anheuser-busch",
-      "status": "merged",
-      "news_added": 3,
-      "events_added": 0,
-      "items_total": 4,
-      "events_total": 1,
-      "aggregate": {
-        "mentionCount90d": 4,
-        "avgTone": 0,
-        "scandalSignals": [],
-        "topArticles": [
-          {
-            "title": "Goldman Sachs Keeps Their Buy Rating on Budweiser Brewing Co. APAC Ltd. (1876) - The Globe and Mail",
-            "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQNFlfclRqWXl4bFBnLVdOcW1YcmlOdFNBcmJfUDdIM1dHOTdvYXZSc0cxQXo4dzIzc3ktSEs1YnNOZUN5NGZhSFFTeHR6YjBzZFptaktuOENHZ2tqUEpxTVU3YmFrWktrLV91WUN6ODBtTl9ld3JFd1lpS0VxUUlYeV9hMmxPdlNpN0x2U3ZER3g3N1RSd1ZiZlBDMGZjbThVWmNnSVVqaHBwLWpUVDI0VUlXTVl0Rlc5VnB3T2NiX0o5MDc5M1NOQ0xWX2FoZ1NqT3pvemxUVk1UbnRaQ2o1dDh3YWxCZEVHYXFZ?oc=5"
-          },
-          {
-            "title": "Goldman Sachs Keeps Their Buy Rating on Budweiser Brewing Co. APAC Ltd. (1876) - The Globe and Mail",
-            "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPUEM4dUQ0NDJlRVhBTWt1aE9feWxRR2VSeXZ4djJwVURyel9ldW5hZzhUeXVMZ0UwU0hRNG9mSTN3cFdzSVUyZHc5WHNqVThlRTFxbmxGTDZqSm1zNFpRMG4xNkppdS1LWHA4ZS1BMHBVWXBRVjdsX2Q0MHhmejZjWUd0S2JtQ1lwNy1zRFg0aUM0aGlPNmhOVEthV3VveE5YRXkyZE10U3hRQWNwamk4UTgwSFFSVGg3YVo3ZGRKMFBYOHBiNkszSmtrSFJqcDBrYnZmdHYyZzctVjRpbFJGODF4TXgzT0xISlZCUmczUHdZUQ?oc=5"
-          },
-          {
-            "title": "Macquarie Sticks to Their Buy Rating for Budweiser Brewing Co. APAC Ltd. (1876) - The Globe and Mail",
-            "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNSjdfbmdfNnZOOUhUNmFJUEZ4TFRvNzBrY1FIR3NnNzVrWmVZR3cxRFhsMnpLU1dFN2xxT1Z1VW1BTHNsX2JsMDJYd2lfZDVVZzNxLXBnNGdYQXFMVm1BUnRfYzNDWjJRZTIxbXc5b1l2OU5JM1kwMUZ6MzF5Nllfczdra3pfRXd6b2NueVhlbXhZWjU2RW9LUGtWSzBBcE5JNHVvNm5TelNkZjMxXzJpX1ljVXlNdVhGLXJhRDJxOF96NTd3WUF5MFBucFRaU2MxOTdiNU5sOHhQZ1RiWkhhNkpsd19Vdk0wbnRZVmdsR0k3VEU?oc=5"
-          }
-        ],
-        "lastUpdated": "2026-07-12T07:38:52.989Z",
+        "lastUpdated": "2026-07-13T08:17:25.552Z",
         "source": "rss-extraction"
       }
     },
     {
       "slug": "heineken-usa",
       "status": "merged",
-      "news_added": 1,
+      "news_added": 2,
       "events_added": 0,
-      "items_total": 2,
+      "items_total": 3,
       "events_total": 0,
       "aggregate": {
-        "mentionCount90d": 2,
+        "mentionCount90d": 3,
         "avgTone": 0,
         "scandalSignals": [
           "GOVERNANCE"
@@ -111,16 +93,73 @@
           {
             "title": "Heineken's new CEO must get beer sales flowing again - Reuters",
             "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSF9GLV9kTGdfeHc3UWpfcnllVm9QWXFQdlJsTXpRTzZ6ckZOMUFRdzdNNWQ4Tmd0eG9FZEpaU0Zhcmc0ckJfXzFfa1hzcFZJbUpZWllTX2xqTVVmbEUxdDBNWU9WNDZGUHlUT082cnZXSDU2VTM3Nkt2elMzbFg5Qkc1eWhkWFVMSmlnZXBOa2c2MnJMdWZSSGNCMzlKY0t1?oc=5"
+          },
+          {
+            "title": "Heineken Names New CEO After Predecessor's Shock Departure - Barron's",
+            "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxORkhLMHNiZll5aWx1UmgyLUNyT3VNaGI0dmtqOUJWZXA1LTRsY09YRkhnNjJvUElLYlVEVjlOVzRiSDJSMkxlWm5pXzZBRmV4UVk0Qy1RNXdGUEdySXh6RGl6bGhVWl8xeGdUcFFyemIzcWVxQkp5bTRpS2NaYkNkRmJ6T3dmamhLNm9JWUJpemlrbmN2bjM4QkVILUU?oc=5"
           }
         ],
-        "lastUpdated": "2026-07-12T07:38:52.990Z",
+        "lastUpdated": "2026-07-13T08:17:25.553Z",
+        "source": "rss-extraction"
+      }
+    },
+    {
+      "slug": "pringles",
+      "status": "merged",
+      "news_added": 1,
+      "events_added": 0,
+      "items_total": 1,
+      "events_total": 0,
+      "aggregate": {
+        "mentionCount90d": 1,
+        "avgTone": 0,
+        "scandalSignals": [],
+        "topArticles": [
+          {
+            "title": "Pringles unveils flavored hot dog buns inspired by its crisps - KSBY News",
+            "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPbW9NYXBacjBVSl9jX3FycUNURFNfdWlLejVhSTlZRFhGX0JmT0xPWjFIZU9BdnY2V0p0eHVWZHpmZlhtZUllTWRkWHdoT1BWOWl0LUwyZGVoY3AtamxkdlZMb05Md2tkV3RPR3psWjRscUNva1c0djJPcU1ELTlBNmdCN0lhczZRZDEzc3FQWnUtcHZYa3JJX3NCTTRnMkFEcFVPWnF4SzFwbHc?oc=5"
+          }
+        ],
+        "lastUpdated": "2026-07-13T08:17:25.554Z",
+        "source": "rss-extraction"
+      }
+    },
+    {
+      "slug": "kraft-heinz",
+      "status": "merged",
+      "news_added": 3,
+      "events_added": 0,
+      "items_total": 6,
+      "events_total": 4,
+      "aggregate": {
+        "mentionCount90d": 6,
+        "avgTone": -0.5,
+        "scandalSignals": [
+          "ENVIRONMENT",
+          "LEGAL"
+        ],
+        "topArticles": [
+          {
+            "title": "Foxborough files counterclaim to Patriots, Kraft Group’s lawsuit over annual stadium licensing fees - Boston.com",
+            "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPdkFxSFZqZlhBMjBGLVBQWF9XZ3gtZEpBRXM5NW5IenlnSmhGZUdNVmJWOV83OHF1STFwY21zSU1lcEFLaDlxQmNEOUhOWUY5SmdOWE96V2NhWGU1VURQalNPODM0ZTM3MXI3eW1KcEdKRXNXcWRPMkk1MjM5THFkejh3cVFESFhWZjJ6LVFaSjFaSGc4WEJ3VW9ISGtYUUJrdXBBVFZ0QlJFdVRsSjFuYjdlUndGM09SSXZrbFVWZ0lTUHF1aUIyaEZ3Tng2U3ROUWN2R20xQ1ZJYzBVeVVmMk9R?oc=5"
+          },
+          {
+            "title": "2 additional kraft pulp mills under investigation after Longview tank disaster - KOIN.com",
+            "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPRVVPVGp4bmFOSEZTdHg0clhkYTFlbzcwVHRZMHdISEdUZjh4ZXRDWHZzdlNBSUNKZm4tTk5vMUhtaFJrLWx0bndpbDhVYzUyd0pLZ3hTbGd2VGJBTXZqWG1SS055cDVMSE4zdzQ0Qm9CMkxrbVZyVEdoZkpKNXZBbG03Yjd2M050QlJiTUVfUVp4ODFKcFVFNUtYNjk5VjdQWFdjMlhoSnZHbUpIRjJXMVFyMHN2djUyQ19Za3dUZDhKWE45cVpZU2dJcHFSUdIB0wFBVV95cUxOM2lyV0JWckVDenRjZGxhOEJ1eERlby1iMnBaOHVYWk9mWUpPWlFXbWtJanVIbDBBRzhKV0JZNXpnRkZHaUhJRFl4MzNoLTBIMzgzWExKdjRKRVpoS3UtejBrTlFpRnFaTEZrTkN2c21HTTM1ZGFrZXBoWGpGU2tqYTBjMC02bXdyM0h0NEZWdmNxei05QWxwLXZESjdINWJIMDhmS3pfNlFaeFZYNE5KUzNHMmoxWF9ERWJxYURad3FreTJUNEhUU0VLd3BDNDhITWtZ?oc=5"
+          },
+          {
+            "title": "Kraft teases new 'TSA-compliant' ranch amid World Cup tourist hype - 10TV",
+            "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNUk90ZmNNNThWNEpacGRmd2xVQ2Vlc0dDVVY4NFhEMm1fWWZKZXhUVzJBdE85THRTVEp2ODlCZFdPMjJFeTRPendTcUh5dFlPakFWc21mMDFHTmhrdmluaGlEN013QkNzbHVqODZlUmhSbVJhcGJYNmhIcEZSR1ZpX1NObGh1dzBJTFZHczN2NUNuaWFtWW93RzNocDRkQjFOckhLRkxKLVVwN2R6UXpLamFhWkFXNkdl?oc=5"
+          }
+        ],
+        "lastUpdated": "2026-07-13T08:17:25.555Z",
         "source": "rss-extraction"
       }
     },
     {
       "slug": "general-mills",
       "status": "merged",
-      "news_added": 2,
+      "news_added": 1,
       "events_added": 0,
       "items_total": 6,
       "events_total": 0,
@@ -142,104 +181,20 @@
             "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQbGt6aUYxdXFxaFJqcmFRYUdkQ3FvX180WWw0eTJxZ2hlbHNQQS1TVkxURWVLc2YtVnhmUWFINEpfX3RfZGM5TUZLcUZnZXVreTluLXo3ekxzdl9acXd5OUhIdTdMMThGMXZlLWtGSHlIOHQtUTA3TzVKUUNNTVdRMHdEMVllZw?oc=5"
           }
         ],
-        "lastUpdated": "2026-07-12T07:38:52.991Z",
-        "source": "rss-extraction"
-      }
-    },
-    {
-      "slug": "mondelez-international",
-      "status": "merged",
-      "news_added": 2,
-      "events_added": 1,
-      "items_total": 6,
-      "events_total": 1,
-      "aggregate": {
-        "mentionCount90d": 6,
-        "avgTone": -0.25,
-        "scandalSignals": [
-          "ENVIRONMENT"
-        ],
-        "topArticles": [
-          {
-            "title": "Oreo’s First-in-a-Decade Flavor Is So Perfect, I’m Buying an Extra Pack for My Desk - AOL.com",
-            "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFAzQ04xYURvbG0xWjRfUTVXRlZFU2ZEeGdPSkJWeWdOZURDa3VBWS1yaGs5OS1KVWE2U1owTDJFNUlTR3FKbTRiUTQta0VnR1Bjc19WRjJsaVJ4UVVuaUsxbXBraFlTbGYwdktGQXd4OElOSzN4Uk14b3JON2w1ZUE?oc=5"
-          },
-          {
-            "title": "Oreo Unveils 'Stuf of Doom' Cookies with New Flavor and Collectible Packaging - AOL.com",
-            "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBfSWJyelpXcEJGWlM3MEs5WGdMZnk0RjltazkxMnk3blBoTW5wdXEyN0FWR3RfT0MyU1h0WlBqMTlxVXpXOUE2UjJDTzhIcERxNklOTk1MNWhGTFM5VUEtYWpFdkFuY2g0R3BNak1DQ0tud2M?oc=5"
-          },
-          {
-            "title": "How Mars and Mondelēz fared on 2025 packaging targets - Packaging Dive",
-            "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPZ2tSVWdYdW5rVGNqSmw2aVF2bVREZTJQRUUyZV9sdUVSZkNsTTZFbUJEU2F2eTh4UHJkSDFRcFJRV2dJQzlFNUlHTE5FYnYzVWN0eDBZTlFyRk1WbDM4R3k4SERqaGF5a1VpUmRqaUJiM0dwQlB6MFMwSjVwdkxmV3l5aldpcHR6R1hrTFpSRGJPdXAzZ0JiQ1JEb1M3bUFPQmVoMQ?oc=5"
-          }
-        ],
-        "lastUpdated": "2026-07-12T07:38:52.992Z",
-        "source": "rss-extraction"
-      }
-    },
-    {
-      "slug": "pringles",
-      "status": "merged",
-      "news_added": 1,
-      "events_added": 0,
-      "items_total": 1,
-      "events_total": 0,
-      "aggregate": {
-        "mentionCount90d": 1,
-        "avgTone": 0,
-        "scandalSignals": [],
-        "topArticles": [
-          {
-            "title": "Pringles unveils flavored hot dog buns inspired by its crisps - KSBY News",
-            "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPbW9NYXBacjBVSl9jX3FycUNURFNfdWlLejVhSTlZRFhGX0JmT0xPWjFIZU9BdnY2V0p0eHVWZHpmZlhtZUllTWRkWHdoT1BWOWl0LUwyZGVoY3AtamxkdlZMb05Md2tkV3RPR3psWjRscUNva1c0djJPcU1ELTlBNmdCN0lhczZRZDEzc3FQWnUtcHZYa3JJX3NCTTRnMkFEcFVPWnF4SzFwbHc?oc=5"
-          }
-        ],
-        "lastUpdated": "2026-07-12T07:38:52.993Z",
-        "source": "rss-extraction"
-      }
-    },
-    {
-      "slug": "kraft-heinz",
-      "status": "merged",
-      "news_added": 3,
-      "events_added": 1,
-      "items_total": 6,
-      "events_total": 4,
-      "aggregate": {
-        "mentionCount90d": 6,
-        "avgTone": -0.33,
-        "scandalSignals": [
-          "ENVIRONMENT",
-          "LEGAL"
-        ],
-        "topArticles": [
-          {
-            "title": "Foxborough files counterclaim to Patriots, Kraft Group’s lawsuit over annual stadium licensing fees - Boston.com",
-            "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPdkFxSFZqZlhBMjBGLVBQWF9XZ3gtZEpBRXM5NW5IenlnSmhGZUdNVmJWOV83OHF1STFwY21zSU1lcEFLaDlxQmNEOUhOWUY5SmdOWE96V2NhWGU1VURQalNPODM0ZTM3MXI3eW1KcEdKRXNXcWRPMkk1MjM5THFkejh3cVFESFhWZjJ6LVFaSjFaSGc4WEJ3VW9ISGtYUUJrdXBBVFZ0QlJFdVRsSjFuYjdlUndGM09SSXZrbFVWZ0lTUHF1aUIyaEZ3Tng2U3ROUWN2R20xQ1ZJYzBVeVVmMk9R?oc=5"
-          },
-          {
-            "title": "2 additional kraft pulp mills under investigation after Longview tank disaster - KOIN.com",
-            "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPRVVPVGp4bmFOSEZTdHg0clhkYTFlbzcwVHRZMHdISEdUZjh4ZXRDWHZzdlNBSUNKZm4tTk5vMUhtaFJrLWx0bndpbDhVYzUyd0pLZ3hTbGd2VGJBTXZqWG1SS055cDVMSE4zdzQ0Qm9CMkxrbVZyVEdoZkpKNXZBbG03Yjd2M050QlJiTUVfUVp4ODFKcFVFNUtYNjk5VjdQWFdjMlhoSnZHbUpIRjJXMVFyMHN2djUyQ19Za3dUZDhKWE45cVpZU2dJcHFSUdIB0wFBVV95cUxOM2lyV0JWckVDenRjZGxhOEJ1eERlby1iMnBaOHVYWk9mWUpPWlFXbWtJanVIbDBBRzhKV0JZNXpnRkZHaUhJRFl4MzNoLTBIMzgzWExKdjRKRVpoS3UtejBrTlFpRnFaTEZrTkN2c21HTTM1ZGFrZXBoWGpGU2tqYTBjMC02bXdyM0h0NEZWdmNxei05QWxwLXZESjdINWJIMDhmS3pfNlFaeFZYNE5KUzNHMmoxWF9ERWJxYURad3FreTJUNEhUU0VLd3BDNDhITWtZ?oc=5"
-          },
-          {
-            "title": "Kraft teases new 'TSA-compliant' ranch amid World Cup tourist hype - 10TV",
-            "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNUk90ZmNNNThWNEpacGRmd2xVQ2Vlc0dDVVY4NFhEMm1fWWZKZXhUVzJBdE85THRTVEp2ODlCZFdPMjJFeTRPendTcUh5dFlPakFWc21mMDFHTmhrdmluaGlEN013QkNzbHVqODZlUmhSbVJhcGJYNmhIcEZSR1ZpX1NObGh1dzBJTFZHczN2NUNuaWFtWW93RzNocDRkQjFOckhLRkxKLVVwN2R6UXpLamFhWkFXNkdl?oc=5"
-          }
-        ],
-        "lastUpdated": "2026-07-12T07:38:52.994Z",
+        "lastUpdated": "2026-07-13T08:17:25.556Z",
         "source": "rss-extraction"
       }
     },
     {
       "slug": "nestl",
       "status": "merged",
-      "news_added": 2,
-      "events_added": 1,
-      "items_total": 4,
-      "events_total": 3,
+      "news_added": 3,
+      "events_added": 2,
+      "items_total": 5,
+      "events_total": 4,
       "aggregate": {
-        "mentionCount90d": 4,
-        "avgTone": -1.38,
+        "mentionCount90d": 5,
+        "avgTone": -0.8,
         "scandalSignals": [
           "PRODUCT_SAFETY"
         ],
@@ -257,19 +212,19 @@
             "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQVjRKSThIeTZkbUdMYm8wX0R4UUJfSE5xR1c3eFZwcEtCd01sRkdnVHNMMUNxcjgxaC1Xd1c4UV82VzduMXk4SFAwYlozQmtYME1NS2xad2l1ZHF0ckF2bnlWM0lrT3ZRWE5IODN5ZHVYaFpOTFZBS1REOHZwa0I3OUhVVS1vbVlGMFRYZnoyaHd2YWFYcWl2WVlrUVlfQjY0Mnc?oc=5"
           }
         ],
-        "lastUpdated": "2026-07-12T07:38:52.995Z",
+        "lastUpdated": "2026-07-13T08:17:25.557Z",
         "source": "rss-extraction"
       }
     },
     {
       "slug": "pepsico",
       "status": "merged",
-      "news_added": 1,
+      "news_added": 2,
       "events_added": 0,
-      "items_total": 3,
+      "items_total": 4,
       "events_total": 1,
       "aggregate": {
-        "mentionCount90d": 3,
+        "mentionCount90d": 4,
         "avgTone": 0,
         "scandalSignals": [],
         "topArticles": [
@@ -278,15 +233,73 @@
             "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPRUs5OU1QVElhTGxBS2FxajJCV3ctRXBuTWNiSkNCRlpocjlLdVRpaFZZeTNIUEg2bl9ndmJJTkZRR0gyVVRMWGF6eWFZS1cwSDVHTVYtTFRNbFJpQ1Y5TmpqQWI1eEhiR1V2QzZUaWM1WGtHb2dxTEVOLUt5dWJNblNjeVFSRjV6Q0N4Rlh2WHRhTzZ5ZHAxRWxwNlNzcGVubFo1NWRsajZzdzZVcDBSNXhB?oc=5"
           },
           {
-            "title": "Kim Komando's Tech Tips &amp; Advice: PepsiCo Turns To Autonomous Trucks - Times Union",
-            "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPQVMtUVBFS1M1WG5uUEtoRkJpVXdSZ01vUTdFU0VNMkh6SFlXOUEzUXBWTE1JdTRMMUhPZ3ZYSHZiMmJPQXZJY0RQRjlpX1hiZVJINVpmOHBXMjNzQmhiY3hxOEVIbXZQamJoSEc1ZGlua2NSVjIzcERFcE40VDRYcGdiajlUajVPVGJkT3lMUWVya2VsOXFiaE1yeVdiUQ?oc=5"
+            "title": "PepsiCo: Q2 Earnings Snapshot - KVUE",
+            "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOTjg2UTBnRkJhS3BabHRTaGtJTE5GSmQwT191YXgtTk5nWEFJVlUtLWxBRFdxVmlaZzBMWWxJZVNzNXFsSEo5VkNZTEZITm13UzEyOENMei1vRHh1T09fZ2FyX0ZiYjItVzRnelR5dnN2NVZ5SFNZQkUzLXBhbThWNW5OQ0VWSkZiSUtCbTVQR3FnZTNHMm50bDgtM2JTZW55RUhEX0o4Si1XSzYydTlpQU4zSHV1bldlbDFJRkFTcmdQUkJn?oc=5"
           },
           {
-            "title": "A Rare Margin Of Safety: Why PepsiCo Is Poised For A Double-Digit Rebound (NASDAQ:PEP) - Seeking Alpha",
-            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNVklETGFwUEEzUnlIR1huMm9CcUFHWXVhSXp3elUtMk1BNm12Tm95NE9GbmJiZEFpUjFFMzNKZ3l3RENhem5Mc09JaTZieFJKQkpJbmlacjM1ZVdhZkRjX0ZudzFmNUtpanJnLVlqVnJUQXdERW5wMlV5RFU0RGNxZmVZOGhucUtXaVd5eTZIaVFubllBenEtaVpwWnlYMmRseW1uMk1yTVJ5bWFETVRNV3Q4WQ?oc=5"
+            "title": "Kim Komando's Tech Tips &amp; Advice: PepsiCo Turns To Autonomous Trucks - Times Union",
+            "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPQVMtUVBFS1M1WG5uUEtoRkJpVXdSZ01vUTdFU0VNMkh6SFlXOUEzUXBWTE1JdTRMMUhPZ3ZYSHZiMmJPQXZJY0RQRjlpX1hiZVJINVpmOHBXMjNzQmhiY3hxOEVIbXZQamJoSEc1ZGlua2NSVjIzcERFcE40VDRYcGdiajlUajVPVGJkT3lMUWVya2VsOXFiaE1yeVdiUQ?oc=5"
           }
         ],
-        "lastUpdated": "2026-07-12T07:38:52.996Z",
+        "lastUpdated": "2026-07-13T08:17:25.558Z",
+        "source": "rss-extraction"
+      }
+    },
+    {
+      "slug": "conagra-brands",
+      "status": "merged",
+      "news_added": 1,
+      "events_added": 0,
+      "items_total": 4,
+      "events_total": 0,
+      "aggregate": {
+        "mentionCount90d": 4,
+        "avgTone": -0.75,
+        "scandalSignals": [
+          "GOVERNANCE"
+        ],
+        "topArticles": [
+          {
+            "title": "S&amp;P indexes reshuffle: Honeywell Aerospace replaces Conagra in S&amp;P 500 (HON:NASDAQ) - Seeking Alpha",
+            "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPd2pyeUE1emdGMHJZb01qZ3d4MWlLQVBaOXVoNnlPQkJKVUg5NEQ4Y08zeG1LQ3V4TDJSN1g3ZWxvd1dFWFJGdm1ETWMtWGxPaUxhQlQwdGxyQTMzekw4TFZqcEx5blB3Zm1TLVpZcnh2WDRpaldXdU8xM2xuSC04NzFVdVhNTE5oZEJ1ZXFUX3FRMFVYRmdVN2o2bWlvTzQ4Z3FtdGRsaTg?oc=5"
+          },
+          {
+            "title": "S&amp;P indexes reshuffle: Honeywell Aerospace replaces Conagra in S&amp;P 500 - MSN",
+            "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxONWJDbVhTNWcxcXl0S0FLN1NYa0hUNEZ0MjJTNTduM0NleFNhb1Ayanc0QkZna29ianVnQU1obGZlcFBzQWROc2VCVk41MjlyTTZYOUhpcGRCS0VKNGZxODctM3JNM3o3a0huNkctMU1ZR19LUnF5QjBTZmZ6aWFsWUF0WkdaNkt5R1ZUNm1KZUJRdVZTYUN2V1VjLWNUNEFRWms0N0FIUllJNVk3SmJ5UGRaR1JxUzJyNEVZc1MwNXY?oc=5"
+          },
+          {
+            "title": "S&amp;P indexes reshuffle: Honeywell Aerospace replaces Conagra in S&amp;P 500 - MSN",
+            "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxORjBSNFFvMGRlcS03OGZVLTJGMjU0OTNiWWVvWlZnOG9YOG1DWmhOS2E5R1A3ZjBzVWhvSi1QbzQyVkxuS1BOWE5Fd1JELVFZdVBnSGtsSEVQRkZMOWl0QzdSUU0yRmNMeXJWUUpvMlZHbm5ScTlXQU1oNmw4YUU1bFQwRGV1QUJvOTFna2ZLX3B5TGs5QUNGa083Umx4WF9obUtjcUdtM0VvME9YVXliVUZGXzh5ajNBaFA3ZnlrUnlvbFJWbGpiMjVfV3Z6czBCMm1PQUphQ2NyV0xQWlhLSWhGTQ?oc=5"
+          }
+        ],
+        "lastUpdated": "2026-07-13T08:17:25.559Z",
+        "source": "rss-extraction"
+      }
+    },
+    {
+      "slug": "chobani",
+      "status": "merged",
+      "news_added": 1,
+      "events_added": 1,
+      "items_total": 2,
+      "events_total": 2,
+      "aggregate": {
+        "mentionCount90d": 2,
+        "avgTone": -1.5,
+        "scandalSignals": [
+          "LEGAL"
+        ],
+        "topArticles": [
+          {
+            "title": "The Maker of Oikos Just Filed a Lawsuit Accusing Chobani of Inflating Its Protein Numbers - inc.com",
+            "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPejMtRkhHdnV3UmlPd0ZyMjlBVVRJQ05YNmNzQUROcVNfRGxFeG5JeFhnS3RVUFpIdGRpeW9MUzNsbXZ4WDgzTE4tWXNJYkdNbW1mNl9WQXV4WWx6T0VzRE80RUVOR3RhWDVOY0U5Wjlid1p6WFNNazNJSTZUOEdZdkIxOGgxdWN4dVdQRWFPdVhSdzZJeU9wQUJtUXFvVFJCZVhGYXJ4VkFuWW13dHJ1NGtNWE9VZmhPSk11ekFBc3pScWc?oc=5"
+          },
+          {
+            "title": "Chobani sued by Danone over high-protein yogurt claims - Food Dive",
+            "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQWUwyelRnaDFad0cwTkZTS3FXWTN4Q0ZqZXpxQWNqZXhBUkktX1E0aVZaSmpTZFZISG1rMnAyNktMajhnN0Zhcm9Wa1l1M1dmaEM2WGg2VTZNTHFxVFppVkhKeHV0dkFscFd6RHVDa3Q2Tk8zc3ZhY3FwbHFVU1NKTlVCeHlKdGVJX3B1MzZEbGZLaWtV?oc=5"
+          }
+        ],
+        "lastUpdated": "2026-07-13T08:17:25.560Z",
         "source": "rss-extraction"
       }
     }
