@@ -1,17 +1,17 @@
 {
-  "merged_at": "2026-07-06T05:02:25.781Z",
+  "merged_at": "2026-07-13T04:23:21.111Z",
   "source_file": "public/data/cisa-kev.json",
-  "total_vendors": 270,
+  "total_vendors": 274,
   "merged_count": 1,
   "skipped_count": 37,
-  "orphan_count": 232,
+  "orphan_count": 236,
   "error_count": 0,
   "merged_vendors": [
     {
-      "vendor": "Microsoft",
-      "target": "microsoft",
+      "vendor": "Adobe",
+      "target": "adobe",
       "routed_via": "override",
-      "cves": 378
+      "cves": 80
     }
   ],
   "top_orphans": [
@@ -146,6 +146,11 @@
       "cves": 5
     },
     {
+      "vendor": "Langflow",
+      "vendor_slug": "langflow",
+      "cves": 4
+    },
+    {
       "vendor": "SimpleHelp",
       "vendor_slug": "simplehelp",
       "cves": 4
@@ -158,11 +163,6 @@
     {
       "vendor": "Craft CMS",
       "vendor_slug": "craft-cms",
-      "cves": 4
-    },
-    {
-      "vendor": "WatchGuard",
-      "vendor_slug": "watchguard",
       "cves": 4
     }
   ]

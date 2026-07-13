@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-06T05:02:25.721Z",
-  "catalog_version": "2026.07.01",
-  "catalog_released": "2026-07-01T19:00:06.9016Z",
-  "total_cve_count": 1631,
-  "vendor_count": 270,
+  "generated_at": "2026-07-13T04:23:21.059Z",
+  "catalog_version": "2026.07.10",
+  "catalog_released": "2026-07-10T17:00:25.7327Z",
+  "total_cve_count": 1637,
+  "vendor_count": 274,
   "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
   "vendors": [
     {
@@ -421,8 +421,8 @@
     },
     {
       "vendor": "Adobe",
-      "total_cve_count": 79,
-      "recent_12mo_count": 5,
+      "total_cve_count": 80,
+      "recent_12mo_count": 6,
       "ransomware_count": 10,
       "product_breakdown": [
         {
@@ -431,7 +431,7 @@
         },
         {
           "label": "ColdFusion",
-          "count": 15
+          "count": 16
         },
         {
           "label": "Acrobat and Reader",
@@ -467,6 +467,17 @@
         }
       ],
       "top_cves": [
+        {
+          "cveID": "CVE-2026-48282",
+          "product": "ColdFusion",
+          "vulnerabilityName": "Adobe ColdFusion Path Traversal Vulnerability",
+          "dateAdded": "2026-07-07",
+          "dueDate": "2026-07-10",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Adobe ColdFusion contains a path traversal vulnerability that could lead to arbitrary code execution in the context of the current user.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48282"
+        },
         {
           "cveID": "CVE-2009-3459",
           "product": "Acrobat and Reader",
@@ -510,17 +521,6 @@
           "shortDescription": "Adobe Commerce and Magento Open Source contain an improper input validation vulnerability that could allow an attacker to take over customer accounts through the Commerce REST API.",
           "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-54236"
-        },
-        {
-          "cveID": "CVE-2025-54253",
-          "product": "Experience Manager (AEM) Forms",
-          "vulnerabilityName": "Adobe Experience Manager Forms Code Execution Vulnerability",
-          "dateAdded": "2025-10-15",
-          "dueDate": "2025-11-05",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Adobe Experience Manager Forms in JEE contains an unspecified vulnerability that allows for arbitrary code execution.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-54253"
         }
       ],
       "highest_severity": [
@@ -549,20 +549,20 @@
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-2861"
         },
         {
+          "cveID": "CVE-2026-48282",
+          "product": "ColdFusion",
+          "vulnerabilityName": "Adobe ColdFusion Path Traversal Vulnerability",
+          "dateAdded": "2026-07-07",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48282"
+        },
+        {
           "cveID": "CVE-2009-3459",
           "product": "Acrobat and Reader",
           "vulnerabilityName": "Adobe Acrobat and Reader Heap-Based Buffer Overflow Vulnerability",
           "dateAdded": "2026-05-20",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2009-3459"
-        },
-        {
-          "cveID": "CVE-2020-9715",
-          "product": "Acrobat",
-          "vulnerabilityName": "Adobe Acrobat Use-After-Free Vulnerability",
-          "dateAdded": "2026-04-13",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-9715"
         }
       ]
     },
@@ -1661,7 +1661,7 @@
     {
       "vendor": "Citrix",
       "total_cve_count": 22,
-      "recent_12mo_count": 5,
+      "recent_12mo_count": 4,
       "ransomware_count": 7,
       "product_breakdown": [
         {
@@ -1808,7 +1808,7 @@
     {
       "vendor": "Synacor",
       "total_cve_count": 18,
-      "recent_12mo_count": 6,
+      "recent_12mo_count": 5,
       "ransomware_count": 5,
       "product_breakdown": [
         {
@@ -5311,6 +5311,90 @@
       ]
     },
     {
+      "vendor": "Langflow",
+      "total_cve_count": 4,
+      "recent_12mo_count": 3,
+      "ransomware_count": 1,
+      "product_breakdown": [
+        {
+          "label": "Langflow",
+          "count": 4
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-55255",
+          "product": "Langflow",
+          "vulnerabilityName": "Langflow Authorization Bypass Through User-Controlled Key Vulnerability",
+          "dateAdded": "2026-07-07",
+          "dueDate": "2026-07-10",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Langflow contains an authorization bypass through user-controlled key vulnerability which allows an authenticated attacker to execute any flow belonging to another user by specifying the victim's flow ID in the request.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55255"
+        },
+        {
+          "cveID": "CVE-2025-34291",
+          "product": "Langflow",
+          "vulnerabilityName": "Langflow Origin Validation Error Vulnerability",
+          "dateAdded": "2026-05-21",
+          "dueDate": "2026-06-04",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Langflow contains an origin validation error vulnerability in which an overly permissive CORS configuration combined with a refresh token cookie configured as SameSite=None allows a malicious webpage to perform cross-origin requests that include credentials and successfully call the refresh endpoint. This could allow the attacker to execute arbitrary code and achieve full system compromise via obtained tokens that permit access to authenticated endpoints.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-34291"
+        },
+        {
+          "cveID": "CVE-2026-33017",
+          "product": "Langflow",
+          "vulnerabilityName": "Langflow Code Injection Vulnerability",
+          "dateAdded": "2026-03-25",
+          "dueDate": "2026-04-08",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Langflow contains a code injection vulnerability that could allow building public flows without requiring authentication.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33017"
+        },
+        {
+          "cveID": "CVE-2025-3248",
+          "product": "Langflow",
+          "vulnerabilityName": "Langflow Missing Authentication Vulnerability",
+          "dateAdded": "2025-05-05",
+          "dueDate": "2025-05-26",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "Langflow contains a missing authentication vulnerability in the /api/v1/validate/code endpoint that allows a remote, unauthenticated attacker to execute arbitrary code via crafted HTTP requests.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-3248"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2025-3248",
+          "product": "Langflow",
+          "vulnerabilityName": "Langflow Missing Authentication Vulnerability",
+          "dateAdded": "2025-05-05",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-3248"
+        },
+        {
+          "cveID": "CVE-2026-55255",
+          "product": "Langflow",
+          "vulnerabilityName": "Langflow Authorization Bypass Through User-Controlled Key Vulnerability",
+          "dateAdded": "2026-07-07",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55255"
+        },
+        {
+          "cveID": "CVE-2025-34291",
+          "product": "Langflow",
+          "vulnerabilityName": "Langflow Origin Validation Error Vulnerability",
+          "dateAdded": "2026-05-21",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-34291"
+        }
+      ]
+    },
+    {
       "vendor": "SimpleHelp",
       "total_cve_count": 4,
       "recent_12mo_count": 3,
@@ -6507,71 +6591,6 @@
       ]
     },
     {
-      "vendor": "Langflow",
-      "total_cve_count": 3,
-      "recent_12mo_count": 2,
-      "ransomware_count": 0,
-      "product_breakdown": [
-        {
-          "label": "Langflow",
-          "count": 3
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2025-34291",
-          "product": "Langflow",
-          "vulnerabilityName": "Langflow Origin Validation Error Vulnerability",
-          "dateAdded": "2026-05-21",
-          "dueDate": "2026-06-04",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Langflow contains an origin validation error vulnerability in which an overly permissive CORS configuration combined with a refresh token cookie configured as SameSite=None allows a malicious webpage to perform cross-origin requests that include credentials and successfully call the refresh endpoint. This could allow the attacker to execute arbitrary code and achieve full system compromise via obtained tokens that permit access to authenticated endpoints.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-34291"
-        },
-        {
-          "cveID": "CVE-2026-33017",
-          "product": "Langflow",
-          "vulnerabilityName": "Langflow Code Injection Vulnerability",
-          "dateAdded": "2026-03-25",
-          "dueDate": "2026-04-08",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Langflow contains a code injection vulnerability that could allow building public flows without requiring authentication.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33017"
-        },
-        {
-          "cveID": "CVE-2025-3248",
-          "product": "Langflow",
-          "vulnerabilityName": "Langflow Missing Authentication Vulnerability",
-          "dateAdded": "2025-05-05",
-          "dueDate": "2025-05-26",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Langflow contains a missing authentication vulnerability in the /api/v1/validate/code endpoint that allows a remote, unauthenticated attacker to execute arbitrary code via crafted HTTP requests.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-3248"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2025-34291",
-          "product": "Langflow",
-          "vulnerabilityName": "Langflow Origin Validation Error Vulnerability",
-          "dateAdded": "2026-05-21",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-34291"
-        },
-        {
-          "cveID": "CVE-2026-33017",
-          "product": "Langflow",
-          "vulnerabilityName": "Langflow Code Injection Vulnerability",
-          "dateAdded": "2026-03-25",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33017"
-        }
-      ]
-    },
-    {
       "vendor": "ConnectWise",
       "total_cve_count": 3,
       "recent_12mo_count": 1,
@@ -7523,7 +7542,7 @@
     {
       "vendor": "Rails",
       "total_cve_count": 3,
-      "recent_12mo_count": 1,
+      "recent_12mo_count": 0,
       "ransomware_count": 0,
       "product_breakdown": [
         {
@@ -7588,7 +7607,7 @@
     {
       "vendor": "PHP",
       "total_cve_count": 3,
-      "recent_12mo_count": 1,
+      "recent_12mo_count": 0,
       "ransomware_count": 1,
       "product_breakdown": [
         {
@@ -11025,6 +11044,146 @@
       ]
     },
     {
+      "vendor": "Balbooa",
+      "total_cve_count": 1,
+      "recent_12mo_count": 1,
+      "ransomware_count": 0,
+      "product_breakdown": [
+        {
+          "label": "Forms",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-56291",
+          "product": "Forms",
+          "vulnerabilityName": "Balbooa Forms Unrestricted Upload of File with Dangerous Type Vulnerability",
+          "dateAdded": "2026-07-10",
+          "dueDate": "2026-07-13",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Balbooa Forms contains an unrestricted upload of file with dangerous type vulnerability that allows an unauthenticated arbitrary file upload which could allow uploading of executable files leading to full RCE.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56291"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2026-56291",
+          "product": "Forms",
+          "vulnerabilityName": "Balbooa Forms Unrestricted Upload of File with Dangerous Type Vulnerability",
+          "dateAdded": "2026-07-10",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56291"
+        }
+      ]
+    },
+    {
+      "vendor": "iCagenda",
+      "total_cve_count": 1,
+      "recent_12mo_count": 1,
+      "ransomware_count": 0,
+      "product_breakdown": [
+        {
+          "label": "iCagenda",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-48939",
+          "product": "iCagenda",
+          "vulnerabilityName": "iCagenda Unrestricted Upload of File with Dangerous Type Vulnerability",
+          "dateAdded": "2026-07-10",
+          "dueDate": "2026-07-13",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "iCagenda contains an unrestricted upload of file with dangerous type vulnerability that allows the upload of arbitrary files in the file attachment feature, ultimately resulting in PHP code upload and execution.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48939"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2026-48939",
+          "product": "iCagenda",
+          "vulnerabilityName": "iCagenda Unrestricted Upload of File with Dangerous Type Vulnerability",
+          "dateAdded": "2026-07-10",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48939"
+        }
+      ]
+    },
+    {
+      "vendor": "JoomShaper",
+      "total_cve_count": 1,
+      "recent_12mo_count": 1,
+      "ransomware_count": 0,
+      "product_breakdown": [
+        {
+          "label": "SP Page Builder",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-48908",
+          "product": "SP Page Builder",
+          "vulnerabilityName": "JoomShaper SP Page Builder Unrestricted Upload of File with Dangerous Type Vulnerability",
+          "dateAdded": "2026-07-07",
+          "dueDate": "2026-07-10",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "JoomShaper SP Page Builder contains an unrestricted upload of file with dangerous type vulnerability that allows unauthenticated users to upload arbitrary files, ultimately resulting in the upload and execution of PHP code.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48908"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2026-48908",
+          "product": "SP Page Builder",
+          "vulnerabilityName": "JoomShaper SP Page Builder Unrestricted Upload of File with Dangerous Type Vulnerability",
+          "dateAdded": "2026-07-07",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48908"
+        }
+      ]
+    },
+    {
+      "vendor": "Joomlack",
+      "total_cve_count": 1,
+      "recent_12mo_count": 1,
+      "ransomware_count": 0,
+      "product_breakdown": [
+        {
+          "label": "Page Builder",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-56290",
+          "product": "Page Builder",
+          "vulnerabilityName": "Joomlack Page Builder Improper Access Control Vulnerability",
+          "dateAdded": "2026-07-07",
+          "dueDate": "2026-07-10",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Joomlack Page Builder contains an improper access control vulnerability that could allow for remote code execution via unauthenticated arbitrary file upload.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56290"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2026-56290",
+          "product": "Page Builder",
+          "vulnerabilityName": "Joomlack Page Builder Improper Access Control Vulnerability",
+          "dateAdded": "2026-07-07",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56290"
+        }
+      ]
+    },
+    {
       "vendor": "PTC",
       "total_cve_count": 1,
       "recent_12mo_count": 1,
@@ -12252,7 +12411,7 @@
     {
       "vendor": "Looking Glass",
       "total_cve_count": 1,
-      "recent_12mo_count": 1,
+      "recent_12mo_count": 0,
       "ransomware_count": 0,
       "product_breakdown": [
         {
