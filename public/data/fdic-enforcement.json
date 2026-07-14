@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-07T06:04:54.084Z",
+  "generated_at": "2026-07-14T04:46:13.651Z",
   "smoke_mode": false,
   "brand_count": 528,
   "with_enforcement_count": 0,
@@ -2006,9 +2006,9 @@
         17300,
         14997,
         12466,
-        32906,
-        27595,
         10600,
+        27595,
+        32906,
         4768,
         17438,
         9575
@@ -2050,9 +2050,9 @@
           "bkclass": "NM"
         },
         {
-          "cert": 32906,
-          "name": "Bank of America Community Development Bank",
-          "state": "CA",
+          "cert": 10600,
+          "name": "Sun Security Bank of America",
+          "state": "MO",
           "active": 0,
           "bkclass": "NM"
         },
@@ -2064,9 +2064,9 @@
           "bkclass": "N"
         },
         {
-          "cert": 10600,
-          "name": "Sun Security Bank of America",
-          "state": "MO",
+          "cert": 32906,
+          "name": "Bank of America Community Development Bank",
+          "state": "CA",
           "active": 0,
           "bkclass": "NM"
         },
@@ -2113,7 +2113,6 @@
         18694,
         13849,
         16309,
-        2843,
         16853,
         19501,
         27076,
@@ -2122,6 +2121,7 @@
         4448,
         5208,
         5457,
+        2843,
         2210,
         15277
       ],
@@ -2225,13 +2225,6 @@
           "bkclass": "N"
         },
         {
-          "cert": 2843,
-          "name": "Wells Fargo Bank of Arizona, National Association",
-          "state": "AZ",
-          "active": 0,
-          "bkclass": "N"
-        },
-        {
           "cert": 16853,
           "name": "Wells Fargo Bank Alaska, National Association",
           "state": "AK",
@@ -2288,6 +2281,13 @@
           "bkclass": "N"
         },
         {
+          "cert": 2843,
+          "name": "Wells Fargo Bank of Arizona, National Association",
+          "state": "AZ",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
           "cert": 2210,
           "name": "Wells Fargo Bank Wyoming, National Association",
           "state": "WY",
@@ -2329,8 +2329,8 @@
       "bank_cert_numbers": [
         6548,
         5134,
-        1304,
         26441,
+        1304,
         34590,
         23922,
         2268,
@@ -2354,16 +2354,16 @@
           "bkclass": "N"
         },
         {
-          "cert": 1304,
-          "name": "U.S. Bank of California",
-          "state": "CA",
+          "cert": 26441,
+          "name": "U.S. Bank of Utah",
+          "state": "UT",
           "active": 0,
           "bkclass": "NM"
         },
         {
-          "cert": 26441,
-          "name": "U.S. Bank of Utah",
-          "state": "UT",
+          "cert": 1304,
+          "name": "U.S. Bank of California",
+          "state": "CA",
           "active": 0,
           "bkclass": "NM"
         },
@@ -2426,8 +2426,8 @@
         34425,
         7740,
         742,
-        10513,
         7944,
+        10513,
         31435,
         2688
       ],
@@ -2496,18 +2496,18 @@
           "bkclass": "N"
         },
         {
-          "cert": 10513,
-          "name": "PNC Bank, Kentucky, Inc.",
-          "state": "KY",
-          "active": 0,
-          "bkclass": "SM"
-        },
-        {
           "cert": 7944,
           "name": "PNC Bank, National Association",
           "state": "PA",
           "active": 0,
           "bkclass": "N"
+        },
+        {
+          "cert": 10513,
+          "name": "PNC Bank, Kentucky, Inc.",
+          "state": "KY",
+          "active": 0,
+          "bkclass": "SM"
         },
         {
           "cert": 31435,
@@ -2923,7 +2923,7 @@
         {
           "cert": 35394,
           "name": "MassMutual Private Wealth & Trust, FSB",
-          "state": "CT",
+          "state": "MA",
           "active": 1,
           "bkclass": "SB"
         }
@@ -3124,23 +3124,23 @@
       "status": "edos_unreachable",
       "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
       "bank_cert_numbers": [
-        19792,
-        4655
+        4655,
+        19792
       ],
       "bank_names": [
-        {
-          "cert": 19792,
-          "name": "Colony Bank of Dodge County",
-          "state": "GA",
-          "active": 0,
-          "bkclass": "NM"
-        },
         {
           "cert": 4655,
           "name": "First National Bank and Trust Company in Dodge City",
           "state": "KS",
           "active": 0,
           "bkclass": "N"
+        },
+        {
+          "cert": 19792,
+          "name": "Colony Bank of Dodge County",
+          "state": "GA",
+          "active": 0,
+          "bkclass": "NM"
         }
       ]
     },
