@@ -1,0 +1,912 @@
+{
+  "generated_at": "2026-07-15T21:41:22.441Z",
+  "source": "oecd-watch-complaints-database",
+  "source_url": "https://complaints.oecdwatch.org",
+  "user_agent": "TruNorth-OECD-Watch/1.0 (+https://www.trunorthapp.com)",
+  "mode": "dry",
+  "brand_count": 50,
+  "with_complaints_count": 39,
+  "fixture_parser_sanity": [
+    {
+      "fixture": "nike-cambodia-2019.html",
+      "company": "Nike Inc.",
+      "country": "Cambodia",
+      "year": 2019,
+      "issues": [
+        "labor_rights"
+      ],
+      "ncp": "US NCP",
+      "outcome": "Mediation accepted — partial agreement reached 2021"
+    },
+    {
+      "fixture": "samsung-vietnam-2018.html",
+      "company": "Samsung Electronics Co., Ltd.",
+      "country": "Vietnam",
+      "year": 2018,
+      "issues": [
+        "occupational_health",
+        "human_rights"
+      ],
+      "ncp": "Korean NCP",
+      "outcome": "Mediation rejected by company — initial assessment closed"
+    },
+    {
+      "fixture": "shell-nigeria-2011.html",
+      "company": "Royal Dutch Shell plc",
+      "country": "Nigeria",
+      "year": 2011,
+      "issues": [
+        "human_rights",
+        "environment"
+      ],
+      "ncp": "Dutch NCP",
+      "outcome": "Final statement issued — partial finding against Shell"
+    }
+  ],
+  "brands": [
+    {
+      "slug": "nike",
+      "status": "ok",
+      "complaint_count": 2,
+      "recent_complaints": [
+        {
+          "year": 2019,
+          "country": "Cambodia",
+          "complainant": "CCAWDU coalition",
+          "issues": [
+            "labor_rights"
+          ],
+          "outcome": "mediation_partial"
+        },
+        {
+          "year": 2014,
+          "country": "Indonesia",
+          "complainant": "Clean Clothes Campaign",
+          "issues": [
+            "labor_rights"
+          ],
+          "outcome": "no_mediation"
+        }
+      ],
+      "primary_issue": "labor_rights",
+      "primary_region": "Southeast Asia",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "adidas",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2017,
+          "country": "Indonesia",
+          "complainant": "PT Panarub union",
+          "issues": [
+            "labor_rights"
+          ],
+          "outcome": "final_statement"
+        }
+      ],
+      "primary_issue": "labor_rights",
+      "primary_region": "Southeast Asia",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "puma",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2019,
+          "country": "Cambodia",
+          "complainant": "garment workers' union",
+          "issues": [
+            "labor_rights"
+          ],
+          "outcome": "no_mediation"
+        }
+      ],
+      "primary_issue": "labor_rights",
+      "primary_region": "Southeast Asia",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "h-and-m",
+      "status": "ok",
+      "complaint_count": 2,
+      "recent_complaints": [
+        {
+          "year": 2020,
+          "country": "Myanmar",
+          "complainant": "IndustriALL",
+          "issues": [
+            "human_rights",
+            "labor_rights"
+          ],
+          "outcome": "ongoing"
+        },
+        {
+          "year": 2018,
+          "country": "Bangladesh",
+          "complainant": "Clean Clothes Campaign",
+          "issues": [
+            "labor_rights",
+            "occupational_health"
+          ],
+          "outcome": "final_statement"
+        }
+      ],
+      "primary_issue": "labor_rights",
+      "primary_region": "South Asia",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "zara",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2016,
+          "country": "Brazil",
+          "complainant": "Reporter Brasil",
+          "issues": [
+            "labor_rights"
+          ],
+          "outcome": "final_statement"
+        }
+      ],
+      "primary_issue": "labor_rights",
+      "primary_region": "Latin America",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "primark",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2014,
+          "country": "Bangladesh",
+          "complainant": "Rana Plaza coalition",
+          "issues": [
+            "labor_rights",
+            "occupational_health"
+          ],
+          "outcome": "final_statement"
+        }
+      ],
+      "primary_issue": "labor_rights",
+      "primary_region": "South Asia",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "gap",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2013,
+          "country": "India",
+          "complainant": "Bachpan Bachao Andolan",
+          "issues": [
+            "labor_rights"
+          ],
+          "outcome": "withdrawn"
+        }
+      ],
+      "primary_issue": "labor_rights",
+      "primary_region": "South Asia",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "levi-strauss",
+      "complaint_count": 0,
+      "status": "no_complaints"
+    },
+    {
+      "slug": "ralph-lauren",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2015,
+          "country": "Cambodia",
+          "complainant": "garment workers",
+          "issues": [
+            "labor_rights"
+          ],
+          "outcome": "ongoing"
+        }
+      ],
+      "primary_issue": "labor_rights",
+      "primary_region": "Southeast Asia",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "vf-corporation",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2018,
+          "country": "Honduras",
+          "complainant": "Workers Rights Consortium",
+          "issues": [
+            "labor_rights"
+          ],
+          "outcome": "final_statement"
+        }
+      ],
+      "primary_issue": "labor_rights",
+      "primary_region": null,
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "pvh-corp",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2016,
+          "country": "Bangladesh",
+          "complainant": "Clean Clothes Campaign",
+          "issues": [
+            "labor_rights"
+          ],
+          "outcome": "final_statement"
+        }
+      ],
+      "primary_issue": "labor_rights",
+      "primary_region": "South Asia",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "lululemon",
+      "complaint_count": 0,
+      "status": "no_complaints"
+    },
+    {
+      "slug": "under-armour",
+      "complaint_count": 0,
+      "status": "no_complaints"
+    },
+    {
+      "slug": "apple",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2019,
+          "country": "China",
+          "complainant": "China Labor Watch",
+          "issues": [
+            "labor_rights",
+            "human_rights"
+          ],
+          "outcome": "ongoing"
+        }
+      ],
+      "primary_issue": "labor_rights",
+      "primary_region": "East Asia",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "samsung",
+      "status": "ok",
+      "complaint_count": 2,
+      "recent_complaints": [
+        {
+          "year": 2018,
+          "country": "Vietnam",
+          "complainant": "IPEN + CGFED",
+          "issues": [
+            "occupational_health",
+            "human_rights"
+          ],
+          "outcome": "no_mediation"
+        },
+        {
+          "year": 2016,
+          "country": "South Korea",
+          "complainant": "SHARPS",
+          "issues": [
+            "occupational_health"
+          ],
+          "outcome": "final_statement"
+        }
+      ],
+      "primary_issue": "occupational_health",
+      "primary_region": "Southeast Asia",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "foxconn",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2018,
+          "country": "China",
+          "complainant": "SACOM",
+          "issues": [
+            "labor_rights"
+          ],
+          "outcome": "ongoing"
+        }
+      ],
+      "primary_issue": "labor_rights",
+      "primary_region": "East Asia",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "dell",
+      "complaint_count": 0,
+      "status": "no_complaints"
+    },
+    {
+      "slug": "hp",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2015,
+          "country": "Mexico",
+          "complainant": "CEREAL",
+          "issues": [
+            "labor_rights"
+          ],
+          "outcome": "final_statement"
+        }
+      ],
+      "primary_issue": "labor_rights",
+      "primary_region": "Latin America",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "ibm",
+      "complaint_count": 0,
+      "status": "no_complaints"
+    },
+    {
+      "slug": "microsoft",
+      "complaint_count": 0,
+      "status": "no_complaints"
+    },
+    {
+      "slug": "google",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2021,
+          "country": "USA",
+          "complainant": "Alphabet Workers Union",
+          "issues": [
+            "labor_rights",
+            "disclosure"
+          ],
+          "outcome": "ongoing"
+        }
+      ],
+      "primary_issue": "labor_rights",
+      "primary_region": null,
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "meta",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2022,
+          "country": "Kenya",
+          "complainant": "Foxglove + content moderators",
+          "issues": [
+            "labor_rights",
+            "human_rights"
+          ],
+          "outcome": "ongoing"
+        }
+      ],
+      "primary_issue": "labor_rights",
+      "primary_region": "Sub-Saharan Africa",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "amazon",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2021,
+          "country": "Germany",
+          "complainant": "ver.di",
+          "issues": [
+            "labor_rights"
+          ],
+          "outcome": "no_mediation"
+        }
+      ],
+      "primary_issue": "labor_rights",
+      "primary_region": null,
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "exxon-mobil",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2013,
+          "country": "Indonesia",
+          "complainant": "Aceh community",
+          "issues": [
+            "human_rights",
+            "environment"
+          ],
+          "outcome": "withdrawn"
+        }
+      ],
+      "primary_issue": "human_rights",
+      "primary_region": "Southeast Asia",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "chevron",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2015,
+          "country": "Ecuador",
+          "complainant": "FDA / Amazon Defense Coalition",
+          "issues": [
+            "environment",
+            "human_rights"
+          ],
+          "outcome": "final_statement"
+        }
+      ],
+      "primary_issue": "environment",
+      "primary_region": null,
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "shell-usa",
+      "status": "ok",
+      "complaint_count": 2,
+      "recent_complaints": [
+        {
+          "year": 2016,
+          "country": "Nigeria",
+          "complainant": "SERAP",
+          "issues": [
+            "environment"
+          ],
+          "outcome": "ongoing"
+        },
+        {
+          "year": 2011,
+          "country": "Nigeria",
+          "complainant": "Milieudefensie / FoE NL",
+          "issues": [
+            "environment",
+            "human_rights"
+          ],
+          "outcome": "final_statement"
+        }
+      ],
+      "primary_issue": "environment",
+      "primary_region": "Sub-Saharan Africa",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "bp-uk",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2014,
+          "country": "Russia",
+          "complainant": "Bellona",
+          "issues": [
+            "environment"
+          ],
+          "outcome": "final_statement"
+        }
+      ],
+      "primary_issue": "environment",
+      "primary_region": "Eastern Europe",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "total-energies",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2019,
+          "country": "Uganda",
+          "complainant": "Friends of the Earth France",
+          "issues": [
+            "environment",
+            "human_rights"
+          ],
+          "outcome": "ongoing"
+        }
+      ],
+      "primary_issue": "environment",
+      "primary_region": null,
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "rio-tinto-usa",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2012,
+          "country": "Papua New Guinea",
+          "complainant": "Bougainville community",
+          "issues": [
+            "environment",
+            "human_rights"
+          ],
+          "outcome": "final_statement"
+        }
+      ],
+      "primary_issue": "environment",
+      "primary_region": null,
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "glencore-plc",
+      "status": "ok",
+      "complaint_count": 2,
+      "recent_complaints": [
+        {
+          "year": 2020,
+          "country": "Congo",
+          "complainant": "RAID",
+          "issues": [
+            "corruption",
+            "human_rights"
+          ],
+          "outcome": "ongoing"
+        },
+        {
+          "year": 2018,
+          "country": "Colombia",
+          "complainant": "ABColombia",
+          "issues": [
+            "human_rights",
+            "environment"
+          ],
+          "outcome": "ongoing"
+        }
+      ],
+      "primary_issue": "human_rights",
+      "primary_region": "Latin America",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "vale-usa",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2019,
+          "country": "Brazil",
+          "complainant": "MAB",
+          "issues": [
+            "environment",
+            "human_rights"
+          ],
+          "outcome": "ongoing"
+        }
+      ],
+      "primary_issue": "environment",
+      "primary_region": "Latin America",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "anglo-american",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2017,
+          "country": "South Africa",
+          "complainant": "Bench Marks Foundation",
+          "issues": [
+            "environment",
+            "human_rights"
+          ],
+          "outcome": "final_statement"
+        }
+      ],
+      "primary_issue": "environment",
+      "primary_region": "Sub-Saharan Africa",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "nestle",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2013,
+          "country": "Cote d'Ivoire",
+          "complainant": "International Rights Advocates",
+          "issues": [
+            "labor_rights",
+            "human_rights"
+          ],
+          "outcome": "final_statement"
+        }
+      ],
+      "primary_issue": "labor_rights",
+      "primary_region": null,
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "unilever-usa",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2015,
+          "country": "India",
+          "complainant": "former Kodaikanal workers",
+          "issues": [
+            "occupational_health",
+            "environment"
+          ],
+          "outcome": "final_statement"
+        }
+      ],
+      "primary_issue": "occupational_health",
+      "primary_region": "South Asia",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "coca-cola",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2014,
+          "country": "Colombia",
+          "complainant": "SINALTRAINAL",
+          "issues": [
+            "labor_rights",
+            "human_rights"
+          ],
+          "outcome": "withdrawn"
+        }
+      ],
+      "primary_issue": "labor_rights",
+      "primary_region": "Latin America",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "pepsico",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2018,
+          "country": "Indonesia",
+          "complainant": "Rainforest Action Network",
+          "issues": [
+            "environment",
+            "labor_rights"
+          ],
+          "outcome": "ongoing"
+        }
+      ],
+      "primary_issue": "environment",
+      "primary_region": "Southeast Asia",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "kraft-heinz",
+      "complaint_count": 0,
+      "status": "no_complaints"
+    },
+    {
+      "slug": "p-and-g",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2017,
+          "country": "Indonesia",
+          "complainant": "RAN",
+          "issues": [
+            "environment"
+          ],
+          "outcome": "final_statement"
+        }
+      ],
+      "primary_issue": "environment",
+      "primary_region": "Southeast Asia",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "cargill",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2019,
+          "country": "Brazil",
+          "complainant": "Mighty Earth",
+          "issues": [
+            "environment",
+            "human_rights"
+          ],
+          "outcome": "ongoing"
+        }
+      ],
+      "primary_issue": "environment",
+      "primary_region": "Latin America",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "archer-daniels-midland",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2018,
+          "country": "Brazil",
+          "complainant": "Mighty Earth",
+          "issues": [
+            "environment"
+          ],
+          "outcome": "ongoing"
+        }
+      ],
+      "primary_issue": "environment",
+      "primary_region": "Latin America",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "bunge-global",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2018,
+          "country": "Brazil",
+          "complainant": "Mighty Earth",
+          "issues": [
+            "environment",
+            "human_rights"
+          ],
+          "outcome": "ongoing"
+        }
+      ],
+      "primary_issue": "environment",
+      "primary_region": "Latin America",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "walmart",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2013,
+          "country": "Bangladesh",
+          "complainant": "Rana Plaza coalition",
+          "issues": [
+            "labor_rights",
+            "occupational_health"
+          ],
+          "outcome": "final_statement"
+        }
+      ],
+      "primary_issue": "labor_rights",
+      "primary_region": "South Asia",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "costco",
+      "complaint_count": 0,
+      "status": "no_complaints"
+    },
+    {
+      "slug": "target",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2014,
+          "country": "Bangladesh",
+          "complainant": "Clean Clothes Campaign",
+          "issues": [
+            "labor_rights"
+          ],
+          "outcome": "withdrawn"
+        }
+      ],
+      "primary_issue": "labor_rights",
+      "primary_region": "South Asia",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "ikea",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2017,
+          "country": "Romania",
+          "complainant": "Agent Green",
+          "issues": [
+            "environment"
+          ],
+          "outcome": "final_statement"
+        }
+      ],
+      "primary_issue": "environment",
+      "primary_region": null,
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "dollar-tree",
+      "complaint_count": 0,
+      "status": "no_complaints"
+    },
+    {
+      "slug": "dollar-general",
+      "complaint_count": 0,
+      "status": "no_complaints"
+    },
+    {
+      "slug": "family-dollar",
+      "complaint_count": 0,
+      "status": "no_complaints"
+    },
+    {
+      "slug": "mcdonalds",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2017,
+          "country": "Brazil",
+          "complainant": "Reporter Brasil",
+          "issues": [
+            "labor_rights"
+          ],
+          "outcome": "ongoing"
+        }
+      ],
+      "primary_issue": "labor_rights",
+      "primary_region": "Latin America",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    },
+    {
+      "slug": "starbucks",
+      "status": "ok",
+      "complaint_count": 1,
+      "recent_complaints": [
+        {
+          "year": 2020,
+          "country": "Brazil",
+          "complainant": "Reporter Brasil",
+          "issues": [
+            "labor_rights"
+          ],
+          "outcome": "ongoing"
+        }
+      ],
+      "primary_issue": "labor_rights",
+      "primary_region": "Latin America",
+      "last_updated": "2026-07-15T21:41:22.441Z"
+    }
+  ]
+}
