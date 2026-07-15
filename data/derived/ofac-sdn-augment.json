@@ -1,8 +1,8 @@
 {
   "source": "ofac-sdn",
   "source_url": "https://www.treasury.gov/ofac/downloads/sdn.csv",
-  "generated_at": "2026-07-14T05:47:09.117Z",
-  "snapshot_date": "2026-07-14",
+  "generated_at": "2026-07-15T05:39:37.441Z",
+  "snapshot_date": "2026-07-15",
   "matched_slug_count": 91,
   "companies": {
     "azul-sa": {
@@ -1572,6 +1572,11 @@
       "entities": [
         {
           "name": "SIREN II",
+          "program": "IRAN-EO13902",
+          "sanction_date": null
+        },
+        {
+          "name": "VIRENT",
           "program": "IRAN-EO13902",
           "sanction_date": null
         }
