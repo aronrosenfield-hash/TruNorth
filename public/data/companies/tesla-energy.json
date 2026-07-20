@@ -2,7 +2,7 @@
   "name": "Tesla Energy",
   "cat": "Energy & Utilities",
   "init": "TESL",
-  "overall": 33.2,
+  "overall": 52.3,
   "isPublic": false,
   "sc": {
     "political": "bipartisan",
@@ -13,7 +13,8 @@
     "guns": "neutral",
     "privacy": "na",
     "execPay": "mixed",
-    "health": "good"
+    "health": "good",
+    "environment": "positive"
   },
   "political": {
     "s": "Via parent company Tesla: FEC: $427K in executive political donations; partisan lean split across 14 executive donors.  [CA CalAccess + NY COELIG + TX Ethics adds state-level totals.]  [Stanford DIME (Bonica) corroborates.]",
@@ -35,7 +36,7 @@
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "Via parent company Tesla: CDP A-List (2024) — top tier for climate disclosure and emissions-reduction action.",
     "sources": [
       "parent-inheritance"
     ]
@@ -120,7 +121,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 1,
+  "realCats": 2,
   "flags": {
     "animals": {
       "na": true
@@ -152,6 +153,7 @@
   },
   "inheritedFrom": "tesla",
   "csc": {
+    "environment": 100,
     "labor": 8
   }
 }

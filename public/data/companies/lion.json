@@ -2,7 +2,7 @@
   "name": "Lion",
   "cat": "Financial Services",
   "init": "LION",
-  "overall": 41.6,
+  "overall": 43.3,
   "isPublic": true,
   "sc": {
     "political": "left",
@@ -12,7 +12,7 @@
     "dei": "neutral",
     "animals": "positive",
     "guns": "neutral",
-    "privacy": "neutral",
+    "privacy": "mixed",
     "execPay": "na",
     "health": "mixed"
   },
@@ -63,9 +63,9 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Via parent company Nestlé: Nestlé operates a mandatory Global Privacy Program aligned with GDPR Binding Corporate Rules (updated January 2025) and employs a worldwide Nestlé Privacy Network. However, the company experienced two publicly claimed data incidents: in March 2022, hacktivist group Anonymous claimed to have leaked 10 GB of Nestlé data (emails, passwords, client data), which Nestlé denied; and in April 2024, threat actor group R00TK1T claimed responsibility for infiltrating Nestlé's systems and leaking confidential internal data—Nestlé had not issued a formal public confirmation of the 2024 breach as of reporting. No regulatory fines against Nestlé specifically for privacy violations have been found in public records.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPay": {
@@ -152,7 +152,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-31T00:43:09.352Z",
-  "realCats": 3,
+  "realCats": 4,
   "flags": {
     "animals": {
       "na": true
@@ -183,7 +183,8 @@
   "csc": {
     "charity": 50,
     "environment": 29.8,
-    "labor": 25.4
+    "labor": 25.4,
+    "privacy": 50
   },
   "dei_eeo1": {
     "year": 2018,

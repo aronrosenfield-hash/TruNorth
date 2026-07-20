@@ -2,17 +2,17 @@
   "name": "Food 4 Less",
   "cat": "Grocery",
   "init": "FOOD",
-  "overall": 35.1,
+  "overall": 30.9,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
     "charity": "positive",
     "environment": "poor",
     "labor": "poor",
-    "dei": "neutral",
+    "dei": "mixed",
     "animals": "negative",
     "guns": "no_guns",
-    "privacy": "neutral",
+    "privacy": "poor",
     "execPay": "poor",
     "health": "mixed"
   },
@@ -43,9 +43,9 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "Via parent company Kroger: Kroger was recognized in 2024 as a 'Best Workplace for Diverse Professionals' by Mogul and as an 'All-Time Top Corporation for Women Business Enterprises' by WBENC, and its FY2025 proxy affirms board-level 'demonstrated support of our longstanding values of diversity and inclusion.' However, in its April 2025 10-K filing Kroger deleted its standalone DEI section, folding ESG commentary under broader 'sustainability risks,' a move documented on a tracker of companies rolling back explicit DEI disclosures.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "animals": {
@@ -61,9 +61,9 @@
     ]
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Via parent company Kroger: Kroger faces multiple active privacy controversies: (1) a federal class-action lawsuit alleging it used Meta's Pixel tracking code to share confidential pharmacy/health customer data without consent in violation of HIPAA; (2) an Illinois BIPA class action (Arnold v. Roundy's, Case No. 2020-CH-005622) alleging facial recognition scanning of shoppers and employees at Mariano's/Kroger stores without consent; (3) documented sale of customer data via its 84.51° subsidiary to 50+ companies including data brokers, generating an estimated $527M in 2024 'alternative profit'; and (4) Kroger's own published privacy policy confirms it collects biometric/facial recognition data in select Texas stores and discloses personal data to AdTech vendors, social networks, and data enrichment providers for targeted advertising.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPay": {
@@ -116,7 +116,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-30T23:48:13.160Z",
-  "realCats": 4,
+  "realCats": 5,
   "health": {
     "s": "LA City health inspections (data through 2018): 1 of 16 LA outlets (6.3%) received a B or worse grade — 1 B grade across 262 inspections (avg score 96.2).",
     "sources": [
@@ -139,6 +139,7 @@
     "charity": 65,
     "environment": 8,
     "labor": 8,
+    "privacy": 8,
     "execPay": 36.8
   }
 }

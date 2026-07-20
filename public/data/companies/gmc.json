@@ -2,7 +2,7 @@
   "name": "GMC",
   "cat": "Automotive",
   "init": "GMC",
-  "overall": 32.6,
+  "overall": 43.3,
   "isPublic": true,
   "sc": {
     "political": "right",
@@ -13,7 +13,8 @@
     "guns": "neutral",
     "privacy": "poor",
     "execPay": "poor",
-    "health": "poor"
+    "health": "poor",
+    "environment": "positive"
   },
   "political": {
     "s": "FEC: $552 PAC donations; 100% to Republican, 0% to Democratic committees.",
@@ -38,7 +39,7 @@
     ]
   },
   "environment": {
-    "s": "No public record found.",
+    "s": "Via parent company General Motors: Climate-commitment coalition member: First Movers Coalition (since 2022) and RE100 (since 2016; target 2025). 100% renewable electricity at US sites by 2025; global by 2035. CDP A-List (2024) — top tier for climate disclosure and emissions-reduction action.",
     "sources": [
       "parent-inheritance"
     ]
@@ -169,7 +170,7 @@
       "cr-auto-reliability"
     ]
   },
-  "realCats": 4,
+  "realCats": 5,
   "flags": {
     "animals": {
       "na": true
@@ -190,6 +191,7 @@
   "inheritedFrom": "general-motors",
   "csc": {
     "charity": 50,
+    "environment": 100,
     "labor": 8,
     "privacy": 8,
     "execPay": 42.4

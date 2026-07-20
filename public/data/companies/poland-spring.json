@@ -2,17 +2,17 @@
   "name": "Poland Spring",
   "cat": "Food & Beverage",
   "init": "POLA",
-  "overall": 64.3,
+  "overall": 61.1,
   "isPublic": false,
   "sc": {
     "political": "bipartisan",
     "charity": "mixed",
     "environment": "positive",
     "labor": "neutral",
-    "dei": "neutral",
+    "dei": "mixed",
     "animals": "positive",
     "guns": "neutral",
-    "privacy": "na",
+    "privacy": "mixed",
     "execPay": "na",
     "health": "mixed"
   },
@@ -42,9 +42,9 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "Via parent company Nestlé: Nestlé maintains active DEI programs including a Gender Balance Acceleration Plan, ILO Global Business Disability Network (GBDN) Charter signatory (signed 2024), Partnership with Global LGBTI Equality (PGLE) membership, UN Women's Empowerment Principles signatory, and a 2025 Global Equal Pay review reporting no countrywide pay gap across 84 countries. However, in March 2025 the company was targeted by a consumer boycott ('Nestlé Blackout,' March 21–28, 2025) organized by The People's Union USA, alleging Nestlé had scaled back DEI commitments—though no formal regulatory finding of DEI policy violation has been issued.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "animals": {
@@ -58,9 +58,9 @@
     "sources": []
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Via parent company Nestlé: Nestlé operates a mandatory Global Privacy Program aligned with GDPR Binding Corporate Rules (updated January 2025) and employs a worldwide Nestlé Privacy Network. However, the company experienced two publicly claimed data incidents: in March 2022, hacktivist group Anonymous claimed to have leaked 10 GB of Nestlé data (emails, passwords, client data), which Nestlé denied; and in April 2024, threat actor group R00TK1T claimed responsibility for infiltrating Nestlé's systems and leaking confidential internal data—Nestlé had not issued a formal public confirmation of the 2024 breach as of reporting. No regulatory fines against Nestlé specifically for privacy violations have been found in public records.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPay": {
@@ -130,7 +130,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 2,
+  "realCats": 3,
   "flags": {
     "guns": {
       "na": true
@@ -157,6 +157,7 @@
   "inheritedFrom": "nestl",
   "csc": {
     "charity": 50,
-    "environment": 100
+    "environment": 100,
+    "privacy": 50
   }
 }

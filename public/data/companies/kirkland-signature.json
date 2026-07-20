@@ -2,7 +2,7 @@
   "name": "Kirkland Signature",
   "cat": "Grocery",
   "init": "KIRK",
-  "overall": 53.5,
+  "overall": 53,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
@@ -12,7 +12,7 @@
     "dei": "pro_dei",
     "animals": "mixed",
     "guns": "no_guns",
-    "privacy": "na",
+    "privacy": "mixed",
     "execPay": "mixed",
     "health": "poor"
   },
@@ -61,9 +61,9 @@
     ]
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Via parent company Costco: Costco publishes a detailed privacy policy offering consumers opt-out rights, data deletion, and a Consumer Health Data Privacy Notice stating it does not sell consumer health data; however, two federal class action lawsuits filed in October 2023 (Castillo et al. v. Costco Wholesale Corp., No. 2:23-cv-01548, and R.S. v. Costco Wholesale Corp., W.D. Wash.) allege Costco secretly used Meta Pixel on its pharmacy webpages to transmit patients' sensitive health information—including prescriptions, HIV status, and insurance details—to Meta, Google, and other third parties without consent, in alleged violation of HIPAA and federal/state wiretapping laws; a federal court largely allowed the case to proceed in November 2024.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPay": {
@@ -131,7 +131,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": "2026-05-31T00:24:06.297Z",
-  "realCats": 4,
+  "realCats": 5,
   "flags": {
     "dei": {
       "notDisclosed": true
@@ -154,6 +154,7 @@
     "charity": 65,
     "environment": 100,
     "labor": 8.1,
+    "privacy": 50,
     "execPay": 46.3
   }
 }

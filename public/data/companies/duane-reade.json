@@ -1,1 +1,227 @@
-{"name":"Duane Reade","cat":"Retail","init":"DUAN","overall":50,"isPublic":true,"sc":{"political":"bipartisan","charity":"neutral","environment":"mixed","labor":"mixed","dei":"pro_dei","animals":"na","guns":"no_guns","privacy":"mixed","execPay":"na","health":"mixed"},"political":{"s":"FEC: $288K in executive political donations; partisan lean split across 12 executive donors.","sources":["Claude AI synthesis","exec-political-donations"]},"labor":{"s":"1 OSHA severe-injury reports since 2015.","sources":["Claude AI synthesis"]},"dataLastUpdated":{"legacy":"2026-05-31","courtlistener":"2026-07-19T18:24:27.805Z","oshaSevereInjury":"2026-06-11T14:35:44.423Z"},"charity":{"s":"No public record found.","sources":["Claude AI synthesis"]},"environment":{"s":"Via parent company Walgreens: CDP Climate Change: B (2024) — management-band disclosure; discloses emissions data but limited target ambition.","sources":["parent-inheritance"]},"dei":{"s":"Via parent company Walgreens: HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.","sources":["parent-inheritance"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.","sources":["atf-ffl"]},"privacy":{"s":"Via parent company Walgreens: 2 HHS OCR HIPAA breaches reported; 147K individuals affected total. Most recent: 2020-02-04. Indiana jury awarded $1.44M after Walgreens pharmacist disclosed prescription records.","sources":["parent-inheritance"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"ab":"#0d2318","ac":"#4caf82","bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/il/chicago/profile/pharmacy/walgreens-0654-5490/addressId/341335"},"logoUrl":"https://commons.wikimedia.org/wiki/Special:FilePath/Duane%20Reade%20by%20Walgreens%202020%20logo.svg","logoSource":"wikidata_p154","slug":"duane-reade","competitors":[],"wiki":null,"secComplaints":null,"news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":{"caseCount24mo":1,"classActionCount":0,"mostRecentCase":"2025-11-20","cases":[{"caseName":"Nwokedi v. Walgreen Co.","dateFiled":"2025-11-20","court":"District Court, S.D. New York","natureOfSuit":"Civil Rights: Jobs","isClassAction":false,"sourceUrl":"https://www.courtlistener.com/?q=1%3A25-cv-09687"},{"caseName":"Philip Krause v. Glenmark Pharmaceuticals, Inc. USA","dateFiled":"2023-10-05","court":"Court of Appeals for the Eleventh Circuit","natureOfSuit":"Health Care / Pharma","isClassAction":false,"sourceUrl":"https://www.courtlistener.com/?q=23-13283"},{"caseName":"Brian Stoltz v. Glenmark Pharmaceuticals, Inc. USA","dateFiled":"2023-09-28","court":"Court of Appeals for the Eleventh Circuit","natureOfSuit":"Health Care / Pharma","isClassAction":false,"sourceUrl":"https://www.courtlistener.com/?q=23-13182"},{"caseName":"Ida Adams v. Glenmark Pharmaceuticals, Inc. USA","dateFiled":"2023-08-23","court":"Court of Appeals for the Eleventh Circuit","natureOfSuit":"Health Care / Pharma","isClassAction":false,"sourceUrl":"https://www.courtlistener.com/?q=23-12742"},{"caseName":"He v. United States of America","dateFiled":"2023-04-18","court":"District Court, S.D. New York","natureOfSuit":"Civil Rights: Other","isClassAction":false,"sourceUrl":"https://www.courtlistener.com/?q=1%3A23-cv-03214"}],"totalAllTime":81,"lastUpdated":"2026-07-19T18:24:27.805Z","source":"courtlistener-recap"},"labor_dol_whd":null,"violationTracker":null,"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2024-04-18","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Duane%20Reade&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-30T23:13:14.654Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-30T23:13:14.654Z","realCats":3,"flags":{"health":{"na":true},"dei":{"notDisclosed":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true}},"health":{"s":"Via parent company Walgreens: 18 CPSC recalls on record; sample hazard: fire & fire-related burn.","sources":["parent-inheritance"]},"inheritedFrom":"walgreens","csc":{"environment":50,"labor":50,"privacy":50},"enriched":{"oshaSevereInjury":{"totalSevereInjuries2y":0,"totalAmputations2y":0,"totalHospitalizations2y":0,"byYear":{"2016":1},"totalRecordsAllTime":1,"sampleRecords":[{"event_date":"2016-06-24","employer":"Duane Reade","city":"NEW YORK","state":"NEW YORK","part_of_body":"Fingertip(s)","nature":"Amputations","event_description":"Struck by dislodged flying object, particle","final_narrative":"An employee was attempting to unjam a hand tool that was lodged in the baler crush plate and baler wall. When the jammed hand tool came loose, it struck the employee's left index finger, amputating the fingertip.","amputation":true,"hospitalized":false}],"lastUpdated":"2026-06-11T14:35:44.423Z","source":"osha-sir","sourceUrl":"https://www.osha.gov/severe-injury-reports"}}}
+{
+  "name": "Duane Reade",
+  "cat": "Retail",
+  "init": "DUAN",
+  "overall": 50,
+  "isPublic": true,
+  "sc": {
+    "political": "bipartisan",
+    "charity": "neutral",
+    "environment": "mixed",
+    "labor": "mixed",
+    "dei": "pro_dei",
+    "animals": "na",
+    "guns": "no_guns",
+    "privacy": "mixed",
+    "execPay": "na",
+    "health": "mixed"
+  },
+  "political": {
+    "s": "FEC: $288K in executive political donations; partisan lean split across 12 executive donors.",
+    "sources": [
+      "Claude AI synthesis",
+      "exec-political-donations"
+    ]
+  },
+  "labor": {
+    "s": "1 OSHA severe-injury reports since 2015.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "courtlistener": "2026-07-19T18:24:27.805Z",
+    "oshaSevereInjury": "2026-06-11T14:35:44.423Z"
+  },
+  "charity": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "environment": {
+    "s": "Via parent company Walgreens: CDP Climate Change: B (2024) — management-band disclosure; discloses emissions data but limited target ambition.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "dei": {
+    "s": "Via parent company Walgreens: HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "guns": {
+    "s": "No federal firearms license on record for this company in the ATF FFL registry — no licensed firearms dealing or manufacturing.",
+    "sources": [
+      "atf-ffl"
+    ]
+  },
+  "privacy": {
+    "s": "Via parent company Walgreens: 2 HHS OCR HIPAA breaches reported; 147K individuals affected total. Most recent: 2020-02-04. Indiana jury awarded $1.44M after Walgreens pharmacist disclosed prescription records.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "sources": [
+      "Claude AI synthesis"
+    ]
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/il/chicago/profile/pharmacy/walgreens-0654-5490/addressId/341335"
+  },
+  "logoUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Duane%20Reade%20by%20Walgreens%202020%20logo.svg",
+  "logoSource": "wikidata_p154",
+  "slug": "duane-reade",
+  "competitors": [],
+  "wiki": null,
+  "secComplaints": null,
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": {
+    "caseCount24mo": 1,
+    "classActionCount": 0,
+    "mostRecentCase": "2025-11-20",
+    "cases": [
+      {
+        "caseName": "Nwokedi v. Walgreen Co.",
+        "dateFiled": "2025-11-20",
+        "court": "District Court, S.D. New York",
+        "natureOfSuit": "Civil Rights: Jobs",
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=1%3A25-cv-09687"
+      },
+      {
+        "caseName": "Philip Krause v. Glenmark Pharmaceuticals, Inc. USA",
+        "dateFiled": "2023-10-05",
+        "court": "Court of Appeals for the Eleventh Circuit",
+        "natureOfSuit": "Health Care / Pharma",
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=23-13283"
+      },
+      {
+        "caseName": "Brian Stoltz v. Glenmark Pharmaceuticals, Inc. USA",
+        "dateFiled": "2023-09-28",
+        "court": "Court of Appeals for the Eleventh Circuit",
+        "natureOfSuit": "Health Care / Pharma",
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=23-13182"
+      },
+      {
+        "caseName": "Ida Adams v. Glenmark Pharmaceuticals, Inc. USA",
+        "dateFiled": "2023-08-23",
+        "court": "Court of Appeals for the Eleventh Circuit",
+        "natureOfSuit": "Health Care / Pharma",
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=23-12742"
+      },
+      {
+        "caseName": "He v. United States of America",
+        "dateFiled": "2023-04-18",
+        "court": "District Court, S.D. New York",
+        "natureOfSuit": "Civil Rights: Other",
+        "isClassAction": false,
+        "sourceUrl": "https://www.courtlistener.com/?q=1%3A23-cv-03214"
+      }
+    ],
+    "totalAllTime": 81,
+    "lastUpdated": "2026-07-19T18:24:27.805Z",
+    "source": "courtlistener-recap"
+  },
+  "labor_dol_whd": null,
+  "violationTracker": null,
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2024-04-18",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Duane%20Reade&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-30T23:13:14.654Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-30T23:13:14.654Z",
+  "realCats": 3,
+  "flags": {
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    }
+  },
+  "health": {
+    "s": "Via parent company Walgreens: 18 CPSC recalls on record; sample hazard: fire & fire-related burn.",
+    "sources": [
+      "parent-inheritance"
+    ]
+  },
+  "inheritedFrom": "walgreens",
+  "csc": {
+    "environment": 50,
+    "labor": 50,
+    "privacy": 50
+  },
+  "enriched": {
+    "oshaSevereInjury": {
+      "totalSevereInjuries2y": 0,
+      "totalAmputations2y": 0,
+      "totalHospitalizations2y": 0,
+      "byYear": {
+        "2016": 1
+      },
+      "totalRecordsAllTime": 1,
+      "sampleRecords": [
+        {
+          "event_date": "2016-06-24",
+          "employer": "Duane Reade",
+          "city": "NEW YORK",
+          "state": "NEW YORK",
+          "part_of_body": "Fingertip(s)",
+          "nature": "Amputations",
+          "event_description": "Struck by dislodged flying object, particle",
+          "final_narrative": "An employee was attempting to unjam a hand tool that was lodged in the baler crush plate and baler wall. When the jammed hand tool came loose, it struck the employee's left index finger, amputating the fingertip.",
+          "amputation": true,
+          "hospitalized": false
+        }
+      ],
+      "lastUpdated": "2026-06-11T14:35:44.423Z",
+      "source": "osha-sir",
+      "sourceUrl": "https://www.osha.gov/severe-injury-reports"
+    }
+  }
+}

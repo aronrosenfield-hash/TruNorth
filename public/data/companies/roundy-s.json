@@ -2,17 +2,17 @@
   "name": "Roundy's",
   "cat": "Grocery",
   "init": "ROUN",
-  "overall": 34.7,
+  "overall": 29.8,
   "isPublic": false,
   "sc": {
     "political": "right",
     "charity": "positive",
     "environment": "poor",
     "labor": "poor",
-    "dei": "neutral",
+    "dei": "mixed",
     "animals": "negative",
     "guns": "no_guns",
-    "privacy": "na",
+    "privacy": "poor",
     "execPay": "poor",
     "health": "mixed"
   },
@@ -42,9 +42,9 @@
     ]
   },
   "dei": {
-    "s": "No public record found.",
+    "s": "Via parent company Kroger: Kroger was recognized in 2024 as a 'Best Workplace for Diverse Professionals' by Mogul and as an 'All-Time Top Corporation for Women Business Enterprises' by WBENC, and its FY2025 proxy affirms board-level 'demonstrated support of our longstanding values of diversity and inclusion.' However, in its April 2025 10-K filing Kroger deleted its standalone DEI section, folding ESG commentary under broader 'sustainability risks,' a move documented on a tracker of companies rolling back explicit DEI disclosures.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "animals": {
@@ -60,9 +60,9 @@
     ]
   },
   "privacy": {
-    "s": "No public record found.",
+    "s": "Via parent company Kroger: Kroger faces multiple active privacy controversies: (1) a federal class-action lawsuit alleging it used Meta's Pixel tracking code to share confidential pharmacy/health customer data without consent in violation of HIPAA; (2) an Illinois BIPA class action (Arnold v. Roundy's, Case No. 2020-CH-005622) alleging facial recognition scanning of shoppers and employees at Mariano's/Kroger stores without consent; (3) documented sale of customer data via its 84.51° subsidiary to 50+ companies including data brokers, generating an estimated $527M in 2024 'alternative profit'; and (4) Kroger's own published privacy policy confirms it collects biometric/facial recognition data in select Texas stores and discloses personal data to AdTech vendors, social networks, and data enrichment providers for targeted advertising.",
     "sources": [
-      "Claude AI synthesis"
+      "parent-inheritance"
     ]
   },
   "execPay": {
@@ -122,7 +122,7 @@
   "nlrb": null,
   "epa": null,
   "lastUpdated": null,
-  "realCats": 3,
+  "realCats": 4,
   "flags": {
     "execPay": {
       "na": true
@@ -147,6 +147,7 @@
   "csc": {
     "charity": 65,
     "environment": 8,
-    "labor": 8
+    "labor": 8,
+    "privacy": 8
   }
 }
