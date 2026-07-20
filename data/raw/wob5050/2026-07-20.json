@@ -1,174 +1,159 @@
 {
-  "generated_at": "2026-07-20T13:29:57.368Z",
+  "generated_at": "2026-07-20T13:29:57.307Z",
   "source": "wob5050",
   "source_url": "https://5050wob.com",
-  "upstream_file": "data/raw/wob5050/2026-07-20.json",
-  "company_count": 15,
-  "companies": {
-    "apple": {
-      "display_name": "Apple Inc.",
+  "mode": "live",
+  "row_count": 15,
+  "rows": [
+    {
       "ticker": "AAPL",
+      "company": "Apple Inc.",
       "sector": "Technology",
       "rating": "A",
       "women_on_board": 4,
       "total_board_size": 8,
       "pct_women": 50,
-      "report_quarter": "2026Q1",
-      "boardParityScore": 1
+      "report_quarter": "2026Q1"
     },
-    "microsoft": {
-      "display_name": "Microsoft Corporation",
+    {
       "ticker": "MSFT",
+      "company": "Microsoft Corporation",
       "sector": "Technology",
       "rating": "A",
       "women_on_board": 5,
       "total_board_size": 12,
       "pct_women": 41.7,
-      "report_quarter": "2026Q1",
-      "boardParityScore": 0.834
+      "report_quarter": "2026Q1"
     },
-    "alphabet": {
-      "display_name": "Alphabet Inc.",
+    {
       "ticker": "GOOGL",
+      "company": "Alphabet Inc.",
       "sector": "Technology",
       "rating": "B",
       "women_on_board": 4,
       "total_board_size": 11,
       "pct_women": 36.4,
-      "report_quarter": "2026Q1",
-      "boardParityScore": 0.728
+      "report_quarter": "2026Q1"
     },
-    "meta-platforms": {
-      "display_name": "Meta Platforms Inc.",
+    {
       "ticker": "META",
+      "company": "Meta Platforms Inc.",
       "sector": "Technology",
       "rating": "B",
       "women_on_board": 3,
       "total_board_size": 9,
       "pct_women": 33.3,
-      "report_quarter": "2026Q1",
-      "boardParityScore": 0.666
+      "report_quarter": "2026Q1"
     },
-    "amazon-com": {
-      "display_name": "Amazon.com Inc.",
+    {
       "ticker": "AMZN",
+      "company": "Amazon.com Inc.",
       "sector": "Consumer Cyclical",
       "rating": "B",
       "women_on_board": 4,
       "total_board_size": 11,
       "pct_women": 36.4,
-      "report_quarter": "2026Q1",
-      "boardParityScore": 0.728
+      "report_quarter": "2026Q1"
     },
-    "walmart": {
-      "display_name": "Walmart Inc.",
+    {
       "ticker": "WMT",
+      "company": "Walmart Inc.",
       "sector": "Consumer Defensive",
       "rating": "A",
       "women_on_board": 5,
       "total_board_size": 11,
       "pct_women": 45.5,
-      "report_quarter": "2026Q1",
-      "boardParityScore": 0.91
+      "report_quarter": "2026Q1"
     },
-    "target": {
-      "display_name": "Target Corporation",
+    {
       "ticker": "TGT",
+      "company": "Target Corporation",
       "sector": "Consumer Defensive",
       "rating": "A",
       "women_on_board": 5,
       "total_board_size": 11,
       "pct_women": 45.5,
-      "report_quarter": "2026Q1",
-      "boardParityScore": 0.91
+      "report_quarter": "2026Q1"
     },
-    "costco-wholesale": {
-      "display_name": "Costco Wholesale",
+    {
       "ticker": "COST",
+      "company": "Costco Wholesale",
       "sector": "Consumer Defensive",
       "rating": "B",
       "women_on_board": 3,
       "total_board_size": 9,
       "pct_women": 33.3,
-      "report_quarter": "2026Q1",
-      "boardParityScore": 0.666
+      "report_quarter": "2026Q1"
     },
-    "coca-cola": {
-      "display_name": "The Coca-Cola Company",
+    {
       "ticker": "KO",
+      "company": "The Coca-Cola Company",
       "sector": "Consumer Defensive",
       "rating": "A",
       "women_on_board": 5,
       "total_board_size": 12,
       "pct_women": 41.7,
-      "report_quarter": "2026Q1",
-      "boardParityScore": 0.834
+      "report_quarter": "2026Q1"
     },
-    "pepsico": {
-      "display_name": "PepsiCo Inc.",
+    {
       "ticker": "PEP",
+      "company": "PepsiCo Inc.",
       "sector": "Consumer Defensive",
       "rating": "A",
       "women_on_board": 5,
       "total_board_size": 12,
       "pct_women": 41.7,
-      "report_quarter": "2026Q1",
-      "boardParityScore": 0.834
+      "report_quarter": "2026Q1"
     },
-    "johnson-and-johnson": {
-      "display_name": "Johnson & Johnson",
+    {
       "ticker": "JNJ",
+      "company": "Johnson & Johnson",
       "sector": "Healthcare",
       "rating": "B",
       "women_on_board": 4,
       "total_board_size": 12,
       "pct_women": 33.3,
-      "report_quarter": "2026Q1",
-      "boardParityScore": 0.666
+      "report_quarter": "2026Q1"
     },
-    "exxon-mobil": {
-      "display_name": "Exxon Mobil Corporation",
+    {
       "ticker": "XOM",
+      "company": "Exxon Mobil Corporation",
       "sector": "Energy",
       "rating": "C",
       "women_on_board": 3,
       "total_board_size": 11,
       "pct_women": 27.3,
-      "report_quarter": "2026Q1",
-      "boardParityScore": 0.546
+      "report_quarter": "2026Q1"
     },
-    "chevron": {
-      "display_name": "Chevron Corporation",
+    {
       "ticker": "CVX",
+      "company": "Chevron Corporation",
       "sector": "Energy",
       "rating": "C",
       "women_on_board": 3,
       "total_board_size": 11,
       "pct_women": 27.3,
-      "report_quarter": "2026Q1",
-      "boardParityScore": 0.546
+      "report_quarter": "2026Q1"
     },
-    "tesla": {
-      "display_name": "Tesla Inc.",
+    {
       "ticker": "TSLA",
+      "company": "Tesla Inc.",
       "sector": "Consumer Cyclical",
       "rating": "D",
       "women_on_board": 2,
       "total_board_size": 7,
       "pct_women": 28.6,
-      "report_quarter": "2026Q1",
-      "boardParityScore": 0.572
+      "report_quarter": "2026Q1"
     },
-    "berkshire-hathaway": {
-      "display_name": "Berkshire Hathaway Inc.",
+    {
       "ticker": "BRK.B",
+      "company": "Berkshire Hathaway Inc.",
       "sector": "Financial",
       "rating": "F",
       "women_on_board": 2,
       "total_board_size": 14,
       "pct_women": 14.3,
-      "report_quarter": "2026Q1",
-      "boardParityScore": 0.286
+      "report_quarter": "2026Q1"
     }
-  }
+  ]
 }
