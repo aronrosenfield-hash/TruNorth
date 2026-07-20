@@ -1,35 +1,17 @@
 {
-  "merged_at": "2026-07-20T04:32:10.810Z",
+  "merged_at": "2026-07-13T04:23:21.111Z",
   "source_file": "public/data/cisa-kev.json",
-  "total_vendors": 275,
-  "merged_count": 4,
-  "skipped_count": 34,
-  "orphan_count": 237,
+  "total_vendors": 274,
+  "merged_count": 1,
+  "skipped_count": 37,
+  "orphan_count": 236,
   "error_count": 0,
   "merged_vendors": [
     {
-      "vendor": "Microsoft",
-      "target": "microsoft",
+      "vendor": "Adobe",
+      "target": "adobe",
       "routed_via": "override",
-      "cves": 381
-    },
-    {
-      "vendor": "Cisco",
-      "target": "cisco",
-      "routed_via": "override",
-      "cves": 94
-    },
-    {
-      "vendor": "Oracle",
-      "target": "oracle-cloud",
-      "routed_via": "parent",
-      "cves": 45
-    },
-    {
-      "vendor": "Fortinet",
-      "target": "fortinet",
-      "routed_via": "override",
-      "cves": 28
+      "cves": 80
     }
   ],
   "top_orphans": [
@@ -66,7 +48,7 @@
     {
       "vendor": "SonicWall",
       "vendor_slug": "sonicwall",
-      "cves": 17
+      "cves": 15
     },
     {
       "vendor": "Mozilla",
