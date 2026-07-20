@@ -34,6 +34,7 @@
 
 import fs from "fs";
 import path from "path";
+import { execSync } from "child_process";
 import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -48,6 +49,10 @@ const OUT_PATH = path.join(ROOT, "public", "data", "weekly_changes.json");
 // the app renders is capped.
 const CAP = 60;
 const MIN_GRADED = 50; // floor below which the index is presumed broken
+// B-94: max tolerated disagreement between the prior snapshot and the catalog
+// that was actually committed. Real weeks land well under 1%; the poisoned
+// baseline that produced the bogus 2026-07-20 feed sat at 5.3% (150/2,845).
+const SNAPSHOT_DRIFT_MAX_PCT = 2;
 const GRADE_ORDER = { A: 5, B: 4, C: 3, D: 2, F: 1 };
 
 function isGraded(c) {
@@ -173,6 +178,47 @@ function main() {
   if (prevGraded > 0 && currGraded < prevGraded * 0.5) {
     console.error(`[weekly-changes] graded count fell ${prevGraded} → ${currGraded} (>50% drop) — refusing to run.`);
     process.exit(1);
+  }
+
+  // B-94 guard (2026-07-20): the snapshot must be a faithful record of the
+  // catalog that was actually COMMITTED last run. It wasn't — score-rebake-
+  // weekly.yml staged _meta/grade-snapshot.json but not index.json, so the
+  // snapshot drifted 150 brands out of sync and sat systematically one grade
+  // ABOVE the shipped catalog. Every diff then read as a decline: the feed
+  // claimed 60 changes, all "drops", of which 48 were phantom and 0 of the
+  // sampled "from" letters were right ("Alcoa slipped C → D" — Alcoa never
+  // moved). Reality that week was 33 changes: 19 drops and 14 rises.
+  // Comparing the snapshot against the last committed index.json catches that
+  // class of poisoning before we publish claims about named companies.
+  // Advisory-only when git isn't available (local runs, shallow checkouts).
+  try {
+    const committedRaw = execSync("git show HEAD:public/data/index.json", {
+      cwd: ROOT, maxBuffer: 1024 * 1024 * 512, stdio: ["ignore", "pipe", "ignore"],
+    }).toString();
+    const committed = JSON.parse(committedRaw);
+    let compared = 0, disagree = 0;
+    for (const c of committed) {
+      const slug = c.slug || c.id;
+      const snapEntry = prevSnap.grades?.[slug];
+      if (!slug || !snapEntry?.g) continue;
+      const shipped = isGraded(c) ? c.grade : "?";
+      compared++;
+      if (snapEntry.g !== shipped) disagree++;
+    }
+    const pct = compared ? (disagree / compared) * 100 : 0;
+    if (compared > 0 && pct > SNAPSHOT_DRIFT_MAX_PCT) {
+      console.error(
+        `[weekly-changes] snapshot disagrees with the committed index.json on ` +
+        `${disagree}/${compared} brands (${pct.toFixed(2)}% > ${SNAPSHOT_DRIFT_MAX_PCT}%). ` +
+        `The baseline is stale or was committed without its index — refusing to ` +
+        `publish change claims from a poisoned baseline. Re-baseline the snapshot ` +
+        `from the shipped catalog, then re-run.`
+      );
+      process.exit(1);
+    }
+    console.log(`[weekly-changes] baseline check OK — snapshot matches committed index on ${compared - disagree}/${compared} brands.`);
+  } catch (err) {
+    console.warn(`[weekly-changes] baseline check skipped (git unavailable): ${err.message.split("\n")[0]}`);
   }
 
   const { changes, stats } = diffChanges(prevSnap, curr);

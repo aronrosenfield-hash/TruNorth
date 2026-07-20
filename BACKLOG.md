@@ -91,6 +91,28 @@
   `VITE_REVENUECAT_ANDROID_KEY` selected by `Capacitor.getPlatform()`, create Play products against the existing
   "TruNorth Pro" entitlement, and build-time assert the key is non-empty. *(effort L · WS-B)*
 
+- **B-94 ✅ DONE — The weekly-changes feed published 60 FALSE claims about named companies.** Same root cause
+  as B-70, one layer deeper: the old `git add` staged `_meta/grade-snapshot.json` but NOT `index.json`, so the
+  snapshot stopped being a faithful record of the shipped catalog — it drifted **150/2,845 brands (5.29%) out of
+  sync and sat systematically ONE GRADE ABOVE reality** (`alcoa: snapshot=C, index=D`). Every diff therefore read
+  as a decline. The feed claimed **60 changes, 100% "drops"**; verified against an `index.json` diff, **48 of 60
+  were phantom** (no grade change at all) and **0 of 14 sampled "from" letters were correct** — it asserted
+  *"Harris Teeter: Grade slipped C → F"* (actually D→F) and *"Alcoa slipped C → D"* (Alcoa never moved).
+  Reality was **33 changes: 19 drops and 14 rises** (Tesla Energy D→B, Buick/GMC/Hummer F→C) — it reported
+  **zero** rises. This file feeds the Sunday digest AND the in-app "what changed" surfaces, on the product whose
+  entire differentiator is that the record is right. **No user ever saw it** (the digest was dead 5 weeks; B-81
+  confirms notify-me has no delivery path), but it shipped in the bundle.
+  **Fixed 2026-07-20:** regenerated `weekly_changes.json` from a verified `index.json` diff using the script's own
+  `snapshotFromIndex`/`diffChanges` (33 real changes, 19 drop / 14 up), and added a baseline-integrity guard to
+  `compute-weekly-changes.mjs` — it now compares the prior snapshot against the last COMMITTED `index.json` and
+  hard-aborts above `SNAPSHOT_DRIFT_MAX_PCT = 2%` rather than publishing claims from a poisoned baseline.
+  Guard verified both ways: fired at 5.29% on the historical bad state, passes 3,057/3,057 post-fix.
+  *(effort S · WS-E)*
+  **↳ FOLLOW-UP (open):** the pre-existing "bake looks broken" guard only checked for a >50% graded-count
+  collapse — a 150-brand semantic divergence sailed through. Audit the other data crons for the same
+  "structurally valid but semantically poisoned" blind spot.
+
+
 ### 🟠 HIGH
 
 - **B-76 — Search ranking is why the "?" wall feels total (≈60% a sort bug).** `searchHits` runs MiniSearch with
