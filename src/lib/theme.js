@@ -36,5 +36,9 @@ export const GRADE_COLORS = {
   C: { text: "#A9A498", bg: "#1F2228", border: "#2A2E35" },
   D: { text: "#E8A04C", bg: "#241B0D", border: "#4A381E" },
   F: { text: "#E0524D", bg: "#291110", border: "#4A1E1E" },
-  "?": { text: "#6E6A60", bg: "#16181D", border: "#23262C" },
+  // 2026-07-20 (v1.2 review): "?" is the MOST-rendered grade state in the app
+  // (9,776 of 12,833 brands) and #6E6A60 on #16181D is 2.95:1 — below WCAG AA
+  // for small text. Raised to the txt3 token (~5.3:1), which also stops this
+  // from disagreeing with the other places "?" is drawn.
+  "?": { text: "#9A9489", bg: "#16181D", border: "#23262C" },
 };

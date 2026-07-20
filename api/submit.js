@@ -45,14 +45,24 @@ function rateLimited(ip, max = 5, windowMs = 60_000) {
 const ALLOWED_ORIGINS = [
   "https://www.trunorthapp.com",
   "https://trunorthapp.com",
-  "http://localhost:5173",
-  "capacitor://localhost",
-  "ionic://localhost",
 ];
+
+// 2026-07-20 (v1.2 review): see api/subscribe.js — "capacitor://localhost" never
+// matched the shipping iOS webview (capacitor.config.json sets ios.scheme
+// "TruNorth"), and Capacitor 8 on Android serves https://localhost. Match any
+// localhost host regardless of scheme/port, plus the literal "null" some
+// custom-scheme WKWebViews send.
+const isLocalShell = (o) => {
+  if (o === "null") return true;
+  try {
+    const h = new URL(o).hostname;
+    return h === "localhost" || h === "127.0.0.1";
+  } catch { return false; }
+};
 
 export default async function handler(req) {
   const origin = req.headers.get("origin") || "";
-  const isAllowed = !origin || ALLOWED_ORIGINS.includes(origin);
+  const isAllowed = !origin || ALLOWED_ORIGINS.includes(origin) || isLocalShell(origin);
 
   // 2026-06-12 review: submit.js had no OPTIONS handler and no CORS headers on
   // its responses, so the native capacitor:// shell (and apex→www) failed the

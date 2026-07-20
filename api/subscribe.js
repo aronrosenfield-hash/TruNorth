@@ -39,11 +39,23 @@ export default async function handler(req) {
   const allowedOrigins = [
     "https://www.trunorthapp.com",
     "https://trunorthapp.com",
-    "http://localhost:5173", // vite dev
-    "capacitor://localhost", // iOS native shell
-    "ionic://localhost",
   ];
-  const isAllowed = allowedOrigins.includes(origin) || !origin; // empty origin = same-origin
+  // 2026-07-20 (v1.2 review): this hard-coded "capacitor://localhost", but
+  // capacitor.config.json sets ios.scheme "TruNorth" — so the SHIPPING iOS
+  // webview sends TruNorth://localhost and never matched, 403'ing native email
+  // capture on the live build. Android (Capacitor 8) serves https://localhost,
+  // also absent — which would have killed the Delete Account endpoint that
+  // Google Play's data-deletion policy requires. Accept any origin whose host
+  // is localhost regardless of scheme/port, plus the literal "null" that some
+  // custom-scheme WKWebViews send.
+  const isLocalShell = (o) => {
+    if (o === "null") return true;
+    try {
+      const h = new URL(o).hostname;
+      return h === "localhost" || h === "127.0.0.1";
+    } catch { return false; }
+  };
+  const isAllowed = !origin || allowedOrigins.includes(origin) || isLocalShell(origin); // empty origin = same-origin
 
   // QA fix 2026-06-10: the handler 405'd OPTIONS, so any cross-origin caller
   // (the capacitor:// native shell, the apex→www domain) failed CORS

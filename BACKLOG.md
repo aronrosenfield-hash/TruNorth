@@ -32,6 +32,187 @@
 
 ---
 
+## 🧪 v1.2 REVIEW PUNCH LIST — 27-agent multi-lens review (2026-07-20)
+
+> **Source:** 13-lens review (UX ×6, UI/a11y ×3, code ×3, Android ×1) → adversarial verify per lens → synthesis.
+> **155 findings survived verification; 131 dropped as dupes/noise.** Every item below cites real code.
+> **Headline:** the single highest-value fix was one line in a cron — `score-rebake-weekly.yml` never staged
+> `index.json`, so **5 weeks of grade movement, the entire Sunday digest, and every "what changed" surface were
+> silently dead while the job reported green.**
+>
+> ✅ **BATCH A SHIPPED 2026-07-20** (this session): B-70, B-72, B-73 (+ QW-01…QW-04, QW-10, QW-12 and the
+> zero-width trash button). `vite build` green, 28/28 scoring tests green.
+
+### 🔴 CRITICAL — live-user impact
+
+- **B-70 ✅ DONE — Weekly rebake cron committed nothing and exited green.** `score-rebake-weekly.yml:73` staged
+  only `companies/` + `weekly_changes.json` + `grade-snapshot.json`, but `finalize-bundle.mjs` also rewrites
+  `index.json` + `search-index.json`. Tree never clean → all 3 `git pull --rebase` retries aborted → loop ended
+  on `sleep 5` so the job exited **0**. `weekly_changes.json` still read `generatedAt 2026-06-13, changes: []`.
+  **Fixed:** `git add public/data/` + fail-loudly retry (`exit 1`). *(effort S · WS-A)*
+  **↳ FOLLOW-UP (open):** run the workflow manually once to land the 5-week backlog; grep the other 167
+  workflows for the same `sleep`-swallows-exit-code template; add a freshness assert to `cron-health-daily.yml`
+  (fail if `weekly_changes.json` is >10 days stale).
+- **B-71 — Paywall comparison table sells four things that are already free.** `App.jsx:1566-1570` marks the
+  exact /100 score, full breakdowns, all 9 categories, per-grade citations and the **in-store scanner** as
+  Pro-only. None are gated: /100 renders at `:3753`, `CategoryRow` (`:2963`) never receives `isPaid`, source
+  chips render at `:3086`, `setShowScanner` fires unconditionally. The one gate that IS enforced (1 brand/day)
+  isn't a row. False purchase disclosure → **App Store 3.1.2 exposure**. Mirrored on `MarketingLanding.jsx:190`
+  and `:379`. **Do NOT gate the scanner.** Needs a product decision on the real paid boundary (recommendation:
+  ongoing service — unlimited watched brands + change alerts, basket-scoped digest, compare >2, export).
+  Generate the table + landing + Account card from ONE shared constant; add a test asserting every `free:false`
+  row maps to a real `isPaid` branch. *(effort M · WS-E · **BLOCKED ON ARON'S DECISION**)*
+- **B-72 ✅ DONE — "Better for your values" fabricated a points delta on ungraded brands.** `computeScore`
+  returns `null` for "?" brands; `App.jsx:3556` filtered `x.score >= ps + 7` — `null` coerced to 0, so nearly
+  any graded competitor qualified and `:3597` rendered `{altScore}+ points better for you`. Reachable on
+  **1,974** brands, directly under copy saying we don't guess. **Fixed:** require a real score on both sides.
+  *(effort S · WS-E)*
+- **B-73 ✅ DONE — API CORS allowlist never matched the shipping iOS webview.** All three API files allowed
+  `capacitor://localhost`, but `capacitor.config.json` sets `ios.scheme: "TruNorth"` → native email capture was
+  very likely 403'ing on the LIVE build, while `marketing.js` returned `{ok:true}` on any non-2xx AND on network
+  failure and `SuggestBrandButton` always rendered "✓ we'll email you". Android (`https://localhost`) was also
+  excluded — which would have broken the Delete Account endpoint Google Play requires. **Fixed:** match any
+  localhost host regardless of scheme + literal `"null"`; `marketing.js` returns honest `ok:false`; added an
+  `error_email` retry state. *(effort S · WS-B)*
+  **↳ FOLLOW-UP (open):** extract the allowlist into ONE shared module (deliberately inlined ×3 for this hotfix
+  to avoid a Vercel routing risk); honor `requiresVerification` ("Check your inbox to confirm"); add a smoke
+  test POSTing from each shipping origin.
+- **B-74 — Android hardware Back quits the app from every screen.** `capacitor-init.js:57-60` is
+  `history.length > 1 ? history.back() : App.exitApp()`, but the app never calls `pushState` (only
+  `replaceState`), so in a fresh WebView `history.length === 1` and the FIRST Back press calls `exitApp()` —
+  from onboarding, mid-Match, with the camera live, with the paywall open. Back is the primary Android nav.
+  Add `src/lib/back-stack.js` (module-level LIFO) + a `useBackDismiss(onClose)` hook alongside the existing
+  `useModalA11y` (one line per overlay). Drop the `history.length` check. *(effort M · WS-B)*
+- **B-75 — Android launch blockers (checklist, all before any beta).** `android/` exists as a bare
+  `cap add android` scaffold. Every one of these silently fails: `payments.js:40` has only
+  `VITE_REVENUECAT_IOS_KEY` and passes it unconditionally at `:66` → the paywall renders and does nothing
+  (Pro is the only revenue); no App Links `<intent-filter>` for `trunorthapp.com` `/company/*` + `/c/*`;
+  `custom_url_scheme` unfixed; ML Kit module + manifest incomplete. Add
+  `VITE_REVENUECAT_ANDROID_KEY` selected by `Capacitor.getPlatform()`, create Play products against the existing
+  "TruNorth Pro" entitlement, and build-time assert the key is non-empty. *(effort L · WS-B)*
+
+### 🟠 HIGH
+
+- **B-76 — Search ranking is why the "?" wall feels total (≈60% a sort bug).** `searchHits` runs MiniSearch with
+  `boost name:5` then collapses to a membership **Set** (`:5881`); `filtered` re-sorts **alphabetically**
+  (`sort` defaults to `"name"`, `:5388`). Replayed on the shipped index: `coca` → COCA COLA FEMSA (?) above
+  Coca-Cola; `apple` → Abrams Appleseed (?) above Apple; `pet` → 9 of top 12 are shrugs. The typeahead
+  (`:6722`) DOES preserve relevance, so the dropdown and the list below it disagree. Convert to a slug→rank
+  **Map**, add a `relevance` sort defaulted when a query is present (sink `overall == null`), and add a
+  persisted **"Graded only · 3,057"** chip. **Zero new data required.** *(effort S · WS-A)*
+- **B-77 — `resolveBrand` returns the wrong company for ~1 in 4 mapped brands.** `App.jsx:182-190` runs a bare
+  prefix loop returning the first alphabetical hit BEFORE consulting `brand-parent-map.json`. Replayed:
+  **935–1,700 of 6,694** mapped keys resolve wrong — `bounty` → Bounty not P&G, `americanspirit` → America not
+  R.J. Reynolds, `ajax` → Ajax Engines not Colgate. **This is the scanner.** Reorder to exact → parent-map →
+  prefix; require `k.length>=5` + token boundary; bail on ambiguity; prefer graded. The 935 mismatches are a
+  ready-made regression corpus. *(effort M · WS-C)*
+- **B-78 — Fabricated "New public records moved X from B to A" when the user changes their own compass.**
+  `App.jsx:5741-5766` snapshots the PERSONALIZED grade with deps `[companies, profile]`; onboarding is
+  basket-before-Match, so the basket is snapshotted at baseline with `profile null`, and the next run diffs
+  personalized vs baseline — rendering record-change stories on the Today front door that no record caused.
+  **The core trust claim, inverted.** Store `{g, at, pv}` where `pv` hashes the scoring-relevant profile fields;
+  emit only when `prev.pv === currentPv`. *(effort M · WS-D)*
+- **B-79 — Reconcile every catalog/source count from one build-time constant.** `OnboardingFlow.jsx:74`
+  hardcodes "12,000+ Companies" with **no graded number** — the one screen 100% of new users see, on a catalog
+  that is 76% "?". The honest reframe exists (`App.jsx:2274`) but is suppressed for 5 minutes after onboarding.
+  Emit `src/generated/catalog-stats.json` from `rebuild-bundle-index.mjs` and `sources-data.json` from
+  `docs/SOURCES.md`; consume everywhere. *(effort S · WS-E)*
+  *(Note: the "200+ sources" claim itself was REFUTED as a problem — `docs/SOURCES.md:5,13,14` reconciles ~105
+  named/in-app vs 200+ pipeline across 168 crons, and `App.jsx:7846` mirrors that distinction.)*
+- **B-80 — Turn the "?" dead end into the app's most valuable screen (marquee candidate).** 76% of sessions land
+  here on four stacked contradictions: the zero-data card says "None of our 200+ sources report on this brand"
+  (`:4023`) while ~100 lines below it renders that brand's Wikipedia summary, BBB rating and SEC filing count —
+  **2,391 brands render a footprint card AND the no-records card.** Rebuild as one card: editorial statement →
+  *receipt of absence* ("Checked FEC, OSHA, EPA, NLRB, SEC on <date> — 0 records", needs the pipeline to write
+  `sourcesChecked` + `lastCheckedAt`) → whatever About/footprint actually has → 3 same-aisle graded
+  alternatives. *(effort L · WS-C)*
+- **B-81 — Close the notify-me loop: "we'll email you the moment X is graded" has no delivery mechanism.** Grep
+  for `brand_grade_notify` across `scripts/`, `api/`, `.github/workflows/` returns **zero consumers**. The email
+  lands in MailerLite `fields.brand`, which upserts by email — a user asking about three brands keeps only the
+  last. Add `scripts/detect-newly-graded.mjs` + per-brand groups + a campaign step. If it can't land in v1.2,
+  **downgrade the copy to something true today.** *(effort L · WS-A)*
+- **B-82 — Add a CI workflow: 168 workflows exist and not one runs on a code change.** Zero have a
+  `pull_request` trigger. The only pre-ship gate is `ship-ios.sh:88` running one test file; the 28 frozen-
+  threshold tests and 135 others never run automatically. **This is the enabling condition for the drift found
+  throughout this review** (the A≥62/B≥50/C≥38/D≥33 thresholds exist verbatim in FOUR files). Add `ci.yml`:
+  `npm ci` → the 3 real test files → `vite build` (the oxc gate). Exclude the ~133 fetcher tests initially.
+  *(effort S · WS-E)*
+- **B-83 — The brand-card Match prompt is inert text.** For an un-quizzed user the highest-intent moment renders
+  as a plain `<div>` at `App.jsx:3881`; the hero container has no `onClick` and `CompanyCard`'s props contain no
+  quiz callback. Add `onTakeMatch`, wire to `setScreen('quiz')` with `track('quiz_started',{from:'brand_card'})`.
+  *(effort M · WS-C)*
+- **B-84 — Render the 12 weeks of basket-alignment history already collected on every launch.**
+  `App.jsx:5770-5782` writes `tn_alignHist` every session and trims to 12 weeks; a repo-wide grep returns
+  exactly two hits, both inside that write. **The strongest honest return artifact the product can have** —
+  dated, personal, moving. Add a sparkline + WoW delta to Ledger and Today. Do NOT gate behind Pro.
+  *(effort M · WS-D)*
+- **B-85 — Free-tier economics: one paywall dismissal buys 7 days of unlimited access.** `App.jsx:3193-3194`
+  computes `inCooldown` from `tn_paywallDismissedAt` over 7×24h and `:3197` skips the quota entirely — and the
+  timestamp is written on EVERY paywall close, including a voluntary price check. The most purchase-curious
+  action buys a free week. Only write on the hard gate; shorten to 24h; never suspend the quota, only the
+  interstitial. *(effort S · WS-E)*
+- **B-86 — Five invisible icons; one is a zero-width delete button.** `ti-barcode`, `ti-circle-check-filled`,
+  `ti-star-filled`, `ti-cigarette`, `ti-trash` have no content rule in `tabler-subset.css` (84-glyph subset).
+  ⚠️ **Adding CSS rules alone is NOT enough — the glyphs are not in the subset font and `pyftsubset`/`fontTools`
+  is not installed.** Requires `pip install fonttools` + regenerating the subset. *(The functional half — the
+  untappable Ledger delete button — was fixed in Batch A with an explicit 44×44 target.)* Wire a grep-vs-CSS
+  diff into `ui-guards.test.mjs`. *(effort S · WS-E)*
+- **B-87 — Delete 4.6 MB of unread `storedFields` + the 2.3 MB stale `companies.js` fallback.**
+  `search-index.json` is 5.75 MB, **79% of it storedFields** — and the only consumer discards everything but the
+  slug. Downloaded, synchronously string-parsed on the main thread, heap-retained every session for nothing.
+  Set `storeFields: ['slug']` in `finalize-bundle.mjs:47` (→ ~1.2 MB) and delete `src/companies.js`.
+  *(effort S · WS-E)*
+
+### 🟡 MEDIUM
+
+- **B-88 — Refill `editorial.json` and de-loop Today.** Holds 7 stories spanning only 2026-06-02→06-08, so since
+  06-09 `BrandOfDayCard` has ALWAYS fallen through to the storyless tile — the difference between an editorial
+  product and a lookup table. Also the shelf shows `present[day % len]` with a deterministic slice, so the daily
+  surface has repeated for six weeks. *(effort S · WS-D)*
+- **B-89 — Ungate `SubmitView`: you are charging users to tell you your data is wrong.** `App.jsx:4688-4698`
+  blocks corrections and suggestions for free users — backwards for a release whose goal is +2,000 graded. Free
+  correction traffic is free labour and the cleanest signal for WHICH "?" brands to grade first. *(effort S · WS-A)*
+- **B-90 — Disclose UPCitemdb and stop claiming "refresh nightly".** `PrivacyPolicy.jsx:131` discloses only Open
+  Food Facts, but `App.jsx:405` sends the barcode + user IP to `api.upcitemdb.com`, disclosed nowhere (incl. the
+  App Store nutrition label). The scanner header asserts "We never store the barcode" while `:431` ships the raw
+  barcode to PostHog. *(Copy half fixed in Batch A.)* *(effort S · WS-E)*
+- **B-91 — Kill opacity-as-meaning for the baseline/ungraded state.** v1.1's headline feature reaches first-run
+  users as faded letters with no legend; the only explanation is a `title` attribute that never fires on touch.
+  Composited, the 0.82 multiplier drops F to **3.19:1**. Replace with a tappable "BASELINE" chip; delete the 8
+  duplicated inline grade maps (`GRADE_COLORS` is imported at `:20` and that import is its ONLY occurrence in
+  8,372 lines — the hero map at `:3713` has already drifted). *(effort S · WS-E)*
+- **B-92 — Extract the scoring engine and start decomposing `App.jsx` (8,372 lines).** `export default function
+  App()` is at line 5137, so ~60% of the file is module-scope declarations that CANNOT close over App()'s state
+  — moving them is cut-and-paste, not a refactor. Order (one commit per file, `vite build` green after each):
+  `grade-thresholds.js` → `political-signals.js` → `scoring.js` → `sources.js`/`BarcodeScanner`. **Do B-82 (CI)
+  first.** *(effort L · WS-E)*
+- **B-93 — Prune the 119 MB native data payload and fix cold-start order.** `android/app/src/main/assets` is
+  131 MB (119 MB `public/data`, 68 MB per-company JSON) — an offline fallback nobody sized, almost none of it
+  reachable because `dataSource.js:48-64` fetches the REMOTE copy first on native. Ship an explicit offline
+  subset (~12–15 MB); invert to bundled-first-then-swap. *(effort M · WS-B)*
+
+### ⚡ QUICK WINS (QW) — small, high-value, mostly independent
+
+| ID | Item | Status |
+|---|---|---|
+| **QW-01** | `score-rebake-weekly.yml:73` → `git add public/data/` + non-zero exit on push failure | ✅ done |
+| **QW-02** | `App.jsx:3555` → `if (ps == null)` guard; kills the fabricated delta on 1,974 brands | ✅ done |
+| **QW-03** | API allowlist ×3 → accept any localhost host regardless of scheme + literal `"null"` | ✅ done |
+| **QW-04** | `marketing.js` → `ok:false` on non-2xx and network failure; retry state in the UI | ✅ done |
+| **QW-05** | `finalize-bundle.mjs:47` → `storeFields:['slug']` (5.75 MB → ~1.2 MB) | open |
+| **QW-06** | `App.jsx:5388` → default sort `score`; `searchHits` as slug→rank Map not Set | open |
+| **QW-07** | Delete `src/App.jsx:5721-5722` + `src/companies.js` (2.3 MB chunk, stale May-2026 grades) | open |
+| **QW-08** | `OnboardingFlow.jsx:74` → "3,000+ graded / 12,000+ tracked"; `:140` `#fff` → `T.bg` (2.19:1 → ~12:1) | open |
+| **QW-09** | `tabler-subset.css` → 5 missing icon rules **(needs `pip install fonttools` + pyftsubset regen)** | open |
+| **QW-10** | `App.jsx` → "refresh nightly" → "refresh continuously — most sources weekly, some daily" | ✅ done |
+| **QW-11** | `App.jsx:220` → branch the camera-denied string on `Capacitor.getPlatform()`; sweep iOS-only copy | open |
+| **QW-12** | `theme.js` → `GRADE_COLORS['?'].text` `#6E6A60` → `#9A9489` (2.95:1 → ~5.3:1) | ✅ done |
+| **QW-13** | `eslint.config.js` → `'no-empty': ['error',{allowEmptyCatch:true}]` (133 errors → ~48, makes lint gateable) | open |
+| **QW-14** | Commit `android/` with an `ios/`-style ignore block before native config lands in an untracked tree | open |
+| **QW-15** | `App.jsx:2213` → `/^\/(?:company\|c)\//` so What's-New stops covering `/c/<slug>` deep links | open |
+| **QW-16** | Refill `editorial.json` (expired 2026-06-08); fall back to `stories[day % len]` not a bare tile | open |
+
+
 ## 🔎 QA PANEL REVIEW — 11-DEVICE / 11-PERSONA (2026-06-14)
 
 11 independent device+persona review agents + Director live walkthrough + source verification. IDs **QA-1…QA-25**, ranked by impact (QA-N = Top-25 item #N). Status: 🔵 needs your decision · 🟢 fixing now · 🟡 project · ✅ done. Full synthesis in session 2026-06-14.

@@ -70,11 +70,20 @@ jobs:
           DATE=$(date -u +%Y-%m-%d)
           git config user.name "trunorth-bot"
           git config user.email "bot@trunorthapp.com"
-          git add public/data/companies/ public/data/weekly_changes.json public/data/_meta/grade-snapshot.json || true
+          # 2026-07-20 (v1.2 review): this staged only companies/ + weekly_changes
+          # + grade-snapshot, but finalize-bundle.mjs ALSO rewrites index.json and
+          # search-index.json. Those stayed unstaged, so the tree was never clean,
+          # every `git pull --rebase` aborted, and because the loop's last command
+          # was `sleep 5` the job still exited 0 — five weeks of grade movement and
+          # the entire Sunday digest died silently while reporting green.
+          # Stage the whole data dir, and fail LOUDLY if the push never lands.
+          git add public/data/ || true
           git diff --quiet --staged && echo "No changes to rebake — exiting" && exit 0
           git commit -m "data(rebake): weekly scoring overlay refresh $DATE [skip ci]"
           for i in 1 2 3; do
-            git pull --rebase origin main && git push origin main && break
+            git pull --rebase origin main && git push origin main && exit 0
             echo "Push attempt $i failed, retrying…"
             sleep 5
           done
+          echo "::error::rebake push failed after 3 attempts — grades did NOT ship" >&2
+          exit 1

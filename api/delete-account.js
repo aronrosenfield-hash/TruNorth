@@ -48,11 +48,20 @@ export default async function handler(req) {
   const allowedOrigins = [
     "https://www.trunorthapp.com",
     "https://trunorthapp.com",
-    "http://localhost:5173", // vite dev
-    "capacitor://localhost", // iOS native shell
-    "ionic://localhost",
   ];
-  const isAllowed = allowedOrigins.includes(origin) || !origin; // empty = same-origin
+  // 2026-07-20 (v1.2 review): see api/subscribe.js — the hard-coded
+  // "capacitor://localhost" never matched the shipping iOS webview (ios.scheme
+  // is "TruNorth"), and Android serves https://localhost. This endpoint backs
+  // the in-app Delete Account flow required by App Store 5.1.1(v) AND Google
+  // Play's data-deletion policy, so a scheme mismatch here is a compliance bug.
+  const isLocalShell = (o) => {
+    if (o === "null") return true;
+    try {
+      const h = new URL(o).hostname;
+      return h === "localhost" || h === "127.0.0.1";
+    } catch { return false; }
+  };
+  const isAllowed = !origin || allowedOrigins.includes(origin) || isLocalShell(origin); // empty = same-origin
 
   if (req.method === "OPTIONS") {
     return new Response(null, {

@@ -56,9 +56,15 @@ export async function subscribeEmail(email, source, metadata = {}) {
       headers: { "Content-Type": "application/json" },
       body:    JSON.stringify({ email: cleaned, source, metadata }),
     });
+    // 2026-07-20 (v1.2 review): these two paths returned ok:true on a FAILED
+    // call, so every caller reported success to the user even when the email
+    // never reached MailerLite — combined with the CORS scheme mismatch (see
+    // api/subscribe.js), native "notify me when we grade this" signups were
+    // very likely 403'ing while the UI rendered "✓ we'll email you". Report
+    // the truth; callers are responsible for a retry affordance.
     if (!res.ok) {
       console.warn("[marketing] /api/subscribe returned", res.status);
-      return { ok: true, source, warning: `subscribe_${res.status}` };
+      return { ok: false, source, warning: `subscribe_${res.status}` };
     }
     const data = await res.json().catch(() => ({}));
     // 2026-06-05: pass through requiresVerification so the calling UI can
@@ -72,7 +78,7 @@ export async function subscribeEmail(email, source, metadata = {}) {
     };
   } catch (err) {
     console.warn("[marketing] /api/subscribe call failed:", err);
-    return { ok: true, source, warning: "subscribe_network" };
+    return { ok: false, source, warning: "subscribe_network" };
   }
 }
 

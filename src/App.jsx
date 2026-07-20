@@ -3552,10 +3552,16 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
             // not just C/D/F. Even an A-grade brand might have an A+ competitor
             // for this user. If no alternatives beat ps+7, fall through to the
             // neutral "Direct competitors" chips (still useful for browsing).
-            const hasBetterAlts = profile
+            // 2026-07-20 (v1.2 review): computeScore returns null for the 9,776
+            // ungraded "?" brands. `null >= ps + 7` coerced null to 0, so on an
+            // ungraded brand (ps == null) nearly any graded competitor qualified
+            // and the card rendered a fabricated "{altScore}+ points better for
+            // you" — directly beneath copy that says we don't guess. Reachable on
+            // 1,974 brands. Require a real score on BOTH sides.
+            const hasBetterAlts = profile && ps != null
               ? competitorsResolved
                   .map(c => ({ co: c, score: computeScore(c, profile) }))
-                  .filter(x => x.score >= ps + 7).length > 0
+                  .filter(x => x.score != null && x.score >= ps + 7).length > 0
               : false;
             const display = profile
               ? competitorsResolved
@@ -5038,12 +5044,17 @@ function SuggestBrandButton({ query, context = "added" }) {
       setLoading(true);
       // brand=<query> tag lets MailerLite segment + send a targeted email
       // to ONLY the people who asked for that brand when it lands.
-      await subscribeEmail(email, CTX.source, {
+      // 2026-07-20 (v1.2 review): this discarded the result and always claimed
+      // success, so a 403 (see the CORS scheme mismatch in api/subscribe.js) or
+      // an offline phone still rendered "we'll email you". The request is already
+      // queued locally in tn_pendingSubmits above, so a failure isn't data loss —
+      // but we must not promise an email we didn't manage to sign them up for.
+      const res = await subscribeEmail(email, CTX.source, {
         brand: query,
         intendsBrandNotification: true,
       });
       setLoading(false);
-      setPhase("done_email");
+      setPhase(res && res.ok ? "done_email" : "error_email");
     } else {
       setPhase("done_anon");
     }
@@ -5062,6 +5073,22 @@ function SuggestBrandButton({ query, context = "added" }) {
       <div style={{ fontSize:13, color:"#38C0CE", display:"flex", alignItems:"center", justifyContent:"center", gap:6 }}>
         <i className="ti ti-check" aria-hidden="true" />
         {CTX.doneAnon}
+      </div>
+    );
+  }
+  // Honest failure state (v1.2 review): the ask is recorded locally either way,
+  // so say that plainly and offer a retry instead of a false confirmation.
+  if (phase === "error_email") {
+    return (
+      <div style={{ fontSize:13, color:T.txt2, textAlign:"center", padding:"4px 8px", lineHeight:1.5 }}>
+        <div>We saved your request, but couldn’t confirm your email just now.</div>
+        <button
+          type="button"
+          onClick={() => setPhase("form")}
+          style={{ marginTop:6, background:"none", border:"none", color:"#38C0CE", fontSize:13, fontWeight:600, cursor:"pointer", padding:"6px 8px", minHeight:44 }}
+        >
+          Try again
+        </button>
       </div>
     );
   }
@@ -6967,7 +6994,7 @@ if (screen === "basket") {
                     <div style={{ fontFamily: SERIF, fontSize: 17, color: T.txt2, lineHeight: 1.35 }}>
                       We're watching your basket — no grade changes this week.
                     </div>
-                    <div style={{ fontSize: 11, color: T.txt3, marginTop: 7 }}>Records refresh nightly across 200+ public sources.</div>
+                    <div style={{ fontSize: 11, color: T.txt3, marginTop: 7 }}>Records refresh continuously — most sources weekly, some daily.</div>
                   </div>
                 )}
 
@@ -7539,7 +7566,7 @@ if (screen === "basket") {
                                 if (ok) removeSwitch(sw.from, sw.to);
                               }}
                               aria-label={`Remove switch ${sw.fromName} to ${sw.toName}`}
-                              style={{ background:"none", border:"none", color:T.txt3, cursor:"pointer", padding:0, display:"inline-flex", fontSize:13 }}>
+                              style={{ background:"none", border:"none", color:T.txt3, cursor:"pointer", padding:0, display:"inline-flex", alignItems:"center", justifyContent:"center", minWidth:44, minHeight:44, fontSize:15 }}>
                               <i className="ti ti-trash" aria-hidden="true" />
                             </button>
                           </span>
