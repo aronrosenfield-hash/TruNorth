@@ -130,7 +130,7 @@
   any code change. Every fix in this review is one un-run test away from silently regressing. *(effort S · WS-E)*
 
 
-- **B-96 — `scoringFlags.test.mjs` has 3 stale snapshots; blocks adding it to CI.** 9/12 pass. The 3 failures are
+- **B-96 ✅ DONE — `scoringFlags.test.mjs` has 3 stale snapshots; blocks adding it to CI.** 9/12 pass. The 3 failures are
   expectation drift, not new breakage: `apple` environment expects `inferred` but gets `default`; `walmart` guns
   expects `{kind:'na'}` but gets `{kind:'default'}`; `patagonia` execPay expects `notDisclosed` but gets `na`.
   Decide per case whether the TEST or the IMPLEMENTATION is right (the patagonia one looks like a real
@@ -173,7 +173,7 @@
   *receipt of absence* ("Checked FEC, OSHA, EPA, NLRB, SEC on <date> — 0 records", needs the pipeline to write
   `sourcesChecked` + `lastCheckedAt`) → whatever About/footprint actually has → 3 same-aisle graded
   alternatives. *(effort L · WS-C)*
-- **B-81 — Close the notify-me loop: "we'll email you the moment X is graded" has no delivery mechanism.** Grep
+- **B-81 ✅ DONE (send path pending a delivery decision) — Close the notify-me loop: "we'll email you the moment X is graded" has no delivery mechanism.** Grep
   for `brand_grade_notify` across `scripts/`, `api/`, `.github/workflows/` returns **zero consumers**. The email
   lands in MailerLite `fields.brand`, which upserts by email — a user asking about three brands keeps only the
   last. Add `scripts/detect-newly-graded.mjs` + per-brand groups + a campaign step. If it can't land in v1.2,

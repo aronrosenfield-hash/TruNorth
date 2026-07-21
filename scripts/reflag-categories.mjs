@@ -15,7 +15,14 @@
 //
 // Rules (verified against scoring-engine-audit §4 cat enumeration):
 //   na:           per public/data/_meta/category-applicability.json (industry map)
-//   execPay:      notDisclosed when no ticker AND not isPublic (no SEC filings)
+//   execPay:      na when no ticker AND not isPublic (no SEC filings). NOT
+//                 notDisclosed — this header said that for months and it is
+//                 wrong: the metric is the SEC Item 402(u) CEO-to-worker pay
+//                 ratio, which binds PUBLIC REGISTRANTS ONLY, so a private
+//                 company isn't withholding it. See the "Lever 2" rationale at
+//                 the write site below. (B-96, 2026-07-20 — this stale comment
+//                 nearly caused a "fix" that would have mislabelled 6,769
+//                 companies as having hidden their pay ratio.)
 //   dei:          notDisclosed when no deiBadges entry
 //   charity:      notDisclosed when slug not in corporate-giving-augment.companies
 //   transparency: notDisclosed when slug not in transparency-benchmarks-augment.data

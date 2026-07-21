@@ -19,9 +19,9 @@ name: ci
 #   • ui-guards       — box-sizing/overflow/contrast/dedup invariants.
 #
 # NOT gated yet, on purpose:
-#   • src/lib/scoringFlags.test.mjs — 3 snapshots are stale vs the current
-#     implementation (B-96). Adding a known-red suite to a blocking gate just
-#     teaches everyone to ignore CI. Add it here the moment B-96 lands.
+#   • (RESOLVED B-96) scoringFlags.test.mjs is now gated below.
+
+
 #   • the ~133 fetcher tests — they hit the network and belong on a schedule.
 #   • eslint — 133 errors today, ~85 of them no-empty (QW-13). Make it green
 #     first, then gate.
@@ -62,3 +62,6 @@ jobs:
 
       - name: Scanner brand resolution (B-77)
         run: node --test scripts/resolve-brand.test.mjs
+
+      - name: Scoring flags (B-96)
+        run: node --test src/lib/scoringFlags.test.mjs

@@ -77,40 +77,49 @@ test("flag OFF: works even when co.flags is undefined", () => {
 
 // ─── Feature flag ON — snapshot per brand × category ────────────────────────
 
-test("snapshot: apple (Technology) — guns/animals/health na, environment inferred", () => {
+test("snapshot: apple (Technology) — guns/animals/health na", () => {
   const co = loadCo("apple");
   const snap = renderSnapshot(co, true);
   // Industry-level NAs for Technology per category-applicability.json
   assert.deepEqual(snap.guns,    { kind: "na", label: NOT_APPLICABLE_LABEL });
   assert.deepEqual(snap.animals, { kind: "na", label: NOT_APPLICABLE_LABEL });
   assert.deepEqual(snap.health,  { kind: "na", label: NOT_APPLICABLE_LABEL });
-  // Inferred environment with basis = "Technology"
-  assert.equal(snap.environment.kind, "inferred");
-  assert.equal(snap.environment.basis, "Technology");
+  // B-96 (2026-07-20): environment used to carry `_inferred` with
+  // basis "Technology". Apple now has REAL environmental records, so the
+  // inferred flag was correctly dropped and this renders as a normal scored
+  // category. Do not "restore" the inferred expectation — a real record
+  // outranks an industry inference.
+  assert.equal(snap.environment.kind, "default");
   // Public company → execPay NOT notDisclosed (Apple has ticker AAPL)
   assert.notEqual(snap.execPay.kind, "notDisclosed");
 });
 
-test("snapshot: walmart (Retail) — guns/health na, dei not flagged (has badges or signals)", () => {
+test("snapshot: walmart (Retail) — health na, guns APPLIES (they sell firearms)", () => {
   const co = loadCo("walmart");
   const snap = renderSnapshot(co, true);
-  assert.deepEqual(snap.guns,   { kind: "na", label: NOT_APPLICABLE_LABEL });
+  // B-96: guns was flagged `na` for Walmart, which was simply wrong — Walmart
+  // is one of the largest US firearms retailers, so the category very much
+  // applies. The flag was correctly removed; it now scores normally.
+  assert.deepEqual(snap.guns,   { kind: "default" });
   assert.deepEqual(snap.health, { kind: "na", label: NOT_APPLICABLE_LABEL });
   // Walmart is public — execPay should NOT be notDisclosed
   assert.notEqual(snap.execPay.kind, "notDisclosed");
 });
 
-test("snapshot: patagonia (Apparel & Fashion) — private company exec-pay notDisclosed", () => {
+test("snapshot: patagonia (Apparel & Fashion) — private company exec-pay na", () => {
   const co = loadCo("patagonia");
   const snap = renderSnapshot(co, true);
   // Apparel & Fashion: guns + health na
   assert.deepEqual(snap.guns,   { kind: "na", label: NOT_APPLICABLE_LABEL });
   assert.deepEqual(snap.health, { kind: "na", label: NOT_APPLICABLE_LABEL });
-  // Private (no ticker) → execPay notDisclosed
-  assert.deepEqual(snap.execPay, {
-    kind: "notDisclosed",
-    label: NOT_DISCLOSED_LABELS.execPay,
-  });
+  // B-96 (2026-07-20): this expected `notDisclosed`, and that is WRONG.
+  // The metric is the SEC Item 402(u) CEO-to-worker pay ratio, which applies
+  // to PUBLIC REGISTRANTS ONLY. A private company isn't withholding it — the
+  // requirement genuinely does not apply, which is exactly what `na` means.
+  // `notDisclosed` would falsely imply they chose to hide something they owed.
+  // See the "Lever 2" rationale in scripts/reflag-categories.mjs.
+  // (Both kinds exclude the category from scoring, so this is display-only.)
+  assert.deepEqual(snap.execPay, { kind: "na", label: NOT_APPLICABLE_LABEL });
 });
 
 test("snapshot: shein (Apparel & Fashion) — guns/health na", () => {
