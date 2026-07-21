@@ -3,6 +3,7 @@
 // import never fires and the app downloads only /data/index.json (~287 KB).
 import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { useModalA11y } from "./lib/useModalA11y";
+import { useBackDismiss, setRootBackHandler } from "./lib/back-stack";
 import SplashScreen from "./SplashScreen";
 import OnboardingFlow from "./OnboardingFlow";
 import MatchFlow from "./MatchFlow";
@@ -113,6 +114,8 @@ function getSymbol(val) {
 // barcode (UPC/EAN/etc.) — no PII. We never store the barcode.
 function BarcodeScanner({ onClose, onMatch, onSearch, companies }) {
   const dialogRef = useModalA11y({ isOpen: true, onClose });
+  // B-74: Android Back closes the scanner (and releases the camera) instead of quitting.
+  useBackDismiss(onClose);
   const videoRef = React.useRef(null);
   const streamRef = React.useRef(null);
   const detectorRef = React.useRef(null);
@@ -1435,6 +1438,8 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
   // to the email input on open; a sales screen must open at the TOP (value prop
   // + plans), not the entry field. (device bug, 2026-06-14)
   const dialogRef = useModalA11y({ isOpen: true, onClose, autoFocus: false });
+  // B-74: Android Back dismisses the paywall instead of quitting the app.
+  useBackDismiss(onClose);
   const [loading, setLoading] = useState(false);
   const [done, setDone]       = useState(false);
   // 4.7: prefill from stored email if we've seen this user before
@@ -1782,6 +1787,8 @@ const chipStyle = () => ({ flexShrink:0, padding:"5px 10px", borderRadius:12, fo
 
 function FilterSheet({ onClose, leanFilter, setLeanFilter, catFilters, toggleCat, flagFilters, toggleFlag, lc }) {
   const dialogRef = useModalA11y({ isOpen: true, onClose });
+  // B-74: Android Back closes the filter sheet.
+  useBackDismiss(onClose);
   return (
     <div ref={dialogRef} onClick={onClose} role="dialog" aria-modal="true" aria-label="Filters" style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.65)", zIndex:200, display:"flex", flexDirection:"column", justifyContent:"flex-end" }}>
       <div onClick={e=>e.stopPropagation()} style={{ background:T.bg, borderTopLeftRadius:20, borderTopRightRadius:20, padding:"6px 16px 24px", paddingBottom:"calc(24px + env(safe-area-inset-bottom, 0px))", maxHeight:"82dvh", overflowY:"auto" }}>
@@ -2249,6 +2256,8 @@ function WhatsNewModal({ companyCount }) {
     setShow(false);
   }, [dontShowAgain]);
   const dialogRef = useModalA11y({ isOpen: show, onClose: dismiss });
+  // B-74: Android Back dismisses the What's-New modal (only while shown).
+  useBackDismiss(dismiss, show);
   if (!show) return null;
   return (
     <div ref={dialogRef} onClick={dismiss} role="dialog" aria-modal="true" aria-label="What's new" style={{ position:"fixed", inset:0, background:"rgba(0,0,0,0.85)", zIndex:200, padding:"32px 12px", display:"flex", alignItems:"center", justifyContent:"center" }}>
@@ -2317,6 +2326,8 @@ function WhatsNewModal({ companyCount }) {
 // comparison with winner highlighted per row.
 function CompareView({ companies, list, onClose, onRemove, onAdd, profile, isPaid }) {
   const dialogRef = useModalA11y({ isOpen: true, onClose });
+  // B-74: Android Back closes the compare view.
+  useBackDismiss(onClose);
   // Resolve each item in `list` to the full company object (from index or detail)
   const [details, setDetails] = useState({});
   useEffect(() => {
@@ -5270,6 +5281,15 @@ export default function App() {
   }, [marketingScreen, __isRoot, __hasDeepLink, __search, __isCapacitorNative]);
 
 const [screen, setScreen] = useState("splash");
+
+  // B-74 — root Android Back handler. Consulted only when no overlay is
+  // registered on the back-stack. Returning true means "I navigated"; false
+  // hands control to capacitor-init's double-tap-to-exit. "splash" is excluded
+  // because there is nowhere sensible to go back TO before onboarding starts.
+  useEffect(() => setRootBackHandler(() => {
+    if (screen !== "main" && screen !== "splash") { setScreen("main"); return true; }
+    return false;
+  }), [screen]);
 const [currentUser, setCurrentUser] = useState(() => {
   try { return JSON.parse(localStorage.getItem("tn_user") || "null"); } catch { return null; }
 });

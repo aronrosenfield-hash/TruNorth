@@ -6,9 +6,12 @@
  *   - StatusBar styled to match the dark app
  *   - SplashScreen auto-hide once React mounts
  *   - App URL-open listener (handles deep links from share sheet, etc.)
- *   - Hardware back button — collapses cards / clears focus instead of
- *     nuking the WebView (iOS swipe-back also routes through here)
+ *   - Hardware back button — resolved through the shared back-stack (B-74):
+ *     open overlay → main screen → double-tap-to-exit. Never quits on the
+ *     first press.
  */
+
+import { handleBack } from "./back-stack";
 
 let isInitialized = false;
 
@@ -54,9 +57,31 @@ export async function initCapacitor() {
         window.dispatchEvent(new PopStateEvent("popstate"));
       } catch {}
     });
+    // B-74 (2026-07-20): this used to be
+    //   window.history.length > 1 ? history.back() : App.exitApp()
+    // The app never calls pushState (only replaceState, which doesn't grow
+    // history.length), so in a fresh WebView that length is 1 and the FIRST
+    // Back press quit the app — verified on a Pixel 8: one press from the
+    // basket picker ejected to the launcher mid-onboarding. Back is Android's
+    // primary nav control, so we now resolve it in priority order:
+    //   1. an open overlay dismisses itself (scanner / paywall / filters /
+    //      compare / what's-new),
+    //   2. otherwise the app navigates back to the main screen,
+    //   3. only at the true root does Back exit — and then only on a second
+    //      press within 2s, so it can never be accidental.
+    let lastBackAt = 0;
     App.addListener("backButton", () => {
-      if (window.history.length > 1) window.history.back();
-      else App.exitApp();
+      if (handleBack()) return;
+
+      const now = Date.now();
+      if (now - lastBackAt < 2000) {
+        App.exitApp();
+        return;
+      }
+      lastBackAt = now;
+      // Let the UI surface "Press back again to exit" if it wants to; exiting
+      // silently on the second press is still correct without a listener.
+      try { window.dispatchEvent(new CustomEvent("tn:back-exit-hint")); } catch {}
     });
   } catch (e) {
     console.warn("[cap] App listeners failed:", e);

@@ -77,7 +77,7 @@
   **↳ FOLLOW-UP (open):** extract the allowlist into ONE shared module (deliberately inlined ×3 for this hotfix
   to avoid a Vercel routing risk); honor `requiresVerification` ("Check your inbox to confirm"); add a smoke
   test POSTing from each shipping origin.
-- **B-74 — Android hardware Back quits the app from every screen.** `capacitor-init.js:57-60` is
+- **B-74 ✅ DONE — Android hardware Back quits the app from every screen.** `capacitor-init.js:57-60` is
   `history.length > 1 ? history.back() : App.exitApp()`, but the app never calls `pushState` (only
   `replaceState`), so in a fresh WebView `history.length === 1` and the FIRST Back press calls `exitApp()` —
   from onboarding, mid-Match, with the camera live, with the paywall open. Back is the primary Android nav.
@@ -198,7 +198,7 @@
   Food Facts, but `App.jsx:405` sends the barcode + user IP to `api.upcitemdb.com`, disclosed nowhere (incl. the
   App Store nutrition label). The scanner header asserts "We never store the barcode" while `:431` ships the raw
   barcode to PostHog. *(Copy half fixed in Batch A.)* *(effort S · WS-E)*
-- **B-91 — Kill opacity-as-meaning for the baseline/ungraded state.** v1.1's headline feature reaches first-run
+- **B-91 ⚠️ PARTIAL — Kill opacity-as-meaning for the baseline/ungraded state.** v1.1's headline feature reaches first-run
   users as faded letters with no legend; the only explanation is a `title` attribute that never fires on touch.
   Composited, the 0.82 multiplier drops F to **3.19:1**. Replace with a tappable "BASELINE" chip; delete the 8
   duplicated inline grade maps (`GRADE_COLORS` is imported at `:20` and that import is its ONLY occurrence in
@@ -224,7 +224,7 @@
 | **QW-05** | `finalize-bundle.mjs:47` → `storeFields:['slug']` (5.75 MB → ~1.2 MB) | open |
 | **QW-06** | `App.jsx:5388` → default sort `score`; `searchHits` as slug→rank Map not Set | open |
 | **QW-07** | Delete `src/App.jsx:5721-5722` + `src/companies.js` (2.3 MB chunk, stale May-2026 grades) | open |
-| **QW-08** | `OnboardingFlow.jsx:74` → "3,000+ graded / 12,000+ tracked"; `:140` `#fff` → `T.bg` (2.19:1 → ~12:1) | open |
+| **QW-08** | `OnboardingFlow.jsx:74` → "3,000+ graded / 12,000+ tracked"; `:140` `#fff` → `T.bg` (2.19:1 → ~12:1) | ✅ done |
 | **QW-09** | `tabler-subset.css` → 5 missing icon rules **(needs `pip install fonttools` + pyftsubset regen)** | open |
 | **QW-10** | `App.jsx` → "refresh nightly" → "refresh continuously — most sources weekly, some daily" | ✅ done |
 | **QW-11** | `App.jsx:220` → branch the camera-denied string on `Capacitor.getPlatform()`; sweep iOS-only copy | open |

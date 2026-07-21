@@ -1,14 +1,25 @@
 import { useState } from "react";
+import { GRADE_COLORS } from "./lib/theme";
 
 // QA fix 2026-06-10: these hardcoded "live example" grades had drifted from
 // the real bundle (Tesla showed C, actual B; Shein showed D, actual C) — the
 // FIRST thing a new user checks is whether the app agrees with itself. Grades
 // + detail rows below now mirror public/data/index.json. If a rebake moves
 // any of these brands a letter, update this array.
+// B-91 (2026-07-20): every colour below used to be hand-written, and they had
+// DRIFTED from the real scale — Shein's C carried #E8A04C (the D amber) and
+// BOTH "D" rows carried #E0524D (the F red). So the very first screen a user
+// sees contradicted v1.1's own "A teal · B green · C gray · D amber · F red"
+// fix. Confirmed on a Pixel 8: Shein's C badge rendered amber. Colours are now
+// derived from the single GRADE_COLORS source of truth, so this class of drift
+// cannot recur. Suffixed grades ("B+") map to their base letter.
+const gradeTone = (g) => GRADE_COLORS[String(g || "?")[0]] || GRADE_COLORS["?"];
+const gradeChip = (g) => ({ background: gradeTone(g).bg, color: gradeTone(g).text });
+
 const COMPANIES = [
-  { emoji:"🛍️", bg:"#1a2e1a", name:"Costco",    meta:"Retail · Warehouse",     grade:"B", gradeStyle:{background:"#19230F",color:"#9CC98A"}, details:[{label:"🌿 Environment",pct:72,color:"#9CC98A",grade:"B"},{label:"🏳️ DEI",pct:78,color:"#38C0CE",grade:"B+"},{label:"❤️ Charity",pct:70,color:"#9CC98A",grade:"B"}] },
-  { emoji:"🚗", bg:"#1a1a2e", name:"Tesla",     meta:"Automotive · EVs",       grade:"B", gradeStyle:{background:"#19230F",color:"#9CC98A"}, details:[{label:"🌿 Environment",pct:78,color:"#38C0CE",grade:"B+"},{label:"🏳️ DEI",pct:60,color:"#9CC98A",grade:"B"},{label:"⚖️ Labor",pct:38,color:"#E0524D",grade:"D"}] },
-  { emoji:"👗", bg:"#2e1a1a", name:"Shein",     meta:"Apparel · Fast Fashion", grade:"C", gradeStyle:{background:"#2e2a1a",color:"#E8A04C"}, details:[{label:"🔒 Privacy",pct:25,color:"#E0524D",grade:"F"},{label:"🐰 Animals",pct:30,color:"#E0524D",grade:"D"},{label:"⚖️ Labor",pct:48,color:"#E8A04C",grade:"C"}] },
+  { emoji:"🛍️", bg:"#1a2e1a", name:"Costco",    meta:"Retail · Warehouse",     grade:"B", gradeStyle:gradeChip("B"), details:[{label:"🌿 Environment",pct:72,color:gradeTone("B").text,grade:"B"},{label:"🏳️ DEI",pct:78,color:gradeTone("B").text,grade:"B+"},{label:"❤️ Charity",pct:70,color:gradeTone("B").text,grade:"B"}] },
+  { emoji:"🚗", bg:"#1a1a2e", name:"Tesla",     meta:"Automotive · EVs",       grade:"B", gradeStyle:gradeChip("B"), details:[{label:"🌿 Environment",pct:78,color:gradeTone("B").text,grade:"B+"},{label:"🏳️ DEI",pct:60,color:gradeTone("B").text,grade:"B"},{label:"⚖️ Labor",pct:38,color:gradeTone("D").text,grade:"D"}] },
+  { emoji:"👗", bg:"#2e1a1a", name:"Shein",     meta:"Apparel · Fast Fashion", grade:"C", gradeStyle:gradeChip("C"), details:[{label:"🔒 Privacy",pct:25,color:gradeTone("F").text,grade:"F"},{label:"🐰 Animals",pct:30,color:gradeTone("D").text,grade:"D"},{label:"⚖️ Labor",pct:48,color:gradeTone("C").text,grade:"C"}] },
 ];
 
 const CATEGORIES = [
@@ -71,13 +82,21 @@ export default function OnboardingFlow({ onComplete }) {
             ))}
           </div>
           <div style={{ ...s.statsRow, marginTop:22 }}>
-            {[["12,000+","Companies"],["9","Categories"],["200+","Public sources"]].map(([num,label]) => (
+            {/* QW-08 (2026-07-20): this said "12,000+ Companies" with no graded
+                number — on the one screen 100% of new users see, for a catalog
+                where 76% of entries have no gradeable record and render "?".
+                Lead with what we actually grade; the tracked total and the
+                honest reason for "?" follow below. */}
+            {[["3,000+","Brands graded"],["9","Categories"],["200+","Public sources"]].map(([num,label]) => (
               <div key={label} style={{ textAlign:"center" }}>
                 <div style={s.statNum}>{num}</div>
                 <div style={s.statLabel}>{label}</div>
               </div>
             ))}
           </div>
+          <p style={{ ...s.statLabel, marginTop:10, textAlign:"center", lineHeight:1.5 }}>
+            of 12,000+ brands tracked — the rest have no public record yet, and we don’t guess.
+          </p>
           <p style={{ ...s.terms, marginTop:14 }}>By continuing you agree to our <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" style={{ color:"#38C0CE", textDecoration:"none" }}>Terms</a> & <a href="https://www.trunorthapp.com/#privacy" target="_blank" rel="noopener noreferrer" style={{ color:"#38C0CE", textDecoration:"none" }}>Privacy Policy</a>.</p>
         </div>
       </div>
@@ -137,6 +156,8 @@ const s = {
   dots:            { display:"flex", justifyContent:"center", gap:6, marginBottom:16 },
   dot:             { width:6, height:6, borderRadius:3, background:"#2A2E35", transition:"all 0.3s ease" },
   dotActive:       { width:20, background:"#38C0CE" },
-  btnPrimary:      { width:"100%", padding:16, background:"#38C0CE", border:"none", borderRadius:14, color:"#fff", fontFamily:"inherit", fontSize:15, fontWeight:700, cursor:"pointer", marginBottom:10 },
+  // QW-08: white on the #38C0CE verdigris is 2.19:1 — well under WCAG AA, on
+  // the primary CTA of the first screen. The ink token takes it to ~12:1.
+  btnPrimary:      { width:"100%", padding:16, background:"#38C0CE", border:"none", borderRadius:14, color:"#0E0F12", fontFamily:"inherit", fontSize:15, fontWeight:700, cursor:"pointer", marginBottom:10 },
   btnSkip:         { width:"100%", padding:10, background:"transparent", border:"none", color:"#444", fontFamily:"inherit", fontSize:13, cursor:"pointer" },
 };
