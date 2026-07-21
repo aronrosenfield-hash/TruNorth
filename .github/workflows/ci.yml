@@ -1,0 +1,61 @@
+name: ci
+
+# B-82 — the FIRST workflow in this repo that runs on a code change.
+#
+# Context: there are 168 workflows here and every one of them is a data cron.
+# Not one had a `pull_request` trigger, so the 28 frozen-threshold scoring tests
+# and 137 other test files never ran automatically. The only pre-ship gate was
+# ship-ios.sh invoking a single test file by hand. That is the enabling
+# condition for most of the drift the 2026-07-20 review found — the A>=62 /
+# B>=50 / C>=38 / D>=33 thresholds exist verbatim in FOUR files, and a guard
+# for "no two brands share a name with contradictory grades" sat RED without
+# anyone knowing (B-95).
+#
+# SCOPE — deliberately small so it is always meaningful and always green:
+#   • vite build      — the real App.jsx syntax gate. Vite's oxc parser rejects
+#                       things esbuild tolerates, so a green esbuild is NOT a
+#                       green build (see the nested-template-literal incident).
+#   • scoring-engine  — the 28 frozen-threshold tests. Non-negotiable.
+#   • ui-guards       — box-sizing/overflow/contrast/dedup invariants.
+#
+# NOT gated yet, on purpose:
+#   • src/lib/scoringFlags.test.mjs — 3 snapshots are stale vs the current
+#     implementation (B-96). Adding a known-red suite to a blocking gate just
+#     teaches everyone to ignore CI. Add it here the moment B-96 lands.
+#   • the ~133 fetcher tests — they hit the network and belong on a schedule.
+#   • eslint — 133 errors today, ~85 of them no-empty (QW-13). Make it green
+#     first, then gate.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# A data cron pushing to main mid-run shouldn't leave two CI jobs racing.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    # Data crons commit with [skip ci]; GitHub already honors that for pushes.
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build (vite/oxc syntax gate)
+        run: npx vite build
+
+      - name: Scoring engine — 28 frozen-threshold tests
+        run: node --test scripts/scoring-engine.test.mjs
+
+      - name: UI guards
+        run: node --test scripts/ui-guards.test.mjs

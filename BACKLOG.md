@@ -126,6 +126,14 @@
   any code change. Every fix in this review is one un-run test away from silently regressing. *(effort S · WS-E)*
 
 
+- **B-96 — `scoringFlags.test.mjs` has 3 stale snapshots; blocks adding it to CI.** 9/12 pass. The 3 failures are
+  expectation drift, not new breakage: `apple` environment expects `inferred` but gets `default`; `walmart` guns
+  expects `{kind:'na'}` but gets `{kind:'default'}`; `patagonia` execPay expects `notDisclosed` but gets `na`.
+  Decide per case whether the TEST or the IMPLEMENTATION is right (the patagonia one looks like a real
+  regression — a private company's exec pay is "not disclosed", not "not applicable"), fix, then add the file to
+  the `ci.yml` gate. *(effort S · WS-E)*
+
+
 ### 🟠 HIGH
 
 - **B-76 — Search ranking is why the "?" wall feels total (≈60% a sort bug).** `searchHits` runs MiniSearch with
