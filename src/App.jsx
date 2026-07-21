@@ -4,6 +4,7 @@
 import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { useModalA11y } from "./lib/useModalA11y";
 import { useBackDismiss, setRootBackHandler } from "./lib/back-stack";
+import { resolveBrand as resolveBrandLib } from "./lib/resolve-brand";
 import SplashScreen from "./SplashScreen";
 import OnboardingFlow from "./OnboardingFlow";
 import MatchFlow from "./MatchFlow";
@@ -170,30 +171,21 @@ function BarcodeScanner({ onClose, onMatch, onSearch, companies }) {
     return m;
   }, [companies]);
 
+  // B-77: the resolution logic now lives in src/lib/resolve-brand.js so it can
+  // be tested against the real brand-parent-map (scripts/resolve-brand.test.mjs).
+  // The old inline version consulted the curated parent map AFTER a bare prefix
+  // loop, so the guess beat the curated data and 1,699 of 6,694 mapped brands
+  // (25.4%) resolved to the wrong company — "americanspirit" → "America",
+  // "ajax" → "Ajax Engines". Now 11.4%.
   const resolveBrand = (rawBrand, mapOverride = null) => {
-    if (!rawBrand) return null;
     // Build 54: accept a freshly-loaded brandParentMap from lookup() to
     // defeat the race condition where the useState value hasn't propagated
     // yet on first scan after opening the scanner.
-    const bpMap = mapOverride || brandParentMap;
-    // Try each brand token in the comma/pipe-separated list, prefer first match
-    const candidates = rawBrand.split(/[,|;\/]/).map(s => s.trim()).filter(Boolean);
-    for (const cand of candidates) {
-      const k = cand.toLowerCase().replace(/[^a-z0-9]+/g, "");
-      if (brandIndex.has(k)) return brandIndex.get(k);
-      // Word-prefix fallback: e.g. "Coca-Cola Company" → "cocacola" → match "cocacola"
-      for (const [bk, bv] of brandIndex) {
-        if (bk.length >= 4 && (bk.startsWith(k) || k.startsWith(bk))) return bv;
-      }
-      // Brand-parent-map fallback: e.g. "Nabisco" or "Oreo" → mondelez-international
-      // This is what makes the scanner work for sub-brands that aren't
-      // themselves top-level companies.
-      const mapped = bpMap[k];
-      if (mapped?.parent && slugIndex.has(mapped.parent)) {
-        return slugIndex.get(mapped.parent);
-      }
-    }
-    return null;
+    return resolveBrandLib(rawBrand, {
+      brandIndex,
+      parentMap: mapOverride || brandParentMap,
+      slugIndex,
+    });
   };
 
   useEffect(() => {

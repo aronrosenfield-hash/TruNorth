@@ -143,7 +143,7 @@
   (`:6722`) DOES preserve relevance, so the dropdown and the list below it disagree. Convert to a slug→rank
   **Map**, add a `relevance` sort defaulted when a query is present (sink `overall == null`), and add a
   persisted **"Graded only · 3,057"** chip. **Zero new data required.** *(effort S · WS-A)*
-- **B-77 — `resolveBrand` returns the wrong company for ~1 in 4 mapped brands.** `App.jsx:182-190` runs a bare
+- **B-77 ✅ DONE (partial — see note) — `resolveBrand` returns the wrong company for ~1 in 4 mapped brands.** `App.jsx:182-190` runs a bare
   prefix loop returning the first alphabetical hit BEFORE consulting `brand-parent-map.json`. Replayed:
   **935–1,700 of 6,694** mapped keys resolve wrong — `bounty` → Bounty not P&G, `americanspirit` → America not
   R.J. Reynolds, `ajax` → Ajax Engines not Colgate. **This is the scanner.** Reorder to exact → parent-map →
