@@ -116,11 +116,57 @@ async function fetchWaiting() {
   return out;
 }
 
+/**
+ * --audit: read the waiting list and report DEMAND, independent of whether
+ * anything was graded this week. Two uses:
+ *   1. verify the brands_requested plumbing actually works against live
+ *      MailerLite without needing a grading event to coincide;
+ *   2. answer the question v1.2 actually cares about — WHICH of the 9,776
+ *      ungraded brands are users asking for? That is the cleanest signal for
+ *      what to grade next, and we were collecting it without ever reading it.
+ * Sends nothing, ever.
+ */
+async function audit() {
+  if (!ML_KEY) {
+    console.error("[audit] MAILERLITE_API_KEY missing — cannot read the waiting list.");
+    process.exit(1);
+  }
+  const waiting = await fetchWaiting();
+  console.log(`[audit] ${waiting.length} subscriber(s) carry a ${BRANDS_FIELD} value`);
+  if (!waiting.length) {
+    console.log(
+      `[audit] none yet. Expected if the capture fix only just deployed — the field is\n` +
+      `        written on the next "notify me when we grade X" tap, not backfilled.`
+    );
+    return;
+  }
+  const demand = new Map();
+  for (const s of waiting) {
+    for (const b of s.brands) {
+      const k = norm(b);
+      if (!demand.has(k)) demand.set(k, { label: b, n: 0 });
+      demand.get(k).n++;
+    }
+  }
+  const ranked = [...demand.values()].sort((a, b) => b.n - a.n);
+  console.log(`[audit] ${ranked.length} distinct brand(s) requested\n`);
+  console.log("  MOST-REQUESTED UNGRADED BRANDS (grade these first):");
+  for (const d of ranked.slice(0, 25)) console.log(`    ${String(d.n).padStart(4)}×  ${d.label}`);
+  const multi = waiting.filter((s) => s.brands.length > 1).length;
+  console.log(
+    `\n  ${multi} subscriber(s) are waiting on MORE THAN ONE brand — those requests were\n` +
+    `  silently overwritten before the append-only fix, so this number should grow.`
+  );
+}
+
 async function main() {
+  if (process.argv.includes("--audit")) return audit();
+
   const newly = readNewlyGraded();
   console.log(`[notify] ${newly.length} newly-graded brand(s) in weekly_changes.json`);
   if (!newly.length) {
     console.log("[notify] nothing to announce — exiting cleanly.");
+    console.log("[notify] (run with --audit to inspect the waiting list regardless)");
     return;
   }
   for (const n of newly.slice(0, 10)) console.log(`  · ${n.name} — ${n.detail}`);

@@ -1,0 +1,33 @@
+name: notify-audit
+
+# B-81 — read-only audit of the "notify me when we grade X" waiting list.
+#
+# WHY THIS EXISTS AS A WORKFLOW: MAILERLITE_API_KEY is a server-side secret and
+# deliberately does NOT live in anyone's local .env. Running the audit here lets
+# it read live MailerLite without the key ever being handed around.
+#
+# It SENDS NOTHING. The script's --audit path only reads subscribers and prints
+# aggregate demand; --apply is not passed and cannot be reached from this job.
+#
+# Two things it answers:
+#   1. is the brands_requested plumbing actually working in production?
+#   2. WHICH ungraded brands are users asking for? That is the demand signal
+#      v1.2's coverage work should be prioritised against — we have been
+#      collecting it since Build 79 and never once read it.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Audit the notify-me waiting list (read-only)
+        env:
+          MAILERLITE_API_KEY: ${{ secrets.MAILERLITE_API_KEY }}
+          MAILERLITE_GROUP_ID: ${{ secrets.MAILERLITE_GROUP_ID }}
+        run: node scripts/notify-newly-graded.mjs --audit
