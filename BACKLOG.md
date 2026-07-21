@@ -53,7 +53,7 @@
   **↳ FOLLOW-UP (open):** run the workflow manually once to land the 5-week backlog; grep the other 167
   workflows for the same `sleep`-swallows-exit-code template; add a freshness assert to `cron-health-daily.yml`
   (fail if `weekly_changes.json` is >10 days stale).
-- **B-71 — Paywall comparison table sells four things that are already free.** `App.jsx:1566-1570` marks the
+- **B-71 ✅ DONE — Paywall comparison table sells four things that are already free.** `App.jsx:1566-1570` marks the
   exact /100 score, full breakdowns, all 9 categories, per-grade citations and the **in-store scanner** as
   Pro-only. None are gated: /100 renders at `:3753`, `CategoryRow` (`:2963`) never receives `isPaid`, source
   chips render at `:3086`, `setShowScanner` fires unconditionally. The one gate that IS enforced (1 brand/day)
@@ -189,7 +189,7 @@
   exactly two hits, both inside that write. **The strongest honest return artifact the product can have** —
   dated, personal, moving. Add a sparkline + WoW delta to Ledger and Today. Do NOT gate behind Pro.
   *(effort M · WS-D)*
-- **B-85 — Free-tier economics: one paywall dismissal buys 7 days of unlimited access.** `App.jsx:3193-3194`
+- **B-85 ✅ DONE — Free-tier economics: one paywall dismissal buys 7 days of unlimited access.** `App.jsx:3193-3194`
   computes `inCooldown` from `tn_paywallDismissedAt` over 7×24h and `:3197` skips the quota entirely — and the
   timestamp is written on EVERY paywall close, including a voluntary price check. The most purchase-curious
   action buys a free week. Only write on the hard gate; shorten to 24h; never suspend the quota, only the

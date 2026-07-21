@@ -1548,7 +1548,7 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
           <div style={{ fontSize:12, color:T.txt3, lineHeight:1.6, maxWidth:300, margin:"0 auto" }}>
             {PRO_WAITLIST_MODE
               ? "We're finalizing payments. Join the waitlist — the first 500 get founder pricing forever ($9/year)."
-              : "Free gives you a personalized letter grade on every brand. Pro unlocks the exact /100 score, full breakdowns, all 9 categories, and the public records behind each grade."}
+              : "Free gives you a personalized letter grade on every brand, unlimited search, and the in-store scanner — plus one full brand profile a day. Pro removes the daily limit: the exact /100 score, all 9 categories, and the public records behind every grade, as often as you like."}
           </div>
         </div>
 
@@ -1564,15 +1564,24 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
             <div style={{ fontSize:11, fontWeight:700, color:T.gold, textTransform:"uppercase", letterSpacing:0.6, textAlign:"center" }}>Pro</div>
           </div>
           {[
-            { feat: "Personalized letter grade",      free: true,  pro: true  },
-            { feat: "45-second values Match",          free: true,  pro: true  },
-            { feat: "Browse 12,000+ brands (2,800+ graded)", free: true,  pro: true  },
-            { feat: "Exact /100 numeric score",       free: false, pro: true, hi: true },
-            { feat: "Full grade breakdowns",          free: false, pro: true  },
-            { feat: "All 9 value categories",         free: false, pro: true  },
-            { feat: "Per-grade citations",            free: false, pro: true  },
-            { feat: "In-store barcode scanner",       free: false, pro: true, hi: true },
-            { feat: "Live data + Sunday digest",      free: false, pro: true  },
+            // B-71 (2026-07-20, Aron's call). This table used to advertise five
+            // things as Pro that the code gave away free — including the
+            // scanner, which carried `hi:true` as the headline conversion
+            // anchor — while the ONE gate actually enforced (1 profile/day)
+            // wasn't a row at all. False in both directions, on a paid app, and
+            // App Store 3.1.2 exposure. Decisions: the scanner STAYS FREE (it's
+            // the top-of-funnel habit and the best answer to the "?" wall), Pro
+            // gates depth-of-record, and the daily limit is the boundary — past
+            // it you get the upgrade screen (see the quota in CompanyCard and
+            // the B-85 cooldown fix). Keep this list in sync with
+            // MarketingLanding.jsx and the Account card.
+            { feat: "Personalized letter grade",             free: true,     pro: true },
+            { feat: "45-second values Match",                free: true,     pro: true },
+            { feat: "Browse 12,000+ brands (3,000+ graded)", free: true,     pro: true },
+            { feat: "In-store barcode scanner",              free: true,     pro: true },
+            { feat: "Full brand profile — /100 score, all 9 categories, per-grade citations",
+                                                             free: "1/day",  pro: "∞", hi: true },
+            { feat: "Live data + Sunday digest",             free: false,    pro: true },
           ].map((row, i, arr) => (
             <div key={i} style={{
               display:"grid", gridTemplateColumns:"1fr 56px 56px", alignItems:"center",
@@ -1586,11 +1595,11 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
               paddingRight: row.hi ? 6 : 0,
             }}>
               <span style={{ fontSize:13, color: row.hi ? T.txt : T.txt2, fontWeight: row.hi ? 600 : 400 }}>{row.feat}</span>
-              <span style={{ textAlign:"center", fontSize:14, color: row.free ? "#9CC98A" : T.txt3 }}>
-                {row.free ? "✓" : "—"}
+              <span style={{ textAlign:"center", fontSize: typeof row.free === "string" ? 11 : 14, color: row.free ? "#9CC98A" : T.txt3 }}>
+                {typeof row.free === "string" ? row.free : row.free ? "✓" : "—"}
               </span>
-              <span style={{ textAlign:"center", fontSize:14, color: row.pro ? T.gold : T.txt3, fontWeight: row.pro ? 700 : 400 }}>
-                {row.pro ? "✓" : "—"}
+              <span style={{ textAlign:"center", fontSize: typeof row.pro === "string" ? 11 : 14, color: row.pro ? T.gold : T.txt3, fontWeight: row.pro ? 700 : 400 }}>
+                {typeof row.pro === "string" ? row.pro : row.pro ? "✓" : "—"}
               </span>
             </div>
           ))}
@@ -3201,11 +3210,18 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
       // tap, training users to dismiss reflexively). Now localStorage with a
       // 7-day window: dismiss once, get the rest of the free-quota week
       // uninterrupted.
-      const dismissedAt = Number(localStorage.getItem("tn_paywallDismissedAt") || 0);
-      const inCooldown = dismissedAt && (Date.now() - dismissedAt) < 7 * 24 * 60 * 60 * 1000;
+      // B-85 (2026-07-20, Aron's call): the 7-day dismissal cooldown used to
+      // SUSPEND THE QUOTA ENTIRELY — and the timestamp was written on every
+      // paywall close, including a voluntary price check from the gold banner
+      // or Account. So the single most purchase-curious action a user could
+      // take bought them a free week of the whole product, and the advertised
+      // "1 brand profile/day" limit never actually bit. Decision: the limit is
+      // the product boundary, so it always applies — past the daily profile,
+      // the upgrade screen is what you get. `tn_paywallDismissedAt` is still
+      // written (analytics//future interstitial pacing) but no longer gates.
       const alreadyViewed = log.slugs.includes(slug);
-      // 1 free view per week: paywall fires on the 2nd unique tap.
-      if (!gradeless && !alreadyViewed && log.slugs.length >= 1 && !inCooldown) {
+      // 1 full brand profile per day: paywall fires on the 2nd unique tap.
+      if (!gradeless && !alreadyViewed && log.slugs.length >= 1) {
         track("paywall_shown", { reason: "free_quota_exhausted", slug, viewed_this_week: log.slugs.length });
         onUpgrade();
         return;
