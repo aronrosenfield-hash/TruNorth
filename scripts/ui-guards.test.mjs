@@ -136,6 +136,56 @@ test("guard: landing + onboarding DEMO grades match the live data (no marketing/
     `Marketing/onboarding demo grades drifted from index.json:\n  ${mismatches.join("\n  ")}`);
 });
 
+test("guard: every rendered grade letter uses ITS OWN colour (all 3 surfaces)", () => {
+  // B-91 extension (2026-07-20). The original C-vs-amber guard only read
+  // src/App.jsx, so it never looked at the other two surfaces that render grade
+  // letters — and MarketingLanding was painting Shein's "C" with C.warn
+  // (#E8A04C), which is D's amber, on the PUBLIC landing page. OnboardingFlow
+  // had the same class of drift (a C in D's amber, both D rows in F's red).
+  //
+  // This resolves each demo's colour expression — a raw hex, a local design
+  // token like C.warn, or GRADE_COLORS.X.text — and asserts it equals the
+  // canonical colour for the grade actually being displayed.
+  const canonical = { A: "#38C0CE", B: "#9CC98A", C: "#A9A498", D: "#E8A04C", F: "#E0524D" };
+  const offenders = [];
+
+  for (const file of ["src/MarketingLanding.jsx", "src/OnboardingFlow.jsx", "src/App.jsx"]) {
+    const src = fs.readFileSync(file, "utf8");
+
+    // Resolve that file's local design tokens (const C = { good: "#...", ... }).
+    const tokens = {};
+    const block = src.match(/const C = \{([\s\S]*?)\n\};/);
+    if (block) {
+      for (const line of block[1].split("\n")) {
+        const t = line.match(/(\w+):\s*"(#[0-9A-Fa-f]{6})"/);
+        if (t) tokens[t[1]] = t[2].toUpperCase();
+      }
+    }
+
+    // grade:"X" ... color:<expr>   (the demo-card shape on every surface)
+    const re = /grade:\s*"([A-F])"\s*,\s*color:\s*([^,}\s]+)/g;
+    let m;
+    while ((m = re.exec(src)) !== null) {
+      const [, grade, expr] = m;
+      let resolved = null;
+      if (/^"#[0-9A-Fa-f]{6}"$/.test(expr)) resolved = expr.replace(/"/g, "").toUpperCase();
+      else if (/^C\.\w+$/.test(expr)) resolved = tokens[expr.slice(2)] || null;
+      else if (/^GRADE_COLORS\.([A-F])\.text$/.test(expr)) {
+        const ref = expr.match(/^GRADE_COLORS\.([A-F])\.text$/)[1];
+        resolved = canonical[ref];
+      } else continue; // gradeTone(...)/helper calls are derived by construction
+      if (resolved && resolved !== canonical[grade]) {
+        offenders.push(`${file}: grade "${grade}" painted ${expr} = ${resolved}, want ${canonical[grade]}`);
+      }
+    }
+  }
+
+  assert.equal(
+    offenders.length, 0,
+    `A grade letter is rendered in ANOTHER grade's colour:\n  ${offenders.join("\n  ")}`
+  );
+});
+
 test("guard: no new hand-written grade palettes in App.jsx (B-91)", () => {
   // B-91 (2026-07-20): App.jsx carried FIVE hand-written copies of the A-F
   // palette. None of the A-F values had drifted yet — but OnboardingFlow's copy
