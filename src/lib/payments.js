@@ -37,7 +37,18 @@ async function loadRC() {
   return PurchasesMod;
 }
 
-const IOS_API_KEY  = import.meta.env.VITE_REVENUECAT_IOS_KEY || "";
+// B-75 (2026-07-20): this was iOS-only and was passed to configure()
+// unconditionally, so on Android RevenueCat would be handed an iOS key — the
+// paywall would render, the purchase would fail, and Pro is the only revenue.
+// RevenueCat issues a SEPARATE public SDK key per platform (Google Play vs
+// App Store); they are not interchangeable. Select by platform.
+const IOS_API_KEY     = import.meta.env.VITE_REVENUECAT_IOS_KEY || "";
+const ANDROID_API_KEY = import.meta.env.VITE_REVENUECAT_ANDROID_KEY || "";
+
+/** The RevenueCat public SDK key for the platform we're actually running on. */
+function apiKeyForPlatform() {
+  return Capacitor.getPlatform() === "android" ? ANDROID_API_KEY : IOS_API_KEY;
+}
 const ENTITLEMENT_ID = "TruNorth Pro"; // exact RevenueCat entitlement identifier (confirmed 2026-06-13)
 
 // PURCHASES_ERROR_CODE.PURCHASE_CANCELLED_ERROR — the only error-shape that
@@ -54,8 +65,12 @@ let configurePromise = null;
 export function configurePayments(appUserID = null) {
   if (!Capacitor.isNativePlatform()) return Promise.resolve();
   if (configurePromise) return configurePromise;
-  if (!IOS_API_KEY) {
-    console.warn("[payments] VITE_REVENUECAT_IOS_KEY missing — paywall will fail silently");
+  const apiKey = apiKeyForPlatform();
+  if (!apiKey) {
+    const envVar = Capacitor.getPlatform() === "android"
+      ? "VITE_REVENUECAT_ANDROID_KEY"
+      : "VITE_REVENUECAT_IOS_KEY";
+    console.warn(`[payments] ${envVar} missing — paywall will render but purchases will fail`);
     return Promise.resolve();
   }
   configurePromise = (async () => {
@@ -63,7 +78,7 @@ export function configurePayments(appUserID = null) {
     if (!RC) return;
     // Anonymous by default; appUserID can be set later via logIn() once we
     // have a real auth/email identity to associate purchases with.
-    await RC.Purchases.configure({ apiKey: IOS_API_KEY, appUserID });
+    await RC.Purchases.configure({ apiKey, appUserID });
   })().catch((err) => {
     configurePromise = null; // allow retry after a failed configure
     throw err;

@@ -22,6 +22,48 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
+            <!--
+              B-75 — Android App Links, mirroring the iOS associated-domains
+              entitlement (applinks:www.trunorthapp.com + trunorthapp.com) so a
+              shared brand link opens the app on both platforms instead of
+              bouncing to the browser. Paths match the two the app parses:
+              /company/<slug> and the short /c/<slug>.
+
+              ⚠️ BLOCKER, verified on a Pixel 8 (Android 17): autoVerify only
+              takes effect once
+              https://www.trunorthapp.com/.well-known/assetlinks.json is
+              published with the RELEASE signing certificate's SHA-256
+              fingerprint — which needs a keystore that doesn't exist yet.
+              `pm get-app-links` reports state 1024 (no response) for both
+              hosts, and on Android 12+ an UNVERIFIED https link does NOT show
+              an "open with" chooser — it goes straight to the browser. Tested:
+              the link opened Chrome, while the same link targeted explicitly
+              (`am start ... -p com.trunorthapp.app`) opened the app correctly,
+              so the filter and in-app routing are right. Shared brand links
+              will keep landing in the browser until assetlinks.json ships.
+            -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" android:host="www.trunorthapp.com" android:pathPrefix="/company/" />
+                <data android:scheme="https" android:host="www.trunorthapp.com" android:pathPrefix="/c/" />
+                <data android:scheme="https" android:host="trunorthapp.com" android:pathPrefix="/company/" />
+                <data android:scheme="https" android:host="trunorthapp.com" android:pathPrefix="/c/" />
+            </intent-filter>
+
+            <!--
+              Custom scheme, matching the iOS CFBundleURLSchemes entry
+              ("trunorth"). Carries trunorth://scan?src=widget — the scan
+              intent the deep-link handler in App.jsx already parses.
+            -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="trunorth" />
+            </intent-filter>
+
         </activity>
 
         <provider
@@ -38,4 +80,17 @@
     <!-- Permissions -->
 
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--
+      B-75 — the in-store scanner. The bare `cap add android` scaffold declared
+      only INTERNET, so getUserMedia (and the ML Kit fallback) had no camera
+      access at all and the scanner — which is FREE and the top-of-funnel habit
+      per B-71 — could never work on Android. iOS already carries the matching
+      NSCameraUsageDescription string.
+      camera is NOT required: the app is fully usable by search alone, and
+      marking it required would exclude camera-less devices from Play.
+    -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
 </manifest>

@@ -83,7 +83,7 @@
   from onboarding, mid-Match, with the camera live, with the paywall open. Back is the primary Android nav.
   Add `src/lib/back-stack.js` (module-level LIFO) + a `useBackDismiss(onClose)` hook alongside the existing
   `useModalA11y` (one line per overlay). Drop the `history.length` check. *(effort M · WS-B)*
-- **B-75 — Android launch blockers (checklist, all before any beta).** `android/` exists as a bare
+- **B-75 ⚠️ MOSTLY DONE — Android launch blockers (checklist, all before any beta).** `android/` exists as a bare
   `cap add android` scaffold. Every one of these silently fails: `payments.js:40` has only
   `VITE_REVENUECAT_IOS_KEY` and passes it unconditionally at `:66` → the paywall renders and does nothing
   (Pro is the only revenue); no App Links `<intent-filter>` for `trunorthapp.com` `/company/*` + `/c/*`;
