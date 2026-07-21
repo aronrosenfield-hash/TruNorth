@@ -27,6 +27,10 @@ dist-ssr
 .env.*
 !.env.*.example
 !.env.testflight.example
+# `.env.*` above also swallowed the plain `.env.example` template (the negation
+# only covered `.env.<something>.example`), so the root template was silently
+# uncommittable. It contains placeholders only — never real values.
+!.env.example
 build/
 *.xcarchive
 scripts/ExportOptions.plist

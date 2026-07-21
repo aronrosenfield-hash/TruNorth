@@ -89,6 +89,93 @@ You're also currently the only TestFlight tester — until you have ~5-10 real u
    - Free or paid: Free (paid features later via in-app purchases)
    - Declarations: privacy policy URL = `https://www.trunorthapp.com/#privacy`
 
+9b. **Payments parity — Play products + RevenueCat + service account** *(added 2026-07-20, B-75)*
+
+    Pro is the only revenue, and none of this existed when the Android scaffold
+    landed: `payments.js` read only `VITE_REVENUECAT_IOS_KEY` and passed it
+    unconditionally, so on Android RevenueCat got an iOS key — the paywall
+    rendered and every purchase failed. The code now selects the key by
+    `Capacitor.getPlatform()`; the rest is account setup.
+
+    **Order matters** — each step needs the previous one:
+
+    1. **Create the two Play subscriptions** (needs the listing from step 9).
+       Play Console → Monetize → Subscriptions → Create. Use the SAME product
+       IDs as iOS so one entitlement serves both platforms:
+       `com.trunorthapp.app.pro.annual` ($14.99/yr) and
+       `com.trunorthapp.app.pro.monthly` ($1.99/mo).
+
+    2. **Create the Google Play app in RevenueCat.**
+       RevenueCat → Apps → **+ New → Google Play Store**, package
+       `com.trunorthapp.app`. ⚠️ Until you do this there is NO Android SDK key
+       to find — the API keys page only lists the iOS app.
+       The **public SDK key (`goog_…`) is issued at app creation**, so you can
+       grab it and unblock the build BEFORE the service account exists.
+
+    3. **Attach both products to the existing `TruNorth Pro` entitlement**
+       in RevenueCat. This is what makes `hasProEntitlement()` work on Android
+       with zero code changes — the entitlement ID is already hardcoded in
+       `src/lib/payments.js`.
+
+    4. **Create the Play service account** — this is what lets RevenueCat
+       *validate* purchases and receive renewal/cancel/refund notifications.
+       It does not exist by default; you generate it:
+       - Play Console → **Setup → API access** → link (or create) a Google
+         Cloud project.
+       - **Create new service account** → opens Google Cloud Console → name it
+         e.g. `revenuecat-play` → Create → Done.
+       - That service account → **Keys → Add key → Create new key → JSON**.
+         The downloaded `.json` IS the credential.
+       - Back in Play Console → **Refresh service accounts** → **Manage Play
+         Console permissions** → grant *View financial data*, *Manage orders
+         and subscriptions*, *View app information*.
+       - RevenueCat → the Google Play app → upload that JSON.
+       - 🔐 The JSON is a secret: never commit it, never paste it into chat or
+         email. If it leaks, revoke the key in Cloud Console and issue a new one.
+       - ⏳ Google's permission propagation can take **24–36 hours**. RevenueCat
+         may report a credentials error immediately after setup even when
+         everything is correct. Wait a day before debugging it.
+
+    5. **Put the key in your LOCAL `.env`** (see `.env.example`):
+       ```
+       VITE_REVENUECAT_ANDROID_KEY=goog_...
+       ```
+       ⚠️ The APK/AAB is built from `dist/`, which `npm run build` generates on
+       your machine. Setting this ONLY in Vercel affects the web deploy and
+       ships a binary with no key — purchases fail silently. It must be local.
+       Use the **public SDK key**, never a Secret API key: `VITE_` vars are
+       compiled into the client bundle.
+
+9c. **App Links — publish `assetlinks.json`** *(added 2026-07-20, B-75)*
+
+    The manifest already declares `autoVerify` App Links for
+    `www.trunorthapp.com` + `trunorthapp.com` on `/company/*` and `/c/*`,
+    mirroring the iOS associated-domains entitlement. But verified on a Pixel 8:
+    `pm get-app-links` reports state **1024 (no response)**, and on Android 12+
+    an UNVERIFIED https link does **not** show an "open with" chooser — it goes
+    straight to the browser. Confirmed: a shared brand link opened Chrome, while
+    the same link targeted explicitly (`am start … -p com.trunorthapp.app`)
+    opened the app. So the filter and in-app routing are correct; only the
+    verification file is missing.
+
+    Needs the RELEASE keystore from step 6 (the debug cert won't do):
+    ```bash
+    keytool -list -v -keystore ~/Developer/keys/trunorth-release.keystore \
+      -alias trunorth | grep "SHA256:"
+    ```
+    Then publish at `https://www.trunorthapp.com/.well-known/assetlinks.json`:
+    ```json
+    [{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": { "namespace": "android_app",
+                  "package_name": "com.trunorthapp.app",
+                  "sha256_cert_fingerprints": ["<SHA256 from above>"] }
+    }]
+    ```
+    Serve it as `application/json` with no redirect. Android re-verifies on the
+    next install/update. Until this ships, shared brand links land in the
+    browser on Android.
+
 10. **Build release AAB** (Android App Bundle — Google Play preferred format)
     ```bash
     cd /Users/aronrosenfield/Developer/trunorth
