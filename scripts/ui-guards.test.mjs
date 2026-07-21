@@ -136,6 +136,66 @@ test("guard: landing + onboarding DEMO grades match the live data (no marketing/
     `Marketing/onboarding demo grades drifted from index.json:\n  ${mismatches.join("\n  ")}`);
 });
 
+test("guard: no light-on-bright style pair below WCAG AA 4.5:1", () => {
+  // 2026-07-21 sweep. Eight inline style pairs shipped below AA: six were
+  // #fff on the verdigris accent (2.19:1) — primary CTAs, the filter-count
+  // badge, the onboarding auth tab — and two were #fff on the party red
+  // (3.83:1) on political-donation badges. White on a bright fill reads fine
+  // on a designer's monitor and fails in daylight, which is exactly where an
+  // in-store shopper uses this app. All now take the ink token (8.76:1 on the
+  // accent, 5.00:1 on the party red).
+  //
+  // Computes real WCAG relative luminance rather than banning specific hexes,
+  // so a NEW bright colour is covered automatically.
+  const toRgb = (h) => {
+    h = h.replace("#", "");
+    if (h.length === 3) h = h.split("").map((c) => c + c).join("");
+    return [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16));
+  };
+  const lum = (rgb) =>
+    rgb.map((v) => (v / 255 <= 0.03928 ? v / 255 / 12.92 : Math.pow((v / 255 + 0.055) / 1.055, 2.4)))
+      .reduce((a, c, i) => a + c * [0.2126, 0.7152, 0.0722][i], 0);
+  const ratio = (f, b) => {
+    const [l1, l2] = [lum(toRgb(f)), lum(toRgb(b))];
+    return (Math.max(l1, l2) + 0.05) / (Math.min(l1, l2) + 0.05);
+  };
+
+  const theme = fs.readFileSync("src/lib/theme.js", "utf8");
+  const T = {};
+  for (const m of theme.matchAll(/(\w+):\s*"(#[0-9A-Fa-f]{3,6})"/g)) T[m[1]] = m[2];
+
+  const offenders = [];
+  for (const file of ["src/App.jsx", "src/OnboardingFlow.jsx", "src/MarketingLanding.jsx"]) {
+    const src = fs.readFileSync(file, "utf8");
+    const local = {};
+    const blk = src.match(/const C = \{([\s\S]*?)\n\};/);
+    if (blk) for (const m of blk[1].matchAll(/(\w+):\s*"(#[0-9A-Fa-f]{6})"/g)) local[m[1]] = m[2];
+    const resolve = (e) => {
+      e = e.trim().replace(/,$/, "");
+      if (/^"#[0-9A-Fa-f]{3,6}"$/.test(e)) return e.replace(/"/g, "");
+      let m = e.match(/^T\.(\w+)$/);
+      if (m) return T[m[1]];
+      m = e.match(/^C\.(\w+)$/);
+      if (m) return local[m[1]];
+      return null;
+    };
+    src.split("\n").forEach((line, i) => {
+      const bg = line.match(/background:\s*([^,}]+)/);
+      const fg = line.match(/(?<!background)\bcolor:\s*([^,}]+)/);
+      if (!bg || !fg) return;
+      const b = resolve(bg[1]);
+      const c = resolve(fg[1]);
+      if (!b || !c) return;
+      const r = ratio(c, b);
+      if (r < 4.5) offenders.push(`${file}:${i + 1}  ${c} on ${b} = ${r.toFixed(2)}:1`);
+    });
+  }
+  assert.equal(
+    offenders.length, 0,
+    `Style pair(s) below WCAG AA 4.5:1 — use the ink token on bright fills:\n  ${offenders.join("\n  ")}`
+  );
+});
+
 test("guard: every rendered grade letter uses ITS OWN colour (all 3 surfaces)", () => {
   // B-91 extension (2026-07-20). The original C-vs-amber guard only read
   // src/App.jsx, so it never looked at the other two surfaces that render grade

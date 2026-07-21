@@ -146,7 +146,7 @@ const s = {
   statLabel:       { fontSize:11, color:"#9A948A", marginTop:2, letterSpacing:0.5, textAlign:"center" },
   authTabs:        { display:"flex", background:"#16181D", borderRadius:12, padding:4, marginBottom:14, border:"1px solid #23262C" },
   authTab:         { flex:1, padding:9, border:"none", background:"transparent", color:"#555", fontFamily:"inherit", fontSize:13, fontWeight:600, cursor:"pointer", borderRadius:9 },
-  authTabActive:   { background:"#38C0CE", color:"#fff" },
+  authTabActive:   { background:"#38C0CE", color:"#0E0F12" },
   authInput:       { width:"100%", padding:"13px 16px", background:"#16181D", border:"1px solid", borderRadius:12, color:"#EDE9E0", fontFamily:"inherit", fontSize:14, marginBottom:10 },
   divider:         { display:"flex", alignItems:"center", gap:10, margin:"12px 0" },
   dividerLine:     { flex:1, height:1, background:"#23262C" },

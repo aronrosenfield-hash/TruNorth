@@ -490,7 +490,7 @@ function BarcodeScanner({ onClose, onMatch, onSearch, companies }) {
                   {lookupBrand && onSearch && (
                     <button
                       onClick={() => onSearch(lookupBrand)}
-                      style={{ padding:"11px 18px", borderRadius:10, border:"none", background:T.accent, color:"#fff", fontSize:13, fontWeight:700, cursor:"pointer", minHeight:44 }}
+                      style={{ padding:"11px 18px", borderRadius:10, border:"none", background:T.accent, color:T.bg, fontSize:13, fontWeight:700, cursor:"pointer", minHeight:44 }}
                     >
                       Search for "{lookupBrand}"
                     </button>
@@ -515,7 +515,7 @@ function BarcodeScanner({ onClose, onMatch, onSearch, companies }) {
                   {onSearch && (
                     <button
                       onClick={() => onSearch("")}
-                      style={{ padding:"11px 18px", borderRadius:10, border:"none", background:T.accent, color:"#fff", fontSize:13, fontWeight:700, cursor:"pointer", minHeight:44, display:"inline-flex", alignItems:"center", justifyContent:"center", gap:6 }}
+                      style={{ padding:"11px 18px", borderRadius:10, border:"none", background:T.accent, color:T.bg, fontSize:13, fontWeight:700, cursor:"pointer", minHeight:44, display:"inline-flex", alignItems:"center", justifyContent:"center", gap:6 }}
                     >
                       <i className="ti ti-search" aria-hidden="true" /> Search by name instead
                     </button>
@@ -1745,7 +1745,7 @@ function FilterPanel({ leanFilter, setLeanFilter, catFilters, setCatFilters, tog
           style={{ display:"flex", alignItems:"center", gap:6, padding:"9px 14px", borderRadius:22, border:`1px solid ${totalActive>0 ? T.accent : T.border}`, background: totalActive>0 ? T.accentBg : T.bg3, color: totalActive>0 ? T.accent2 : T.txt2, fontSize:13, fontWeight:600, cursor:"pointer" }}>
           <i className="ti ti-adjustments-horizontal" />
           Filter
-          {totalActive > 0 && <span style={{ background:T.accent, color:"#fff", padding:"1px 7px", borderRadius:12, fontSize:11 }}>{totalActive}</span>}
+          {totalActive > 0 && <span style={{ background:T.accent, color:T.bg, padding:"1px 7px", borderRadius:12, fontSize:11 }}>{totalActive}</span>}
         </button>
         {totalActive > 0 && (
           <>
@@ -1836,7 +1836,7 @@ function FilterSheet({ onClose, leanFilter, setLeanFilter, catFilters, toggleCat
             );
           })}
         </div>
-        <button onClick={onClose} style={{ width:"100%", marginTop:18, padding:13, borderRadius:12, border:"none", background:T.accent, color:"#fff", fontSize:14, fontWeight:700, cursor:"pointer" }}>
+        <button onClick={onClose} style={{ width:"100%", marginTop:18, padding:13, borderRadius:12, border:"none", background:T.accent, color:T.bg, fontSize:14, fontWeight:700, cursor:"pointer" }}>
           Done
         </button>
       </div>
@@ -3080,7 +3080,7 @@ function CategoryRow({ cat: k, enriched, profile }) {
                 const vt = enriched.violationTracker || enriched.laborAPI?.violationTracker;
                 if (!vt?.active_last_6mo) return null;
                 return (
-                  <div style={{ marginTop:6, display:"inline-flex", alignItems:"center", gap:6, padding:"2px 8px", fontSize:11, borderRadius:20, background:T.rep, color:"#fff", fontWeight:600 }}>
+                  <div style={{ marginTop:6, display:"inline-flex", alignItems:"center", gap:6, padding:"2px 8px", fontSize:11, borderRadius:20, background:T.rep, color:T.bg, fontWeight:600 }}>
                     <i className="ti ti-flame" aria-hidden="true" /> Active enforcement in last 6 mo
                   </div>
                 );
@@ -3402,7 +3402,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                   <div style={{ fontSize:12, fontWeight:700, color:T.rep, textTransform:"uppercase", letterSpacing:"0.05em", marginBottom:2, display:"flex", alignItems:"center", gap:6 }}>
                     Federal penalties
                     {active && (
-                      <span title="A penalty was assessed within the last 6 months." style={{ fontSize:9, fontWeight:700, padding:"1px 6px", borderRadius:10, background:T.rep, color:"#fff", letterSpacing:"0.04em" }}>
+                      <span title="A penalty was assessed within the last 6 months." style={{ fontSize:9, fontWeight:700, padding:"1px 6px", borderRadius:10, background:T.rep, color:T.bg, letterSpacing:"0.04em" }}>
                         ACTIVE
                       </span>
                     )}
@@ -4848,7 +4848,7 @@ function SubmitView({ isPaid, onUpgrade }) {
       <textarea style={{ ...inp, resize:"vertical", minHeight:80, fontFamily:"inherit" }} value={detail} onChange={e=>setDetail(e.target.value)} placeholder={type==="correction"?"Describe the correction...":"Company name, category, and key data points..."} />
       <label style={lbl}>Source (optional)</label>
       <input style={inp} value={source} onChange={e=>setSource(e.target.value)} placeholder="e.g. opensecrets.org/..." />
-      <button onClick={submit} style={{ width:"100%", padding:14, borderRadius:12, border:"none", background:T.accent, color:"#fff", fontSize:15, fontWeight:700, cursor:"pointer" }}>Submit</button>
+      <button onClick={submit} style={{ width:"100%", padding:14, borderRadius:12, border:"none", background:T.accent, color:T.bg, fontSize:15, fontWeight:700, cursor:"pointer" }}>Submit</button>
     </div>
   );
 }
