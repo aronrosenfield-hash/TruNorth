@@ -48,8 +48,17 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="https" android:host="www.trunorthapp.com" android:pathPrefix="/company/" />
                 <data android:scheme="https" android:host="www.trunorthapp.com" android:pathPrefix="/c/" />
-                <data android:scheme="https" android:host="trunorthapp.com" android:pathPrefix="/company/" />
-                <data android:scheme="https" android:host="trunorthapp.com" android:pathPrefix="/c/" />
+                <!--
+                  The apex (trunorthapp.com) is deliberately NOT declared.
+                  Android fetches /.well-known/assetlinks.json WITHOUT following
+                  redirects, and the apex 307s to www (verified with curl), so
+                  the apex could never verify — and one failing host drags the
+                  whole autoVerify result down. Every canonical and share URL
+                  the app emits is www (BASE in api/company-seo.js), and the
+                  apex redirect still delivers apex links to www in the browser.
+                  If the apex is ever needed here, it must serve assetlinks.json
+                  directly with a 200, not a redirect.
+                -->
             </intent-filter>
 
             <!--

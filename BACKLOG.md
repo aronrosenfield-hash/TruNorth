@@ -251,7 +251,7 @@
 | **QW-11** | `App.jsx:220` → branch the camera-denied string on `Capacitor.getPlatform()`; sweep iOS-only copy | open |
 | **QW-12** | `theme.js` → `GRADE_COLORS['?'].text` `#6E6A60` → `#9A9489` (2.95:1 → ~5.3:1) | ✅ done |
 | **QW-13** | `eslint.config.js` → `'no-empty': ['error',{allowEmptyCatch:true}]` (133 errors → ~48, makes lint gateable) | open |
-| **QW-14** | Commit `android/` with an `ios/`-style ignore block before native config lands in an untracked tree | open |
+| **QW-14** | Commit `android/` with an `ios/`-style ignore block before native config lands in an untracked tree | ✅ done |
 | **QW-15** | `App.jsx:2213` → `/^\/(?:company\|c)\//` so What's-New stops covering `/c/<slug>` deep links | open |
 | **QW-16** | Refill `editorial.json` (expired 2026-06-08); fall back to `stories[day % len]` not a bare tile | open |
 
