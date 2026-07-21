@@ -39,15 +39,33 @@ export function normalizeBrandKey(s) {
 function resolveKey(k, brandIndex, parentMap, slugIndex) {
   if (!k) return null;
 
+  const mapped = parentMap && parentMap[k];
+  const mappedParent =
+    mapped && mapped.parent && slugIndex.has(mapped.parent) ? slugIndex.get(mapped.parent) : null;
+
   // 1. Exact company-name match — the strongest possible signal.
-  if (brandIndex.has(k)) return brandIndex.get(k);
+  if (brandIndex.has(k)) {
+    const exact = brandIndex.get(k);
+    // B-77 roll-up (Aron's call, 2026-07-20): prefer the parent ONLY when the
+    // exact hit is an ungraded "?" stub and the curated parent IS graded. That
+    // is the single case where rolling up strictly improves the answer — the
+    // user scanned a real product and would otherwise get a shrug.
+    //
+    // We deliberately do NOT always roll up, even though the landing copy says
+    // "subsidiaries roll up to parents": measured on the shipped catalog, 1,015
+    // sub-brands have their OWN grade alongside a graded parent (76 (gas
+    // station) is an F where Phillips 66 is a D — the sub-brand is the more
+    // precise answer), and 42 would LOSE a grade entirely. This rule captures
+    // the ~350 clear wins and makes nothing worse.
+    if (exact.overall == null && mappedParent && mappedParent.overall != null) {
+      return mappedParent;
+    }
+    return exact;
+  }
 
   // 2. Brand-parent map. MUST come before the prefix pass: it is curated
   //    (confidence + source per entry), whereas the prefix pass is a guess.
-  const mapped = parentMap && parentMap[k];
-  if (mapped && mapped.parent && slugIndex.has(mapped.parent)) {
-    return slugIndex.get(mapped.parent);
-  }
+  if (mappedParent) return mappedParent;
 
   // 3. Prefix fallback — last resort, for names not in the map at all
   //    ("Coca-Cola Company" → "Coca-Cola"). Hardened three ways:

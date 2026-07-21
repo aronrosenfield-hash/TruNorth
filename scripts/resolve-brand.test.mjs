@@ -65,10 +65,30 @@ test("guard: ambiguous fragments resolve to nothing, not to a wrong brand", () =
   }
 });
 
-// Whole-corpus accuracy. Locked BELOW the measured 11.4% so a regression toward
-// the old 25.4% fails loudly. The residual is the sub-brand-vs-parent product
-// question (exact matches like "7up" → the 7 Up entry rather than PepsiCo),
-// NOT the prefix hijack — tighten this bound if that decision changes.
+// THE invariant behind the roll-up rule (Aron's call): a scan must never come
+// back as an ungraded "?" when the curated parent IS graded. That is the whole
+// point of rolling up — the user scanned a real product and deserves an answer.
+// Precision is preserved in the other direction: a sub-brand WITH its own grade
+// still wins over its parent ("76 (gas station)" F stays F, not Phillips 66 D).
+test("guard: never returns an ungraded brand when a graded parent exists", () => {
+  const offenders = [];
+  for (const key of Object.keys(parentMap)) {
+    const want = parentMap[key].parent;
+    const parent = slugIndex.get(want);
+    if (!parent || parent.overall == null) continue; // parent isn't graded — nothing to roll up to
+    const got = resolveBrand(key, ctx);
+    if (got && got.overall == null) offenders.push(`${key} → ${got.name} (?) but ${want} is graded`);
+  }
+  assert.equal(
+    offenders.length,
+    0,
+    `${offenders.length} scans return "?" despite a graded parent:\n  ${offenders.slice(0, 8).join("\n  ")}`
+  );
+});
+
+// Whole-corpus accuracy. Locked below the measured 89.3% so a regression toward
+// the old 74.6% fails loudly. The residual is the sub-brand-vs-parent case where
+// BOTH are graded and the sub-brand is deliberately preferred as more precise.
 test("guard: brand-parent-map resolution accuracy stays above 85%", () => {
   let right = 0;
   let wrong = 0;
