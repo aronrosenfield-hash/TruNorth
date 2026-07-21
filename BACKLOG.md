@@ -113,6 +113,19 @@
   "structurally valid but semantically poisoned" blind spot.
 
 
+- **B-95 — Three brand pairs ship CONTRADICTORY grades for the same company.** `ui-guards.test.mjs` has a guard
+  for exactly this (the old "Exxon is a D and a B" bug) and **it is currently RED**:
+  `abercrombie-and-fitch-de=B` vs `abercrombie-and-fitch=F` · `amphenol-de=B` vs `amphenol-corp=F` ·
+  `tjx-companies-de=B` vs `tjx-companies=D`. A user searching "Abercrombie & Fitch" gets **B or F depending on
+  which entry they land on** — directly corrosive to the one claim the product makes. Verified identical before
+  AND after the 2026-07-20 rebake, so this is pre-existing debt, not rebake drift: the Exxon dedup fixed its own
+  family and missed the `-de` suffix family (the same family as the dead `-de` sitemap slugs). Fix path already
+  exists: `scripts/dedup-brands.mjs`. Grade-affecting → run under rule #16 (rebake → finalize → 28 tests →
+  drift audit) with the diff reviewed before commit.
+  **⚠️ This is the case FOR B-82:** the guard was written, it went red, and nothing ran it — there is no CI on
+  any code change. Every fix in this review is one un-run test away from silently regressing. *(effort S · WS-E)*
+
+
 ### 🟠 HIGH
 
 - **B-76 — Search ranking is why the "?" wall feels total (≈60% a sort bug).** `searchHits` runs MiniSearch with
