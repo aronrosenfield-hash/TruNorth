@@ -22,9 +22,27 @@
  *
  *   node scripts/notify-newly-graded.mjs            # dry run (default)
  *   node scripts/notify-newly-graded.mjs --apply    # actually send
+ *   node scripts/notify-newly-graded.mjs --apply --force   # bypass the blast guard
+ *
+ * HOW --apply SENDS: MailerLite campaigns target GROUPS, not arbitrary address
+ * lists. So this sends ONE CAMPAIGN PER NEWLY-GRADED BRAND, to a throwaway
+ * group holding only the people who asked about that brand. That is what lets
+ * the email say "the brand YOU asked about is graded" rather than a generic
+ * blast — which is the promise the app actually made.
+ *
+ * Three rails, because an email cannot be recalled:
+ *   1. Dry run is the DEFAULT. --apply is required to send anything.
+ *   2. Blast guard — refuses above NOTIFY_MAX_RECIPIENTS (default 500) unless
+ *      --force. A poisoned upstream diff (see B-94, where a stale snapshot
+ *      produced 60 false grade claims) must not become a mass mailing.
+ *   3. Idempotency — a fulfilled brand is REMOVED from that subscriber's
+ *      brands_requested after a successful send, so a re-run or next week's
+ *      cron can never notify the same person about the same brand twice.
  *
  * Env: MAILERLITE_API_KEY (required for both modes — the dry run still reads
- *      the subscriber list), MAILERLITE_GROUP_ID (optional, scopes the read).
+ *      the subscriber list), MAILERLITE_GROUP_ID (optional, scopes the read),
+ *      NOTIFY_FROM_EMAIL (defaults to aron@trunorthapp.com — must be a VERIFIED
+ *      MailerLite sender or the campaign will be rejected), NOTIFY_MAX_RECIPIENTS.
  */
 
 import fs from "fs";
@@ -68,7 +86,11 @@ async function ml(pathname, opts = {}) {
     const body = await res.text().catch(() => "");
     throw new Error(`MailerLite ${pathname} → ${res.status} ${body.slice(0, 200)}`);
   }
-  return res.json();
+  // Group-assign and schedule return 200/204 with an empty body; res.json()
+  // would throw on those. Parse defensively.
+  const text = await res.text().catch(() => "");
+  if (!text) return null;
+  try { return JSON.parse(text); } catch { return null; }
 }
 
 /** Every subscriber carrying a brands_requested value. Paginates. */
@@ -135,17 +157,108 @@ async function main() {
     return;
   }
 
-  // NOTE: MailerLite campaigns target groups, not arbitrary address lists, so
-  // an --apply implementation needs a per-run group (or the transactional API).
-  // Deliberately left unimplemented rather than half-built: sending is
-  // irreversible, and the recipient matching above is the part that needed
-  // proving. See docs/ANDROID_LAUNCH_PLAN.md-style setup notes in BACKLOG B-81.
-  console.error(
-    "[notify] --apply is not wired yet: the recipient set is computed and verifiable above, " +
-      "but the send path needs a MailerLite delivery decision (per-run group vs transactional API). " +
-      "Refusing to guess at an irreversible action."
-  );
-  process.exit(2);
+  // ── SEND ────────────────────────────────────────────────────────────────
+  // MailerLite campaigns target GROUPS, not arbitrary address lists. So we send
+  // ONE CAMPAIGN PER NEWLY-GRADED BRAND, to a throwaway group containing only
+  // the people who asked about that brand. That is what makes the email able to
+  // say "the brand YOU asked about is graded" instead of a generic blast — and
+  // it is the promise the app actually made.
+  //
+  // Blast guard: a bug upstream (a bad diff, a poisoned snapshot — see B-94)
+  // could nominate thousands of "newly graded" brands. Refuse anything above
+  // MAX_RECIPIENTS unless --force is passed, because an email cannot be recalled.
+  const MAX_RECIPIENTS = Number(process.env.NOTIFY_MAX_RECIPIENTS || 500);
+  if (recipients.length > MAX_RECIPIENTS && !process.argv.includes("--force")) {
+    console.error(
+      `[notify] REFUSING: ${recipients.length} recipients exceeds the ${MAX_RECIPIENTS} blast guard. ` +
+        "Verify the newly-graded list is real, then re-run with --force (or raise NOTIFY_MAX_RECIPIENTS)."
+    );
+    process.exit(2);
+  }
+
+  const FROM = process.env.NOTIFY_FROM_EMAIL || "aron@trunorthapp.com";
+  const stamp = new Date().toISOString().slice(0, 10);
+
+  // Invert: brand → the subscribers waiting on it.
+  const byBrand = new Map();
+  for (const r of recipients) {
+    for (const h of r.hits) {
+      if (!byBrand.has(h.slug)) byBrand.set(h.slug, { brand: h, emails: [] });
+      byBrand.get(h.slug).emails.push(r.email);
+    }
+  }
+
+  let sent = 0;
+  for (const [slug, { brand, emails }] of byBrand) {
+    const grade = (brand.detail.match(/·\s*([A-F])\s*$/) || [])[1] || "";
+    console.log(`\n[notify] ${brand.name} → ${emails.length} subscriber(s)`);
+
+    // 1. throwaway group scoped to this brand + run
+    const group = await ml("groups", {
+      method: "POST",
+      body: JSON.stringify({ name: `notify · ${slug} · ${stamp}` }),
+    });
+    const groupId = group?.data?.id;
+    if (!groupId) throw new Error(`group create returned no id for ${slug}`);
+
+    // 2. add each waiting subscriber
+    for (const email of emails) {
+      const sub = await ml(`subscribers/${encodeURIComponent(email)}`).catch(() => null);
+      const subId = sub?.data?.id;
+      if (!subId) { console.warn(`  ! could not resolve subscriber ${email}`); continue; }
+      await ml(`subscribers/${subId}/groups/${groupId}`, { method: "POST" });
+    }
+
+    // 3. campaign — plain, factual, links straight to the brand
+    const url = `${SITE}/company/${slug}`;
+    const html =
+      `<p>You asked us to tell you when <strong>${brand.name}</strong> was graded.</p>` +
+      `<p>It now grades <strong>${grade || "—"}</strong> on TruNorth, built only from public records.</p>` +
+      `<p><a href="${url}">See the record for ${brand.name} →</a></p>` +
+      `<p style="color:#888;font-size:12px">You're getting this because you asked to be notified about this brand in the TruNorth app.</p>`;
+    const campaign = await ml("campaigns", {
+      method: "POST",
+      body: JSON.stringify({
+        name: `Newly graded · ${brand.name} · ${stamp}`,
+        type: "regular",
+        emails: [{
+          subject: `${brand.name} is now graded on TruNorth`,
+          from_name: "TruNorth",
+          from: FROM,
+          content: html,
+        }],
+        groups: [groupId],
+      }),
+    });
+    const campaignId = campaign?.data?.id;
+    if (!campaignId) throw new Error(`campaign create returned no id for ${slug}`);
+    await ml(`campaigns/${campaignId}/schedule`, {
+      method: "POST",
+      body: JSON.stringify({ delivery: "instant" }),
+    });
+    console.log(`  ✓ campaign ${campaignId} sent to group ${groupId}`);
+    sent++;
+
+    // 4. IDEMPOTENCY — drop the fulfilled brand from each subscriber's list so a
+    //    re-run (or next week's cron) can never notify the same person twice.
+    for (const email of emails) {
+      const sub = await ml(`subscribers/${encodeURIComponent(email)}`).catch(() => null);
+      const prior = sub?.data?.fields?.[BRANDS_FIELD];
+      if (!prior) continue;
+      const remaining = String(prior)
+        .split("|")
+        .map((b) => b.trim())
+        .filter((b) => b && norm(b) !== norm(brand.name))
+        .join("|");
+      if (remaining === String(prior)) continue;
+      await ml("subscribers", {
+        method: "POST",
+        body: JSON.stringify({ email, fields: { [BRANDS_FIELD]: remaining } }),
+      }).catch((e) => console.warn(`  ! could not clear ${brand.name} for a subscriber: ${e.message}`));
+    }
+  }
+
+  console.log(`\n[notify] done — ${sent} campaign(s) sent across ${recipients.length} subscriber(s).`);
 }
 
 main().catch((err) => {
