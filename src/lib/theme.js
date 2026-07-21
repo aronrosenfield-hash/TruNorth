@@ -42,3 +42,32 @@ export const GRADE_COLORS = {
   // from disagreeing with the other places "?" is drawn.
   "?": { text: "#9A9489", bg: "#16181D", border: "#23262C" },
 };
+
+// B-91 — derive every grade chip from GRADE_COLORS above.
+//
+// App.jsx carried FIVE hand-written copies of this palette. None of the A-F
+// values had drifted yet, but OnboardingFlow's copy HAD (it rendered a C in
+// D's amber and both D rows in F's red, so the very first screen contradicted
+// the app's own colour scale). Duplicated palettes drift; that is what they do.
+// These helpers give every call site one source of truth.
+
+/** Standard grade chip: muted border. Used in lists, rows and shelves. */
+export function gradeChip(grade) {
+  const g = GRADE_COLORS[grade] || GRADE_COLORS["?"];
+  return { bg: g.bg, border: g.border, text: g.text };
+}
+
+/**
+ * Hero variant — the border takes the GRADE colour rather than the muted
+ * border, for the large badge on the brand detail card. Deliberately different
+ * from gradeChip(); it is emphasis, not drift.
+ */
+export function gradeChipHero(grade) {
+  const g = GRADE_COLORS[grade] || GRADE_COLORS["?"];
+  return { bg: g.bg, border: g.text, text: g.text };
+}
+
+/** Just the letter colour — for call sites that only need text. */
+export function gradeColor(grade) {
+  return (GRADE_COLORS[grade] || GRADE_COLORS["?"]).text;
+}

@@ -136,6 +136,33 @@ test("guard: landing + onboarding DEMO grades match the live data (no marketing/
     `Marketing/onboarding demo grades drifted from index.json:\n  ${mismatches.join("\n  ")}`);
 });
 
+test("guard: no new hand-written grade palettes in App.jsx (B-91)", () => {
+  // B-91 (2026-07-20): App.jsx carried FIVE hand-written copies of the A-F
+  // palette. None of the A-F values had drifted yet — but OnboardingFlow's copy
+  // HAD, rendering a C in D's amber and both D rows in F's red, so the very
+  // first screen a user sees contradicted the app's own colour scale. Duplicated
+  // palettes drift; that is what they do. All five now derive from GRADE_COLORS
+  // via gradeChip() / gradeChipHero() in src/lib/theme.js.
+  //
+  // This bans the SHAPE that regresses it: an object literal keyed A/B/C/D/F
+  // whose values are raw grade hexes. Deriving from GRADE_COLORS still passes.
+  const src = fs.readFileSync("src/App.jsx", "utf8");
+  const GRADE_HEX = ["#38C0CE", "#9CC98A", "#A9A498", "#E8A04C", "#E0524D"];
+  const offenders = [];
+  for (const letter of ["A", "B", "C", "D", "F"]) {
+    for (const hex of GRADE_HEX) {
+      // e.g.  A: { bg:"#0E2126", text:"#38C0CE" }   or   A: { color:"#38C0CE"
+      const re = new RegExp(`\\b${letter}:\\s*\\{[^}]*(?:text|color|bg|background)\\s*:\\s*"${hex}"`);
+      if (re.test(src)) offenders.push(`${letter}: { …"${hex}" }`);
+    }
+  }
+  assert.equal(
+    offenders.length, 0,
+    "New hand-written grade palette in App.jsx — derive from GRADE_COLORS " +
+      `(gradeChip/gradeChipHero in src/lib/theme.js) instead:\n  ${offenders.join("\n  ")}`
+  );
+});
+
 test("guard: the C grade never renders in D's amber (#E8A04C) — C is bone-gray", () => {
   // 2026-07-04 (diligence): grade badges hand-inlined C and D BOTH as #E8A04C
   // amber, so a "mixed" C and a "below-average" D were indistinguishable in a

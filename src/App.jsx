@@ -19,7 +19,7 @@ import { computeFingerprint, persistFingerprint, getStoredFingerprint } from "./
 import { useConfirm, usePrompt, useAlert } from "./components/ConfirmModal";
 import { subscribeEmail, getStoredEmail, deleteAccountData } from "./lib/marketing";
 import { writeWidgetSnapshot } from "./lib/widget";
-import { T, SERIF, MONO, GRADE_COLORS } from "./lib/theme";
+import { T, SERIF, MONO, GRADE_COLORS, gradeChip, gradeChipHero } from "./lib/theme";
 import { tapMedium, notifySuccess } from "./lib/haptics";
 import CompassSeal, { COMPASS_AXES } from "./CompassSeal";
 
@@ -1998,12 +1998,12 @@ function BrandOfDayCard({ editorial, deduped, profile, openBrand }) {
       const pickScore = computeScore(co, profile);
       const pickGrade = scoreGrade(pickScore, userRelevantRealCats(co, profile));
       const flavor = {
-        A: { color:"#38C0CE", bgTint:"rgba(76,175,130,0.08)", borderTint:"rgba(76,175,130,0.4)", chipBg:"#0E2126" },
-        B: { color:"#9CC98A", bgTint:"rgba(139,195,74,0.08)", borderTint:"rgba(139,195,74,0.4)", chipBg:"#19230F" },
-        C: { color:"#A9A498", bgTint:"rgba(169,164,152,0.08)", borderTint:"rgba(169,164,152,0.4)", chipBg:"#1F2228" },
-        D: { color:"#E8A04C", bgTint:"rgba(255,112,67,0.08)", borderTint:"rgba(255,112,67,0.4)", chipBg:"#241B0D" },
-        F: { color:"#E0524D", bgTint:"rgba(226,74,74,0.08)", borderTint:"rgba(226,74,74,0.4)", chipBg:"#291110" },
-      }[pickGrade] || { color:"#E8A04C", bgTint:"rgba(240,160,48,0.08)", borderTint:"rgba(240,160,48,0.4)", chipBg:"#1F2228" };
+        A: { color:GRADE_COLORS.A.text, bgTint:"rgba(76,175,130,0.08)", borderTint:"rgba(76,175,130,0.4)", chipBg:GRADE_COLORS.A.bg },
+        B: { color:GRADE_COLORS.B.text, bgTint:"rgba(139,195,74,0.08)", borderTint:"rgba(139,195,74,0.4)", chipBg:GRADE_COLORS.B.bg },
+        C: { color:GRADE_COLORS.C.text, bgTint:"rgba(169,164,152,0.08)", borderTint:"rgba(169,164,152,0.4)", chipBg:GRADE_COLORS.C.bg },
+        D: { color:GRADE_COLORS.D.text, bgTint:"rgba(255,112,67,0.08)", borderTint:"rgba(255,112,67,0.4)", chipBg:GRADE_COLORS.D.bg },
+        F: { color:GRADE_COLORS.F.text, bgTint:"rgba(226,74,74,0.08)", borderTint:"rgba(226,74,74,0.4)", chipBg:GRADE_COLORS.F.bg },
+      }[pickGrade] || { color:GRADE_COLORS["?"].text, bgTint:"rgba(154,148,137,0.08)", borderTint:"rgba(154,148,137,0.4)", chipBg:GRADE_COLORS["?"].bg };  // B-91: was D-amber for an UNKNOWN grade
       return (
         <div
           onClick={() => openBrand(co.slug || co.id, { focusDetail: false, trackEvent: "editorial_clicked", trackProps: { story_id: story.id } })}
@@ -2041,11 +2041,11 @@ function BrandOfDayCard({ editorial, deduped, profile, openBrand }) {
   const pickScore = computeScore(pick, profile);
   const pickGrade = scoreGrade(pickScore, userRelevantRealCats(pick, profile));
   const flavorByGrade = {
-    A: { tag: "Worth knowing", color: "#38C0CE", bgTint: "rgba(76,175,130,0.08)", borderTint: "rgba(76,175,130,0.4)" },
-    B: { tag: "Worth knowing", color: "#9CC98A", bgTint: "rgba(139,195,74,0.08)", borderTint: "rgba(139,195,74,0.4)" },
-    C: { tag: "Mixed signal",  color: "#A9A498", bgTint: "rgba(169,164,152,0.08)", borderTint: "rgba(169,164,152,0.4)" },
-    D: { tag: "Worth a look",  color: "#E8A04C", bgTint: "rgba(255,112,67,0.08)", borderTint: "rgba(255,112,67,0.4)" },
-    F: { tag: "Worth a look",  color: "#E0524D", bgTint: "rgba(226,74,74,0.08)", borderTint: "rgba(226,74,74,0.4)" },
+    A: { tag: "Worth knowing", color: GRADE_COLORS.A.text, bgTint: "rgba(76,175,130,0.08)", borderTint: "rgba(76,175,130,0.4)" },
+    B: { tag: "Worth knowing", color: GRADE_COLORS.B.text, bgTint: "rgba(139,195,74,0.08)", borderTint: "rgba(139,195,74,0.4)" },
+    C: { tag: "Mixed signal",  color: GRADE_COLORS.C.text, bgTint: "rgba(169,164,152,0.08)", borderTint: "rgba(169,164,152,0.4)" },
+    D: { tag: "Worth a look",  color: GRADE_COLORS.D.text, bgTint: "rgba(255,112,67,0.08)", borderTint: "rgba(255,112,67,0.4)" },
+    F: { tag: "Worth a look",  color: GRADE_COLORS.F.text, bgTint: "rgba(226,74,74,0.08)", borderTint: "rgba(226,74,74,0.4)" },
   };
   const fl = flavorByGrade[pickGrade] || flavorByGrade.C;
   return (
@@ -3285,18 +3285,18 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
               a lock here wrongly implied the grade itself was locked (diligence).
               Pro is signaled by the Upgrade button + the gated detail rows. */}
           {(() => {
-            const gradeRowColors = {
-              A: { bg:"#0E2126", border:"#1E444A", text:"#38C0CE" },
-              B: { bg:"#19230F", border:"#2E4A1E", text:"#9CC98A" },
-              C: { bg:"#1F2228", border:"#2A2E35", text:"#A9A498" },
-              D: { bg:"#241B0D", border:"#4A381E", text:"#E8A04C" },
-              F: { bg:"#291110", border:"#4A1E1E", text:"#E0524D" },
-              "?": { bg:T.bg3, border:T.border2, text:T.txt3 },
-            };
-            const rc = gradeRowColors[grade];
+            // B-91: was a hand-written copy of GRADE_COLORS.
+            const rc = gradeChip(grade);
             return (
               <div style={{ width:38, height:38, borderRadius:10, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", background:rc.bg, border:`1px solid ${rc.border}` }} title={profile ? "Your personalized grade" : (grade === "?" ? "No public record yet — we don't guess" : "Baseline grade — take the Match to personalize")}>
-                <div style={{ fontSize:isPaid?17:22, fontWeight:700, color:rc.text, lineHeight:1, opacity: profile || grade === "?" ? 1 : 0.82 }}>{grade}</div>
+                {/* B-91: this carried `opacity: 0.82` for un-quizzed users to
+                    signal "baseline". Opacity is not a legend — the only
+                    explanation was a title attribute, which never fires on
+                    touch — and composited it dropped an F to 3.19:1, below
+                    WCAG AA, on v1.1's headline feature. The hero block below
+                    already says the grade is a baseline in words; the letter
+                    itself now always renders at full contrast. */}
+                <div style={{ fontSize:isPaid?17:22, fontWeight:700, color:rc.text, lineHeight:1 }}>{grade}</div>
                 {isPaid && profile && <div style={{ fontSize:10, color:rc.text, opacity:0.7 }}>{ps}</div>}
               </div>
             );
@@ -3734,15 +3734,10 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
               orange=C, red=D, dark red=F). Visual-first; the rest of the
               profile flows below it. Pre-quiz users see a neutral grey circle. */}
           {(() => {
-            const gradeColors = {
-              A: { bg:"#0E2126", border:"#38C0CE", text:"#38C0CE" },
-              B: { bg:"#19230F", border:"#9CC98A", text:"#9CC98A" },
-              C: { bg:"#1F2228", border:"#A9A498", text:"#A9A498" },
-              D: { bg:"#241B0D", border:"#E8A04C", text:"#E8A04C" },
-              F: { bg:"#291110", border:"#E0524D", text:"#E0524D" },
-              "?": { bg:T.bg3, border:T.border2, text:T.txt3 },
-            };
-            const gc = gradeColors[grade];
+            // B-91: hero variant — the border takes the GRADE colour rather
+            // than the muted one (emphasis, deliberately different from
+            // gradeChip). Derived from GRADE_COLORS instead of a 5th copy.
+            const gc = gradeChipHero(grade);
             return (
               <div style={{ display:"flex", alignItems:"center", gap:14, marginBottom:18, padding:"14px 14px 16px", background:T.bg3, borderRadius:14, border:`1px solid ${T.border}` }}>
                 {/* R1 (Compass redesign): the verdict SEAL replaces the grade
@@ -6587,13 +6582,8 @@ if (screen === "basket") {
                     winner could legitimately be a B or C — don't lie. */}
                 {(() => {
                   const wg = scoreGrade(winner.score, userRelevantRealCats(winner.co, profile));
-                  const palette = {
-                    A: { bg:"#0E2126", border:"#1E444A", text:"#38C0CE" },
-                    B: { bg:"#19230F", border:"#2E4A1E", text:"#9CC98A" },
-                    C: { bg:"#1F2228", border:"#2A2E35", text:"#A9A498" },
-                    D: { bg:"#241B0D", border:"#4A381E", text:"#E8A04C" },
-                    F: { bg:"#291110", border:"#4A1E1E", text:"#E0524D" },
-                  }[wg] || { bg:T.bg3, border:T.border2, text:T.txt3 };
+                  // B-91: was a hand-written copy of GRADE_COLORS.
+                  const palette = gradeChip(wg);
                   return (
                     <div style={{ width:44, height:44, borderRadius:10, background:palette.bg, border:`1px solid ${palette.border}`, display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
                       <div style={{ fontSize:18, fontWeight:700, color:palette.text, lineHeight:1 }}>{wg}</div>
@@ -7171,7 +7161,12 @@ if (screen === "basket") {
                             style={{ flex: 1, minWidth: 0, background: T.bg3, border: `1px solid ${T.border2}`, borderRadius: 12, padding: "10px 4px 8px", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
                             <CompanyLogo company={co} size={34} />
                             <div style={{ fontSize: 10, color: T.txt2, fontWeight: 600, maxWidth: "100%", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{co.name}</div>
-                            <div style={{ fontFamily: SERIF, fontSize: 15, fontWeight: 600, color: gcol, opacity: profile || g === "?" ? 1 : 0.82 }}>{g}</div>
+                            {/* B-91: dropped `opacity: 0.82` for un-quizzed
+                                users. This site never even had the title
+                                attribute the grade badge carried, so the fade
+                                communicated nothing at all while pushing an F
+                                to 3.19:1 — below WCAG AA. */}
+                            <div style={{ fontFamily: SERIF, fontSize: 15, fontWeight: 600, color: gcol }}>{g}</div>
                           </button>
                         );
                       })}

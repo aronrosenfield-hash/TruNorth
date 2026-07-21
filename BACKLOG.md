@@ -223,7 +223,7 @@
   Food Facts, but `App.jsx:405` sends the barcode + user IP to `api.upcitemdb.com`, disclosed nowhere (incl. the
   App Store nutrition label). The scanner header asserts "We never store the barcode" while `:431` ships the raw
   barcode to PostHog. *(Copy half fixed in Batch A.)* *(effort S · WS-E)*
-- **B-91 ⚠️ PARTIAL — Kill opacity-as-meaning for the baseline/ungraded state.** v1.1's headline feature reaches first-run
+- **B-91 ✅ DONE — Kill opacity-as-meaning for the baseline/ungraded state.** v1.1's headline feature reaches first-run
   users as faded letters with no legend; the only explanation is a `title` attribute that never fires on touch.
   Composited, the 0.82 multiplier drops F to **3.19:1**. Replace with a tappable "BASELINE" chip; delete the 8
   duplicated inline grade maps (`GRADE_COLORS` is imported at `:20` and that import is its ONLY occurrence in
