@@ -17,11 +17,10 @@ name: ci
 #                       green build (see the nested-template-literal incident).
 #   • scoring-engine  — the 28 frozen-threshold tests. Non-negotiable.
 #   • ui-guards       — box-sizing/overflow/contrast/dedup invariants.
+#   • resolve-brand   — scanner brand→company accuracy (B-77).
+#   • scoringFlags    — na / notDisclosed / inferred render + exclusion (B-96).
 #
 # NOT gated yet, on purpose:
-#   • (RESOLVED B-96) scoringFlags.test.mjs is now gated below.
-
-
 #   • the ~133 fetcher tests — they hit the network and belong on a schedule.
 #   • eslint — 133 errors today, ~85 of them no-empty (QW-13). Make it green
 #     first, then gate.
