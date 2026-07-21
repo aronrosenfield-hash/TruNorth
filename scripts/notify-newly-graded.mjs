@@ -131,12 +131,54 @@ async function audit() {
     console.error("[audit] MAILERLITE_API_KEY missing — cannot read the waiting list.");
     process.exit(1);
   }
+  // Census first: "0 waiting" means something very different if there are no
+  // subscribers at all vs. hundreds who simply predate the append-only fix.
+  // Also count the LEGACY single-value `brand` field — every request captured
+  // before that fix landed there and was overwritten by the next one, so any
+  // rows here are recoverable demand we would otherwise never see.
+  let total = 0, legacy = 0;
+  const legacyBrands = new Map();
+  {
+    let cursor = null;
+    for (let page = 0; page < 50; page++) {
+      const qs = new URLSearchParams({ limit: "200" });
+      if (ML_GROUP) qs.set("filter[group]", ML_GROUP);
+      if (cursor) qs.set("cursor", cursor);
+      const data = await ml(`subscribers?${qs}`);
+      for (const s of data.data || []) {
+        total++;
+        const b = s.fields && s.fields.brand;
+        if (b) {
+          legacy++;
+          const k = norm(b);
+          if (!legacyBrands.has(k)) legacyBrands.set(k, { label: b, n: 0 });
+          legacyBrands.get(k).n++;
+        }
+      }
+      cursor = data.meta && data.meta.next_cursor;
+      if (!cursor) break;
+    }
+  }
+  console.log(`[audit] ${total} subscriber(s) on the list`);
+  console.log(`[audit] ${legacy} carry the LEGACY single-value 'brand' field`);
+
   const waiting = await fetchWaiting();
   console.log(`[audit] ${waiting.length} subscriber(s) carry a ${BRANDS_FIELD} value`);
+
+  if (legacy) {
+    console.log(`\n  RECOVERABLE legacy requests (pre append-only fix — each subscriber kept only their LAST):`);
+    for (const d of [...legacyBrands.values()].sort((a, b) => b.n - a.n).slice(0, 25)) {
+      console.log(`    ${String(d.n).padStart(4)}×  ${d.label}`);
+    }
+    console.log(`  → worth migrating into ${BRANDS_FIELD} so these people still get notified.`);
+  }
+
   if (!waiting.length) {
     console.log(
-      `[audit] none yet. Expected if the capture fix only just deployed — the field is\n` +
-      `        written on the next "notify me when we grade X" tap, not backfilled.`
+      `\n[audit] no ${BRANDS_FIELD} values yet.` +
+      (total === 0
+        ? " There are no subscribers at all, so nothing to verify."
+        : " Expected if the capture fix only just deployed — the\n        field is written on the next \"notify me\" tap, not backfilled.")
     );
     return;
   }
