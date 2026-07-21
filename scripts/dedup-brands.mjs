@@ -33,6 +33,18 @@ const MERGES = [
     "exxonmobil-fuels-lubricants-and-specialties-marketing-company",
     "exxonmobil-refining-and-supply-company"], name: "ExxonMobil" },
   { canonical: "southern-copper-corp", losers: ["southern-copper"], name: "Southern Copper" },
+
+  // B-95 — the "-de" family (2026-07-20). ui-guards' "no two brands share a
+  // name with CONTRADICTORY grades" was RED on these three and nobody knew,
+  // because no workflow ran tests on a code change until B-82. Each "-de"
+  // entry carries realCats=1 and overall EXACTLY 50 — the neutral midpoint —
+  // so it renders a B purely from the ABSENCE of evidence, while the real
+  // entry for the same brand carries realCats=3 and an actual record. Searching
+  // "Abercrombie & Fitch" returned B or F depending which row you hit.
+  // Canonical = the evidenced entry (most realCats), per the rule above.
+  { canonical: "abercrombie-and-fitch", losers: ["abercrombie-and-fitch-de"], name: "Abercrombie & Fitch" },
+  { canonical: "amphenol-corp",         losers: ["amphenol-de"],              name: "Amphenol" },
+  { canonical: "tjx-companies",         losers: ["tjx-companies-de"],         name: "TJX Companies" },
 ];
 
 const readJSON = (p) => JSON.parse(fs.readFileSync(p, "utf8"));

@@ -113,7 +113,7 @@
   "structurally valid but semantically poisoned" blind spot.
 
 
-- **B-95 — Three brand pairs ship CONTRADICTORY grades for the same company.** `ui-guards.test.mjs` has a guard
+- **B-95 ✅ DONE — Three brand pairs ship CONTRADICTORY grades for the same company.** `ui-guards.test.mjs` has a guard
   for exactly this (the old "Exxon is a D and a B" bug) and **it is currently RED**:
   `abercrombie-and-fitch-de=B` vs `abercrombie-and-fitch=F` · `amphenol-de=B` vs `amphenol-corp=F` ·
   `tjx-companies-de=B` vs `tjx-companies=D`. A user searching "Abercrombie & Fitch" gets **B or F depending on
@@ -174,7 +174,7 @@
   lands in MailerLite `fields.brand`, which upserts by email — a user asking about three brands keeps only the
   last. Add `scripts/detect-newly-graded.mjs` + per-brand groups + a campaign step. If it can't land in v1.2,
   **downgrade the copy to something true today.** *(effort L · WS-A)*
-- **B-82 — Add a CI workflow: 168 workflows exist and not one runs on a code change.** Zero have a
+- **B-82 ✅ DONE — Add a CI workflow: 168 workflows exist and not one runs on a code change.** Zero have a
   `pull_request` trigger. The only pre-ship gate is `ship-ios.sh:88` running one test file; the 28 frozen-
   threshold tests and 135 others never run automatically. **This is the enabling condition for the drift found
   throughout this review** (the A≥62/B≥50/C≥38/D≥33 thresholds exist verbatim in FOUR files). Add `ci.yml`:
