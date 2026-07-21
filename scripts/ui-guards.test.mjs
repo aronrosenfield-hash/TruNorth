@@ -136,6 +136,38 @@ test("guard: landing + onboarding DEMO grades match the live data (no marketing/
     `Marketing/onboarding demo grades drifted from index.json:\n  ${mismatches.join("\n  ")}`);
 });
 
+test("guard: every outbound sender is on the AUTHENTICATED domain", () => {
+  // 2026-07-21: send-weekly-digest.mjs sent from "Aron@trunorth.com" —
+  // trunorth.com, NOT the DNS-authenticated trunorthapp.com. A sender on an
+  // unauthenticated domain gets rejected or spam-foldered, so the weekly digest
+  // could never have delivered. It hid for months because the digest had
+  // nothing to send (B-70 kept its input empty for five weeks), so the broken
+  // sender was never exercised.
+  //
+  // Only trunorthapp.com is authenticated (DKIM + SPF; see the note at
+  // api/submit.js). This checks FROM addresses only — recipients (SUBMIT_INBOX)
+  // can be any domain.
+  const AUTHENTICATED = "trunorthapp.com";
+  const files = ["scripts/send-weekly-digest.mjs", "scripts/notify-newly-graded.mjs", "api/submit.js"];
+  const offenders = [];
+  for (const file of files) {
+    if (!fs.existsSync(file)) continue;
+    const src = fs.readFileSync(file, "utf8");
+    // from: "..." / from: "Name <addr>"  — literal senders only; env-driven
+    // values are resolved at runtime and default to the authenticated domain.
+    for (const m of src.matchAll(/\bfrom:\s*"([^"]+)"/g)) {
+      const addr = (m[1].match(/<([^>]+)>/) || [null, m[1]])[1].trim();
+      if (!addr.includes("@")) continue;
+      const domain = addr.split("@")[1].toLowerCase();
+      if (domain !== AUTHENTICATED) offenders.push(`${file}: from "${addr}" (${domain} is not authenticated)`);
+    }
+  }
+  assert.equal(
+    offenders.length, 0,
+    `Outbound sender on an unauthenticated domain — mail will be rejected or spam-foldered:\n  ${offenders.join("\n  ")}`
+  );
+});
+
 test("guard: no light-on-bright style pair below WCAG AA 4.5:1", () => {
   // 2026-07-21 sweep. Eight inline style pairs shipped below AA: six were
   // #fff on the verdigris accent (2.19:1) — primary CTAs, the filter-count

@@ -4794,7 +4794,7 @@ function SubmitView({ isPaid, onUpgrade }) {
     if (!company.trim() || !detail.trim()) { alert("Please fill in company name and description."); return; }
     track("submit_company", { type, category: cat, companyName: company.trim() });
     // Phase 5.as r2: actually deliver the submission (was being dropped).
-    // /api/submit is a Vercel edge function that emails Aron@trunorth.com
+    // /api/submit is a Vercel edge function that emails SUBMIT_INBOX
     // via Resend (with a console-log fallback if Resend isn't configured).
     // Non-blocking — UI confirms regardless of API success so the user is
     // never penalized for our infra hiccups.

@@ -41,8 +41,8 @@
  *
  * Env: MAILERLITE_API_KEY (required for both modes — the dry run still reads
  *      the subscriber list), MAILERLITE_GROUP_ID (optional, scopes the read),
- *      NOTIFY_FROM_EMAIL (defaults to aron@trunorthapp.com — must be a VERIFIED
- *      MailerLite sender or the campaign will be rejected), NOTIFY_MAX_RECIPIENTS.
+ *      TRUNORTH_FROM_EMAIL (defaults to aron@trunorthapp.com, the AUTHENTICATED
+ *      domain — shared with send-weekly-digest.mjs), NOTIFY_MAX_RECIPIENTS.
  */
 
 import fs from "fs";
@@ -176,7 +176,7 @@ async function main() {
     process.exit(2);
   }
 
-  const FROM = process.env.NOTIFY_FROM_EMAIL || "aron@trunorthapp.com";
+  const FROM = process.env.TRUNORTH_FROM_EMAIL || "aron@trunorthapp.com";
   const stamp = new Date().toISOString().slice(0, 10);
 
   // Invert: brand → the subscribers waiting on it.

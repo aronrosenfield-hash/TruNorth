@@ -5,7 +5,7 @@
 // user corrections is a trust-killer. This endpoint delivers them somewhere:
 //
 //   1. Stamps the payload with timestamp + IP-derived country
-//   2. Forwards to RESEND_API_KEY if configured → email to Aron@trunorth.com
+//   2. Forwards to RESEND_API_KEY if configured → email to SUBMIT_INBOX
 //   3. Falls back to console.log (visible in Vercel function logs)
 //
 // Always returns 200 to avoid noisy errors at the client; the user already
@@ -13,7 +13,7 @@
 //
 // Required env (set in Vercel project → Environment Variables):
 //   RESEND_API_KEY   — Resend.com API key (free tier = 100 emails/day)
-//   SUBMIT_INBOX     — where to deliver, e.g. aron@trunorth.com
+//   SUBMIT_INBOX     — where to deliver, e.g. aron@trunorthapp.com
 //
 // Without those, submissions still log to Vercel + return 200 — no broken UX.
 

@@ -128,6 +128,13 @@ if (DRY_RUN) {
   process.exit(0);
 }
 
+// 2026-07-21: this sent from "Aron@trunorth.com" — trunorth.com, NOT the
+// authenticated trunorthapp.com. MailerLite rejects (or spam-folders) a sender
+// on an unauthenticated domain, so the digest could never have delivered. It
+// went unnoticed because the digest had nothing to send for five weeks (B-70).
+// Shared with scripts/notify-newly-graded.mjs via the same env var.
+const FROM_EMAIL = process.env.TRUNORTH_FROM_EMAIL || "aron@trunorthapp.com";
+
 // ── Create campaign ──────────────────────────────────────────────────────────
 async function ml(endpoint, body, method = "POST") {
   const res = await fetch(`https://connect.mailerlite.com/api/${endpoint}`, {
@@ -151,7 +158,7 @@ const campaign = await ml("campaigns", {
   emails: [{
     subject,
     from_name: "TruNorth",
-    from: "Aron@trunorth.com",
+    from: FROM_EMAIL,
     content: html,
   }],
   groups: [GROUP_ID],
