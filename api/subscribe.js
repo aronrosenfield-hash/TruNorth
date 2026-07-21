@@ -16,6 +16,49 @@ export const config = { runtime: "edge" };
 
 const ML_ENDPOINT = "https://connect.mailerlite.com/api/subscribers";
 
+// ── B-81: append-only "notify me when we grade X" requests ───────────────────
+// MailerLite upserts subscribers by email, so any single-value field is
+// last-write-wins. This list field is the system of record for which brands a
+// person is waiting on; scripts/notify-newly-graded.mjs reads it.
+// Pipe-delimited because brand names legitimately contain commas
+// ("Ben & Jerry's, Inc"). Capped so one user can't grow an unbounded field.
+const BRANDS_FIELD = "brands_requested";
+const MAX_TRACKED_BRANDS = 25;
+
+/** Merge a new brand into an existing pipe-delimited list, de-duped, capped. */
+export function mergeBrandList(prior, brand) {
+  const seen = new Set();
+  const out = [];
+  for (const raw of String(prior || "").split("|").concat([brand || ""])) {
+    const t = raw.trim();
+    if (!t) continue;
+    const k = t.toLowerCase();
+    if (seen.has(k)) continue;
+    seen.add(k);
+    out.push(t);
+  }
+  // Keep the MOST RECENT requests if someone exceeds the cap.
+  return out.slice(-MAX_TRACKED_BRANDS).join("|");
+}
+
+/**
+ * Existing brands_requested for this email, or "" if new/unavailable.
+ * `mlKey` is passed in rather than read from module scope — MAILERLITE_API_KEY
+ * is resolved inside the handler, so closing over it here would throw.
+ */
+async function fetchPriorBrands(email, mlKey) {
+  try {
+    const r = await fetch(`${ML_ENDPOINT}/${encodeURIComponent(email)}`, {
+      headers: { Authorization: `Bearer ${mlKey}`, Accept: "application/json" },
+    });
+    if (!r.ok) return ""; // 404 = new subscriber; anything else = fail open
+    const d = await r.json().catch(() => null);
+    return (d && d.data && d.data.fields && d.data.fields[BRANDS_FIELD]) || "";
+  } catch {
+    return ""; // never block a signup on the read
+  }
+}
+
 // Per-IP rate limit: 5 requests per 60s window (in-memory; resets on edge
 // cold-start, which is fine for spam protection).
 const _hits = new Map();
@@ -113,9 +156,23 @@ export default async function handler(req) {
   }
 
   try {
+    // B-81 (2026-07-20): "notify me when we grade X" wrote the brand into
+    // `fields.brand`, and MailerLite UPSERTS by email — so a user who asked
+    // about three brands kept only the last, and we silently dropped the other
+    // two requests while the UI said "we'll email you the moment X is graded".
+    // Accumulate into an append-only `brands_requested` list instead. `brand`
+    // is still written (most-recent, useful for segmentation) but is no longer
+    // the system of record.
+    const fields = { source, ...sanitizeMetadata(metadata) };
+    const requestedBrand =
+      metadata && typeof metadata.brand === "string" ? metadata.brand.trim().slice(0, 60) : "";
+    if (requestedBrand) {
+      fields[BRANDS_FIELD] = mergeBrandList(await fetchPriorBrands(email, ML_KEY), requestedBrand);
+    }
+
     const payload = {
       email,
-      fields: { source, ...sanitizeMetadata(metadata) },
+      fields,
       // 2026-06-05: opt EVERY subscriber into double-opt-in by default.
       // MailerLite recognizes status:"unconfirmed" → automatically sends
       // a "Please confirm your subscription" email with a click-through

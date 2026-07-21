@@ -87,3 +87,19 @@ jobs:
           done
           echo "::error::rebake push failed after 3 attempts — grades did NOT ship" >&2
           exit 1
+
+      # B-81 — "we'll email you the moment <brand> is graded" had ZERO consumers
+      # anywhere in scripts/, api/ or .github/workflows/. This step consumes the
+      # `new_brand` rows the step above just produced (a brand crossing "?" → A-F
+      # is absent from last week's graded-only snapshot, so it already shows up
+      # as newly graded) and reports exactly who is waiting on each one.
+      #
+      # DRY RUN ON PURPOSE — it sends nothing. Email is irreversible and
+      # outward-facing, so the recipient set gets proven in the logs for a few
+      # weeks before anyone flips this to --apply. `|| true` keeps a reporting
+      # step from ever failing the data job.
+      - name: Notify-me dry run (newly graded brands)
+        env:
+          MAILERLITE_API_KEY: ${{ secrets.MAILERLITE_API_KEY }}
+          MAILERLITE_GROUP_ID: ${{ secrets.MAILERLITE_GROUP_ID }}
+        run: node scripts/notify-newly-graded.mjs || true
