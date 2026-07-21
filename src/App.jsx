@@ -3997,6 +3997,46 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
             const zeroData = profile ? ps == null : (enriched.realCats ?? 0) === 0;
             if (!zeroData) return null;
             const isPrivate = !enriched.ticker && !enriched.isPublic;
+            // B-80 (2026-07-20): the "?" screen was a dead end — 76% of sessions
+            // land here and the card offered nothing to do next. Verified across
+            // all 9,776 ungraded brands: 100% have at least three GRADED
+            // same-category peers, so there is always a way forward. Sorted
+            // best-first, because the useful question after "we can't grade
+            // this" is "then what CAN I buy?".
+            const sameAisle = (allCompanies || [])
+              .filter(c =>
+                c.cat === enriched.cat &&
+                c.overall != null &&
+                (c.slug || c.id) !== (enriched.slug || enriched.id) &&
+                c.consumerFacing !== false
+              )
+              .sort((a, b) => (b.overall ?? -1) - (a.overall ?? -1))
+              .slice(0, 3);
+            const altsBlock = sameAisle.length > 0 ? (
+              <div style={{ marginTop:12, paddingTop:10, borderTop:`1px solid ${T.border}` }}>
+                <div style={{ fontSize:10, fontWeight:700, color:T.txt3, textTransform:"uppercase", letterSpacing:0.6, marginBottom:8 }}>
+                  Graded alternatives in {enriched.cat || "this category"}
+                </div>
+                {sameAisle.map(alt => {
+                  const g = GRADE_COLORS[alt.grade] || GRADE_COLORS["?"];
+                  return (
+                    <button
+                      key={alt.slug || alt.id}
+                      onClick={() => {
+                        try { track("ungraded_alt_tapped", { from: enriched.slug, to: alt.slug }); } catch {}
+                        if (onNavigate) onNavigate(alt.slug || alt.id);
+                      }}
+                      style={{ display:"flex", alignItems:"center", gap:10, padding:"8px 10px", marginBottom:6, background:T.bg2, border:`1px solid ${T.border}`, borderRadius:10, cursor:"pointer", textAlign:"left", width:"100%", minHeight:44 }}
+                    >
+                      <CompanyLogo company={alt} size={28} />
+                      <div style={{ flex:1, minWidth:0, fontSize:13, fontWeight:600, color:T.txt, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{alt.name}</div>
+                      <div style={{ padding:"3px 9px", borderRadius:7, background:g.bg, color:g.text, fontSize:13, fontWeight:700 }}>{alt.grade}</div>
+                      <i className="ti ti-chevron-right" style={{ fontSize:14, color:T.txt3 }} aria-hidden="true" />
+                    </button>
+                  );
+                })}
+              </div>
+            ) : null;
             // 2026-06-11 (Aron): private + zero-data gets a DISTINCT card, not
             // the generic gray one — users were reading bare empty rows as
             // "the app failed." The truth is structural and worth saying
@@ -4035,6 +4075,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                   <div style={{ marginTop:11, paddingTop:11, borderTop:`1px solid ${T.border}` }}>
                     <SuggestBrandButton query={enriched.name} context="graded" />
                   </div>
+                  {altsBlock}
                 </div>
               );
             }
@@ -4052,7 +4093,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
             if (enriched.wiki && (enriched.wiki.summary || enriched.wiki.website)) found.push("a company profile");
             if (enriched.bbb && enriched.bbb.rating) found.push("a BBB rating");
             if (enriched.cik || enriched.secFilings) found.push("SEC filings");
-            if (enriched.enriched && Object.keys(enriched.enriched).length) found.push("public-record footprint");
+            if (enriched.enriched && Object.keys(enriched.enriched).length) found.push("a public-record footprint");
             const foundLabel =
               found.length === 1 ? found[0]
               : found.length === 2 ? `${found[0]} and ${found[1]}`
@@ -4068,7 +4109,17 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                     ? `We have ${foundLabel} for this brand — but nothing yet from the regulator, court, and certification feeds a grade is built from. We don’t grade what we can’t source, so it stays a “?” until one lands.`
                     : "None of our 200+ public-records sources currently report on this brand. Records are added as regulators publish them."}
                 </div>
+                {/* B-80 "receipt of absence": say the CADENCE, which is true (the
+                    regulator/court crons run weekly), rather than a per-brand
+                    "checked on <date>". dataLastUpdated exists on 97% of
+                    companies but reads 2026-05 — two months stale, and 125 of a
+                    400-brand sample hold an object rather than a date — so a
+                    dated claim would be fabricated precision. */}
+                <div style={{ fontSize:11, color:T.txt3, opacity:0.85, marginBottom:10 }}>
+                  We re-check the regulator, court, and certification feeds every week.
+                </div>
                 <SuggestBrandButton query={enriched.name} context="graded" />
+                {altsBlock}
               </div>
             );
           })()}
