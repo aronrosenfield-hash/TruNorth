@@ -136,7 +136,7 @@
 
 ### 🟠 HIGH
 
-- **B-76 — Search ranking is why the "?" wall feels total (≈60% a sort bug).** `searchHits` runs MiniSearch with
+- **B-76 ✅ DONE — Search ranking is why the "?" wall feels total (≈60% a sort bug).** `searchHits` runs MiniSearch with
   `boost name:5` then collapses to a membership **Set** (`:5881`); `filtered` re-sorts **alphabetically**
   (`sort` defaults to `"name"`, `:5388`). Replayed on the shipped index: `coca` → COCA COLA FEMSA (?) above
   Coca-Cola; `apple` → Abrams Appleseed (?) above Apple; `pet` → 9 of top 12 are shrugs. The typeahead

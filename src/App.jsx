@@ -5418,7 +5418,17 @@ useEffect(() => {
       // means multi-word queries ("General Mills") only return companies with
       // BOTH tokens (was returning 290 fuzzy matches before).
       const results = searchIndex.search(q, { boost: { name: 5 }, prefix: true, fuzzy: 0.2, combineWith: "AND" });
-      return new Set(results.map(r => r.slug || r.id));
+      // B-76 (2026-07-20): this used to collapse to a Set, throwing MiniSearch's
+      // relevance order away — and `filtered` then re-sorted ALPHABETICALLY
+      // (sort defaulted to "name"), so "coca" ranked COCA COLA FEMSA (?) above
+      // Coca-Cola, "apple" ranked Abrams Appleseed (?) above Apple, and 9 of the
+      // top 12 for "pet" were shrugs. The typeahead DID keep relevance, so the
+      // dropdown and the list beneath it disagreed about the top result.
+      // Keep slug → rank instead; Map#has keeps every existing membership
+      // check working unchanged.
+      const ranks = new Map();
+      results.forEach((r, i) => { const s = r.slug || r.id; if (!ranks.has(s)) ranks.set(s, i); });
+      return ranks;
     } catch (err) {
       console.warn("[search-index] search failed:", err);
       return null;
@@ -5432,7 +5442,19 @@ useEffect(() => {
   const [catFilters, setCatFilters] = useState([]); // multi-select — empty = all
   const [flagFilters, setFlagFilters] = useState([]); // multi-select boolean flags
   const toggleFlag = (id) => setFlagFilters(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]);
-  const [sort, setSort]             = useState("name");
+  // B-76: browse used to default to A–Z, which buries the 3,054 graded brands
+  // under 9,776 alphabetical "?" stubs. Default to score; an active query
+  // overrides this with relevance ordering (see `filtered`).
+  const [sort, setSort]             = useState("score");
+  // B-76: hide ungraded brands on BROWSE surfaces (default on). Deliberately
+  // NOT applied while a query is active — someone searching a specific brand
+  // must still be able to reach it and hit "notify me when we grade this".
+  const [gradedOnly, setGradedOnly] = useState(() => {
+    try { return localStorage.getItem("tn_gradedOnly") !== "0"; } catch { return true; }
+  });
+  useEffect(() => {
+    try { localStorage.setItem("tn_gradedOnly", gradedOnly ? "1" : "0"); } catch {}
+  }, [gradedOnly]);
 
   // UX 7A: saved/favorites — Set of slugs, persisted in localStorage.
   // Declared early so the `filtered` memo below can reference it.
@@ -5899,6 +5921,19 @@ useEffect(() => {
       const co = deduped.find(c => (c.slug || c.id) === focusedSlug);
       return co ? [co] : [];
     }
+    // B-76 relevance helpers. Ordering with an active query is:
+    //   exact name → prefix name → graded before ungraded → MiniSearch rank.
+    // Plain MiniSearch rank alone isn't enough: "coca" matches COCA COLA FEMSA
+    // as strongly as Coca-Cola, and the tiebreak that actually matters to a
+    // shopper is "do we have a record for it".
+    const qlc = (query || "").trim().toLowerCase();
+    const qActive = qlc.length > 0;
+    const relRank = (c) => {
+      const n = (c.name || "").toLowerCase();
+      if (n === qlc) return 0;
+      if (n.startsWith(qlc)) return 1;
+      return 2;
+    };
     return deduped
     .filter(c => {
       if (leanFilter !== "all") {
@@ -5933,6 +5968,11 @@ useEffect(() => {
       }
       // UX 7A: saved-only filter
       if (showSavedOnly && !savedSet.has(c.slug || c.id)) return false;
+      // B-76: on browse surfaces, hide the 9,776 ungraded "?" stubs by default.
+      // Never applied with an active query (the searcher must still find their
+      // brand and be offered "notify me when we grade this"), and never in the
+      // saved list (a saved brand stays visible even if it isn't graded yet).
+      if (gradedOnly && !qActive && !showSavedOnly && c.overall == null) return false;
       // Consumer gating: hide non-consumer entries from BROWSE surfaces
       // (no query). With a query, keep them — someone typing "gulfport
       // energy" means it — but they sort below consumer matches.
@@ -5948,6 +5988,24 @@ useEffect(() => {
       const ca = a.consumerFacing === false ? 1 : 0;
       const cb = b.consumerFacing === false ? 1 : 0;
       if (ca !== cb) return ca - cb;
+      // B-76: an active query outranks the sort chips — relevance, not A–Z.
+      if (qActive) {
+        const ra = relRank(a), rb = relRank(b);
+        if (ra !== rb) return ra - rb;
+        const ga = a.overall == null ? 1 : 0, gb = b.overall == null ? 1 : 0;
+        if (ga !== gb) return ga - gb;
+        // Among equally-relevant graded matches, the SHORTER name is nearly
+        // always the brand the user meant: "Coca-Cola" over "Coca-Cola
+        // Consolidated", "Apple" over "Apple Store". MiniSearch's own rank
+        // doesn't capture that (it ranked Consolidated first).
+        if (ra <= 1 && a.name.length !== b.name.length) return a.name.length - b.name.length;
+        if (searchHits) {
+          const ma = searchHits.get(a.slug || a.id) ?? Infinity;
+          const mb = searchHits.get(b.slug || b.id) ?? Infinity;
+          if (ma !== mb) return ma - mb;
+        }
+        return a.name.localeCompare(b.name);
+      }
       // QA fix 2026-06-10: without a profile computeScore returns co.overall
       // RAW — null/undefined on the ~6,300 stub brands — so score-sort
       // compared NaN and ordered arbitrarily. `?? -1` sinks no-data brands
@@ -5958,7 +6016,7 @@ useEffect(() => {
       return (o[(a.sc.political||"").toLowerCase()]??5) - (o[(b.sc.political||"").toLowerCase()]??5);
     });
   },
-    [deduped, leanFilter, catFilters, flagFilters, query, searchHits, sort, profile, showSavedOnly, savedSet, focusedSlug, industryBucket, showAllCompanies]
+    [deduped, leanFilter, catFilters, flagFilters, query, searchHits, sort, profile, showSavedOnly, savedSet, focusedSlug, industryBucket, showAllCompanies, gradedOnly]
   );
 
   // Phase 5.ag (perf): cap rendered company cards. Creating 11,000+ JSX
@@ -6767,7 +6825,8 @@ if (screen === "basket") {
                 UX asked for a 5-row suggestion list while typing. Renders
                 below the input, taps route to the brand. Closes on blur. */}
             {showSearchDropdown && queryRaw.trim().length >= 1 && searchHits && (() => {
-              const suggestions = [...searchHits].slice(0, 5)
+              // B-76: searchHits is a slug→rank Map now, so spread its keys.
+              const suggestions = [...searchHits.keys()].slice(0, 5)
                 .map(slug => deduped.find(c => (c.slug || c.id) === slug))
                 .filter(Boolean);
               if (!suggestions.length) return null;
@@ -7126,6 +7185,17 @@ if (screen === "basket") {
                 {sv==="score"?"Your score":sv==="name"?"A–Z":"Lean"}
               </button>
             ))}
+            {/* B-76: 76% of the catalog is an ungraded "?" and there was no
+                lever to hide it. Browse-only — with an active query the filter
+                stands down so the searcher can still reach their brand. */}
+            {!query.trim() && (
+              <button
+                onClick={()=>setGradedOnly(v=>!v)}
+                aria-pressed={gradedOnly}
+                style={{ padding:"5px 10px", borderRadius:20, fontSize:12, fontWeight:gradedOnly?700:500, border:`1px solid ${gradedOnly?T.accent:T.border}`, background:gradedOnly?T.accentBg:T.bg3, color:gradedOnly?T.accent2:T.txt2, cursor:"pointer", minHeight:32 }}>
+                Graded only
+              </button>
+            )}
             {/* UX 7A: Saved filter chip (visible only when user has saved at least one) */}
             {savedSet.size > 0 && (
               <button
