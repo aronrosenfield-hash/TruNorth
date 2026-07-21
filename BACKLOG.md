@@ -166,7 +166,7 @@
   `docs/SOURCES.md`; consume everywhere. *(effort S · WS-E)*
   *(Note: the "200+ sources" claim itself was REFUTED as a problem — `docs/SOURCES.md:5,13,14` reconciles ~105
   named/in-app vs 200+ pipeline across 168 crons, and `App.jsx:7846` mirrors that distinction.)*
-- **B-80 — Turn the "?" dead end into the app's most valuable screen (marquee candidate).** 76% of sessions land
+- **B-80 ⚠️ PARTIAL (contradiction fixed; full redesign open) — Turn the "?" dead end into the app's most valuable screen (marquee candidate).** 76% of sessions land
   here on four stacked contradictions: the zero-data card says "None of our 200+ sources report on this brand"
   (`:4023`) while ~100 lines below it renders that brand's Wikipedia summary, BBB rating and SEC filing count —
   **2,391 brands render a footprint card AND the no-records card.** Rebuild as one card: editorial statement →

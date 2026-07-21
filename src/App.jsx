@@ -4038,14 +4038,35 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                 </div>
               );
             }
+            // B-80 (2026-07-20): this card used to assert flatly that "None of
+            // our 200+ public-records sources currently report on this brand"
+            // — while the About and footprint blocks ~100 lines below render
+            // that same brand's Wikipedia summary, BBB rating, SEC filings and
+            // enriched.* records. Measured across the catalog: 6,186 of the
+            // 9,776 ungraded brands (63%) have at least one of those, so the
+            // app was contradicting itself on the screen where 76% of sessions
+            // land, on the product whose entire claim is that the record is
+            // right. Say what is actually true: we have records, they just
+            // aren't SCOREABLE ones.
+            const found = [];
+            if (enriched.wiki && (enriched.wiki.summary || enriched.wiki.website)) found.push("a company profile");
+            if (enriched.bbb && enriched.bbb.rating) found.push("a BBB rating");
+            if (enriched.cik || enriched.secFilings) found.push("SEC filings");
+            if (enriched.enriched && Object.keys(enriched.enriched).length) found.push("public-record footprint");
+            const foundLabel =
+              found.length === 1 ? found[0]
+              : found.length === 2 ? `${found[0]} and ${found[1]}`
+              : found.slice(0, -1).join(", ") + ", and " + found[found.length - 1];
             return (
               <div style={{ margin:"4px 0 10px", padding:"12px 14px", borderRadius:12, background:T.bg3, border:`1px solid ${T.border2}` }}>
                 <div style={{ fontSize:12, fontWeight:700, color:T.txt2, marginBottom:4 }}>
                   <i className="ti ti-file-search" aria-hidden="true" style={{ marginRight:5 }} />
-                  No public records found yet
+                  {found.length ? "Nothing scoreable yet" : "No public records found yet"}
                 </div>
                 <div style={{ fontSize:12, color:T.txt3, lineHeight:1.5, marginBottom:10 }}>
-                  None of our 200+ public-records sources currently report on this brand. Records are added as regulators publish them.
+                  {found.length
+                    ? `We have ${foundLabel} for this brand — but nothing yet from the regulator, court, and certification feeds a grade is built from. We don’t grade what we can’t source, so it stays a “?” until one lands.`
+                    : "None of our 200+ public-records sources currently report on this brand. Records are added as regulators publish them."}
                 </div>
                 <SuggestBrandButton query={enriched.name} context="graded" />
               </div>
