@@ -1,35 +1,17 @@
 {
-  "merged_at": "2026-07-20T04:32:10.810Z",
+  "merged_at": "2026-07-27T04:29:56.103Z",
   "source_file": "public/data/cisa-kev.json",
-  "total_vendors": 275,
-  "merged_count": 4,
-  "skipped_count": 34,
-  "orphan_count": 237,
+  "total_vendors": 276,
+  "merged_count": 1,
+  "skipped_count": 37,
+  "orphan_count": 238,
   "error_count": 0,
   "merged_vendors": [
     {
       "vendor": "Microsoft",
       "target": "microsoft",
       "routed_via": "override",
-      "cves": 381
-    },
-    {
-      "vendor": "Cisco",
-      "target": "cisco",
-      "routed_via": "override",
-      "cves": 94
-    },
-    {
-      "vendor": "Oracle",
-      "target": "oracle-cloud",
-      "routed_via": "parent",
-      "cves": 45
-    },
-    {
-      "vendor": "Fortinet",
-      "target": "fortinet",
-      "routed_via": "override",
-      "cves": 28
+      "cves": 382
     }
   ],
   "top_orphans": [
@@ -139,6 +121,16 @@
       "cves": 6
     },
     {
+      "vendor": "WordPress",
+      "vendor_slug": "wordpress",
+      "cves": 5
+    },
+    {
+      "vendor": "Langflow",
+      "vendor_slug": "langflow",
+      "cves": 5
+    },
+    {
       "vendor": "Drupal",
       "vendor_slug": "drupal",
       "cves": 5
@@ -164,11 +156,6 @@
       "cves": 5
     },
     {
-      "vendor": "Langflow",
-      "vendor_slug": "langflow",
-      "cves": 4
-    },
-    {
       "vendor": "SimpleHelp",
       "vendor_slug": "simplehelp",
       "cves": 4
@@ -176,11 +163,6 @@
     {
       "vendor": "Kentico",
       "vendor_slug": "kentico",
-      "cves": 4
-    },
-    {
-      "vendor": "Craft CMS",
-      "vendor_slug": "craft-cms",
       "cves": 4
     }
   ]

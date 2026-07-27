@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-07-20T04:32:10.748Z",
-  "catalog_version": "2026.07.16",
-  "catalog_released": "2026-07-16T17:00:15.6845Z",
-  "total_cve_count": 1647,
-  "vendor_count": 275,
+  "generated_at": "2026-07-27T04:29:56.055Z",
+  "catalog_version": "2026.07.24",
+  "catalog_released": "2026-07-24T17:40:56.0086Z",
+  "total_cve_count": 1653,
+  "vendor_count": 276,
   "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
   "vendors": [
     {
       "vendor": "Microsoft",
-      "total_cve_count": 381,
-      "recent_12mo_count": 45,
+      "total_cve_count": 382,
+      "recent_12mo_count": 44,
       "ransomware_count": 104,
       "product_breakdown": [
         {
@@ -34,7 +34,7 @@
         },
         {
           "label": "SharePoint",
-          "count": 7
+          "count": 8
         },
         {
           "label": "SharePoint Server",
@@ -54,6 +54,17 @@
         }
       ],
       "top_cves": [
+        {
+          "cveID": "CVE-2026-50522",
+          "product": "SharePoint",
+          "vulnerabilityName": "Microsoft SharePoint Deserialization of Untrusted Data Vulnerability ",
+          "dateAdded": "2026-07-22",
+          "dueDate": "2026-07-25",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Microsoft SharePoint contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50522"
+        },
         {
           "cveID": "CVE-2026-58644",
           "product": "SharePoint",
@@ -97,17 +108,6 @@
           "shortDescription": "Microsoft SharePoint Server contains a deserialization of untrusted data vulnerability which allows an authorized attacker to execute code over a network.",
           "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45659"
-        },
-        {
-          "cveID": "CVE-2008-4250",
-          "product": "Windows",
-          "vulnerabilityName": "Microsoft Windows Buffer Overflow Vulnerability",
-          "dateAdded": "2026-05-20",
-          "dueDate": "2026-06-03",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Microsoft Windows contains a buffer overflow vulnerability in the Windows Server Service that allows remote attackers to execute arbitrary code via a crafted RPC request that triggers an overflow during path canonicalization.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2008-4250"
         }
       ],
       "highest_severity": [
@@ -136,20 +136,20 @@
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-49704"
         },
         {
+          "cveID": "CVE-2026-50522",
+          "product": "SharePoint",
+          "vulnerabilityName": "Microsoft SharePoint Deserialization of Untrusted Data Vulnerability ",
+          "dateAdded": "2026-07-22",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50522"
+        },
+        {
           "cveID": "CVE-2026-58644",
           "product": "SharePoint",
           "vulnerabilityName": "Microsoft SharePoint Deserialization of Untrusted Data Vulnerability",
           "dateAdded": "2026-07-16",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58644"
-        },
-        {
-          "cveID": "CVE-2026-56155",
-          "product": "Active Directory Federation Services",
-          "vulnerabilityName": "Microsoft Active Directory Federation Services Insufficient Granularity of Access Control Vulnerability ",
-          "dateAdded": "2026-07-14",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56155"
         }
       ]
     },
@@ -569,7 +569,7 @@
     {
       "vendor": "Google",
       "total_cve_count": 72,
-      "recent_12mo_count": 9,
+      "recent_12mo_count": 8,
       "ransomware_count": 0,
       "product_breakdown": [
         {
@@ -840,7 +840,7 @@
       "vendor": "Apache",
       "total_cve_count": 39,
       "recent_12mo_count": 1,
-      "ransomware_count": 7,
+      "ransomware_count": 8,
       "product_breakdown": [
         {
           "label": "Tomcat",
@@ -2186,7 +2186,7 @@
       "vendor": "Palo Alto Networks",
       "total_cve_count": 15,
       "recent_12mo_count": 2,
-      "ransomware_count": 5,
+      "ransomware_count": 6,
       "product_breakdown": [
         {
           "label": "PAN-OS",
@@ -2204,7 +2204,7 @@
           "vulnerabilityName": "Palo Alto Networks PAN-OS Authentication Bypass Vulnerability",
           "dateAdded": "2026-05-29",
           "dueDate": "2026-06-01",
-          "knownRansomwareCampaignUse": "Unknown",
+          "knownRansomwareCampaignUse": "Known",
           "shortDescription": "Palo Alto Networks PAN-OS contains an authentication bypass vulnerability that allows attackers to bypass security restrictions and establish an unauthorized VPN connection.",
           "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0257"
@@ -2256,6 +2256,14 @@
       ],
       "highest_severity": [
         {
+          "cveID": "CVE-2026-0257",
+          "product": "PAN-OS",
+          "vulnerabilityName": "Palo Alto Networks PAN-OS Authentication Bypass Vulnerability",
+          "dateAdded": "2026-05-29",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0257"
+        },
+        {
           "cveID": "CVE-2024-9474",
           "product": "PAN-OS",
           "vulnerabilityName": "Palo Alto Networks PAN-OS Management Interface OS Command Injection Vulnerability",
@@ -2272,28 +2280,20 @@
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-0012"
         },
         {
-          "cveID": "CVE-2024-3400",
-          "product": "PAN-OS",
-          "vulnerabilityName": "Palo Alto Networks PAN-OS Command Injection Vulnerability",
-          "dateAdded": "2024-04-12",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-3400"
-        },
-        {
-          "cveID": "CVE-2026-0257",
-          "product": "PAN-OS",
-          "vulnerabilityName": "Palo Alto Networks PAN-OS Authentication Bypass Vulnerability",
-          "dateAdded": "2026-05-29",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0257"
-        },
-        {
           "cveID": "CVE-2026-0300",
           "product": "PAN-OS",
           "vulnerabilityName": "Palo Alto Networks PAN-OS Out-of-bounds Write Vulnerability",
           "dateAdded": "2026-05-06",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0300"
+        },
+        {
+          "cveID": "CVE-2025-0111",
+          "product": "PAN-OS",
+          "vulnerabilityName": "Palo Alto Networks PAN-OS File Read Vulnerability",
+          "dateAdded": "2025-02-20",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-0111"
         }
       ]
     },
@@ -4792,6 +4792,200 @@
       ]
     },
     {
+      "vendor": "WordPress",
+      "total_cve_count": 5,
+      "recent_12mo_count": 2,
+      "ransomware_count": 0,
+      "product_breakdown": [
+        {
+          "label": "Core",
+          "count": 2
+        },
+        {
+          "label": "File Manager Plugin",
+          "count": 1
+        },
+        {
+          "label": "Snap Creek Duplicator Plugin",
+          "count": 1
+        },
+        {
+          "label": "Social Warfare Plugin",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-60137",
+          "product": "Core",
+          "vulnerabilityName": "WordPress Core SQL Injection Vulnerability",
+          "dateAdded": "2026-07-21",
+          "dueDate": "2026-08-04",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "WordPress Core contains a SQL injection vulnerability when a plugin or theme passes untrusted input to the parameter. This vulnerability can be chained with CVE-2026-63030 to allow an unauthenticated attacker to gain remote code execution on default WordPress installations.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60137"
+        },
+        {
+          "cveID": "CVE-2026-63030",
+          "product": "Core",
+          "vulnerabilityName": "WordPress Core Interpretation Conflict Vulnerability",
+          "dateAdded": "2026-07-21",
+          "dueDate": "2026-07-24",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "WordPress Core contains an interpretation conflict vulnerability that could allow an attacker to perform SQL Injection and achieve Remote Code Execution. This vulnerability can be chained with CVE-2026-60137.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63030"
+        },
+        {
+          "cveID": "CVE-2020-25213",
+          "product": "File Manager Plugin",
+          "vulnerabilityName": "WordPress File Manager Plugin Remote Code Execution Vulnerability",
+          "dateAdded": "2021-11-03",
+          "dueDate": "2022-05-03",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "WordPress File Manager plugin contains a remote code execution vulnerability that allows unauthenticated users to execute PHP code and upload malicious files on a target site.",
+          "requiredAction": "Apply updates per vendor instructions.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-25213"
+        },
+        {
+          "cveID": "CVE-2020-11738",
+          "product": "Snap Creek Duplicator Plugin",
+          "vulnerabilityName": "WordPress Snap Creek Duplicator Plugin File Download Vulnerability",
+          "dateAdded": "2021-11-03",
+          "dueDate": "2022-05-03",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "WordPress Snap Creek Duplicator plugin contains a file download vulnerability when an administrator creates a new copy of their site that allows an attacker to download the generated files from their Wordpress dashboard. This vulnerability affects Duplicator and Dulplicator Pro.",
+          "requiredAction": "Apply updates per vendor instructions.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11738"
+        },
+        {
+          "cveID": "CVE-2019-9978",
+          "product": "Social Warfare Plugin",
+          "vulnerabilityName": "WordPress Social Warfare Plugin Cross-Site Scripting (XSS) Vulnerability",
+          "dateAdded": "2021-11-03",
+          "dueDate": "2022-05-03",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "WordPress Social Warfare plugin contains a cross-site scripting (XSS) vulnerability that allows for remote code execution. This vulnerability affects Social Warfare and Social Warfare Pro.",
+          "requiredAction": "Apply updates per vendor instructions.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-9978"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2026-60137",
+          "product": "Core",
+          "vulnerabilityName": "WordPress Core SQL Injection Vulnerability",
+          "dateAdded": "2026-07-21",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60137"
+        },
+        {
+          "cveID": "CVE-2026-63030",
+          "product": "Core",
+          "vulnerabilityName": "WordPress Core Interpretation Conflict Vulnerability",
+          "dateAdded": "2026-07-21",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63030"
+        }
+      ]
+    },
+    {
+      "vendor": "Langflow",
+      "total_cve_count": 5,
+      "recent_12mo_count": 4,
+      "ransomware_count": 1,
+      "product_breakdown": [
+        {
+          "label": "Langflow",
+          "count": 5
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-0770",
+          "product": "Langflow",
+          "vulnerabilityName": "Langflow Inclusion of Functionality from Untrusted Control Sphere Vulnerability",
+          "dateAdded": "2026-07-21",
+          "dueDate": "2026-07-24",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Langflow contains an inclusion of functionality from untrusted control sphere vulnerability that allows remote attackers to execute arbitrary code on affected installations. ",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0770"
+        },
+        {
+          "cveID": "CVE-2026-55255",
+          "product": "Langflow",
+          "vulnerabilityName": "Langflow Authorization Bypass Through User-Controlled Key Vulnerability",
+          "dateAdded": "2026-07-07",
+          "dueDate": "2026-07-10",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Langflow contains an authorization bypass through user-controlled key vulnerability which allows an authenticated attacker to execute any flow belonging to another user by specifying the victim's flow ID in the request.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55255"
+        },
+        {
+          "cveID": "CVE-2025-34291",
+          "product": "Langflow",
+          "vulnerabilityName": "Langflow Origin Validation Error Vulnerability",
+          "dateAdded": "2026-05-21",
+          "dueDate": "2026-06-04",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Langflow contains an origin validation error vulnerability in which an overly permissive CORS configuration combined with a refresh token cookie configured as SameSite=None allows a malicious webpage to perform cross-origin requests that include credentials and successfully call the refresh endpoint. This could allow the attacker to execute arbitrary code and achieve full system compromise via obtained tokens that permit access to authenticated endpoints.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-34291"
+        },
+        {
+          "cveID": "CVE-2026-33017",
+          "product": "Langflow",
+          "vulnerabilityName": "Langflow Code Injection Vulnerability",
+          "dateAdded": "2026-03-25",
+          "dueDate": "2026-04-08",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Langflow contains a code injection vulnerability that could allow building public flows without requiring authentication.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33017"
+        },
+        {
+          "cveID": "CVE-2025-3248",
+          "product": "Langflow",
+          "vulnerabilityName": "Langflow Missing Authentication Vulnerability",
+          "dateAdded": "2025-05-05",
+          "dueDate": "2025-05-26",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "Langflow contains a missing authentication vulnerability in the /api/v1/validate/code endpoint that allows a remote, unauthenticated attacker to execute arbitrary code via crafted HTTP requests.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-3248"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2025-3248",
+          "product": "Langflow",
+          "vulnerabilityName": "Langflow Missing Authentication Vulnerability",
+          "dateAdded": "2025-05-05",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-3248"
+        },
+        {
+          "cveID": "CVE-2026-0770",
+          "product": "Langflow",
+          "vulnerabilityName": "Langflow Inclusion of Functionality from Untrusted Control Sphere Vulnerability",
+          "dateAdded": "2026-07-21",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0770"
+        },
+        {
+          "cveID": "CVE-2026-55255",
+          "product": "Langflow",
+          "vulnerabilityName": "Langflow Authorization Bypass Through User-Controlled Key Vulnerability",
+          "dateAdded": "2026-07-07",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55255"
+        }
+      ]
+    },
+    {
       "vendor": "Drupal",
       "total_cve_count": 5,
       "recent_12mo_count": 1,
@@ -5311,90 +5505,6 @@
           "dateAdded": "2022-03-25",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-4344"
-        }
-      ]
-    },
-    {
-      "vendor": "Langflow",
-      "total_cve_count": 4,
-      "recent_12mo_count": 3,
-      "ransomware_count": 1,
-      "product_breakdown": [
-        {
-          "label": "Langflow",
-          "count": 4
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2026-55255",
-          "product": "Langflow",
-          "vulnerabilityName": "Langflow Authorization Bypass Through User-Controlled Key Vulnerability",
-          "dateAdded": "2026-07-07",
-          "dueDate": "2026-07-10",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Langflow contains an authorization bypass through user-controlled key vulnerability which allows an authenticated attacker to execute any flow belonging to another user by specifying the victim's flow ID in the request.",
-          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55255"
-        },
-        {
-          "cveID": "CVE-2025-34291",
-          "product": "Langflow",
-          "vulnerabilityName": "Langflow Origin Validation Error Vulnerability",
-          "dateAdded": "2026-05-21",
-          "dueDate": "2026-06-04",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Langflow contains an origin validation error vulnerability in which an overly permissive CORS configuration combined with a refresh token cookie configured as SameSite=None allows a malicious webpage to perform cross-origin requests that include credentials and successfully call the refresh endpoint. This could allow the attacker to execute arbitrary code and achieve full system compromise via obtained tokens that permit access to authenticated endpoints.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-34291"
-        },
-        {
-          "cveID": "CVE-2026-33017",
-          "product": "Langflow",
-          "vulnerabilityName": "Langflow Code Injection Vulnerability",
-          "dateAdded": "2026-03-25",
-          "dueDate": "2026-04-08",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Langflow contains a code injection vulnerability that could allow building public flows without requiring authentication.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33017"
-        },
-        {
-          "cveID": "CVE-2025-3248",
-          "product": "Langflow",
-          "vulnerabilityName": "Langflow Missing Authentication Vulnerability",
-          "dateAdded": "2025-05-05",
-          "dueDate": "2025-05-26",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "Langflow contains a missing authentication vulnerability in the /api/v1/validate/code endpoint that allows a remote, unauthenticated attacker to execute arbitrary code via crafted HTTP requests.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-3248"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2025-3248",
-          "product": "Langflow",
-          "vulnerabilityName": "Langflow Missing Authentication Vulnerability",
-          "dateAdded": "2025-05-05",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-3248"
-        },
-        {
-          "cveID": "CVE-2026-55255",
-          "product": "Langflow",
-          "vulnerabilityName": "Langflow Authorization Bypass Through User-Controlled Key Vulnerability",
-          "dateAdded": "2026-07-07",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55255"
-        },
-        {
-          "cveID": "CVE-2025-34291",
-          "product": "Langflow",
-          "vulnerabilityName": "Langflow Origin Validation Error Vulnerability",
-          "dateAdded": "2026-05-21",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-34291"
         }
       ]
     },
@@ -6595,6 +6705,87 @@
       ]
     },
     {
+      "vendor": "Check Point",
+      "total_cve_count": 3,
+      "recent_12mo_count": 2,
+      "ransomware_count": 2,
+      "product_breakdown": [
+        {
+          "label": "SmartConsole",
+          "count": 1
+        },
+        {
+          "label": "Security Gateway",
+          "count": 1
+        },
+        {
+          "label": "Quantum Security Gateways",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-16232",
+          "product": "SmartConsole",
+          "vulnerabilityName": "Check Point SmartConsole Improper Authentication Vulnerability",
+          "dateAdded": "2026-07-22",
+          "dueDate": "2026-07-25",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Check Point SmartConsole contains an improper authentication vulnerability which could allow an unauthenticated remote attacker to obtain an application login token and use it to authenticate with full administrative privileges.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16232"
+        },
+        {
+          "cveID": "CVE-2026-50751",
+          "product": "Security Gateway",
+          "vulnerabilityName": "Check Point Security Gateway Improper Authentication Vulnerability",
+          "dateAdded": "2026-06-08",
+          "dueDate": "2026-06-11",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "Check Point Security Gateway contains an improper authentication vulnerability in IKEv1 key exchange that could allow an unauthenticated remote attacker to bypass user authentication and establish a remote access VPN connection without a valid user password.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50751"
+        },
+        {
+          "cveID": "CVE-2024-24919",
+          "product": "Quantum Security Gateways",
+          "vulnerabilityName": "Check Point Quantum Security Gateways Information Disclosure Vulnerability",
+          "dateAdded": "2024-05-30",
+          "dueDate": "2024-06-20",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "Check Point Quantum Security Gateways contain an unspecified information disclosure vulnerability. The vulnerability potentially allows an attacker to access information on Gateways connected to the internet, with IPSec VPN, Remote Access VPN or Mobile Access enabled. This issue affects several product lines from Check Point, including CloudGuard Network, Quantum Scalable Chassis, Quantum Security Gateways, and Quantum Spark Appliances.",
+          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-24919"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2026-50751",
+          "product": "Security Gateway",
+          "vulnerabilityName": "Check Point Security Gateway Improper Authentication Vulnerability",
+          "dateAdded": "2026-06-08",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50751"
+        },
+        {
+          "cveID": "CVE-2024-24919",
+          "product": "Quantum Security Gateways",
+          "vulnerabilityName": "Check Point Quantum Security Gateways Information Disclosure Vulnerability",
+          "dateAdded": "2024-05-30",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-24919"
+        },
+        {
+          "cveID": "CVE-2026-16232",
+          "product": "SmartConsole",
+          "vulnerabilityName": "Check Point SmartConsole Improper Authentication Vulnerability",
+          "dateAdded": "2026-07-22",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16232"
+        }
+      ]
+    },
+    {
       "vendor": "ConnectWise",
       "total_cve_count": 3,
       "recent_12mo_count": 1,
@@ -7396,7 +7587,7 @@
     {
       "vendor": "SysAid",
       "total_cve_count": 3,
-      "recent_12mo_count": 2,
+      "recent_12mo_count": 0,
       "ransomware_count": 1,
       "product_breakdown": [
         {
@@ -7473,7 +7664,7 @@
     {
       "vendor": "CrushFTP",
       "total_cve_count": 3,
-      "recent_12mo_count": 1,
+      "recent_12mo_count": 0,
       "ransomware_count": 1,
       "product_breakdown": [
         {
@@ -8473,79 +8664,6 @@
       ]
     },
     {
-      "vendor": "WordPress",
-      "total_cve_count": 3,
-      "recent_12mo_count": 0,
-      "ransomware_count": 0,
-      "product_breakdown": [
-        {
-          "label": "File Manager Plugin",
-          "count": 1
-        },
-        {
-          "label": "Snap Creek Duplicator Plugin",
-          "count": 1
-        },
-        {
-          "label": "Social Warfare Plugin",
-          "count": 1
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2020-25213",
-          "product": "File Manager Plugin",
-          "vulnerabilityName": "WordPress File Manager Plugin Remote Code Execution Vulnerability",
-          "dateAdded": "2021-11-03",
-          "dueDate": "2022-05-03",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "WordPress File Manager plugin contains a remote code execution vulnerability that allows unauthenticated users to execute PHP code and upload malicious files on a target site.",
-          "requiredAction": "Apply updates per vendor instructions.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-25213"
-        },
-        {
-          "cveID": "CVE-2020-11738",
-          "product": "Snap Creek Duplicator Plugin",
-          "vulnerabilityName": "WordPress Snap Creek Duplicator Plugin File Download Vulnerability",
-          "dateAdded": "2021-11-03",
-          "dueDate": "2022-05-03",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "WordPress Snap Creek Duplicator plugin contains a file download vulnerability when an administrator creates a new copy of their site that allows an attacker to download the generated files from their Wordpress dashboard. This vulnerability affects Duplicator and Dulplicator Pro.",
-          "requiredAction": "Apply updates per vendor instructions.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11738"
-        },
-        {
-          "cveID": "CVE-2019-9978",
-          "product": "Social Warfare Plugin",
-          "vulnerabilityName": "WordPress Social Warfare Plugin Cross-Site Scripting (XSS) Vulnerability",
-          "dateAdded": "2021-11-03",
-          "dueDate": "2022-05-03",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "WordPress Social Warfare plugin contains a cross-site scripting (XSS) vulnerability that allows for remote code execution. This vulnerability affects Social Warfare and Social Warfare Pro.",
-          "requiredAction": "Apply updates per vendor instructions.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-9978"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2020-25213",
-          "product": "File Manager Plugin",
-          "vulnerabilityName": "WordPress File Manager Plugin Remote Code Execution Vulnerability",
-          "dateAdded": "2021-11-03",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-25213"
-        },
-        {
-          "cveID": "CVE-2020-11738",
-          "product": "Snap Creek Duplicator Plugin",
-          "vulnerabilityName": "WordPress Snap Creek Duplicator Plugin File Download Vulnerability",
-          "dateAdded": "2021-11-03",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11738"
-        }
-      ]
-    },
-    {
       "vendor": "LiteSpeed",
       "total_cve_count": 2,
       "recent_12mo_count": 2,
@@ -8650,64 +8768,6 @@
           "dateAdded": "2026-05-08",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42208"
-        }
-      ]
-    },
-    {
-      "vendor": "Check Point",
-      "total_cve_count": 2,
-      "recent_12mo_count": 1,
-      "ransomware_count": 2,
-      "product_breakdown": [
-        {
-          "label": "Security Gateway",
-          "count": 1
-        },
-        {
-          "label": "Quantum Security Gateways",
-          "count": 1
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2026-50751",
-          "product": "Security Gateway",
-          "vulnerabilityName": "Check Point Security Gateway Improper Authentication Vulnerability",
-          "dateAdded": "2026-06-08",
-          "dueDate": "2026-06-11",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "Check Point Security Gateway contains an improper authentication vulnerability in IKEv1 key exchange that could allow an unauthenticated remote attacker to bypass user authentication and establish a remote access VPN connection without a valid user password.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50751"
-        },
-        {
-          "cveID": "CVE-2024-24919",
-          "product": "Quantum Security Gateways",
-          "vulnerabilityName": "Check Point Quantum Security Gateways Information Disclosure Vulnerability",
-          "dateAdded": "2024-05-30",
-          "dueDate": "2024-06-20",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "Check Point Quantum Security Gateways contain an unspecified information disclosure vulnerability. The vulnerability potentially allows an attacker to access information on Gateways connected to the internet, with IPSec VPN, Remote Access VPN or Mobile Access enabled. This issue affects several product lines from Check Point, including CloudGuard Network, Quantum Scalable Chassis, Quantum Security Gateways, and Quantum Spark Appliances.",
-          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-24919"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2026-50751",
-          "product": "Security Gateway",
-          "vulnerabilityName": "Check Point Security Gateway Improper Authentication Vulnerability",
-          "dateAdded": "2026-06-08",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50751"
-        },
-        {
-          "cveID": "CVE-2024-24919",
-          "product": "Quantum Security Gateways",
-          "vulnerabilityName": "Check Point Quantum Security Gateways Information Disclosure Vulnerability",
-          "dateAdded": "2024-05-30",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-24919"
         }
       ]
     },
@@ -11048,6 +11108,41 @@
       ]
     },
     {
+      "vendor": "DD-WRT",
+      "total_cve_count": 1,
+      "recent_12mo_count": 1,
+      "ransomware_count": 0,
+      "product_breakdown": [
+        {
+          "label": "DD-WRT",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2021-27137",
+          "product": "DD-WRT",
+          "vulnerabilityName": "DD-WRT Stack-Based Buffer Overflow Vulnerability",
+          "dateAdded": "2026-07-21",
+          "dueDate": "2026-07-24",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "DD-WRT contains a stack-based buffer overflow vulnerability that could allow an unauthenticated attacker to overflow an internal buffer used by UPnP and trigger a code execution vulnerability.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-27137"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2021-27137",
+          "product": "DD-WRT",
+          "vulnerabilityName": "DD-WRT Stack-Based Buffer Overflow Vulnerability",
+          "dateAdded": "2026-07-21",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-27137"
+        }
+      ]
+    },
+    {
       "vendor": "KNX Association",
       "total_cve_count": 1,
       "recent_12mo_count": 1,
@@ -11226,7 +11321,7 @@
       "vendor": "PTC",
       "total_cve_count": 1,
       "recent_12mo_count": 1,
-      "ransomware_count": 0,
+      "ransomware_count": 1,
       "product_breakdown": [
         {
           "label": "Windchill and FlexPLM",
@@ -11240,7 +11335,7 @@
           "vulnerabilityName": "PTC Windchill and FlexPLM Improper Input Validation Vulnerability",
           "dateAdded": "2026-06-25",
           "dueDate": "2026-06-28",
-          "knownRansomwareCampaignUse": "Unknown",
+          "knownRansomwareCampaignUse": "Known",
           "shortDescription": "PTC Windchill and FlexPLM contains an improper input validation vulnerability allowing an unauthenticated, remote attacker to execute arbitrary code by sending a malicious request to the network.",
           "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12569"
@@ -11252,7 +11347,7 @@
           "product": "Windchill and FlexPLM",
           "vulnerabilityName": "PTC Windchill and FlexPLM Improper Input Validation Vulnerability",
           "dateAdded": "2026-06-25",
-          "knownRansomwareCampaignUse": "Unknown",
+          "knownRansomwareCampaignUse": "Known",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-12569"
         }
       ]
