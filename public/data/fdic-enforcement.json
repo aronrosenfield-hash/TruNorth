@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T05:04:22.220Z",
+  "generated_at": "2026-07-28T04:59:23.535Z",
   "smoke_mode": false,
   "brand_count": 528,
   "with_enforcement_count": 0,
@@ -938,7 +938,8 @@
       "status": "edos_unreachable",
       "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
       "bank_cert_numbers": [
-        9261
+        9261,
+        1018
       ],
       "bank_names": [
         {
@@ -947,6 +948,13 @@
           "state": "IL",
           "active": 0,
           "bkclass": "NM"
+        },
+        {
+          "cert": 1018,
+          "name": "M&I Bank of Burlington",
+          "state": "WI",
+          "active": 0,
+          "bkclass": "SM"
         }
       ]
     },
@@ -1690,8 +1698,7 @@
       "status": "edos_unreachable",
       "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
       "bank_cert_numbers": [
-        21353,
-        32334
+        21353
       ],
       "bank_names": [
         {
@@ -1700,13 +1707,6 @@
           "state": "CO",
           "active": 0,
           "bkclass": "N"
-        },
-        {
-          "cert": 32334,
-          "name": "Madison Square Federal Savings Bank",
-          "state": "MD",
-          "active": 0,
-          "bkclass": "SB"
         }
       ]
     },
@@ -1998,12 +1998,12 @@
         17300,
         14997,
         12466,
+        10600,
         32906,
         27595,
-        10600,
         4768,
-        9575,
-        17438
+        17438,
+        9575
       ],
       "bank_names": [
         {
@@ -2042,6 +2042,13 @@
           "bkclass": "NM"
         },
         {
+          "cert": 10600,
+          "name": "Sun Security Bank of America",
+          "state": "MO",
+          "active": 0,
+          "bkclass": "NM"
+        },
+        {
           "cert": 32906,
           "name": "Bank of America Community Development Bank",
           "state": "CA",
@@ -2056,23 +2063,9 @@
           "bkclass": "N"
         },
         {
-          "cert": 10600,
-          "name": "Sun Security Bank of America",
-          "state": "MO",
-          "active": 0,
-          "bkclass": "NM"
-        },
-        {
           "cert": 4768,
           "name": "UMB National Bank of America",
           "state": "KS",
-          "active": 0,
-          "bkclass": "N"
-        },
-        {
-          "cert": 9575,
-          "name": "Bank of America Utah, National Association",
-          "state": "UT",
           "active": 0,
           "bkclass": "N"
         },
@@ -2081,6 +2074,13 @@
           "name": "First National Bank of America",
           "state": "MI",
           "active": 1,
+          "bkclass": "N"
+        },
+        {
+          "cert": 9575,
+          "name": "Bank of America Utah, National Association",
+          "state": "UT",
+          "active": 0,
           "bkclass": "N"
         }
       ]
@@ -2114,8 +2114,8 @@
         5208,
         5457,
         2843,
-        15277,
-        2210
+        2210,
+        15277
       ],
       "bank_names": [
         {
@@ -2280,16 +2280,16 @@
           "bkclass": "N"
         },
         {
-          "cert": 15277,
-          "name": "Wells Fargo Bank South Dakota, National Association",
-          "state": "SD",
+          "cert": 2210,
+          "name": "Wells Fargo Bank Wyoming, National Association",
+          "state": "WY",
           "active": 0,
           "bkclass": "N"
         },
         {
-          "cert": 2210,
-          "name": "Wells Fargo Bank Wyoming, National Association",
-          "state": "WY",
+          "cert": 15277,
+          "name": "Wells Fargo Bank South Dakota, National Association",
+          "state": "SD",
           "active": 0,
           "bkclass": "N"
         }
@@ -2418,8 +2418,8 @@
         34425,
         7740,
         742,
-        10513,
         7944,
+        10513,
         31435,
         2688
       ],
@@ -2488,18 +2488,18 @@
           "bkclass": "N"
         },
         {
-          "cert": 10513,
-          "name": "PNC Bank, Kentucky, Inc.",
-          "state": "KY",
-          "active": 0,
-          "bkclass": "SM"
-        },
-        {
           "cert": 7944,
           "name": "PNC Bank, National Association",
           "state": "PA",
           "active": 0,
           "bkclass": "N"
+        },
+        {
+          "cert": 10513,
+          "name": "PNC Bank, Kentucky, Inc.",
+          "state": "KY",
+          "active": 0,
+          "bkclass": "SM"
         },
         {
           "cert": 31435,
@@ -2770,11 +2770,18 @@
       "status": "edos_unreachable",
       "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
       "bank_cert_numbers": [
+        22139,
         24443,
-        31488,
-        22139
+        31488
       ],
       "bank_names": [
+        {
+          "cert": 22139,
+          "name": "Progressive Bank",
+          "state": "LA",
+          "active": 0,
+          "bkclass": "NM"
+        },
         {
           "cert": 24443,
           "name": "Progressive National Bank",
@@ -2788,13 +2795,6 @@
           "state": "MO",
           "active": 1,
           "bkclass": "SM"
-        },
-        {
-          "cert": 22139,
-          "name": "Progressive Bank",
-          "state": "LA",
-          "active": 0,
-          "bkclass": "NM"
         }
       ]
     },
