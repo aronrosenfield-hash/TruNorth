@@ -1,153 +1,129 @@
 {
-  "generated_at": "2026-07-10T15:43:51.156Z",
+  "generated_at": "2026-07-10T15:43:51.102Z",
   "source": "wba-social",
   "source_url": "https://www.worldbenchmarkingalliance.org/publication/social/",
-  "upstream_file": "data/raw/wba-social/2026-07-10.json",
-  "bands": {
-    "leader": 16.5,
-    "laggard": 9.5
-  },
-  "company_count": 10,
-  "companies": {
-    "unilever": {
-      "display_name": "Unilever PLC",
-      "industry": "Consumer Goods",
+  "mode": "live",
+  "row_count": 10,
+  "rows": [
+    {
+      "company": "Unilever PLC",
       "headquarters": "United Kingdom",
+      "industry": "Consumer Goods",
       "rank": 1,
       "total_score": 16.5,
       "human_rights_score": 5.5,
       "decent_work_score": 6,
       "ethics_score": 5,
       "indicators_met": 15,
-      "total_indicators": 18,
-      "score_band": "leader",
-      "wbaSocialPercentile": 1
+      "total_indicators": 18
     },
-    "stellantis-n-v": {
-      "display_name": "Stellantis N.V.",
-      "industry": "Automotive",
+    {
+      "company": "Stellantis N.V.",
       "headquarters": "Netherlands",
+      "industry": "Automotive",
       "rank": 2,
       "total_score": 15,
       "human_rights_score": 5,
       "decent_work_score": 5.5,
       "ethics_score": 4.5,
       "indicators_met": 14,
-      "total_indicators": 18,
-      "score_band": "mid",
-      "wbaSocialPercentile": 0.9
+      "total_indicators": 18
     },
-    "tata-steel": {
-      "display_name": "Tata Steel Limited",
-      "industry": "Mining & Metals",
+    {
+      "company": "Tata Steel Limited",
       "headquarters": "India",
+      "industry": "Mining & Metals",
       "rank": 3,
       "total_score": 13.5,
       "human_rights_score": 4.5,
       "decent_work_score": 5,
       "ethics_score": 4,
       "indicators_met": 13,
-      "total_indicators": 18,
-      "score_band": "mid",
-      "wbaSocialPercentile": 0.8
+      "total_indicators": 18
     },
-    "apple": {
-      "display_name": "Apple Inc.",
-      "industry": "Information Communication Technology",
+    {
+      "company": "Apple Inc.",
       "headquarters": "United States",
+      "industry": "Information Communication Technology",
       "rank": 4,
       "total_score": 12.5,
       "human_rights_score": 4,
       "decent_work_score": 4.5,
       "ethics_score": 4,
       "indicators_met": 12,
-      "total_indicators": 18,
-      "score_band": "mid",
-      "wbaSocialPercentile": 0.7
+      "total_indicators": 18
     },
-    "nestle-s-a": {
-      "display_name": "Nestlé S.A.",
-      "industry": "Food & Beverage",
+    {
+      "company": "Nestlé S.A.",
       "headquarters": "Switzerland",
+      "industry": "Food & Beverage",
       "rank": 5,
       "total_score": 12,
       "human_rights_score": 4,
       "decent_work_score": 4,
       "ethics_score": 4,
       "indicators_met": 12,
-      "total_indicators": 18,
-      "score_band": "mid",
-      "wbaSocialPercentile": 0.6
+      "total_indicators": 18
     },
-    "walmart": {
-      "display_name": "Walmart Inc.",
-      "industry": "Retail",
+    {
+      "company": "Walmart Inc.",
       "headquarters": "United States",
+      "industry": "Retail",
       "rank": 6,
       "total_score": 9.5,
       "human_rights_score": 3,
       "decent_work_score": 3.5,
       "ethics_score": 3,
       "indicators_met": 9,
-      "total_indicators": 18,
-      "score_band": "laggard",
-      "wbaSocialPercentile": 0.5
+      "total_indicators": 18
     },
-    "inditex": {
-      "display_name": "Inditex",
-      "industry": "Apparel",
+    {
+      "company": "Inditex",
       "headquarters": "Spain",
+      "industry": "Apparel",
       "rank": 7,
       "total_score": 11,
       "human_rights_score": 3.5,
       "decent_work_score": 4,
       "ethics_score": 3.5,
       "indicators_met": 11,
-      "total_indicators": 18,
-      "score_band": "mid",
-      "wbaSocialPercentile": 0.4
+      "total_indicators": 18
     },
-    "coca-cola": {
-      "display_name": "The Coca-Cola Company",
-      "industry": "Food & Beverage",
+    {
+      "company": "The Coca-Cola Company",
       "headquarters": "United States",
+      "industry": "Food & Beverage",
       "rank": 8,
       "total_score": 10.5,
       "human_rights_score": 3.5,
       "decent_work_score": 3.5,
       "ethics_score": 3.5,
       "indicators_met": 10,
-      "total_indicators": 18,
-      "score_band": "mid",
-      "wbaSocialPercentile": 0.3
+      "total_indicators": 18
     },
-    "amazon-com": {
-      "display_name": "Amazon.com Inc.",
-      "industry": "Retail",
+    {
+      "company": "Amazon.com Inc.",
       "headquarters": "United States",
+      "industry": "Retail",
       "rank": 9,
       "total_score": 5,
       "human_rights_score": 1.5,
       "decent_work_score": 2,
       "ethics_score": 1.5,
       "indicators_met": 5,
-      "total_indicators": 18,
-      "score_band": "laggard",
-      "wbaSocialPercentile": 0.2
+      "total_indicators": 18
     },
-    "jbs-s-a": {
-      "display_name": "JBS S.A.",
-      "industry": "Food & Beverage",
+    {
+      "company": "JBS S.A.",
       "headquarters": "Brazil",
+      "industry": "Food & Beverage",
       "rank": 10,
       "total_score": 3.5,
       "human_rights_score": 1,
       "decent_work_score": 1.5,
       "ethics_score": 1,
       "indicators_met": 3,
-      "total_indicators": 18,
-      "score_band": "laggard",
-      "wbaSocialPercentile": 0.1
+      "total_indicators": 18
     }
-  }
+  ]
 }
