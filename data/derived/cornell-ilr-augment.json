@@ -2,9 +2,9 @@
   "_license": "CC-BY — Cornell ILR",
   "_citation": "Kallas, J., Iyer, D. K., & Friedman, E. (2024). \"Labor Action Tracker.\" Cornell University ILR School & University of Illinois LER School. Retrieved from striketracker.ilr.cornell.edu",
   "_source_url": "https://striketracker.ilr.cornell.edu",
-  "_generated_at": "2026-06-11T14:35:39.838Z",
-  "_source_raw_file": "data/raw/cornell-ilr/2026-06-09.json",
-  "_matched_slugs": 315,
+  "_generated_at": "2026-07-06T17:20:36.577Z",
+  "_source_raw_file": "data/raw/cornell-ilr/2026-07-06.json",
+  "_matched_slugs": 320,
   "_orphan_employers": [
     {
       "name": "The US Federal Government",
@@ -42,14 +42,14 @@
       "totalWorkers": 10830
     },
     {
+      "name": "California State University",
+      "actionCount": 12,
+      "totalWorkers": 36635
+    },
+    {
       "name": "Cornell University",
       "actionCount": 11,
       "totalWorkers": 1600
-    },
-    {
-      "name": "California State University",
-      "actionCount": 11,
-      "totalWorkers": 36635
     },
     {
       "name": "Chicago Public Schools",
@@ -145,6 +145,11 @@
       "name": "University Medical Center",
       "actionCount": 6,
       "totalWorkers": 2900
+    },
+    {
+      "name": "State of California",
+      "actionCount": 6,
+      "totalWorkers": 7900
     },
     {
       "name": "University of Rochester",
@@ -250,18 +255,13 @@
       "name": "Clark County School District",
       "actionCount": 5,
       "totalWorkers": 4020
-    },
-    {
-      "name": "Providence Health",
-      "actionCount": 5,
-      "totalWorkers": 8207
     }
   ],
   "_routing_counts": {
-    "direct": 1308,
+    "direct": 1314,
     "alias": 97,
     "brand-parent": 87,
-    "orphan": 3201
+    "orphan": 3261
   },
   "bySlug": {
     "conagra-brands": {
@@ -8254,8 +8254,8 @@
             "actionId": 4870,
             "actionType": "strike",
             "startDate": "2026-06-01",
-            "endDate": null,
-            "durationDays": null,
+            "endDate": "2026-06-10",
+            "durationDays": 10,
             "authorized": true,
             "numWorkers": 1000,
             "bargainingUnitSize": 0,
@@ -9349,95 +9349,92 @@
         "_license": "CC-BY — Cornell ILR"
       }
     },
-    "exxonmobil": {
-      "labor": {
-        "laborActions": [
-          {
-            "actionId": 486,
-            "actionType": "protest",
-            "startDate": "2021-08-18",
-            "endDate": "2021-08-18",
-            "durationDays": 1,
-            "authorized": null,
-            "numWorkers": null,
-            "bargainingUnitSize": 650,
-            "numUnions": 1,
-            "unions": [
-              "United Steelworkers (USW)"
-            ],
-            "industry": [
-              "Mining"
-            ],
-            "demands": [
-              "End to lockout"
-            ],
-            "city": "Houston",
-            "state": "Texas",
-            "sourceUrl": "https://www.prnewswire.com/news-releases/usw-exxonmobil-brings-lockout-to-houston-offshore-technology-conference-301356025.html",
-            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-486",
-            "notes": ""
-          },
-          {
-            "actionId": 306,
-            "actionType": "protest",
-            "startDate": "2021-05-26",
-            "endDate": "2021-05-26",
-            "durationDays": 1,
-            "authorized": null,
-            "numWorkers": null,
-            "bargainingUnitSize": 650,
-            "numUnions": 1,
-            "unions": [
-              "United Steelworkers (USW)"
-            ],
-            "industry": [
-              "Mining"
-            ],
-            "demands": [
-              "End lockout and agree to a new contract"
-            ],
-            "city": "Irving",
-            "state": "Texas",
-            "sourceUrl": "https://kfdm.com/news/local/usw-members-plan-to-demonstrate-wednesday-at-exxonmobil-shareholders-meeting",
-            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-306",
-            "notes": ""
-          },
-          {
-            "actionId": 233,
-            "actionType": "protest",
-            "startDate": "2021-04-29",
-            "endDate": "2021-04-29",
-            "durationDays": 1,
-            "authorized": null,
-            "numWorkers": null,
-            "bargainingUnitSize": 650,
-            "numUnions": 1,
-            "unions": [
-              "United Steelworkers (USW)"
-            ],
-            "industry": [
-              "Mining"
-            ],
-            "demands": [
-              "Health and safety",
-              "Prevent a lockout"
-            ],
-            "city": "Beaumont",
-            "state": "Texas",
-            "sourceUrl": "https://www.12newsnow.com/article/news/local/power-city/rally-outside-exxonmobil-in-beaumont-following-lockout-notice/502-3087996f-7053-4eb2-8c98-70bb42fc46a4",
-            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-233",
-            "notes": ""
-          }
-        ],
-        "actionCount": 3,
-        "totalWorkersInvolved": 0,
-        "sourceUrl": "https://striketracker.ilr.cornell.edu",
-        "_license": "CC-BY — Cornell ILR"
-      }
-    },
     "city": {
       "labor": {
         "laborActions": [
+          {
+            "actionId": 4961,
+            "actionType": "protest",
+            "startDate": "2026-06-25",
+            "endDate": "2026-06-25",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 2,
+            "unions": [
+              "International Federation of Professional and Technical Engineers (IFPTE)",
+              "American Federation of State, County and Municipal Employees (AFSCME)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Staffing",
+              "Health and safety"
+            ],
+            "city": "San Jose",
+            "state": "California",
+            "sourceUrl": "https://web.archive.org/web/20260701212747/https://fightbacknews.org/articles/san-jose-city-workers-rally-for-decent-contract",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4961",
+            "notes": ""
+          },
+          {
+            "actionId": 4936,
+            "actionType": "protest",
+            "startDate": "2026-06-17",
+            "endDate": "2026-06-17",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 5,
+            "unions": [
+              "Service Employees International Union (SEIU)",
+              "Free City College",
+              "American Federation of Teachers (AFT)",
+              "San Francisco Labor Council",
+              "Office and Professional Employees International Union (OPEIU)"
+            ],
+            "industry": [],
+            "demands": [
+              "Against budget cuts"
+            ],
+            "city": "San Francisco",
+            "state": "California",
+            "sourceUrl": "https://archive.ph/oi5H1",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4936",
+            "notes": ""
+          },
+          {
+            "actionId": 4916,
+            "actionType": "protest",
+            "startDate": "2026-06-09",
+            "endDate": "2026-06-09",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "International Federation of Professional and Technical Engineers (IFPTE)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Healthcare",
+              "Work from home privilege",
+              "Staffing"
+            ],
+            "city": "Oakland",
+            "state": "California",
+            "sourceUrl": "https://web.archive.org/web/20260616163711/https://localnewsmatters.org/2026/06/09/oakland-city-workers-contract-protest/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4916",
+            "notes": ""
+          },
           {
             "actionId": 4886,
             "actionType": "protest",
@@ -11940,7 +11937,7 @@
             "notes": ""
           }
         ],
-        "actionCount": 95,
+        "actionCount": 98,
         "totalWorkersInvolved": 40306,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
@@ -13200,6 +13197,34 @@
       "labor": {
         "laborActions": [
           {
+            "actionId": 4954,
+            "actionType": "protest",
+            "startDate": "2026-06-25",
+            "endDate": "2026-06-25",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "University of Michigan Professional Nurse Council (UMPNC)"
+            ],
+            "industry": [
+              "Health Care and Social Assistance"
+            ],
+            "demands": [
+              "Pay",
+              "Staffing",
+              "scheduling",
+              "Installation of surveillance devices"
+            ],
+            "city": "Ann Arbor",
+            "state": "Michigan",
+            "sourceUrl": "http://archive.today/2026.06.30-161114/https://www.michigandaily.com/news/news-briefs/nurses-union-announces-strike-vote-outside-regents-meeting/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4954",
+            "notes": ""
+          },
+          {
             "actionId": 4832,
             "actionType": "protest",
             "startDate": "2026-05-17",
@@ -13467,7 +13492,7 @@
             "notes": ""
           }
         ],
-        "actionCount": 10,
+        "actionCount": 11,
         "totalWorkersInvolved": 4390,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
@@ -28505,7 +28530,7 @@
             ],
             "demands": [
               "Union recognition",
-              "Against union busting"
+              "End to anti union retaliation"
             ],
             "city": "Indianapolis",
             "state": "Indiana",
@@ -32219,31 +32244,6 @@
       "labor": {
         "laborActions": [
           {
-            "actionId": 4880,
-            "actionType": "protest",
-            "startDate": "2026-06-03",
-            "endDate": "2026-06-03",
-            "durationDays": 1,
-            "authorized": null,
-            "numWorkers": 0,
-            "bargainingUnitSize": 0,
-            "numUnions": 1,
-            "unions": [
-              "The United Brotherhood of Carpenters and Joiners of America (UBC)"
-            ],
-            "industry": [
-              "Construction"
-            ],
-            "demands": [
-              "Against outsourcing work to out of state firms"
-            ],
-            "city": "Danville",
-            "state": "Illinois",
-            "sourceUrl": "https://web.archive.org/web/20260604145527/https://www.news-gazette.com/business/restaurants/chick-fil-a-breaks-ground-in-danville-amid-union-protest-over-lack-of-local-labor/article_c7d03a9f-4955-409a-85c3-c64af9b835d8.html",
-            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4880",
-            "notes": ""
-          },
-          {
             "actionId": 1449,
             "actionType": "strike",
             "startDate": "2022-09-27",
@@ -32270,7 +32270,7 @@
             "notes": "To further support our documentation of this action as a strike, we relied on private, direct communication with the labor organization as a source."
           }
         ],
-        "actionCount": 2,
+        "actionCount": 1,
         "totalWorkersInvolved": 3,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
@@ -42323,8 +42323,8 @@
             "actionId": 4877,
             "actionType": "strike",
             "startDate": "2026-06-02",
-            "endDate": null,
-            "durationDays": null,
+            "endDate": "2026-06-11",
+            "durationDays": 10,
             "authorized": true,
             "numWorkers": 50,
             "bargainingUnitSize": 0,
@@ -42384,6 +42384,234 @@
         ],
         "actionCount": 1,
         "totalWorkersInvolved": 0,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "reynolds-consumer-products": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 4927,
+            "actionType": "protest",
+            "startDate": "2026-06-17",
+            "endDate": "2026-06-17",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "United Steel Workers (USW)"
+            ],
+            "industry": [
+              "Manufacturing"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Malvern",
+            "state": "Arkansas",
+            "sourceUrl": "https://web.archive.org/web/20260619183127/https://www.malvern-online.com/news/steelworkers-strike-on-the-horizon/article_64df9d4e-5cce-46a7-a962-f848ed2509b4.html",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4927",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 0,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "ashland": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 4946,
+            "actionType": "strike",
+            "startDate": "2026-06-24",
+            "endDate": null,
+            "durationDays": null,
+            "authorized": true,
+            "numWorkers": 70,
+            "bargainingUnitSize": 0,
+            "numUnions": 4,
+            "unions": [
+              "International Union of Operating Engineers (IUOE)",
+              "International Brotherhood of Electrical Workers (IBEW)",
+              "United Association of Journeymen and Apprentices of the Plumbing and Pipe Fitting Industry (UA)",
+              "International Association of Machinists and Aerospace Workers (IAM)"
+            ],
+            "industry": [
+              "Manufacturing"
+            ],
+            "demands": [
+              "Health and safety",
+              "Paid Time Off (PTO)",
+              "Sick leave",
+              "Job Security"
+            ],
+            "city": "Texas City",
+            "state": "Texas",
+            "sourceUrl": "https://web.archive.org/web/20260628040826/https://www.beaumontenterprise.com/news/article/pipefitters-electricians-machinists-launch-22322738.php",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4946",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 70,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "rogers": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 4953,
+            "actionType": "protest",
+            "startDate": "2026-06-25",
+            "endDate": "2026-06-25",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "National Union of Healthcare Workers (NUHW)"
+            ],
+            "industry": [
+              "Health Care and Social Assistance"
+            ],
+            "demands": [
+              "Health and safety",
+              "Staffing",
+              "End to anti union retaliation",
+              "Unjust firings"
+            ],
+            "city": "West Allis",
+            "state": "Wisconsin",
+            "sourceUrl": "https://web.archive.org/web/20260629115435/https://www.cbs58.com/news/rogers-behavioral-health-workers-protest-amid-union-retaliation-allegations",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4953",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 0,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "nationwide": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 4965,
+            "actionType": "protest",
+            "startDate": "2026-06-24",
+            "endDate": "2026-06-24",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 100,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "American Federation of State, County and Municipal Employees (AFSCME)"
+            ],
+            "industry": [
+              "Health Care and Social Assistance"
+            ],
+            "demands": [
+              "Staffing",
+              "Pay",
+              "Health and safety",
+              "Healthcare",
+              "Union recognition"
+            ],
+            "city": "Columbus",
+            "state": "Ohio",
+            "sourceUrl": "https://web.archive.org/web/20260701215845/https://www.wosu.org/2026-06-24/nationwide-childrens-hospital-nurses-rally-in-support-of-union-efforts",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4965",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 100,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "hudson": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 4966,
+            "actionType": "strike",
+            "startDate": "2026-07-01",
+            "endDate": null,
+            "durationDays": null,
+            "authorized": true,
+            "numWorkers": 7,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "Service Employees International Union (SEIU)"
+            ],
+            "industry": [
+              "Real Estate and Rental and Leasing"
+            ],
+            "demands": [
+              "Pay",
+              "Job Security"
+            ],
+            "city": "New York",
+            "state": "New York",
+            "sourceUrl": "https://archive.ph/q2Ti6",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4966",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 7,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "woodward": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 4968,
+            "actionType": "protest",
+            "startDate": "2026-06-30",
+            "endDate": "2026-06-30",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 100,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "United Auto Workers (UAW)"
+            ],
+            "industry": [
+              "Manufacturing"
+            ],
+            "demands": [
+              "Pay",
+              "Job Security",
+              "fair progression",
+              "time off",
+              "surveillance"
+            ],
+            "city": "Niles",
+            "state": "Illinois",
+            "sourceUrl": "http://archive.today/2026.07.01-125439/https://chicago.suntimes.com/work/2026/06/30/union-uaw-local-5101-workers-rally-woodward-mpc-niles",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4968",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 100,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
       }
