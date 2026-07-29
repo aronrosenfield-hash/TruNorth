@@ -1,18 +1,18 @@
 {
   "_license": "CC BY-SA 3.0 — Powerbase (Spinwatch), https://powerbase.info",
   "_source": "https://powerbase.info",
-  "_generated_at": "2026-06-11T14:35:44.651Z",
-  "_source_file": "data/raw/powerbase/2026-06-09.json",
+  "_generated_at": "2026-07-01T16:22:34.728Z",
+  "_source_file": "data/raw/powerbase/2026-07-01.json",
   "_stats": {
-    "raw_pages": 37,
-    "matched_companies": 23,
+    "raw_pages": 57,
+    "matched_companies": 43,
     "by_category": {
-      "political": 21,
-      "environment": 2
+      "political": 38,
+      "environment": 5
     },
     "by_severity": {
-      "poor": 3,
-      "mixed": 20
+      "poor": 6,
+      "mixed": 37
     }
   },
   "companies": {
@@ -520,29 +520,15 @@
       ],
       "external_link_count": 0
     },
-    "cisco": {
-      "title": "Cisco",
-      "page_url": "https://powerbase.info/index.php/Cisco",
+    "accenture": {
+      "title": "Accenture",
+      "page_url": "https://powerbase.info/index.php/Accenture",
       "narratives": {
         "political": {
-          "text": "Powerbase wiki — investigative profile. Cisco Systems, or Cisco is a global technology firm, with its interests concentrated on computer networking and hardware. It is one of the most prominent commercial actors in educational technology,…",
+          "text": "Powerbase wiki — investigative profile. Accenture is a global management consulting, technology services and outsourcing company. The firm was founded in 1989 as Andersen Consulting, by partners from a number of Arthur Andersen firms…",
           "sc": "mixed",
           "severity": "mixed",
-          "source_url": "https://powerbase.info/index.php/Cisco"
-        }
-      },
-      "category_signals": [],
-      "external_link_count": 0
-    },
-    "ibm": {
-      "title": "IBM",
-      "page_url": "https://powerbase.info/index.php/IBM",
-      "narratives": {
-        "political": {
-          "text": "Powerbase wiki — investigative profile. IBM (International Business Machines Corporation) is a multinational computer technology and consulting corporation headquartered in Armonk, New York, USA. IBM manufactures and sells computer…",
-          "sc": "mixed",
-          "severity": "mixed",
-          "source_url": "https://powerbase.info/index.php/IBM"
+          "source_url": "https://powerbase.info/index.php/Accenture"
         }
       },
       "category_signals": [],
@@ -561,6 +547,399 @@
       },
       "category_signals": [],
       "external_link_count": 1
+    },
+    "tesco": {
+      "title": "Tesco Plc",
+      "page_url": "https://powerbase.info/index.php/Tesco_Plc",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — investigative profile. :\"Our market share of UK retailing is 12.5% - that leaves 87.5% to go after.\" - Terry Leahy, Tesco Chief Executive, quoted in Management Today :\"Tesco will just sail away. It will become…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Tesco_Plc"
+        }
+      },
+      "category_signals": [],
+      "external_link_count": 4
+    },
+    "cisco": {
+      "title": "Cisco",
+      "page_url": "https://powerbase.info/index.php/Cisco",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — investigative profile. Cisco Systems, or Cisco is a global technology firm, with its interests concentrated on computer networking and hardware. It is one of the most prominent commercial actors in educational technology,…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Cisco"
+        }
+      },
+      "category_signals": [],
+      "external_link_count": 0
+    },
+    "deloitte": {
+      "title": "Deloitte",
+      "page_url": "https://powerbase.info/index.php/Deloitte",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — lobbying, fossil fuel, revolving door. Deloitte Touche Tohmatsu International - Deloitte - is an organisation of member firms around the world in accounting and financial and risk consultancy. Member firms offer services in audit, tax,…",
+          "sc": "poor",
+          "severity": "negative",
+          "source_url": "https://powerbase.info/index.php/Deloitte"
+        }
+      },
+      "category_signals": [
+        {
+          "category_title": "Category:Financial sector lobbying",
+          "signal": "lobbying",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Fracking",
+          "signal": "fossil_fuel",
+          "cat": "environment"
+        },
+        {
+          "category_title": "Category:Revolving Door",
+          "signal": "revolving_door",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Tax avoidance",
+          "signal": "tax_avoidance",
+          "cat": "political"
+        }
+      ],
+      "external_link_count": 3
+    },
+    "dupont": {
+      "title": "Dupont",
+      "page_url": "https://powerbase.info/index.php/Dupont",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — investigative profile. E. I. DuPont de Nemours and Company (DuPont) is a global science and technology company. It is involved in a range of different industry areas, including high-performance materials, synthetic…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Dupont"
+        }
+      },
+      "category_signals": [],
+      "external_link_count": 0
+    },
+    "eli-lilly": {
+      "title": "Eli Lilly and Company",
+      "page_url": "https://powerbase.info/index.php/Eli_Lilly_and_Company",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — investigative profile. Eli Lilly and Company Limited is the UK affiliate of the American pharmaceutical company Eli Lilly and Company of Indianapolis. In itself, Eli Lilly and Co. Ltd. is a major pharmaceutical company..…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Eli_Lilly_and_Company"
+        }
+      },
+      "category_signals": [],
+      "external_link_count": 4
+    },
+    "general-dynamics": {
+      "title": "General Dynamics Corporation",
+      "page_url": "https://powerbase.info/index.php/General_Dynamics_Corporation",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — revolving door. General Dynamics (GD) is an American-headquartered aerospace and defence multinational company. Its business is spread across a range of areas: business aviation; combat vehicles, weapons systems…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/General_Dynamics_Corporation"
+        }
+      },
+      "category_signals": [
+        {
+          "category_title": "Category:Arms Trade Revolving Door",
+          "signal": "revolving_door",
+          "cat": "political"
+        }
+      ],
+      "external_link_count": 0
+    },
+    "humana": {
+      "title": "Humana",
+      "page_url": "https://powerbase.info/index.php/Humana",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — investigative profile. Humana Europe offers commissioning services and support to the NHS in England. It is based in London According to its website, it has developed a specific offering to support GP consortia as they…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Humana"
+        }
+      },
+      "category_signals": [],
+      "external_link_count": 1
+    },
+    "ibm": {
+      "title": "IBM",
+      "page_url": "https://powerbase.info/index.php/IBM",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — investigative profile. IBM (International Business Machines Corporation) is a multinational computer technology and consulting corporation headquartered in Armonk, New York, USA. IBM manufactures and sells computer…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/IBM"
+        }
+      },
+      "category_signals": [],
+      "external_link_count": 2
+    },
+    "merck": {
+      "title": "Merck and Co. Inc.",
+      "page_url": "https://powerbase.info/index.php/Merck_and_Co._Inc.",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — investigative profile. Merck & Co., Inc. describes itself as \"a global research-driven pharmaceutical company dedicated to putting patients first.\" \"Putting patients first\" has so far \"led to more than 27,000 heart…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Merck_and_Co._Inc."
+        }
+      },
+      "category_signals": [],
+      "external_link_count": 2
+    },
+    "saic": {
+      "title": "SAIC",
+      "page_url": "https://powerbase.info/index.php/SAIC",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — investigative profile. SAIC, Science Applications International Corporation, is a company which specializes in complex engineering and technology programs for U.S. military and intelligence agencies. SAIC was founded in…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/SAIC"
+        }
+      },
+      "category_signals": [],
+      "external_link_count": 0
+    },
+    "veritas": {
+      "title": "Veritas",
+      "page_url": "https://powerbase.info/index.php/Veritas",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — investigative profile. Veritas was a right-wing political party formed in February 2005 by Robert Kilroy-Silk following a split from the UK Independence Party (UKIP). Kilroy-Silk served as its party leader through the…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Veritas"
+        }
+      },
+      "category_signals": [],
+      "external_link_count": 2
+    },
+    "abbvie": {
+      "title": "AbbVie",
+      "page_url": "https://powerbase.info/index.php/AbbVie",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — investigative profile. AbbVie is a research-based biopharmaceutical company. AbbVie began as the pharmaceutical leader, Abbott, which was founded in 1888 by Chicago physician, Dr. Wallace Abbott. In 2011 the companines…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/AbbVie"
+        }
+      },
+      "category_signals": [],
+      "external_link_count": 1
+    },
+    "alcoa": {
+      "title": "Alcoa",
+      "page_url": "https://powerbase.info/index.php/Alcoa",
+      "narratives": {
+        "environment": {
+          "text": "Powerbase wiki — mining industry, mining industry, mining industry. Alcoa (standing for Aluminium Company of America) is the world's third largest aluminium producer with operations in 31 countries.",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Alcoa"
+        }
+      },
+      "category_signals": [
+        {
+          "category_title": "Category:Mining Industry",
+          "signal": "mining_industry",
+          "cat": "environment"
+        },
+        {
+          "category_title": "Category:Mining and Metals",
+          "signal": "mining_industry",
+          "cat": "environment"
+        },
+        {
+          "category_title": "Category:Mining and Metals: Transnational Corporations",
+          "signal": "mining_industry",
+          "cat": "environment"
+        }
+      ],
+      "external_link_count": 4
+    },
+    "allstate": {
+      "title": "Allstate Corporation",
+      "page_url": "https://powerbase.info/index.php/Allstate_Corporation",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — revolving door, revolving door. Allstate Corporation is the second-largest personal lines insurer in the United States and the largest that is publicly held. On Fortune Global 500, they ranked 198 in 2008 and 295 in 2009.",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Allstate_Corporation"
+        }
+      },
+      "category_signals": [
+        {
+          "category_title": "Category:Financial Revolving Door",
+          "signal": "revolving_door",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Revolving Door",
+          "signal": "revolving_door",
+          "cat": "political"
+        }
+      ],
+      "external_link_count": 1
+    },
+    "anheuser-busch": {
+      "title": "Anheuser Busch",
+      "page_url": "https://powerbase.info/index.php/Anheuser_Busch",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — investigative profile. Anheuser Busch is a wholly owned subsidiary of Anheuser-Busch InBev since 2008 when it merged with InBev. It is the leading global brewer and continues to operate under the Anheuser-Busch name and…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Anheuser_Busch"
+        }
+      },
+      "category_signals": [],
+      "external_link_count": 3
+    },
+    "cargill": {
+      "title": "Cargill",
+      "page_url": "https://powerbase.info/index.php/Cargill",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — lobbying.",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Cargill"
+        }
+      },
+      "category_signals": [
+        {
+          "category_title": "Category:Biofuels Lobby Groups",
+          "signal": "lobbying",
+          "cat": "political"
+        }
+      ],
+      "external_link_count": 0
+    },
+    "compass": {
+      "title": "Compass",
+      "page_url": "https://powerbase.info/index.php/Compass",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — think tank. Compass is described on its website as \"the influential left of centre pressure group\". The website states, \"The organisation is run by an annually elected Management Committee and relevant officers…",
+          "sc": "poor",
+          "severity": "negative",
+          "source_url": "https://powerbase.info/index.php/Compass"
+        }
+      },
+      "category_signals": [
+        {
+          "category_title": "Category:Think Tanks",
+          "signal": "think_tank",
+          "cat": "political"
+        }
+      ],
+      "external_link_count": 4
+    },
+    "conoco": {
+      "title": "Conoco Inc.",
+      "page_url": "https://powerbase.info/index.php/Conoco_Inc.",
+      "narratives": {
+        "environment": {
+          "text": "Powerbase wiki — fossil fuel. The oil company which in 2002 merged with Phillips Petroleum Company to form ConocoPhillips",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Conoco_Inc."
+        }
+      },
+      "category_signals": [
+        {
+          "category_title": "Category:Oil Industry",
+          "signal": "fossil_fuel",
+          "cat": "environment"
+        }
+      ],
+      "external_link_count": 0
+    },
+    "conocophillips": {
+      "title": "ConocoPhillips",
+      "page_url": "https://powerbase.info/index.php/ConocoPhillips",
+      "narratives": {
+        "environment": {
+          "text": "Powerbase wiki — fossil fuel.",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/ConocoPhillips"
+        }
+      },
+      "category_signals": [
+        {
+          "category_title": "Category:Oil Industry",
+          "signal": "fossil_fuel",
+          "cat": "environment"
+        }
+      ],
+      "external_link_count": 0
+    },
+    "danone": {
+      "title": "Danone",
+      "page_url": "https://powerbase.info/index.php/Danone",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — investigative profile. Groupe Danone is a food production company trading mainly in dairy products and bottled water and claims to be the leading world company in dairy products. Their mission statement is 'Bringing…",
+          "sc": "mixed",
+          "severity": "mixed",
+          "source_url": "https://powerbase.info/index.php/Danone"
+        }
+      },
+      "category_signals": [],
+      "external_link_count": 0
+    },
+    "ey": {
+      "title": "Ernst and Young",
+      "page_url": "https://powerbase.info/index.php/Ernst_and_Young",
+      "narratives": {
+        "political": {
+          "text": "Powerbase wiki — lobbying, fossil fuel, revolving door. Ernst & Young is one of the largest professional services firms in the world and one of the Big Four accountancy firms. Just four accounting firms – PricewaterhouseCoopers, KPMG, Deloitte & Touche…",
+          "sc": "poor",
+          "severity": "negative",
+          "source_url": "https://powerbase.info/index.php/Ernst_and_Young"
+        }
+      },
+      "category_signals": [
+        {
+          "category_title": "Category:Financial sector lobbying",
+          "signal": "lobbying",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Fracking",
+          "signal": "fossil_fuel",
+          "cat": "environment"
+        },
+        {
+          "category_title": "Category:Revolving Door",
+          "signal": "revolving_door",
+          "cat": "political"
+        },
+        {
+          "category_title": "Category:Tax avoidance",
+          "signal": "tax_avoidance",
+          "cat": "political"
+        }
+      ],
+      "external_link_count": 4
     }
   }
 }
