@@ -99,7 +99,7 @@
   coverage value (sec/dol/labor first); several may be genuinely dead sources → honestly degrade the in-app
   "live" claim rather than fake data. **Impact:** restores coverage-critical gov sources + closes the
   over-claim the diligence review flagged.
-- **B-108 — retire the duplicate Canada Competition Bureau pipeline** (two crons, two fetchers). *(WS-B, S)*
+- **B-108 ✅ DONE — retire the duplicate Canada Competition Bureau pipeline** (two crons, two fetchers). *(WS-B, S)*
   **Impact:** one less maintenance surface for a solo founder.
 - **B-118 — build the one-workflow source-discovery MVP + separate source-value model.** *(WS-B, L)*
   `source-discovery-weekly.yml` → one ranked GitHub issue; `scripts/source-value-score.mjs` scores sources
