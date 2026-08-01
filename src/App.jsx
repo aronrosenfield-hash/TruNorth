@@ -1017,12 +1017,18 @@ function computeScore(co, profile) {
 
 // ─── DISPLAY HELPERS ─────────────────────────────────────────────────────────
 // 2026-06-01 (user feedback): everywhere the app shows a company count to
-// the user, round DOWN to the nearest thousand and append "+". The exact
-// count (e.g. 11,209) reads as precision theater and dates the build.
-// "11,000+" is the marketing voice; it's the same number, better punch.
+// the user, round DOWN and append "+". The exact count (e.g. 11,209) reads
+// as precision theater and dates the build. The round-DOWN rule is the load-
+// bearing part: we under-claim, never over-claim.
+// 2026-08-01 (GEO audit G-10): bucket changed from 1,000 to 100. Flooring
+// 12,830 to "12,000+" threw away 800 brands and put this helper out of step
+// with the static copy in index.html / llms.txt / MarketingLanding, which is
+// how the counts drifted apart in the first place. 100 keeps the marketing
+// voice ("12,800+", not "12,830"), keeps the under-claim, and lets these
+// surfaces track the catalog automatically as it grows.
 function formatCompanyCount(n) {
   if (!n || n < 1000) return String(n || 0);
-  const rounded = Math.floor(n / 1000) * 1000;
+  const rounded = Math.floor(n / 100) * 100;
   return `${rounded.toLocaleString()}+`;
 }
 
@@ -1569,7 +1575,7 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
             // MarketingLanding.jsx and the Account card.
             { feat: "Personalized letter grade",             free: true,     pro: true },
             { feat: "45-second values Match",                free: true,     pro: true },
-            { feat: "Browse 12,000+ brands (3,000+ graded)", free: true,     pro: true },
+            { feat: "Browse 12,800+ brands (3,000+ graded)", free: true,     pro: true },
             { feat: "In-store barcode scanner",              free: true,     pro: true },
             { feat: "Full brand profile — /100 score, all 9 categories, per-grade citations",
                                                              free: "1/day",  pro: "∞", hi: true },
@@ -2282,12 +2288,16 @@ function WhatsNewModal({ companyCount }) {
           </div>
         </div>
         <div style={{ background:T.accentBg, border:`1px solid ${T.accent}`, borderRadius:10, padding:"14px 16px", marginBottom:14 }}>
-          <div style={{ fontSize:28, fontWeight:800, color:T.accent2, lineHeight:1.1 }}>2,800+</div>
+          <div style={{ fontSize:28, fontWeight:800, color:T.accent2, lineHeight:1.1 }}>3,000+</div>
           {/* 2026-07-03 (diligence): lead with the HONEST graded number, not the
-              12,000+ tracked figure — "12,000+" as the headline read as an
-              over-promise when a first search hit a "?". Graded is the promise. */}
+              12,800+ tracked figure — the tracked count as the headline read as
+              an over-promise when a first search hit a "?". Graded is the promise.
+              2026-08-01: "12,000+ more tracked" was wrong arithmetic — it implied
+              ~14,800 total. The remainder is tracked-minus-graded, not the whole
+              catalog. Counts here are rounded DOWN from index.json (3,054 graded
+              / 12,830 tracked / 9,776 ungraded) so they never over-claim. */}
           <div style={{ fontSize:13, color:T.txt2, marginTop:4, lineHeight:1.4 }}>
-            brands fully graded across 9 categories from US public records — campaign finance (FEC), environment (EPA), worker safety (OSHA), labor disputes (NLRB), and corporate filings (SEC). 12,000+ more tracked; ungraded brands show a “?”, never a fake grade.
+            brands fully graded across 9 categories from US public records — campaign finance (FEC), environment (EPA), worker safety (OSHA), labor disputes (NLRB), and corporate filings (SEC). 9,700+ more tracked; ungraded brands show a “?”, never a fake grade.
           </div>
         </div>
         <ul style={{ listStyle:"none", padding:0, margin:0, fontSize:13.5, color:T.txt2, lineHeight:1.65 }}>

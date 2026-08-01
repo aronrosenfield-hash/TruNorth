@@ -95,7 +95,7 @@ export default function OnboardingFlow({ onComplete }) {
             ))}
           </div>
           <p style={{ ...s.statLabel, marginTop:10, textAlign:"center", lineHeight:1.5 }}>
-            of 12,000+ brands tracked — the rest have no public record yet, and we don’t guess.
+            of 12,800+ brands tracked — the rest have no public record yet, and we don’t guess.
           </p>
           <p style={{ ...s.terms, marginTop:14 }}>By continuing you agree to our <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" style={{ color:"#38C0CE", textDecoration:"none" }}>Terms</a> & <a href="https://www.trunorthapp.com/#privacy" target="_blank" rel="noopener noreferrer" style={{ color:"#38C0CE", textDecoration:"none" }}>Privacy Policy</a>.</p>
         </div>
