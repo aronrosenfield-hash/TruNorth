@@ -3239,7 +3239,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
     setOpen(o => {
       if (!o) {
         // Expanding — track view + lazily fetch detail if needed
-        track("company_view", { slug: company.slug || company.id, name: company.name, grade, score: ps, category: company.cat });
+        track("company_view", { slug: company.slug || company.id, name: company.name, grade, graded: grade !== "?", score: ps, category: company.cat });
         if (isSplitBundleEnabled() && company.slug && !detail && !loadingDetail) {
           setLoadingDetail(true);
           loadCompanyDetail(company.slug)
@@ -4647,7 +4647,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                     if (navigator.share && navigator.canShare?.(shareData) !== false) { await navigator.share(shareData); method = "native_share"; }
                     else if (navigator.clipboard?.writeText) { await navigator.clipboard.writeText(url); }
                   } catch (err) { if (err?.name === "AbortError") method = "cancelled"; }
-                  track("brand_card_shared", { slug, grade: _g, method });
+                  track("share", { surface: "brand_card", slug, grade: _g, method });
                 }}
                 style={{ flex:1, padding:10, borderRadius:8, fontSize:12, fontWeight:600, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:6, background:T.bg3, border:`1px solid ${T.border}`, color:T.txt2 }}
               >
@@ -4739,7 +4739,7 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
                   }
                   method = err?.name === "AbortError" ? "user-cancelled" : "error";
                 }
-                track("share_clicked", { slug: enriched.slug || enriched.id, name: enriched.name, grade, method });
+                track("share", { surface: "brand_detail", slug: enriched.slug || enriched.id, name: enriched.name, grade, method });
               }}
               style={{ flex:1, padding:10, borderRadius:8, fontSize:12, fontWeight:600, cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", gap:6, background:T.accentBg, border:`1px solid ${T.accent}`, color:T.accent2 }}
             >
@@ -5098,13 +5098,13 @@ function SuggestBrandButton({ query, context = "added" }) {
   // dead-end). Both capture an email + demand signal → a guaranteed return event
   // when the brand lands. (2026-07-03, retention Tier 3.)
   const CTX = context === "graded" ? {
-    source: "brand_grade_notify", ev: "brand_grade_notify",
+    source: "brand_grade_notify",
     idle: `Notify me when we grade “${query}”`, idleIcon: "ti-bell",
     formQ: <>Email me the moment <strong style={{ color:T.txt }}>&ldquo;{query}&rdquo;</strong> gets a grade? (Optional)</>,
     doneEmail: `Done — we'll email you the moment “${query}” is graded`,
     doneAnon: `Got it — we'll prioritize grading “${query}”`,
   } : {
-    source: "failed_search_notify", ev: "failed_search_suggest",
+    source: "failed_search_notify",
     idle: `Suggest “${query}” to be added`, idleIcon: "ti-plus",
     formQ: <>Want us to email you when <strong style={{ color:T.txt }}>&ldquo;{query}&rdquo;</strong> is added? (Optional)</>,
     doneEmail: `Thanks — we'll email you when “${query}” is added`,
@@ -5124,7 +5124,7 @@ function SuggestBrandButton({ query, context = "added" }) {
         localStorage.setItem("tn_pendingSubmits", JSON.stringify(pending.slice(-50)));
       }
     } catch {}
-    track(CTX.ev, { query, hasEmail: !!withEmail });
+    track("notify_me_requested", { context, query, hasEmail: !!withEmail });
 
     if (withEmail && email) {
       setLoading(true);
@@ -5728,7 +5728,7 @@ useEffect(() => {
     return () => { if (unlisten) unlisten(); };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
-    if (showPaywall) track("paywall_shown", { tab, isPaid });
+    if (showPaywall) track("paywall_shown", { reason: "screen_view", tab, isPaid });
   }, [showPaywall]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
@@ -6666,7 +6666,7 @@ if (screen === "basket") {
                 if (err?.name !== "AbortError") console.error("share failed:", err);
                 method = err?.name === "AbortError" ? "user-cancelled" : "error";
               }
-              track("values_card_shared", { method, top: winner?.co?.slug || winner?.co?.id || null });
+              track("share", { surface: "values_card", method, top: winner?.co?.slug || winner?.co?.id || null });
               // (For the curious: the OG image actually previewed by social
               // platforms is /api/og/values?<qp> — we don't push it in the
               // share intent because Web Share API only supports url+text.
@@ -6777,7 +6777,7 @@ if (screen === "basket") {
           onClose={() => setShowScanner(false)}
           onMatch={(co, meta) => {
             setShowScanner(false);
-            track("scanner_match", { slug: co.slug || co.id, name: co.name, barcode: meta?.barcode, source: meta?.source });
+            track("scanner_match", { slug: co.slug || co.id, name: co.name, grade: co.grade, barcode: meta?.barcode, source: meta?.source });
             // Phase 5.aj: focus on exactly that one company — no list.
             // openBrand with clearFilters+clearQuery does the full reset.
             openBrand(co.slug || co.id, { clearFilters: true, clearQuery: true });
