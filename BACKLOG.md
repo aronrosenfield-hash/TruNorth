@@ -76,6 +76,19 @@
 
 ### Batch 2 — source hygiene (no grades) 
 
+- **B-120 — ⚠️ ROOT CAUSE of the 20 cancelled crons: one shared concurrency group.** *(WS-B, M, **REQUIRES
+  DECISION**)* All **126** data workflows share `concurrency: group: data-pipeline-commit` (identical stanza,
+  `cancel-in-progress: false`). GitHub allows only 1 running + 1 pending per group, so in the hour-4–7 UTC
+  window where **~90 crons are scheduled**, ~88 get CANCELLED as superseded — not timeouts (trending-refresh
+  ran 62s vs a 30-min limit). The crons ALREADY handle push races individually (`git pull --rebase && push`
+  retry), so the global serialize isn't needed for push safety. **Fix options:** (a) per-workflow group
+  `${{ github.workflow }}` — all run concurrently, risk = push contention with 90 concurrent pushes to main;
+  (b) DESTAGGER the ~90 bunched schedules across 24h, keep the shared group — lowest risk, no push storm, but
+  edits ~90 cron times; (c) hybrid — a handful of groups by cadence. **Reviving ~20 dead sources triggers a
+  large data-freshness burst → grade drift at the next rebake (rule #16, show diff first).** Needs Aron's call
+  on approach + awareness of the drift. Separately, the **15 hard FAILURES** (sec-def14a-annual, dol-ofccp,
+  fsis/fsis-dw, usda-aphis, eu-antitrust, followthemoney-state, forest500, wikirate, usaspending, sec-8k, …)
+  are NOT concurrency — each is its own fetcher break, folded into B-107.
 - **B-107 — fix or honestly degrade the 5 dead health/safety fetchers** (nhtsa-auto, fsis, fsis-dw, fra, gdelt —
   advertised live, no output on disk). *(WS-B, M)* **Impact:** closes a diligence/credibility over-claim.
 - **B-108 — retire the duplicate Canada Competition Bureau pipeline** (two crons, two fetchers). *(WS-B, S)*
