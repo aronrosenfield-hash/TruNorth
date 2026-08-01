@@ -123,7 +123,7 @@
 
 ### Batch 4 — coverage conversions (MOVE GRADES → rule #16, show drift before commit)
 
-- **B-113 — normalize the `very_poor` underscore enum + rebake.** *(WS-A, S, grades)* Data stores `very_poor`,
+- **B-113 ✅ DONE — normalize the `very_poor` underscore enum + rebake.** *(WS-A, S, grades)* Data stores `very_poor`,
   scorer matches `very poor` (rebake-scoring.mjs:301/332/348/354) → Chanel/Prada/PetroChina/Pioneer/TD
   Ameritrade fall to "?" instead of earned D/F. **~5–6 convert; 16 already-graded carry underscored enums and
   WILL shift — show the drift diff.** Cheapest real coverage fix.
