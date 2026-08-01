@@ -32,6 +32,99 @@
 
 ---
 
+## 🎯 v1.2 COVERAGE & ADOPTION PROGRAM (2026-08-01, 6-agent audit)
+
+> **Two goals:** (1) increase LEGITIMATE graded coverage (convert "?" brands with credible data),
+> (2) create trustworthy adoption measurement + repeat usage. Android held to code/CI/emulator/docs
+> only until Aron has device access.
+> **Measured baseline:** 12,830 tracked · **3,054 graded** · 9,776 "?" (76.2%). A brand grades iff ≥1 of
+> the **5 scoreable** categories (charity/environment/labor/privacy/execPay) has a signal; the 4 stance
+> categories (political/dei/animals/guns) return null by design and can NEVER lift a brand off the wall.
+> **"?" wall causes:** identity-but-no-scoreable-evidence **4,277 (44%)** · stance-only **3,104 (32%,
+> structural, don't chase)** · genuinely empty **1,964 (20%, the honest floor)** · execPay-no-ratio 350 ·
+> dark-scoreable-on-disk 66 · graded-parent-not-inherited 10 · enum-vocab-bug 5.
+> **Ordered by (impact × credibility × match-confidence) / (effort × maintenance × wrong-grade-risk).**
+
+### Batch 1 — measurement + instruments (no grades, no decisions) — DO FIRST
+
+- **QW-17 ✅ DONE — PostHog funnel schema hygiene.** *(WS-E, S, no grades/decision)* The pipe is healthy
+  (`analytics.js` init, ph.trunorthapp.com proxy, localStorage → retention already computable) but the funnel
+  is un-queryable: `paywall_shown` fires 2 incompatible shapes (App.jsx:3217 vs :5731), share splits across 3
+  names (:4650/:4742/:6669), notify-me uses 2 names (:5101/:5107), `company_view` (:3242) has no `graded`
+  boolean. Consolidate to one shape per funnel step. **Impact:** every step queryable with one query;
+  foundational for measuring whether ANY coverage/retention work moves the needle. Free at ~9 visitors/wk;
+  prevents un-fixable historical gaps at scale.
+- **QW-18 ✅ DONE — add `grade` to `scanner_match`** (App.jsx:6780). *(WS-D, S)* The flagship in-store
+  feature's dead-end rate (scan resolves to a "?" brand) is currently invisible. Additive prop. **Impact:**
+  directly answers whether coverage or barcode data is the bigger lever.
+- **B-104 — commit `scripts/audit-ungraded.mjs` as the coverage instrument.** *(WS-A, S)* The audit script the
+  workflow wrote; classifies all 9,776 "?" by root cause. **Impact:** repeatable one-command coverage
+  measurement — the backbone number every coverage decision depends on.
+- **B-105 — fix the watchdog blind spot before adding any source.** *(WS-B, S)* `cron-health-daily` uses a 24h
+  lookback (misses weekly crons), queries only `status=failure` (misses `cancelled` = timeout kills), and
+  auto-closes empty windows. **Confirmed live 2026-08-01:** 11 cancelled + 7 failed crons, watchdog green.
+  **Impact:** prerequisite for trusting any new source; without it every pipeline inherits silent death.
+- **B-106 — materialize demand signals into one in-repo `demand-queue.json`.** *(WS-C, S)* scanner_no_match +
+  notify-me + ungraded company_view + trending, ranked. **Impact:** ends the repo's blindness to what users
+  scan/search but can't find — the true expansion backlog.
+- **QW-19 — widen the trending window 7→90 days** (`refresh-trending.mjs`). *(WS-C, S)* trending.json currently
+  = 2 brands/1 view each. **Impact:** makes the dead Trending row + demand queue meaningful at near-zero
+  traffic. Revert once daily views hit hundreds. **NOTE: trending-refresh cron is CANCELLED (timeout) — B-105
+  must land first or this stays dead.**
+- **QW-20 — report `brands_added` and `brands_graded` as two separate KPIs in doc-sync.** *(WS-C, S)* Never raw
+  catalog count. **Impact:** the one metric that says whether expansion creates gradeable value vs inflating "?".
+
+### Batch 2 — source hygiene (no grades) 
+
+- **B-107 — fix or honestly degrade the 5 dead health/safety fetchers** (nhtsa-auto, fsis, fsis-dw, fra, gdelt —
+  advertised live, no output on disk). *(WS-B, M)* **Impact:** closes a diligence/credibility over-claim.
+- **B-108 — retire the duplicate Canada Competition Bureau pipeline** (two crons, two fetchers). *(WS-B, S)*
+  **Impact:** one less maintenance surface for a solo founder.
+- **B-118 — build the one-workflow source-discovery MVP + separate source-value model.** *(WS-B, L)*
+  `source-discovery-weekly.yml` → one ranked GitHub issue; `scripts/source-value-score.mjs` scores sources
+  0–100 on coverage-lift 0.30 / category-need 0.25 (inverse coverage, self-steers to DEI 11%) / license 0.20
+  (gov=1.0, CC-BY-NC hard-block) / freshness 0.15 / solo-maintenance 0.10 — MUST NOT touch frozen thresholds.
+  **Impact:** answers "what source next?" with data; the pipeline moves nothing, only human-approved wire-ins.
+
+### Batch 3 — repeat-usage (client display, no grades)
+
+- **B-109 — surface "?"→grade transitions for SAVED brands** (the event that actually fires as coverage grows;
+  App.jsx:5898 currently EXCLUDES `?`→grade). *(WS-D, S)*
+- **B-110 — fulfill the notify-me promise IN-APP** (reconcile `tn_pendingSubmits` vs index.json: "You asked
+  about Trader Joe's — it's now graded B"). *(WS-D, S)* Closes the loop the email path can't; no backend.
+- **B-111 — catalog-level "N brands graded this week" Today card.** *(WS-D, S)* Cheap proof-of-concept for the
+  marquee; something true + new for every returning user even when their basket didn't move.
+- **B-112 — ⭐ MARQUEE: full personalized "Newly Graded" return engine.** *(WS-D, L, **REQUIRES DECISION**, no
+  grades)* Flip the weekly-return mechanic from grade-CHANGES (weekly_changes.json = 0, fires ~never) to
+  newly-GRADED (fires constantly as coverage grows 3,054→7–8k). Client-side diff of index.json vs a stored
+  snapshot; no push, no accounts, no rebake. **Makes the coverage workstream visible to users so both goals
+  compound.** Ship B-111 first as proof, then this. Do NOT build until Aron approves.
+
+### Batch 4 — coverage conversions (MOVE GRADES → rule #16, show drift before commit)
+
+- **B-113 — normalize the `very_poor` underscore enum + rebake.** *(WS-A, S, grades)* Data stores `very_poor`,
+  scorer matches `very poor` (rebake-scoring.mjs:301/332/348/354) → Chanel/Prada/PetroChina/Pioneer/TD
+  Ameritrade fall to "?" instead of earned D/F. **~5–6 convert; 16 already-graded carry underscored enums and
+  WILL shift — show the drift diff.** Cheapest real coverage fix.
+- **B-114 — parent-map inheritance for absent everyday brands + fix 10 broken redirects.** *(WS-C, S, grades)*
+  ~8–30 high-recognition pages (Oreo, Cheerios, Pampers/Tide, Uniqlo, Temu) inherit an already-graded parent
+  with "Via parent company" attribution. Honor the collision guard (distinct SEC filers don't inherit).
+- **B-117 — backfill SEC CEO-to-worker pay ratio → sc.execPay.** *(WS-A, M, grades, no decision)* Highest-
+  credibility automated lever (SEC, exact CIK). Never fabricate the ratio where the exemption means it doesn't
+  exist. Low-hundreds of brands.
+- **B-115 — ⚠️ wire dark `enriched.execPay/tax` into execPay scoring.** *(WS-A, M, grades, **REQUIRES
+  DECISION**)* Biggest dark-data win: up to **927 graded brands** gain a real execPay signal (coverage today
+  25%) from data already on disk. Needs Aron's sign-off on the ratio→score mapping + drift diff.
+- **B-116 — ⚠️ wire dark `enriched.environment` (EPA TRI/GHGRP) into environment scoring.** *(WS-B, M, grades,
+  **REQUIRES DECISION**)* Up to **393 graded brands** (coverage 26%); public-domain, no license risk. Needs the
+  toxic-release revenue-normalization methodology decision.
+- **B-119 — run gov-record pipelines (DOL WHD / EPA ECHO / OSHA / NLRB / IRS-990) against the 3,708 public-CIK
+  ungraded brands.** *(WS-A, L, grades, no decision)* **The strategic ceiling — how graded coverage moves
+  3,054 → 7–8k without touching thresholds.** Gov primaries = highest credibility. High maintenance: sequence
+  ONE pipeline at a time, verify each name-match before attaching.
+
+
+
 ## 🧪 v1.2 REVIEW PUNCH LIST — 27-agent multi-lens review (2026-07-20)
 
 > **Source:** 13-lens review (UX ×6, UI/a11y ×3, code ×3, Android ×1) → adversarial verify per lens → synthesis.
