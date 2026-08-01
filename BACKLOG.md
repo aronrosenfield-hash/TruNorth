@@ -57,7 +57,7 @@
 - **QW-18 ✅ DONE — add `grade` to `scanner_match`** (App.jsx:6780). *(WS-D, S)* The flagship in-store
   feature's dead-end rate (scan resolves to a "?" brand) is currently invisible. Additive prop. **Impact:**
   directly answers whether coverage or barcode data is the bigger lever.
-- **B-104 — commit `scripts/audit-ungraded.mjs` as the coverage instrument.** *(WS-A, S)* The audit script the
+- **B-104 ✅ DONE — commit `scripts/audit-ungraded.mjs` as the coverage instrument.** *(WS-A, S)* The audit script the
   workflow wrote; classifies all 9,776 "?" by root cause. **Impact:** repeatable one-command coverage
   measurement — the backbone number every coverage decision depends on.
 - **B-105 — fix the watchdog blind spot before adding any source.** *(WS-B, S)* `cron-health-daily` uses a 24h
