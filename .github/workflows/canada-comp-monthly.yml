@@ -12,7 +12,7 @@ name: canada-comp-monthly
 
 on:
   schedule:
-    - cron: "32 6 2 * *"   # 2nd of month, 06:00 UTC
+    - cron: "57 1 2 * *"   # 01:57 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

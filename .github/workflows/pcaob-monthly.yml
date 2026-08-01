@@ -10,7 +10,7 @@ name: pcaob-monthly
 
 on:
   schedule:
-    - cron: "57 16 1 * *"   # 1st of month, 16:00 UTC
+    - cron: "44 18 1 * *"   # 18:44 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

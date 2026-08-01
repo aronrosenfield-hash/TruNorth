@@ -10,7 +10,7 @@ name: occ-weekly
 
 on:
   schedule:
-    - cron: "55 0 * * 2"   # Tuesday 00:00 UTC
+    - cron: "10 17 * * 2"   # 17:10 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

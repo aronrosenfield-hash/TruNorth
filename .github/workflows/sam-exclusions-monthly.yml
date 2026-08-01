@@ -7,7 +7,7 @@ name: sam-exclusions-monthly
 
 on:
   schedule:
-    - cron: "30 8 7 * *" # 7th monthly, 08:50 UTC
+    - cron: "42 19 7 * *"   # 19:42 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

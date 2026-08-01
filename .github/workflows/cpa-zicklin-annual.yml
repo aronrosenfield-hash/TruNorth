@@ -22,7 +22,7 @@ name: cpa-zicklin-annual
 
 on:
   schedule:
-    - cron: "47 13 1 10 *"   # Oct 1, 13:00 UTC
+    - cron: "18 4 1 10 *"   # 04:18 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

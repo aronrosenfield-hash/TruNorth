@@ -10,7 +10,7 @@ name: industry-flags-monthly
 
 on:
   schedule:
-    - cron: "3 6 15 * *"
+    - cron: "28 13 15 * *"   # 13:28 UTC · spread (B-120)
   workflow_dispatch:
   push:
     branches: [main]

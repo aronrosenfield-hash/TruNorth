@@ -20,7 +20,7 @@ name: state-campaign-finance-monthly
 
 on:
   schedule:
-    - cron: "1 5 1 * *"   # 1st of month, 05:00 UTC
+    - cron: "4 21 1 * *"   # 21:04 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

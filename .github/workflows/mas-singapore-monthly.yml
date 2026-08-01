@@ -8,7 +8,7 @@ name: mas-singapore-monthly
 
 on:
   schedule:
-    - cron: "2 7 5 * *"
+    - cron: "50 14 5 * *"   # 14:50 UTC · spread (B-120)
   workflow_dispatch:
     inputs:
       url:

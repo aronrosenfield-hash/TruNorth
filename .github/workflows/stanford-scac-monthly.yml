@@ -9,7 +9,7 @@ name: stanford-scac-monthly
 
 on:
   schedule:
-    - cron: "59 23 1 * *"   # 1st of month, 23:00 UTC
+    - cron: "53 20 1 * *"   # 20:53 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

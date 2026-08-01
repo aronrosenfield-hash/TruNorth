@@ -15,7 +15,7 @@ name: eeoc-dei-annual
 
 on:
   schedule:
-    - cron: "8 4 15 3 *"   # 04:00 UTC on March 15
+    - cron: "1 7 15 3 *"   # 07:01 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

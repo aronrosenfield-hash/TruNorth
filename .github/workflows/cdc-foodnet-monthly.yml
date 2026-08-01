@@ -6,7 +6,7 @@ name: cdc-foodnet-monthly
 
 on:
   schedule:
-    - cron: "17 2 1 * *"   # 02:00 UTC on the first of each month
+    - cron: "32 2 1 * *"   # 02:32 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

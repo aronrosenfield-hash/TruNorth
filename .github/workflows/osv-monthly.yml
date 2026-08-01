@@ -9,7 +9,7 @@ name: osv-monthly
 
 on:
   schedule:
-    - cron: "34 9 1 * *"   # 1st of month, 09:00 UTC
+    - cron: "20 18 1 * *"   # 18:20 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

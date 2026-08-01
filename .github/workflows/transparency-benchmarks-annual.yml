@@ -19,7 +19,7 @@ name: transparency-benchmarks-annual
 
 on:
   schedule:
-    - cron: "49 6 1 2 *"   # Feb 1, 06:00 UTC
+    - cron: "51 21 1 2 *"   # 21:51 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

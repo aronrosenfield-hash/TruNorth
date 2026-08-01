@@ -8,7 +8,7 @@ name: irs990pf-annual
 
 on:
   schedule:
-    - cron: "15 7 20 8 *"   # 07:00 UTC, Aug 20 — after the annual extract lands
+    - cron: "40 13 20 8 *"   # 13:40 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

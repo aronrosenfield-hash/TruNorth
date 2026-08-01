@@ -15,14 +15,14 @@ name: sec-8k-events-monthly
 
 on:
   schedule:
-    - cron: "19 7 5 * *"   # 07:00 UTC, 5th of every month
+    - cron: "6 20 5 * *"   # 20:06 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit raw output + augment + per-company JSON
 
 concurrency:
-  group: data-pipeline-commit
+  group: ${{ github.workflow }}
   cancel-in-progress: false
 
 jobs:

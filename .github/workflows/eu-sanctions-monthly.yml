@@ -15,7 +15,7 @@ name: eu-sanctions-monthly
 
 on:
   schedule:
-    - cron: "46 5 2 * *"   # 2nd of the month, 05:00 UTC
+    - cron: "47 8 2 * *"   # 08:47 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

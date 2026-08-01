@@ -10,7 +10,7 @@ name: gsa-sam-monthly
 
 on:
   schedule:
-    - cron: "49 0 1 * *"   # 1st of the month, 00:00 UTC
+    - cron: "29 12 1 * *"   # 12:29 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

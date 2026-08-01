@@ -24,7 +24,7 @@ name: uk-gpg-annual
 
 on:
   schedule:
-    - cron: "46 19 1 4 *"   # April 1, 19:00 UTC
+    - cron: "38 22 1 4 *"   # 22:38 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

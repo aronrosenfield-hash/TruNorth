@@ -16,14 +16,14 @@ name: sec-def14a-annual
 
 on:
   schedule:
-    - cron: "11 6 10 7 *"   # 06:00 UTC, July 10
+    - cron: "18 20 10 7 *"   # 20:18 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit raw output + augment + per-company JSON
 
 concurrency:
-  group: data-pipeline-commit
+  group: ${{ github.workflow }}
   cancel-in-progress: false
 
 jobs:

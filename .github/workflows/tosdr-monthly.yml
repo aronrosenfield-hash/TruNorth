@@ -5,7 +5,7 @@ name: tosdr-monthly
 
 on:
   schedule:
-    - cron: "3 7 6 * *" # 06th monthly, 07:40 UTC
+    - cron: "40 21 6 * *"   # 21:40 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

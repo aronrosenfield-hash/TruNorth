@@ -9,7 +9,7 @@ name: cfpb-weekly
 
 on:
   schedule:
-    - cron: "55 18 * * 0"   # Sunday 18:00 UTC
+    - cron: "44 2 * * 0"   # 02:44 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

@@ -76,7 +76,7 @@
 
 ### Batch 2 — source hygiene (no grades) 
 
-- **B-120 — ⚠️ ROOT CAUSE of the 20 cancelled crons: one shared concurrency group.** *(WS-B, M, **REQUIRES
+- **B-120 ✅ DONE (destagger + long-runners isolated) — ⚠️ ROOT CAUSE of the 20 cancelled crons: one shared concurrency group.** *(WS-B, M, **REQUIRES
   DECISION**)* All **126** data workflows share `concurrency: group: data-pipeline-commit` (identical stanza,
   `cancel-in-progress: false`). GitHub allows only 1 running + 1 pending per group, so in the hour-4–7 UTC
   window where **~90 crons are scheduled**, ~88 get CANCELLED as superseded — not timeouts (trending-refresh

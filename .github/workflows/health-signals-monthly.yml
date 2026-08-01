@@ -12,7 +12,7 @@ name: health-signals-monthly
 
 on:
   schedule:
-    - cron: "28 5 1 * *"   # 05:00 UTC on the 1st of every month
+    - cron: "41 12 1 * *"   # 12:41 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

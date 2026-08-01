@@ -23,7 +23,7 @@ name: oversight-ig-monthly
 
 on:
   schedule:
-    - cron: "28 1 2 * *"   # 2nd of month, 01:00 UTC
+    - cron: "32 18 2 * *"   # 18:32 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

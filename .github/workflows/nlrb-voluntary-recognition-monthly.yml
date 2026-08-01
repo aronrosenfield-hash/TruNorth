@@ -14,7 +14,7 @@ name: nlrb-voluntary-recognition-monthly
 
 on:
   schedule:
-    - cron: "50 7 3 * *"   # 07:00 UTC on the 3rd of every month
+    - cron: "23 16 3 * *"   # 16:23 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

@@ -10,7 +10,7 @@ name: eu-enforcement-quarterly
 
 on:
   schedule:
-    - cron: "57 7 1 2,5,8,11 *"   # 1st of Feb/May/Aug/Nov, 07:00 UTC
+    - cron: "35 8 1 2,5,8,11 *"   # 08:35 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

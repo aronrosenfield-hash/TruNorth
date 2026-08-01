@@ -21,7 +21,7 @@ name: c2c-annual
 
 on:
   schedule:
-    - cron: "58 18 1 5 *"   # May 1, 18:00 UTC
+    - cron: "59 0 1 5 *"   # 00:59 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

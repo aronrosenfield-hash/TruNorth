@@ -6,7 +6,7 @@ name: ofac-sdn-daily
 
 on:
   schedule:
-    - cron: "5 3 * * *"   # 03:30 UTC daily
+    - cron: "34 17 * * *"   # 17:34 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

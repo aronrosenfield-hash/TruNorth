@@ -12,7 +12,7 @@ name: ca-prop65-monthly
 
 on:
   schedule:
-    - cron: "4 7 5 * *"   # 5th of month, 07:00 UTC
+    - cron: "34 1 5 * *"   # 01:34 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

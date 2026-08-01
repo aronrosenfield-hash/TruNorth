@@ -23,7 +23,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: data-pipeline-commit
+  group: ${{ github.workflow }}
   cancel-in-progress: false
 
 jobs:

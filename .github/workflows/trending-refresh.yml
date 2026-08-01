@@ -14,7 +14,7 @@ name: trending-refresh
 
 on:
   schedule:
-    - cron: "34 6 * * *"  # daily at 06:00 UTC
+    - cron: "3 22 * * *"   # 22:03 UTC · spread (B-120)
   workflow_dispatch:      # allow manual runs
 
 permissions:

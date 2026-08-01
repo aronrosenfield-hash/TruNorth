@@ -22,14 +22,14 @@ name: sustainability-certs-quarterly
 
 on:
   schedule:
-    - cron: "48 2 1 2,5,8,11 *"   # 02:30 UTC on Feb/May/Aug/Nov 1
+    - cron: "28 21 1 2,5,8,11 *"   # 21:28 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit raw + per-company JSON
 
 concurrency:
-  group: data-pipeline-commit
+  group: ${{ github.workflow }}
   cancel-in-progress: false
 
 jobs:

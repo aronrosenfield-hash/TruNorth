@@ -9,7 +9,7 @@ name: doj-weekly
 
 on:
   schedule:
-    - cron: "47 21 * * 0"   # Sunday 21:00 UTC
+    - cron: "15 6 * * 0"   # 06:15 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

@@ -6,7 +6,7 @@ name: cppa-data-brokers-quarterly
 
 on:
   schedule:
-    - cron: "38 7 8 2,5,8,11 *"   # 07:00 UTC, 8th of Feb/May/Aug/Nov
+    - cron: "29 4 8 2,5,8,11 *"   # 04:29 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

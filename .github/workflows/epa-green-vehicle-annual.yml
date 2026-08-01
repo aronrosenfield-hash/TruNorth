@@ -19,7 +19,7 @@ name: epa-green-vehicle-annual
 
 on:
   schedule:
-    - cron: "57 6 1 2 *"   # 06:00 UTC, Feb 1
+    - cron: "48 7 1 2 *"   # 07:48 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

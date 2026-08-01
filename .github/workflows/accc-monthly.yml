@@ -14,7 +14,7 @@ name: accc-monthly
 
 on:
   schedule:
-    - cron: "36 7 2 * *"   # 2nd of month, 07:00 UTC
+    - cron: "0 0 2 * *"   # 00:00 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

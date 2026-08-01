@@ -9,7 +9,7 @@ name: muckrock-monthly
 
 on:
   schedule:
-    - cron: "6 2 2 * *"   # 2nd of month, 02:00 UTC
+    - cron: "25 15 2 * *"   # 15:25 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

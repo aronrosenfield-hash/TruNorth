@@ -16,7 +16,7 @@ name: industry-carbon-intensity-annual
 
 on:
   schedule:
-    - cron: "35 6 1 2 *"   # Feb 1 06:00 UTC
+    - cron: "16 13 1 2 *"   # 13:16 UTC · spread (B-120)
   workflow_dispatch:
     inputs:
       live:

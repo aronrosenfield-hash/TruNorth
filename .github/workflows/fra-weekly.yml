@@ -11,7 +11,7 @@ name: fra-weekly
 
 on:
   schedule:
-    - cron: "51 8 * * 1"   # Monday 08:00 UTC
+    - cron: "7 11 * * 1"   # 11:07 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

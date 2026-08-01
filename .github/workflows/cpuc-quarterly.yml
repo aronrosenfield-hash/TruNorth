@@ -5,7 +5,7 @@ name: cpuc-quarterly
 
 on:
   schedule:
-    - cron: "40 5 4 1,4,7,10 *"   # 05:30 UTC on the 4th of Jan/Apr/Jul/Oct
+    - cron: "53 4 4 1,4,7,10 *"   # 04:53 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

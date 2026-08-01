@@ -22,7 +22,7 @@ name: rainforest-annual
 
 on:
   schedule:
-    - cron: "18 18 1 2 *"   # Feb 1, 18:00 UTC
+    - cron: "31 19 1 2 *"   # 19:31 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

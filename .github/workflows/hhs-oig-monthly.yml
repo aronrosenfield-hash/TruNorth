@@ -19,7 +19,7 @@ name: hhs-oig-monthly
 
 on:
   schedule:
-    - cron: "2 3 1 * *"   # 1st of month, 03:00 UTC
+    - cron: "53 12 1 * *"   # 12:53 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

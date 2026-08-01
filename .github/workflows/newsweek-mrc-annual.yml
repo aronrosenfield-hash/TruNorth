@@ -22,7 +22,7 @@ name: newsweek-mrc-annual
 
 on:
   schedule:
-    - cron: "33 18 1 11 *"   # Nov 1, 18:00 UTC
+    - cron: "48 15 1 11 *"   # 15:48 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

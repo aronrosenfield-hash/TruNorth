@@ -7,7 +7,7 @@ name: tx-tceq-monthly
 
 on:
   schedule:
-    - cron: "41 5 5 * *"   # 05:40 UTC on the 5th of every month
+    - cron: "15 22 5 * *"   # 22:15 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

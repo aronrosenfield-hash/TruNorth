@@ -34,14 +34,14 @@ name: exec-political-donations-quarterly
 
 on:
   schedule:
-    - cron: "3 5 1 2,5,8,11 *"   # 05:30 UTC on Feb/May/Aug/Nov 1st
+    - cron: "10 9 1 2,5,8,11 *"   # 09:10 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit exec-political-donations.json + augment
 
 concurrency:
-  group: data-pipeline-commit
+  group: ${{ github.workflow }}
   cancel-in-progress: false
 
 jobs:

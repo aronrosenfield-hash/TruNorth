@@ -9,7 +9,7 @@ name: canada-competition-bureau-monthly
 
 on:
   schedule:
-    - cron: "46 8 6 * *"
+    - cron: "9 2 6 * *"   # 02:09 UTC · spread (B-120)
   workflow_dispatch:
     inputs:
       url:

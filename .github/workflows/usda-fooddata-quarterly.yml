@@ -23,7 +23,7 @@ name: usda-fooddata-quarterly
 
 on:
   schedule:
-    - cron: "11 5 15 2,5,8,11 *"   # 05:00 UTC on Feb/May/Aug/Nov 15
+    - cron: "48 23 15 2,5,8,11 *"   # 23:48 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:
@@ -31,7 +31,7 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: data-pipeline-commit
+  group: ${{ github.workflow }}
   cancel-in-progress: false
 
 jobs:

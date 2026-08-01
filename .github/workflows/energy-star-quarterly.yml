@@ -7,7 +7,7 @@ name: energy-star-quarterly
 
 on:
   schedule:
-    - cron: "14 6 1 1,4,7,10 *"   # 06:00 UTC on Jan/Apr/Jul/Oct 1st
+    - cron: "13 7 1 1,4,7,10 *"   # 07:13 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

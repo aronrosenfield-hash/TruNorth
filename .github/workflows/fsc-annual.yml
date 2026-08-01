@@ -23,7 +23,7 @@ name: fsc-annual
 
 on:
   schedule:
-    - cron: "51 18 1 4 *"   # Apr 1, 18:00 UTC
+    - cron: "19 11 1 4 *"   # 11:19 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

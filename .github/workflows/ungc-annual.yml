@@ -22,7 +22,7 @@ name: ungc-annual
 
 on:
   schedule:
-    - cron: "16 18 1 8 *"   # Aug 1, 18:00 UTC
+    - cron: "13 23 1 8 *"   # 23:13 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

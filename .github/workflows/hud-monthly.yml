@@ -10,7 +10,7 @@ name: hud-monthly
 
 on:
   schedule:
-    - cron: "9 19 1 * *"   # 1st of month, 19:00 UTC
+    - cron: "4 13 1 * *"   # 13:04 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

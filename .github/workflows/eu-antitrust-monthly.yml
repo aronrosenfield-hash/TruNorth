@@ -10,7 +10,7 @@ name: eu-antitrust-monthly
 
 on:
   schedule:
-    - cron: "20 4 2 * *"   # 2nd of month, 04:00 UTC
+    - cron: "23 8 2 * *"   # 08:23 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

@@ -8,7 +8,7 @@ name: courtlistener-weekly
 
 on:
   schedule:
-    - cron: "21 17 * * 0"   # Sunday 17:00 UTC
+    - cron: "6 4 * * 0"   # 04:06 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

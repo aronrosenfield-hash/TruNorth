@@ -11,7 +11,7 @@ name: doj-atr-monthly
 
 on:
   schedule:
-    - cron: "12 3 2 * *"   # 2nd of month, 03:00 UTC
+    - cron: "51 5 2 * *"   # 05:51 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

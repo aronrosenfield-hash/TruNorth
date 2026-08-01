@@ -11,14 +11,14 @@ name: openstates-monthly
 
 on:
   schedule:
-    - cron: "58 4 1 * *"   # day 1 of month, 04:00 UTC
+    - cron: "57 17 1 * *"   # 17:57 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit openstates-bills.json back to main
 
 concurrency:
-  group: data-pipeline-commit
+  group: ${{ github.workflow }}
   cancel-in-progress: false
 
 jobs:

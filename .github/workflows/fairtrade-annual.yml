@@ -20,7 +20,7 @@ name: fairtrade-annual
 
 on:
   schedule:
-    - cron: "53 18 1 1 *"   # Jan 1, 18:00 UTC
+    - cron: "34 9 1 1 *"   # 09:34 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

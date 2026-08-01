@@ -11,14 +11,14 @@ name: nvd-monthly
 
 on:
   schedule:
-    - cron: "27 8 1 * *"   # 1st of month, 08:00 UTC
+    - cron: "59 16 1 * *"   # 16:59 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit nvd-cves.json + per-company changes
 
 concurrency:
-  group: data-pipeline-commit
+  group: ${{ github.workflow }}
   cancel-in-progress: false
 
 jobs:

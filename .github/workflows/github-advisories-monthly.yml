@@ -7,7 +7,7 @@ name: github-advisories-monthly
 
 on:
   schedule:
-    - cron: "3 10 1 * *"   # 1st of month, 10:00 UTC
+    - cron: "6 12 1 * *"   # 12:06 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

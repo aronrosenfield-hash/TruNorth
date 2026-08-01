@@ -9,7 +9,7 @@ name: faa-weekly
 
 on:
   schedule:
-    - cron: "27 7 * * 1"   # Monday 07:00 UTC
+    - cron: "22 9 * * 1"   # 09:22 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

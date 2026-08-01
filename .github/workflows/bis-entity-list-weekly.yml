@@ -6,7 +6,7 @@ name: bis-entity-list-weekly
 
 on:
   schedule:
-    - cron: "56 4 * * 1"    # 04:00 UTC every Monday
+    - cron: "35 0 * * 1"   # 00:35 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

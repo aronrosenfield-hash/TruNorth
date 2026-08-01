@@ -20,14 +20,14 @@ name: bcorp-quarterly
 
 on:
   schedule:
-    - cron: "52 2 15 3,6,9,12 *"   # 02:00 UTC on Mar/Jun/Sep/Dec 15
+    - cron: "23 0 15 3,6,9,12 *"   # 00:23 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:
   contents: write   # required to commit raw + per-company file updates
 
 concurrency:
-  group: data-pipeline-commit
+  group: ${{ github.workflow }}
   cancel-in-progress: false
 
 jobs:

@@ -9,7 +9,7 @@ name: gao-monthly
 
 on:
   schedule:
-    - cron: "32 0 2 * *"   # 2nd of month, 00:00 UTC
+    - cron: "42 11 2 * *"   # 11:42 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

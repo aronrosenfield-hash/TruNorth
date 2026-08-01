@@ -24,7 +24,7 @@ name: just-capital-annual
 
 on:
   schedule:
-    - cron: "26 18 1 9 *"   # Sep 1, 18:00 UTC
+    - cron: "51 13 1 9 *"   # 13:51 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

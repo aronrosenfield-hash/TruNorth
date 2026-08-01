@@ -8,7 +8,7 @@ name: dea-monthly
 
 on:
   schedule:
-    - cron: "25 21 1 * *"   # 1st of month, 21:00 UTC
+    - cron: "16 5 1 * *"   # 05:16 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

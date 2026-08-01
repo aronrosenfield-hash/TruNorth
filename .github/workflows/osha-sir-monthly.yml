@@ -10,7 +10,7 @@ name: osha-sir-monthly
 
 on:
   schedule:
-    - cron: "6 1 1 * *"   # 01:00 UTC, day 1 of every month
+    - cron: "9 18 1 * *"   # 18:09 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

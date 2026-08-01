@@ -10,7 +10,7 @@ name: nrc-weekly
 
 on:
   schedule:
-    - cron: "3 3 * * 2"   # Tuesday 03:00 UTC
+    - cron: "35 16 * * 2"   # 16:35 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

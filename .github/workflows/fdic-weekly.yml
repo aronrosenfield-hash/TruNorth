@@ -16,7 +16,7 @@ name: fdic-weekly
 
 on:
   schedule:
-    - cron: "56 1 * * 2"   # Tuesday 01:00 UTC
+    - cron: "57 9 * * 2"   # 09:57 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

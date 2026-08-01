@@ -20,7 +20,7 @@ name: net-zero-tracker-quarterly
 
 on:
   schedule:
-    - cron: "5 6 1 1,4,7,10 *"   # 06:00 UTC on Jan/Apr/Jul/Oct 1st
+    - cron: "37 15 1 1,4,7,10 *"   # 15:37 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

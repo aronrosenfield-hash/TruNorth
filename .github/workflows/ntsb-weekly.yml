@@ -9,7 +9,7 @@ name: ntsb-weekly
 
 on:
   schedule:
-    - cron: "13 9 * * 1"   # Monday 09:00 UTC
+    - cron: "47 16 * * 1"   # 16:47 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

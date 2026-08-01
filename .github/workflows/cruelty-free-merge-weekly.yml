@@ -17,7 +17,7 @@ name: cruelty-free-merge-weekly
 
 on:
   schedule:
-    - cron: "28 3 * * 0"   # Sunday 03:00 UTC
+    - cron: "4 5 * * 0"   # 05:04 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

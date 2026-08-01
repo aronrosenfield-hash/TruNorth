@@ -10,7 +10,7 @@ name: sec-ecd-quarterly
 
 on:
   schedule:
-    - cron: "14 6 5 1,4,7,10 *"   # 06:00 UTC, 5th of Jan/Apr/Jul/Oct
+    - cron: "29 20 5 1,4,7,10 *"   # 20:29 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

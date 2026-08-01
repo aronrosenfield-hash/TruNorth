@@ -8,7 +8,7 @@ name: finra-weekly
 
 on:
   schedule:
-    - cron: "35 2 * * 2"   # Tuesday 02:00 UTC
+    - cron: "32 10 * * 2"   # 10:32 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

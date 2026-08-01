@@ -12,7 +12,7 @@ name: fed-reserve-monthly
 
 on:
   schedule:
-    - cron: "40 17 1 * *"   # 1st of month, 17:00 UTC
+    - cron: "9 10 1 * *"   # 10:09 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:

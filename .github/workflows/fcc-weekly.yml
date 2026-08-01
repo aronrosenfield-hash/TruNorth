@@ -10,7 +10,7 @@ name: fcc-weekly
 
 on:
   schedule:
-    - cron: "53 10 * * 1"   # Monday 10:00 UTC
+    - cron: "45 9 * * 1"   # 09:45 UTC · spread (B-120)
   workflow_dispatch:
 
 permissions:
