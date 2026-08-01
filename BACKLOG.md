@@ -89,8 +89,16 @@
   on approach + awareness of the drift. Separately, the **15 hard FAILURES** (sec-def14a-annual, dol-ofccp,
   fsis/fsis-dw, usda-aphis, eu-antitrust, followthemoney-state, forest500, wikirate, usaspending, sec-8k, …)
   are NOT concurrency — each is its own fetcher break, folded into B-107.
-- **B-107 — fix or honestly degrade the 5 dead health/safety fetchers** (nhtsa-auto, fsis, fsis-dw, fra, gdelt —
-  advertised live, no output on disk). *(WS-B, M)* **Impact:** closes a diligence/credibility over-claim.
+- **B-107 — triage the 15 hard-FAILURE crons** (distinct from the 20 cancellations B-120 fixed). *(WS-B, L)*
+  Categorized 2026-08-01: **12 fail at their FETCH step** — each a unique dead/moved live source, individual
+  triage: `fmcsa-sms` (→Socrata, already B-69), `canada-comp`, `dol-ofccp` (labor), `eu-antitrust`,
+  `eu-enforcement` (GDPR tracker), `fsis`+`fsis-dw` (recalls), `usda-aphis` (animals), `wikirate`,
+  `dime-augment`, `forest500`, `followthemoney-state`. **3 fail at COMMIT+PUSH** — `sec-8k`, `sec-def14a`
+  (execPay source for B-115/117), `usaspending` — fetched fine, hit the OLD shared-concurrency rebase
+  contention; **B-120 should self-resolve these on next run** (verify). Sequence the fetch-failures by
+  coverage value (sec/dol/labor first); several may be genuinely dead sources → honestly degrade the in-app
+  "live" claim rather than fake data. **Impact:** restores coverage-critical gov sources + closes the
+  over-claim the diligence review flagged.
 - **B-108 — retire the duplicate Canada Competition Bureau pipeline** (two crons, two fetchers). *(WS-B, S)*
   **Impact:** one less maintenance surface for a solo founder.
 - **B-118 — build the one-workflow source-discovery MVP + separate source-value model.** *(WS-B, L)*
