@@ -60,7 +60,7 @@
 - **B-104 ✅ DONE — commit `scripts/audit-ungraded.mjs` as the coverage instrument.** *(WS-A, S)* The audit script the
   workflow wrote; classifies all 9,776 "?" by root cause. **Impact:** repeatable one-command coverage
   measurement — the backbone number every coverage decision depends on.
-- **B-105 — fix the watchdog blind spot before adding any source.** *(WS-B, S)* `cron-health-daily` uses a 24h
+- **B-105 ✅ DONE — fix the watchdog blind spot before adding any source.** *(WS-B, S)* `cron-health-daily` uses a 24h
   lookback (misses weekly crons), queries only `status=failure` (misses `cancelled` = timeout kills), and
   auto-closes empty windows. **Confirmed live 2026-08-01:** 11 cancelled + 7 failed crons, watchdog green.
   **Impact:** prerequisite for trusting any new source; without it every pipeline inherits silent death.

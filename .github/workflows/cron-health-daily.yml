@@ -1,10 +1,26 @@
 name: cron-health-daily
 
-# H6 (2026-06-11 tech review): 0 of 166 data workflows notified anyone on
-# failure — a silently failing cron just meant quietly stale data. Instead of
-# editing every workflow, this single watchdog lists all failed workflow runs
-# from the last 24h and maintains one rolling GitHub issue. Aron watches
-# issues; stale data now announces itself.
+# Watchdog over all scheduled data crons. One rolling GitHub issue; Aron watches
+# issues, so a silently-staling source announces itself.
+#
+# B-105 REWRITE (2026-08-01). The previous version was blind three ways and
+# reported GREEN while 18 crons were broken (confirmed live: 7 failure + 11
+# cancelled):
+#   1. it looked back only 24h — so a WEEKLY/MONTHLY cron that failed 3 days ago
+#      was invisible (most crons here are weekly+).
+#   2. it queried status=failure ONLY — but GitHub reports a `timeout-minutes`
+#      kill as conclusion=CANCELLED, so every timed-out cron was missed. This is
+#      exactly how faa/fra/gdelt/trending-refresh died unseen.
+#   3. on an empty 24h window it auto-CLOSED the issue — so a real weekly failure
+#      opened an issue one day and it self-closed the next (11 opened+auto-closed,
+#      zero fixed).
+#
+# New model: check the LATEST SCHEDULED run of EACH workflow (cadence-agnostic —
+# "is this cron currently healthy?"), flag any whose conclusion is failure /
+# cancelled / timed_out / startup_failure, and maintain ONE issue whose BODY is
+# rewritten to the current unhealthy set. Close it only when EVERY cron's latest
+# scheduled run is green. An open issue means something real; it never
+# auto-closes on a quiet window.
 
 on:
   schedule:
@@ -20,27 +36,58 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Collect failures and report
+      - name: Assess latest scheduled run per workflow
         env:
           GH_TOKEN: ${{ github.token }}
           REPO: ${{ github.repository }}
         run: |
-          SINCE=$(date -u -d '24 hours ago' +%Y-%m-%dT%H:%M:%SZ)
-          gh api "repos/$REPO/actions/runs?status=failure&created=>$SINCE&per_page=100" \
-            --jq '.workflow_runs[] | "- [" + .name + "](" + .html_url + ") — " + (.created_at | sub("T.*";""))' > failures.txt || true
-          COUNT=$(grep -c '^-' failures.txt || true)
-          echo "Failed runs in last 24h: $COUNT"
-          TITLE="🔴 Cron failures — daily watchdog"
-          EXISTING=$(gh issue list --repo "$REPO" --state open --search "$TITLE in:title" --json number --jq '.[0].number' || true)
+          set -euo pipefail
+
+          # ~800 most-recent runs covers daily/weekly/monthly reliably (~50 days
+          # at this repo's run rate). Group by workflow, take the latest SCHEDULED
+          # run of each, keep only the unhealthy conclusions. event==schedule
+          # naturally excludes CI (pull_request/push) and manual dispatches.
+          gh run list --repo "$REPO" --limit 800 \
+            --json workflowName,event,status,conclusion,createdAt,url > runs.json
+
+          jq -r '
+            [ .[] | select(.event == "schedule") ]
+            | group_by(.workflowName)[]
+            | max_by(.createdAt)
+            | select(.conclusion == "failure" or .conclusion == "cancelled"
+                     or .conclusion == "timed_out" or .conclusion == "startup_failure")
+            | "- [" + .workflowName + "](" + .url + ") — latest scheduled run: **"
+              + .conclusion + "** ("
+              + (if .conclusion == "cancelled" then "⏱ likely a timeout-minutes kill; "
+                 else "" end)
+              + (.createdAt | sub("T.*"; "")) + ")"
+          ' runs.json | sort > unhealthy.txt
+
+          COUNT=$(grep -c '^-' unhealthy.txt || true)
+          echo "Unhealthy scheduled crons: $COUNT"
+          cat unhealthy.txt || true
+
+          TITLE="🔴 Cron health — scheduled data crons"
+          EXISTING=$(gh issue list --repo "$REPO" --state open \
+            --search "$TITLE in:title" --json number --jq '.[0].number' || true)
+
           if [ "$COUNT" -gt 0 ]; then
-            BODY=$(printf "Failed workflow runs in the last 24h (%s):\n\n%s\n\n_Auto-maintained by cron-health-daily._" "$COUNT" "$(cat failures.txt)")
+            BODY=$(printf '%s scheduled cron(s) whose LATEST run did not succeed (checked %s UTC):\n\n%s\n\n> `cancelled` is usually a `timeout-minutes` kill, not a manual cancel. A run that later succeeds clears itself.\n\n_Auto-maintained by cron-health-daily (B-105). This issue stays OPEN until every scheduled cron is green — it does not auto-close on a quiet day._' \
+              "$COUNT" "$(date -u +%Y-%m-%dT%H:%MZ)" "$(cat unhealthy.txt)")
             if [ -n "$EXISTING" ]; then
-              gh issue comment "$EXISTING" --repo "$REPO" --body "$BODY"
+              # Rewrite the body to the CURRENT set (don't append comments forever).
+              gh issue edit "$EXISTING" --repo "$REPO" --body "$BODY"
+              echo "Updated issue #$EXISTING"
             else
               gh issue create --repo "$REPO" --title "$TITLE" --body "$BODY"
+              echo "Opened a new cron-health issue"
             fi
           else
             if [ -n "$EXISTING" ]; then
-              gh issue close "$EXISTING" --repo "$REPO" --comment "✅ No failed runs in the last 24h — closing."
+              gh issue close "$EXISTING" --repo "$REPO" \
+                --comment "✅ Every scheduled cron's latest run is green — closing."
+              echo "Closed issue #$EXISTING (all green)"
+            else
+              echo "All scheduled crons healthy; nothing to report."
             fi
           fi
