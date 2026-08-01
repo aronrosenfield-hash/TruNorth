@@ -544,9 +544,9 @@ function BarcodeScanner({ onClose, onMatch, onSearch, companies }) {
 // score the same 9 marketed categories. Must stay in sync with
 // rebake-scoring.mjs CAT_KEYS + scripts/lib/index-entry.mjs CATEGORIES.
 const CAT_KEYS = ["political","charity","environment","labor","dei","animals","guns","privacy","execPay"];
-const CAT_LABELS = {political:"Political",charity:"Charity",environment:"Environ.",labor:"Labor",dei:"DEI",animals:"Animal Testing",guns:"Firearms",privacy:"Data Privacy",execPay:"Exec Pay"};
+const CAT_LABELS = {political:"Political",charity:"Charity",environment:"Environ.",labor:"Labor",dei:"DEI",animals:"Animal Testing",guns:"Firearms",privacy:"Data Privacy",execPay:"Pay & Tax"};
 const CAT_ICONS  = {political:"ti-flag-2",charity:"ti-heart",environment:"ti-leaf",labor:"ti-users",dei:"ti-rainbow",animals:"ti-paw",guns:"ti-target",privacy:"ti-lock",execPay:"ti-coin"};
-const CAT_FULL   = {political:"Political donations & lobbying",charity:"Charitable giving",environment:"Environmental policy",labor:"Labor practices",dei:"DEI & social equity",animals:"Animal testing",guns:"Firearms policy",privacy:"Data privacy",execPay:"Executive pay ratio"};
+const CAT_FULL   = {political:"Political donations & lobbying",charity:"Charitable giving",environment:"Environmental policy",labor:"Labor practices",dei:"DEI & social equity",animals:"Animal testing",guns:"Firearms policy",privacy:"Data privacy",execPay:"Executive pay & tax fairness"};
 
 // Phase 3.2 — classify per-category data state.
 //   "scored"  — we have a real signal (good/poor/neutral/left/right/etc.)

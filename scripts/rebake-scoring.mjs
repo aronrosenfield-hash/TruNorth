@@ -134,6 +134,10 @@ function parsePayRatio(d) {
   const pr = d?.payRatio;
   if (pr && typeof pr.ratio === "number" && pr.ratio > 0) return pr.ratio;
   if (typeof pr === "number" && pr > 0) return pr;
+  // B-115: the SEC DEF-14A bulk pull lands the ratio in enriched.execPay, not on
+  // d.payRatio — so ~15 brands carried a real ratio the scorer never saw.
+  const er = d?.enriched?.execPay?.payRatio;
+  if (typeof er === "number" && er > 0) return er;
   for (const s of [d?.execPay?.ratio, d?.execPay?.s]) {
     const m = String(s || "").replace(/,/g, "").match(/([\d.]+)\s*:\s*1/);
     if (m && parseFloat(m[1]) > 0) return parseFloat(m[1]);
@@ -158,6 +162,45 @@ export function payRatioScore(ratio) {
     }
   }
   return 5;
+}
+
+// B-115 (Aron 2026-08-01): execPay is now "Pay & Tax". ITEP federal effective
+// tax rate → score. PENALIZE-ONLY (Aron's call, option B): paying the taxes you
+// owe is the baseline, not a virtue — the median payer (~15.8% federal) sits at
+// NEUTRAL 50 and the score is CAPPED at 50, so full payment never boosts a
+// grade. Only clear avoidance drags down: below-median rates fall toward 8, and
+// a PROFITABLE company with multiple $0-tax years bottoms out. A company with
+// LOSSES legitimately pays none → return null (no signal, NOT a bad grade).
+// secTax (GAAP total rate) is DELIBERATELY NOT used — a low/negative total rate
+// is usually foreign losses/accounting, not avoidance (Aron's call: ITEP only).
+const TAX_ANCHORS = [[0, 8], [5, 20], [10, 36], [15, 50]]; // fed rate % → score, capped at 50
+function taxAvoidanceScore(d) {
+  const t = d?.enriched?.tax;
+  if (!t || typeof t.effectiveFederalTaxRate !== "number") return null;
+  if (typeof t.totalProfits === "number" && t.totalProfits <= 0) return null; // losses ⇒ legit
+  if ((t.zeroTaxYears || 0) >= 2) return 8;                                    // multiple $0 years
+  const r = Math.max(0, Math.min(15, t.effectiveFederalTaxRate * 100));
+  if (r >= 15) return 50; // median-or-above ⇒ neutral, no boost
+  for (let i = 1; i < TAX_ANCHORS.length; i++) {
+    const [r1, s1] = TAX_ANCHORS[i - 1], [r2, s2] = TAX_ANCHORS[i];
+    if (r <= r2) return s1 + ((r - r1) / (r2 - r1)) * (s2 - s1);
+  }
+  return 50;
+}
+
+// Combined "Pay & Tax": the SEC pay ratio and the ITEP federal tax signal,
+// AVERAGED when both exist (Aron's call). Enum fallback preserved. Returns null
+// when neither a ratio, a recognized enum, nor tax data is present.
+function payTaxScore(d, val) {
+  const ratio = parsePayRatio(d);
+  const payScore = ratio != null ? payRatioScore(ratio)
+    : ["fair", "good"].includes(val) ? 97
+    : val === "mixed" ? 50
+    : val === "poor" ? 8
+    : null;
+  const taxScore = taxAvoidanceScore(d);
+  if (payScore != null && taxScore != null) return (payScore + taxScore) / 2;
+  return payScore != null ? payScore : taxScore;
 }
 
 // Charity positive band spread by IRS-990 grant totals (log scale):
@@ -280,6 +323,15 @@ export function politicalScore(d, val) {
 /** Non-personalized score for a category. Returns null when no signal. */
 export function baseScoreCat(k, v, d) {
   const val = String(v || "").toLowerCase();
+  // B-115: execPay ("Pay & Tax") scores from the SEC pay ratio and/or ITEP
+  // federal tax data even when the enum is neutral/absent — the structured data
+  // IS the signal — so it MUST run before the neutral guard below. Falls through
+  // (payTaxScore null) for private companies with no data, which the guard then
+  // correctly drops.
+  if (k === "execPay") {
+    const s = payTaxScore(d, val);
+    if (s != null) return s;
+  }
   if (!val || val === "neutral" || val === "na" || val === "n/a" || val === "unknown") return null;
 
   // V3/R4 + R7: stance categories are personal-values axes the app is neutral
@@ -309,16 +361,7 @@ export function baseScoreCat(k, v, d) {
     if (val === "poor") return 8;
     return null;
   }
-  if (k === "execPay") {
-    // V3/R3: score the actual SEC-disclosed pay ratio when we have it —
-    // continuous log curve instead of the {97, 50, 8} buckets.
-    const ratio = parsePayRatio(d);
-    if (ratio != null) return payRatioScore(ratio);
-    if (["fair", "good"].includes(val)) return 97;
-    if (val === "mixed") return 50;
-    if (val === "poor") return 8;
-    return null;
-  }
+  // execPay ("Pay & Tax") handled above (before the neutral guard) via payTaxScore.
   if (k === "health") {
     if (["good", "positive"].includes(val)) return 100;
     if (val === "mixed") return 50;

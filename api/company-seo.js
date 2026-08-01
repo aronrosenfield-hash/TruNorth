@@ -31,7 +31,7 @@ const CATEGORY_LABELS = {
   animals: "Animal testing",
   guns: "Firearms",
   privacy: "Privacy",
-  execPay: "Executive pay",
+  execPay: "Executive pay & tax",
 };
 
 function esc(s) {

@@ -31,7 +31,7 @@ const CATEGORIES = [
   { emoji:"🐰", bg:"#2e2a1e", name:"Animal Testing",      desc:"PETA & Leaping Bunny certifications", pct:50 },
   { emoji:"🔫", bg:"#4A1E1E", name:"Firearms",            desc:"Sells or manufactures guns",           pct:30 },
   { emoji:"🔒", bg:"#1e2e3e", name:"Data Privacy",        desc:"HIBP breaches, FTC actions",           pct:60 },
-  { emoji:"💵", bg:"#1E444A", name:"Executive Pay",       desc:"CEO-to-worker pay ratio",              pct:40 },
+  { emoji:"💵", bg:"#1E444A", name:"Pay & Tax",           desc:"CEO-to-worker pay ratio & tax fairness", pct:40 },
 ];
 
 export default function OnboardingFlow({ onComplete }) {
