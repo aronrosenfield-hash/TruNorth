@@ -1,64 +1,64 @@
 {
-  "generated_at": "2026-07-01T17:27:06.947Z",
+  "generated_at": "2026-08-01T19:39:19.719Z",
   "source": "osv.dev",
   "source_url": "https://osv.dev",
   "vendor_count": 10,
   "vendors": [
     {
       "vendor": "Mozilla",
-      "total_vulnerabilities": 1078,
-      "recent_24mo": 318,
+      "total_vulnerabilities": 1124,
+      "recent_24mo": 358,
       "critical_count": 1,
       "sample_top_vulns": [
         {
-          "id": "GHSA-gj48-438w-jh9v",
-          "summary": "Bleach clean() / Cleaner() fails to sanitize dangerous URI schemes in allowed formaction attributes",
-          "published": "2026-06-16T14:07:49Z",
-          "modified": "2026-06-18T18:29:26.517334064Z",
-          "aliases": [],
-          "url": "https://osv.dev/vulnerability/GHSA-gj48-438w-jh9v"
-        },
-        {
-          "id": "GHSA-g75f-g53v-794x",
-          "summary": "Bleach linkify(parse_email=True) CPU exhaustion via unbounded email regex scanning",
-          "published": "2026-06-16T14:07:30Z",
-          "modified": "2026-06-16T14:15:07.999448951Z",
-          "aliases": [],
-          "url": "https://osv.dev/vulnerability/GHSA-g75f-g53v-794x"
-        },
-        {
-          "id": "GHSA-8rfp-98v4-mmr6",
-          "summary": "Bleach: URI sanitization allows disallowed URI schemes with Unicode > U+00A0 in output",
-          "published": "2026-06-16T14:06:29Z",
-          "modified": "2026-06-18T13:29:27.505774604Z",
-          "aliases": [],
-          "url": "https://osv.dev/vulnerability/GHSA-8rfp-98v4-mmr6"
-        },
-        {
-          "id": "DEBIAN-CVE-2026-12330",
+          "id": "DEBIAN-CVE-2026-16412",
           "summary": "",
-          "published": "2026-06-16T13:16:33.747Z",
-          "modified": "2026-06-22T10:00:08.276198242Z",
+          "published": "2026-07-21T13:17:16.630Z",
+          "modified": "2026-07-27T04:00:20.196580711Z",
           "aliases": [],
-          "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-12330"
+          "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-16412"
         },
         {
-          "id": "DEBIAN-CVE-2026-12329",
+          "id": "DEBIAN-CVE-2026-16405",
           "summary": "",
-          "published": "2026-06-16T13:16:33.657Z",
-          "modified": "2026-06-22T10:00:08.331846625Z",
+          "published": "2026-07-21T13:17:15.910Z",
+          "modified": "2026-07-27T04:00:20.960351345Z",
           "aliases": [],
-          "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-12329"
+          "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-16405"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-16396",
+          "summary": "",
+          "published": "2026-07-21T13:17:14.853Z",
+          "modified": "2026-07-27T04:00:19.163725565Z",
+          "aliases": [],
+          "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-16396"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-16391",
+          "summary": "",
+          "published": "2026-07-21T13:17:14.290Z",
+          "modified": "2026-07-27T04:00:17.255481220Z",
+          "aliases": [],
+          "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-16391"
+        },
+        {
+          "id": "DEBIAN-CVE-2026-16390",
+          "summary": "",
+          "published": "2026-07-21T13:17:14.160Z",
+          "modified": "2026-07-27T04:00:20.199649187Z",
+          "aliases": [],
+          "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-16390"
         }
       ],
       "package_breakdown": [
         {
           "label": "Debian:12/firefox-esr",
-          "count": 1000
+          "count": 1045
         },
         {
           "label": "Debian:12/nss",
-          "count": 84
+          "count": 85
         },
         {
           "label": "PyPI/bleach",
@@ -69,69 +69,70 @@
     },
     {
       "vendor": "Google",
-      "total_vulnerabilities": 99,
-      "recent_24mo": 39,
-      "critical_count": 1,
+      "total_vulnerabilities": 115,
+      "recent_24mo": 54,
+      "critical_count": 8,
       "sample_top_vulns": [
         {
-          "id": "GO-2026-5025",
-          "summary": "Invoking incorrect handling of namespaced elements in foreign content in golang.org/x/net/html",
-          "published": "2026-05-22T02:46:43Z",
-          "modified": "2026-05-30T05:14:17.563517047Z",
+          "id": "GO-2026-5942",
+          "summary": "Parsing an invalid SVCB or HTTPS RR can panic in golang.org/x/net/dns/dnsmessage",
+          "published": "2026-07-14T17:29:16Z",
+          "modified": "2026-07-22T20:59:39.532205173Z",
           "aliases": [
-            "CVE-2026-42506"
+            "CVE-2026-46600"
           ],
-          "url": "https://osv.dev/vulnerability/GO-2026-5025"
+          "url": "https://osv.dev/vulnerability/GO-2026-5942"
         },
         {
-          "id": "GO-2026-5026",
-          "summary": "Invoking failure to reject ASCII-only Punycode-encoded labels in golang.org/x/net/idna",
-          "published": "2026-05-22T02:46:43Z",
-          "modified": "2026-06-30T11:14:29.198693603Z",
-          "aliases": [
-            "CVE-2026-39821"
-          ],
-          "url": "https://osv.dev/vulnerability/GO-2026-5026"
+          "id": "GO-2026-5932",
+          "summary": "The golang.org/x/crypto/openpgp package is unmaintained, unsafe by design, and has known security issues",
+          "published": "2026-07-07T22:15:29Z",
+          "modified": "2026-07-10T05:44:31.101996029Z",
+          "aliases": [],
+          "url": "https://osv.dev/vulnerability/GO-2026-5932"
         },
         {
-          "id": "GO-2026-5027",
-          "summary": "Invoking incorrect handling of HTML elements in foreign content in golang.org/x/net/html",
-          "published": "2026-05-22T02:46:43Z",
-          "modified": "2026-05-30T05:14:17.859851842Z",
+          "id": "GHSA-x527-x647-q7gg",
+          "summary": "golang.org/x/crypto: Invoking VerifiedPublicKeyCallback permissions skip enforcement",
+          "published": "2026-06-25T22:23:16Z",
+          "modified": "2026-07-17T15:46:06.930323997Z",
           "aliases": [
-            "CVE-2026-42502"
+            "CVE-2026-46595",
+            "GO-2026-5023"
           ],
-          "url": "https://osv.dev/vulnerability/GO-2026-5027"
+          "url": "https://osv.dev/vulnerability/GHSA-x527-x647-q7gg"
         },
         {
-          "id": "GO-2026-5028",
-          "summary": "Invoking denial of service when parsing arbitrary HTML in golang.org/x/net/html",
-          "published": "2026-05-22T02:46:43Z",
-          "modified": "2026-05-30T05:14:18.140371162Z",
+          "id": "GHSA-5cgq-3rg8-m6cv",
+          "summary": "golang.org/x/crypto vulnerable to auth bypass via unenforced @revoked status",
+          "published": "2026-06-25T22:22:04Z",
+          "modified": "2026-07-17T15:46:06.967025401Z",
           "aliases": [
-            "CVE-2026-25680"
+            "CVE-2026-42508",
+            "GO-2026-5021"
           ],
-          "url": "https://osv.dev/vulnerability/GO-2026-5028"
+          "url": "https://osv.dev/vulnerability/GHSA-5cgq-3rg8-m6cv"
         },
         {
-          "id": "GO-2026-5029",
-          "summary": "Invoking incorrect handling of character references in DOCTYPE nodes in golang.org/x/net/html",
-          "published": "2026-05-22T02:46:43Z",
-          "modified": "2026-05-30T05:14:17.199855080Z",
+          "id": "GHSA-rm3j-f69w-wqmq",
+          "summary": "golang.org/x/crypto vulnerable to infinite loop on large channel writes",
+          "published": "2026-06-25T22:21:40Z",
+          "modified": "2026-07-07T15:30:10.026194814Z",
           "aliases": [
-            "CVE-2026-25681"
+            "CVE-2026-39834",
+            "GO-2026-5020"
           ],
-          "url": "https://osv.dev/vulnerability/GO-2026-5029"
+          "url": "https://osv.dev/vulnerability/GHSA-rm3j-f69w-wqmq"
         }
       ],
       "package_breakdown": [
         {
-          "label": "Go/golang.org/x/net",
-          "count": 49
+          "label": "Go/golang.org/x/crypto",
+          "count": 55
         },
         {
-          "label": "Go/golang.org/x/crypto",
-          "count": 41
+          "label": "Go/golang.org/x/net",
+          "count": 51
         },
         {
           "label": "Maven/com.google.protobuf:protobuf-java",
@@ -150,10 +151,22 @@
     },
     {
       "vendor": "Meta",
-      "total_vulnerabilities": 45,
-      "recent_24mo": 34,
+      "total_vulnerabilities": 47,
+      "recent_24mo": 36,
       "critical_count": 2,
       "sample_top_vulns": [
+        {
+          "id": "PYSEC-2026-1970",
+          "summary": "PyTorch Improper Resource Shutdown or Release vulnerability",
+          "published": "2026-07-07T16:02:51.040640Z",
+          "modified": "2026-07-07T17:56:13.049049052Z",
+          "aliases": [
+            "BIT-pytorch-2025-3730",
+            "CVE-2025-3730",
+            "GHSA-887c-mr87-cxwp"
+          ],
+          "url": "https://osv.dev/vulnerability/PYSEC-2026-1970"
+        },
         {
           "id": "PYSEC-2026-139",
           "summary": "",
@@ -164,6 +177,19 @@
             "CVE-2026-4538"
           ],
           "url": "https://osv.dev/vulnerability/PYSEC-2026-139"
+        },
+        {
+          "id": "PYSEC-2026-2286",
+          "summary": "",
+          "published": "2026-01-27T22:15:56.470Z",
+          "modified": "2026-07-13T07:26:23.701611780Z",
+          "aliases": [
+            "BIT-pytorch-2026-24747",
+            "CVE-2026-24747",
+            "GHSA-63cw-57p8-fm3p",
+            "PYSEC-2026-1856"
+          ],
+          "url": "https://osv.dev/vulnerability/PYSEC-2026-2286"
         },
         {
           "id": "PYSEC-2025-210",
@@ -186,34 +212,12 @@
             "CVE-2025-55560"
           ],
           "url": "https://osv.dev/vulnerability/PYSEC-2025-209"
-        },
-        {
-          "id": "PYSEC-2025-208",
-          "summary": "",
-          "published": "2025-09-25T16:15:34.960Z",
-          "modified": "2026-05-20T09:19:20.054109Z",
-          "aliases": [
-            "BIT-pytorch-2025-55558",
-            "CVE-2025-55558"
-          ],
-          "url": "https://osv.dev/vulnerability/PYSEC-2025-208"
-        },
-        {
-          "id": "PYSEC-2025-207",
-          "summary": "",
-          "published": "2025-09-25T16:15:34.833Z",
-          "modified": "2026-05-20T09:19:19.989717Z",
-          "aliases": [
-            "BIT-pytorch-2025-55557",
-            "CVE-2025-55557"
-          ],
-          "url": "https://osv.dev/vulnerability/PYSEC-2025-207"
         }
       ],
       "package_breakdown": [
         {
           "label": "PyPI/torch",
-          "count": 41
+          "count": 43
         },
         {
           "label": "npm/react",
