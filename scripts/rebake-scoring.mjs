@@ -130,14 +130,18 @@ export function negativeSeverityScore(narrative, enumVal, revenue) {
 
 // Actual CEO-to-median-worker pay ratio, preferring the structured DEF 14A
 // crawl (payRatio.ratio) over the narrative "NNN:1" string.
-function parsePayRatio(d) {
+function parsePayRatio(d, includeEnriched = true) {
   const pr = d?.payRatio;
   if (pr && typeof pr.ratio === "number" && pr.ratio > 0) return pr.ratio;
   if (typeof pr === "number" && pr > 0) return pr;
   // B-115: the SEC DEF-14A bulk pull lands the ratio in enriched.execPay, not on
-  // d.payRatio — so ~15 brands carried a real ratio the scorer never saw.
-  const er = d?.enriched?.execPay?.payRatio;
-  if (typeof er === "number" && er > 0) return er;
+  // d.payRatio. This is used PENALIZE-ONLY (option 2), so callers computing the
+  // positive pay baseline pass includeEnriched=false — the enriched ratio may
+  // only DRAG a score down, never lift it above the pre-B-115 legacy baseline.
+  if (includeEnriched) {
+    const er = d?.enriched?.execPay?.payRatio;
+    if (typeof er === "number" && er > 0) return er;
+  }
   for (const s of [d?.execPay?.ratio, d?.execPay?.s]) {
     const m = String(s || "").replace(/,/g, "").match(/([\d.]+)\s*:\s*1/);
     if (m && parseFloat(m[1]) > 0) return parseFloat(m[1]);
@@ -178,7 +182,10 @@ function taxAvoidanceScore(d) {
   const t = d?.enriched?.tax;
   if (!t || typeof t.effectiveFederalTaxRate !== "number") return null;
   if (typeof t.totalProfits === "number" && t.totalProfits <= 0) return null; // losses ⇒ legit
-  if ((t.zeroTaxYears || 0) >= 2) return 8;                                    // multiple $0 years
+  // Repeated $0-tax years signal avoidance — but ONLY alongside a sub-median
+  // multi-year average. A company averaging ≥15% federal with isolated $0 years is
+  // showing loss-year artifacts, not a pattern (fixes e.g. Trimble at 21.5% avg).
+  if ((t.zeroTaxYears || 0) >= 2 && t.effectiveFederalTaxRate < 0.15) return 8;
   const r = Math.max(0, Math.min(15, t.effectiveFederalTaxRate * 100));
   if (r >= 15) return 50; // median-or-above ⇒ neutral, no boost
   for (let i = 1; i < TAX_ANCHORS.length; i++) {
@@ -188,19 +195,43 @@ function taxAvoidanceScore(d) {
   return 50;
 }
 
-// Combined "Pay & Tax": the SEC pay ratio and the ITEP federal tax signal,
-// AVERAGED when both exist (Aron's call). Enum fallback preserved. Returns null
-// when neither a ratio, a recognized enum, nor tax data is present.
+// Combined "Pay & Tax" — STRICTLY PENALIZE-ONLY & MONOTONIC-DOWN (Aron's call,
+// B-115 option 2). The ONLY new force is the ITEP federal-tax-avoidance penalty.
+// Pay is scored EXACTLY as it was pre-B-115 (legacy ratio sources + enum buckets):
+// the enriched SEC pay ratio is deliberately NOT used — it frequently disagrees
+// with the legacy ratio and would drag brands down on a data-quality artifact, not
+// conduct (e.g. Alaska/Frontier/Home Depot). Tax avoidance can only DRAG DOWN:
+//   • Already-graded (enum) brands: averaged into the baseline, min-capped so a
+//     brand's grade can only fall, never rise.
+//   • Neutral/na brands (a NEW category): fires ONLY on CLEAR avoidance
+//     (score < SEVERE_NEG), always below any graded brand's overall — so it can
+//     newly-grade a "?" brand LOW or drag a graded one down, but never lift one.
+// A company with LOSSES pays no tax legitimately → taxAvoidanceScore returns null.
 function payTaxScore(d, val) {
-  const ratio = parsePayRatio(d);
-  const payScore = ratio != null ? payRatioScore(ratio)
-    : ["fair", "good"].includes(val) ? 97
-    : val === "mixed" ? 50
-    : val === "poor" ? 8
+  const hasEnum = ["fair", "good", "mixed", "poor"].includes(val);
+  const taxRaw = taxAvoidanceScore(d);                       // 8..50, or null
+  // Only a rate BELOW the ~15% median (score < 50) is avoidance; a compliant rate
+  // scores exactly 50 and must NOT drag a good pay score down (that mislabels
+  // full-rate payers like Arista/Campbell/Quanta as avoiders).
+  const taxPenalty = taxRaw != null && taxRaw < 50 ? taxRaw : null;
+
+  // Pay baseline — pre-B-115 exactly (legacy sources only; nothing here can lift).
+  const legacyRatio = parsePayRatio(d, false);
+  const base = hasEnum
+    ? (legacyRatio != null ? payRatioScore(legacyRatio)
+      : ["fair", "good"].includes(val) ? 97
+      : val === "mixed" ? 50
+      : 8)
     : null;
-  const taxScore = taxAvoidanceScore(d);
-  if (payScore != null && taxScore != null) return (payScore + taxScore) / 2;
-  return payScore != null ? payScore : taxScore;
+
+  if (base != null) {
+    // Tax avoidance drags the existing score down (averaged, capped ≤ baseline).
+    if (taxPenalty != null && taxPenalty < base) return Math.min(base, (base + taxPenalty) / 2);
+    return base;
+  }
+  // Neutral/na enum: a NEW signal only on clear tax avoidance (< SEVERE_NEG).
+  if (taxPenalty != null && taxPenalty < SEVERE_NEG) return taxPenalty;
+  return null;
 }
 
 // Charity positive band spread by IRS-990 grant totals (log scale):
@@ -323,15 +354,13 @@ export function politicalScore(d, val) {
 /** Non-personalized score for a category. Returns null when no signal. */
 export function baseScoreCat(k, v, d) {
   const val = String(v || "").toLowerCase();
-  // B-115: execPay ("Pay & Tax") scores from the SEC pay ratio and/or ITEP
-  // federal tax data even when the enum is neutral/absent — the structured data
-  // IS the signal — so it MUST run before the neutral guard below. Falls through
-  // (payTaxScore null) for private companies with no data, which the guard then
-  // correctly drops.
-  if (k === "execPay") {
-    const s = payTaxScore(d, val);
-    if (s != null) return s;
-  }
+  // B-115: execPay ("Pay & Tax") is scored ENTIRELY by payTaxScore — the SEC pay
+  // ratio (pre-B-115 baseline) plus the ITEP tax-avoidance penalty, even when the
+  // enum is neutral/absent (the structured data IS the signal). Return
+  // unconditionally so execPay never falls through to the generic enum scorer
+  // below: that preserves the exact pre-B-115 pay behavior (null → dropped by the
+  // bake loop, e.g. "very poor" with no ratio) and keeps this change tax-only.
+  if (k === "execPay") return payTaxScore(d, val);
   if (!val || val === "neutral" || val === "na" || val === "n/a" || val === "unknown") return null;
 
   // V3/R4 + R7: stance categories are personal-values axes the app is neutral
@@ -406,6 +435,20 @@ function classifyCategory(d, k) {
   const narrative = String(detail.s || "");
   const hasNarrative = narrative && !NO_RECORD.test(narrative);
   const narrativeIsNoRecord = narrative && NO_RECORD.test(narrative);
+
+  // B-115 (option 2): execPay ("Pay & Tax") can be scoreable while the enum is
+  // na/neutral — but ONLY as a PENALTY (tax avoidance or an egregious dark pay
+  // ratio). payTaxScore returns null for non-penalizing positives, so a good dark
+  // ratio / compliant tax never enters the bake loop and never lifts a brand off
+  // "?". Gated on a NON-recognized enum so recognized enums keep flowing through
+  // the normal path below (incl. the no-record orphan-label zeroing). A "No public
+  // record found" narrative refers to PAY DISCLOSURE — it must NOT suppress a real
+  // ITEP tax-avoidance penalty (the tax filing IS the record). Placed before the
+  // na guard so a tax-only avoider with a neutral/na pay enum still bakes.
+  if (k === "execPay" && !["fair", "good", "mixed", "poor"].includes(val)
+      && payTaxScore(d, val) != null) {
+    return { state: "real", value: "neutral" };
+  }
 
   if (flags.na === true || val === "na" || val === "n/a") return { state: "na" };
   if (flags.notDisclosed === true && !hasNarrative) return { state: "notDisclosed" };
