@@ -1,17 +1,23 @@
 {
-  "merged_at": "2026-07-27T04:29:56.103Z",
+  "merged_at": "2026-08-03T06:40:39.848Z",
   "source_file": "public/data/cisa-kev.json",
   "total_vendors": 276,
-  "merged_count": 1,
-  "skipped_count": 37,
+  "merged_count": 2,
+  "skipped_count": 36,
   "orphan_count": 238,
   "error_count": 0,
   "merged_vendors": [
     {
-      "vendor": "Microsoft",
-      "target": "microsoft",
+      "vendor": "Cisco",
+      "target": "cisco",
       "routed_via": "override",
-      "cves": 382
+      "cves": 95
+    },
+    {
+      "vendor": "Fortinet",
+      "target": "fortinet",
+      "routed_via": "override",
+      "cves": 29
     }
   ],
   "top_orphans": [

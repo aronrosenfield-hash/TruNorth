@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-27T04:29:56.055Z",
-  "catalog_version": "2026.07.24",
-  "catalog_released": "2026-07-24T17:40:56.0086Z",
-  "total_cve_count": 1653,
+  "generated_at": "2026-08-03T06:40:39.795Z",
+  "catalog_version": "2026.07.29",
+  "catalog_released": "2026-07-29T18:45:59.5809Z",
+  "total_cve_count": 1656,
   "vendor_count": 276,
   "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
   "vendors": [
@@ -155,8 +155,8 @@
     },
     {
       "vendor": "Cisco",
-      "total_cve_count": 94,
-      "recent_12mo_count": 18,
+      "total_cve_count": 95,
+      "recent_12mo_count": 17,
       "ransomware_count": 6,
       "product_breakdown": [
         {
@@ -202,6 +202,17 @@
       ],
       "top_cves": [
         {
+          "cveID": "CVE-2026-20316",
+          "product": "Secure Firewall Management Center (FMC)",
+          "vulnerabilityName": "Cisco Secure Firewall Management Center Use of Hard-coded Password Vulnerability",
+          "dateAdded": "2026-07-29",
+          "dueDate": "2026-08-01",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Cisco Secure Firewall Management Center (FMC) formerly known as Firepower Management Center contains a use of hard-coded password vulnerability that could allow an unauthenticated, remote attacker to log in to an affected device using a low-privileged account to access sensitive data within the impacted systems.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20316"
+        },
+        {
           "cveID": "CVE-2008-4128",
           "product": "IOS",
           "vulnerabilityName": "Cisco IOS Cross-Site Request Forgery Vulnerability",
@@ -244,17 +255,6 @@
           "shortDescription": "Cisco Catalyst SD-WAN Manager formerly SD-WAN vManage contains an improper encoding or escaping of output vulnerability. This vulnerability could allow an authenticated, local attacker to execute arbitrary commands as root by supplying a crafted file to the affected system.",
           "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20245"
-        },
-        {
-          "cveID": "CVE-2026-20182",
-          "product": "Catalyst SD-WAN",
-          "vulnerabilityName": "Cisco Catalyst SD-WAN Controller Authentication Bypass Vulnerability",
-          "dateAdded": "2026-05-14",
-          "dueDate": "2026-05-17",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Cisco Catalyst SD-WAN Controller & Manager contain an authentication bypass vulnerability that allows an unauthenticated, remote attacker to bypass authentication and obtain administrative privileges on an affected system.",
-          "requiredAction": "Please adhere to CISA’s guidelines to assess exposure and mitigate risks associated with Cisco SD-WAN devices as outlined in CISA’s Emergency Directive 26-03 (URL listed below in Notes) and CISA’s Hunt & Hardening Guidance for Cisco SD-WAN Devices (URL listed below in Notes). Adhere to the applicable BOD 22-01 guidance for cloud services or discontinue use of the product if mitigations are not available.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20182"
         }
       ],
       "highest_severity": [
@@ -283,20 +283,20 @@
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-20269"
         },
         {
+          "cveID": "CVE-2026-20316",
+          "product": "Secure Firewall Management Center (FMC)",
+          "vulnerabilityName": "Cisco Secure Firewall Management Center Use of Hard-coded Password Vulnerability",
+          "dateAdded": "2026-07-29",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20316"
+        },
+        {
           "cveID": "CVE-2008-4128",
           "product": "IOS",
           "vulnerabilityName": "Cisco IOS Cross-Site Request Forgery Vulnerability",
           "dateAdded": "2026-07-13",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2008-4128"
-        },
-        {
-          "cveID": "CVE-2026-20230",
-          "product": "Unified Communications Manager",
-          "vulnerabilityName": "Cisco Unified Communications Manager Server-Side Request Forgery (SSRF) Vulnerability",
-          "dateAdded": "2026-06-25",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20230"
         }
       ]
     },
@@ -1132,13 +1132,13 @@
     },
     {
       "vendor": "Fortinet",
-      "total_cve_count": 28,
-      "recent_12mo_count": 8,
+      "total_cve_count": 29,
+      "recent_12mo_count": 9,
       "ransomware_count": 13,
       "product_breakdown": [
         {
           "label": "FortiOS",
-          "count": 8
+          "count": 9
         },
         {
           "label": "Multiple Products",
@@ -1174,6 +1174,17 @@
         }
       ],
       "top_cves": [
+        {
+          "cveID": "CVE-2025-68686",
+          "product": "FortiOS",
+          "vulnerabilityName": "Fortinet FortiOS Exposure of Sensitive Information to an Unauthorized Actor Vulnerability",
+          "dateAdded": "2026-07-27",
+          "dueDate": "2026-08-10",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Fortinet FortiOS contains an exposure of sensitive information to an unauthorized actor vulnerability. This may allow a remote unauthenticated attacker to bypass the patch developed for the symbolic link persistency mechanism observed in some post-exploit cases, via crafted HTTP requests. An attacker would need first to have compromised the product via another vulnerability, at filesystem level.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-68686"
+        },
         {
           "cveID": "CVE-2026-25089",
           "product": "FortiSandbox",
@@ -1217,17 +1228,6 @@
           "shortDescription": "Fortinet FortiClient EMS contains an improper access control vulnerability that may allow an unauthenticated attacker to execute unauthorized code or commands via crafted requests.",
           "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-35616"
-        },
-        {
-          "cveID": "CVE-2026-24858",
-          "product": "Multiple Products",
-          "vulnerabilityName": "Fortinet Multiple Products Authentication Bypass Using an Alternate Path or Channel Vulnerability",
-          "dateAdded": "2026-01-27",
-          "dueDate": "2026-01-30",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Fortinet FortiAnalyzer, FortiManager, FortiOS, and FortiProxy contain an authentication bypass using an alternate path or channel that could allow an attacker with a FortiCloud account and a registered device to log into other devices registered to other accounts, if FortiCloud SSO authentication is enabled on those devices.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-24858"
         }
       ],
       "highest_severity": [
@@ -1256,20 +1256,20 @@
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-55591"
         },
         {
+          "cveID": "CVE-2025-68686",
+          "product": "FortiOS",
+          "vulnerabilityName": "Fortinet FortiOS Exposure of Sensitive Information to an Unauthorized Actor Vulnerability",
+          "dateAdded": "2026-07-27",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-68686"
+        },
+        {
           "cveID": "CVE-2026-25089",
           "product": "FortiSandbox",
           "vulnerabilityName": "Fortinet FortiSandbox OS Command Injection Vulnerability",
           "dateAdded": "2026-07-16",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-25089"
-        },
-        {
-          "cveID": "CVE-2026-39808",
-          "product": "FortiSandbox",
-          "vulnerabilityName": "Fortinet FortiSandbox OS Command Injection Vulnerability",
-          "dateAdded": "2026-07-16",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-39808"
         }
       ]
     },
@@ -6861,7 +6861,7 @@
     {
       "vendor": "PaperCut",
       "total_cve_count": 3,
-      "recent_12mo_count": 2,
+      "recent_12mo_count": 1,
       "ransomware_count": 2,
       "product_breakdown": [
         {
@@ -8660,6 +8660,64 @@
           "dateAdded": "2021-11-03",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-10987"
+        }
+      ]
+    },
+    {
+      "vendor": "Arista",
+      "total_cve_count": 2,
+      "recent_12mo_count": 2,
+      "ransomware_count": 0,
+      "product_breakdown": [
+        {
+          "label": "VeloCloud Orchestrator",
+          "count": 1
+        },
+        {
+          "label": "Extensible Operating System",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-16812",
+          "product": "VeloCloud Orchestrator",
+          "vulnerabilityName": "Arista VeloCloud Orchestrator On-Prem OS Command Injection Vulnerability",
+          "dateAdded": "2026-07-27",
+          "dueDate": "2026-07-30",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Arista VeloCloud Orchestrator On-Prem contains an OS command injection vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrity, and availability of the orchestrator and data managed by the orchestrator.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16812"
+        },
+        {
+          "cveID": "CVE-2026-7473",
+          "product": "Extensible Operating System",
+          "vulnerabilityName": "Arista Extensible Operating System Incomplete Comparison with Missing Factors Vulnerability",
+          "dateAdded": "2026-06-09",
+          "dueDate": "2026-06-23",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Arista Extensible Operating System (EOS) contains an incomplete comparison with missing factors vulnerability when the switch incorrectly decapsulate and forwards other unexpected tunneled packet with a destination IP matching its configured decapsulation IP.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7473"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2026-16812",
+          "product": "VeloCloud Orchestrator",
+          "vulnerabilityName": "Arista VeloCloud Orchestrator On-Prem OS Command Injection Vulnerability",
+          "dateAdded": "2026-07-27",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16812"
+        },
+        {
+          "cveID": "CVE-2026-7473",
+          "product": "Extensible Operating System",
+          "vulnerabilityName": "Arista Extensible Operating System Incomplete Comparison with Missing Factors Vulnerability",
+          "dateAdded": "2026-06-09",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7473"
         }
       ]
     },
@@ -11454,41 +11512,6 @@
           "dateAdded": "2026-06-16",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48907"
-        }
-      ]
-    },
-    {
-      "vendor": "Arista",
-      "total_cve_count": 1,
-      "recent_12mo_count": 1,
-      "ransomware_count": 0,
-      "product_breakdown": [
-        {
-          "label": "Extensible Operating System",
-          "count": 1
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2026-7473",
-          "product": "Extensible Operating System",
-          "vulnerabilityName": "Arista Extensible Operating System Incomplete Comparison with Missing Factors Vulnerability",
-          "dateAdded": "2026-06-09",
-          "dueDate": "2026-06-23",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Arista Extensible Operating System (EOS) contains an incomplete comparison with missing factors vulnerability when the switch incorrectly decapsulate and forwards other unexpected tunneled packet with a destination IP matching its configured decapsulation IP.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7473"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2026-7473",
-          "product": "Extensible Operating System",
-          "vulnerabilityName": "Arista Extensible Operating System Incomplete Comparison with Missing Factors Vulnerability",
-          "dateAdded": "2026-06-09",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7473"
         }
       ]
     },
