@@ -6,15 +6,21 @@
 >
 > **🟢 LAUNCHED — Jun 23, 2026 · 2:01 AM CDT** (App Store · id `6775301458` · `https://apps.apple.com/app/id6775301458` · PH launched). **CURRENT LIVE BUILD = v1.1 Build 81** (approved 2026-07-08, released Manual **2026-07-14**) — it superseded v1.0 Build 75, which was live Jun 23 → Jul 14. **Next iOS ship = Build 82.** *(The 2026-06-11 "date is soft, get it right" call held through the Compass redesign; the experience shipped on the locked date. Go-live runbook: `docs/LAUNCH_DAY.md`.)*
 >
-> **Last updated:** 2026-08-02 (daily doc-sync) — **a short human day (3 commits, all before 16:00 CDT) but a high-information one: B-115 was re-cut and its monotonic-down claim now VERIFIED by per-brand diff, the first full post-destagger cron cycle ran, and outbound email broke.** 🟢 **v1.1 Build 81 stays the LIVE App Store build; next iOS ship = Build 82** (no `ios/` or `android/` changes today; Android still scaffold-only).
+> **Last updated:** 2026-08-03 (daily doc-sync) — **ZERO human commits today (the last human commit is still `9c955183e`, 2026-08-02 15:46 CDT). All movement was machine-side: 9 bot data commits on `origin/main` that moved 0 grades, and a cron health list that got WORSE, not better — 34 → 37 rows, hard failures 17 → 20.** 🟢 **v1.1 Build 81 stays the LIVE App Store build; next iOS ship = Build 82** (no `ios/` or `android/` changes; Android still scaffold-only).
 >
-> **CATALOG — two different numbers today; both counted from `index.json`, not from commit messages.** **LOCAL (has B-115): 12,830 tracked / 3,065 graded** (A 64 · B 1,170 · C 1,041 · D 534 · F 256), 9,765 "?". **`origin/main` (no B-115, what the live site serves): 3,059 graded** (A 64 · B 1,178 · C 1,052 · D 525 · F 240), 9,771 "?". The 6-brand gap IS B-115 and nothing else. ⚠️ **The 08-01 header's "3,060 / A 62" was measured at `a8ba45a7c` — the REJECTED first pass — so it is not a valid baseline for anything. The true pre-B-115 baseline is `c0a7450f2` = 3,059 / A 64.**
+> **CATALOG — unchanged from 08-02; still two numbers, both counted from `index.json`.** **LOCAL (has B-115): 12,830 tracked / 3,065 graded** (A 64 · B 1,170 · C 1,041 · D 534 · F 256), 9,765 "?". **`origin/main` (no B-115, what the live site serves): 12,830 tracked / 3,059 graded** (A 64 · B 1,178 · C 1,052 · D 525 · F 240), 9,771 "?". **Re-counted today at `c05ac34ba` — today's 9 data commits moved ZERO grades.** The 6-brand gap IS B-115 and nothing else. ⚠️ **The 08-01 header's "3,060 / A 62" was measured at `a8ba45a7c` — the REJECTED first pass — so it is not a valid baseline for anything. The true pre-B-115 baseline is `c0a7450f2` = 3,059 / A 64.**
 >
 > ✅ **B-115 MONOTONIC-DOWN IS NOW PROVEN, not asserted.** Per-brand diff of `c0a7450f2` → `3bdae9815` across all 12,830 rows: **0 upgrades · 38 downgrades · 6 newly graded** (atmos-energy, telephone-and-data-systems-de, ugi-pa, voya-financial, williams-companies, xcel-energy — **all ?→D**). A-grades untouched. The design claim in the item text holds exactly as written.
 >
-> 🚨 **ACTION FOR YOU — B-115 IS COMMITTED BUT NOT PUSHED.** The FINAL Pay & Tax is `3bdae9815` (it supersedes the rejected first pass `a8ba45a7c`; **both are local-only**). `origin/main` has neither and the **live site still scores the old `execPay`**. **Your push is what takes "Pay & Tax" live.** The clone is now **24 behind / 5 ahead** — this sync deliberately did **not** pull, rebase, or push, because rebasing the scoring commit over 24 bot data commits is a merge you drive, not an unattended job. ✅ **Good news that shrinks the job: the geo commit `5ae00931e` already landed on `origin/main` independently as PR #156 (`e29deabd0`, byte-identical 49-line `docs/geo-prompt-audit.md`), so the rebase should drop it as already-applied — you are effectively rebasing 2 real commits, not 5.** Suggested: `git pull --rebase origin main`, resolve `index.json`/`meta.json`/`search-index.json` by re-running the rebake, confirm the drift is still the 0-up/38-down/6-new tax set, then push.
+> 🚨 **ACTION FOR YOU — B-115 IS COMMITTED BUT NOT PUSHED (day 2).** The FINAL Pay & Tax is `3bdae9815` (it supersedes the rejected first pass `a8ba45a7c`; **both are local-only**). `origin/main` has neither and the **live site still scores the old `execPay`**. **Your push is what takes "Pay & Tax" live.** The clone is now **34 behind / 7 ahead** (measured after a fresh `git fetch` on 08-03; it was 24 behind yesterday — **the backlog of bot data commits to rebase over grows by ~10/day, so this gets harder the longer it waits**). Only 2 of the 7 ahead are code; the rest is doc-sync/geo noise. This sync deliberately did **not** pull, rebase, or push, because rebasing a scoring commit over 34 bot data commits is a merge you drive, not an unattended job. ✅ **Good news that shrinks the job: the geo commit `5ae00931e` already landed on `origin/main` independently as PR #156 (`e29deabd0`, byte-identical 49-line `docs/geo-prompt-audit.md`), so the rebase should drop it as already-applied — you are effectively rebasing 2 real commits, not 7.** Suggested: `git pull --rebase origin main`, resolve `index.json`/`meta.json`/`search-index.json` by re-running the rebake, confirm the drift is still the 0-up/38-down/6-new tax set, then push.
 >
 > 🔴 **NEW BREAK TODAY — ALL OUTBOUND EMAIL IS DOWN (B-121, needs YOUR decision).** `weekly-digest` failed at 2026-08-02T18:58Z after **7 consecutive clean Sundays** (Jun 14 → Jul 26). Cause is not code: MailerLite returned **422 `"Content submission is only available on Premium plan."`** on `POST /campaigns`. **The 2026-08-02 subscriber digest did not go out** — first miss since launch. Same call, same failure mode, sits at `scripts/notify-newly-graded.mjs:307` — so **Tier-3 "Notify me when we grade this" is broken too**; it just hasn't screamed because it is DRY-RUN by default and will only 422 the moment you run `--apply`.
+>
+> 🔴 **NEW BREAK TODAY — `bis-entity-list-weekly` is dead on an EXPIRED TLS CERTIFICATE at the source (B-122).** The fetcher's primary endpoint `https://api.trade.gov/static/consolidated_screening_list/consolidated.csv` now fails with **`CERT_HAS_EXPIRED`**. **Root cause is verified and dated, not guessed:** the `*.trade.gov` certificate (Dept. of Commerce, issued by Entrust) has `notAfter = Jul 28 10:56:42 2026 GMT` — **it expired 6 days ago.** BIS ran green on 07-27 (the day before expiry) and failed on 08-03, its first run after. ⚠️ **This is the OPPOSITE of B-103/OFAC: the failure REPRODUCES off-runner** — `curl` from Aron's Mac returns the same `certificate has expired`. **So it is a real upstream break, not a CI artifact, and "wait one cycle" only works if Commerce renews.** Nothing to fix in our code. **Cheapest correct response: wait one week; if 08-10 also fails, switch to `data.trade.gov/consolidated_screening_list/v1/search` (returns 401 — needs an API key) or scrape the BIS site.** No grade impact — the last good snapshot stands.
+>
+> ⚠️ **CRON HEALTH REGRESSED TODAY — the list is growing, not shrinking (3rd straight day of new hard failures).** Issue **#155 went 34 → 37 rows** at the 08-03T15:51Z rewrite: **20 hard failures (was 17) + 17 cancelled.** **Today's scheduled runs: 21 total — 14 success · 4 failure · 3 cancelled = 67% healthy, DOWN from 08-02's 80%.** **Three NEW rows, all dated 08-03:** `bis-entity-list-weekly` (expired cert, B-122) · `fcc-weekly` (`ETIMEDOUT`) · `fsis-dw-weekly` (`HTTP 403`). ⚠️ **`fcc-weekly` exposes a watchdog blind spot worth knowing: it has failed 4 of its last 6 runs but was ABSENT from #155 yesterday, because 07-27 happened to succeed and the watchdog only reports each workflow's LATEST run. An intermittent cron vanishes from the health list on any lucky week.** Also: **`faa`, `fra` and `gdelt` were cancelled AGAIN today, hours apart (12:39 / 13:47 / 14:04 UTC) and unbunched** — that is now the 2nd post-destagger day confirming B-120 was a partial fix and a real `timeout-minutes` cause remains.
+>
+> **✅ CLOSED 2026-08-03 (0 — no human commits today).** **NEW work opened: B-122 (BIS expired cert).**
 >
 > **✅ CLOSED 2026-08-02 (0 new items — the day's 3 commits refined and documented work already open):** `3bdae9815` re-cut B-115, `9c955183e` documented it, `5ae00931e` logged the G-10 GEO audit. **NEW work opened: B-121 (outbound email).**
 >
@@ -137,6 +143,25 @@
   shape, and removes a plan dependency from the retention path — **and (a) only if the marketing digest is
   worth a monthly fee.** ⚠️ **Whatever is chosen, add a non-zero-exit guard so a send failure keeps opening
   the watchdog row rather than failing quietly on a weekly cadence** (this is bug-class (b) from B-100).
+- **B-122 🔴 NEW 2026-08-03 — `bis-entity-list-weekly` is down on an EXPIRED TLS CERT at the source.**
+  *(WS-B, XS — **wait, don't code**; display/enrichment only, no grade impact)* Run `30783601658` (08-03
+  04:09Z) exited 1 with **`CERT_HAS_EXPIRED`** fetching
+  `https://api.trade.gov/static/consolidated_screening_list/consolidated.csv`
+  (`scripts/bis-entity-list-fetch.mjs:42`). **Verified root cause, dated:** the `*.trade.gov` cert
+  (`O=United States Dept.of Commerce`, issuer `Entrust OV TLS Issuing RSA CA 1`) has
+  **`notAfter = Jul 28 10:56:42 2026 GMT`**. Run history matches exactly — **success 06-29 · 07-06 · 07-13 ·
+  07-20 · 07-27, then failure 08-03**, i.e. five clean weeks, then the first run after the cert lapsed.
+  ⚠️ **Contrast with B-103 (OFAC), and note the rule this sharpens:** the OFAC 403 was CI-only and cleared
+  itself; **this one REPRODUCES off-runner** (`curl` from the Mac: `SSL certificate problem: certificate has
+  expired`). **Reproducing off-runner is what separates "wait one cycle" from "the source really is
+  broken."** Run the off-runner probe first, every time — it is 10 seconds and it decides the response.
+  **Options:** (a) **wait one cycle** — Commerce renews and 08-10 goes green, cost zero; (b) switch to
+  `https://data.trade.gov/consolidated_screening_list/v1/search`, which is healthy but returns **401 —
+  requires a `api.data.gov` key**; (c) scrape `bis.doc.gov` (301s fine, but HTML, brittle).
+  **Recommendation: (a) for one week, then (b).** ⚠️ **Do NOT "fix" this by disabling cert verification
+  (`NODE_TLS_REJECT_UNAUTHORIZED=0` / `rejectUnauthorized:false`) — that trades a legible weekly red run
+  for a silent MITM hole across every fetcher that shares the agent.** The fetcher failed **correctly**
+  (hard-fail before write, last-good snapshot intact) — same good pattern as B-103.
 - **B-107 — triage the hard-FAILURE crons.** *(WS-B, L — ⭐ **now the highest-value open ops item**, and with
   B-105 shipped it has a trustworthy live list: **read the body of issue #155**, which the watchdog rewrites
   every day.)*
@@ -146,9 +171,23 @@
   **15 → 17, up not down** — the destagger removed bunching but new individual sources broke. **Fresh
   failures dated 08-01/08-02 that were NOT in the original 15:** `eu-sanctions-monthly` (08-02),
   `usda-aphis-monthly` (08-02, animals), `stanford-scac-monthly` (08-01), plus re-confirmations of
-  `dol-ofccp`, `eu-antitrust`, `eu-enforcement`, `followthemoney-state`. **Add a 4th sub-class to the
-  categories below: the 3 non-bunched post-destagger CANCELLATIONS** — `openstates-monthly`, `gao-monthly`,
-  `oversight-ig-monthly` — which are almost certainly real `timeout-minutes` kills and should be triaged by
+  `dol-ofccp`, `eu-antitrust`, `eu-enforcement`, `followthemoney-state`.
+  ⚠️ **RE-READ 2026-08-03 — the trend is the wrong direction and this is now urgent. #155 is 34 → 37 rows
+  (20 hard failures + 17 cancelled); hard failures have risen 15 → 17 → 20 on three consecutive days.**
+  Three new 08-03 rows: **`bis-entity-list-weekly`** (expired source cert → its own item, **B-122**),
+  **`fcc-weekly`** (`TypeError: fetch failed` / `read ETIMEDOUT`), **`fsis-dw-weekly`** (`HTTP 403`, same
+  403 wall as `fsis-weekly` — treat the two FSIS crons as ONE fix). **08-03 ran 21 scheduled jobs: 14
+  success · 4 failure · 3 cancelled (67% healthy), down from 80% on 08-02.**
+  ⚠️ **New watchdog caveat discovered today — the health list UNDERSTATES intermittent breakage.**
+  `fcc-weekly` has failed **4 of its last 6 runs** (07-06, 07-13, 07-20, 08-03) yet was absent from #155
+  yesterday, because 07-27 succeeded and the watchdog reports only each workflow's **latest** run.
+  **A flaky cron disappears from the list on any lucky week — so #155 is a floor on breakage, not a
+  ceiling.** When triaging, check run HISTORY per workflow, not just the current row.
+  **Add a 4th sub-class to the
+  categories below: the non-bunched post-destagger CANCELLATIONS** — `openstates-monthly`, `gao-monthly`,
+  `oversight-ig-monthly`, **plus `faa-weekly`, `fra-weekly` and `gdelt-weekly`, all cancelled again on 08-03
+  at 12:39 / 13:47 / 14:04 UTC — hours apart and unbunched, on the second post-destagger day** — which are
+  almost certainly real `timeout-minutes` kills and should be triaged by
   raising or splitting their caps, NOT by touching concurrency. **Ignore the `canada-comp-monthly` row
   permanently** (B-108 deleted the workflow; the watchdog reports last-known runs so the row never ages out).
   Categorized 2026-08-01: **12 fail at their FETCH step** — each a unique dead/moved live source, individual
