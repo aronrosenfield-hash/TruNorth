@@ -1,6 +1,6 @@
 {
   "_license": "Public health, pharma, food-safety + medical records — DOJ press releases, DEA admin court, FDA openFDA, CMS provider data, USDA FSIS, CDC public reports, Leapfrog Hospital Safety Grade, Center for Science in the Public Interest, Public Citizen Health Research Group, Truth Initiative. Cite original source URLs.",
-  "_source_file": "data/raw/health-pharma-r3/2026-06-09.json",
+  "_source_file": "data/raw/health-pharma-r3/2026-07-09.json",
   "_source_urls": {
     "doj-fca-healthcare": "https://www.justice.gov/civil/false-claims-act-cases",
     "dea-enforcement": "https://www.deadiversion.usdoj.gov/admin_court/index.html",
@@ -15,9 +15,9 @@
     "public-citizen-worst-pills": "https://www.worstpills.org/",
     "truth-initiative-tobacco": "https://truthinitiative.org/"
   },
-  "_generated_at": "2026-06-11T14:35:42.112Z",
+  "_generated_at": "2026-07-09T16:14:30.526Z",
   "_stats": {
-    "raw_entries": 272,
+    "raw_entries": 269,
     "matched_companies": 68,
     "route_counts": {
       "slugHint": 52,
@@ -25,10 +25,10 @@
       "hpAlias": 15,
       "alias": 0,
       "parent": 0,
-      "suffix": 19,
-      "orphan": 182
+      "suffix": 18,
+      "orphan": 180
     },
-    "orphans": 182
+    "orphans": 180
   },
   "companies": {
     "biogen": {
@@ -40,7 +40,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -70,7 +70,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -100,8 +100,8 @@
         "fda-drug-shortages"
       ],
       "_routedVia": "slugHint",
-      "_entries": 3,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_entries": 2,
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -120,14 +120,6 @@
             "year": 2026,
             "amountUsd": null,
             "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
-          },
-          {
-            "source": "fda-drug-shortages",
-            "severity": "mixed",
-            "title": "FDA Drug Shortages: 4 active shortages attributed to Novartis Pharmaceuticals Corporation",
-            "year": 2026,
-            "amountUsd": null,
-            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
           }
         ],
         "sources": [
@@ -136,7 +128,7 @@
         ],
         "bestStatus": "concern",
         "totalPenaltyUsd": 729000000,
-        "narrative": "Novartis $729M to resolve speaker-program kickback FCA case ($729M). FDA Drug Shortages: 38 active shortages attributed to Sandoz Inc.. Plus 1 other public-record finding across 2 sources."
+        "narrative": "Novartis $729M to resolve speaker-program kickback FCA case ($729M). FDA Drug Shortages: 38 active shortages attributed to Sandoz Inc.."
       }
     },
     "gilead-sciences": {
@@ -149,7 +141,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -163,8 +155,8 @@
           },
           {
             "source": "fda-drug-shortages",
-            "severity": "mixed",
-            "title": "FDA Drug Shortages: 3 active shortages attributed to Gilead Sciences, Inc.",
+            "severity": "concern",
+            "title": "FDA Drug Shortages: 5 active shortages attributed to Gilead Sciences, Inc.",
             "year": 2026,
             "amountUsd": null,
             "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
@@ -176,7 +168,7 @@
         ],
         "bestStatus": "concern",
         "totalPenaltyUsd": 97000000,
-        "narrative": "Gilead $97M FCA settlement — Letairis copay-charity kickback ($97M). FDA Drug Shortages: 3 active shortages attributed to Gilead Sciences, Inc.."
+        "narrative": "Gilead $97M FCA settlement — Letairis copay-charity kickback ($97M). FDA Drug Shortages: 5 active shortages attributed to Gilead Sciences, Inc.."
       }
     },
     "walgreens": {
@@ -190,7 +182,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 3,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -240,7 +232,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 3,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -289,7 +281,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -328,7 +320,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -358,7 +350,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -388,7 +380,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -418,7 +410,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -449,7 +441,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -489,7 +481,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -529,7 +521,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -569,7 +561,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -584,7 +576,7 @@
           {
             "source": "fda-maude-mfr",
             "severity": "mixed",
-            "title": "FDA MAUDE: 28,561 medical-device adverse-event reports (24mo) — ETHICON INC.",
+            "title": "FDA MAUDE: 27,574 medical-device adverse-event reports (24mo) — ETHICON INC.",
             "year": 2026,
             "amountUsd": null,
             "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
@@ -596,7 +588,7 @@
         ],
         "bestStatus": "concern",
         "totalPenaltyUsd": 5000000000,
-        "narrative": "J&J — national opioid settlement (~$5B over 9 years) ($5.00B). FDA MAUDE: 28,561 medical-device adverse-event reports (24mo) — ETHICON INC.."
+        "narrative": "J&J — national opioid settlement (~$5B over 9 years) ($5.00B). FDA MAUDE: 27,574 medical-device adverse-event reports (24mo) — ETHICON INC.."
       }
     },
     "abbvie": {
@@ -609,7 +601,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -648,7 +640,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -678,7 +670,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -708,7 +700,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -738,7 +730,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -768,7 +760,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -798,7 +790,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -836,7 +828,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -867,7 +859,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -906,7 +898,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -937,7 +929,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 2,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -976,7 +968,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1006,7 +998,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1036,7 +1028,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1066,7 +1058,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1096,7 +1088,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1126,7 +1118,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1156,7 +1148,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1187,7 +1179,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 3,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1202,7 +1194,7 @@
           {
             "source": "fda-drug-shortages",
             "severity": "concern",
-            "title": "FDA Drug Shortages: 206 active shortages attributed to Hospira, Inc., a Pfizer Company",
+            "title": "FDA Drug Shortages: 202 active shortages attributed to Hospira, Inc., a Pfizer Company",
             "year": 2026,
             "amountUsd": null,
             "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
@@ -1210,7 +1202,7 @@
           {
             "source": "fda-drug-shortages",
             "severity": "concern",
-            "title": "FDA Drug Shortages: 91 active shortages attributed to Pfizer Inc.",
+            "title": "FDA Drug Shortages: 90 active shortages attributed to Pfizer Inc.",
             "year": 2026,
             "amountUsd": null,
             "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
@@ -1222,7 +1214,7 @@
         ],
         "bestStatus": "concern",
         "totalPenaltyUsd": null,
-        "narrative": "FDA Drug Shortages: 206 active shortages attributed to Hospira, Inc., a Pfizer Company. FDA Drug Shortages: 91 active shortages attributed to Pfizer Inc.. Plus 1 other public-record finding across 2 sources."
+        "narrative": "FDA Drug Shortages: 202 active shortages attributed to Hospira, Inc., a Pfizer Company. FDA Drug Shortages: 90 active shortages attributed to Pfizer Inc.. Plus 1 other public-record finding across 2 sources."
       }
     },
     "gsk": {
@@ -1234,7 +1226,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1264,7 +1256,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1294,7 +1286,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1324,7 +1316,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1354,7 +1346,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1384,7 +1376,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1414,14 +1406,14 @@
       ],
       "_routedVia": "hpAlias",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
           {
             "source": "fda-drug-shortages",
             "severity": "concern",
-            "title": "FDA Drug Shortages: 172 active shortages attributed to Fresenius Kabi USA, LLC",
+            "title": "FDA Drug Shortages: 175 active shortages attributed to Fresenius Kabi USA, LLC",
             "year": 2026,
             "amountUsd": null,
             "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
@@ -1432,7 +1424,7 @@
         ],
         "bestStatus": "concern",
         "totalPenaltyUsd": null,
-        "narrative": "FDA Drug Shortages: 172 active shortages attributed to Fresenius Kabi USA, LLC."
+        "narrative": "FDA Drug Shortages: 175 active shortages attributed to Fresenius Kabi USA, LLC."
       }
     },
     "baxter-international": {
@@ -1445,14 +1437,14 @@
       ],
       "_routedVia": "hpAlias",
       "_entries": 2,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
           {
             "source": "fda-drug-shortages",
             "severity": "concern",
-            "title": "FDA Drug Shortages: 64 active shortages attributed to Baxter Healthcare",
+            "title": "FDA Drug Shortages: 65 active shortages attributed to Baxter Healthcare",
             "year": 2026,
             "amountUsd": null,
             "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
@@ -1460,7 +1452,7 @@
           {
             "source": "fda-maude-mfr",
             "severity": "mixed",
-            "title": "FDA MAUDE: 23,776 medical-device adverse-event reports (24mo) — BAXTER HEALTHCARE CORPORATION",
+            "title": "FDA MAUDE: 23,125 medical-device adverse-event reports (24mo) — BAXTER HEALTHCARE CORPORATION",
             "year": 2026,
             "amountUsd": null,
             "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
@@ -1472,7 +1464,7 @@
         ],
         "bestStatus": "concern",
         "totalPenaltyUsd": null,
-        "narrative": "FDA Drug Shortages: 64 active shortages attributed to Baxter Healthcare. FDA MAUDE: 23,776 medical-device adverse-event reports (24mo) — BAXTER HEALTHCARE CORPORATION."
+        "narrative": "FDA Drug Shortages: 65 active shortages attributed to Baxter Healthcare. FDA MAUDE: 23,125 medical-device adverse-event reports (24mo) — BAXTER HEALTHCARE CORPORATION."
       }
     },
     "amneal-pharmaceuticals": {
@@ -1484,14 +1476,14 @@
       ],
       "_routedVia": "direct",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
           {
             "source": "fda-drug-shortages",
             "severity": "concern",
-            "title": "FDA Drug Shortages: 19 active shortages attributed to Amneal Pharmaceuticals",
+            "title": "FDA Drug Shortages: 21 active shortages attributed to Amneal Pharmaceuticals",
             "year": 2026,
             "amountUsd": null,
             "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
@@ -1502,7 +1494,7 @@
         ],
         "bestStatus": "concern",
         "totalPenaltyUsd": null,
-        "narrative": "FDA Drug Shortages: 19 active shortages attributed to Amneal Pharmaceuticals."
+        "narrative": "FDA Drug Shortages: 21 active shortages attributed to Amneal Pharmaceuticals."
       }
     },
     "novo-nordisk": {
@@ -1514,7 +1506,7 @@
       ],
       "_routedVia": "suffix",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1544,7 +1536,7 @@
       ],
       "_routedVia": "hpAlias",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1574,7 +1566,7 @@
       ],
       "_routedVia": "suffix",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1604,7 +1596,7 @@
       ],
       "_routedVia": "suffix",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1625,36 +1617,6 @@
         "narrative": "FDA Drug Shortages: 3 active shortages attributed to Amgen Inc.."
       }
     },
-    "genentech": {
-      "_sources": [
-        "health-pharma-r3"
-      ],
-      "_innerSources": [
-        "fda-drug-shortages"
-      ],
-      "_routedVia": "suffix",
-      "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
-      "health": {
-        "certifications": [],
-        "findings": [
-          {
-            "source": "fda-drug-shortages",
-            "severity": "mixed",
-            "title": "FDA Drug Shortages: 3 active shortages attributed to Genentech, Inc",
-            "year": 2026,
-            "amountUsd": null,
-            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
-          }
-        ],
-        "sources": [
-          "fda-drug-shortages"
-        ],
-        "bestStatus": "mixed",
-        "totalPenaltyUsd": null,
-        "narrative": "FDA Drug Shortages: 3 active shortages attributed to Genentech, Inc."
-      }
-    },
     "journey-medical": {
       "_sources": [
         "health-pharma-r3"
@@ -1664,7 +1626,7 @@
       ],
       "_routedVia": "suffix",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1694,7 +1656,7 @@
       ],
       "_routedVia": "suffix",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1724,7 +1686,7 @@
       ],
       "_routedVia": "suffix",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1745,6 +1707,36 @@
         "narrative": "FDA Drug Shortages: 2 active shortages attributed to Dr. Reddy's Laboratories, Inc.."
       }
     },
+    "genentech": {
+      "_sources": [
+        "health-pharma-r3"
+      ],
+      "_innerSources": [
+        "fda-drug-shortages"
+      ],
+      "_routedVia": "suffix",
+      "_entries": 1,
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
+      "health": {
+        "certifications": [],
+        "findings": [
+          {
+            "source": "fda-drug-shortages",
+            "severity": "mixed",
+            "title": "FDA Drug Shortages: 2 active shortages attributed to Genentech, Inc",
+            "year": 2026,
+            "amountUsd": null,
+            "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/"
+          }
+        ],
+        "sources": [
+          "fda-drug-shortages"
+        ],
+        "bestStatus": "mixed",
+        "totalPenaltyUsd": null,
+        "narrative": "FDA Drug Shortages: 2 active shortages attributed to Genentech, Inc."
+      }
+    },
     "merck-and-co": {
       "_sources": [
         "health-pharma-r3"
@@ -1754,7 +1746,7 @@
       ],
       "_routedVia": "hpAlias",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1784,7 +1776,7 @@
       ],
       "_routedVia": "suffix",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1814,7 +1806,7 @@
       ],
       "_routedVia": "suffix",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1844,7 +1836,7 @@
       ],
       "_routedVia": "direct",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -1874,14 +1866,14 @@
       ],
       "_routedVia": "suffix",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
           {
             "source": "fda-maude-mfr",
             "severity": "concern",
-            "title": "FDA MAUDE: 716,899 medical-device adverse-event reports (24mo) — DEXCOM, INC.",
+            "title": "FDA MAUDE: 691,911 medical-device adverse-event reports (24mo) — DEXCOM, INC.",
             "year": 2026,
             "amountUsd": null,
             "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
@@ -1892,7 +1884,7 @@
         ],
         "bestStatus": "concern",
         "totalPenaltyUsd": null,
-        "narrative": "FDA MAUDE: 716,899 medical-device adverse-event reports (24mo) — DEXCOM, INC.."
+        "narrative": "FDA MAUDE: 691,911 medical-device adverse-event reports (24mo) — DEXCOM, INC.."
       }
     },
     "tandem-diabetes-care": {
@@ -1904,14 +1896,14 @@
       ],
       "_routedVia": "direct",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
           {
             "source": "fda-maude-mfr",
             "severity": "concern",
-            "title": "FDA MAUDE: 494,195 medical-device adverse-event reports (24mo) — TANDEM DIABETES CARE",
+            "title": "FDA MAUDE: 476,548 medical-device adverse-event reports (24mo) — TANDEM DIABETES CARE",
             "year": 2026,
             "amountUsd": null,
             "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
@@ -1922,7 +1914,7 @@
         ],
         "bestStatus": "concern",
         "totalPenaltyUsd": null,
-        "narrative": "FDA MAUDE: 494,195 medical-device adverse-event reports (24mo) — TANDEM DIABETES CARE."
+        "narrative": "FDA MAUDE: 476,548 medical-device adverse-event reports (24mo) — TANDEM DIABETES CARE."
       }
     },
     "medtronic": {
@@ -1934,14 +1926,14 @@
       ],
       "_routedVia": "hpAlias",
       "_entries": 2,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
           {
             "source": "fda-maude-mfr",
             "severity": "concern",
-            "title": "FDA MAUDE: 349,135 medical-device adverse-event reports (24mo) — MEDTRONIC PUERTO RICO OPERATIONS CO.",
+            "title": "FDA MAUDE: 335,601 medical-device adverse-event reports (24mo) — MEDTRONIC PUERTO RICO OPERATIONS CO.",
             "year": 2026,
             "amountUsd": null,
             "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
@@ -1949,7 +1941,7 @@
           {
             "source": "fda-maude-mfr",
             "severity": "mixed",
-            "title": "FDA MAUDE: 51,033 medical-device adverse-event reports (24mo) — MEDTRONIC, INC.",
+            "title": "FDA MAUDE: 50,606 medical-device adverse-event reports (24mo) — MEDTRONIC, INC.",
             "year": 2026,
             "amountUsd": null,
             "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
@@ -1960,7 +1952,7 @@
         ],
         "bestStatus": "concern",
         "totalPenaltyUsd": null,
-        "narrative": "FDA MAUDE: 349,135 medical-device adverse-event reports (24mo) — MEDTRONIC PUERTO RICO OPERATIONS CO.. FDA MAUDE: 51,033 medical-device adverse-event reports (24mo) — MEDTRONIC, INC.."
+        "narrative": "FDA MAUDE: 335,601 medical-device adverse-event reports (24mo) — MEDTRONIC PUERTO RICO OPERATIONS CO.. FDA MAUDE: 50,606 medical-device adverse-event reports (24mo) — MEDTRONIC, INC.."
       }
     },
     "insulet": {
@@ -1972,14 +1964,14 @@
       ],
       "_routedVia": "suffix",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
           {
             "source": "fda-maude-mfr",
             "severity": "concern",
-            "title": "FDA MAUDE: 128,182 medical-device adverse-event reports (24mo) — INSULET CORPORATION",
+            "title": "FDA MAUDE: 123,693 medical-device adverse-event reports (24mo) — INSULET CORPORATION",
             "year": 2026,
             "amountUsd": null,
             "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
@@ -1990,7 +1982,7 @@
         ],
         "bestStatus": "concern",
         "totalPenaltyUsd": null,
-        "narrative": "FDA MAUDE: 128,182 medical-device adverse-event reports (24mo) — INSULET CORPORATION."
+        "narrative": "FDA MAUDE: 123,693 medical-device adverse-event reports (24mo) — INSULET CORPORATION."
       }
     },
     "boston-scientific": {
@@ -2002,14 +1994,14 @@
       ],
       "_routedVia": "hpAlias",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
           {
             "source": "fda-maude-mfr",
             "severity": "concern",
-            "title": "FDA MAUDE: 126,236 medical-device adverse-event reports (24mo) — BOSTON SCIENTIFIC CORPORATION",
+            "title": "FDA MAUDE: 121,489 medical-device adverse-event reports (24mo) — BOSTON SCIENTIFIC CORPORATION",
             "year": 2026,
             "amountUsd": null,
             "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
@@ -2020,7 +2012,7 @@
         ],
         "bestStatus": "concern",
         "totalPenaltyUsd": null,
-        "narrative": "FDA MAUDE: 126,236 medical-device adverse-event reports (24mo) — BOSTON SCIENTIFIC CORPORATION."
+        "narrative": "FDA MAUDE: 121,489 medical-device adverse-event reports (24mo) — BOSTON SCIENTIFIC CORPORATION."
       }
     },
     "abbott-laboratories": {
@@ -2032,14 +2024,14 @@
       ],
       "_routedVia": "hpAlias",
       "_entries": 2,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
           {
             "source": "fda-maude-mfr",
             "severity": "concern",
-            "title": "FDA MAUDE: 122,361 medical-device adverse-event reports (24mo) — ABBOTT DIABETES CARE INC",
+            "title": "FDA MAUDE: 118,970 medical-device adverse-event reports (24mo) — ABBOTT DIABETES CARE INC",
             "year": 2026,
             "amountUsd": null,
             "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
@@ -2047,7 +2039,7 @@
           {
             "source": "fda-maude-mfr",
             "severity": "mixed",
-            "title": "FDA MAUDE: 62,981 medical-device adverse-event reports (24mo) — ABBOTT DIABETES CARE LTD",
+            "title": "FDA MAUDE: 62,053 medical-device adverse-event reports (24mo) — ABBOTT DIABETES CARE LTD",
             "year": 2026,
             "amountUsd": null,
             "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
@@ -2058,7 +2050,7 @@
         ],
         "bestStatus": "concern",
         "totalPenaltyUsd": null,
-        "narrative": "FDA MAUDE: 122,361 medical-device adverse-event reports (24mo) — ABBOTT DIABETES CARE INC. FDA MAUDE: 62,981 medical-device adverse-event reports (24mo) — ABBOTT DIABETES CARE LTD."
+        "narrative": "FDA MAUDE: 118,970 medical-device adverse-event reports (24mo) — ABBOTT DIABETES CARE INC. FDA MAUDE: 62,053 medical-device adverse-event reports (24mo) — ABBOTT DIABETES CARE LTD."
       }
     },
     "intuitive-surgical": {
@@ -2070,14 +2062,14 @@
       ],
       "_routedVia": "hpAlias",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
           {
             "source": "fda-maude-mfr",
             "severity": "mixed",
-            "title": "FDA MAUDE: 85,014 medical-device adverse-event reports (24mo) — INTUITIVE SURGICAL, INC",
+            "title": "FDA MAUDE: 83,884 medical-device adverse-event reports (24mo) — INTUITIVE SURGICAL, INC",
             "year": 2026,
             "amountUsd": null,
             "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
@@ -2088,7 +2080,7 @@
         ],
         "bestStatus": "mixed",
         "totalPenaltyUsd": null,
-        "narrative": "FDA MAUDE: 85,014 medical-device adverse-event reports (24mo) — INTUITIVE SURGICAL, INC."
+        "narrative": "FDA MAUDE: 83,884 medical-device adverse-event reports (24mo) — INTUITIVE SURGICAL, INC."
       }
     },
     "beta-bionics": {
@@ -2100,7 +2092,7 @@
       ],
       "_routedVia": "suffix",
       "_entries": 2,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -2138,14 +2130,14 @@
       ],
       "_routedVia": "direct",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
           {
             "source": "fda-maude-mfr",
             "severity": "mixed",
-            "title": "FDA MAUDE: 16,590 medical-device adverse-event reports (24mo) — EDWARDS LIFESCIENCES",
+            "title": "FDA MAUDE: 16,023 medical-device adverse-event reports (24mo) — EDWARDS LIFESCIENCES",
             "year": 2026,
             "amountUsd": null,
             "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
@@ -2156,7 +2148,7 @@
         ],
         "bestStatus": "mixed",
         "totalPenaltyUsd": null,
-        "narrative": "FDA MAUDE: 16,590 medical-device adverse-event reports (24mo) — EDWARDS LIFESCIENCES."
+        "narrative": "FDA MAUDE: 16,023 medical-device adverse-event reports (24mo) — EDWARDS LIFESCIENCES."
       }
     },
     "zimmer-biomet": {
@@ -2168,14 +2160,14 @@
       ],
       "_routedVia": "suffix",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
           {
             "source": "fda-maude-mfr",
             "severity": "mixed",
-            "title": "FDA MAUDE: 16,146 medical-device adverse-event reports (24mo) — ZIMMER BIOMET, INC.",
+            "title": "FDA MAUDE: 15,512 medical-device adverse-event reports (24mo) — ZIMMER BIOMET, INC.",
             "year": 2026,
             "amountUsd": null,
             "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
@@ -2186,7 +2178,7 @@
         ],
         "bestStatus": "mixed",
         "totalPenaltyUsd": null,
-        "narrative": "FDA MAUDE: 16,146 medical-device adverse-event reports (24mo) — ZIMMER BIOMET, INC.."
+        "narrative": "FDA MAUDE: 15,512 medical-device adverse-event reports (24mo) — ZIMMER BIOMET, INC.."
       }
     },
     "smith-and-nephew": {
@@ -2198,14 +2190,14 @@
       ],
       "_routedVia": "suffix",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
           {
             "source": "fda-maude-mfr",
             "severity": "mixed",
-            "title": "FDA MAUDE: 12,338 medical-device adverse-event reports (24mo) — SMITH & NEPHEW, INC.",
+            "title": "FDA MAUDE: 11,818 medical-device adverse-event reports (24mo) — SMITH & NEPHEW, INC.",
             "year": 2026,
             "amountUsd": null,
             "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
@@ -2216,7 +2208,7 @@
         ],
         "bestStatus": "mixed",
         "totalPenaltyUsd": null,
-        "narrative": "FDA MAUDE: 12,338 medical-device adverse-event reports (24mo) — SMITH & NEPHEW, INC.."
+        "narrative": "FDA MAUDE: 11,818 medical-device adverse-event reports (24mo) — SMITH & NEPHEW, INC.."
       }
     },
     "icu-medical": {
@@ -2228,14 +2220,14 @@
       ],
       "_routedVia": "suffix",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
           {
             "source": "fda-maude-mfr",
             "severity": "mixed",
-            "title": "FDA MAUDE: 10,481 medical-device adverse-event reports (24mo) — ICU MEDICAL, INC.",
+            "title": "FDA MAUDE: 10,462 medical-device adverse-event reports (24mo) — ICU MEDICAL, INC.",
             "year": 2026,
             "amountUsd": null,
             "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm"
@@ -2246,7 +2238,7 @@
         ],
         "bestStatus": "mixed",
         "totalPenaltyUsd": null,
-        "narrative": "FDA MAUDE: 10,481 medical-device adverse-event reports (24mo) — ICU MEDICAL, INC.."
+        "narrative": "FDA MAUDE: 10,462 medical-device adverse-event reports (24mo) — ICU MEDICAL, INC.."
       }
     },
     "kindred-healthcare": {
@@ -2258,7 +2250,7 @@
       ],
       "_routedVia": "slugHint",
       "_entries": 1,
-      "_lastUpdated": "2026-06-11T14:35:42.112Z",
+      "_lastUpdated": "2026-07-09T16:14:30.526Z",
       "health": {
         "certifications": [],
         "findings": [
@@ -2373,18 +2365,18 @@
       "title": "Truth Initiative + multistate: Juul $1.7B settlements over youth marketing"
     },
     {
-      "brand": "Teva Pharmaceuticals USA, Inc.",
-      "source": "fda-drug-shortages",
-      "severity": "concern",
-      "year": 2026,
-      "title": "FDA Drug Shortages: 117 active shortages attributed to Teva Pharmaceuticals USA, Inc."
-    },
-    {
       "brand": "Hikma Pharmaceuticals USA, Inc.",
       "source": "fda-drug-shortages",
       "severity": "concern",
       "year": 2026,
-      "title": "FDA Drug Shortages: 97 active shortages attributed to Hikma Pharmaceuticals USA, Inc."
+      "title": "FDA Drug Shortages: 99 active shortages attributed to Hikma Pharmaceuticals USA, Inc."
+    },
+    {
+      "brand": "Teva Pharmaceuticals USA, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 85 active shortages attributed to Teva Pharmaceuticals USA, Inc."
     },
     {
       "brand": "Eugia US LLC",
@@ -2429,6 +2421,13 @@
       "title": "FDA Drug Shortages: 22 active shortages attributed to EMD Serono, Inc."
     },
     {
+      "brand": "Mylan Pharmaceuticals Inc., a Viatris Company",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 21 active shortages attributed to Mylan Pharmaceuticals Inc., a Viatris Company"
+    },
+    {
       "brand": "Upsher-Smith Laboratories, LLC",
       "source": "fda-drug-shortages",
       "severity": "concern",
@@ -2464,13 +2463,6 @@
       "title": "FDA Drug Shortages: 19 active shortages attributed to B. Braun Medical Inc."
     },
     {
-      "brand": "Mylan Pharmaceuticals Inc., a Viatris Company",
-      "source": "fda-drug-shortages",
-      "severity": "concern",
-      "year": 2026,
-      "title": "FDA Drug Shortages: 19 active shortages attributed to Mylan Pharmaceuticals Inc., a Viatris Company"
-    },
-    {
       "brand": "Lannett Company, Inc.",
       "source": "fda-drug-shortages",
       "severity": "concern",
@@ -2478,18 +2470,18 @@
       "title": "FDA Drug Shortages: 18 active shortages attributed to Lannett Company, Inc."
     },
     {
-      "brand": "SpecGx LLC",
-      "source": "fda-drug-shortages",
-      "severity": "concern",
-      "year": 2026,
-      "title": "FDA Drug Shortages: 18 active shortages attributed to SpecGx LLC"
-    },
-    {
       "brand": "Takeda Pharmaceuticals USA Inc.",
       "source": "fda-drug-shortages",
       "severity": "concern",
       "year": 2026,
       "title": "FDA Drug Shortages: 18 active shortages attributed to Takeda Pharmaceuticals USA Inc."
+    },
+    {
+      "brand": "Jiangsu Hengrui Pharmaceuticals Co., Ltd.",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 17 active shortages attributed to Jiangsu Hengrui Pharmaceuticals Co., Ltd."
     },
     {
       "brand": "Mylan Institutional, a Viatris Company",
@@ -2506,11 +2498,11 @@
       "title": "FDA Drug Shortages: 16 active shortages attributed to Torrent Pharmaceuticals Limited"
     },
     {
-      "brand": "Torrent Pharma Inc.",
+      "brand": "SpecGx LLC",
       "source": "fda-drug-shortages",
       "severity": "concern",
       "year": 2026,
-      "title": "FDA Drug Shortages: 15 active shortages attributed to Torrent Pharma Inc."
+      "title": "FDA Drug Shortages: 15 active shortages attributed to SpecGx LLC"
     },
     {
       "brand": "Eli Lilly and Co.",
@@ -2518,13 +2510,6 @@
       "severity": "concern",
       "year": 2026,
       "title": "FDA Drug Shortages: 14 active shortages attributed to Eli Lilly and Co."
-    },
-    {
-      "brand": "Actavis Pharma, Inc.",
-      "source": "fda-drug-shortages",
-      "severity": "concern",
-      "year": 2026,
-      "title": "FDA Drug Shortages: 13 active shortages attributed to Actavis Pharma, Inc."
     },
     {
       "brand": "Alvogen",
@@ -2546,6 +2531,13 @@
       "severity": "concern",
       "year": 2026,
       "title": "FDA Drug Shortages: 12 active shortages attributed to Chartwell Molecular Holdings LLC"
+    },
+    {
+      "brand": "Jiangsu Hengrui Pharmaceuticals Co. (US Agent eVenus Pharmaceutical Laboratories, Inc.)",
+      "source": "fda-drug-shortages",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 12 active shortages attributed to Jiangsu Hengrui Pharmaceuticals Co. (US Agent eVenus Pharmaceutical Laboratories, Inc.)"
     },
     {
       "brand": "Sagent Pharmaceuticals",
@@ -2597,11 +2589,11 @@
       "title": "FDA Drug Shortages: 10 active shortages attributed to Somerset Therapeutics, LLC"
     },
     {
-      "brand": "Caplin Steriles, Ltd.",
+      "brand": "Actavis Pharma, Inc.",
       "source": "fda-drug-shortages",
       "severity": "concern",
       "year": 2026,
-      "title": "FDA Drug Shortages: 9 active shortages attributed to Caplin Steriles, Ltd."
+      "title": "FDA Drug Shortages: 9 active shortages attributed to Actavis Pharma, Inc."
     },
     {
       "brand": "Ingenus Pharmaceuticals LLC",
@@ -2618,11 +2610,11 @@
       "title": "FDA Drug Shortages: 9 active shortages attributed to Meitheal Pharmaceuticals, Inc."
     },
     {
-      "brand": "Fresenius Medical Care North America",
+      "brand": "Caplin Steriles, Ltd.",
       "source": "fda-drug-shortages",
       "severity": "concern",
       "year": 2026,
-      "title": "FDA Drug Shortages: 8 active shortages attributed to Fresenius Medical Care North America"
+      "title": "FDA Drug Shortages: 8 active shortages attributed to Caplin Steriles, Ltd."
     },
     {
       "brand": "InfoRLife SA",
@@ -2630,13 +2622,6 @@
       "severity": "concern",
       "year": 2026,
       "title": "FDA Drug Shortages: 8 active shortages attributed to InfoRLife SA"
-    },
-    {
-      "brand": "Jiangsu Hengrui Pharmaceuticals Co., Ltd.",
-      "source": "fda-drug-shortages",
-      "severity": "concern",
-      "year": 2026,
-      "title": "FDA Drug Shortages: 8 active shortages attributed to Jiangsu Hengrui Pharmaceuticals Co., Ltd."
     },
     {
       "brand": "Prinston Pharmaceutical, Inc.",
@@ -2723,11 +2708,11 @@
       "title": "FDA Drug Shortages: 6 active shortages attributed to Amphastar Pharmaceuticals, Inc."
     },
     {
-      "brand": "Jiangsu Hengrui Pharmaceuticals Co. (US Agent eVenus Pharmaceutical Laboratories, Inc.)",
+      "brand": "Fresenius Medical Care North America",
       "source": "fda-drug-shortages",
       "severity": "concern",
       "year": 2026,
-      "title": "FDA Drug Shortages: 6 active shortages attributed to Jiangsu Hengrui Pharmaceuticals Co. (US Agent eVenus Pharmaceutical Laboratories, Inc.)"
+      "title": "FDA Drug Shortages: 6 active shortages attributed to Fresenius Medical Care North America"
     },
     {
       "brand": "Novadoz Pharmaceuticals LLC",
@@ -2835,13 +2820,6 @@
       "title": "FDA Drug Shortages: 3 active shortages attributed to Alembic Pharmaceuticals"
     },
     {
-      "brand": "American Regent, Inc.",
-      "source": "fda-drug-shortages",
-      "severity": "mixed",
-      "year": 2026,
-      "title": "FDA Drug Shortages: 3 active shortages attributed to American Regent, Inc."
-    },
-    {
       "brand": "Cheplapharm Arzneimittel GmbH",
       "source": "fda-drug-shortages",
       "severity": "mixed",
@@ -2870,6 +2848,13 @@
       "title": "FDA Drug Shortages: 3 active shortages attributed to Watson Pharma Private Limited"
     },
     {
+      "brand": "American Regent, Inc.",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to American Regent, Inc."
+    },
+    {
       "brand": "AstraZeneca AB",
       "source": "fda-drug-shortages",
       "severity": "mixed",
@@ -2882,13 +2867,6 @@
       "severity": "mixed",
       "year": 2026,
       "title": "FDA Drug Shortages: 2 active shortages attributed to Avyxa Pharma, LLC"
-    },
-    {
-      "brand": "Genus Lifesciences",
-      "source": "fda-drug-shortages",
-      "severity": "mixed",
-      "year": 2026,
-      "title": "FDA Drug Shortages: 2 active shortages attributed to Genus Lifesciences"
     },
     {
       "brand": "Intercept Pharmaceuticals",
@@ -3115,6 +3093,13 @@
       "title": "FDA Drug Shortages: 1 active shortage attributed to Mylan Specialty, a Viatris Company"
     },
     {
+      "brand": "ONESOURCE SPECIALTY PTE LTD",
+      "source": "fda-drug-shortages",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to ONESOURCE SPECIALTY PTE LTD"
+    },
+    {
       "brand": "Pyros Pharmaceuticals, Inc.",
       "source": "fda-drug-shortages",
       "severity": "mixed",
@@ -3134,13 +3119,6 @@
       "severity": "mixed",
       "year": 2026,
       "title": "FDA Drug Shortages: 1 active shortage attributed to Salix Pharmaceuticals, a division of Bausch Health US, LLC"
-    },
-    {
-      "brand": "Sichuan Kelun Pharmaceutical Co., Ltd",
-      "source": "fda-drug-shortages",
-      "severity": "mixed",
-      "year": 2026,
-      "title": "FDA Drug Shortages: 1 active shortage attributed to Sichuan Kelun Pharmaceutical Co., Ltd"
     },
     {
       "brand": "Spectra Medical Devices, LLC",
@@ -3175,7 +3153,7 @@
       "source": "fda-maude-mfr",
       "severity": "concern",
       "year": 2026,
-      "title": "FDA MAUDE: 453,609 medical-device adverse-event reports (24mo) — INSTITUT STRAUMANN AG"
+      "title": "FDA MAUDE: 435,028 medical-device adverse-event reports (24mo) — INSTITUT STRAUMANN AG"
     },
     {
       "brand": "NOBEL BIOCARE AB GÖTEBORG",
@@ -3189,14 +3167,14 @@
       "source": "fda-maude-mfr",
       "severity": "concern",
       "year": 2026,
-      "title": "FDA MAUDE: 150,459 medical-device adverse-event reports (24mo) — RESPIRONICS, INC."
+      "title": "FDA MAUDE: 142,719 medical-device adverse-event reports (24mo) — RESPIRONICS, INC."
     },
     {
       "brand": "JJGC S.A.",
       "source": "fda-maude-mfr",
       "severity": "concern",
       "year": 2026,
-      "title": "FDA MAUDE: 125,058 medical-device adverse-event reports (24mo) — JJGC S.A."
+      "title": "FDA MAUDE: 120,825 medical-device adverse-event reports (24mo) — JJGC S.A."
     },
     {
       "brand": "MIS IMPLANTS TECHNOLOGIES LTD.",
@@ -3210,168 +3188,168 @@
       "source": "fda-maude-mfr",
       "severity": "concern",
       "year": 2026,
-      "title": "FDA MAUDE: 118,293 medical-device adverse-event reports (24mo) — MEDTRONIC MINIMED"
+      "title": "FDA MAUDE: 115,080 medical-device adverse-event reports (24mo) — MEDTRONIC MINIMED"
     },
     {
       "brand": "AIZU OLYMPUS CO., LTD.",
       "source": "fda-maude-mfr",
       "severity": "concern",
       "year": 2026,
-      "title": "FDA MAUDE: 103,096 medical-device adverse-event reports (24mo) — AIZU OLYMPUS CO., LTD."
-    },
-    {
-      "brand": "NOBEL BIOCARE AB",
-      "source": "fda-maude-mfr",
-      "severity": "mixed",
-      "year": 2026,
-      "title": "FDA MAUDE: 84,652 medical-device adverse-event reports (24mo) — NOBEL BIOCARE AB"
+      "title": "FDA MAUDE: 101,034 medical-device adverse-event reports (24mo) — AIZU OLYMPUS CO., LTD."
     },
     {
       "brand": "CAREFUSION 303, INC.",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 78,567 medical-device adverse-event reports (24mo) — CAREFUSION 303, INC."
+      "title": "FDA MAUDE: 78,478 medical-device adverse-event reports (24mo) — CAREFUSION 303, INC."
     },
     {
       "brand": "DENTSPLY IMPLANTS MANUFACTURING GMBH",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 74,688 medical-device adverse-event reports (24mo) — DENTSPLY IMPLANTS MANUFACTURING GMBH"
+      "title": "FDA MAUDE: 71,163 medical-device adverse-event reports (24mo) — DENTSPLY IMPLANTS MANUFACTURING GMBH"
+    },
+    {
+      "brand": "NOBEL BIOCARE AB",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 67,606 medical-device adverse-event reports (24mo) — NOBEL BIOCARE AB"
     },
     {
       "brand": "CAREFUSION SD",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 61,420 medical-device adverse-event reports (24mo) — CAREFUSION SD"
+      "title": "FDA MAUDE: 59,033 medical-device adverse-event reports (24mo) — CAREFUSION SD"
     },
     {
       "brand": "SHIRAKAWA OLYMPUS CO., LTD.",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 57,834 medical-device adverse-event reports (24mo) — SHIRAKAWA OLYMPUS CO., LTD."
-    },
-    {
-      "brand": "UNOMEDICAL A/S",
-      "source": "fda-maude-mfr",
-      "severity": "mixed",
-      "year": 2026,
-      "title": "FDA MAUDE: 48,817 medical-device adverse-event reports (24mo) — UNOMEDICAL A/S"
+      "title": "FDA MAUDE: 55,954 medical-device adverse-event reports (24mo) — SHIRAKAWA OLYMPUS CO., LTD."
     },
     {
       "brand": "ALLERGAN (COSTA RICA)",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 44,704 medical-device adverse-event reports (24mo) — ALLERGAN (COSTA RICA)"
+      "title": "FDA MAUDE: 43,023 medical-device adverse-event reports (24mo) — ALLERGAN (COSTA RICA)"
+    },
+    {
+      "brand": "UNOMEDICAL A/S",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 42,426 medical-device adverse-event reports (24mo) — UNOMEDICAL A/S"
     },
     {
       "brand": "BIOHORIZONS INC.",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 41,369 medical-device adverse-event reports (24mo) — BIOHORIZONS INC."
+      "title": "FDA MAUDE: 39,756 medical-device adverse-event reports (24mo) — BIOHORIZONS INC."
     },
     {
       "brand": "ST. JUDE MEDICAL, INC.(CRM-SYLMAR)",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 39,126 medical-device adverse-event reports (24mo) — ST. JUDE MEDICAL, INC.(CRM-SYLMAR)"
-    },
-    {
-      "brand": "MPRI",
-      "source": "fda-maude-mfr",
-      "severity": "mixed",
-      "year": 2026,
-      "title": "FDA MAUDE: 36,607 medical-device adverse-event reports (24mo) — MPRI"
+      "title": "FDA MAUDE: 37,337 medical-device adverse-event reports (24mo) — ST. JUDE MEDICAL, INC.(CRM-SYLMAR)"
     },
     {
       "brand": "MEDTRONIC PUERTO RICO VILLALBA",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 35,573 medical-device adverse-event reports (24mo) — MEDTRONIC PUERTO RICO VILLALBA"
+      "title": "FDA MAUDE: 35,548 medical-device adverse-event reports (24mo) — MEDTRONIC PUERTO RICO VILLALBA"
+    },
+    {
+      "brand": "MPRI",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 33,916 medical-device adverse-event reports (24mo) — MPRI"
     },
     {
       "brand": "ABBOTT MEDICAL",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 33,264 medical-device adverse-event reports (24mo) — ABBOTT MEDICAL"
+      "title": "FDA MAUDE: 32,146 medical-device adverse-event reports (24mo) — ABBOTT MEDICAL"
     },
     {
       "brand": "ALTATEC GMBH",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 30,535 medical-device adverse-event reports (24mo) — ALTATEC GMBH"
-    },
-    {
-      "brand": "MENTOR TEXAS",
-      "source": "fda-maude-mfr",
-      "severity": "mixed",
-      "year": 2026,
-      "title": "FDA MAUDE: 28,582 medical-device adverse-event reports (24mo) — MENTOR TEXAS"
+      "title": "FDA MAUDE: 29,160 medical-device adverse-event reports (24mo) — ALTATEC GMBH"
     },
     {
       "brand": "S.I.N. IMPLANT SYSTEM",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 28,171 medical-device adverse-event reports (24mo) — S.I.N. IMPLANT SYSTEM"
+      "title": "FDA MAUDE: 28,121 medical-device adverse-event reports (24mo) — S.I.N. IMPLANT SYSTEM"
+    },
+    {
+      "brand": "MENTOR TEXAS",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 27,460 medical-device adverse-event reports (24mo) — MENTOR TEXAS"
     },
     {
       "brand": "SYNTHES GMBH",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 24,955 medical-device adverse-event reports (24mo) — SYNTHES GMBH"
-    },
-    {
-      "brand": "ZOLL MANUFACTURING CORPORATION",
-      "source": "fda-maude-mfr",
-      "severity": "mixed",
-      "year": 2026,
-      "title": "FDA MAUDE: 24,553 medical-device adverse-event reports (24mo) — ZOLL MANUFACTURING CORPORATION"
+      "title": "FDA MAUDE: 23,948 medical-device adverse-event reports (24mo) — SYNTHES GMBH"
     },
     {
       "brand": "ANTHOGYR",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 24,462 medical-device adverse-event reports (24mo) — ANTHOGYR"
+      "title": "FDA MAUDE: 23,675 medical-device adverse-event reports (24mo) — ANTHOGYR"
+    },
+    {
+      "brand": "ZOLL MANUFACTURING CORPORATION",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 23,514 medical-device adverse-event reports (24mo) — ZOLL MANUFACTURING CORPORATION"
     },
     {
       "brand": "DEPUY ORTHOPAEDICS INC US",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 24,314 medical-device adverse-event reports (24mo) — DEPUY ORTHOPAEDICS INC US"
+      "title": "FDA MAUDE: 23,287 medical-device adverse-event reports (24mo) — DEPUY ORTHOPAEDICS INC US"
     },
     {
       "brand": "ABIOMED, INC.",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 23,818 medical-device adverse-event reports (24mo) — ABIOMED, INC."
+      "title": "FDA MAUDE: 23,114 medical-device adverse-event reports (24mo) — ABIOMED, INC."
     },
     {
       "brand": "PHILIPS MEDICAL SYSTEMS NEDERLAND B.V.",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 21,856 medical-device adverse-event reports (24mo) — PHILIPS MEDICAL SYSTEMS NEDERLAND B.V."
+      "title": "FDA MAUDE: 21,405 medical-device adverse-event reports (24mo) — PHILIPS MEDICAL SYSTEMS NEDERLAND B.V."
     },
     {
       "brand": "ABBOTT VASCULAR INC.",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 21,840 medical-device adverse-event reports (24mo) — ABBOTT VASCULAR INC."
+      "title": "FDA MAUDE: 21,012 medical-device adverse-event reports (24mo) — ABBOTT VASCULAR INC."
     },
     {
       "brand": "UNOMEDICAL DEVICES S.A DE C.V",
@@ -3385,56 +3363,56 @@
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 19,859 medical-device adverse-event reports (24mo) — C.R. BARD, INC. (BASD) -3006260740"
+      "title": "FDA MAUDE: 19,203 medical-device adverse-event reports (24mo) — C.R. BARD, INC. (BASD) -3006260740"
     },
     {
       "brand": "MEDTRONIC SINGAPORE OPERATIONS",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 19,307 medical-device adverse-event reports (24mo) — MEDTRONIC SINGAPORE OPERATIONS"
+      "title": "FDA MAUDE: 18,573 medical-device adverse-event reports (24mo) — MEDTRONIC SINGAPORE OPERATIONS"
     },
     {
       "brand": "ETHICON ENDO-SURGERY, LLC.",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 18,835 medical-device adverse-event reports (24mo) — ETHICON ENDO-SURGERY, LLC."
+      "title": "FDA MAUDE: 18,112 medical-device adverse-event reports (24mo) — ETHICON ENDO-SURGERY, LLC."
     },
     {
       "brand": "ST. JUDE MEDICAL - NEUROMODULATION (PUERTO RICO, LLC)",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 18,037 medical-device adverse-event reports (24mo) — ST. JUDE MEDICAL - NEUROMODULATION (PUERTO RICO, LLC)"
+      "title": "FDA MAUDE: 17,209 medical-device adverse-event reports (24mo) — ST. JUDE MEDICAL - NEUROMODULATION (PUERTO RICO, LLC)"
     },
     {
       "brand": "DATEX-OHMEDA, INC.",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 17,711 medical-device adverse-event reports (24mo) — DATEX-OHMEDA, INC."
+      "title": "FDA MAUDE: 17,122 medical-device adverse-event reports (24mo) — DATEX-OHMEDA, INC."
     },
     {
       "brand": "OLYMPUS WINTER & IBE GMBH",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 17,426 medical-device adverse-event reports (24mo) — OLYMPUS WINTER & IBE GMBH"
+      "title": "FDA MAUDE: 16,652 medical-device adverse-event reports (24mo) — OLYMPUS WINTER & IBE GMBH"
     },
     {
       "brand": "BOSTON SCIENTIFIC NEUROMODULATION CORPORATION",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 15,186 medical-device adverse-event reports (24mo) — BOSTON SCIENTIFIC NEUROMODULATION CORPORATION"
+      "title": "FDA MAUDE: 15,146 medical-device adverse-event reports (24mo) — BOSTON SCIENTIFIC NEUROMODULATION CORPORATION"
     },
     {
       "brand": "THORATEC CORPORATION",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 14,946 medical-device adverse-event reports (24mo) — THORATEC CORPORATION"
+      "title": "FDA MAUDE: 14,339 medical-device adverse-event reports (24mo) — THORATEC CORPORATION"
     },
     {
       "brand": "UNOMEDICAL DEVICES S.A. DE C.V.",
@@ -3448,49 +3426,35 @@
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 13,605 medical-device adverse-event reports (24mo) — DATASCOPE CORP."
-    },
-    {
-      "brand": "ARTHREX, INC.",
-      "source": "fda-maude-mfr",
-      "severity": "mixed",
-      "year": 2026,
-      "title": "FDA MAUDE: 13,317 medical-device adverse-event reports (24mo) — ARTHREX, INC."
-    },
-    {
-      "brand": "SMITHS MEDICAL ASD, INC.",
-      "source": "fda-maude-mfr",
-      "severity": "mixed",
-      "year": 2026,
-      "title": "FDA MAUDE: 12,696 medical-device adverse-event reports (24mo) — SMITHS MEDICAL ASD, INC."
+      "title": "FDA MAUDE: 13,273 medical-device adverse-event reports (24mo) — DATASCOPE CORP."
     },
     {
       "brand": "ADIN DENTAL IMPLANT SYSTEMS LTD",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 12,589 medical-device adverse-event reports (24mo) — ADIN DENTAL IMPLANT SYSTEMS LTD"
+      "title": "FDA MAUDE: 12,580 medical-device adverse-event reports (24mo) — ADIN DENTAL IMPLANT SYSTEMS LTD"
+    },
+    {
+      "brand": "ARTHREX, INC.",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 11,994 medical-device adverse-event reports (24mo) — ARTHREX, INC."
+    },
+    {
+      "brand": "SMITHS MEDICAL ASD, INC.",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 11,855 medical-device adverse-event reports (24mo) — SMITHS MEDICAL ASD, INC."
     },
     {
       "brand": "BIOTRONIK SE & CO. KG",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 12,366 medical-device adverse-event reports (24mo) — BIOTRONIK SE & CO. KG"
-    },
-    {
-      "brand": "MEDTRONIC IRELAND",
-      "source": "fda-maude-mfr",
-      "severity": "mixed",
-      "year": 2026,
-      "title": "FDA MAUDE: 11,344 medical-device adverse-event reports (24mo) — MEDTRONIC IRELAND"
-    },
-    {
-      "brand": "DEPUY IRELAND - 9616671",
-      "source": "fda-maude-mfr",
-      "severity": "mixed",
-      "year": 2026,
-      "title": "FDA MAUDE: 11,283 medical-device adverse-event reports (24mo) — DEPUY IRELAND - 9616671"
+      "title": "FDA MAUDE: 11,823 medical-device adverse-event reports (24mo) — BIOTRONIK SE & CO. KG"
     },
     {
       "brand": "UNOMEDICAL UM-D",
@@ -3500,61 +3464,75 @@
       "title": "FDA MAUDE: 11,157 medical-device adverse-event reports (24mo) — UNOMEDICAL UM-D"
     },
     {
-      "brand": "HOYA CORPORATION PENTAX TOKYO OFFICE",
+      "brand": "MEDTRONIC IRELAND",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 11,001 medical-device adverse-event reports (24mo) — HOYA CORPORATION PENTAX TOKYO OFFICE"
+      "title": "FDA MAUDE: 11,023 medical-device adverse-event reports (24mo) — MEDTRONIC IRELAND"
     },
     {
       "brand": "C.R. BARD INC. (COVINGTON) -1018233",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 10,832 medical-device adverse-event reports (24mo) — C.R. BARD INC. (COVINGTON) -1018233"
+      "title": "FDA MAUDE: 10,682 medical-device adverse-event reports (24mo) — C.R. BARD INC. (COVINGTON) -1018233"
     },
     {
-      "brand": "MEDTRONIC HEART VALVES DIVISION",
+      "brand": "DEPUY IRELAND - 9616671",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 10,699 medical-device adverse-event reports (24mo) — MEDTRONIC HEART VALVES DIVISION"
+      "title": "FDA MAUDE: 10,536 medical-device adverse-event reports (24mo) — DEPUY IRELAND - 9616671"
     },
     {
       "brand": "STRAIGHT SMILE, LLC",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 10,530 medical-device adverse-event reports (24mo) — STRAIGHT SMILE, LLC"
+      "title": "FDA MAUDE: 10,528 medical-device adverse-event reports (24mo) — STRAIGHT SMILE, LLC"
     },
     {
       "brand": "ALCON RESEARCH, LLC - HOUSTON",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 10,520 medical-device adverse-event reports (24mo) — ALCON RESEARCH, LLC - HOUSTON"
+      "title": "FDA MAUDE: 10,260 medical-device adverse-event reports (24mo) — ALCON RESEARCH, LLC - HOUSTON"
+    },
+    {
+      "brand": "MEDTRONIC HEART VALVES DIVISION",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 10,198 medical-device adverse-event reports (24mo) — MEDTRONIC HEART VALVES DIVISION"
+    },
+    {
+      "brand": "HOYA CORPORATION PENTAX TOKYO OFFICE",
+      "source": "fda-maude-mfr",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 10,152 medical-device adverse-event reports (24mo) — HOYA CORPORATION PENTAX TOKYO OFFICE"
     },
     {
       "brand": "MEDTRONIC EUROPE SARL",
       "source": "fda-maude-mfr",
       "severity": "mixed",
       "year": 2026,
-      "title": "FDA MAUDE: 10,387 medical-device adverse-event reports (24mo) — MEDTRONIC EUROPE SARL"
+      "title": "FDA MAUDE: 10,004 medical-device adverse-event reports (24mo) — MEDTRONIC EUROPE SARL"
     },
     {
       "brand": "Life Care Centers of America",
       "source": "cms-nh-compare",
       "severity": "positive",
       "year": 2026,
-      "title": "CMS Nursing Home Compare: Life Care Centers of America — 132 facilities, avg 3.55/5 overall"
+      "title": "CMS Nursing Home Compare: Life Care Centers of America — 132 facilities, avg 3.49/5 overall"
     },
     {
       "brand": "Genesis Healthcare",
       "source": "cms-nh-compare",
       "severity": "concern",
       "year": 2026,
-      "title": "CMS Nursing Home Compare: Genesis Healthcare — 8 facilities, avg 2.38/5 overall"
+      "title": "CMS Nursing Home Compare: Genesis Healthcare — 8 facilities, avg 2.25/5 overall"
     }
   ],
-  "orphan_total": 182
+  "orphan_total": 180
 }

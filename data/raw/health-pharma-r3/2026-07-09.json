@@ -1,0 +1,3576 @@
+{
+  "_license": "Public health, pharma, food-safety + medical records — DOJ press releases, DEA admin court, FDA openFDA, CMS provider data, USDA FSIS, CDC public reports, Leapfrog Hospital Safety Grade, Center for Science in the Public Interest, Public Citizen Health Research Group, Truth Initiative. Cite original source URLs.",
+  "_source_urls": {
+    "doj-fca-healthcare": "https://www.justice.gov/civil/false-claims-act-cases",
+    "dea-enforcement": "https://www.deadiversion.usdoj.gov/admin_court/index.html",
+    "opioid-settlements": "https://www.naag.org/issues/opioids/",
+    "fda-drug-shortages": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+    "fda-maude-mfr": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+    "cms-nh-compare": "https://www.medicare.gov/care-compare/?providerType=NursingHome",
+    "leapfrog-hospital-safety": "https://www.hospitalsafetygrade.org/",
+    "usda-fsis-recalls": "https://www.fsis.usda.gov/recalls",
+    "cdc-ar-meat": "https://www.cdc.gov/antimicrobial-resistance/data-research/threats/",
+    "csp-iworst-eating": "https://www.cspinet.org/xtreme-eating-awards",
+    "public-citizen-worst-pills": "https://www.worstpills.org/",
+    "truth-initiative-tobacco": "https://truthinitiative.org/"
+  },
+  "_generated_at": "2026-07-09T16:14:30.467Z",
+  "_stats": {
+    "entries": 269,
+    "sources": 12,
+    "per_source": {
+      "doj-fca-healthcare": 12,
+      "dea-enforcement": 7,
+      "opioid-settlements": 10,
+      "leapfrog-hospital-safety": 6,
+      "cms-nh-compare": 8,
+      "usda-fsis-recalls": 6,
+      "cdc-ar-meat": 5,
+      "csp-iworst-eating": 5,
+      "public-citizen-worst-pills": 4,
+      "truth-initiative-tobacco": 4,
+      "fda-drug-shortages": 132,
+      "fda-maude-mfr": 70
+    },
+    "curated": 63,
+    "live_added": 206
+  },
+  "entries": [
+    {
+      "source": "doj-fca-healthcare",
+      "brand": "Biogen",
+      "slugHint": "biogen",
+      "year": 2022,
+      "amountUsd": 900000000,
+      "title": "Biogen pays $900M to resolve FCA allegations of kickbacks to neurologists",
+      "summary": "DOJ False Claims Act settlement: Biogen allegedly paid speaker-program kickbacks to induce prescriptions of MS drugs Avonex/Tysabri/Tecfidera.",
+      "severity": "concern",
+      "sourceUrl": "https://www.justice.gov/civil/false-claims-act-cases",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "doj-fca-healthcare",
+      "brand": "Mallinckrodt",
+      "slugHint": "mallinckrodt",
+      "year": 2022,
+      "amountUsd": 260000000,
+      "title": "Mallinckrodt $260M FCA settlement — H.P. Acthar Gel kickbacks + Medicaid underpayment",
+      "summary": "DOJ alleged Mallinckrodt paid kickbacks via the Chronic Disease Fund to mask Acthar's price + underpaid Medicaid rebates.",
+      "severity": "concern",
+      "sourceUrl": "https://www.justice.gov/civil/false-claims-act-cases",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "doj-fca-healthcare",
+      "brand": "Indivior",
+      "slugHint": "indivior-pharmaceuticals",
+      "year": 2020,
+      "amountUsd": 600000000,
+      "title": "Indivior $600M global resolution over Suboxone film marketing",
+      "summary": "DOJ: Indivior misled prescribers about Suboxone film's risk to children + caused false Medicaid claims.",
+      "severity": "concern",
+      "sourceUrl": "https://www.justice.gov/civil/false-claims-act-cases",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "doj-fca-healthcare",
+      "brand": "Novartis",
+      "slugHint": "novartis",
+      "year": 2020,
+      "amountUsd": 729000000,
+      "title": "Novartis $729M to resolve speaker-program kickback FCA case",
+      "summary": "DOJ alleged Novartis ran sham speaker programs as cardiovascular / diabetes prescriber kickbacks.",
+      "severity": "concern",
+      "sourceUrl": "https://www.justice.gov/civil/false-claims-act-cases",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "doj-fca-healthcare",
+      "brand": "Gilead Sciences",
+      "slugHint": "gilead-sciences",
+      "year": 2020,
+      "amountUsd": 97000000,
+      "title": "Gilead $97M FCA settlement — Letairis copay-charity kickback",
+      "summary": "DOJ: Gilead used a copay charity to steer Letairis patients + induce Medicare prescriptions.",
+      "severity": "concern",
+      "sourceUrl": "https://www.justice.gov/civil/false-claims-act-cases",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "doj-fca-healthcare",
+      "brand": "Walgreens",
+      "slugHint": "walgreens",
+      "year": 2024,
+      "amountUsd": 106800000,
+      "title": "Walgreens $106.8M FCA settlement — billing for never-dispensed prescriptions",
+      "summary": "DOJ: Walgreens billed Medicare/Medicaid/Tricare for prescriptions it processed but never actually dispensed to patients (2009-2020).",
+      "severity": "concern",
+      "sourceUrl": "https://www.justice.gov/civil/false-claims-act-cases",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "doj-fca-healthcare",
+      "brand": "CVS Health",
+      "slugHint": "cvs-health",
+      "year": 2024,
+      "amountUsd": 18000000,
+      "title": "CVS / Omnicare $18M FCA case — long-term-care kickbacks",
+      "summary": "DOJ alleged Omnicare (CVS) dispensed drugs without valid prescriptions for nursing-home residents.",
+      "severity": "concern",
+      "sourceUrl": "https://www.justice.gov/civil/false-claims-act-cases",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "doj-fca-healthcare",
+      "brand": "HCA Healthcare",
+      "slugHint": "hca-healthcare",
+      "year": 2024,
+      "amountUsd": 60000000,
+      "title": "HCA-affiliate physician practice $60M FCA settlement (oncology billing)",
+      "summary": "DOJ: HCA-affiliated oncology clinic billed for medically-unnecessary infusions + unlicensed nurses.",
+      "severity": "concern",
+      "sourceUrl": "https://www.justice.gov/civil/false-claims-act-cases",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "doj-fca-healthcare",
+      "brand": "Centene",
+      "slugHint": "centene",
+      "year": 2022,
+      "amountUsd": 165000000,
+      "title": "Centene multistate $165M+ Medicaid PBM settlement",
+      "summary": "Centene paid 22+ states settlements over overbilling Medicaid programs through pharmacy-benefit-manager rebates.",
+      "severity": "concern",
+      "sourceUrl": "https://www.justice.gov/civil/false-claims-act-cases",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "doj-fca-healthcare",
+      "brand": "Booz Allen Hamilton",
+      "slugHint": "booz-allen-hamilton",
+      "year": 2023,
+      "amountUsd": 377500000,
+      "title": "Booz Allen $377.5M FCA settlement — commercial cost mischarging",
+      "summary": "DOJ: BAH improperly charged commercial costs to federal contracts incl. HHS/CMS work.",
+      "severity": "concern",
+      "sourceUrl": "https://www.justice.gov/civil/false-claims-act-cases",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "doj-fca-healthcare",
+      "brand": "Cigna",
+      "slugHint": "cigna",
+      "year": 2023,
+      "amountUsd": 172300000,
+      "title": "Cigna $172.3M FCA settlement — Medicare Advantage risk-adjustment fraud",
+      "summary": "DOJ: Cigna submitted inaccurate diagnosis codes to inflate Medicare Advantage risk-adjustment payments (2014-2019).",
+      "severity": "concern",
+      "sourceUrl": "https://www.justice.gov/civil/false-claims-act-cases",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "doj-fca-healthcare",
+      "brand": "Humana",
+      "slugHint": "humana",
+      "year": 2024,
+      "amountUsd": 90000000,
+      "title": "Humana $90M FCA settlement — Medicare Part D bid-process misrepresentation",
+      "summary": "DOJ: Humana misrepresented expected bid costs in Medicare Part D prescription-drug-plan bids.",
+      "severity": "concern",
+      "sourceUrl": "https://www.justice.gov/civil/false-claims-act-cases",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "dea-enforcement",
+      "brand": "McKesson",
+      "slugHint": "mckesson",
+      "year": 2017,
+      "amountUsd": 150000000,
+      "title": "McKesson $150M DEA civil penalty — failure to report suspicious opioid orders",
+      "summary": "DEA: McKesson failed to design + operate effective suspicious-order monitoring across 12 states.",
+      "severity": "concern",
+      "sourceUrl": "https://www.deadiversion.usdoj.gov/admin_court/index.html",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "dea-enforcement",
+      "brand": "Cardinal Health",
+      "slugHint": "cardinal-health",
+      "year": 2016,
+      "amountUsd": 44000000,
+      "title": "Cardinal Health $44M DEA settlement — opioid distribution diversion controls",
+      "summary": "DEA: Cardinal Health failed to maintain effective controls against diversion of controlled substances.",
+      "severity": "concern",
+      "sourceUrl": "https://www.deadiversion.usdoj.gov/admin_court/index.html",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "dea-enforcement",
+      "brand": "AmerisourceBergen",
+      "slugHint": "amerisourcebergen",
+      "year": 2017,
+      "amountUsd": 16000000,
+      "title": "AmerisourceBergen $16M DEA + state settlements — opioid distribution",
+      "summary": "DEA + state AG cases: AmerisourceBergen failed to identify + report suspicious orders.",
+      "severity": "concern",
+      "sourceUrl": "https://www.deadiversion.usdoj.gov/admin_court/index.html",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "dea-enforcement",
+      "brand": "CVS Health",
+      "slugHint": "cvs-health",
+      "year": 2020,
+      "amountUsd": 5000000,
+      "title": "CVS pharmacies $5M DEA civil penalty — controlled-substance dispensing recordkeeping",
+      "summary": "DEA: CVS pharmacies failed to keep accurate records of controlled-substance receipts + dispensing.",
+      "severity": "concern",
+      "sourceUrl": "https://www.deadiversion.usdoj.gov/admin_court/index.html",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "dea-enforcement",
+      "brand": "Walmart",
+      "slugHint": "walmart",
+      "year": 2024,
+      "amountUsd": 7500000,
+      "title": "Walmart pharmacies — DOJ/DEA civil filings over opioid prescription handling",
+      "summary": "DOJ/DEA filed civil claims alleging Walmart's mail-order + retail pharmacies filled invalid opioid prescriptions; settled portions of program.",
+      "severity": "concern",
+      "sourceUrl": "https://www.deadiversion.usdoj.gov/admin_court/index.html",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "dea-enforcement",
+      "brand": "Walgreens",
+      "slugHint": "walgreens",
+      "year": 2013,
+      "amountUsd": 80000000,
+      "title": "Walgreens $80M DEA settlement — historic opioid distribution lapses",
+      "summary": "DEA: Walgreens distribution centers (notably Jupiter, FL) failed to design + operate suspicious-order systems.",
+      "severity": "concern",
+      "sourceUrl": "https://www.deadiversion.usdoj.gov/admin_court/index.html",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "dea-enforcement",
+      "brand": "Mallinckrodt",
+      "slugHint": "mallinckrodt",
+      "year": 2017,
+      "amountUsd": 35000000,
+      "title": "Mallinckrodt $35M DEA settlement — failure to report suspicious oxycodone orders",
+      "summary": "DEA: Mallinckrodt sold ~500M oxycodone tabs in Florida pill-mill region without flagging suspicious orders.",
+      "severity": "concern",
+      "sourceUrl": "https://www.deadiversion.usdoj.gov/admin_court/index.html",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "opioid-settlements",
+      "brand": "Johnson & Johnson",
+      "slugHint": "johnson-and-johnson",
+      "year": 2022,
+      "amountUsd": 5000000000,
+      "title": "J&J — national opioid settlement (~$5B over 9 years)",
+      "summary": "National Opioid Settlement: J&J among manufacturers paying state/local governments for opioid-crisis harms.",
+      "severity": "concern",
+      "sourceUrl": "https://www.naag.org/issues/opioids/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "opioid-settlements",
+      "brand": "McKesson",
+      "slugHint": "mckesson",
+      "year": 2022,
+      "amountUsd": 7900000000,
+      "title": "McKesson — Big-3 distributor opioid settlement (~$7.9B)",
+      "summary": "National Opioid Settlement: McKesson share of $26B Big-3 distributor agreement (with Cardinal + ABC).",
+      "severity": "concern",
+      "sourceUrl": "https://www.naag.org/issues/opioids/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "opioid-settlements",
+      "brand": "AmerisourceBergen",
+      "slugHint": "amerisourcebergen",
+      "year": 2022,
+      "amountUsd": 6400000000,
+      "title": "AmerisourceBergen — Big-3 distributor opioid settlement",
+      "summary": "National Opioid Settlement: ABC share of $26B Big-3 distributor agreement.",
+      "severity": "concern",
+      "sourceUrl": "https://www.naag.org/issues/opioids/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "opioid-settlements",
+      "brand": "Cardinal Health",
+      "slugHint": "cardinal-health",
+      "year": 2022,
+      "amountUsd": 6400000000,
+      "title": "Cardinal Health — Big-3 distributor opioid settlement",
+      "summary": "National Opioid Settlement: Cardinal share of $26B Big-3 distributor agreement.",
+      "severity": "concern",
+      "sourceUrl": "https://www.naag.org/issues/opioids/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "opioid-settlements",
+      "brand": "CVS Health",
+      "slugHint": "cvs-health",
+      "year": 2023,
+      "amountUsd": 5000000000,
+      "title": "CVS opioid settlement (~$5B over 10 years)",
+      "summary": "National Opioid Settlement: CVS pharmacies tier.",
+      "severity": "concern",
+      "sourceUrl": "https://www.naag.org/issues/opioids/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "opioid-settlements",
+      "brand": "Walgreens",
+      "slugHint": "walgreens",
+      "year": 2023,
+      "amountUsd": 5700000000,
+      "title": "Walgreens opioid settlement (~$5.7B over 15 years)",
+      "summary": "National Opioid Settlement: Walgreens pharmacies tier.",
+      "severity": "concern",
+      "sourceUrl": "https://www.naag.org/issues/opioids/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "opioid-settlements",
+      "brand": "Walmart",
+      "slugHint": "walmart",
+      "year": 2022,
+      "amountUsd": 3100000000,
+      "title": "Walmart opioid settlement (~$3.1B)",
+      "summary": "National Opioid Settlement: Walmart pharmacies tier.",
+      "severity": "concern",
+      "sourceUrl": "https://www.naag.org/issues/opioids/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "opioid-settlements",
+      "brand": "Teva Pharmaceutical",
+      "slugHint": "teva",
+      "year": 2022,
+      "amountUsd": 4250000000,
+      "title": "Teva $4.25B opioid settlement (cash + naloxone supply)",
+      "summary": "National Opioid Settlement: Teva manufacturer tier — cash + ~$1.2B in donated Narcan.",
+      "severity": "concern",
+      "sourceUrl": "https://www.naag.org/issues/opioids/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "opioid-settlements",
+      "brand": "Allergan / AbbVie",
+      "slugHint": "abbvie",
+      "year": 2022,
+      "amountUsd": 2370000000,
+      "title": "Allergan / AbbVie $2.37B opioid settlement",
+      "summary": "National Opioid Settlement: Allergan (AbbVie) manufacturer tier.",
+      "severity": "concern",
+      "sourceUrl": "https://www.naag.org/issues/opioids/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "opioid-settlements",
+      "brand": "Endo Health",
+      "slugHint": "endo-health-solutions",
+      "year": 2024,
+      "amountUsd": 600000000,
+      "title": "Endo $600M+ opioid settlement (Ch. 11 reorganization)",
+      "summary": "Endo emerged from bankruptcy after settling opioid claims with US states + DOJ.",
+      "severity": "concern",
+      "sourceUrl": "https://www.naag.org/issues/opioids/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "leapfrog-hospital-safety",
+      "brand": "HCA Healthcare",
+      "slugHint": "hca-healthcare",
+      "year": 2025,
+      "severity": "mixed",
+      "title": "Leapfrog Spring 2025: HCA chain mixed grades",
+      "summary": "Leapfrog: HCA-affiliated hospitals collectively grade B median, with notable C/D-graded facilities in multiple states.",
+      "sourceUrl": "https://www.hospitalsafetygrade.org/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "leapfrog-hospital-safety",
+      "brand": "Tenet Healthcare",
+      "slugHint": "tenet-healthcare",
+      "year": 2025,
+      "severity": "mixed",
+      "title": "Leapfrog Spring 2025: Tenet chain mixed grades",
+      "summary": "Leapfrog: Tenet hospitals collectively grade B/C median with multiple D-graded facilities across TX/FL/AZ.",
+      "sourceUrl": "https://www.hospitalsafetygrade.org/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "leapfrog-hospital-safety",
+      "brand": "Community Health Systems",
+      "slugHint": "community-health-systems",
+      "year": 2025,
+      "severity": "concern",
+      "title": "Leapfrog Spring 2025: CHS chain — multiple D/F grades",
+      "summary": "Leapfrog: Community Health Systems facilities concentrated in C/D bands; several D-graded hospitals in published roster.",
+      "sourceUrl": "https://www.hospitalsafetygrade.org/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "leapfrog-hospital-safety",
+      "brand": "Universal Health Services",
+      "slugHint": "universal-health-services",
+      "year": 2025,
+      "severity": "mixed",
+      "title": "Leapfrog Spring 2025: UHS chain mixed grades",
+      "summary": "Leapfrog: UHS facilities split across A-D bands; behavioral-health hospitals not graded.",
+      "sourceUrl": "https://www.hospitalsafetygrade.org/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "leapfrog-hospital-safety",
+      "brand": "Mayo Clinic",
+      "slugHint": "mayo-clinic",
+      "year": 2025,
+      "severity": "leader",
+      "title": "Leapfrog Spring 2025: Mayo Clinic — Grade A across reporting hospitals",
+      "summary": "Leapfrog: Mayo Clinic facilities consistently A-graded across Rochester, Phoenix, Jacksonville locations.",
+      "sourceUrl": "https://www.hospitalsafetygrade.org/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "leapfrog-hospital-safety",
+      "brand": "Cleveland Clinic",
+      "slugHint": "cleveland-clinic",
+      "year": 2025,
+      "severity": "leader",
+      "title": "Leapfrog Spring 2025: Cleveland Clinic — Grade A",
+      "summary": "Leapfrog: Cleveland Clinic main campus + most satellite hospitals A-graded.",
+      "sourceUrl": "https://www.hospitalsafetygrade.org/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "cms-nh-compare",
+      "brand": "Genesis Healthcare",
+      "slugHint": "genesis-healthcare",
+      "year": 2025,
+      "severity": "concern",
+      "title": "CMS Nursing Home Compare: Genesis Healthcare — below-average chain",
+      "summary": "CMS overall star ratings for Genesis-operated facilities cluster in 1-2 star band per published facility roster (2024 data).",
+      "sourceUrl": "https://www.medicare.gov/care-compare/?providerType=NursingHome",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "cms-nh-compare",
+      "brand": "Brookdale Senior Living",
+      "slugHint": "brookdale-senior-living",
+      "year": 2025,
+      "severity": "mixed",
+      "title": "CMS Nursing Home Compare: Brookdale SNF subset — mixed",
+      "summary": "CMS: Brookdale skilled-nursing facilities (subset of portfolio) cluster 2-3 stars overall.",
+      "sourceUrl": "https://www.medicare.gov/care-compare/?providerType=NursingHome",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "cms-nh-compare",
+      "brand": "Ensign Group",
+      "slugHint": "ensign-group",
+      "year": 2025,
+      "severity": "positive",
+      "title": "CMS Nursing Home Compare: Ensign Group — above-average chain",
+      "summary": "CMS: Ensign-operated facilities cluster in 3-4 star band, with health-inspection ratings outperforming national median.",
+      "sourceUrl": "https://www.medicare.gov/care-compare/?providerType=NursingHome",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "cms-nh-compare",
+      "brand": "ProMedica / Manor Care",
+      "slugHint": "promedica",
+      "year": 2025,
+      "severity": "mixed",
+      "title": "CMS Nursing Home Compare: ProMedica/ManorCare — mixed grades",
+      "summary": "CMS: ProMedica skilled-nursing portfolio (formerly HCR ManorCare) clusters 2-3 stars.",
+      "sourceUrl": "https://www.medicare.gov/care-compare/?providerType=NursingHome",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "usda-fsis-recalls",
+      "brand": "Tyson Foods",
+      "slugHint": "tyson-foods",
+      "year": 2024,
+      "severity": "concern",
+      "title": "FSIS Class-I recalls — multiple in past 24 months (foreign material, Listeria, undeclared allergen)",
+      "summary": "USDA FSIS: Tyson-related recalls in 2023-2024 include chicken breast strips (metal), ground beef (E. coli concerns), and ready-to-eat items.",
+      "sourceUrl": "https://www.fsis.usda.gov/recalls",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "usda-fsis-recalls",
+      "brand": "Boar's Head",
+      "slugHint": "boar-s-head",
+      "year": 2024,
+      "severity": "concern",
+      "amountUsd": null,
+      "title": "FSIS Class-I recall — 7M+ lbs deli meat (Jarratt, VA) tied to multi-state Listeria outbreak (9 deaths)",
+      "summary": "USDA FSIS + CDC: Boar's Head Jarratt VA plant recalled all ready-to-eat deli products after Listeria outbreak killed 9, hospitalized 57 across 18 states (July-Sep 2024).",
+      "sourceUrl": "https://www.fsis.usda.gov/recalls",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "usda-fsis-recalls",
+      "brand": "Conagra Brands",
+      "slugHint": "conagra-brands",
+      "year": 2024,
+      "severity": "concern",
+      "title": "FSIS Class-I recalls — Banquet chicken strips (plastic) + ready-to-eat items",
+      "summary": "USDA FSIS: Conagra-operated Banquet chicken strip recall (foreign material) + multiple sub-brand RTE recalls in 2023-2024.",
+      "sourceUrl": "https://www.fsis.usda.gov/recalls",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "usda-fsis-recalls",
+      "brand": "BrucePac",
+      "slugHint": "brucepac",
+      "year": 2024,
+      "severity": "concern",
+      "title": "FSIS Class-I recall — 11.7M lbs RTE meat + poultry (Durant OK) Listeria",
+      "summary": "USDA FSIS: BrucePac October 2024 — one of the largest USDA recalls ever; affected products distributed to ~75 brand customers nationwide.",
+      "sourceUrl": "https://www.fsis.usda.gov/recalls",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "usda-fsis-recalls",
+      "brand": "Perdue Foods",
+      "slugHint": "perdue-foods",
+      "year": 2024,
+      "severity": "concern",
+      "title": "FSIS Class-I recall — Perdue chicken nuggets/tenders (metal wire)",
+      "summary": "USDA FSIS: Perdue Foods 2024 recall of frozen ready-to-eat chicken products for possible metal-wire contamination.",
+      "sourceUrl": "https://www.fsis.usda.gov/recalls",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "usda-fsis-recalls",
+      "brand": "JBS USA",
+      "slugHint": "jbs-n-v",
+      "year": 2024,
+      "severity": "concern",
+      "title": "FSIS Class-I recalls — JBS / Swift ground beef (E. coli) multiple events",
+      "summary": "USDA FSIS: JBS-operated processors issued multiple ground-beef recalls for possible E. coli O157:H7 in 2023-2024.",
+      "sourceUrl": "https://www.fsis.usda.gov/recalls",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "cdc-ar-meat",
+      "brand": "Tyson Foods",
+      "slugHint": "tyson-foods",
+      "year": 2024,
+      "severity": "mixed",
+      "title": "CDC AR Threats: Tyson reintroduced antibiotics in chicken (2023)",
+      "summary": "CDC + public reporting: Tyson reversed its 'No Antibiotics Ever' chicken program in 2023, reintroducing 'ionophore' antibiotics — though those aren't medically important to humans.",
+      "sourceUrl": "https://www.cdc.gov/antimicrobial-resistance/data-research/threats/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "cdc-ar-meat",
+      "brand": "Perdue Farms",
+      "slugHint": "perdue-foods",
+      "year": 2024,
+      "severity": "leader",
+      "title": "CDC AR Threats: Perdue antibiotic-free chicken leader",
+      "summary": "CDC + USDA: Perdue maintains industry-leading 'No Antibiotics Ever' protocol across hatchery + grow-out for fresh chicken.",
+      "sourceUrl": "https://www.cdc.gov/antimicrobial-resistance/data-research/threats/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "cdc-ar-meat",
+      "brand": "JBS USA",
+      "slugHint": "jbs-n-v",
+      "year": 2024,
+      "severity": "concern",
+      "title": "CDC AR Threats: JBS — high use of medically-important antibiotics in cattle",
+      "summary": "CDC + Pew/NRDC analysis: JBS feedlot operations rank among the largest US users of medically-important antibiotics in beef cattle.",
+      "sourceUrl": "https://www.cdc.gov/antimicrobial-resistance/data-research/threats/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "cdc-ar-meat",
+      "brand": "Cargill",
+      "slugHint": "cargill",
+      "year": 2024,
+      "severity": "mixed",
+      "title": "CDC AR Threats: Cargill — mid-tier antibiotic stewardship",
+      "summary": "CDC + industry reporting: Cargill reports declining cephalosporin use but continues medically-important antibiotic use in cattle finishing.",
+      "sourceUrl": "https://www.cdc.gov/antimicrobial-resistance/data-research/threats/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "cdc-ar-meat",
+      "brand": "Chick-fil-A",
+      "slugHint": "chick-fil-a",
+      "year": 2024,
+      "severity": "mixed",
+      "title": "CDC AR Threats: Chick-fil-A backed off 'No Antibiotics Ever' in 2024",
+      "summary": "Chick-fil-A March 2024 announced shift from 'No Antibiotics Ever' to 'No Antibiotics Important to Human Medicine' — a category broader than CDC's strictest standard.",
+      "sourceUrl": "https://www.cdc.gov/antimicrobial-resistance/data-research/threats/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "csp-iworst-eating",
+      "brand": "The Cheesecake Factory",
+      "slugHint": "cheesecake-factory",
+      "year": 2023,
+      "severity": "concern",
+      "title": "CSPI Xtreme Eating: Cheesecake Factory — recurring honors",
+      "summary": "CSPI Xtreme Eating Awards: Cheesecake Factory items routinely cited for 2,000+ calorie single servings, including Linda's Fudge Cake (1,610 cal) + Pasta Napoletana (2,310 cal).",
+      "sourceUrl": "https://www.cspinet.org/xtreme-eating-awards",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "csp-iworst-eating",
+      "brand": "Applebee's",
+      "slugHint": "applebee-s",
+      "year": 2023,
+      "severity": "concern",
+      "title": "CSPI Xtreme Eating: Applebee's classic combos cited",
+      "summary": "CSPI: Applebee's Bourbon Street Steak + Shrimp 'n Parmesan Sirloin among cited items for sodium + saturated-fat content.",
+      "sourceUrl": "https://www.cspinet.org/xtreme-eating-awards",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "csp-iworst-eating",
+      "brand": "Buffalo Wild Wings",
+      "slugHint": "buffalo-wild-wings",
+      "year": 2023,
+      "severity": "concern",
+      "title": "CSPI Xtreme Eating: Buffalo Wild Wings — high-calorie shareables",
+      "summary": "CSPI: Buffalo Wild Wings cheese-curd burger + cheesy-bread combos cited for 2,500+ calorie meals.",
+      "sourceUrl": "https://www.cspinet.org/xtreme-eating-awards",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "csp-iworst-eating",
+      "brand": "Texas Roadhouse",
+      "slugHint": "texas-roadhouse",
+      "year": 2022,
+      "severity": "concern",
+      "title": "CSPI Xtreme Eating: Texas Roadhouse cited",
+      "summary": "CSPI: Texas Roadhouse Cactus Blossom appetizer + multiple steak combos cited for high sodium + saturated-fat.",
+      "sourceUrl": "https://www.cspinet.org/xtreme-eating-awards",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "csp-iworst-eating",
+      "brand": "Sonic Drive-In",
+      "slugHint": "sonic-drive-in",
+      "year": 2022,
+      "severity": "mixed",
+      "title": "CSPI: Sonic shake-line label-misleading callout",
+      "summary": "CSPI: Sonic shake / blast desserts marketed as snacks but routinely exceed 1,000 calories.",
+      "sourceUrl": "https://www.cspinet.org/xtreme-eating-awards",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "public-citizen-worst-pills",
+      "brand": "Pfizer",
+      "slugHint": "pfizer",
+      "year": 2024,
+      "severity": "mixed",
+      "title": "Public Citizen 'Do Not Use' list — Chantix (varenicline) flagged",
+      "summary": "Public Citizen Health Research Group: Chantix on 'Do Not Use' list citing neuropsychiatric + cardiovascular adverse events.",
+      "sourceUrl": "https://www.worstpills.org/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "public-citizen-worst-pills",
+      "brand": "GSK",
+      "slugHint": "gsk",
+      "year": 2024,
+      "severity": "mixed",
+      "title": "Public Citizen 'Do Not Use' list — Avandia (rosiglitazone) — historic",
+      "summary": "Public Citizen Health Research Group: Avandia long on 'Do Not Use' list over cardiovascular risk; FDA restrictions retained.",
+      "sourceUrl": "https://www.worstpills.org/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "public-citizen-worst-pills",
+      "brand": "Boehringer Ingelheim",
+      "slugHint": "boehringer-ingelheim-united-states",
+      "year": 2024,
+      "severity": "mixed",
+      "title": "Public Citizen 'Do Not Use' — Pradaxa monitoring concerns flagged",
+      "summary": "Public Citizen Health Research Group: long-running concerns flagged for Pradaxa bleeding-risk profile.",
+      "sourceUrl": "https://www.worstpills.org/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "public-citizen-worst-pills",
+      "brand": "Bayer",
+      "slugHint": "bayer",
+      "year": 2024,
+      "severity": "mixed",
+      "title": "Public Citizen — Xarelto (rivaroxaban) bleeding-risk flagged",
+      "summary": "Public Citizen Health Research Group: Xarelto flagged for bleeding events vs. alternatives w/ established reversal agents.",
+      "sourceUrl": "https://www.worstpills.org/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "truth-initiative-tobacco",
+      "brand": "Altria Group",
+      "slugHint": "altria-group",
+      "year": 2024,
+      "severity": "concern",
+      "title": "Truth Initiative: Altria — historic youth-marketing + Juul investment",
+      "summary": "Truth Initiative + FDA + state AG: Altria's $12.8B Juul investment (2018, mostly written down) implicated in youth-vaping epidemic; Altria divested in 2023.",
+      "sourceUrl": "https://truthinitiative.org/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "truth-initiative-tobacco",
+      "brand": "Juul Labs",
+      "slugHint": "juul-labs",
+      "year": 2023,
+      "severity": "concern",
+      "amountUsd": 1700000000,
+      "title": "Truth Initiative + multistate: Juul $1.7B settlements over youth marketing",
+      "summary": "Truth Initiative + state AGs: Juul paid $1.7B+ across multistate settlements (NC, multistate coalition) over targeting minors.",
+      "sourceUrl": "https://truthinitiative.org/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "truth-initiative-tobacco",
+      "brand": "British American Tobacco",
+      "slugHint": "british-american-tobacco-p-l-c",
+      "year": 2024,
+      "severity": "concern",
+      "title": "Truth Initiative: BAT — kid-flavor Vuse / R.J. Reynolds menthol concerns",
+      "summary": "Truth Initiative: BAT (R.J. Reynolds) Vuse e-cig + menthol-cigarette portfolio cited for youth + menthol-targeted-community marketing.",
+      "sourceUrl": "https://truthinitiative.org/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "truth-initiative-tobacco",
+      "brand": "Philip Morris International",
+      "slugHint": "philip-morris-international",
+      "year": 2024,
+      "severity": "concern",
+      "title": "Truth Initiative: PMI heat-not-burn marketing concerns",
+      "summary": "Truth Initiative: PMI's IQOS heat-not-burn marketing claims contested as misleading on harm reduction.",
+      "sourceUrl": "https://truthinitiative.org/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Hospira, Inc., a Pfizer Company",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 202 active shortages attributed to Hospira, Inc., a Pfizer Company",
+      "summary": "FDA openFDA: Hospira, Inc., a Pfizer Company listed as the company on 202 drug products currently in shortage status.",
+      "_liveCount": 202,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Fresenius Kabi USA, LLC",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 175 active shortages attributed to Fresenius Kabi USA, LLC",
+      "summary": "FDA openFDA: Fresenius Kabi USA, LLC listed as the company on 175 drug products currently in shortage status.",
+      "_liveCount": 175,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Hikma Pharmaceuticals USA, Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 99 active shortages attributed to Hikma Pharmaceuticals USA, Inc.",
+      "summary": "FDA openFDA: Hikma Pharmaceuticals USA, Inc. listed as the company on 99 drug products currently in shortage status.",
+      "_liveCount": 99,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Pfizer Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 90 active shortages attributed to Pfizer Inc.",
+      "summary": "FDA openFDA: Pfizer Inc. listed as the company on 90 drug products currently in shortage status.",
+      "_liveCount": 90,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Teva Pharmaceuticals USA, Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 85 active shortages attributed to Teva Pharmaceuticals USA, Inc.",
+      "summary": "FDA openFDA: Teva Pharmaceuticals USA, Inc. listed as the company on 85 drug products currently in shortage status.",
+      "_liveCount": 85,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Baxter Healthcare",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 65 active shortages attributed to Baxter Healthcare",
+      "summary": "FDA openFDA: Baxter Healthcare listed as the company on 65 drug products currently in shortage status.",
+      "_liveCount": 65,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Eugia US LLC",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 42 active shortages attributed to Eugia US LLC",
+      "summary": "FDA openFDA: Eugia US LLC listed as the company on 42 drug products currently in shortage status.",
+      "_liveCount": 42,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Sandoz Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 38 active shortages attributed to Sandoz Inc.",
+      "summary": "FDA openFDA: Sandoz Inc. listed as the company on 38 drug products currently in shortage status.",
+      "_liveCount": 38,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Accord Healthcare Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 28 active shortages attributed to Accord Healthcare Inc.",
+      "summary": "FDA openFDA: Accord Healthcare Inc. listed as the company on 28 drug products currently in shortage status.",
+      "_liveCount": 28,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Sun Pharmaceutical Industries, Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 25 active shortages attributed to Sun Pharmaceutical Industries, Inc.",
+      "summary": "FDA openFDA: Sun Pharmaceutical Industries, Inc. listed as the company on 25 drug products currently in shortage status.",
+      "_liveCount": 25,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Otsuka ICU Medical LLC",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 24 active shortages attributed to Otsuka ICU Medical LLC",
+      "summary": "FDA openFDA: Otsuka ICU Medical LLC listed as the company on 24 drug products currently in shortage status.",
+      "_liveCount": 24,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Gland Pharma Limited",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 23 active shortages attributed to Gland Pharma Limited",
+      "summary": "FDA openFDA: Gland Pharma Limited listed as the company on 23 drug products currently in shortage status.",
+      "_liveCount": 23,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "EMD Serono, Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 22 active shortages attributed to EMD Serono, Inc.",
+      "summary": "FDA openFDA: EMD Serono, Inc. listed as the company on 22 drug products currently in shortage status.",
+      "_liveCount": 22,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Amneal Pharmaceuticals",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 21 active shortages attributed to Amneal Pharmaceuticals",
+      "summary": "FDA openFDA: Amneal Pharmaceuticals listed as the company on 21 drug products currently in shortage status.",
+      "_liveCount": 21,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Mylan Pharmaceuticals Inc., a Viatris Company",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 21 active shortages attributed to Mylan Pharmaceuticals Inc., a Viatris Company",
+      "summary": "FDA openFDA: Mylan Pharmaceuticals Inc., a Viatris Company listed as the company on 21 drug products currently in shortage status.",
+      "_liveCount": 21,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Upsher-Smith Laboratories, LLC",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 21 active shortages attributed to Upsher-Smith Laboratories, LLC",
+      "summary": "FDA openFDA: Upsher-Smith Laboratories, LLC listed as the company on 21 drug products currently in shortage status.",
+      "_liveCount": 21,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Elite Laboratories, Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 20 active shortages attributed to Elite Laboratories, Inc.",
+      "summary": "FDA openFDA: Elite Laboratories, Inc. listed as the company on 20 drug products currently in shortage status.",
+      "_liveCount": 20,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Endo Pharmaceuticals, Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 20 active shortages attributed to Endo Pharmaceuticals, Inc.",
+      "summary": "FDA openFDA: Endo Pharmaceuticals, Inc. listed as the company on 20 drug products currently in shortage status.",
+      "_liveCount": 20,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Aurobindo Pharma USA",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 19 active shortages attributed to Aurobindo Pharma USA",
+      "summary": "FDA openFDA: Aurobindo Pharma USA listed as the company on 19 drug products currently in shortage status.",
+      "_liveCount": 19,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "B. Braun Medical Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 19 active shortages attributed to B. Braun Medical Inc.",
+      "summary": "FDA openFDA: B. Braun Medical Inc. listed as the company on 19 drug products currently in shortage status.",
+      "_liveCount": 19,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Lannett Company, Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 18 active shortages attributed to Lannett Company, Inc.",
+      "summary": "FDA openFDA: Lannett Company, Inc. listed as the company on 18 drug products currently in shortage status.",
+      "_liveCount": 18,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Takeda Pharmaceuticals USA Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 18 active shortages attributed to Takeda Pharmaceuticals USA Inc.",
+      "summary": "FDA openFDA: Takeda Pharmaceuticals USA Inc. listed as the company on 18 drug products currently in shortage status.",
+      "_liveCount": 18,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Jiangsu Hengrui Pharmaceuticals Co., Ltd.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 17 active shortages attributed to Jiangsu Hengrui Pharmaceuticals Co., Ltd.",
+      "summary": "FDA openFDA: Jiangsu Hengrui Pharmaceuticals Co., Ltd. listed as the company on 17 drug products currently in shortage status.",
+      "_liveCount": 17,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Mylan Institutional, a Viatris Company",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 17 active shortages attributed to Mylan Institutional, a Viatris Company",
+      "summary": "FDA openFDA: Mylan Institutional, a Viatris Company listed as the company on 17 drug products currently in shortage status.",
+      "_liveCount": 17,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Novo Nordisk, Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 17 active shortages attributed to Novo Nordisk, Inc.",
+      "summary": "FDA openFDA: Novo Nordisk, Inc. listed as the company on 17 drug products currently in shortage status.",
+      "_liveCount": 17,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Torrent Pharmaceuticals Limited",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 16 active shortages attributed to Torrent Pharmaceuticals Limited",
+      "summary": "FDA openFDA: Torrent Pharmaceuticals Limited listed as the company on 16 drug products currently in shortage status.",
+      "_liveCount": 16,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "SpecGx LLC",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 15 active shortages attributed to SpecGx LLC",
+      "summary": "FDA openFDA: SpecGx LLC listed as the company on 15 drug products currently in shortage status.",
+      "_liveCount": 15,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Eli Lilly and Co.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 14 active shortages attributed to Eli Lilly and Co.",
+      "summary": "FDA openFDA: Eli Lilly and Co. listed as the company on 14 drug products currently in shortage status.",
+      "_liveCount": 14,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Alvogen",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 12 active shortages attributed to Alvogen",
+      "summary": "FDA openFDA: Alvogen listed as the company on 12 drug products currently in shortage status.",
+      "_liveCount": 12,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Avet Pharmaceuticals, Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 12 active shortages attributed to Avet Pharmaceuticals, Inc.",
+      "summary": "FDA openFDA: Avet Pharmaceuticals, Inc. listed as the company on 12 drug products currently in shortage status.",
+      "_liveCount": 12,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Chartwell Molecular Holdings LLC",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 12 active shortages attributed to Chartwell Molecular Holdings LLC",
+      "summary": "FDA openFDA: Chartwell Molecular Holdings LLC listed as the company on 12 drug products currently in shortage status.",
+      "_liveCount": 12,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Jiangsu Hengrui Pharmaceuticals Co. (US Agent eVenus Pharmaceutical Laboratories, Inc.)",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 12 active shortages attributed to Jiangsu Hengrui Pharmaceuticals Co. (US Agent eVenus Pharmaceutical Laboratories, Inc.)",
+      "summary": "FDA openFDA: Jiangsu Hengrui Pharmaceuticals Co. (US Agent eVenus Pharmaceutical Laboratories, Inc.) listed as the company on 12 drug products currently in shortage status.",
+      "_liveCount": 12,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Sagent Pharmaceuticals",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 12 active shortages attributed to Sagent Pharmaceuticals",
+      "summary": "FDA openFDA: Sagent Pharmaceuticals listed as the company on 12 drug products currently in shortage status.",
+      "_liveCount": 12,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Apotex Corp.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 11 active shortages attributed to Apotex Corp.",
+      "summary": "FDA openFDA: Apotex Corp. listed as the company on 11 drug products currently in shortage status.",
+      "_liveCount": 11,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Epic Pharma, LLC",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 11 active shortages attributed to Epic Pharma, LLC",
+      "summary": "FDA openFDA: Epic Pharma, LLC listed as the company on 11 drug products currently in shortage status.",
+      "_liveCount": 11,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Rubicon Research Private Limited",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 11 active shortages attributed to Rubicon Research Private Limited",
+      "summary": "FDA openFDA: Rubicon Research Private Limited listed as the company on 11 drug products currently in shortage status.",
+      "_liveCount": 11,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Sanofi-Aventis U.S. LLC",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 11 active shortages attributed to Sanofi-Aventis U.S. LLC",
+      "summary": "FDA openFDA: Sanofi-Aventis U.S. LLC listed as the company on 11 drug products currently in shortage status.",
+      "_liveCount": 11,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Solco Healthcare US, LLC",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 11 active shortages attributed to Solco Healthcare US, LLC",
+      "summary": "FDA openFDA: Solco Healthcare US, LLC listed as the company on 11 drug products currently in shortage status.",
+      "_liveCount": 11,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Vertical Pharmaceuticals, LLC",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 11 active shortages attributed to Vertical Pharmaceuticals, LLC",
+      "summary": "FDA openFDA: Vertical Pharmaceuticals, LLC listed as the company on 11 drug products currently in shortage status.",
+      "_liveCount": 11,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "AbbVie Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 10 active shortages attributed to AbbVie Inc.",
+      "summary": "FDA openFDA: AbbVie Inc. listed as the company on 10 drug products currently in shortage status.",
+      "_liveCount": 10,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Kindos Pharmaceuticals Co. Ltd.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 10 active shortages attributed to Kindos Pharmaceuticals Co. Ltd.",
+      "summary": "FDA openFDA: Kindos Pharmaceuticals Co. Ltd. listed as the company on 10 drug products currently in shortage status.",
+      "_liveCount": 10,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Somerset Therapeutics, LLC",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 10 active shortages attributed to Somerset Therapeutics, LLC",
+      "summary": "FDA openFDA: Somerset Therapeutics, LLC listed as the company on 10 drug products currently in shortage status.",
+      "_liveCount": 10,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Actavis Pharma, Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 9 active shortages attributed to Actavis Pharma, Inc.",
+      "summary": "FDA openFDA: Actavis Pharma, Inc. listed as the company on 9 drug products currently in shortage status.",
+      "_liveCount": 9,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Ingenus Pharmaceuticals LLC",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 9 active shortages attributed to Ingenus Pharmaceuticals LLC",
+      "summary": "FDA openFDA: Ingenus Pharmaceuticals LLC listed as the company on 9 drug products currently in shortage status.",
+      "_liveCount": 9,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Meitheal Pharmaceuticals, Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 9 active shortages attributed to Meitheal Pharmaceuticals, Inc.",
+      "summary": "FDA openFDA: Meitheal Pharmaceuticals, Inc. listed as the company on 9 drug products currently in shortage status.",
+      "_liveCount": 9,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Caplin Steriles, Ltd.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 8 active shortages attributed to Caplin Steriles, Ltd.",
+      "summary": "FDA openFDA: Caplin Steriles, Ltd. listed as the company on 8 drug products currently in shortage status.",
+      "_liveCount": 8,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "InfoRLife SA",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 8 active shortages attributed to InfoRLife SA",
+      "summary": "FDA openFDA: InfoRLife SA listed as the company on 8 drug products currently in shortage status.",
+      "_liveCount": 8,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Prinston Pharmaceutical, Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 8 active shortages attributed to Prinston Pharmaceutical, Inc.",
+      "summary": "FDA openFDA: Prinston Pharmaceutical, Inc. listed as the company on 8 drug products currently in shortage status.",
+      "_liveCount": 8,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Teyro Labs",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 8 active shortages attributed to Teyro Labs",
+      "summary": "FDA openFDA: Teyro Labs listed as the company on 8 drug products currently in shortage status.",
+      "_liveCount": 8,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Assertio Specialty Pharmaceuticals, LLC",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 7 active shortages attributed to Assertio Specialty Pharmaceuticals, LLC",
+      "summary": "FDA openFDA: Assertio Specialty Pharmaceuticals, LLC listed as the company on 7 drug products currently in shortage status.",
+      "_liveCount": 7,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Granules Pharmaceuticals Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 7 active shortages attributed to Granules Pharmaceuticals Inc.",
+      "summary": "FDA openFDA: Granules Pharmaceuticals Inc. listed as the company on 7 drug products currently in shortage status.",
+      "_liveCount": 7,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Janssen Pharmaceuticals",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 7 active shortages attributed to Janssen Pharmaceuticals",
+      "summary": "FDA openFDA: Janssen Pharmaceuticals listed as the company on 7 drug products currently in shortage status.",
+      "_liveCount": 7,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Lupin Pharmaceuticals, Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 7 active shortages attributed to Lupin Pharmaceuticals, Inc.",
+      "summary": "FDA openFDA: Lupin Pharmaceuticals, Inc. listed as the company on 7 drug products currently in shortage status.",
+      "_liveCount": 7,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Padagis US LLC",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 7 active shortages attributed to Padagis US LLC",
+      "summary": "FDA openFDA: Padagis US LLC listed as the company on 7 drug products currently in shortage status.",
+      "_liveCount": 7,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Rhodes Pharmaceuticals L.P.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 7 active shortages attributed to Rhodes Pharmaceuticals L.P.",
+      "summary": "FDA openFDA: Rhodes Pharmaceuticals L.P. listed as the company on 7 drug products currently in shortage status.",
+      "_liveCount": 7,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Sunrise Pharmaceutical, Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 7 active shortages attributed to Sunrise Pharmaceutical, Inc.",
+      "summary": "FDA openFDA: Sunrise Pharmaceutical, Inc. listed as the company on 7 drug products currently in shortage status.",
+      "_liveCount": 7,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Trigen Laboratories, LLC",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 7 active shortages attributed to Trigen Laboratories, LLC",
+      "summary": "FDA openFDA: Trigen Laboratories, LLC listed as the company on 7 drug products currently in shortage status.",
+      "_liveCount": 7,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "XGen Pharmaceuticals DJB, Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 7 active shortages attributed to XGen Pharmaceuticals DJB, Inc.",
+      "summary": "FDA openFDA: XGen Pharmaceuticals DJB, Inc. listed as the company on 7 drug products currently in shortage status.",
+      "_liveCount": 7,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Amphastar Pharmaceuticals, Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 6 active shortages attributed to Amphastar Pharmaceuticals, Inc.",
+      "summary": "FDA openFDA: Amphastar Pharmaceuticals, Inc. listed as the company on 6 drug products currently in shortage status.",
+      "_liveCount": 6,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Fresenius Medical Care North America",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 6 active shortages attributed to Fresenius Medical Care North America",
+      "summary": "FDA openFDA: Fresenius Medical Care North America listed as the company on 6 drug products currently in shortage status.",
+      "_liveCount": 6,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Novadoz Pharmaceuticals LLC",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 6 active shortages attributed to Novadoz Pharmaceuticals LLC",
+      "summary": "FDA openFDA: Novadoz Pharmaceuticals LLC listed as the company on 6 drug products currently in shortage status.",
+      "_liveCount": 6,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Par Health, Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 6 active shortages attributed to Par Health, Inc.",
+      "summary": "FDA openFDA: Par Health, Inc. listed as the company on 6 drug products currently in shortage status.",
+      "_liveCount": 6,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Advanz Pharma (US) Corp.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 5 active shortages attributed to Advanz Pharma (US) Corp.",
+      "summary": "FDA openFDA: Advanz Pharma (US) Corp. listed as the company on 5 drug products currently in shortage status.",
+      "_liveCount": 5,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Gilead Sciences, Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 5 active shortages attributed to Gilead Sciences, Inc.",
+      "summary": "FDA openFDA: Gilead Sciences, Inc. listed as the company on 5 drug products currently in shortage status.",
+      "_liveCount": 5,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Oryza Pharmaceuticals Inc.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 5 active shortages attributed to Oryza Pharmaceuticals Inc.",
+      "summary": "FDA openFDA: Oryza Pharmaceuticals Inc. listed as the company on 5 drug products currently in shortage status.",
+      "_liveCount": 5,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Azurity Pharmaceuticals, Inc",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 4 active shortages attributed to Azurity Pharmaceuticals, Inc",
+      "summary": "FDA openFDA: Azurity Pharmaceuticals, Inc listed as the company on 4 drug products currently in shortage status.",
+      "_liveCount": 4,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "EDW Pharma, Inc. (formerly Italfarmaco Pharma, Inc.)",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 4 active shortages attributed to EDW Pharma, Inc. (formerly Italfarmaco Pharma, Inc.)",
+      "summary": "FDA openFDA: EDW Pharma, Inc. (formerly Italfarmaco Pharma, Inc.) listed as the company on 4 drug products currently in shortage status.",
+      "_liveCount": 4,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "HQ Specialty Pharma",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 4 active shortages attributed to HQ Specialty Pharma",
+      "summary": "FDA openFDA: HQ Specialty Pharma listed as the company on 4 drug products currently in shortage status.",
+      "_liveCount": 4,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "MSN Laboratories Private Limited",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 4 active shortages attributed to MSN Laboratories Private Limited",
+      "summary": "FDA openFDA: MSN Laboratories Private Limited listed as the company on 4 drug products currently in shortage status.",
+      "_liveCount": 4,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Milla Pharmaceuticals",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 4 active shortages attributed to Milla Pharmaceuticals",
+      "summary": "FDA openFDA: Milla Pharmaceuticals listed as the company on 4 drug products currently in shortage status.",
+      "_liveCount": 4,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Noven Pharmaceuticals, Inc.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 4 active shortages attributed to Noven Pharmaceuticals, Inc.",
+      "summary": "FDA openFDA: Noven Pharmaceuticals, Inc. listed as the company on 4 drug products currently in shortage status.",
+      "_liveCount": 4,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Par Health, USA LLC",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 4 active shortages attributed to Par Health, USA LLC",
+      "summary": "FDA openFDA: Par Health, USA LLC listed as the company on 4 drug products currently in shortage status.",
+      "_liveCount": 4,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Piramal Critical Care Inc.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 4 active shortages attributed to Piramal Critical Care Inc.",
+      "summary": "FDA openFDA: Piramal Critical Care Inc. listed as the company on 4 drug products currently in shortage status.",
+      "_liveCount": 4,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Rising Pharma Holdings, Inc.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 4 active shortages attributed to Rising Pharma Holdings, Inc.",
+      "summary": "FDA openFDA: Rising Pharma Holdings, Inc. listed as the company on 4 drug products currently in shortage status.",
+      "_liveCount": 4,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Ailex Pharmaceuticals",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 3 active shortages attributed to Ailex Pharmaceuticals",
+      "summary": "FDA openFDA: Ailex Pharmaceuticals listed as the company on 3 drug products currently in shortage status.",
+      "_liveCount": 3,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Alembic Pharmaceuticals",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 3 active shortages attributed to Alembic Pharmaceuticals",
+      "summary": "FDA openFDA: Alembic Pharmaceuticals listed as the company on 3 drug products currently in shortage status.",
+      "_liveCount": 3,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Amgen Inc.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 3 active shortages attributed to Amgen Inc.",
+      "summary": "FDA openFDA: Amgen Inc. listed as the company on 3 drug products currently in shortage status.",
+      "_liveCount": 3,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Cheplapharm Arzneimittel GmbH",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 3 active shortages attributed to Cheplapharm Arzneimittel GmbH",
+      "summary": "FDA openFDA: Cheplapharm Arzneimittel GmbH listed as the company on 3 drug products currently in shortage status.",
+      "_liveCount": 3,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Exela Pharma Sciences, LLC",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 3 active shortages attributed to Exela Pharma Sciences, LLC",
+      "summary": "FDA openFDA: Exela Pharma Sciences, LLC listed as the company on 3 drug products currently in shortage status.",
+      "_liveCount": 3,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Ferring",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 3 active shortages attributed to Ferring",
+      "summary": "FDA openFDA: Ferring listed as the company on 3 drug products currently in shortage status.",
+      "_liveCount": 3,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Journey Medical Corporation",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 3 active shortages attributed to Journey Medical Corporation",
+      "summary": "FDA openFDA: Journey Medical Corporation listed as the company on 3 drug products currently in shortage status.",
+      "_liveCount": 3,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Watson Pharma Private Limited",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 3 active shortages attributed to Watson Pharma Private Limited",
+      "summary": "FDA openFDA: Watson Pharma Private Limited listed as the company on 3 drug products currently in shortage status.",
+      "_liveCount": 3,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "American Regent, Inc.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to American Regent, Inc.",
+      "summary": "FDA openFDA: American Regent, Inc. listed as the company on 2 drug products currently in shortage status.",
+      "_liveCount": 2,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "AstraZeneca AB",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to AstraZeneca AB",
+      "summary": "FDA openFDA: AstraZeneca AB listed as the company on 2 drug products currently in shortage status.",
+      "_liveCount": 2,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Avyxa Pharma, LLC",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Avyxa Pharma, LLC",
+      "summary": "FDA openFDA: Avyxa Pharma, LLC listed as the company on 2 drug products currently in shortage status.",
+      "_liveCount": 2,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Bristol Myers Squibb Co.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Bristol Myers Squibb Co.",
+      "summary": "FDA openFDA: Bristol Myers Squibb Co. listed as the company on 2 drug products currently in shortage status.",
+      "_liveCount": 2,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Dr. Reddy's Laboratories, Inc.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Dr. Reddy's Laboratories, Inc.",
+      "summary": "FDA openFDA: Dr. Reddy's Laboratories, Inc. listed as the company on 2 drug products currently in shortage status.",
+      "_liveCount": 2,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Genentech, Inc",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Genentech, Inc",
+      "summary": "FDA openFDA: Genentech, Inc listed as the company on 2 drug products currently in shortage status.",
+      "_liveCount": 2,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Intercept Pharmaceuticals",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Intercept Pharmaceuticals",
+      "summary": "FDA openFDA: Intercept Pharmaceuticals listed as the company on 2 drug products currently in shortage status.",
+      "_liveCount": 2,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Janssen Research and Development",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Janssen Research and Development",
+      "summary": "FDA openFDA: Janssen Research and Development listed as the company on 2 drug products currently in shortage status.",
+      "_liveCount": 2,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Medefil, Inc.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Medefil, Inc.",
+      "summary": "FDA openFDA: Medefil, Inc. listed as the company on 2 drug products currently in shortage status.",
+      "_liveCount": 2,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Merck Sharp & Dohme Corp.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Merck Sharp & Dohme Corp.",
+      "summary": "FDA openFDA: Merck Sharp & Dohme Corp. listed as the company on 2 drug products currently in shortage status.",
+      "_liveCount": 2,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Merck Sharp & Dohme LLC",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Merck Sharp & Dohme LLC",
+      "summary": "FDA openFDA: Merck Sharp & Dohme LLC listed as the company on 2 drug products currently in shortage status.",
+      "_liveCount": 2,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Mullan Pharmaceutical Inc.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Mullan Pharmaceutical Inc.",
+      "summary": "FDA openFDA: Mullan Pharmaceutical Inc. listed as the company on 2 drug products currently in shortage status.",
+      "_liveCount": 2,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Nephron Pharmaceuticals Corporation",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Nephron Pharmaceuticals Corporation",
+      "summary": "FDA openFDA: Nephron Pharmaceuticals Corporation listed as the company on 2 drug products currently in shortage status.",
+      "_liveCount": 2,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Prasco Laboratories",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Prasco Laboratories",
+      "summary": "FDA openFDA: Prasco Laboratories listed as the company on 2 drug products currently in shortage status.",
+      "_liveCount": 2,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Slayback Pharma",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Slayback Pharma",
+      "summary": "FDA openFDA: Slayback Pharma listed as the company on 2 drug products currently in shortage status.",
+      "_liveCount": 2,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "SteriMax, Inc.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to SteriMax, Inc.",
+      "summary": "FDA openFDA: SteriMax, Inc. listed as the company on 2 drug products currently in shortage status.",
+      "_liveCount": 2,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Swedish Orphan Biovitrum AB",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to Swedish Orphan Biovitrum AB",
+      "summary": "FDA openFDA: Swedish Orphan Biovitrum AB listed as the company on 2 drug products currently in shortage status.",
+      "_liveCount": 2,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "WG Critical Care",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to WG Critical Care",
+      "summary": "FDA openFDA: WG Critical Care listed as the company on 2 drug products currently in shortage status.",
+      "_liveCount": 2,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "pharmaand GmbH (pharma&)",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 2 active shortages attributed to pharmaand GmbH (pharma&)",
+      "summary": "FDA openFDA: pharmaand GmbH (pharma&) listed as the company on 2 drug products currently in shortage status.",
+      "_liveCount": 2,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Armas Pharmaceuticals Inc",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Armas Pharmaceuticals Inc",
+      "summary": "FDA openFDA: Armas Pharmaceuticals Inc listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "BTG International Inc.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to BTG International Inc.",
+      "summary": "FDA openFDA: BTG International Inc. listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Chiesi USA, Inc.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Chiesi USA, Inc.",
+      "summary": "FDA openFDA: Chiesi USA, Inc. listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Cipla Limited",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Cipla Limited",
+      "summary": "FDA openFDA: Cipla Limited listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Cumberland Pharmaceuticals Inc.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Cumberland Pharmaceuticals Inc.",
+      "summary": "FDA openFDA: Cumberland Pharmaceuticals Inc. listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Curium US LLC",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Curium US LLC",
+      "summary": "FDA openFDA: Curium US LLC listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "ESTEVE PHARMACEUTICALS, S.A.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to ESTEVE PHARMACEUTICALS, S.A.",
+      "summary": "FDA openFDA: ESTEVE PHARMACEUTICALS, S.A. listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Epizyme, Inc. (An Ipsen Company)",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Epizyme, Inc. (An Ipsen Company)",
+      "summary": "FDA openFDA: Epizyme, Inc. (An Ipsen Company) listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Fera Pharmaceuticals",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Fera Pharmaceuticals",
+      "summary": "FDA openFDA: Fera Pharmaceuticals listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Glaukos Corporation",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Glaukos Corporation",
+      "summary": "FDA openFDA: Glaukos Corporation listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Hainan Poly Pharm. Co., Ltd.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Hainan Poly Pharm. Co., Ltd.",
+      "summary": "FDA openFDA: Hainan Poly Pharm. Co., Ltd. listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Harrow Eye, LLC",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Harrow Eye, LLC",
+      "summary": "FDA openFDA: Harrow Eye, LLC listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Huons Co., Ltd",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Huons Co., Ltd",
+      "summary": "FDA openFDA: Huons Co., Ltd listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Huons Co., Ltd. (South Korea)",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Huons Co., Ltd. (South Korea)",
+      "summary": "FDA openFDA: Huons Co., Ltd. (South Korea) listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Laboratorios Atral",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Laboratorios Atral",
+      "summary": "FDA openFDA: Laboratorios Atral listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Leadiant Biosciences, Inc.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Leadiant Biosciences, Inc.",
+      "summary": "FDA openFDA: Leadiant Biosciences, Inc. listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Lifsa Drugs LLC",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Lifsa Drugs LLC",
+      "summary": "FDA openFDA: Lifsa Drugs LLC listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Long Grove Pharmaceuticals LLC",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Long Grove Pharmaceuticals LLC",
+      "summary": "FDA openFDA: Long Grove Pharmaceuticals LLC listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Medexus",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Medexus",
+      "summary": "FDA openFDA: Medexus listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Micro Labs LTD",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Micro Labs LTD",
+      "summary": "FDA openFDA: Micro Labs LTD listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Mylan Specialty, a Viatris Company",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Mylan Specialty, a Viatris Company",
+      "summary": "FDA openFDA: Mylan Specialty, a Viatris Company listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Neurocrine Biosciences, Inc.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Neurocrine Biosciences, Inc.",
+      "summary": "FDA openFDA: Neurocrine Biosciences, Inc. listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "ONESOURCE SPECIALTY PTE LTD",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to ONESOURCE SPECIALTY PTE LTD",
+      "summary": "FDA openFDA: ONESOURCE SPECIALTY PTE LTD listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Organon",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Organon",
+      "summary": "FDA openFDA: Organon listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Pyros Pharmaceuticals, Inc.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Pyros Pharmaceuticals, Inc.",
+      "summary": "FDA openFDA: Pyros Pharmaceuticals, Inc. listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Ritedose Pharmaceuticals, LLC",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Ritedose Pharmaceuticals, LLC",
+      "summary": "FDA openFDA: Ritedose Pharmaceuticals, LLC listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Salix Pharmaceuticals, a division of Bausch Health US, LLC",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Salix Pharmaceuticals, a division of Bausch Health US, LLC",
+      "summary": "FDA openFDA: Salix Pharmaceuticals, a division of Bausch Health US, LLC listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Spectra Medical Devices, LLC",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Spectra Medical Devices, LLC",
+      "summary": "FDA openFDA: Spectra Medical Devices, LLC listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Strides Pharma Inc.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Strides Pharma Inc.",
+      "summary": "FDA openFDA: Strides Pharma Inc. listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "Sun Pharmaceutical Industries Limited",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to Sun Pharmaceutical Industries Limited",
+      "summary": "FDA openFDA: Sun Pharmaceutical Industries Limited listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-drug-shortages",
+      "brand": "ViiV Healthcare Company",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA Drug Shortages: 1 active shortage attributed to ViiV Healthcare Company",
+      "summary": "FDA openFDA: ViiV Healthcare Company listed as the company on 1 drug product currently in shortage status.",
+      "_liveCount": 1,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/drugshortages/",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "DEXCOM, INC.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA MAUDE: 691,911 medical-device adverse-event reports (24mo) — DEXCOM, INC.",
+      "summary": "FDA MAUDE database: DEXCOM, INC. listed as the manufacturer on 691,911 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 691911,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "TANDEM DIABETES CARE",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA MAUDE: 476,548 medical-device adverse-event reports (24mo) — TANDEM DIABETES CARE",
+      "summary": "FDA MAUDE database: TANDEM DIABETES CARE listed as the manufacturer on 476,548 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 476548,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "INSTITUT STRAUMANN AG",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA MAUDE: 435,028 medical-device adverse-event reports (24mo) — INSTITUT STRAUMANN AG",
+      "summary": "FDA MAUDE database: INSTITUT STRAUMANN AG listed as the manufacturer on 435,028 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 435028,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "NOBEL BIOCARE AB GÖTEBORG",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA MAUDE: 432,329 medical-device adverse-event reports (24mo) — NOBEL BIOCARE AB GÖTEBORG",
+      "summary": "FDA MAUDE database: NOBEL BIOCARE AB GÖTEBORG listed as the manufacturer on 432,329 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 432329,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "MEDTRONIC PUERTO RICO OPERATIONS CO.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA MAUDE: 335,601 medical-device adverse-event reports (24mo) — MEDTRONIC PUERTO RICO OPERATIONS CO.",
+      "summary": "FDA MAUDE database: MEDTRONIC PUERTO RICO OPERATIONS CO. listed as the manufacturer on 335,601 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 335601,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "RESPIRONICS, INC.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA MAUDE: 142,719 medical-device adverse-event reports (24mo) — RESPIRONICS, INC.",
+      "summary": "FDA MAUDE database: RESPIRONICS, INC. listed as the manufacturer on 142,719 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 142719,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "INSULET CORPORATION",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA MAUDE: 123,693 medical-device adverse-event reports (24mo) — INSULET CORPORATION",
+      "summary": "FDA MAUDE database: INSULET CORPORATION listed as the manufacturer on 123,693 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 123693,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "BOSTON SCIENTIFIC CORPORATION",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA MAUDE: 121,489 medical-device adverse-event reports (24mo) — BOSTON SCIENTIFIC CORPORATION",
+      "summary": "FDA MAUDE database: BOSTON SCIENTIFIC CORPORATION listed as the manufacturer on 121,489 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 121489,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "JJGC S.A.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA MAUDE: 120,825 medical-device adverse-event reports (24mo) — JJGC S.A.",
+      "summary": "FDA MAUDE database: JJGC S.A. listed as the manufacturer on 120,825 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 120825,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "MIS IMPLANTS TECHNOLOGIES LTD.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA MAUDE: 118,998 medical-device adverse-event reports (24mo) — MIS IMPLANTS TECHNOLOGIES LTD.",
+      "summary": "FDA MAUDE database: MIS IMPLANTS TECHNOLOGIES LTD. listed as the manufacturer on 118,998 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 118998,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "ABBOTT DIABETES CARE INC",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA MAUDE: 118,970 medical-device adverse-event reports (24mo) — ABBOTT DIABETES CARE INC",
+      "summary": "FDA MAUDE database: ABBOTT DIABETES CARE INC listed as the manufacturer on 118,970 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 118970,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "MEDTRONIC MINIMED",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA MAUDE: 115,080 medical-device adverse-event reports (24mo) — MEDTRONIC MINIMED",
+      "summary": "FDA MAUDE database: MEDTRONIC MINIMED listed as the manufacturer on 115,080 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 115080,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "AIZU OLYMPUS CO., LTD.",
+      "severity": "concern",
+      "year": 2026,
+      "title": "FDA MAUDE: 101,034 medical-device adverse-event reports (24mo) — AIZU OLYMPUS CO., LTD.",
+      "summary": "FDA MAUDE database: AIZU OLYMPUS CO., LTD. listed as the manufacturer on 101,034 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 101034,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "INTUITIVE SURGICAL, INC",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 83,884 medical-device adverse-event reports (24mo) — INTUITIVE SURGICAL, INC",
+      "summary": "FDA MAUDE database: INTUITIVE SURGICAL, INC listed as the manufacturer on 83,884 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 83884,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "CAREFUSION 303, INC.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 78,478 medical-device adverse-event reports (24mo) — CAREFUSION 303, INC.",
+      "summary": "FDA MAUDE database: CAREFUSION 303, INC. listed as the manufacturer on 78,478 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 78478,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "DENTSPLY IMPLANTS MANUFACTURING GMBH",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 71,163 medical-device adverse-event reports (24mo) — DENTSPLY IMPLANTS MANUFACTURING GMBH",
+      "summary": "FDA MAUDE database: DENTSPLY IMPLANTS MANUFACTURING GMBH listed as the manufacturer on 71,163 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 71163,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "NOBEL BIOCARE AB",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 67,606 medical-device adverse-event reports (24mo) — NOBEL BIOCARE AB",
+      "summary": "FDA MAUDE database: NOBEL BIOCARE AB listed as the manufacturer on 67,606 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 67606,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "ABBOTT DIABETES CARE LTD",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 62,053 medical-device adverse-event reports (24mo) — ABBOTT DIABETES CARE LTD",
+      "summary": "FDA MAUDE database: ABBOTT DIABETES CARE LTD listed as the manufacturer on 62,053 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 62053,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "CAREFUSION SD",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 59,033 medical-device adverse-event reports (24mo) — CAREFUSION SD",
+      "summary": "FDA MAUDE database: CAREFUSION SD listed as the manufacturer on 59,033 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 59033,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "SHIRAKAWA OLYMPUS CO., LTD.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 55,954 medical-device adverse-event reports (24mo) — SHIRAKAWA OLYMPUS CO., LTD.",
+      "summary": "FDA MAUDE database: SHIRAKAWA OLYMPUS CO., LTD. listed as the manufacturer on 55,954 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 55954,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "MEDTRONIC, INC.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 50,606 medical-device adverse-event reports (24mo) — MEDTRONIC, INC.",
+      "summary": "FDA MAUDE database: MEDTRONIC, INC. listed as the manufacturer on 50,606 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 50606,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "ALLERGAN (COSTA RICA)",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 43,023 medical-device adverse-event reports (24mo) — ALLERGAN (COSTA RICA)",
+      "summary": "FDA MAUDE database: ALLERGAN (COSTA RICA) listed as the manufacturer on 43,023 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 43023,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "UNOMEDICAL A/S",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 42,426 medical-device adverse-event reports (24mo) — UNOMEDICAL A/S",
+      "summary": "FDA MAUDE database: UNOMEDICAL A/S listed as the manufacturer on 42,426 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 42426,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "BIOHORIZONS INC.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 39,756 medical-device adverse-event reports (24mo) — BIOHORIZONS INC.",
+      "summary": "FDA MAUDE database: BIOHORIZONS INC. listed as the manufacturer on 39,756 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 39756,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "ST. JUDE MEDICAL, INC.(CRM-SYLMAR)",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 37,337 medical-device adverse-event reports (24mo) — ST. JUDE MEDICAL, INC.(CRM-SYLMAR)",
+      "summary": "FDA MAUDE database: ST. JUDE MEDICAL, INC.(CRM-SYLMAR) listed as the manufacturer on 37,337 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 37337,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "BETA BIONICS INC.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 37,335 medical-device adverse-event reports (24mo) — BETA BIONICS INC.",
+      "summary": "FDA MAUDE database: BETA BIONICS INC. listed as the manufacturer on 37,335 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 37335,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "MEDTRONIC PUERTO RICO VILLALBA",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 35,548 medical-device adverse-event reports (24mo) — MEDTRONIC PUERTO RICO VILLALBA",
+      "summary": "FDA MAUDE database: MEDTRONIC PUERTO RICO VILLALBA listed as the manufacturer on 35,548 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 35548,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "MPRI",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 33,916 medical-device adverse-event reports (24mo) — MPRI",
+      "summary": "FDA MAUDE database: MPRI listed as the manufacturer on 33,916 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 33916,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "ABBOTT MEDICAL",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 32,146 medical-device adverse-event reports (24mo) — ABBOTT MEDICAL",
+      "summary": "FDA MAUDE database: ABBOTT MEDICAL listed as the manufacturer on 32,146 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 32146,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "ALTATEC GMBH",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 29,160 medical-device adverse-event reports (24mo) — ALTATEC GMBH",
+      "summary": "FDA MAUDE database: ALTATEC GMBH listed as the manufacturer on 29,160 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 29160,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "S.I.N. IMPLANT SYSTEM",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 28,121 medical-device adverse-event reports (24mo) — S.I.N. IMPLANT SYSTEM",
+      "summary": "FDA MAUDE database: S.I.N. IMPLANT SYSTEM listed as the manufacturer on 28,121 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 28121,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "ETHICON INC.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 27,574 medical-device adverse-event reports (24mo) — ETHICON INC.",
+      "summary": "FDA MAUDE database: ETHICON INC. listed as the manufacturer on 27,574 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 27574,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "MENTOR TEXAS",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 27,460 medical-device adverse-event reports (24mo) — MENTOR TEXAS",
+      "summary": "FDA MAUDE database: MENTOR TEXAS listed as the manufacturer on 27,460 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 27460,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "SYNTHES GMBH",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 23,948 medical-device adverse-event reports (24mo) — SYNTHES GMBH",
+      "summary": "FDA MAUDE database: SYNTHES GMBH listed as the manufacturer on 23,948 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 23948,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "ANTHOGYR",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 23,675 medical-device adverse-event reports (24mo) — ANTHOGYR",
+      "summary": "FDA MAUDE database: ANTHOGYR listed as the manufacturer on 23,675 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 23675,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "ZOLL MANUFACTURING CORPORATION",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 23,514 medical-device adverse-event reports (24mo) — ZOLL MANUFACTURING CORPORATION",
+      "summary": "FDA MAUDE database: ZOLL MANUFACTURING CORPORATION listed as the manufacturer on 23,514 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 23514,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "DEPUY ORTHOPAEDICS INC US",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 23,287 medical-device adverse-event reports (24mo) — DEPUY ORTHOPAEDICS INC US",
+      "summary": "FDA MAUDE database: DEPUY ORTHOPAEDICS INC US listed as the manufacturer on 23,287 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 23287,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "BAXTER HEALTHCARE CORPORATION",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 23,125 medical-device adverse-event reports (24mo) — BAXTER HEALTHCARE CORPORATION",
+      "summary": "FDA MAUDE database: BAXTER HEALTHCARE CORPORATION listed as the manufacturer on 23,125 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 23125,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "ABIOMED, INC.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 23,114 medical-device adverse-event reports (24mo) — ABIOMED, INC.",
+      "summary": "FDA MAUDE database: ABIOMED, INC. listed as the manufacturer on 23,114 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 23114,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "PHILIPS MEDICAL SYSTEMS NEDERLAND B.V.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 21,405 medical-device adverse-event reports (24mo) — PHILIPS MEDICAL SYSTEMS NEDERLAND B.V.",
+      "summary": "FDA MAUDE database: PHILIPS MEDICAL SYSTEMS NEDERLAND B.V. listed as the manufacturer on 21,405 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 21405,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "ABBOTT VASCULAR INC.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 21,012 medical-device adverse-event reports (24mo) — ABBOTT VASCULAR INC.",
+      "summary": "FDA MAUDE database: ABBOTT VASCULAR INC. listed as the manufacturer on 21,012 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 21012,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "UNOMEDICAL DEVICES S.A DE C.V",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 20,694 medical-device adverse-event reports (24mo) — UNOMEDICAL DEVICES S.A DE C.V",
+      "summary": "FDA MAUDE database: UNOMEDICAL DEVICES S.A DE C.V listed as the manufacturer on 20,694 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 20694,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "C.R. BARD, INC. (BASD) -3006260740",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 19,203 medical-device adverse-event reports (24mo) — C.R. BARD, INC. (BASD) -3006260740",
+      "summary": "FDA MAUDE database: C.R. BARD, INC. (BASD) -3006260740 listed as the manufacturer on 19,203 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 19203,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "MEDTRONIC SINGAPORE OPERATIONS",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 18,573 medical-device adverse-event reports (24mo) — MEDTRONIC SINGAPORE OPERATIONS",
+      "summary": "FDA MAUDE database: MEDTRONIC SINGAPORE OPERATIONS listed as the manufacturer on 18,573 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 18573,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "ETHICON ENDO-SURGERY, LLC.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 18,112 medical-device adverse-event reports (24mo) — ETHICON ENDO-SURGERY, LLC.",
+      "summary": "FDA MAUDE database: ETHICON ENDO-SURGERY, LLC. listed as the manufacturer on 18,112 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 18112,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "ST. JUDE MEDICAL - NEUROMODULATION (PUERTO RICO, LLC)",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 17,209 medical-device adverse-event reports (24mo) — ST. JUDE MEDICAL - NEUROMODULATION (PUERTO RICO, LLC)",
+      "summary": "FDA MAUDE database: ST. JUDE MEDICAL - NEUROMODULATION (PUERTO RICO, LLC) listed as the manufacturer on 17,209 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 17209,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "DATEX-OHMEDA, INC.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 17,122 medical-device adverse-event reports (24mo) — DATEX-OHMEDA, INC.",
+      "summary": "FDA MAUDE database: DATEX-OHMEDA, INC. listed as the manufacturer on 17,122 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 17122,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "OLYMPUS WINTER & IBE GMBH",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 16,652 medical-device adverse-event reports (24mo) — OLYMPUS WINTER & IBE GMBH",
+      "summary": "FDA MAUDE database: OLYMPUS WINTER & IBE GMBH listed as the manufacturer on 16,652 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 16652,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "EDWARDS LIFESCIENCES",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 16,023 medical-device adverse-event reports (24mo) — EDWARDS LIFESCIENCES",
+      "summary": "FDA MAUDE database: EDWARDS LIFESCIENCES listed as the manufacturer on 16,023 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 16023,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "ZIMMER BIOMET, INC.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 15,512 medical-device adverse-event reports (24mo) — ZIMMER BIOMET, INC.",
+      "summary": "FDA MAUDE database: ZIMMER BIOMET, INC. listed as the manufacturer on 15,512 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 15512,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "BOSTON SCIENTIFIC NEUROMODULATION CORPORATION",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 15,146 medical-device adverse-event reports (24mo) — BOSTON SCIENTIFIC NEUROMODULATION CORPORATION",
+      "summary": "FDA MAUDE database: BOSTON SCIENTIFIC NEUROMODULATION CORPORATION listed as the manufacturer on 15,146 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 15146,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "THORATEC CORPORATION",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 14,339 medical-device adverse-event reports (24mo) — THORATEC CORPORATION",
+      "summary": "FDA MAUDE database: THORATEC CORPORATION listed as the manufacturer on 14,339 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 14339,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "UNOMEDICAL DEVICES S.A. DE C.V.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 14,208 medical-device adverse-event reports (24mo) — UNOMEDICAL DEVICES S.A. DE C.V.",
+      "summary": "FDA MAUDE database: UNOMEDICAL DEVICES S.A. DE C.V. listed as the manufacturer on 14,208 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 14208,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "DATASCOPE CORP.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 13,273 medical-device adverse-event reports (24mo) — DATASCOPE CORP.",
+      "summary": "FDA MAUDE database: DATASCOPE CORP. listed as the manufacturer on 13,273 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 13273,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "ADIN DENTAL IMPLANT SYSTEMS LTD",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 12,580 medical-device adverse-event reports (24mo) — ADIN DENTAL IMPLANT SYSTEMS LTD",
+      "summary": "FDA MAUDE database: ADIN DENTAL IMPLANT SYSTEMS LTD listed as the manufacturer on 12,580 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 12580,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "ARTHREX, INC.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 11,994 medical-device adverse-event reports (24mo) — ARTHREX, INC.",
+      "summary": "FDA MAUDE database: ARTHREX, INC. listed as the manufacturer on 11,994 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 11994,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "SMITHS MEDICAL ASD, INC.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 11,855 medical-device adverse-event reports (24mo) — SMITHS MEDICAL ASD, INC.",
+      "summary": "FDA MAUDE database: SMITHS MEDICAL ASD, INC. listed as the manufacturer on 11,855 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 11855,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "BIOTRONIK SE & CO. KG",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 11,823 medical-device adverse-event reports (24mo) — BIOTRONIK SE & CO. KG",
+      "summary": "FDA MAUDE database: BIOTRONIK SE & CO. KG listed as the manufacturer on 11,823 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 11823,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "SMITH & NEPHEW, INC.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 11,818 medical-device adverse-event reports (24mo) — SMITH & NEPHEW, INC.",
+      "summary": "FDA MAUDE database: SMITH & NEPHEW, INC. listed as the manufacturer on 11,818 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 11818,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "UNOMEDICAL UM-D",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 11,157 medical-device adverse-event reports (24mo) — UNOMEDICAL UM-D",
+      "summary": "FDA MAUDE database: UNOMEDICAL UM-D listed as the manufacturer on 11,157 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 11157,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "MEDTRONIC IRELAND",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 11,023 medical-device adverse-event reports (24mo) — MEDTRONIC IRELAND",
+      "summary": "FDA MAUDE database: MEDTRONIC IRELAND listed as the manufacturer on 11,023 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 11023,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "C.R. BARD INC. (COVINGTON) -1018233",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 10,682 medical-device adverse-event reports (24mo) — C.R. BARD INC. (COVINGTON) -1018233",
+      "summary": "FDA MAUDE database: C.R. BARD INC. (COVINGTON) -1018233 listed as the manufacturer on 10,682 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 10682,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "DEPUY IRELAND - 9616671",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 10,536 medical-device adverse-event reports (24mo) — DEPUY IRELAND - 9616671",
+      "summary": "FDA MAUDE database: DEPUY IRELAND - 9616671 listed as the manufacturer on 10,536 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 10536,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "STRAIGHT SMILE, LLC",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 10,528 medical-device adverse-event reports (24mo) — STRAIGHT SMILE, LLC",
+      "summary": "FDA MAUDE database: STRAIGHT SMILE, LLC listed as the manufacturer on 10,528 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 10528,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "ICU MEDICAL, INC.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 10,462 medical-device adverse-event reports (24mo) — ICU MEDICAL, INC.",
+      "summary": "FDA MAUDE database: ICU MEDICAL, INC. listed as the manufacturer on 10,462 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 10462,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "ALCON RESEARCH, LLC - HOUSTON",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 10,260 medical-device adverse-event reports (24mo) — ALCON RESEARCH, LLC - HOUSTON",
+      "summary": "FDA MAUDE database: ALCON RESEARCH, LLC - HOUSTON listed as the manufacturer on 10,260 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 10260,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "MEDTRONIC HEART VALVES DIVISION",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 10,198 medical-device adverse-event reports (24mo) — MEDTRONIC HEART VALVES DIVISION",
+      "summary": "FDA MAUDE database: MEDTRONIC HEART VALVES DIVISION listed as the manufacturer on 10,198 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 10198,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "HOYA CORPORATION PENTAX TOKYO OFFICE",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 10,152 medical-device adverse-event reports (24mo) — HOYA CORPORATION PENTAX TOKYO OFFICE",
+      "summary": "FDA MAUDE database: HOYA CORPORATION PENTAX TOKYO OFFICE listed as the manufacturer on 10,152 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 10152,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "BETA BIONICS, INC.",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 10,044 medical-device adverse-event reports (24mo) — BETA BIONICS, INC.",
+      "summary": "FDA MAUDE database: BETA BIONICS, INC. listed as the manufacturer on 10,044 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 10044,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "fda-maude-mfr",
+      "brand": "MEDTRONIC EUROPE SARL",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "FDA MAUDE: 10,004 medical-device adverse-event reports (24mo) — MEDTRONIC EUROPE SARL",
+      "summary": "FDA MAUDE database: MEDTRONIC EUROPE SARL listed as the manufacturer on 10,004 adverse-event reports received in the past 24 months (does not by itself imply causation).",
+      "_liveCount": 10004,
+      "sourceUrl": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfMAUDE/search.cfm",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "cms-nh-compare",
+      "brand": "Brookdale Senior Living",
+      "slugHint": "brookdale-senior-living",
+      "severity": "positive",
+      "year": 2026,
+      "title": "CMS Nursing Home Compare: Brookdale Senior Living — 14 facilities, avg 3.57/5 overall",
+      "summary": "CMS: Brookdale Senior Living-affiliated nursing homes (14 facilities) average 3.57 stars overall; 3 at 1-2 stars, 7 at 4-5 stars.",
+      "_liveFacilities": 14,
+      "_liveAvgRating": 3.5714285714285716,
+      "sourceUrl": "https://www.medicare.gov/care-compare/?providerType=NursingHome",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "cms-nh-compare",
+      "brand": "Life Care Centers of America",
+      "slugHint": "life-care-centers-of-america",
+      "severity": "positive",
+      "year": 2026,
+      "title": "CMS Nursing Home Compare: Life Care Centers of America — 132 facilities, avg 3.49/5 overall",
+      "summary": "CMS: Life Care Centers of America-affiliated nursing homes (132 facilities) average 3.49 stars overall; 30 at 1-2 stars, 69 at 4-5 stars.",
+      "_liveFacilities": 132,
+      "_liveAvgRating": 3.492424242424242,
+      "sourceUrl": "https://www.medicare.gov/care-compare/?providerType=NursingHome",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "cms-nh-compare",
+      "brand": "Kindred Healthcare",
+      "slugHint": "kindred-healthcare",
+      "severity": "mixed",
+      "year": 2026,
+      "title": "CMS Nursing Home Compare: Kindred Healthcare — 4 facilities, avg 3.00/5 overall",
+      "summary": "CMS: Kindred Healthcare-affiliated nursing homes (4 facilities) average 3.00 stars overall; 1 at 1-2 stars, 1 at 4-5 stars.",
+      "_liveFacilities": 4,
+      "_liveAvgRating": 3,
+      "sourceUrl": "https://www.medicare.gov/care-compare/?providerType=NursingHome",
+      "categories": [
+        "health"
+      ]
+    },
+    {
+      "source": "cms-nh-compare",
+      "brand": "Genesis Healthcare",
+      "slugHint": "genesis-healthcare",
+      "severity": "concern",
+      "year": 2026,
+      "title": "CMS Nursing Home Compare: Genesis Healthcare — 8 facilities, avg 2.25/5 overall",
+      "summary": "CMS: Genesis Healthcare-affiliated nursing homes (8 facilities) average 2.25 stars overall; 4 at 1-2 stars, 0 at 4-5 stars.",
+      "_liveFacilities": 8,
+      "_liveAvgRating": 2.25,
+      "sourceUrl": "https://www.medicare.gov/care-compare/?providerType=NursingHome",
+      "categories": [
+        "health"
+      ]
+    }
+  ]
+}
