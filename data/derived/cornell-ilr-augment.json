@@ -2,9 +2,9 @@
   "_license": "CC-BY — Cornell ILR",
   "_citation": "Kallas, J., Iyer, D. K., & Friedman, E. (2024). \"Labor Action Tracker.\" Cornell University ILR School & University of Illinois LER School. Retrieved from striketracker.ilr.cornell.edu",
   "_source_url": "https://striketracker.ilr.cornell.edu",
-  "_generated_at": "2026-06-11T14:35:39.838Z",
-  "_source_raw_file": "data/raw/cornell-ilr/2026-06-09.json",
-  "_matched_slugs": 315,
+  "_generated_at": "2026-08-06T09:05:18.865Z",
+  "_source_raw_file": "data/raw/cornell-ilr/2026-08-06.json",
+  "_matched_slugs": 324,
   "_orphan_employers": [
     {
       "name": "The US Federal Government",
@@ -42,14 +42,14 @@
       "totalWorkers": 10830
     },
     {
+      "name": "California State University",
+      "actionCount": 12,
+      "totalWorkers": 36635
+    },
+    {
       "name": "Cornell University",
       "actionCount": 11,
       "totalWorkers": 1600
-    },
-    {
-      "name": "California State University",
-      "actionCount": 11,
-      "totalWorkers": 36635
     },
     {
       "name": "Chicago Public Schools",
@@ -112,6 +112,16 @@
       "totalWorkers": 950
     },
     {
+      "name": "Allina Health",
+      "actionCount": 6,
+      "totalWorkers": 1665
+    },
+    {
+      "name": "Essentia Health",
+      "actionCount": 6,
+      "totalWorkers": 730
+    },
+    {
       "name": "San Francisco Unified School District",
       "actionCount": 6,
       "totalWorkers": 6430
@@ -147,6 +157,11 @@
       "totalWorkers": 2900
     },
     {
+      "name": "State of California",
+      "actionCount": 6,
+      "totalWorkers": 7900
+    },
+    {
       "name": "University of Rochester",
       "actionCount": 6,
       "totalWorkers": 940
@@ -172,19 +187,9 @@
       "totalWorkers": 4000
     },
     {
-      "name": "Allina Health",
-      "actionCount": 5,
-      "totalWorkers": 1600
-    },
-    {
       "name": "Yale University",
       "actionCount": 5,
       "totalWorkers": 3900
-    },
-    {
-      "name": "Essentia Health",
-      "actionCount": 5,
-      "totalWorkers": 730
     },
     {
       "name": "Sutter Health",
@@ -250,18 +255,13 @@
       "name": "Clark County School District",
       "actionCount": 5,
       "totalWorkers": 4020
-    },
-    {
-      "name": "Providence Health",
-      "actionCount": 5,
-      "totalWorkers": 8207
     }
   ],
   "_routing_counts": {
-    "direct": 1308,
+    "direct": 1323,
     "alias": 97,
-    "brand-parent": 87,
-    "orphan": 3201
+    "brand-parent": 88,
+    "orphan": 3312
   },
   "bySlug": {
     "conagra-brands": {
@@ -322,7 +322,7 @@
             ],
             "demands": [
               "Pay",
-              "Sick leave benefits"
+              "Paid time off (PTO)"
             ],
             "city": "Park City",
             "state": "Utah",
@@ -386,7 +386,9 @@
             "demands": [
               "Pay",
               "Health and safety",
-              "Scheduling; Union Shop; Juneteenth Holiday"
+              "Union shop",
+              "Juneteenth holiday",
+              "scheduling"
             ],
             "city": "Detroit",
             "state": "Michigan",
@@ -412,7 +414,7 @@
             ],
             "demands": [
               "Pay",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Detroit",
             "state": "Michigan",
@@ -549,7 +551,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Los Angeles",
             "state": "California",
@@ -676,7 +678,8 @@
             "demands": [
               "Pay",
               "Job Security",
-              "Scheduling; Training"
+              "scheduling",
+              "Training"
             ],
             "city": "San Jose",
             "state": "California",
@@ -804,7 +807,8 @@
             ],
             "demands": [
               "Pay",
-              "Scheduling; End to anti-union retaliation"
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Los Angeles",
             "state": "California",
@@ -881,7 +885,7 @@
             ],
             "demands": [
               "Health and safety",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Los Angeles",
             "state": "California",
@@ -1060,7 +1064,8 @@
             "demands": [
               "Pay",
               "Health and safety",
-              "Paid sick leave; End to harassment in the workplace"
+              "End to harassment in the workplace",
+              "Paid time off (PTO)"
             ],
             "city": "Hazard",
             "state": "California",
@@ -1112,7 +1117,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Reinstatement of paid sick leave; End to anti-union retaliation"
+              "Paid time off (PTO)",
+              "End to anti union retaliation"
             ],
             "city": "Oakland",
             "state": "California",
@@ -1137,7 +1143,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Reinstatement of paid sick leave"
+              "Paid time off (PTO)"
             ],
             "city": "Oakland",
             "state": "California",
@@ -1188,7 +1194,7 @@
             ],
             "demands": [
               "Health and safety",
-              "Paid sick leave"
+              "Paid time off (PTO)"
             ],
             "city": "Los Angeles",
             "state": "California",
@@ -1265,7 +1271,7 @@
             ],
             "demands": [
               "Pay",
-              "Paid sick leave"
+              "Paid time off (PTO)"
             ],
             "city": "San Jose",
             "state": "California",
@@ -1291,7 +1297,7 @@
             ],
             "demands": [
               "Pay",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "San Jose",
             "state": "California",
@@ -1393,7 +1399,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Scheduling; Pass AB 257"
+              "scheduling",
+              "Pass AB 257"
             ],
             "city": "Sacramento",
             "state": "California",
@@ -1419,7 +1426,8 @@
             ],
             "demands": [
               "Staffing",
-              "End to sexual harassment; Hostile work environment"
+              "End to sexual harassment",
+              "Health and safety"
             ],
             "city": "Saratoga",
             "state": "California",
@@ -1444,7 +1452,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-worker organizing retaliation; Scheduling"
+              "End to anti union retaliation",
+              "scheduling"
             ],
             "city": "University City",
             "state": "Missouri",
@@ -1577,8 +1586,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Pay",
-              "$15 minimum wage"
+              "Pay"
             ],
             "city": "Detroit",
             "state": "Michigan",
@@ -1605,7 +1613,6 @@
             "demands": [
               "Pay",
               "Health and safety",
-              "$15 minimum wage",
               "Staffing"
             ],
             "city": "Tampa",
@@ -1631,7 +1638,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Union recognition; Paid time off"
+              "Union recognition",
+              "Paid time off (PTO)"
             ],
             "city": "Chicago",
             "state": "Illinois",
@@ -1709,7 +1717,7 @@
             ],
             "demands": [
               "Pay",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Saratoga",
             "state": "California",
@@ -2017,7 +2025,8 @@
             "demands": [
               "Health and safety",
               "Staffing",
-              "Respect in the workplace; Scheduling"
+              "Respect in the workplace",
+              "scheduling"
             ],
             "city": "Los Angeles",
             "state": "California",
@@ -2043,7 +2052,8 @@
             ],
             "demands": [
               "Pay",
-              "Union recognition; Recall laid off workers"
+              "Union recognition",
+              "Reinstate terminated workers"
             ],
             "city": "Branford",
             "state": "Connecticut",
@@ -2068,7 +2078,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "$15 minimum wage"
+              "Pay"
             ],
             "city": "Milwaukee",
             "state": "Wisconsin",
@@ -2093,7 +2103,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "$15 minimum wage"
+              "Pay"
             ],
             "city": "San Francisco",
             "state": "California",
@@ -2176,8 +2186,7 @@
             "demands": [
               "Pay",
               "COVID-19 protocols",
-              "Health and safety",
-              "$15 minimum wage"
+              "Health and safety"
             ],
             "city": "Cicero",
             "state": "Illinois",
@@ -2231,7 +2240,7 @@
             "demands": [
               "COVID-19 protocols",
               "Health and safety",
-              "$15 minimum wage"
+              "Pay"
             ],
             "city": "Berkeley",
             "state": "California",
@@ -2444,7 +2453,7 @@
               "Information"
             ],
             "demands": [
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Huntington Beach",
             "state": "California",
@@ -2745,8 +2754,8 @@
               "Transportation and Warehousing"
             ],
             "demands": [
-              "End anti-union retaliation",
-              "Union recognition"
+              "Union recognition",
+              "End to anti union retaliation"
             ],
             "city": "Maspeth",
             "state": "New York",
@@ -2772,7 +2781,7 @@
             ],
             "demands": [
               "Pay",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Durham",
             "state": "North Carolina",
@@ -2851,7 +2860,8 @@
             ],
             "demands": [
               "Pay",
-              "Scheduling; Accommodate injured workers faster"
+              "Accommodate injured workers faster",
+              "scheduling"
             ],
             "city": "Garner",
             "state": "North Carolina",
@@ -2907,7 +2917,8 @@
               "Staffing",
               "Job Security",
               "Union recognition",
-              "Scheduling; End anti-union retaliation"
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Maspeth",
             "state": "New York",
@@ -2988,7 +2999,7 @@
             ],
             "demands": [
               "Health and safety",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "East Point",
             "state": "Georgia",
@@ -3017,7 +3028,8 @@
               "Healthcare",
               "Job Security",
               "Union recognition",
-              "On-Site Translation; End to Anti-Union Retaliation"
+              "End to anti union retaliation",
+              "On-site translation"
             ],
             "city": "Hebron",
             "state": "Kentucky",
@@ -3042,7 +3054,7 @@
               "Transportation and Warehousing"
             ],
             "demands": [
-              "End to Anti-Union Retaliation"
+              "End to anti union retaliation"
             ],
             "city": "San Bernardino",
             "state": "California",
@@ -3070,7 +3082,7 @@
               "Pay",
               "Health and safety",
               "Union recognition",
-              "End to Anti Union Retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Skokie",
             "state": "Illinois",
@@ -3153,7 +3165,8 @@
               "Health and safety",
               "Staffing",
               "Union recognition",
-              "End to anti-union retaliation; Reinstate terminated union activist"
+              "End to anti union retaliation",
+              "Reinstate terminated union activist"
             ],
             "city": "Queens",
             "state": "New York",
@@ -3181,7 +3194,9 @@
             "demands": [
               "Pay",
               "Health and safety",
-              "End to anti-union retaliation; Allow workers to wear one earbud in roles where it is deemed safe; End automated write-ups and discipline"
+              "End to anti union retaliation",
+              "Allow workers to wear one earbud in roles where it is deemed safe",
+              "End automated write-ups and discipline"
             ],
             "city": "Garner",
             "state": "North Carolina",
@@ -3207,7 +3222,8 @@
             "demands": [
               "Pay",
               "Health and safety",
-              "Allow workers to wear one earbud in suitable roles; End to anti-union retaliation"
+              "Allow worker to wear one earbud in suitable roles",
+              "End to anti union retaliation"
             ],
             "city": "West Deptford",
             "state": "New Jersey",
@@ -3708,7 +3724,8 @@
             ],
             "demands": [
               "Union recognition",
-              "End union busting tactics and dangerous labor practices"
+              "Health and safety",
+              "End to anti union retaliation"
             ],
             "city": "Seattle",
             "state": "Washington",
@@ -4002,7 +4019,7 @@
             "demands": [
               "Pay",
               "Health and safety",
-              "Paid time off for Eid"
+              "Paid time off (PTO)"
             ],
             "city": "Shakopee",
             "state": "Minnesota",
@@ -4055,7 +4072,7 @@
             "demands": [
               "Pay",
               "Job Security",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Bellmawr",
             "state": "New Jersey",
@@ -4161,7 +4178,7 @@
             ],
             "demands": [
               "Pay",
-              "Longer breaks"
+              "scheduling"
             ],
             "city": "Queens",
             "state": "New York",
@@ -4315,7 +4332,7 @@
             ],
             "demands": [
               "Racial justice",
-              "Union Recognition"
+              "Union recognition"
             ],
             "city": "New York",
             "state": "New York",
@@ -4368,7 +4385,7 @@
             ],
             "demands": [
               "Job Security",
-              "Hiring local labor"
+              "Hire local union labor"
             ],
             "city": "Rochester",
             "state": "New York",
@@ -4396,7 +4413,7 @@
             "demands": [
               "Pay",
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Chicago",
             "state": "Illinois",
@@ -5483,7 +5500,7 @@
             ],
             "demands": [
               "Pay",
-              "End to discriminatory deactivations"
+              "Health and safety"
             ],
             "city": "Denver",
             "state": "Colorado",
@@ -5536,7 +5553,8 @@
             ],
             "demands": [
               "Health and safety",
-              "Make gig worker safety data public; Provide additional compensation to the families of workers killed on the job; End forced arbitration; Allow gig workers to unionize"
+              "Allow gig workers to unionize",
+              "Pay"
             ],
             "city": "San Jose",
             "state": "California",
@@ -6263,7 +6281,8 @@
             ],
             "demands": [
               "Health and safety",
-              "Make gig worker safety data public; Provide additional compensation to the families of workers killed on the job; End forced arbitration; Allow gig workers to unionize"
+              "Allow gig workers to unionize",
+              "Pay"
             ],
             "city": "San Jose",
             "state": "California",
@@ -6448,8 +6467,8 @@
             "actionId": 2618,
             "actionType": "strike",
             "startDate": "2023-11-22",
-            "endDate": "2023-11-27",
-            "durationDays": 6,
+            "endDate": "2023-11-26",
+            "durationDays": 5,
             "authorized": true,
             "numWorkers": 2400,
             "bargainingUnitSize": null,
@@ -6463,7 +6482,7 @@
             "demands": [
               "Health and safety",
               "Staffing",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Riverside",
             "state": "California",
@@ -6604,7 +6623,7 @@
             ],
             "demands": [
               "Pay",
-              "Less mandatory overtime"
+              "scheduling"
             ],
             "city": "O'Fallon",
             "state": "Missouri",
@@ -6667,7 +6686,7 @@
             ],
             "demands": [
               "Job Security",
-              "Hire local labor"
+              "Hire local union labor"
             ],
             "city": "Webster",
             "state": "New York",
@@ -6753,7 +6772,6 @@
               "Reinstate Terminated Worker",
               "Staffing",
               "Job Security",
-              "Scheduling",
               "Health and safety",
               "scheduling"
             ],
@@ -6929,7 +6947,7 @@
             ],
             "demands": [
               "First contract",
-              "End to Anti-Union Retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Boston",
             "state": "Massachusetts",
@@ -7114,8 +7132,7 @@
             ],
             "demands": [
               "Pay",
-              "Healthcare",
-              "$15 minimum wage"
+              "Healthcare"
             ],
             "city": "St. Louis",
             "state": "Missouri",
@@ -7142,7 +7159,7 @@
             "demands": [
               "COVID-19 protocols",
               "Health and safety",
-              "$15 minimum wage"
+              "Pay"
             ],
             "city": "St. Louis",
             "state": "Missouri",
@@ -7332,7 +7349,7 @@
             "demands": [
               "Pay",
               "Job Security",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Charleston",
             "state": "Illinois",
@@ -7431,7 +7448,7 @@
             ],
             "demands": [
               "Pay",
-              "Time off"
+              "Paid time off (PTO)"
             ],
             "city": "New York City",
             "state": "New York",
@@ -7508,7 +7525,7 @@
             "demands": [
               "Pay",
               "Healthcare",
-              "More paid time off"
+              "Paid time off (PTO)"
             ],
             "city": "Brookwood",
             "state": "Alabama",
@@ -7580,8 +7597,7 @@
               "Retail Trade"
             ],
             "demands": [
-              "Job Security",
-              "Prevent store closure"
+              "Job Security"
             ],
             "city": "Los Angeles",
             "state": "California",
@@ -7652,7 +7668,10 @@
               "Transportation and Warehousing"
             ],
             "demands": [
-              "Sympathy strike; Union recognition; Classify workers as employees; Rehire terminated workers"
+              "Reinstate terminated workers",
+              "Union recognition",
+              "Sympathy strike",
+              "Classify workers as employees"
             ],
             "city": "Compton",
             "state": "California",
@@ -7802,7 +7821,7 @@
             ],
             "demands": [
               "Pay",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Orlando",
             "state": "Florida",
@@ -7830,7 +7849,7 @@
               "Pay",
               "Job Security",
               "Retirement benefits",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Chicago",
             "state": "Illinois",
@@ -7883,7 +7902,7 @@
             ],
             "demands": [
               "Pay",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Tamuning",
             "state": "Guam",
@@ -7934,7 +7953,7 @@
             ],
             "demands": [
               "Pay",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Tamuning",
             "state": "Guam",
@@ -7961,7 +7980,7 @@
             "demands": [
               "Pay",
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Cleveland",
             "state": "Ohio",
@@ -7987,7 +8006,7 @@
             ],
             "demands": [
               "Pay",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Cleveland",
             "state": "Ohio",
@@ -8013,7 +8032,7 @@
             ],
             "demands": [
               "Pay",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Newark",
             "state": "New Jersey",
@@ -8254,8 +8273,8 @@
             "actionId": 4870,
             "actionType": "strike",
             "startDate": "2026-06-01",
-            "endDate": null,
-            "durationDays": null,
+            "endDate": "2026-06-10",
+            "durationDays": 10,
             "authorized": true,
             "numWorkers": 1000,
             "bargainingUnitSize": 0,
@@ -9019,7 +9038,9 @@
             "demands": [
               "Pay",
               "Health and safety",
-              "End to mandatory overtime; Implement more full-time job opportunities; Eliminate the two-tier wage system"
+              "Implement more full-time job opportunities",
+              "Eliminate the two-tier wage system",
+              "scheduling"
             ],
             "city": "Orange",
             "state": "California",
@@ -9096,7 +9117,7 @@
             ],
             "demands": [
               "Health and safety",
-              "Remove cameras from UPS trucks; Install air conditioners in UPS trucks"
+              "Surveillance"
             ],
             "city": "Brooklyn",
             "state": "New York",
@@ -9273,7 +9294,7 @@
               "Transportation and Warehousing"
             ],
             "demands": [
-              "Rehire terminated workers"
+              "Rehire fired worker"
             ],
             "city": "St. Albans",
             "state": "New York",
@@ -9349,95 +9370,92 @@
         "_license": "CC-BY — Cornell ILR"
       }
     },
-    "exxonmobil": {
-      "labor": {
-        "laborActions": [
-          {
-            "actionId": 486,
-            "actionType": "protest",
-            "startDate": "2021-08-18",
-            "endDate": "2021-08-18",
-            "durationDays": 1,
-            "authorized": null,
-            "numWorkers": null,
-            "bargainingUnitSize": 650,
-            "numUnions": 1,
-            "unions": [
-              "United Steelworkers (USW)"
-            ],
-            "industry": [
-              "Mining"
-            ],
-            "demands": [
-              "End to lockout"
-            ],
-            "city": "Houston",
-            "state": "Texas",
-            "sourceUrl": "https://www.prnewswire.com/news-releases/usw-exxonmobil-brings-lockout-to-houston-offshore-technology-conference-301356025.html",
-            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-486",
-            "notes": ""
-          },
-          {
-            "actionId": 306,
-            "actionType": "protest",
-            "startDate": "2021-05-26",
-            "endDate": "2021-05-26",
-            "durationDays": 1,
-            "authorized": null,
-            "numWorkers": null,
-            "bargainingUnitSize": 650,
-            "numUnions": 1,
-            "unions": [
-              "United Steelworkers (USW)"
-            ],
-            "industry": [
-              "Mining"
-            ],
-            "demands": [
-              "End lockout and agree to a new contract"
-            ],
-            "city": "Irving",
-            "state": "Texas",
-            "sourceUrl": "https://kfdm.com/news/local/usw-members-plan-to-demonstrate-wednesday-at-exxonmobil-shareholders-meeting",
-            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-306",
-            "notes": ""
-          },
-          {
-            "actionId": 233,
-            "actionType": "protest",
-            "startDate": "2021-04-29",
-            "endDate": "2021-04-29",
-            "durationDays": 1,
-            "authorized": null,
-            "numWorkers": null,
-            "bargainingUnitSize": 650,
-            "numUnions": 1,
-            "unions": [
-              "United Steelworkers (USW)"
-            ],
-            "industry": [
-              "Mining"
-            ],
-            "demands": [
-              "Health and safety",
-              "Prevent a lockout"
-            ],
-            "city": "Beaumont",
-            "state": "Texas",
-            "sourceUrl": "https://www.12newsnow.com/article/news/local/power-city/rally-outside-exxonmobil-in-beaumont-following-lockout-notice/502-3087996f-7053-4eb2-8c98-70bb42fc46a4",
-            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-233",
-            "notes": ""
-          }
-        ],
-        "actionCount": 3,
-        "totalWorkersInvolved": 0,
-        "sourceUrl": "https://striketracker.ilr.cornell.edu",
-        "_license": "CC-BY — Cornell ILR"
-      }
-    },
     "city": {
       "labor": {
         "laborActions": [
+          {
+            "actionId": 4961,
+            "actionType": "protest",
+            "startDate": "2026-06-25",
+            "endDate": "2026-06-25",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 2,
+            "unions": [
+              "International Federation of Professional and Technical Engineers (IFPTE)",
+              "American Federation of State, County and Municipal Employees (AFSCME)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Staffing",
+              "Health and safety"
+            ],
+            "city": "San Jose",
+            "state": "California",
+            "sourceUrl": "https://web.archive.org/web/20260701212747/https://fightbacknews.org/articles/san-jose-city-workers-rally-for-decent-contract",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4961",
+            "notes": ""
+          },
+          {
+            "actionId": 4936,
+            "actionType": "protest",
+            "startDate": "2026-06-17",
+            "endDate": "2026-06-17",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 5,
+            "unions": [
+              "Service Employees International Union (SEIU)",
+              "Free City College",
+              "American Federation of Teachers (AFT)",
+              "San Francisco Labor Council",
+              "Office and Professional Employees International Union (OPEIU)"
+            ],
+            "industry": [],
+            "demands": [
+              "Against budget cuts"
+            ],
+            "city": "San Francisco",
+            "state": "California",
+            "sourceUrl": "https://archive.ph/oi5H1",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4936",
+            "notes": ""
+          },
+          {
+            "actionId": 4916,
+            "actionType": "protest",
+            "startDate": "2026-06-09",
+            "endDate": "2026-06-09",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "International Federation of Professional and Technical Engineers (IFPTE)"
+            ],
+            "industry": [
+              "Public Administration"
+            ],
+            "demands": [
+              "Pay",
+              "Healthcare",
+              "Work from home privilege",
+              "Staffing"
+            ],
+            "city": "Oakland",
+            "state": "California",
+            "sourceUrl": "https://web.archive.org/web/20260616163711/https://localnewsmatters.org/2026/06/09/oakland-city-workers-contract-protest/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4916",
+            "notes": ""
+          },
           {
             "actionId": 4886,
             "actionType": "protest",
@@ -9463,6 +9481,32 @@
             "state": "New York",
             "sourceUrl": "https://web.archive.org/web/20260604033755/https://www.cbsnews.com/newyork/news/fdny-5th-firefighter-on-engines-rally-mamdani-city-budget/",
             "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4886",
+            "notes": ""
+          },
+          {
+            "actionId": 4988,
+            "actionType": "protest",
+            "startDate": "2026-05-05",
+            "endDate": "2026-05-05",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "American Federation of State, County and Municipal Employees (AFSCME)"
+            ],
+            "industry": [
+              "Administrative and Support and Waste Management"
+            ],
+            "demands": [
+              "Pay",
+              "Staffing"
+            ],
+            "city": "Syracuse",
+            "state": "New York",
+            "sourceUrl": "https://web.archive.org/web/20260711211405/https://cnycentral.com/news/local/syracuse-dpw-picket",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4988",
             "notes": ""
           },
           {
@@ -9569,7 +9613,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "$25 minimum wage"
+              "Pay"
             ],
             "city": " San Diego",
             "state": "California",
@@ -9836,7 +9880,7 @@
               "Public Administration"
             ],
             "demands": [
-              "Enact paid sick leave legislation"
+              "Paid time off (PTO)"
             ],
             "city": "Pittsburgh",
             "state": "Pennsylvania",
@@ -10024,7 +10068,7 @@
             ],
             "demands": [
               "Pay",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Fresno",
             "state": "California",
@@ -10051,7 +10095,8 @@
             "demands": [
               "Pay",
               "Health and safety",
-              "Paid parental leave; Support special education"
+              "Support special education",
+              "Paid time off (PTO)"
             ],
             "city": "Revere",
             "state": "Massachusetts",
@@ -10203,7 +10248,7 @@
             ],
             "demands": [
               "Pay",
-              "Hostile work environment"
+              "Health and safety"
             ],
             "city": "La Center",
             "state": "Kentucky",
@@ -10230,8 +10275,8 @@
             "demands": [
               "Pay",
               "Staffing",
-              "Predictable scheduling",
-              "10-hour rest period between shifts"
+              "10-hour rest period between shifts",
+              "scheduling"
             ],
             "city": "Los Angeles",
             "state": "California",
@@ -10628,7 +10673,7 @@
             ],
             "demands": [
               "Pay",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Stockton",
             "state": "California",
@@ -10837,7 +10882,7 @@
             ],
             "demands": [
               "Pay",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Philadelphia",
             "state": "Pennsylvania",
@@ -10907,7 +10952,9 @@
               "Health and safety",
               "Racial justice",
               "Staffing",
-              "Climate justice; End housing crisis; Scheduling"
+              "Climate justice",
+              "End housing crisis",
+              "scheduling"
             ],
             "city": "Seattle",
             "state": "Washington",
@@ -11060,8 +11107,8 @@
             ],
             "demands": [
               "Health and safety",
-              "Stopping retaliation against employees",
-              "following grievance procedure"
+              "following grievance procedure",
+              "End to anti union retaliation"
             ],
             "city": "Lawrence",
             "state": "Kansas",
@@ -11320,7 +11367,7 @@
             ],
             "demands": [
               "Pay",
-              "End to anti-union retaliation; Connecticut State Board of Mediation and Arbitration must settle the collective bargaining agreement"
+              "End to anti union retaliation"
             ],
             "city": "Shelton",
             "state": "Connecticut",
@@ -11554,7 +11601,8 @@
             ],
             "demands": [
               "Pay",
-              "Seniority rights; Scheduling"
+              "scheduling",
+              "Seniority rights"
             ],
             "city": "Latrobe",
             "state": "Pennsylvania",
@@ -11602,7 +11650,7 @@
               "Public Administration"
             ],
             "demands": [
-              "Hostile work environment"
+              "Health and safety"
             ],
             "city": "Port Wentworth",
             "state": "Georgia",
@@ -11682,7 +11730,7 @@
               "Pay",
               "Health and safety",
               "Racial justice",
-              "union recognition"
+              "Union recognition"
             ],
             "city": "Virginia Beach",
             "state": "Virginia",
@@ -11940,7 +11988,7 @@
             "notes": ""
           }
         ],
-        "actionCount": 95,
+        "actionCount": 99,
         "totalWorkersInvolved": 40306,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
@@ -11996,7 +12044,8 @@
             "demands": [
               "Pay",
               "Job Security",
-              "Opportunities for career advancement; Longer bathroom breaks"
+              "scheduling",
+              "Opportunities for career advancement"
             ],
             "city": "Riverview",
             "state": "Florida",
@@ -12076,7 +12125,8 @@
               "Pay",
               "Healthcare",
               "COVID-19 protocols",
-              "Longer bathroom and lunch break durations; Paid time off"
+              "scheduling",
+              "Paid time off (PTO)"
             ],
             "city": "Hattiesburg",
             "state": "Mississippi",
@@ -12155,7 +12205,8 @@
             "demands": [
               "Pay",
               "Healthcare",
-              "Paid sick leave; Union recognition"
+              "Union recognition",
+              "Paid time off (PTO)"
             ],
             "city": "Hattiesburg",
             "state": "Mississippi",
@@ -12182,7 +12233,7 @@
             ],
             "demands": [
               "COVID-19 protocols",
-              "$15 minimum wage"
+              "Pay"
             ],
             "city": "Lawrence",
             "state": "Kansas",
@@ -12372,7 +12423,7 @@
               "Pay",
               "Health and safety",
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Irmo",
             "state": "South Carolina",
@@ -12612,7 +12663,7 @@
             "demands": [
               "Pay",
               "Retirement benefits",
-              "Scheduling; End to mandatory overtime"
+              "scheduling"
             ],
             "city": "Orange",
             "state": "California",
@@ -12727,7 +12778,9 @@
             "demands": [
               "Pay",
               "Staffing",
-              "Create a grievance procedure; Scheduling; Paid breaks; Sick leave"
+              "Create a grievance procedure",
+              "scheduling",
+              "Paid time off (PTO)"
             ],
             "city": "Lansing",
             "state": "Michigan",
@@ -12802,7 +12855,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation; Pass AB 257"
+              "Pass AB 257",
+              "End to anti union retaliation"
             ],
             "city": "Newport Beach",
             "state": "California",
@@ -12953,7 +13007,7 @@
             "demands": [
               "Pay",
               "Staffing",
-              "Fair scheduling"
+              "scheduling"
             ],
             "city": "New York",
             "state": "New York",
@@ -13030,8 +13084,7 @@
             "demands": [
               "Pay",
               "COVID-19 protocols",
-              "Health and safety",
-              "$15 minimum wage"
+              "Health and safety"
             ],
             "city": "Cicero",
             "state": "Illinois",
@@ -13155,7 +13208,7 @@
               "Pay",
               "Healthcare",
               "Job Security",
-              "Fair scheduling"
+              "scheduling"
             ],
             "city": "Portland",
             "state": "Oregon",
@@ -13199,6 +13252,35 @@
     "michigan": {
       "labor": {
         "laborActions": [
+          {
+            "actionId": 4954,
+            "actionType": "protest",
+            "startDate": "2026-06-25",
+            "endDate": "2026-06-25",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "University of Michigan Professional Nurse Council (UMPNC)"
+            ],
+            "industry": [
+              "Health Care and Social Assistance"
+            ],
+            "demands": [
+              "Pay",
+              "Staffing",
+              "scheduling",
+              "Installation of surveillance devices",
+              "against surveillance"
+            ],
+            "city": "Ann Arbor",
+            "state": "Michigan",
+            "sourceUrl": "http://archive.today/2026.06.30-161114/https://www.michigandaily.com/news/news-briefs/nurses-union-announces-strike-vote-outside-regents-meeting/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4954",
+            "notes": ""
+          },
           {
             "actionId": 4832,
             "actionType": "protest",
@@ -13378,7 +13460,7 @@
             ],
             "demands": [
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Detroit",
             "state": "Michigan",
@@ -13406,7 +13488,7 @@
               "Pay",
               "Health and safety",
               "Staffing",
-              "End to mandatory overtime"
+              "scheduling"
             ],
             "city": "Ann Arbor",
             "state": "Michigan",
@@ -13467,7 +13549,7 @@
             "notes": ""
           }
         ],
-        "actionCount": 10,
+        "actionCount": 11,
         "totalWorkersInvolved": 4390,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
@@ -13520,7 +13602,7 @@
             ],
             "demands": [
               "Pay",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Milwaukee",
             "state": "Wisconsin",
@@ -13888,7 +13970,7 @@
             ],
             "demands": [
               "Pay",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Cambridge",
             "state": "Massachusetts",
@@ -14047,7 +14129,7 @@
             ],
             "demands": [
               "Racial justice",
-              "Protections against harassment"
+              "Health and safety"
             ],
             "city": "Cambridge",
             "state": "Massachusetts",
@@ -14223,7 +14305,7 @@
             ],
             "demands": [
               "Job Security",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Oshkosh",
             "state": "Wisconsin",
@@ -15212,7 +15294,7 @@
               "Pay",
               "Staffing",
               "Retirement benefits",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Fontana",
             "state": "California",
@@ -15249,8 +15331,8 @@
             "actionId": 2391,
             "actionType": "strike",
             "startDate": "2023-10-04",
-            "endDate": "2023-10-07",
-            "durationDays": 4,
+            "endDate": "2023-10-06",
+            "durationDays": 3,
             "authorized": true,
             "numWorkers": 75000,
             "bargainingUnitSize": null,
@@ -15411,8 +15493,8 @@
             "actionId": 1715,
             "actionType": "strike",
             "startDate": "2022-08-29",
-            "endDate": "2023-02-20",
-            "durationDays": 176,
+            "endDate": "2023-02-16",
+            "durationDays": 172,
             "authorized": true,
             "numWorkers": 60,
             "bargainingUnitSize": null,
@@ -15819,7 +15901,7 @@
             ],
             "demands": [
               "Health and safety",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "San Jose",
             "state": "California",
@@ -16019,8 +16101,7 @@
             ],
             "demands": [
               "Pay",
-              "Health and safety",
-              "$15 minimum wage"
+              "Health and safety"
             ],
             "city": "San Jose",
             "state": "California",
@@ -16379,7 +16460,7 @@
             ],
             "demands": [
               "Health and safety",
-              "Removal of CEO; End to workplace harassment"
+              "Removal of CEO"
             ],
             "city": "Irvine",
             "state": "California",
@@ -16456,6 +16537,31 @@
     "aramark": {
       "labor": {
         "laborActions": [
+          {
+            "actionId": 4995,
+            "actionType": "protest",
+            "startDate": "2026-05-06",
+            "endDate": "2026-05-06",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "UNITE HERE"
+            ],
+            "industry": [
+              "Accommodation and Food Services"
+            ],
+            "demands": [
+              "Against DHS agents in workplace"
+            ],
+            "city": "Phoenix",
+            "state": "Arizona",
+            "sourceUrl": "https://web.archive.org/web/20260711230230/https://www.unitehere11.org/phoenix-convention-center-workers-protest-border-security-conference/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4995",
+            "notes": ""
+          },
           {
             "actionId": 4798,
             "actionType": "strike",
@@ -16555,7 +16661,7 @@
             "demands": [
               "Pay",
               "Healthcare",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Philadelphia",
             "state": "Pennsylvania",
@@ -16676,7 +16782,7 @@
             "notes": ""
           }
         ],
-        "actionCount": 8,
+        "actionCount": 9,
         "totalWorkersInvolved": 3400,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
@@ -16995,7 +17101,7 @@
             ],
             "demands": [
               "Pay",
-              "Workplace safety"
+              "Health and safety"
             ],
             "city": "New Orleans",
             "state": "Louisiana",
@@ -17258,7 +17364,7 @@
               "Pay",
               "Health and safety",
               "First contract",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Louisville",
             "state": "Kentucky",
@@ -17314,7 +17420,7 @@
             ],
             "demands": [
               "Pay",
-              "End to excessive overtime; Scheduling"
+              "scheduling"
             ],
             "city": "Warners",
             "state": "New York",
@@ -17648,7 +17754,8 @@
             "demands": [
               "Pay",
               "COVID-19 protocols",
-              "Union recognition; consistent scheduling"
+              "Union recognition",
+              "scheduling"
             ],
             "city": "Mooresville",
             "state": "North Carolina",
@@ -17673,8 +17780,8 @@
               "Transportation and Warehousing"
             ],
             "demands": [
-              "$15 minimum wage",
-              "Union recognition"
+              "Union recognition",
+              "Pay"
             ],
             "city": "Houston",
             "state": "Texas",
@@ -17891,7 +17998,10 @@
             ],
             "demands": [
               "Pay",
-              "Paid vacation; Training; Insurance; End anti-union retaliation"
+              "Paid time off (PTO)",
+              "Training",
+              "Insurance",
+              "End to anti union retaliation"
             ],
             "city": "Dalton",
             "state": "Georgia",
@@ -17980,7 +18090,8 @@
             "demands": [
               "Pay",
               "Job Security",
-              "Retain the copy desk; End to anti-union retaliation"
+              "Retain the copy desk",
+              "End to anti union retaliation"
             ],
             "city": "Austin",
             "state": "Texas",
@@ -18028,7 +18139,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to hostile work environment"
+              "Health and safety"
             ],
             "city": "Dubuque",
             "state": "Iowa",
@@ -18158,7 +18269,8 @@
             "demands": [
               "Pay",
               "Healthcare",
-              "Retirement benefits; Maintain paid time off"
+              "Retirement benefits",
+              "Paid time off (PTO)"
             ],
             "city": "Memphis",
             "state": "Tennessee",
@@ -18356,7 +18468,7 @@
             "demands": [
               "Pay",
               "First contract",
-              "Paid time off"
+              "Paid time off (PTO)"
             ],
             "city": "Minneapolis",
             "state": "Minnesota",
@@ -18368,8 +18480,8 @@
             "actionId": 624,
             "actionType": "strike",
             "startDate": "2021-10-17",
-            "endDate": "2021-10-20",
-            "durationDays": 4,
+            "endDate": "2021-10-19",
+            "durationDays": 3,
             "authorized": true,
             "numWorkers": null,
             "bargainingUnitSize": 50,
@@ -18754,7 +18866,7 @@
             "demands": [
               "Pay",
               "Health and safety",
-              "More hours"
+              "scheduling"
             ],
             "city": "Philadelphia",
             "state": "Pennsylvania",
@@ -18778,7 +18890,7 @@
             ],
             "demands": [
               "Pay",
-              "More hours"
+              "scheduling"
             ],
             "city": "Philadelphia",
             "state": "Pennsylvania",
@@ -18841,7 +18953,8 @@
             ],
             "demands": [
               "Healthcare",
-              "Retirement benefits; Paid time off"
+              "Retirement benefits",
+              "Paid time off (PTO)"
             ],
             "city": "Shelby",
             "state": "Ohio",
@@ -19145,7 +19258,9 @@
             ],
             "demands": [
               "Pay",
-              "Shorter hours; End to harassment; Sympathy strike; Scheduling"
+              "scheduling",
+              "End to harassment",
+              "Sympathy strike"
             ],
             "city": "Chula Vista",
             "state": "California",
@@ -19172,7 +19287,8 @@
             "demands": [
               "Staffing",
               "Job Security",
-              "End to harassment; Shorter hours"
+              "End to harassment",
+              "scheduling"
             ],
             "city": "Anaheim",
             "state": "California",
@@ -19445,7 +19561,7 @@
             ],
             "demands": [
               "Pay",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Tamuning",
             "state": "Guam",
@@ -19639,7 +19755,7 @@
               "Healthcare",
               "Staffing",
               "Retirement benefits",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Chicago",
             "state": "Illinois",
@@ -19723,8 +19839,8 @@
             "actionId": 740,
             "actionType": "strike",
             "startDate": "2021-12-01",
-            "endDate": "2021-12-02",
-            "durationDays": 2,
+            "endDate": "2021-12-01",
+            "durationDays": 1,
             "authorized": true,
             "numWorkers": 50,
             "bargainingUnitSize": null,
@@ -20131,7 +20247,7 @@
               "Healthcare",
               "COVID-19 protocols",
               "Health and safety",
-              "Paid sick leave"
+              "Paid time off (PTO)"
             ],
             "city": "Cupertino",
             "state": "California",
@@ -20636,7 +20752,7 @@
               "Pay",
               "First contract",
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Burbank",
             "state": "California",
@@ -20787,7 +20903,8 @@
             ],
             "demands": [
               "Staffing",
-              "Scheduling; End to anti-union retaliation"
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Seattle",
             "state": "Washington",
@@ -20846,7 +20963,7 @@
             ],
             "demands": [
               "Pay",
-              "End anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Madison",
             "state": "Wisconsin",
@@ -20924,7 +21041,7 @@
             ],
             "demands": [
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Queens",
             "state": "New York",
@@ -20949,7 +21066,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation; Reinstate illegally terminated worker"
+              "Reinstate illegally terminated worker",
+              "End to anti union retaliation"
             ],
             "city": "Lincoln",
             "state": "Nebraska",
@@ -20977,7 +21095,7 @@
               "Health and safety",
               "First contract",
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Berkeley",
             "state": "California",
@@ -21028,7 +21146,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Reinstate terminated union activist; End to anti-union retaliation"
+              "Rehire terminated union activist",
+              "End to anti union retaliation"
             ],
             "city": "Ashburn",
             "state": "Virginia",
@@ -21107,7 +21226,7 @@
               "Pay",
               "First contract",
               "Staffing",
-              "Turn off mobile orders during promotional days without additional staffing; End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Chicago",
             "state": "Illinois",
@@ -21133,7 +21252,7 @@
             ],
             "demands": [
               "Staffing",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Los Angeles",
             "state": "California",
@@ -21159,7 +21278,7 @@
             ],
             "demands": [
               "First contract",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Gardner",
             "state": "Massachusetts",
@@ -21184,7 +21303,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Minneapolis",
             "state": "Minnesota",
@@ -21287,7 +21406,7 @@
             "demands": [
               "First contract",
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Santa Maria",
             "state": "California",
@@ -21312,7 +21431,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation; Reinstate terminated union activist"
+              "End to anti union retaliation",
+              "Rehire terminated union activist"
             ],
             "city": "Jonesboro",
             "state": "Georgia",
@@ -21412,7 +21532,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Reinstate terminated union activist; End to anti-union retaliation"
+              "Rehire terminated union activist",
+              "End to anti union retaliation"
             ],
             "city": "Montclair",
             "state": "New Jersey",
@@ -21440,7 +21561,9 @@
               "Pay",
               "First contract",
               "Staffing",
-              "Reinstate terminated union activists; End to anti-union retaliation; Stop calling police to picket lines"
+              "Stop calling police to picket lines",
+              "Rehire terminated union activist",
+              "End to anti union retaliation"
             ],
             "city": "Pittsburgh",
             "state": "Pennsylvania",
@@ -21542,7 +21665,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to hostile work environment"
+              "Health and safety"
             ],
             "city": "Iowa City",
             "state": "Iowa",
@@ -21567,7 +21690,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Danbury",
             "state": "Connecticut",
@@ -21594,7 +21717,7 @@
             "demands": [
               "First contract",
               "Union recognition",
-              "End to antiunion retaliation"
+              "End to anti union retaliation"
             ],
             "city": "New York",
             "state": "New York",
@@ -21621,7 +21744,9 @@
             "demands": [
               "First contract",
               "Staffing",
-              "Scheduling; End to anti-union retaliation; Allow workers to hang a Pride flag in-store"
+              "scheduling",
+              "End to anti union retaliation",
+              "Allow workers to hang Pride flag in-store"
             ],
             "city": "Marysville",
             "state": "Washington",
@@ -21647,7 +21772,8 @@
             ],
             "demands": [
               "Staffing",
-              "End to antiunion retaliation; Scheduling"
+              "End to anti union retaliation",
+              "scheduling"
             ],
             "city": "Buffalo",
             "state": "New York",
@@ -21700,7 +21826,7 @@
               "Pay",
               "Healthcare",
               "First contract",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Beaverton",
             "state": "Oregon",
@@ -21726,7 +21852,7 @@
             ],
             "demands": [
               "Union recognition",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Salem",
             "state": "Oregon",
@@ -21753,7 +21879,7 @@
             "demands": [
               "Health and safety",
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Clarksville",
             "state": "Indiana",
@@ -21779,7 +21905,7 @@
             ],
             "demands": [
               "First contract",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Eugene",
             "state": "Oregon",
@@ -21804,7 +21930,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Reinstate terminated union activist; End to antiunion retaliation"
+              "Rehire terminated union activist",
+              "End to anti union retaliation"
             ],
             "city": "Farmingville",
             "state": "New York",
@@ -21831,7 +21958,7 @@
             "demands": [
               "First contract",
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Sunnyvale",
             "state": "California",
@@ -21857,7 +21984,7 @@
             ],
             "demands": [
               "First contract",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Philadelphia",
             "state": "Pennsylvania",
@@ -21883,7 +22010,7 @@
             ],
             "demands": [
               "First contract",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Pittsburgh",
             "state": "Pennsylvania",
@@ -21960,7 +22087,7 @@
             ],
             "demands": [
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Alcoa",
             "state": "Tennessee",
@@ -21988,7 +22115,7 @@
               "Pay",
               "First contract",
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "New Braunfels",
             "state": "Texas",
@@ -22039,7 +22166,7 @@
             ],
             "demands": [
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Oak Park",
             "state": "Illinois",
@@ -22090,7 +22217,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "San Antonio",
             "state": "Texas",
@@ -22116,7 +22243,7 @@
             ],
             "demands": [
               "Pay",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Chicago",
             "state": "Illinois",
@@ -22142,7 +22269,7 @@
             ],
             "demands": [
               "Pay",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "New York",
             "state": "New York",
@@ -22169,7 +22296,9 @@
             "demands": [
               "First contract",
               "Staffing",
-              "Reinstate terminated union activist; End to anti-union retaliation; Scheduling"
+              "End to anti union retaliation",
+              "scheduling",
+              "Reinstate terminated union activist"
             ],
             "city": "Ashburn",
             "state": "Virginia",
@@ -22195,7 +22324,8 @@
             ],
             "demands": [
               "Staffing",
-              "Scheduling; End to retaliatory write-ups"
+              "End to retaliatory write-ups",
+              "scheduling"
             ],
             "city": "Lynbrook",
             "state": "New York",
@@ -22222,7 +22352,7 @@
             "demands": [
               "First contract",
               "Staffing",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Portland",
             "state": "Oregon",
@@ -22249,7 +22379,7 @@
             "demands": [
               "Pay",
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Appleton",
             "state": "Wisconsin",
@@ -22300,7 +22430,7 @@
             ],
             "demands": [
               "Job Security",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Portland",
             "state": "Oregon",
@@ -22325,7 +22455,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Reinstate terminated union activist; End to anti-union retaliation"
+              "Rehire terminated union activist",
+              "End to anti union retaliation"
             ],
             "city": "Minneapolis",
             "state": "Minnesota",
@@ -22351,7 +22482,8 @@
             ],
             "demands": [
               "Staffing",
-              "End to anti-union retaliation; End to managerial neglect"
+              "End to managerial neglect",
+              "End to anti union retaliation"
             ],
             "city": "Colorado Springs",
             "state": "Colorado",
@@ -22403,7 +22535,7 @@
             ],
             "demands": [
               "Job Security",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Ithaca",
             "state": "New York",
@@ -22456,7 +22588,7 @@
             ],
             "demands": [
               "Job Security",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Ithaca",
             "state": "New York",
@@ -22482,7 +22614,7 @@
             ],
             "demands": [
               "First contract",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Philadelphia",
             "state": "Pennsylvania",
@@ -22533,7 +22665,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation; Do not interfere with right to wear union insignia"
+              "End to anti union retaliation"
             ],
             "city": "Portland",
             "state": "Oregon",
@@ -22559,7 +22691,7 @@
             ],
             "demands": [
               "First contract",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "New York",
             "state": "New York",
@@ -22584,7 +22716,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Leesburg",
             "state": "Virginia",
@@ -22636,7 +22768,7 @@
             ],
             "demands": [
               "Staffing",
-              "End to anti-union retaliation; Do not unlawfully remove union bulletin board"
+              "End to anti union retaliation"
             ],
             "city": "St. Paul",
             "state": "Minnesota",
@@ -22712,7 +22844,7 @@
             ],
             "demands": [
               "First contract",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "St. Louis",
             "state": "Missouri",
@@ -22739,7 +22871,9 @@
             "demands": [
               "First contract",
               "Staffing",
-              "Reinstate terminated union activist; Scheduling; End to anti-union retaliation"
+              "scheduling",
+              "End to anti union retaliation",
+              "Reinstate terminated union activist"
             ],
             "city": "Chicago",
             "state": "Illinois",
@@ -22816,7 +22950,9 @@
             ],
             "demands": [
               "Pay",
-              "Implement credit card tipping; End to anti-union retaliation; Train more partners and managers in mixology"
+              "Training",
+              "End to anti union retaliation",
+              "Implement credit card tipping"
             ],
             "city": "Seattle",
             "state": "Washington",
@@ -22841,7 +22977,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Reinstate terminated union activist; End to anti-union retaliation"
+              "Rehire terminated union activist",
+              "End to anti union retaliation"
             ],
             "city": "Cheektowaga",
             "state": "New York",
@@ -22920,7 +23057,8 @@
               "Pay",
               "Health and safety",
               "First contract",
-              "Scheduling; End to anti-union retaliation"
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Seattle",
             "state": "Washington",
@@ -22948,7 +23086,8 @@
               "Pay",
               "Health and safety",
               "First contract",
-              "End to anti-union retaliation; Scheduling"
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Westminster",
             "state": "Colorado",
@@ -22974,7 +23113,7 @@
             ],
             "demands": [
               "First contract",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Portland",
             "state": "Oregon",
@@ -23000,7 +23139,7 @@
             ],
             "demands": [
               "First contract",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Eugene",
             "state": "Oregon",
@@ -23076,7 +23215,7 @@
             ],
             "demands": [
               "Job Security",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Brighton",
             "state": "Massachusetts",
@@ -23127,7 +23266,7 @@
               "Educational Services"
             ],
             "demands": [
-              "Celebration of terminated union activist's reinstatement; End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Astoria",
             "state": "New York",
@@ -23154,7 +23293,7 @@
             "demands": [
               "Health and safety",
               "Staffing",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Lynbrook",
             "state": "New York",
@@ -23180,7 +23319,7 @@
             ],
             "demands": [
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Atlanta",
             "state": "Georgia",
@@ -23208,7 +23347,7 @@
               "Arts, Entertainment and Recreation"
             ],
             "demands": [
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Avondale",
             "state": "Arizona",
@@ -23259,7 +23398,7 @@
             ],
             "demands": [
               "Health and safety",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Atlanta",
             "state": "Georgia",
@@ -23338,7 +23477,7 @@
               "Pay",
               "Staffing",
               "Union recognition",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Portland",
             "state": "Oregon",
@@ -23363,7 +23502,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Roanoke",
             "state": "Virginia",
@@ -23413,7 +23552,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation; Rehire terminated union activist"
+              "End to anti union retaliation",
+              "Rehire terminated union activist"
             ],
             "city": "Ithaca",
             "state": "New York",
@@ -23438,7 +23578,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "La Quinta",
             "state": "California",
@@ -23464,7 +23604,7 @@
             ],
             "demands": [
               "First contract",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Wilmington",
             "state": "North Carolina",
@@ -23489,7 +23629,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Reinstate fired union activist; End to anti-union retaliation"
+              "Rehire terminated union activist",
+              "End to anti union retaliation"
             ],
             "city": "Ithaca",
             "state": "New York",
@@ -23514,7 +23655,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation; Celebration of the 1 year anniversary of Starbucks Workers United"
+              "End to anti union retaliation"
             ],
             "city": "Los Angeles",
             "state": "California",
@@ -23539,7 +23680,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Do not withhold credit card tipping from unionized stores; End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Portland",
             "state": "Oregon",
@@ -23564,7 +23705,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation; Do not close union store without bargaining"
+              "Job Security",
+              "End to anti union retaliation"
             ],
             "city": "Seattle",
             "state": "Washington",
@@ -23589,7 +23731,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation; Reinstate terminated union activists"
+              "Rehire terminated union activist",
+              "End to anti union retaliation"
             ],
             "city": "Amherst",
             "state": "New York",
@@ -23640,7 +23783,7 @@
             ],
             "demands": [
               "First contract",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Jacksonville",
             "state": "Florida",
@@ -23741,7 +23884,8 @@
             ],
             "demands": [
               "Union recognition",
-              "End to anti-union retaliation; Scheduling"
+              "End to anti union retaliation",
+              "scheduling"
             ],
             "city": "Santa Fe",
             "state": "New Mexico",
@@ -23792,7 +23936,10 @@
             ],
             "demands": [
               "Staffing",
-              "Scheduling; End to anti-union retaliation; Assist a partner with job relocation; Provide extensive training"
+              "Assist a partner with job relocation",
+              "Provide extensive training",
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Pittsburgh",
             "state": "Pennsylvania",
@@ -23818,7 +23965,10 @@
             ],
             "demands": [
               "Staffing",
-              "End to anti-union retaliation; Do not withhold benefits to unionized stores; Scheduling; Allow the Pride flag to be hung in the store lobby"
+              "Do not withhold benefits to unionized stores",
+              "Allow the Pride flag to be hung in the store lobby",
+              "End to anti union retaliation",
+              "scheduling"
             ],
             "city": "Portland",
             "state": "Oregon",
@@ -23868,7 +24018,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Knoxville",
             "state": "Tennessee",
@@ -23896,7 +24046,8 @@
               "Pay",
               "First contract",
               "Job Security",
-              "Scheduling; End to anti-union retaliation"
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Brooklyn",
             "state": "New York",
@@ -23973,7 +24124,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Reinstate fired union activist; End to anti-union retaliation"
+              "Rehire terminated union activist",
+              "End to anti union retaliation"
             ],
             "city": "Independence",
             "state": "Missouri",
@@ -24000,7 +24152,7 @@
             "demands": [
               "Pay",
               "Health and safety",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Buffalo",
             "state": "New York",
@@ -24026,7 +24178,7 @@
             ],
             "demands": [
               "Job Security",
-              "End to anti-union retaliation; Reopen the Forest & Bard location with the same staff after renovations"
+              "End to anti union retaliation"
             ],
             "city": "Staten Island",
             "state": "New York",
@@ -24051,7 +24203,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation; Stop issuing frivolous write-ups"
+              "End to anti union retaliation"
             ],
             "city": "Buffalo",
             "state": "New York",
@@ -24205,7 +24357,8 @@
             "demands": [
               "First contract",
               "Staffing",
-              "Scheduling; End to anti-union retaliation"
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Ladue",
             "state": "Missouri",
@@ -24231,7 +24384,8 @@
             ],
             "demands": [
               "Health and safety",
-              "Scheduling; Demand a formal apology from store manager; Hostile work environment"
+              "scheduling",
+              "Demand a formal apology from store manager"
             ],
             "city": "Raleigh",
             "state": "North Carolina",
@@ -24257,7 +24411,8 @@
             ],
             "demands": [
               "Health and safety",
-              "Provide first aid training to partners; End to anti-union retaliation"
+              "Training",
+              "End to anti union retaliation"
             ],
             "city": "Buffalo",
             "state": "New York",
@@ -24284,7 +24439,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Seattle",
             "state": "Washington",
@@ -24309,7 +24464,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Seattle",
             "state": "Washington",
@@ -24336,7 +24491,8 @@
             "demands": [
               "Health and safety",
               "Staffing",
-              "End to anti-union retaliation; Do not withhold benefits to unionized stores; Reinstate fired union activists"
+              "End to anti union retaliation",
+              "Rehire terminated union activist"
             ],
             "city": "Tumwater",
             "state": "Washington",
@@ -24362,7 +24518,8 @@
             ],
             "demands": [
               "Staffing",
-              "End to anti-union retaliation; Reinstate fired partners"
+              "Reinstate fired partners",
+              "End to anti union retaliation"
             ],
             "city": "Watertown",
             "state": "Massachusetts",
@@ -24387,7 +24544,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Alcoa",
             "state": "Tennessee",
@@ -24412,7 +24569,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation; Reinstate fired union activists"
+              "Rehire terminated union activist",
+              "End to anti union retaliation"
             ],
             "city": "Buffalo",
             "state": "New York",
@@ -24437,7 +24595,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Scheduling; End to anti-union retaliation"
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Biddeford",
             "state": "Maine",
@@ -24491,7 +24650,7 @@
             ],
             "demands": [
               "Pay",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Tallahassee",
             "state": "Florida",
@@ -24543,7 +24702,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Barstow",
             "state": "California",
@@ -24570,7 +24729,7 @@
             "demands": [
               "Staffing",
               "Job Security",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Independence",
             "state": "Missouri",
@@ -24595,7 +24754,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Reinstate fired union activists; End to anti-union retaliation"
+              "End to anti union retaliation",
+              "Rehire terminated union activist"
             ],
             "city": "Latham",
             "state": "New York",
@@ -24621,7 +24781,8 @@
             ],
             "demands": [
               "First contract",
-              "Reinstate fired union activist; End to anti-union retaliation; Repeal unjust disciplinary actions against partners; Do not deny unionized workers their Weingarten rights"
+              "Rehire terminated union activist",
+              "End to anti union retaliation"
             ],
             "city": "Ann Arbor",
             "state": "Michigan",
@@ -24648,7 +24809,9 @@
             "demands": [
               "Staffing",
               "Job Security",
-              "End to anti-union retaliation; Scheduling; Reinstate fired union activists"
+              "End to anti union retaliation",
+              "scheduling",
+              "Reinstate fired union activists"
             ],
             "city": "Westford",
             "state": "Massachusetts",
@@ -24675,7 +24838,8 @@
             "demands": [
               "Pay",
               "First contract",
-              "Scheduling; Reinstate fired union activists"
+              "scheduling",
+              "Reinstate fired union activists"
             ],
             "city": "Minneapolis",
             "state": "Minnesota",
@@ -24700,7 +24864,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Chicago",
             "state": "Illinois",
@@ -24751,7 +24915,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Reinstate fired union activist; End to anti-union retaliation"
+              "Rehire terminated union activist",
+              "End to anti union retaliation"
             ],
             "city": "Buffalo",
             "state": "New York",
@@ -24777,7 +24942,8 @@
             ],
             "demands": [
               "Pay",
-              "Scheduling; Reinstate fired union activists"
+              "scheduling",
+              "Reinstate fired union activists"
             ],
             "city": "Everett",
             "state": "Washington",
@@ -24802,7 +24968,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Reinstate fired union activist; End to anti-union retaliation"
+              "Rehire terminated union activist",
+              "End to anti union retaliation"
             ],
             "city": "Ithaca",
             "state": "New York",
@@ -24827,7 +24994,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation; Against the decision to shut down the Country Club Plaza Starbucks location"
+              "Job Security",
+              "End to anti union retaliation"
             ],
             "city": "Kansas City",
             "state": "Missouri",
@@ -24853,7 +25021,7 @@
             ],
             "demands": [
               "Job Security",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Seattle",
             "state": "Washington",
@@ -24880,7 +25048,8 @@
             "demands": [
               "Pay",
               "Staffing",
-              "Scheduling; End to anti-union retaliation"
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Cheektowaga",
             "state": "New York",
@@ -24905,7 +25074,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Orchard Park",
             "state": "New York",
@@ -24932,7 +25101,7 @@
             "demands": [
               "First contract",
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Olney",
             "state": "Maryland",
@@ -24958,7 +25127,7 @@
             ],
             "demands": [
               "Pay",
-              "Do not withhold benefits from unionized stores; End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Memphis",
             "state": "Tennessee",
@@ -24983,7 +25152,9 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Scheduling; Do not withhold benefits to unionized stores; End to anti-union retaliation"
+              "scheduling",
+              "End to anti union retaliation",
+              "Do not withhold benefits to unionized stores"
             ],
             "city": "Lakewood",
             "state": "California",
@@ -25033,7 +25204,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation; Do not withhold benefits to unionized stores; Stop interfering with workers' right to post union literature; Engage in good-faith bargaining"
+              "End to anti union retaliation"
             ],
             "city": "Santa Cruz",
             "state": "California",
@@ -25059,7 +25230,9 @@
             ],
             "demands": [
               "Pay",
-              "Scheduling; End to anti-union retaliation; Do not withhold benefits to unionized stores"
+              "Do not withhold benefits to unionized stores",
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Bellingham",
             "state": "Washington",
@@ -25086,7 +25259,8 @@
             "demands": [
               "Pay",
               "Staffing",
-              "End to anti-union retaliation; Do not withhold benefits to unionized stores; Do not change store hours without bargaining"
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Ann Arbor",
             "state": "Michigan",
@@ -25111,7 +25285,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation; Do not withhold benefits to unionized stores; End to unjust disciplining"
+              "End to anti union retaliation"
             ],
             "city": "Eugene",
             "state": "Oregon",
@@ -25163,7 +25337,8 @@
             "demands": [
               "Pay",
               "Staffing",
-              "Scheduling; Do not withhold benefits to unionized stores"
+              "scheduling",
+              "Do not withhold benefits to unionized stores"
             ],
             "city": "Pennington",
             "state": "New Jersey",
@@ -25188,7 +25363,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Reinstate terminated union activist; End to anti-union retaliation"
+              "End to anti union retaliation",
+              "Rehire terminated union activist"
             ],
             "city": "Tonawanda",
             "state": "New York",
@@ -25213,7 +25389,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation; Reinstate fired union activists; Do not withhold benefits to unionized stores"
+              "Reinstate terminated union activist",
+              "End to anti union retaliation"
             ],
             "city": "Overland Park",
             "state": "Kansas",
@@ -25238,7 +25415,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation; Engage in good-faith bargaining"
+              "End to anti union retaliation"
             ],
             "city": "Boston",
             "state": "Massachusetts",
@@ -25265,7 +25442,9 @@
             "demands": [
               "Pay",
               "Staffing",
-              "Scheduling; End to anti-union retaliation; Do not withhold benefits to unionized stores"
+              "Do not withhold benefits to unionized stores",
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Jacksonville",
             "state": "Florida",
@@ -25290,7 +25469,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Reinstate fired union activists; End to anti-union retaliation"
+              "Reinstate terminated union activist",
+              "End to anti union retaliation"
             ],
             "city": "Pittsburgh",
             "state": "Pennsylvania",
@@ -25315,7 +25495,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation; Do not withhold benefits to unionized stores"
+              "End to anti union retaliation"
             ],
             "city": "Brighton",
             "state": "Massachusetts",
@@ -25367,7 +25547,7 @@
             "demands": [
               "First contract",
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Minneapolis",
             "state": "Minnesota",
@@ -25393,7 +25573,10 @@
             ],
             "demands": [
               "Staffing",
-              "Scheduling; Promote partners; Transfer more workers to the store; Increase store operation hours"
+              "Promote partners",
+              "Transfer more workers to the store",
+              "Increase store operation hours",
+              "scheduling"
             ],
             "city": "Ithaca",
             "state": "New York",
@@ -25419,7 +25602,8 @@
             ],
             "demands": [
               "Staffing",
-              "Scheduling; End to anti-union retaliation"
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Cheektowaga",
             "state": "New York",
@@ -25470,7 +25654,9 @@
             ],
             "demands": [
               "Staffing",
-              "Scheduling; Hostile work environment; End to anti-union retaliation"
+              "scheduling",
+              "End to anti union retaliation",
+              "Health and safety"
             ],
             "city": "East Amherst",
             "state": "New York",
@@ -25496,7 +25682,9 @@
             ],
             "demands": [
               "Staffing",
-              "Scheduling; Hostile work environment; End to anti-union retaliation"
+              "End to anti union retaliation",
+              "scheduling",
+              "Health and safety"
             ],
             "city": "Philadelphia",
             "state": "Pennsylvania",
@@ -25525,7 +25713,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Reinstate fired union activist; End to anti-union retaliation"
+              "Reinstate fired union activist",
+              "End to anti union retaliation"
             ],
             "city": "Astoria",
             "state": "New York",
@@ -25552,7 +25741,8 @@
             "demands": [
               "Pay",
               "Staffing",
-              "Scheduling; End to anti-union retaliation"
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Anderson",
             "state": "South Carolina",
@@ -25578,7 +25768,8 @@
             ],
             "demands": [
               "Staffing",
-              "Scheduling; End to anti-union retaliation"
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Clinton Township",
             "state": "Michigan",
@@ -25605,7 +25796,9 @@
             "demands": [
               "Staffing",
               "Job Security",
-              "Reinstate a fired union activist; End to anti-union retaliation; Expanded training"
+              "Training",
+              "End to anti union retaliation",
+              "Rehire terminated union activist"
             ],
             "city": "Augusta",
             "state": "Georgia",
@@ -25631,7 +25824,8 @@
             ],
             "demands": [
               "Staffing",
-              "Scheduling; End to anti-union retaliation"
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Brookline",
             "state": "Massachusetts",
@@ -25659,7 +25853,7 @@
               "Pay",
               "Health and safety",
               "First contract",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Seattle",
             "state": "Washington",
@@ -25686,7 +25880,8 @@
             "demands": [
               "Pay",
               "Staffing",
-              "Scheduling; End to anti-union retaliation"
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Atlanta",
             "state": "Georgia",
@@ -25737,7 +25932,8 @@
             ],
             "demands": [
               "Staffing",
-              "Scheduling; End to anti-union retaliation"
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Cottonwood Heights",
             "state": "Utah",
@@ -25762,7 +25958,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Do not force the closure of unionized stores; End to anti-union retaliation"
+              "Job Security",
+              "End to anti union retaliation"
             ],
             "city": "Seattle",
             "state": "Washington",
@@ -25839,7 +26036,8 @@
             "demands": [
               "Health and safety",
               "Staffing",
-              "Scheduling; End to anti-union retaliation"
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Buffalo",
             "state": "New York",
@@ -25866,7 +26064,8 @@
             "demands": [
               "Health and safety",
               "Staffing",
-              "Scheduling; End to anti-union retaliation"
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Buffalo",
             "state": "New York",
@@ -25892,7 +26091,7 @@
             ],
             "demands": [
               "First contract",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Tonawanda",
             "state": "New York",
@@ -25919,7 +26118,7 @@
             "demands": [
               "Pay",
               "Union recognition",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Biddeford",
             "state": "Maine",
@@ -25972,7 +26171,8 @@
             "demands": [
               "First contract",
               "Staffing",
-              "Scheduling; End to anti-union retaliation"
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Cleveland",
             "state": "Ohio",
@@ -25997,7 +26197,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to union busting; reinstate fired union activists"
+              "Rehire terminated union activist",
+              "End to anti union retaliation"
             ],
             "city": "Kansas City",
             "state": "Missouri",
@@ -26023,7 +26224,7 @@
             ],
             "demands": [
               "Union recognition",
-              "Reinstate fired union activist"
+              "Reinstate terminated union activist"
             ],
             "city": "Dallas",
             "state": "Texas",
@@ -26049,7 +26250,8 @@
             ],
             "demands": [
               "Job Security",
-              "End to union busting; Reinstate displaced workers from the Heritage Market program"
+              "Rehire displaced workers",
+              "End to anti union retaliation"
             ],
             "city": "Seattle",
             "state": "Washington",
@@ -26203,7 +26405,7 @@
             ],
             "demands": [
               "Health and safety",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Anderson",
             "state": "South Carolina",
@@ -26228,7 +26430,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to union busting; Stop illegally firing employees"
+              "End to anti union retaliation"
             ],
             "city": "Denver",
             "state": "Colorado",
@@ -26281,7 +26483,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Union recognition; Sign the Fair Elections Principles"
+              "Union recognition"
             ],
             "city": "New York",
             "state": "New York",
@@ -26381,7 +26583,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Rehire terminated union activists"
+              "Rehire terminated union activist"
             ],
             "city": "Tumwater",
             "state": "Washington",
@@ -26433,7 +26635,7 @@
             ],
             "demands": [
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Seattle",
             "state": "Washington",
@@ -26459,7 +26661,7 @@
             ],
             "demands": [
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Leesburg",
             "state": "Virginia",
@@ -26587,7 +26789,8 @@
             ],
             "demands": [
               "Union recognition",
-              "Reinstate terminated activists; End to union busting"
+              "End to anti union retaliation",
+              "Reinstate terminated union activist"
             ],
             "city": "Olympia",
             "state": "Washington",
@@ -26819,7 +27022,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Union recognition; Protect legal right to wear union apparel"
+              "Union recognition",
+              "Protect legal right to wear union apparel"
             ],
             "city": "Seattle",
             "state": "Washington",
@@ -26872,7 +27076,8 @@
             ],
             "demands": [
               "Staffing",
-              "Union recognition; More hours"
+              "scheduling",
+              "Union recognition"
             ],
             "city": "Seattle",
             "state": "Washington",
@@ -26898,7 +27103,8 @@
             ],
             "demands": [
               "Health and safety",
-              "Union recognition; More hours"
+              "Union recognition",
+              "scheduling"
             ],
             "city": "Seattle",
             "state": "Washington",
@@ -26951,7 +27157,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Union recognition; Rehire terminated union activists"
+              "Union recognition",
+              "Reinstate terminated union activist"
             ],
             "city": "Overland Park",
             "state": "Kansas",
@@ -27074,7 +27281,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "Union recognition; Rehire terminated union activists"
+              "Union recognition",
+              "Reinstate terminated union activist"
             ],
             "city": "Memphis",
             "state": "Tennessee",
@@ -27155,7 +27363,7 @@
               "Pay",
               "COVID-19 protocols",
               "Staffing",
-              "union recognition"
+              "Union recognition"
             ],
             "city": "Eugene",
             "state": "Oregon",
@@ -27219,7 +27427,8 @@
             "demands": [
               "Pay",
               "Staffing",
-              "Union recognition; Rehire terminated activist"
+              "Union recognition",
+              "Reinstate terminated workers"
             ],
             "city": "Pittsburgh",
             "state": "Pennsylvania",
@@ -27257,7 +27466,7 @@
               "Pay",
               "Staffing",
               "Retirement benefits",
-              "End to Anti-Union Retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Denver",
             "state": "Colorado",
@@ -27529,7 +27738,9 @@
               "Pay",
               "Healthcare",
               "Retirement benefits",
-              "Scheduling; Fair Promotions; End to Tiers"
+              "Fair promotion",
+              "End to tiers",
+              "scheduling"
             ],
             "city": "Jackson",
             "state": "Michigan",
@@ -27752,7 +27963,7 @@
               "Retail Trade"
             ],
             "demands": [
-              "Work environment"
+              "Health and safety"
             ],
             "city": "Dayton",
             "state": "Ohio",
@@ -27800,8 +28011,8 @@
             "actionId": 887,
             "actionType": "strike",
             "startDate": "2022-03-13",
-            "endDate": "2022-03-18",
-            "durationDays": 6,
+            "endDate": "2022-03-17",
+            "durationDays": 5,
             "authorized": true,
             "numWorkers": 220,
             "bargainingUnitSize": null,
@@ -27887,7 +28098,8 @@
             ],
             "demands": [
               "First contract",
-              "End to anti-union retaliation; Stop interfering with dancers' ability to earn cash tips"
+              "Stop interfering with dancers' ability to earn cash tips",
+              "End to anti union retaliation"
             ],
             "city": "North Hollywood",
             "state": "California",
@@ -28505,7 +28717,7 @@
             ],
             "demands": [
               "Union recognition",
-              "Against union busting"
+              "End to anti union retaliation"
             ],
             "city": "Indianapolis",
             "state": "Indiana",
@@ -28704,8 +28916,8 @@
               "Pay",
               "Staffing",
               "Job Security",
-              "Fix scheduling issues",
-              "improve working conditions and benefits"
+              "improve working conditions and benefits",
+              "scheduling"
             ],
             "city": "Chicago",
             "state": "Illinois",
@@ -29003,7 +29215,7 @@
             "demands": [
               "Pay",
               "Healthcare",
-              "Paid parental leave"
+              "Paid time off (PTO)"
             ],
             "city": "Philadelphia",
             "state": "Pennsylvania",
@@ -29224,6 +29436,34 @@
     "hilton": {
       "labor": {
         "laborActions": [
+          {
+            "actionId": 5024,
+            "actionType": "protest",
+            "startDate": "2026-07-17",
+            "endDate": "2026-07-17",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "UNITE HERE"
+            ],
+            "industry": [
+              "Accommodation and Food Services"
+            ],
+            "demands": [
+              "Union recognition",
+              "Pay",
+              "Staffing",
+              "Healthcare"
+            ],
+            "city": "Berkeley",
+            "state": "California",
+            "sourceUrl": "http://archive.today/2026.07.27-151908/https://www.berkeleyside.org/2026/07/21/graduate-by-hilton-berkeley-unionizing",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-5024",
+            "notes": ""
+          },
           {
             "actionId": 4296,
             "actionType": "strike",
@@ -29706,7 +29946,7 @@
             "notes": ""
           }
         ],
-        "actionCount": 18,
+        "actionCount": 19,
         "totalWorkersInvolved": 14480,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
@@ -29815,7 +30055,7 @@
             "demands": [
               "Pay",
               "Healthcare",
-              "Paid leave"
+              "Paid time off (PTO)"
             ],
             "city": "Jamaica",
             "state": "New York",
@@ -29842,7 +30082,7 @@
               "Transportation and Warehousing"
             ],
             "demands": [
-              "Anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Atlanta",
             "state": "Georgia",
@@ -29897,7 +30137,7 @@
               "Pay",
               "Staffing",
               "Retirement benefits",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Los Angeles",
             "state": "California",
@@ -30097,7 +30337,7 @@
             "demands": [
               "Pay",
               "Healthcare",
-              "Paid sick leave"
+              "Paid time off (PTO)"
             ],
             "city": "Englewood",
             "state": "Colorado",
@@ -30374,7 +30614,8 @@
               "Retail Trade"
             ],
             "demands": [
-              "End anti-union retaliation; Reinstate terminated worker"
+              "Reinstate terminated worker",
+              "End to anti union retaliation"
             ],
             "city": "Hadley",
             "state": "Massachusetts",
@@ -30449,7 +30690,8 @@
               "Retail Trade"
             ],
             "demands": [
-              "Scheduling; End to anti-union retaliation"
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Minneapolis",
             "state": "Minnesota",
@@ -30605,7 +30847,7 @@
               "Pay",
               "Healthcare",
               "Retirement benefits",
-              "Paid sick leave"
+              "Paid time off (PTO)"
             ],
             "city": "Orlando",
             "state": "Florida",
@@ -30641,7 +30883,7 @@
             ],
             "demands": [
               "Job Security",
-              "End anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Buffalo",
             "state": "New York",
@@ -30667,8 +30909,7 @@
             ],
             "demands": [
               "Health and safety",
-              "Staffing",
-              "Improve nurse recruitment and retention"
+              "Staffing"
             ],
             "city": "Buffalo",
             "state": "New York",
@@ -30742,7 +30983,8 @@
             ],
             "demands": [
               "Pay",
-              "Bereavement leave; Scheduling"
+              "Bereavement leave",
+              "scheduling"
             ],
             "city": "Knoxville",
             "state": "Iowa",
@@ -30829,8 +31071,7 @@
             "demands": [
               "Pay",
               "Racial justice",
-              "$15 minimum wage",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Columbia",
             "state": "South Carolina",
@@ -30969,7 +31210,7 @@
             ],
             "demands": [
               "Pay",
-              "Paid time off"
+              "Paid time off (PTO)"
             ],
             "city": "Joliet",
             "state": "Illinois",
@@ -31195,7 +31436,8 @@
             ],
             "demands": [
               "Health and safety",
-              "Reinstate terminated union activist; End to anti-union retaliation"
+              "Rehire terminated union activist",
+              "End to anti union retaliation"
             ],
             "city": "Tempe",
             "state": "Arizona",
@@ -31332,7 +31574,7 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Alhambra",
             "state": "California",
@@ -31434,9 +31676,9 @@
             ],
             "demands": [
               "Health and safety",
-              "Scheduling; Repair to air conditioning; Training to prevent",
-              "identify",
-              "and respond to heat-related illnesses"
+              "Training to prevent, identify, and respond to heat-related illnesses",
+              "Repair to air conditioning",
+              "scheduling"
             ],
             "city": "San Jose",
             "state": "California",
@@ -31593,8 +31835,7 @@
               "Pay",
               "Health and safety",
               "Staffing",
-              "Union recognition",
-              "Hostile work environment"
+              "Union recognition"
             ],
             "city": "Kansas City",
             "state": "Missouri",
@@ -31637,6 +31878,31 @@
     "google-alphabet": {
       "labor": {
         "laborActions": [
+          {
+            "actionId": 5011,
+            "actionType": "protest",
+            "startDate": "2026-07-16",
+            "endDate": "2026-07-16",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 100,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "Alphabet Workers Union (AWU)"
+            ],
+            "industry": [
+              "Professional, Scientific and Technical Services"
+            ],
+            "demands": [
+              "Job Security"
+            ],
+            "city": "Mountain View",
+            "state": "California",
+            "sourceUrl": "http://archive.today/2026.07.17-005856/https://www.businessinsider.com/google-workers-rally-for-job-security-at-mountain-view-hq-2026-7",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-5011",
+            "notes": ""
+          },
           {
             "actionId": 3145,
             "actionType": "protest",
@@ -31762,8 +32028,8 @@
             "notes": "We have reported the main location of this protest. There were also demonstrations in 3 other cities: New York, NY, Seattle, WA and Durham, NC."
           }
         ],
-        "actionCount": 5,
-        "totalWorkersInvolved": 150,
+        "actionCount": 6,
+        "totalWorkersInvolved": 250,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
       }
@@ -31868,7 +32134,8 @@
               "Pay",
               "Job Security",
               "Retirement benefits",
-              "Scheduling; Eliminate pay tiers"
+              "Eliminate pay tiers",
+              "scheduling"
             ],
             "city": "Wentzville",
             "state": "Missouri",
@@ -31895,7 +32162,7 @@
             "demands": [
               "Pay",
               "Job Security",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Kokomo",
             "state": "Indiana",
@@ -32162,7 +32429,7 @@
               "Pay",
               "Healthcare",
               "Retirement benefits",
-              "no cuts to vacation"
+              "Paid time off (PTO)"
             ],
             "city": "Lebanon",
             "state": "Oregon",
@@ -32219,31 +32486,6 @@
       "labor": {
         "laborActions": [
           {
-            "actionId": 4880,
-            "actionType": "protest",
-            "startDate": "2026-06-03",
-            "endDate": "2026-06-03",
-            "durationDays": 1,
-            "authorized": null,
-            "numWorkers": 0,
-            "bargainingUnitSize": 0,
-            "numUnions": 1,
-            "unions": [
-              "The United Brotherhood of Carpenters and Joiners of America (UBC)"
-            ],
-            "industry": [
-              "Construction"
-            ],
-            "demands": [
-              "Against outsourcing work to out of state firms"
-            ],
-            "city": "Danville",
-            "state": "Illinois",
-            "sourceUrl": "https://web.archive.org/web/20260604145527/https://www.news-gazette.com/business/restaurants/chick-fil-a-breaks-ground-in-danville-amid-union-protest-over-lack-of-local-labor/article_c7d03a9f-4955-409a-85c3-c64af9b835d8.html",
-            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4880",
-            "notes": ""
-          },
-          {
             "actionId": 1449,
             "actionType": "strike",
             "startDate": "2022-09-27",
@@ -32270,7 +32512,7 @@
             "notes": "To further support our documentation of this action as a strike, we relied on private, direct communication with the labor organization as a source."
           }
         ],
-        "actionCount": 2,
+        "actionCount": 1,
         "totalWorkersInvolved": 3,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
@@ -32470,7 +32712,7 @@
             "demands": [
               "Pay",
               "Healthcare",
-              "End to mandatory overtime; Scheduling"
+              "scheduling"
             ],
             "city": "Amherst",
             "state": "Ohio",
@@ -32659,7 +32901,7 @@
             ],
             "demands": [
               "Union recognition",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Philadelphia",
             "state": "Pennsylvania",
@@ -32696,7 +32938,7 @@
             "demands": [
               "Pay",
               "Retirement benefits",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Allentown",
             "state": "Pennsylvania",
@@ -32924,7 +33166,7 @@
               "Staffing",
               "Elon Musk",
               "the new CEO",
-              "demanded that staffers sign up for “long hours at high intensity” or resign"
+              "Pay"
             ],
             "city": "San Francisco",
             "state": "California",
@@ -32983,8 +33225,8 @@
             "actionId": 4726,
             "actionType": "strike",
             "startDate": "2026-04-03",
-            "endDate": null,
-            "durationDays": null,
+            "endDate": "2026-04-05",
+            "durationDays": 3,
             "authorized": true,
             "numWorkers": 75,
             "bargainingUnitSize": 0,
@@ -32993,7 +33235,7 @@
               "Communication Workers of America (CWA)"
             ],
             "industry": [
-              "Arts, Entertainment and Recreation"
+              "Information"
             ],
             "demands": [
               "Job Security",
@@ -33046,7 +33288,7 @@
               "United Auto Workers (UAW)"
             ],
             "industry": [
-              "Arts, Entertainment and Recreation"
+              "Information"
             ],
             "demands": [
               "First contract",
@@ -33396,7 +33638,7 @@
             "demands": [
               "Health and safety",
               "Union recognition",
-              "Rehire terminated union activist"
+              "Reinstate terminated union activist"
             ],
             "city": "San Diego",
             "state": "California",
@@ -33529,7 +33771,8 @@
             ],
             "demands": [
               "First contract",
-              "Scheduling; End to Anti-Union Retaliation"
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Chicago",
             "state": "Illinois",
@@ -33582,7 +33825,7 @@
               "Pay",
               "First contract",
               "Staffing",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "New York",
             "state": "New York",
@@ -33608,7 +33851,7 @@
             ],
             "demands": [
               "First contract",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Beachwood",
             "state": "Ohio",
@@ -33634,7 +33877,7 @@
             ],
             "demands": [
               "First contract",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Chicago",
             "state": "Illinois",
@@ -33660,7 +33903,7 @@
             ],
             "demands": [
               "Pay",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Maple Grove",
             "state": "Minnesota",
@@ -33686,7 +33929,7 @@
             ],
             "demands": [
               "Pay",
-              "End to anti-union retaliation; Do not withhold merit pay increases to unionized stores"
+              "End to anti union retaliation"
             ],
             "city": "New York",
             "state": "New York",
@@ -33813,7 +34056,7 @@
             ],
             "demands": [
               "Union recognition",
-              "End to antiunion retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Durham",
             "state": "North Carolina",
@@ -33926,7 +34169,8 @@
               "Accommodation and Food Services"
             ],
             "demands": [
-              "End to anti-union retaliation; Scheduling"
+              "End to anti union retaliation",
+              "scheduling"
             ],
             "city": "Oakland",
             "state": "California",
@@ -34129,7 +34373,8 @@
             ],
             "demands": [
               "Staffing",
-              "Scheduling; Training"
+              "scheduling",
+              "Training"
             ],
             "city": "Hannibal",
             "state": "Missouri",
@@ -34514,6 +34759,34 @@
       "labor": {
         "laborActions": [
           {
+            "actionId": 4999,
+            "actionType": "strike",
+            "startDate": "2026-07-08",
+            "endDate": "2026-07-10",
+            "durationDays": 3,
+            "authorized": true,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "UNITE HERE"
+            ],
+            "industry": [
+              "Accommodation and Food Services"
+            ],
+            "demands": [
+              "Pay",
+              "Retirement benefits",
+              "Staffing",
+              "First contract"
+            ],
+            "city": "Phoenix",
+            "state": "Arizona",
+            "sourceUrl": "https://web.archive.org/web/20260712182703/https://viewfromthewing.com/american-airlines-lounge-food-workers-strike-at-phoenix-airport-as-airline-touts-better-club-dining/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4999",
+            "notes": ""
+          },
+          {
             "actionId": 4431,
             "actionType": "strike",
             "startDate": "2025-10-07",
@@ -34699,7 +34972,7 @@
             "notes": ""
           }
         ],
-        "actionCount": 7,
+        "actionCount": 8,
         "totalWorkersInvolved": 1650,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
@@ -34850,7 +35123,7 @@
             ],
             "demands": [
               "Pay",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Omaha",
             "state": "Nebraska",
@@ -35222,7 +35495,7 @@
             ],
             "demands": [
               "Pay",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Durham",
             "state": "North Carolina",
@@ -35276,7 +35549,8 @@
             "demands": [
               "Pay",
               "Health and safety",
-              "Scheduling; End to the mandatory meal credit policy"
+              "scheduling",
+              "End to the mandatory meal credit policy"
             ],
             "city": "Conyers",
             "state": "Georgia",
@@ -35329,7 +35603,7 @@
             "demands": [
               "Pay",
               "Health and safety",
-              "$25 minimum wage; End mandatory meal deduction"
+              "End mandatory meal deduction"
             ],
             "city": "Durham",
             "state": "North Carolina",
@@ -35358,7 +35632,7 @@
               "Health and safety",
               "Staffing",
               "End to mandatory “meal deduction” policy",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Columbia",
             "state": "South Carolina",
@@ -35387,7 +35661,7 @@
               "Health and safety",
               "Staffing",
               "End to mandatory \"meal deduction\" policy",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Columbia",
             "state": "South Carolina",
@@ -35573,7 +35847,8 @@
             ],
             "demands": [
               "Pay",
-              "Scheduling; End To Anti-Union Retaliation"
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Los Angeles",
             "state": "California",
@@ -35600,7 +35875,8 @@
             "demands": [
               "Pay",
               "Health and safety",
-              "Paid sick leave; End to harassment in the workplace"
+              "End to harassment in the workplace",
+              "Paid time off (PTO)"
             ],
             "city": "Hazard",
             "state": "California",
@@ -35697,9 +35973,9 @@
             ],
             "demands": [
               "Health and safety",
-              "Scheduling; Repair to air conditioning; Training to prevent",
-              "identify",
-              "and respond to heat-related illnesses"
+              "Training to prevent, identify, and respond to heat-related illnesses",
+              "Repair to air conditioning",
+              "scheduling"
             ],
             "city": "San Jose",
             "state": "California",
@@ -35910,7 +36186,8 @@
               "Healthcare",
               "Health and safety",
               "Racial justice",
-              "Scheduling; End to unjust discipline"
+              "scheduling",
+              "End to unjust discipline"
             ],
             "city": "Columbia",
             "state": "South Carolina",
@@ -36036,7 +36313,8 @@
               "Pay",
               "Job Security",
               "Retirement benefits",
-              "Scheduling; Eliminate pay tiers"
+              "Eliminate pay tiers",
+              "scheduling"
             ],
             "city": "Wentzville",
             "state": "Missouri",
@@ -36063,7 +36341,7 @@
             "demands": [
               "Pay",
               "Job Security",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Kokomo",
             "state": "Indiana",
@@ -36261,7 +36539,8 @@
               "Pay",
               "Job Security",
               "Retirement benefits",
-              "Scheduling; Eliminate pay tiers"
+              "Eliminate pay tiers",
+              "scheduling"
             ],
             "city": "Wentzville",
             "state": "Missouri",
@@ -36288,7 +36567,7 @@
             "demands": [
               "Pay",
               "Job Security",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Kokomo",
             "state": "Indiana",
@@ -36354,7 +36633,9 @@
               "Pay",
               "Healthcare",
               "Health and safety",
-              "Scheduling; End to favoritism; Allow workers to exercise their right to organize"
+              "End to favoritism",
+              "scheduling",
+              "Union recognition"
             ],
             "city": "Atlanta",
             "state": "Georgia",
@@ -36418,7 +36699,7 @@
               "Pay",
               "Healthcare",
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Boston",
             "state": "Massachusetts",
@@ -36453,7 +36734,7 @@
             "demands": [
               "Health and safety",
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Columbia",
             "state": "Missouri",
@@ -36478,7 +36759,7 @@
             "demands": [
               "Health and safety",
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Overland Park",
             "state": "Kansas",
@@ -36648,7 +36929,7 @@
               "Health and safety",
               "Job Security",
               "Retirement benefits",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Macungie",
             "state": "Pennsylvania",
@@ -37402,7 +37683,7 @@
             "demands": [
               "Pay",
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Deerfield",
             "state": "Illinois",
@@ -37600,7 +37881,7 @@
             ],
             "demands": [
               "Health and safety",
-              "Paid sick leave"
+              "Paid time off (PTO)"
             ],
             "city": "Hammond",
             "state": "Indiana",
@@ -37843,7 +38124,7 @@
             "demands": [
               "Pay",
               "Retirement benefits",
-              "Expand parental leave; Expand sick leave"
+              "Paid time off (PTO)"
             ],
             "city": "New York",
             "state": "New York",
@@ -37978,7 +38259,7 @@
             ],
             "demands": [
               "Pay",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Los Angeles",
             "state": "California",
@@ -38005,7 +38286,7 @@
             "demands": [
               "Pay",
               "Job Security",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Los Angeles",
             "state": "California",
@@ -38449,7 +38730,7 @@
             ],
             "demands": [
               "Pay",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Durham",
             "state": "North Carolina",
@@ -38500,7 +38781,7 @@
             ],
             "demands": [
               "Health and safety",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Los Angeles",
             "state": "California",
@@ -38797,7 +39078,7 @@
             "demands": [
               "Pay",
               "Healthcare",
-              "Paid leave"
+              "Paid time off (PTO)"
             ],
             "city": "Jamaica",
             "state": "New York",
@@ -38834,7 +39115,9 @@
             "demands": [
               "Pay",
               "First contract",
-              "End to Anti-Union Retaliation; Reinstate Terminated Union Activist; Hire Within the Bargaining Unit"
+              "Hire within the bargaining unit",
+              "End to anti union retaliation",
+              "Rehire terminated union activist"
             ],
             "city": "New York",
             "state": "New York",
@@ -38904,7 +39187,7 @@
             "demands": [
               "Pay",
               "Union recognition",
-              "Better time off"
+              "Paid time off (PTO)"
             ],
             "city": "Iowa City",
             "state": "Iowa",
@@ -38969,7 +39252,8 @@
               "Pay",
               "Staffing",
               "Job Security",
-              "Scheduling; End to Anti-Union Retaliation"
+              "scheduling",
+              "End to anti union retaliation"
             ],
             "city": "Southampton",
             "state": "New York",
@@ -39648,7 +39932,7 @@
             ],
             "demands": [
               "Pay",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "South Charleston",
             "state": "West Virginia",
@@ -39917,7 +40201,9 @@
             "demands": [
               "Pay",
               "Retirement benefits",
-              "Scheduling; Add disability benefits; Add paid maternity and paternity leave"
+              "scheduling",
+              "Add disability benefits",
+              "Add paid maternity and paternity leave"
             ],
             "city": "Fletcher",
             "state": "North Carolina",
@@ -39944,7 +40230,7 @@
             "demands": [
               "Pay",
               "Staffing",
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Eglin AFB",
             "state": "Florida",
@@ -40228,7 +40514,7 @@
               "Construction"
             ],
             "demands": [
-              "Against hiring nonunion workers"
+              "Hire local union labor"
             ],
             "city": "New York",
             "state": "New York",
@@ -40246,6 +40532,32 @@
     "premier": {
       "labor": {
         "laborActions": [
+          {
+            "actionId": 5002,
+            "actionType": "protest",
+            "startDate": "2026-07-09",
+            "endDate": "2026-07-09",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "United Auto Workers (UAW)"
+            ],
+            "industry": [
+              "Health Care and Social Assistance"
+            ],
+            "demands": [
+              "First contract",
+              "Health and safety"
+            ],
+            "city": "Dayton",
+            "state": "Ohio",
+            "sourceUrl": "http://archive.today/2026.07.13-162327/https://www.wdtn.com/news/local-news/careflight-workers-rally-for-union-contract-amid-ongoing-negotations/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-5002",
+            "notes": ""
+          },
           {
             "actionId": 3656,
             "actionType": "strike",
@@ -40272,7 +40584,7 @@
             "notes": ""
           }
         ],
-        "actionCount": 1,
+        "actionCount": 2,
         "totalWorkersInvolved": 0,
         "sourceUrl": "https://striketracker.ilr.cornell.edu",
         "_license": "CC-BY — Cornell ILR"
@@ -40299,7 +40611,7 @@
             ],
             "demands": [
               "Union recognition",
-              "End to Anti-Union Retaliation"
+              "End to anti union retaliation"
             ],
             "city": "New York",
             "state": "New York",
@@ -40553,7 +40865,7 @@
               "Manufacturing"
             ],
             "demands": [
-              "Scheduling"
+              "scheduling"
             ],
             "city": "Ottumwa",
             "state": "Iowa",
@@ -40939,8 +41251,8 @@
             ],
             "demands": [
               "Healthcare",
-              "Paid Time Off (PTO)",
-              "Job Security"
+              "Job Security",
+              "Paid time off (PTO)"
             ],
             "city": "Cincinnati",
             "state": "Ohio",
@@ -41056,7 +41368,7 @@
               "Finance and Insurance"
             ],
             "demands": [
-              "Anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Charlotte",
             "state": "North Carolina",
@@ -41208,7 +41520,7 @@
             ],
             "demands": [
               "Pay",
-              "End to anti-union retaliation"
+              "End to anti union retaliation"
             ],
             "city": "Durham",
             "state": "North Carolina",
@@ -41475,7 +41787,7 @@
             ],
             "demands": [
               "Union recognition",
-              "Reinstate fired union activist"
+              "Reinstate terminated union activist"
             ],
             "city": "Ann Arbor",
             "state": "Michigan",
@@ -41980,7 +42292,6 @@
               "Manufacturing"
             ],
             "demands": [
-              "Against layoffs",
               "Job Security"
             ],
             "city": " Amana",
@@ -42006,7 +42317,6 @@
               "Manufacturing"
             ],
             "demands": [
-              "Against layoffs",
               "Job Security"
             ],
             "city": " Des Moines",
@@ -42323,8 +42633,8 @@
             "actionId": 4877,
             "actionType": "strike",
             "startDate": "2026-06-02",
-            "endDate": null,
-            "durationDays": null,
+            "endDate": "2026-06-11",
+            "durationDays": 10,
             "authorized": true,
             "numWorkers": 50,
             "bargainingUnitSize": 0,
@@ -42379,6 +42689,381 @@
             "state": "Oregon",
             "sourceUrl": "https://web.archive.org/web/20260602071644/https://www.ijpr.org/business-and-labor/2026-06-01/horizon-air-flight-attendants-protest-medford-base-closure-strike-vote",
             "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4904",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 0,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "reynolds-consumer-products": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 4927,
+            "actionType": "protest",
+            "startDate": "2026-06-17",
+            "endDate": "2026-06-17",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "United Steel Workers (USW)"
+            ],
+            "industry": [
+              "Manufacturing"
+            ],
+            "demands": [
+              "Pay"
+            ],
+            "city": "Malvern",
+            "state": "Arkansas",
+            "sourceUrl": "https://web.archive.org/web/20260619183127/https://www.malvern-online.com/news/steelworkers-strike-on-the-horizon/article_64df9d4e-5cce-46a7-a962-f848ed2509b4.html",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4927",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 0,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "ashland": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 4946,
+            "actionType": "strike",
+            "startDate": "2026-06-24",
+            "endDate": null,
+            "durationDays": null,
+            "authorized": true,
+            "numWorkers": 70,
+            "bargainingUnitSize": 0,
+            "numUnions": 4,
+            "unions": [
+              "International Union of Operating Engineers (IUOE)",
+              "International Brotherhood of Electrical Workers (IBEW)",
+              "United Association of Journeymen and Apprentices of the Plumbing and Pipe Fitting Industry (UA)",
+              "International Association of Machinists and Aerospace Workers (IAM)"
+            ],
+            "industry": [
+              "Manufacturing"
+            ],
+            "demands": [
+              "Health and safety",
+              "Job Security",
+              "Paid time off (PTO)"
+            ],
+            "city": "Texas City",
+            "state": "Texas",
+            "sourceUrl": "https://web.archive.org/web/20260628040826/https://www.beaumontenterprise.com/news/article/pipefitters-electricians-machinists-launch-22322738.php",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4946",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 70,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "rogers": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 4953,
+            "actionType": "protest",
+            "startDate": "2026-06-25",
+            "endDate": "2026-06-25",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "National Union of Healthcare Workers (NUHW)"
+            ],
+            "industry": [
+              "Health Care and Social Assistance"
+            ],
+            "demands": [
+              "Health and safety",
+              "Staffing",
+              "End to anti union retaliation",
+              "Unjust firings"
+            ],
+            "city": "West Allis",
+            "state": "Wisconsin",
+            "sourceUrl": "https://web.archive.org/web/20260629115435/https://www.cbs58.com/news/rogers-behavioral-health-workers-protest-amid-union-retaliation-allegations",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4953",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 0,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "nationwide": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 4965,
+            "actionType": "protest",
+            "startDate": "2026-06-24",
+            "endDate": "2026-06-24",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 100,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "American Federation of State, County and Municipal Employees (AFSCME)"
+            ],
+            "industry": [
+              "Health Care and Social Assistance"
+            ],
+            "demands": [
+              "Staffing",
+              "Pay",
+              "Health and safety",
+              "Healthcare",
+              "Union recognition"
+            ],
+            "city": "Columbus",
+            "state": "Ohio",
+            "sourceUrl": "https://web.archive.org/web/20260701215845/https://www.wosu.org/2026-06-24/nationwide-childrens-hospital-nurses-rally-in-support-of-union-efforts",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4965",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 100,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "hudson": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 4966,
+            "actionType": "strike",
+            "startDate": "2026-07-01",
+            "endDate": null,
+            "durationDays": null,
+            "authorized": true,
+            "numWorkers": 7,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "Service Employees International Union (SEIU)"
+            ],
+            "industry": [
+              "Real Estate and Rental and Leasing"
+            ],
+            "demands": [
+              "Pay",
+              "Job Security",
+              "First contract"
+            ],
+            "city": "New York",
+            "state": "New York",
+            "sourceUrl": "https://archive.ph/q2Ti6",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4966",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 7,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "woodward": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 4968,
+            "actionType": "protest",
+            "startDate": "2026-06-30",
+            "endDate": "2026-06-30",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 100,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "United Auto Workers (UAW)"
+            ],
+            "industry": [
+              "Manufacturing"
+            ],
+            "demands": [
+              "Pay",
+              "Job Security",
+              "fair progression",
+              "against surveillance",
+              "Paid time off (PTO)"
+            ],
+            "city": "Niles",
+            "state": "Illinois",
+            "sourceUrl": "http://archive.today/2026.07.01-125439/https://chicago.suntimes.com/work/2026/06/30/union-uaw-local-5101-workers-rally-woodward-mpc-niles",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4968",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 100,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "logan": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 4987,
+            "actionType": "protest",
+            "startDate": "2026-07-07",
+            "endDate": "2026-07-07",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "Union of American Physicians and Dentists (UAPD)"
+            ],
+            "industry": [
+              "Health Care and Social Assistance"
+            ],
+            "demands": [
+              "End to anti union retaliation",
+              "Job Security"
+            ],
+            "city": "Kalispell",
+            "state": "Montana",
+            "sourceUrl": "http://archive.today/2026.07.10-185250/https://nbcmontana.com/news/local/supporters-rally-after-logan-health-declines-to-renew-kalispell-doctors-contract",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4987",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 0,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "apollo-global-management": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 4994,
+            "actionType": "protest",
+            "startDate": "2026-05-05",
+            "endDate": "2026-05-05",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 4,
+            "unions": [
+              "Laborers’ International Union of North America (LIUNA)",
+              "Professional Staff Congress (PSC-CUNY)",
+              "American Association of University Professors (SJU-AAUP)",
+              "NYC Central Labor Council."
+            ],
+            "industry": [
+              "Construction"
+            ],
+            "demands": [
+              "Pay",
+              "Healthcare",
+              "Retirement benefits"
+            ],
+            "city": "New York",
+            "state": "New York",
+            "sourceUrl": "https://archive.ph/TTFom",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-4994",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 0,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "vestis": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 5004,
+            "actionType": "strike",
+            "startDate": "2026-07-13",
+            "endDate": null,
+            "durationDays": null,
+            "authorized": true,
+            "numWorkers": 29,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "Teamsters (IBT)"
+            ],
+            "industry": [
+              "Other Services (except Public Administration)"
+            ],
+            "demands": [
+              "End to anti union retaliation",
+              "Pay"
+            ],
+            "city": "Indianapolis",
+            "state": "Indiana",
+            "sourceUrl": "https://web.archive.org/web/20260714005202/https://teamster.org/2026/07/vestis-teamsters-launch-ulp-strike-in-indianapolis/",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-5004",
+            "notes": ""
+          }
+        ],
+        "actionCount": 1,
+        "totalWorkersInvolved": 29,
+        "sourceUrl": "https://striketracker.ilr.cornell.edu",
+        "_license": "CC-BY — Cornell ILR"
+      }
+    },
+    "id-software": {
+      "labor": {
+        "laborActions": [
+          {
+            "actionId": 5009,
+            "actionType": "protest",
+            "startDate": "2026-07-15",
+            "endDate": "2026-07-15",
+            "durationDays": 1,
+            "authorized": null,
+            "numWorkers": 0,
+            "bargainingUnitSize": 0,
+            "numUnions": 1,
+            "unions": [
+              "Communications Workers of America (CWA)"
+            ],
+            "industry": [
+              "Professional, Scientific and Technical Services"
+            ],
+            "demands": [
+              "Job Security"
+            ],
+            "city": "Richardson",
+            "state": "Texas",
+            "sourceUrl": "https://web.archive.org/web/20260720174849/https://www.dallasnews.com/business/jobs/article/microsoft-runs-betrayal-laid-employees-22345439.php",
+            "trackerUrl": "https://striketracker.ilr.cornell.edu/#action-5009",
             "notes": ""
           }
         ],
