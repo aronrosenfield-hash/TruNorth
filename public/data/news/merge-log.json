@@ -1,52 +1,19 @@
 {
-  "merged_at": "2026-08-07T06:23:08.801Z",
-  "source_file": "2026-08-07.extracted.json",
-  "total_items": 52,
-  "brand_count": 17,
-  "merged_count": 17,
+  "merged_at": "2026-08-08T05:49:40.455Z",
+  "source_file": "2026-08-08.extracted.json",
+  "total_items": 31,
+  "brand_count": 10,
+  "merged_count": 10,
   "orphan_count": 0,
   "error_count": 0,
   "orphans": [],
   "errors": [],
   "sample_merged": [
     {
-      "slug": "coca-cola",
-      "status": "merged",
-      "news_added": 9,
-      "events_added": 9,
-      "items_total": 43,
-      "events_total": 30,
-      "aggregate": {
-        "mentionCount90d": 43,
-        "avgTone": -2.13,
-        "scandalSignals": [
-          "PRIVACY",
-          "LEGAL",
-          "LABOR"
-        ],
-        "topArticles": [
-          {
-            "title": "Hackers hit Coca-Cola and Chick-fil-A. Now come the data breach lawsuits. - AJC.com",
-            "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNekVOMGlIUlVVVXlMMXV2LVNLcGpWclB6bVpJRGhsOEpYSTZ4VTZDc0hlV0RhUldoc1c1SldzeGZEUVJ2WXk1TE1hTmdST1ZlOWliZ0JGb0pPTUVIbHFJc1hNb0xKS2JaXzk4V1hkS05TWUc2YnB6SUxjUnhocThYSnU5V0tWcF94SjU3bmd1eWQ4amdObk94cGQ1WUtCdXlNT2JiX0NyN2Vnd1RQaXc?oc=5"
-          },
-          {
-            "title": "Coca-Cola UNITED names leadership in new executive roles effective Aug. 1 - WBMA",
-            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPeVNWekppWG5SbU5QRlcyV0VHaG1RdkUtTXFuNlVZaGhtMHlVSWFFM20yckxpemk4WjBjVnBnbkk3MUpfYi1Wdk5TRkRDTzlCUTR5WWItdWIxUTg2c3M0SjEyVC1FaVRCUUV4MXFYTFV3dGpzd3Zmc3Y0eFVxdlZ3TFBYc00zM29GbkJRYUNIN0dRTTFkQm5LZktweTYzc1NBaTgyMk42OTNPdGJsWnJ2UXFSaw?oc=5"
-          },
-          {
-            "title": "Hacking group claims to leak Coke data as former Fairlife employee files suit - The Business Journals",
-            "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOamlyRy1MMnpMenFpajJCUzc2UTFZalg4czg2YWpsVDZMVzFxUGJzeWQ5Mk5RMi1qOXFrN1paZ05HTC1HVWRjRU9VdUg1OHNnRHpmdHFyenlSR3ZqWndPOGwtSzVxbFNQRFc5V1Z2RWNZeXBRbnU5R1JqOVFsOERHQzJFa3o5V3VkMXhGX1BTMnVNLWpKdEFnVVhMZHo2M1J1UkxhRg?oc=5"
-          }
-        ],
-        "lastUpdated": "2026-08-07T06:23:08.817Z",
-        "source": "rss-extraction"
-      }
-    },
-    {
       "slug": "pepsi",
       "status": "merged",
-      "news_added": 5,
-      "events_added": 5,
+      "news_added": 3,
+      "events_added": 3,
       "items_total": 16,
       "events_total": 13,
       "aggregate": {
@@ -54,8 +21,8 @@
         "avgTone": -1,
         "scandalSignals": [
           "LABOR",
-          "LEGAL",
           "PRODUCT_SAFETY",
+          "LEGAL",
           "ENVIRONMENT"
         ],
         "topArticles": [
@@ -72,39 +39,7 @@
             "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9aelFsbFA5dlc4QzV0LWZTVC1OVzhCY2htM1RHb0dsQWZBdTBhc3dMMTYzWTltb284QmQxYzRGci1HRkNseFo4Y0ZyMk0wbFNpUXE2WFRn0gFWQVVfeXFMT1p6UWxsUDl2VzhDNXQtZlNULU5XOEJjaG0zVEdvR2xBZkF1MGFzd0wxNjNZOW1vbzhCZDFjNEZyLUdGQ2x4WjhjRnIyTTBsU2lRcTZYVGc?oc=5"
           }
         ],
-        "lastUpdated": "2026-08-07T06:23:08.819Z",
-        "source": "rss-extraction"
-      }
-    },
-    {
-      "slug": "dr-pepper",
-      "status": "merged",
-      "news_added": 2,
-      "events_added": 0,
-      "items_total": 6,
-      "events_total": 2,
-      "aggregate": {
-        "mentionCount90d": 6,
-        "avgTone": -0.17,
-        "scandalSignals": [
-          "GOVERNANCE",
-          "PRODUCT_SAFETY"
-        ],
-        "topArticles": [
-          {
-            "title": "Keurig Dr Pepper Posts Higher Sales as Separation Work Continues - WSJ",
-            "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPa3lsQVZnT0tReHdwRFFKdlZVQlM0UUFHdnNMdlBsY3RfZzFmNEJ5OURONU1PUUVia21LNWNXakJQVDZqOGtDWG9hWVhmYWVhY3c5SktSVkVveUxhS1ZWczNSRmlrQ053YmRZRXpPSF9oVG1DcFVkRGlLanE0YnQ5QmlodTZQVzhzVHk3Z19taVdWWTBoaFpmdm9iSFJzdXlTMzhReGhBVEYwZWQ4dXh3Yg?oc=5"
-          },
-          {
-            "title": "Keurig Dr Pepper Inc. stock outperforms competitors on strong trading day - MarketWatch",
-            "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOZVNkTmk3VU9zRXdkUk9Qam9ITzNDME9jM2MxdS1YMGhlZ1RBcmItMnI1UnhIanczdENpdzBzN3dWVXBmQ0M1dFhfZjhtbE9SdVFKb01NX3BfcnROUDFCZDRndVNZRU42Mk1xQmJXalhlaWNCZkNncUNaZkdOWmwweGg1MFRKcHlNV3FNZkhRZVBwQmN4R1R5NVN6bkx1enBYTUFYNFJpbW52QzlIazA4RWplRHFaTThQRU5aOWFtc18yOTVObHlDaDZiZXo?oc=5"
-          },
-          {
-            "title": "Check Your Fridge—Dr Pepper Has Recalled Thousands Of Cases Of Soda - AOL.com",
-            "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE15bFBCOUNDSmNkX1RwLUZubUlERHZDRkJmOTgxVy1QTUVqVlFmSGhBMGR6VEZOSlB5aWZ0Rmg0UXJMOFFVaXVpUXJoQXJLQ3FoOXJZTFVYVWxvaW9zYnVMTEJuU19iMzJsdEZZazBYQk1hR21O?oc=5"
-          }
-        ],
-        "lastUpdated": "2026-08-07T06:23:08.820Z",
+        "lastUpdated": "2026-08-08T05:49:40.473Z",
         "source": "rss-extraction"
       }
     },
@@ -135,15 +70,15 @@
             "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSF9GLV9kTGdfeHc3UWpfcnllVm9QWXFQdlJsTXpRTzZ6ckZOMUFRdzdNNWQ4Tmd0eG9FZEpaU0Zhcmc0ckJfXzFfa1hzcFZJbUpZWllTX2xqTVVmbEUxdDBNWU9WNDZGUHlUT082cnZXSDU2VTM3Nkt2elMzbFg5Qkc1eWhkWFVMSmlnZXBOa2c2MnJMdWZSSGNCMzlKY0t1?oc=5"
           }
         ],
-        "lastUpdated": "2026-08-07T06:23:08.820Z",
+        "lastUpdated": "2026-08-08T05:49:40.474Z",
         "source": "rss-extraction"
       }
     },
     {
       "slug": "mondelez-international",
       "status": "merged",
-      "news_added": 8,
-      "events_added": 7,
+      "news_added": 5,
+      "events_added": 5,
       "items_total": 24,
       "events_total": 15,
       "aggregate": {
@@ -168,20 +103,20 @@
             "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5VaW5zaXhTa1MzQThfRFhIeDNIajRsaFd6bzhEdnZ3YjB3X09nSG5vUjBpWTBQQ0xWMS1fU0pURGVIa1ZkcUFrT1BYV0k0c3ZyTUhXWldIN21OZmdfWWwxVWlkZHYtWUlNRm1tVWs5dG1EaFhFRndqMDM5SzZKQQ?oc=5"
           }
         ],
-        "lastUpdated": "2026-08-07T06:23:08.821Z",
+        "lastUpdated": "2026-08-08T05:49:40.475Z",
         "source": "rss-extraction"
       }
     },
     {
       "slug": "doritos",
       "status": "merged",
-      "news_added": 2,
-      "events_added": 2,
+      "news_added": 3,
+      "events_added": 3,
       "items_total": 39,
       "events_total": 30,
       "aggregate": {
         "mentionCount90d": 39,
-        "avgTone": -1.81,
+        "avgTone": -1.78,
         "scandalSignals": [
           "PRODUCT_SAFETY",
           "ETHICS"
@@ -200,7 +135,7 @@
             "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxQV0FRYlN5bXRDMXpDeGZlM1dveEw1TDNFWkpySGgwcXUyVUVlcTh2V2VaWkNUNVpQOVYxVGdoYl9xOXRWQkw3SEc1N1ZnNUcxa1AwYVd2VUdWTk5uMU5fOTlHNzkwcjNtQS1mSEU1OFlyeUxwNjNUNEV3dlRRS1J4RzZQN0xubU5EUUhOTms2b0R2Y0JMalpmSjh6YnJ2WFJwcUcwNzF4Nk1Jb0ZBSTZNVkRBNWZNbzJVN1BMbUIxRlJfMEpsdFMtMWxaSWN2d01WZ3dyR3F3aTMtSGp4R2pLU1lZWkc2blJRdmRVMDNVOHFPUDR4WE16cWRFQjg2SGhhMExZeERR?oc=5"
           }
         ],
-        "lastUpdated": "2026-08-07T06:23:08.823Z",
+        "lastUpdated": "2026-08-08T05:49:40.477Z",
         "source": "rss-extraction"
       }
     },
@@ -225,15 +160,15 @@
             "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQYmNXR3VwX0dTUXljVENncUtuTHllVW02bXdsalNkODVfVlNHeDlaTzJoUDVmc2prUFdhQTRyMU9YUng1TTJsa0JfRnEwc0FBWWlwdkFfNDNzUVBNUV9WTUMwUkl4MDAzaEdoSTNDdzZUcnlRbXg5MlItUWVnbjYxelFnTjdKMEtEU3BVdlZqX2NrMmdIRU9jakZ2ajVfWEJNYVE?oc=5"
           }
         ],
-        "lastUpdated": "2026-08-07T06:23:08.824Z",
+        "lastUpdated": "2026-08-08T05:49:40.478Z",
         "source": "rss-extraction"
       }
     },
     {
       "slug": "hershey",
       "status": "merged",
-      "news_added": 2,
-      "events_added": 2,
+      "news_added": 1,
+      "events_added": 1,
       "items_total": 3,
       "events_total": 2,
       "aggregate": {
@@ -248,7 +183,7 @@
             "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQRlBtQXNjSFotb0JKSUhiWk45MjN2UWN2dGZJRmltaVFNQUdaQzFyWXRNR2dzNXZPeHgxbGVJLVBkYXdlNXRueVJvaFI0SHdIUzY5bDlrT0poZjhNWnBtazdvSWthSWRxbENROVA3WUtQRlYxN2JyRkE0S0N4VDhpYkFxaw?oc=5"
           },
           {
-            "title": "Hershey’s Kisses recalled due to undeclared almonds - thestar.com",
+            "title": "Hershey’s Kisses recalled due to undeclared almonds - Toronto Star",
             "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxORGlRNzl6bmF3ZnlYbGdyUE1RTUZCWkgyTVVka0l1ZERhOVJHQTVPRmxvM2M4QWtrcG9VVVF5bGhYaUJyQ2c1N0t6NkVVQ29qZzY3LV9STm1NaGhLQndKODFnbmtlUHJycEVSYllyYkx4bXV1aGs0d3o3S0lpTUhaY2RITDdkYVJDMWZHVmtiR0dKQkx4cFRTMHJoSHNSdHBPYktXS3JKalVyVmtWcF9iMlZIQ0FTQi1HNzc5QW53UndCM1huQmtEejFyUDBqMFRuVHc?oc=5"
           },
           {
@@ -256,40 +191,7 @@
             "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOdnp4ZDFWNDhqTFhOaDdHWXNva3BOcDJsYThQamJIZl9MTzlhMTRLWS05UUJvWXhzWHhjdC1Yd2dhLVRibDllNUgxTFlCMzhhWmNhWXcwUzZ5cnRKMmZNTnNSWjNTX0lwdk11cmhlVGctNEZpRUhpZnNDTWQtNFdYdW5YaDliN1BQSXNPOGdiM2Fvdmwxbkc3VmRaSmg0TG10elEzSEtrZmdhYk5hUmI5c3Jwd043ZVdITVlpMVV3NWZ6WHpCR1pnOXd5b1VyNU1KX1VWUml0OTA?oc=5"
           }
         ],
-        "lastUpdated": "2026-08-07T06:23:08.825Z",
-        "source": "rss-extraction"
-      }
-    },
-    {
-      "slug": "heinz",
-      "status": "merged",
-      "news_added": 1,
-      "events_added": 0,
-      "items_total": 5,
-      "events_total": 3,
-      "aggregate": {
-        "mentionCount90d": 5,
-        "avgTone": -0.6,
-        "scandalSignals": [
-          "PRODUCT_SAFETY",
-          "LABOR",
-          "GOVERNANCE"
-        ],
-        "topArticles": [
-          {
-            "title": "Vermont Targets Kraft Heinz in New Ultra-Processed Foods Investigation - The National Law Review",
-            "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQM05YZ0xsSy0yTkNBQ0M0eEJnZHpTeXV0MVZ3WXNFaXJueWtoQmw3SF9rQ0d4NVBCSkRBTWZSWm44TVo1eGdRdm1NNVJ4cFNUWXJkZHgzMTZaeWxqM2lWc1RBRnV0WG1TTkI1aHNlM3R6N2RCZWhfcWlJbm5CZ1AzWDc0Vlo3dGlCZzI3ZWllNjVvNllHUzFidU1qVVEzU3pMZFHSAacBQVVfeXFMTUZybVkzSUxPZ3QzTGE5Ym9JRTcydk15N0xuR2YxdkVVZ1J1T2hYNFhmTDhRUzdYd0dVUEY4VU9PWm9LMUtVM0lHaDE0Tk51NGkxN1lZeDktQVd3N1VXc0h0MzhhLU1BdHlPV1ItcXZEOEZ0VWs3bFlxTF9UcVV6VG04ZXN4Q1VhZ3NoR2RpRWN6YWVJWUJXWXltWWoyampkYkcwZEtpNVU?oc=5"
-          },
-          {
-            "title": "Kraft Heinz, Disney Announce 'Landmark' Alliance 07/22/2026 - MediaPost",
-            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNd0hXT1VKbGRRQWpoQi1UcmZjSEVaN04tc0xpQzJpbEwydXl1cmVsRHNDdVpxRGZMcTJwMFIxcmJaVk8zY2s5VGtGYWsxYnNUanZSZHRMamY3TS13WG4yTUVHS1V5MG51blo1YXB5Y01leGFvWjcwb1NrNk5FNldacGo0bFhYNnhzalMySnNkWVNMdXFVSzdrcTVFNS1CUWRKcktDRVNsQ1lEbEpaVThhRHJlTG93SnJNeUZn?oc=5"
-          },
-          {
-            "title": "Heinz calls foul on small condiment packets in social World Cup effort - Marketing Dive",
-            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOYnpMZnd4N0xkUGVOcS1fN04wdWsybXFGQnh6Y0ExNFlfbWt0YURRaWlCZ09WellncWJHSTBOd0F0NHMxVmdhbG9LOXlpd2stajN3Q1d3VnFnR0pBMUN2NjV2VlgzSklzSHJQbEJ1SlMxbzBxNXluT3paMEFSSy0xSWRmMVJLYzBSaFJ6QnJpYWZJOFppc29mMW9mUFo4RlVZV1dBZll2THNQcXRGdVliWW1jNA?oc=5"
-          }
-        ],
-        "lastUpdated": "2026-08-07T06:23:08.825Z",
+        "lastUpdated": "2026-08-08T05:49:40.479Z",
         "source": "rss-extraction"
       }
     },
@@ -304,8 +206,8 @@
         "mentionCount90d": 30,
         "avgTone": -2.15,
         "scandalSignals": [
-          "PRODUCT_SAFETY",
-          "LEGAL"
+          "LEGAL",
+          "PRODUCT_SAFETY"
         ],
         "topArticles": [
           {
@@ -321,7 +223,103 @@
             "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxQOWVvdHNfZzRrSHBKbF85SEZmTk5BbkdWbk13NTY2dVJtb3VYZDNCTk1JZWxGc3laSjd6U3VscnBrTXJ5MVVydXNOU1lJZUJBLTVQSTJNNGxmQTJBMTBZdFpLWVNNZzd0cFc0N2NibnlYUDl5cUlBaF9jM21fN2dWWjZ3RXZ1WDUzLXlZTDV6aDNMeHJGZnVabzk2V3JndmVNLThLLTIwQWxuMnUwd0N6SVBXaXNzdTQ1ZDU4RFBxUVZwX3dXS0VzWktSM1ZET0NzcEdOU2MxeU9PRlNYSjl5eDV4ZVNIRFBsdE84YkJhM3dhNGtuWDlDWmh6X2FjZ9IB_gFBVV95cUxQOWVvdHNfZzRrSHBKbF85SEZmTk5BbkdWbk13NTY2dVJtb3VYZDNCTk1JZWxGc3laSjd6U3VscnBrTXJ5MVVydXNOU1lJZUJBLTVQSTJNNGxmQTJBMTBZdFpLWVNNZzd0cFc0N2NibnlYUDl5cUlBaF9jM21fN2dWWjZ3RXZ1WDUzLXlZTDV6aDNMeHJGZnVabzk2V3JndmVNLThLLTIwQWxuMnUwd0N6SVBXaXNzdTQ1ZDU4RFBxUVZwX3dXS0VzWktSM1ZET0NzcEdOU2MxeU9PRlNYSjl5eDV4ZVNIRFBsdE84YkJhM3dhNGtuWDlDWmh6X2FjZw?oc=5"
           }
         ],
-        "lastUpdated": "2026-08-07T06:23:08.827Z",
+        "lastUpdated": "2026-08-08T05:49:40.480Z",
+        "source": "rss-extraction"
+      }
+    },
+    {
+      "slug": "pepsico",
+      "status": "merged",
+      "news_added": 1,
+      "events_added": 0,
+      "items_total": 7,
+      "events_total": 3,
+      "aggregate": {
+        "mentionCount90d": 7,
+        "avgTone": -0.14,
+        "scandalSignals": [
+          "ENVIRONMENT"
+        ],
+        "topArticles": [
+          {
+            "title": "Envision Delivers Low-Carbon Ammonia Environmental Attribute Certificates to PepsiCo APAC, Pioneering Decarbonization in the Fertilizer Industry - PR Newswire",
+            "url": "https://news.google.com/rss/articles/CBMipgJBVV95cUxOT3pDZ1hTUmhtUGlHS2Y3aHJnejlhSWhuX1cyYjB5bEJ1SUY1dzUwTUVZNjhoaEpxOGJBTG9pZmM1U19Bay1LVVM1bVN6THp4ZkI4Y1ZfUWxCZ0Q4SWladjA2MlBzQVdieV91SXRsWXNFS3c0cVlqczFocWlEWndyWFNEaGxiakEtc2xMMnVKcVVuQXJqcTR4YmVkaXhhYmx6VkhBdUY3eTFPcXJRNFEtQzZRMEd2cnF3SGo0d1FfdU9MWUV1MDFqNHJuaHdHRnQzaGNnVFV2TWtPOTJGODRZaWV4NkFVX0Jmb3NIOE9pMHZsY1lVQUZXMV9ObDJlcURsbnNORUZRdzhManpSUWtQZkRncjc4MEdYeUJZemtCZlBiN2NDc1E?oc=5"
+          },
+          {
+            "title": "PepsiCo improves sustainable sourcing, delays emissions reporting - Supply Chain Dive",
+            "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxORTFwYnZDOEZXVndSei1xY0FxbHllWHNiN182Z2hMN18wMVptYW5WSEZIeGp4QjJ2UzZiTDU0TEtNY2NDTWtnNmdkblVqUGxSOFRXd3dmQTYyTUxYV1pzZnRDMG52QVVjd2txT1oybVZpYUJZVWZBTjI5TGhjaWFnODdfSTBHb2laZ3ppcV9Fb0tENlY4YlV0STBwakZZamdSYjZ4WXVWNFR3NEF4RFE?oc=5"
+          },
+          {
+            "title": "PepsiCo: Q2 Earnings Snapshot - KVUE",
+            "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOTjg2UTBnRkJhS3BabHRTaGtJTE5GSmQwT191YXgtTk5nWEFJVlUtLWxBRFdxVmlaZzBMWWxJZVNzNXFsSEo5VkNZTEZITm13UzEyOENMei1vRHh1T09fZ2FyX0ZiYjItVzRnelR5dnN2NVZ5SFNZQkUzLXBhbThWNW5OQ0VWSkZiSUtCbTVQR3FnZTNHMm50bDgtM2JTZW55RUhEX0o4Si1XSzYydTlpQU4zSHV1bldlbDFJRkFTcmdQUkJn?oc=5"
+          }
+        ],
+        "lastUpdated": "2026-08-08T05:49:40.481Z",
+        "source": "rss-extraction"
+      }
+    },
+    {
+      "slug": "tyson-foods",
+      "status": "merged",
+      "news_added": 2,
+      "events_added": 2,
+      "items_total": 9,
+      "events_total": 7,
+      "aggregate": {
+        "mentionCount90d": 9,
+        "avgTone": -1.17,
+        "scandalSignals": [
+          "LABOR",
+          "ENVIRONMENT"
+        ],
+        "topArticles": [
+          {
+            "title": "Tyson Foods (TSN) Expected to Announce Quarterly Earnings on Monday - MarketBeat",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQTXZSTW13UzZsMndBUU5VN1d2S2FuVHNUWG9qX3hpZERwQXJUUUhKZThoc1ZrbDBkNm9PZ2RWUUtXV05xcmlCcFF2YjM0RG5WOXliajFHalBlcWpqYkgtN2VfVUtOVXByUnJIRXB5SHdjSFYzei1selJaUy1XSUt5LXVxOVVsUEdjUjFnR2w2X2ZMVkN5MXh6ZUFqSHFXU3gzQkVlbDlBeS1waG5yTEVYY3lSVDRHS29jbGxJ?oc=5"
+          },
+          {
+            "title": "Ammonia leak reported at Gadsden Tyson Foods facility - AOL.com",
+            "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNbDIwcTRpY1FxQXNFWjBSVUpCTWIzc1doUFAxcjhPLUdJTDBYSUE3OUlpaEx3VHVTM2dzNGp4aWRDR2VPZFJjRnhOdU5ISkdaZTRHSkNzUkw1RkNPRlhfXzJ4N3pId21nUFBwVFowTk1vX0htZW5oU0JlOXprejJjSEl6bEllZw?oc=5"
+          },
+          {
+            "title": "Tyson Foods completes Lexington plant closure Friday with final round of layoffs - KOLN | Nebraska Local News, Weather, Sports | Lincoln, NE",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOM0NFeXFCNTFVMm9JVzBHN25EQ01MZ1lKZVdoaXdSMkxGS1MyT01kSXBWNjk5a2dzM3NRV0VEUjd2NDdHNWNYVzBrNkl3M21PWEhSNkFhUlhxbkF5MnROX05uV2tHVG1RYnl6NU8zNURRV2F3aUQwUnZmUjR6c3ROWGpGMFBwb2lReU5KRUlJamhocEdNWVcyLTZ4dzlyajR5ckJIMVU5T1JFNjE0djlLdW1vNNIBxwFBVV95cUxQeVpsX2l2eWRGbFhXWHI5a3NXai0zdnlVTVFNdk9jNW1GYld6ZUhpU2w2TGdrcHV4ZTNCX1FDeG55bFFQMjNPR2RBaTJvWV80SzZIRDlqLVVOSk9XRmNCNFB2V2d1QzdrQkNPWWItOUVFc1ZJbkI0VG5PZkc5OU1LOF94aGw0aWlyQTdjVGJ5LWFPZmRueWVDelI2RkNOTGpDVlZCSkhILWZCVTVpdW9OM3E0M2UxRGw2TjI0LURxRGtva01HclZR?oc=5"
+          }
+        ],
+        "lastUpdated": "2026-08-08T05:49:40.482Z",
+        "source": "rss-extraction"
+      }
+    },
+    {
+      "slug": "coca-cola",
+      "status": "merged",
+      "news_added": 6,
+      "events_added": 6,
+      "items_total": 44,
+      "events_total": 30,
+      "aggregate": {
+        "mentionCount90d": 44,
+        "avgTone": -2.15,
+        "scandalSignals": [
+          "PRIVACY",
+          "LEGAL",
+          "LABOR"
+        ],
+        "topArticles": [
+          {
+            "title": "Hackers hit Coca-Cola and Chick-fil-A. Now come the data breach lawsuits. - AJC.com",
+            "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNekVOMGlIUlVVVXlMMXV2LVNLcGpWclB6bVpJRGhsOEpYSTZ4VTZDc0hlV0RhUldoc1c1SldzeGZEUVJ2WXk1TE1hTmdST1ZlOWliZ0JGb0pPTUVIbHFJc1hNb0xKS2JaXzk4V1hkS05TWUc2YnB6SUxjUnhocThYSnU5V0tWcF94SjU3bmd1eWQ4amdObk94cGQ1WUtCdXlNT2JiX0NyN2Vnd1RQaXc?oc=5"
+          },
+          {
+            "title": "Coca-Cola UNITED names leadership in new executive roles effective Aug. 1 - WBMA",
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPeVNWekppWG5SbU5QRlcyV0VHaG1RdkUtTXFuNlVZaGhtMHlVSWFFM20yckxpemk4WjBjVnBnbkk3MUpfYi1Wdk5TRkRDTzlCUTR5WWItdWIxUTg2c3M0SjEyVC1FaVRCUUV4MXFYTFV3dGpzd3Zmc3Y0eFVxdlZ3TFBYc00zM29GbkJRYUNIN0dRTTFkQm5LZktweTYzc1NBaTgyMk42OTNPdGJsWnJ2UXFSaw?oc=5"
+          },
+          {
+            "title": "Hacking group claims to leak Coke data as former Fairlife employee files suit - The Business Journals",
+            "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOamlyRy1MMnpMenFpajJCUzc2UTFZalg4czg2YWpsVDZMVzFxUGJzeWQ5Mk5RMi1qOXFrN1paZ05HTC1HVWRjRU9VdUg1OHNnRHpmdHFyenlSR3ZqWndPOGwtSzVxbFNQRFc5V1Z2RWNZeXBRbnU5R1JqOVFsOERHQzJFa3o5V3VkMXhGX1BTMnVNLWpKdEFnVVhMZHo2M1J1UkxhRg?oc=5"
+          }
+        ],
+        "lastUpdated": "2026-08-08T05:49:40.483Z",
         "source": "rss-extraction"
       }
     }
