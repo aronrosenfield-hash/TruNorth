@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-03T06:40:39.795Z",
-  "catalog_version": "2026.07.29",
-  "catalog_released": "2026-07-29T18:45:59.5809Z",
-  "total_cve_count": 1656,
+  "generated_at": "2026-08-10T04:58:19.842Z",
+  "catalog_version": "2026.08.07",
+  "catalog_released": "2026-08-07T16:45:47.0648Z",
+  "total_cve_count": 1662,
   "vendor_count": 276,
   "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
   "vendors": [
@@ -838,13 +838,13 @@
     },
     {
       "vendor": "Apache",
-      "total_cve_count": 39,
-      "recent_12mo_count": 1,
+      "total_cve_count": 40,
+      "recent_12mo_count": 2,
       "ransomware_count": 8,
       "product_breakdown": [
         {
           "label": "Tomcat",
-          "count": 5
+          "count": 6
         },
         {
           "label": "Struts",
@@ -885,6 +885,17 @@
       ],
       "top_cves": [
         {
+          "cveID": "CVE-2026-34486",
+          "product": "Tomcat",
+          "vulnerabilityName": "Apache Tomcat Missing Encryption of Sensitive Data Vulnerability",
+          "dateAdded": "2026-08-04",
+          "dueDate": "2026-08-07",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Apache Tomcat contains a missing encryption of sensitive data vulnerability that allows the bypass of the EncryptInterceptor. This vulnerability can be chained with CVE‑2025‑24813.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34486"
+        },
+        {
           "cveID": "CVE-2026-34197",
           "product": "ActiveMQ",
           "vulnerabilityName": "Apache ActiveMQ Improper Input Validation Vulnerability",
@@ -913,7 +924,7 @@
           "dateAdded": "2025-04-01",
           "dueDate": "2025-04-22",
           "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Apache Tomcat contains a path equivalence vulnerability that allows a remote attacker to execute code, disclose information, or inject malicious content via a partial PUT request.",
+          "shortDescription": "Apache Tomcat contains a path equivalence vulnerability that allows a remote attacker to execute code, disclose information, or inject malicious content via a partial PUT request. This vulnerability can be chained with CVE‑2026‑34486.",
           "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-24813"
         },
@@ -927,17 +938,6 @@
           "shortDescription": "Apache OFBiz contains a forced browsing vulnerability that allows a remote attacker to obtain unauthorized access.",
           "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-45195"
-        },
-        {
-          "cveID": "CVE-2024-27348",
-          "product": "HugeGraph-Server",
-          "vulnerabilityName": "Apache HugeGraph-Server Improper Access Control Vulnerability",
-          "dateAdded": "2024-09-18",
-          "dueDate": "2024-10-09",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Apache HugeGraph-Server contains an improper access control vulnerability that could allow a remote attacker to execute arbitrary code.",
-          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-27348"
         }
       ],
       "highest_severity": [
@@ -966,20 +966,20 @@
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-12615"
         },
         {
+          "cveID": "CVE-2026-34486",
+          "product": "Tomcat",
+          "vulnerabilityName": "Apache Tomcat Missing Encryption of Sensitive Data Vulnerability",
+          "dateAdded": "2026-08-04",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34486"
+        },
+        {
           "cveID": "CVE-2026-34197",
           "product": "ActiveMQ",
           "vulnerabilityName": "Apache ActiveMQ Improper Input Validation Vulnerability",
           "dateAdded": "2026-04-16",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34197"
-        },
-        {
-          "cveID": "CVE-2024-38475",
-          "product": "HTTP Server",
-          "vulnerabilityName": "Apache HTTP Server Improper Escaping of Output Vulnerability",
-          "dateAdded": "2025-05-01",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-38475"
         }
       ]
     },
@@ -1379,7 +1379,7 @@
     {
       "vendor": "D-Link",
       "total_cve_count": 26,
-      "recent_12mo_count": 5,
+      "recent_12mo_count": 2,
       "ransomware_count": 2,
       "product_breakdown": [
         {
@@ -1936,7 +1936,7 @@
       "vendor": "SonicWall",
       "total_cve_count": 17,
       "recent_12mo_count": 3,
-      "ransomware_count": 10,
+      "ransomware_count": 12,
       "product_breakdown": [
         {
           "label": "SMA1000 Appliances",
@@ -1982,7 +1982,7 @@
           "vulnerabilityName": "SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability",
           "dateAdded": "2026-07-14",
           "dueDate": "2026-07-17",
-          "knownRansomwareCampaignUse": "Unknown",
+          "knownRansomwareCampaignUse": "Known",
           "shortDescription": "SonicWall SMA1000 Appliances contain a server-side request forgery vulnerability that could allow a remote unauthenticated attacker to potentially cause the appliance to make requests to unintended location.",
           "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15409"
@@ -1993,7 +1993,7 @@
           "vulnerabilityName": "SonicWall SMA1000 Appliances Code Injection Vulnerability",
           "dateAdded": "2026-07-14",
           "dueDate": "2026-07-17",
-          "knownRansomwareCampaignUse": "Unknown",
+          "knownRansomwareCampaignUse": "Known",
           "shortDescription": "SonicWall SMA1000 Appliances contain a code injection vulnerability which in specific conditions could potentially enable a remote authenticated attacker as administrator to execute arbitrary OS commands.",
           "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15410"
@@ -2034,6 +2034,22 @@
       ],
       "highest_severity": [
         {
+          "cveID": "CVE-2026-15409",
+          "product": "SMA1000 Appliances",
+          "vulnerabilityName": "SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability",
+          "dateAdded": "2026-07-14",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15409"
+        },
+        {
+          "cveID": "CVE-2026-15410",
+          "product": "SMA1000 Appliances",
+          "vulnerabilityName": "SonicWall SMA1000 Appliances Code Injection Vulnerability",
+          "dateAdded": "2026-07-14",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15410"
+        },
+        {
           "cveID": "CVE-2024-53704",
           "product": "SonicOS",
           "vulnerabilityName": "SonicWall SonicOS SSLVPN Improper Authentication Vulnerability",
@@ -2042,36 +2058,20 @@
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-53704"
         },
         {
-          "cveID": "CVE-2025-23006",
-          "product": "SMA1000 Appliances",
-          "vulnerabilityName": "SonicWall SMA1000 Appliances Deserialization Vulnerability",
-          "dateAdded": "2025-01-24",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-23006"
-        },
-        {
-          "cveID": "CVE-2024-40766",
-          "product": "SonicOS",
-          "vulnerabilityName": "SonicWall SonicOS Improper Access Control Vulnerability",
-          "dateAdded": "2024-09-09",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-40766"
-        },
-        {
-          "cveID": "CVE-2026-15409",
-          "product": "SMA1000 Appliances",
-          "vulnerabilityName": "SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability",
-          "dateAdded": "2026-07-14",
+          "cveID": "CVE-2025-40602",
+          "product": "SMA1000 appliance",
+          "vulnerabilityName": "SonicWall SMA1000 Missing Authorization Vulnerability",
+          "dateAdded": "2025-12-17",
           "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15409"
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-40602"
         },
         {
-          "cveID": "CVE-2026-15410",
-          "product": "SMA1000 Appliances",
-          "vulnerabilityName": "SonicWall SMA1000 Appliances Code Injection Vulnerability",
-          "dateAdded": "2026-07-14",
+          "cveID": "CVE-2023-44221",
+          "product": "SMA100 Appliances",
+          "vulnerabilityName": "SonicWall SMA100 Appliances OS Command Injection Vulnerability",
+          "dateAdded": "2025-05-01",
           "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15410"
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-44221"
         }
       ]
     },
@@ -2392,7 +2392,7 @@
       "vendor": "SAP",
       "total_cve_count": 14,
       "recent_12mo_count": 0,
-      "ransomware_count": 2,
+      "ransomware_count": 3,
       "product_breakdown": [
         {
           "label": "NetWeaver",
@@ -2422,7 +2422,7 @@
           "vulnerabilityName": "SAP NetWeaver Deserialization Vulnerability",
           "dateAdded": "2025-05-15",
           "dueDate": "2025-06-05",
-          "knownRansomwareCampaignUse": "Unknown",
+          "knownRansomwareCampaignUse": "Known",
           "shortDescription": "SAP NetWeaver Visual Composer Metadata Uploader contains a deserialization vulnerability that allows a privileged attacker to compromise the confidentiality, integrity, and availability of the host system by deserializing untrusted or malicious content.",
           "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-42999"
@@ -2474,6 +2474,14 @@
       ],
       "highest_severity": [
         {
+          "cveID": "CVE-2025-42999",
+          "product": "NetWeaver",
+          "vulnerabilityName": "SAP NetWeaver Deserialization Vulnerability",
+          "dateAdded": "2025-05-15",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-42999"
+        },
+        {
           "cveID": "CVE-2025-31324",
           "product": "NetWeaver",
           "vulnerabilityName": "SAP NetWeaver Unrestricted File Upload Vulnerability",
@@ -2490,20 +2498,20 @@
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-2380"
         },
         {
-          "cveID": "CVE-2025-42999",
-          "product": "NetWeaver",
-          "vulnerabilityName": "SAP NetWeaver Deserialization Vulnerability",
-          "dateAdded": "2025-05-15",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-42999"
-        },
-        {
           "cveID": "CVE-2017-12637",
           "product": "NetWeaver",
           "vulnerabilityName": "SAP NetWeaver Directory Traversal Vulnerability",
           "dateAdded": "2025-03-19",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-12637"
+        },
+        {
+          "cveID": "CVE-2019-0344",
+          "product": "Commerce Cloud",
+          "vulnerabilityName": "SAP Commerce Cloud Deserialization of Untrusted Data Vulnerability",
+          "dateAdded": "2024-09-30",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-0344"
         }
       ]
     },
@@ -3098,7 +3106,7 @@
       "vendor": "SolarWinds",
       "total_cve_count": 11,
       "recent_12mo_count": 4,
-      "ransomware_count": 1,
+      "ransomware_count": 2,
       "product_breakdown": [
         {
           "label": "Web Help Desk",
@@ -3135,7 +3143,7 @@
           "vulnerabilityName": "SolarWinds Web Help Desk Deserialization of Untrusted Data Vulnerability",
           "dateAdded": "2026-03-09",
           "dueDate": "2026-03-12",
-          "knownRansomwareCampaignUse": "Unknown",
+          "knownRansomwareCampaignUse": "Known",
           "shortDescription": "SolarWinds Web Help Desk contain a deserialization of untrusted data vulnerability in AjaxProxy that could allow an attacker to run commands on the host machine.",
           "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-26399"
@@ -3176,6 +3184,14 @@
       ],
       "highest_severity": [
         {
+          "cveID": "CVE-2025-26399",
+          "product": "Web Help Desk",
+          "vulnerabilityName": "SolarWinds Web Help Desk Deserialization of Untrusted Data Vulnerability",
+          "dateAdded": "2026-03-09",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-26399"
+        },
+        {
           "cveID": "CVE-2021-35211",
           "product": "Serv-U",
           "vulnerabilityName": "SolarWinds Serv-U Remote Code Execution Vulnerability",
@@ -3192,12 +3208,12 @@
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-28318"
         },
         {
-          "cveID": "CVE-2025-26399",
+          "cveID": "CVE-2025-40536",
           "product": "Web Help Desk",
-          "vulnerabilityName": "SolarWinds Web Help Desk Deserialization of Untrusted Data Vulnerability",
-          "dateAdded": "2026-03-09",
+          "vulnerabilityName": "SolarWinds Web Help Desk Security Control Bypass Vulnerability",
+          "dateAdded": "2026-02-12",
           "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-26399"
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-40536"
         }
       ]
     },
@@ -3420,6 +3436,145 @@
       ]
     },
     {
+      "vendor": "Progress",
+      "total_cve_count": 9,
+      "recent_12mo_count": 1,
+      "ransomware_count": 4,
+      "product_breakdown": [
+        {
+          "label": "WhatsUp Gold",
+          "count": 2
+        },
+        {
+          "label": "LoadMaster",
+          "count": 1
+        },
+        {
+          "label": "Kemp LoadMaster",
+          "count": 1
+        },
+        {
+          "label": "Telerik Report Server",
+          "count": 1
+        },
+        {
+          "label": "WS_FTP Server",
+          "count": 1
+        },
+        {
+          "label": "MOVEit Transfer",
+          "count": 1
+        },
+        {
+          "label": "Telerik UI for ASP.NET AJAX",
+          "count": 1
+        },
+        {
+          "label": "ASP.NET AJAX and Sitefinity",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-8037",
+          "product": "LoadMaster",
+          "vulnerabilityName": "Progress LoadMaster Command Injection Vulnerability",
+          "dateAdded": "2026-08-07",
+          "dueDate": "2026-08-10",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Progress LoadMaster contains a command injection vulnerability that allows an un-authenticated attacker to execute arbitrary commands on the LoadMaster appliance by exploiting unsanitized input in multiple command endpoints.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8037"
+        },
+        {
+          "cveID": "CVE-2024-4885",
+          "product": "WhatsUp Gold",
+          "vulnerabilityName": "Progress WhatsUp Gold Path Traversal Vulnerability",
+          "dateAdded": "2025-03-03",
+          "dueDate": "2025-03-24",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Progress WhatsUp Gold contains a path traversal vulnerability that allows an unauthenticated attacker to achieve remote code execution.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-4885"
+        },
+        {
+          "cveID": "CVE-2024-1212",
+          "product": "Kemp LoadMaster",
+          "vulnerabilityName": "Progress Kemp LoadMaster OS Command Injection Vulnerability",
+          "dateAdded": "2024-11-18",
+          "dueDate": "2024-12-09",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Progress Kemp LoadMaster contains an OS command injection vulnerability that allows an unauthenticated, remote attacker to access the system through the LoadMaster management interface, enabling arbitrary system command execution.",
+          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-1212"
+        },
+        {
+          "cveID": "CVE-2024-6670",
+          "product": "WhatsUp Gold",
+          "vulnerabilityName": "Progress WhatsUp Gold SQL Injection Vulnerability",
+          "dateAdded": "2024-09-16",
+          "dueDate": "2024-10-07",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "Progress WhatsUp Gold contains a SQL injection vulnerability that allows an unauthenticated attacker to retrieve the user's encrypted password if the application is configured with only a single user.",
+          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-6670"
+        },
+        {
+          "cveID": "CVE-2024-4358",
+          "product": "Telerik Report Server",
+          "vulnerabilityName": "Progress Telerik Report Server Authentication Bypass by Spoofing Vulnerability",
+          "dateAdded": "2024-06-13",
+          "dueDate": "2024-07-04",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Progress Telerik Report Server contains an authorization bypass by spoofing vulnerability that allows an attacker to obtain unauthorized access.",
+          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-4358"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2024-6670",
+          "product": "WhatsUp Gold",
+          "vulnerabilityName": "Progress WhatsUp Gold SQL Injection Vulnerability",
+          "dateAdded": "2024-09-16",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-6670"
+        },
+        {
+          "cveID": "CVE-2023-40044",
+          "product": "WS_FTP Server",
+          "vulnerabilityName": "Progress WS_FTP Server Deserialization of Untrusted Data Vulnerability",
+          "dateAdded": "2023-10-05",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-40044"
+        },
+        {
+          "cveID": "CVE-2023-34362",
+          "product": "MOVEit Transfer",
+          "vulnerabilityName": "Progress MOVEit Transfer SQL Injection Vulnerability",
+          "dateAdded": "2023-06-02",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-34362"
+        },
+        {
+          "cveID": "CVE-2026-8037",
+          "product": "LoadMaster",
+          "vulnerabilityName": "Progress LoadMaster Command Injection Vulnerability",
+          "dateAdded": "2026-08-07",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8037"
+        },
+        {
+          "cveID": "CVE-2024-4885",
+          "product": "WhatsUp Gold",
+          "vulnerabilityName": "Progress WhatsUp Gold Path Traversal Vulnerability",
+          "dateAdded": "2025-03-03",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-4885"
+        }
+      ]
+    },
+    {
       "vendor": "Arm",
       "total_cve_count": 9,
       "recent_12mo_count": 0,
@@ -3630,6 +3785,129 @@
       ]
     },
     {
+      "vendor": "IBM",
+      "total_cve_count": 8,
+      "recent_12mo_count": 1,
+      "ransomware_count": 2,
+      "product_breakdown": [
+        {
+          "label": "Data Risk Manager",
+          "count": 3
+        },
+        {
+          "label": "Langflow",
+          "count": 1
+        },
+        {
+          "label": "Aspera Faspex",
+          "count": 1
+        },
+        {
+          "label": "InfoSphere BigInsights",
+          "count": 1
+        },
+        {
+          "label": "WebSphere Application Server and Server Hypervisor Edition",
+          "count": 1
+        },
+        {
+          "label": "Planning Analytics",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-9198",
+          "product": "Langflow",
+          "vulnerabilityName": "IBM Langflow Code Injection Vulnerability",
+          "dateAdded": "2026-08-04",
+          "dueDate": "2026-08-07",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Langflow contains a code injection vulnerability that allows unauthenticated attackers to achieve full remote code execution on default Langflow deployments.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9198"
+        },
+        {
+          "cveID": "CVE-2022-47986",
+          "product": "Aspera Faspex",
+          "vulnerabilityName": "IBM Aspera Faspex Code Execution Vulnerability",
+          "dateAdded": "2023-02-21",
+          "dueDate": "2023-03-14",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "IBM Aspera Faspex could allow a remote attacker to execute code on the system, caused by a YAML deserialization flaw.",
+          "requiredAction": "Apply updates per vendor instructions.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-47986"
+        },
+        {
+          "cveID": "CVE-2013-3993",
+          "product": "InfoSphere BigInsights",
+          "vulnerabilityName": "IBM InfoSphere BigInsights Invalid Input Vulnerability",
+          "dateAdded": "2022-05-25",
+          "dueDate": "2022-06-15",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "Certain APIs within BigInsights can take invalid input that might allow attackers unauthorized access to read, write, modify, or delete data.",
+          "requiredAction": "The impacted product is end-of-life and should be disconnected if still in use.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2013-3993"
+        },
+        {
+          "cveID": "CVE-2015-7450",
+          "product": "WebSphere Application Server and Server Hypervisor Edition",
+          "vulnerabilityName": "IBM WebSphere Application Server and Server Hypervisor Edition Code Injection.",
+          "dateAdded": "2022-01-10",
+          "dueDate": "2022-07-10",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Serialized-object interfaces in certain IBM analytics, business solutions, cognitive, IT infrastructure, and mobile and social products allow remote attackers to execute arbitrary commands",
+          "requiredAction": "Apply updates per vendor instructions.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2015-7450"
+        },
+        {
+          "cveID": "CVE-2020-4430",
+          "product": "Data Risk Manager",
+          "vulnerabilityName": "IBM Data Risk Manager Directory Traversal Vulnerability",
+          "dateAdded": "2021-11-03",
+          "dueDate": "2022-05-03",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "IBM Data Risk Manager contains a directory traversal vulnerability that could allow a remote authenticated attacker to traverse directories and send a specially crafted URL request to download arbitrary files from the system.",
+          "requiredAction": "Apply updates per vendor instructions.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-4430"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2022-47986",
+          "product": "Aspera Faspex",
+          "vulnerabilityName": "IBM Aspera Faspex Code Execution Vulnerability",
+          "dateAdded": "2023-02-21",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-47986"
+        },
+        {
+          "cveID": "CVE-2013-3993",
+          "product": "InfoSphere BigInsights",
+          "vulnerabilityName": "IBM InfoSphere BigInsights Invalid Input Vulnerability",
+          "dateAdded": "2022-05-25",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2013-3993"
+        },
+        {
+          "cveID": "CVE-2026-9198",
+          "product": "Langflow",
+          "vulnerabilityName": "IBM Langflow Code Injection Vulnerability",
+          "dateAdded": "2026-08-04",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9198"
+        },
+        {
+          "cveID": "CVE-2015-7450",
+          "product": "WebSphere Application Server and Server Hypervisor Edition",
+          "vulnerabilityName": "IBM WebSphere Application Server and Server Hypervisor Edition Code Injection.",
+          "dateAdded": "2022-01-10",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2015-7450"
+        }
+      ]
+    },
+    {
       "vendor": "Juniper",
       "total_cve_count": 8,
       "recent_12mo_count": 1,
@@ -3717,141 +3995,6 @@
           "dateAdded": "2025-03-13",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-21590"
-        }
-      ]
-    },
-    {
-      "vendor": "Progress",
-      "total_cve_count": 8,
-      "recent_12mo_count": 0,
-      "ransomware_count": 4,
-      "product_breakdown": [
-        {
-          "label": "WhatsUp Gold",
-          "count": 2
-        },
-        {
-          "label": "Kemp LoadMaster",
-          "count": 1
-        },
-        {
-          "label": "Telerik Report Server",
-          "count": 1
-        },
-        {
-          "label": "WS_FTP Server",
-          "count": 1
-        },
-        {
-          "label": "MOVEit Transfer",
-          "count": 1
-        },
-        {
-          "label": "Telerik UI for ASP.NET AJAX",
-          "count": 1
-        },
-        {
-          "label": "ASP.NET AJAX and Sitefinity",
-          "count": 1
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2024-4885",
-          "product": "WhatsUp Gold",
-          "vulnerabilityName": "Progress WhatsUp Gold Path Traversal Vulnerability",
-          "dateAdded": "2025-03-03",
-          "dueDate": "2025-03-24",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Progress WhatsUp Gold contains a path traversal vulnerability that allows an unauthenticated attacker to achieve remote code execution.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-4885"
-        },
-        {
-          "cveID": "CVE-2024-1212",
-          "product": "Kemp LoadMaster",
-          "vulnerabilityName": "Progress Kemp LoadMaster OS Command Injection Vulnerability",
-          "dateAdded": "2024-11-18",
-          "dueDate": "2024-12-09",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Progress Kemp LoadMaster contains an OS command injection vulnerability that allows an unauthenticated, remote attacker to access the system through the LoadMaster management interface, enabling arbitrary system command execution.",
-          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-1212"
-        },
-        {
-          "cveID": "CVE-2024-6670",
-          "product": "WhatsUp Gold",
-          "vulnerabilityName": "Progress WhatsUp Gold SQL Injection Vulnerability",
-          "dateAdded": "2024-09-16",
-          "dueDate": "2024-10-07",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "Progress WhatsUp Gold contains a SQL injection vulnerability that allows an unauthenticated attacker to retrieve the user's encrypted password if the application is configured with only a single user.",
-          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-6670"
-        },
-        {
-          "cveID": "CVE-2024-4358",
-          "product": "Telerik Report Server",
-          "vulnerabilityName": "Progress Telerik Report Server Authentication Bypass by Spoofing Vulnerability",
-          "dateAdded": "2024-06-13",
-          "dueDate": "2024-07-04",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Progress Telerik Report Server contains an authorization bypass by spoofing vulnerability that allows an attacker to obtain unauthorized access.",
-          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-4358"
-        },
-        {
-          "cveID": "CVE-2023-40044",
-          "product": "WS_FTP Server",
-          "vulnerabilityName": "Progress WS_FTP Server Deserialization of Untrusted Data Vulnerability",
-          "dateAdded": "2023-10-05",
-          "dueDate": "2023-10-26",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "Progress WS_FTP Server contains a deserialization of untrusted data vulnerability in the Ad Hoc Transfer module that allows an authenticated attacker to execute remote commands on the underlying operating system.",
-          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-40044"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2024-6670",
-          "product": "WhatsUp Gold",
-          "vulnerabilityName": "Progress WhatsUp Gold SQL Injection Vulnerability",
-          "dateAdded": "2024-09-16",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-6670"
-        },
-        {
-          "cveID": "CVE-2023-40044",
-          "product": "WS_FTP Server",
-          "vulnerabilityName": "Progress WS_FTP Server Deserialization of Untrusted Data Vulnerability",
-          "dateAdded": "2023-10-05",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-40044"
-        },
-        {
-          "cveID": "CVE-2023-34362",
-          "product": "MOVEit Transfer",
-          "vulnerabilityName": "Progress MOVEit Transfer SQL Injection Vulnerability",
-          "dateAdded": "2023-06-02",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-34362"
-        },
-        {
-          "cveID": "CVE-2024-4885",
-          "product": "WhatsUp Gold",
-          "vulnerabilityName": "Progress WhatsUp Gold Path Traversal Vulnerability",
-          "dateAdded": "2025-03-03",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-4885"
-        },
-        {
-          "cveID": "CVE-2024-1212",
-          "product": "Kemp LoadMaster",
-          "vulnerabilityName": "Progress Kemp LoadMaster OS Command Injection Vulnerability",
-          "dateAdded": "2024-11-18",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-1212"
         }
       ]
     },
@@ -4451,125 +4594,6 @@
           "dateAdded": "2023-05-12",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-3560"
-        }
-      ]
-    },
-    {
-      "vendor": "IBM",
-      "total_cve_count": 7,
-      "recent_12mo_count": 0,
-      "ransomware_count": 2,
-      "product_breakdown": [
-        {
-          "label": "Data Risk Manager",
-          "count": 3
-        },
-        {
-          "label": "Aspera Faspex",
-          "count": 1
-        },
-        {
-          "label": "InfoSphere BigInsights",
-          "count": 1
-        },
-        {
-          "label": "WebSphere Application Server and Server Hypervisor Edition",
-          "count": 1
-        },
-        {
-          "label": "Planning Analytics",
-          "count": 1
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2022-47986",
-          "product": "Aspera Faspex",
-          "vulnerabilityName": "IBM Aspera Faspex Code Execution Vulnerability",
-          "dateAdded": "2023-02-21",
-          "dueDate": "2023-03-14",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "IBM Aspera Faspex could allow a remote attacker to execute code on the system, caused by a YAML deserialization flaw.",
-          "requiredAction": "Apply updates per vendor instructions.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-47986"
-        },
-        {
-          "cveID": "CVE-2013-3993",
-          "product": "InfoSphere BigInsights",
-          "vulnerabilityName": "IBM InfoSphere BigInsights Invalid Input Vulnerability",
-          "dateAdded": "2022-05-25",
-          "dueDate": "2022-06-15",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "Certain APIs within BigInsights can take invalid input that might allow attackers unauthorized access to read, write, modify, or delete data.",
-          "requiredAction": "The impacted product is end-of-life and should be disconnected if still in use.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2013-3993"
-        },
-        {
-          "cveID": "CVE-2015-7450",
-          "product": "WebSphere Application Server and Server Hypervisor Edition",
-          "vulnerabilityName": "IBM WebSphere Application Server and Server Hypervisor Edition Code Injection.",
-          "dateAdded": "2022-01-10",
-          "dueDate": "2022-07-10",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Serialized-object interfaces in certain IBM analytics, business solutions, cognitive, IT infrastructure, and mobile and social products allow remote attackers to execute arbitrary commands",
-          "requiredAction": "Apply updates per vendor instructions.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2015-7450"
-        },
-        {
-          "cveID": "CVE-2020-4430",
-          "product": "Data Risk Manager",
-          "vulnerabilityName": "IBM Data Risk Manager Directory Traversal Vulnerability",
-          "dateAdded": "2021-11-03",
-          "dueDate": "2022-05-03",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "IBM Data Risk Manager contains a directory traversal vulnerability that could allow a remote authenticated attacker to traverse directories and send a specially crafted URL request to download arbitrary files from the system.",
-          "requiredAction": "Apply updates per vendor instructions.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-4430"
-        },
-        {
-          "cveID": "CVE-2020-4427",
-          "product": "Data Risk Manager",
-          "vulnerabilityName": "IBM Data Risk Manager Security Bypass Vulnerability",
-          "dateAdded": "2021-11-03",
-          "dueDate": "2022-05-03",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "IBM Data Risk Manager contains a security bypass vulnerability that could allow a remote attacker to bypass security restrictions when configured with SAML authentication. By sending a specially crafted HTTP request, an attacker could exploit this vulnerability to bypass the authentication process and gain full administrative access to the system.",
-          "requiredAction": "Apply updates per vendor instructions.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-4427"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2022-47986",
-          "product": "Aspera Faspex",
-          "vulnerabilityName": "IBM Aspera Faspex Code Execution Vulnerability",
-          "dateAdded": "2023-02-21",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-47986"
-        },
-        {
-          "cveID": "CVE-2013-3993",
-          "product": "InfoSphere BigInsights",
-          "vulnerabilityName": "IBM InfoSphere BigInsights Invalid Input Vulnerability",
-          "dateAdded": "2022-05-25",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2013-3993"
-        },
-        {
-          "cveID": "CVE-2015-7450",
-          "product": "WebSphere Application Server and Server Hypervisor Edition",
-          "vulnerabilityName": "IBM WebSphere Application Server and Server Hypervisor Edition Code Injection.",
-          "dateAdded": "2022-01-10",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2015-7450"
-        },
-        {
-          "cveID": "CVE-2020-4430",
-          "product": "Data Risk Manager",
-          "vulnerabilityName": "IBM Data Risk Manager Directory Traversal Vulnerability",
-          "dateAdded": "2021-11-03",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-4430"
         }
       ]
     },
@@ -5199,7 +5223,7 @@
       "vendor": "RARLAB",
       "total_cve_count": 5,
       "recent_12mo_count": 2,
-      "ransomware_count": 3,
+      "ransomware_count": 4,
       "product_breakdown": [
         {
           "label": "WinRAR",
@@ -5228,7 +5252,7 @@
           "vulnerabilityName": "RARLAB WinRAR Path Traversal Vulnerability",
           "dateAdded": "2025-08-12",
           "dueDate": "2025-09-02",
-          "knownRansomwareCampaignUse": "Unknown",
+          "knownRansomwareCampaignUse": "Known",
           "shortDescription": "RARLAB WinRAR contains a path traversal vulnerability affecting the Windows version of WinRAR. This vulnerability could allow an attacker to execute arbitrary code by crafting malicious archive files.",
           "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-8088"
@@ -5269,6 +5293,14 @@
       ],
       "highest_severity": [
         {
+          "cveID": "CVE-2025-8088",
+          "product": "WinRAR",
+          "vulnerabilityName": "RARLAB WinRAR Path Traversal Vulnerability",
+          "dateAdded": "2025-08-12",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-8088"
+        },
+        {
           "cveID": "CVE-2023-38831",
           "product": "WinRAR",
           "vulnerabilityName": "RARLAB WinRAR Code Execution Vulnerability",
@@ -5285,28 +5317,12 @@
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-30333"
         },
         {
-          "cveID": "CVE-2018-20250",
-          "product": "WinRAR",
-          "vulnerabilityName": "WinRAR Absolute Path Traversal Vulnerability",
-          "dateAdded": "2022-02-15",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-20250"
-        },
-        {
           "cveID": "CVE-2025-6218",
           "product": "WinRAR",
           "vulnerabilityName": "RARLAB WinRAR Path Traversal Vulnerability",
           "dateAdded": "2025-12-09",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-6218"
-        },
-        {
-          "cveID": "CVE-2025-8088",
-          "product": "WinRAR",
-          "vulnerabilityName": "RARLAB WinRAR Path Traversal Vulnerability",
-          "dateAdded": "2025-08-12",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-8088"
         }
       ]
     },
@@ -5505,6 +5521,178 @@
           "dateAdded": "2022-03-25",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-4344"
+        }
+      ]
+    },
+    {
+      "vendor": "JetBrains",
+      "total_cve_count": 4,
+      "recent_12mo_count": 2,
+      "ransomware_count": 3,
+      "product_breakdown": [
+        {
+          "label": "TeamCity",
+          "count": 4
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-63077",
+          "product": "TeamCity",
+          "vulnerabilityName": "JetBrains TeamCity Deserialization of Untrusted Data Vulnerability",
+          "dateAdded": "2026-08-05",
+          "dueDate": "2026-08-08",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "JetBrains TeamCity contains a deserialization of untrusted data vulnerability that could allow unauthenticated remote code execution via the agent polling protocol.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63077"
+        },
+        {
+          "cveID": "CVE-2024-27199",
+          "product": "TeamCity",
+          "vulnerabilityName": "JetBrains TeamCity Relative Path Traversal Vulnerability",
+          "dateAdded": "2026-04-20",
+          "dueDate": "2026-05-04",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "JetBrains TeamCity contains a relative path traversal vulnerability that could allow limited admin actions to be performed.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-27199"
+        },
+        {
+          "cveID": "CVE-2024-27198",
+          "product": "TeamCity",
+          "vulnerabilityName": "JetBrains TeamCity Authentication Bypass Vulnerability",
+          "dateAdded": "2024-03-07",
+          "dueDate": "2024-03-28",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "JetBrains TeamCity contains an authentication bypass vulnerability that allows an attacker to perform admin actions.",
+          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-27198"
+        },
+        {
+          "cveID": "CVE-2023-42793",
+          "product": "TeamCity",
+          "vulnerabilityName": "JetBrains TeamCity Authentication Bypass Vulnerability",
+          "dateAdded": "2023-10-04",
+          "dueDate": "2023-10-25",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "JetBrains TeamCity contains an authentication bypass vulnerability that allows for remote code execution on TeamCity Server.",
+          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-42793"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2024-27199",
+          "product": "TeamCity",
+          "vulnerabilityName": "JetBrains TeamCity Relative Path Traversal Vulnerability",
+          "dateAdded": "2026-04-20",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-27199"
+        },
+        {
+          "cveID": "CVE-2024-27198",
+          "product": "TeamCity",
+          "vulnerabilityName": "JetBrains TeamCity Authentication Bypass Vulnerability",
+          "dateAdded": "2024-03-07",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-27198"
+        },
+        {
+          "cveID": "CVE-2023-42793",
+          "product": "TeamCity",
+          "vulnerabilityName": "JetBrains TeamCity Authentication Bypass Vulnerability",
+          "dateAdded": "2023-10-04",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-42793"
+        },
+        {
+          "cveID": "CVE-2026-63077",
+          "product": "TeamCity",
+          "vulnerabilityName": "JetBrains TeamCity Deserialization of Untrusted Data Vulnerability",
+          "dateAdded": "2026-08-05",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63077"
+        }
+      ]
+    },
+    {
+      "vendor": "N-able",
+      "total_cve_count": 4,
+      "recent_12mo_count": 4,
+      "ransomware_count": 0,
+      "product_breakdown": [
+        {
+          "label": "N-central",
+          "count": 2
+        },
+        {
+          "label": "N-Central",
+          "count": 2
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-18556",
+          "product": "N-central",
+          "vulnerabilityName": "N-able N-central Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+          "dateAdded": "2026-08-04",
+          "dueDate": "2026-08-07",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "N-able N-central contains an authentication bypass using an alternate path or channel that allows for authentication bypass.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18556"
+        },
+        {
+          "cveID": "CVE-2026-18577",
+          "product": "N-central",
+          "vulnerabilityName": "N-able N-central Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+          "dateAdded": "2026-08-03",
+          "dueDate": "2026-08-06",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "N-able N-central contains an authentication bypass using an alternate path or channel allows for authentication bypass and account takeover in N-central. This vulnerability is the result of an incomplete patch for CVE-2026-18556.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18577"
+        },
+        {
+          "cveID": "CVE-2025-8876",
+          "product": "N-Central",
+          "vulnerabilityName": "N-able N-Central Command Injection Vulnerability",
+          "dateAdded": "2025-08-13",
+          "dueDate": "2025-08-20",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "N-able N-Central contains a command injection vulnerability via improper sanitization of user input.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-8876"
+        },
+        {
+          "cveID": "CVE-2025-8875",
+          "product": "N-Central",
+          "vulnerabilityName": "N-able N-Central Insecure Deserialization Vulnerability",
+          "dateAdded": "2025-08-13",
+          "dueDate": "2025-08-20",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "N-able N-Central contains an insecure deserialization vulnerability that could lead to command execution.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-8875"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2026-18556",
+          "product": "N-central",
+          "vulnerabilityName": "N-able N-central Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+          "dateAdded": "2026-08-04",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18556"
+        },
+        {
+          "cveID": "CVE-2026-18577",
+          "product": "N-central",
+          "vulnerabilityName": "N-able N-central Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+          "dateAdded": "2026-08-03",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18577"
         }
       ]
     },
@@ -6932,79 +7120,6 @@
           "dateAdded": "2025-07-28",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-2533"
-        }
-      ]
-    },
-    {
-      "vendor": "JetBrains",
-      "total_cve_count": 3,
-      "recent_12mo_count": 1,
-      "ransomware_count": 3,
-      "product_breakdown": [
-        {
-          "label": "TeamCity",
-          "count": 3
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2024-27199",
-          "product": "TeamCity",
-          "vulnerabilityName": "JetBrains TeamCity Relative Path Traversal Vulnerability",
-          "dateAdded": "2026-04-20",
-          "dueDate": "2026-05-04",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "JetBrains TeamCity contains a relative path traversal vulnerability that could allow limited admin actions to be performed.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-27199"
-        },
-        {
-          "cveID": "CVE-2024-27198",
-          "product": "TeamCity",
-          "vulnerabilityName": "JetBrains TeamCity Authentication Bypass Vulnerability",
-          "dateAdded": "2024-03-07",
-          "dueDate": "2024-03-28",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "JetBrains TeamCity contains an authentication bypass vulnerability that allows an attacker to perform admin actions.",
-          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-27198"
-        },
-        {
-          "cveID": "CVE-2023-42793",
-          "product": "TeamCity",
-          "vulnerabilityName": "JetBrains TeamCity Authentication Bypass Vulnerability",
-          "dateAdded": "2023-10-04",
-          "dueDate": "2023-10-25",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "JetBrains TeamCity contains an authentication bypass vulnerability that allows for remote code execution on TeamCity Server.",
-          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-42793"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2024-27199",
-          "product": "TeamCity",
-          "vulnerabilityName": "JetBrains TeamCity Relative Path Traversal Vulnerability",
-          "dateAdded": "2026-04-20",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-27199"
-        },
-        {
-          "cveID": "CVE-2024-27198",
-          "product": "TeamCity",
-          "vulnerabilityName": "JetBrains TeamCity Authentication Bypass Vulnerability",
-          "dateAdded": "2024-03-07",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-27198"
-        },
-        {
-          "cveID": "CVE-2023-42793",
-          "product": "TeamCity",
-          "vulnerabilityName": "JetBrains TeamCity Authentication Bypass Vulnerability",
-          "dateAdded": "2023-10-04",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-42793"
         }
       ]
     },
@@ -9448,60 +9563,6 @@
       ]
     },
     {
-      "vendor": "N-able",
-      "total_cve_count": 2,
-      "recent_12mo_count": 2,
-      "ransomware_count": 0,
-      "product_breakdown": [
-        {
-          "label": "N-Central",
-          "count": 2
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2025-8876",
-          "product": "N-Central",
-          "vulnerabilityName": "N-able N-Central Command Injection Vulnerability",
-          "dateAdded": "2025-08-13",
-          "dueDate": "2025-08-20",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "N-able N-Central contains a command injection vulnerability via improper sanitization of user input.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-8876"
-        },
-        {
-          "cveID": "CVE-2025-8875",
-          "product": "N-Central",
-          "vulnerabilityName": "N-able N-Central Insecure Deserialization Vulnerability",
-          "dateAdded": "2025-08-13",
-          "dueDate": "2025-08-20",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "N-able N-Central contains an insecure deserialization vulnerability that could lead to command execution.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-8875"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2025-8876",
-          "product": "N-Central",
-          "vulnerabilityName": "N-able N-Central Command Injection Vulnerability",
-          "dateAdded": "2025-08-13",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-8876"
-        },
-        {
-          "cveID": "CVE-2025-8875",
-          "product": "N-Central",
-          "vulnerabilityName": "N-able N-Central Insecure Deserialization Vulnerability",
-          "dateAdded": "2025-08-13",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-8875"
-        }
-      ]
-    },
-    {
       "vendor": "GeoVision",
       "total_cve_count": 2,
       "recent_12mo_count": 0,
@@ -10223,7 +10284,7 @@
       "vendor": "Rejetto",
       "total_cve_count": 2,
       "recent_12mo_count": 0,
-      "ransomware_count": 0,
+      "ransomware_count": 1,
       "product_breakdown": [
         {
           "label": "HTTP File Server",
@@ -10241,7 +10302,7 @@
           "vulnerabilityName": "Rejetto HTTP File Server Improper Neutralization of Special Elements Used in a Template Engine Vulnerability",
           "dateAdded": "2024-07-09",
           "dueDate": "2024-07-30",
-          "knownRansomwareCampaignUse": "Unknown",
+          "knownRansomwareCampaignUse": "Known",
           "shortDescription": "Rejetto HTTP File Server contains an improper neutralization of special elements used in a template engine vulnerability. This allows a remote, unauthenticated attacker to execute commands on the affected system by sending a specially crafted HTTP request.",
           "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-23692"
@@ -10264,7 +10325,7 @@
           "product": "HTTP File Server",
           "vulnerabilityName": "Rejetto HTTP File Server Improper Neutralization of Special Elements Used in a Template Engine Vulnerability",
           "dateAdded": "2024-07-09",
-          "knownRansomwareCampaignUse": "Unknown",
+          "knownRansomwareCampaignUse": "Known",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-23692"
         },
         {

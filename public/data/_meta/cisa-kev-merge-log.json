@@ -1,5 +1,5 @@
 {
-  "merged_at": "2026-08-03T06:40:39.848Z",
+  "merged_at": "2026-08-10T04:58:19.947Z",
   "source_file": "public/data/cisa-kev.json",
   "total_vendors": 276,
   "merged_count": 2,
@@ -8,23 +8,23 @@
   "error_count": 0,
   "merged_vendors": [
     {
-      "vendor": "Cisco",
-      "target": "cisco",
+      "vendor": "IBM",
+      "target": "ibm",
       "routed_via": "override",
-      "cves": 95
+      "cves": 8
     },
     {
-      "vendor": "Fortinet",
-      "target": "fortinet",
-      "routed_via": "override",
-      "cves": 29
+      "vendor": "N-able",
+      "target": "n-able",
+      "routed_via": "direct",
+      "cves": 4
     }
   ],
   "top_orphans": [
     {
       "vendor": "Apache",
       "vendor_slug": "apache",
-      "cves": 39
+      "cves": 40
     },
     {
       "vendor": "Ivanti",
@@ -87,6 +87,11 @@
       "cves": 11
     },
     {
+      "vendor": "Progress",
+      "vendor_slug": "progress",
+      "cves": 9
+    },
+    {
       "vendor": "Arm",
       "vendor_slug": "arm",
       "cves": 9
@@ -99,11 +104,6 @@
     {
       "vendor": "Juniper",
       "vendor_slug": "juniper",
-      "cves": 8
-    },
-    {
-      "vendor": "Progress",
-      "vendor_slug": "progress",
       "cves": 8
     },
     {
@@ -162,13 +162,13 @@
       "cves": 5
     },
     {
-      "vendor": "SimpleHelp",
-      "vendor_slug": "simplehelp",
+      "vendor": "JetBrains",
+      "vendor_slug": "jetbrains",
       "cves": 4
     },
     {
-      "vendor": "Kentico",
-      "vendor_slug": "kentico",
+      "vendor": "SimpleHelp",
+      "vendor_slug": "simplehelp",
       "cves": 4
     }
   ]
