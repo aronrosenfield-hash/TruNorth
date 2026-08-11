@@ -18,6 +18,15 @@ function esc(s) {
     .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 }
+// Ungraded brands carry `overall: null`. `Number(null)` is 0 — which IS finite —
+// so an unguarded isFinite() check silently turned "no grade" into a 0 score and
+// published an "F" grade on 9,765 companies that have no public record at all.
+// Anything nullish or blank is NO GRADE and must never be coerced to a zero.
+function numOrNull(score) {
+  if (score == null || score === "") return null;
+  const n = Number(score);
+  return isFinite(n) ? n : null;
+}
 function grade(score, realCats) {
   // SCORING V3 (2026-06-11): signal-count cap removed — evidence confidence
   // is priced in by shrinkage when scores are baked (rebake-scoring.mjs), so
@@ -25,8 +34,8 @@ function grade(score, realCats) {
   // frozen from the one-time V3 recalibration. MUST stay in sync with
   // src/App.jsx scoreGrade, scripts/finalize-bundle.mjs scoreGrade,
   // scripts/rebake-scoring.mjs gradeFromOverall: A>=62, B>=50, C>=38, D>=33.
-  const n = Number(score);
-  if (!isFinite(n)) return "\u2014";
+  const n = numOrNull(score);
+  if (n == null) return "\u2014";
   if (n >= 62) return "A";
   if (n >= 50) return "B";
   if (n >= 38) return "C";
@@ -60,8 +69,8 @@ export default async function handler(req) {
 
   const name = company.name || slug;
   const cat = company.cat || "";
-  const overall = Number(company.overall);
-  const overallG = isFinite(overall) ? grade(overall, company.realCats) : null;
+  const overall = numOrNull(company.overall);
+  const overallG = overall != null ? grade(overall, company.realCats) : null;
 
   const index = await getIndex(url.origin);
   const compSet = new Set((company.competitors || []).map(c => String(c).toLowerCase()));
@@ -71,20 +80,22 @@ export default async function handler(req) {
     const s = (co.slug || co.id || "").toLowerCase();
     if (s === slug) return false;
     if ((co.cat || "") !== cat) return false;
-    const o = Number(co.overall ?? co.score);
-    return isFinite(o) && (!isFinite(overall) || o > overall);
+    // Only genuinely graded peers can be offered as "higher-graded alternatives";
+    // an ungraded peer must never be ranked as if it scored 0.
+    const o = numOrNull(co.overall ?? co.score);
+    return o != null && (overall == null || o > overall);
   });
   // Rank: own competitors first, then by grade desc.
   peers.sort((a, b) => {
     const aw = compSet.has((a.slug || a.id || "").toLowerCase()) ? 1 : 0;
     const bw = compSet.has((b.slug || b.id || "").toLowerCase()) ? 1 : 0;
     if (aw !== bw) return bw - aw;
-    return Number(b.overall ?? b.score) - Number(a.overall ?? a.score);
+    return (numOrNull(b.overall ?? b.score) ?? 0) - (numOrNull(a.overall ?? a.score) ?? 0);
   });
   const alts = peers.slice(0, 8).map(co => ({
     slug: co.slug || co.id,
     name: co.name,
-    overall: Number(co.overall ?? co.score),
+    overall: numOrNull(co.overall ?? co.score),
     g: grade(co.overall ?? co.score, co.realCats),
   }));
 

@@ -40,6 +40,16 @@ function esc(s) {
     .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 }
 
+// Ungraded brands carry `overall: null`. `Number(null)` is 0 — which IS finite —
+// so an unguarded isFinite() check turns "no grade" into a 0 score and publishes
+// an "F" on a company with no public record (the defect fixed in
+// alternatives-seo.js). The call site below already null-checks; this makes the
+// function itself safe so a future call site cannot reintroduce it.
+function numOrNull(score) {
+  if (score == null || score === "") return null;
+  const n = Number(score);
+  return isFinite(n) ? n : null;
+}
 function grade(score, realCats) {
   // SCORING V3 (2026-06-11): signal-count cap removed — evidence confidence
   // is priced in by shrinkage when scores are baked (rebake-scoring.mjs), so
@@ -47,8 +57,8 @@ function grade(score, realCats) {
   // frozen from the one-time V3 recalibration. MUST stay in sync with
   // src/App.jsx scoreGrade, scripts/finalize-bundle.mjs scoreGrade,
   // scripts/rebake-scoring.mjs gradeFromOverall: A>=62, B>=50, C>=38, D>=33.
-  const n = Number(score);
-  if (!isFinite(n)) return "\u2014";
+  const n = numOrNull(score);
+  if (n == null) return "\u2014";
   if (n >= 62) return "A";
   if (n >= 50) return "B";
   if (n >= 38) return "C";
