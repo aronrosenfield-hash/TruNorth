@@ -78,7 +78,7 @@
     ]
   },
   "execPay": {
-    "s": "CEO-to-median-worker pay ratio 378:1 (median employee pay $119,748) — SEC proxy statement (DEF 14A, 2026).",
+    "s": "CEO-to-median-worker pay ratio 1378:1 (median employee pay $119,748) — SEC proxy statement (DEF 14A, 2026).",
     "ratio": "N/A",
     "sources": [
       "sec-def14a"
@@ -216,7 +216,9 @@
       "filingDate": "2026-04-30",
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1437107/000143710726000046/wbd-20260429.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
-      "source": "sec-def14a"
+      "source": "sec-def14a",
+      "_supersededBy": "payRatio",
+      "_note": "sec-def14a parse contradicted the authoritative payRatio record; not used for display or scoring"
     },
     "secTax": {
       "effectiveTaxRate": -0.01,
