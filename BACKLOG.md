@@ -85,6 +85,83 @@
 
 ---
 
+## 🚀 v1.3 "WHO OWNS WHAT YOU BUY" — CORRECTNESS → COVERAGE → LAUNCH (2026-08-10, 14-agent review)
+
+> **Full plan:** `docs/research/v1.2-growth-strategy-2026-08-10.md`
+> **Aron's decisions (2026-08-10):** ① Fix ~3 weeks, **launch late September** — do NOT big-bang in August.
+> ② Positioning = **"who owns what you buy"** (the brand→parent map is the wedge). ③ **Paywall unchanged**
+> — leave pricing alone for now. ④ Email **moves to Resend**.
+>
+> **The finding that reframed the plan:** TruNorth does not have a marketing problem yet — it has a
+> **correctness problem that gets worse with every visitor**. A launch that *works* is the risk.
+
+### C — Correctness (must land before ANY distribution work). Stop-ship gate.
+- **C-1 ✅ DONE (`b8f529575`) — 9,765 pages published a fabricated "F".** `Number(null)` is `0`, which IS
+  finite, so `alternatives-seo.js` turned "no grade" into `grade(0)`="F" on every ungraded company; all
+  12,792 of those pages are in the sitemap. Fixed at the root of `grade()` via `numOrNull()` + all 3
+  coercing call sites; same latent defect hardened in `company-seo.js`. Verified against the real
+  handlers: ungraded subject now asserts NO grade; graded subject still correct.
+- **C-2 ✅ DONE (`3c503eca1`) — 13 publicly FALSE CEO pay-ratio claims.** The `sec-def14a` parser drops a
+  leading "1" (Coca-Cola 1739→739, McDonald's 1082→82, Starbucks 1794→794, Wayfair 5702→702, …) and on
+  Home Depot parsed the filing YEAR as the ratio ("2026:1, CEO total comp $2K" vs the real 427:1 /
+  $16.2M). Surgical data fix; **0 grade drift** (scoring reads structured `payRatio` first — which
+  retroactively validates cutting the enriched ratio from B-115). ⚠️ **Upstream parser still broken —
+  these regress on its next successful run (B-107/B-123).**
+- **C-3 — 82,553 `"Claude AI synthesis"` source strings across 11,187 brand files (87% of the catalog).**
+  On a "records, not opinions" product this is the single most dangerous string in the repo. Either cite
+  the real record or drop the claim. **Highest remaining reputational risk.**
+- **C-4 — 1,298 graded brands (42%) rest on ONE category; 586 score exactly 50.000, which renders as "B".**
+  Live example: **23andMe grades "B"** off one `privacy:"mixed"` datapoint while its own narrative cites
+  the CA AG suing it over a data breach. Show *"Not enough public record to grade"* instead. Grade-moving
+  → rule #16, Aron approves drift.
+- **C-5 — same company, contradictory grades.** `Alaska Air Group=D` vs `Alaska Airlines=A`; `Apple=B` vs
+  `Apple Store=A` vs `Apple Music=C`; `Amazon=C` vs `Amazon Go=F`; `CVS Health=D`/`CVS Pharmacy=C`. Of 602
+  sub-brands graded beside a graded parent, **143 (24%) disagree, 32 by 2+ letters.** Keep legitimate
+  divergence (Ben & Jerry's=A vs Unilever=C); suppress thin-data artifacts on the same business.
+- **C-6 — golden-set CI check that FAILS THE BUILD** if any brand asserts a grade unsupported by a record.
+  The only control that keeps working when attention moves elsewhere.
+
+### V — Coverage (the release feature)
+- **V-1 🔑 THE FLAGSHIP — wire the brand→parent map into SEARCH.** The scanner loads
+  `brand-parent-map.json` (6,704 entries) at `App.jsx:149-190`; **the text-search path never does**
+  (`App.jsx:5483-5521`). Measured: **4,902 shelf brands already resolve to an ALREADY-GRADED parent and
+  are unfindable by typing the name** (4,389 high-confidence) — Nestlé 206 · P&G 180 · Unilever 179 ·
+  PepsiCo 124 · Mars 115 · General Mills 101 · Hershey 96 · Coca-Cola 95. Proof of the absurdity:
+  **Febreze/Downy/Gillette/Olay/Pantene/Head & Shoulders all grade C; Tide/Charmin/Pampers/Old Spice/
+  Swiffer — same parent — return nothing.** ⚠️ **Design: ONE record, MANY aliases** ("Tide — made by
+  Procter & Gamble, graded C on the parent"), NOT 4,902 new rows (that inflates the brand count and
+  multiplies C-5). Never let an alias overwrite an independently-graded brand.
+- **V-2 — normalize 1,744 raw ALL-CAPS EDGAR display names** ("CLOROX CO", "J M SMUCKER"); 732 are graded
+  and surface in results.
+- **V-3 — log zero-result searches.** The single most valuable dataset currently discarded; it becomes the
+  prioritized "what to grade next" queue.
+- **V-4 — depth over breadth:** wire 1–2 dark `enriched.*` dims (supplyChain, federalContracts, privacy,
+  oshaSevereInjury) using the B-115 penalize-only template, targeting the 1,298 single-signal brands.
+
+### L — Launch (late September)
+- **L-1 — hero asset: "Your grocery aisle is 10 companies."** Interactive, free, no app required. The
+  parent map is the only dataset TruNorth owns that nobody else publishes.
+- **L-2 — `/methodology` + `/corrections` pages.** On a checkability product these are features, and they
+  are the prerequisite for every partnership ask (ITEP permission is already on file, unused).
+- **L-3 — App Store listing overhaul.** Per agent research the app is filed under **News** (not Shopping),
+  named "TruNorthApp" (zero keywords), and ranks **#4 for its own brand name**. ⚠️ Aron to confirm in ASC.
+- **L-4 — creator-led distribution, not ads.** Competitive proof: **Buy'r launched 2026-01-21 → 50K
+  downloads week one, 4.8★/597 ratings**, off ONE TikTok creator (4M followers), with a thinner database
+  and **no scores at all**. Yuka hit 80M with zero paid marketing. A *dormant* app (Goods Unite Us, last
+  updated 2024) has 40,000 ratings to TruNorth's 2.
+- **L-5 — stopping rule (write it down):** if by **2026-12-15** organic sessions <100/month AND graded
+  brands with ≥3 categories <1,000, stop building and keep the site as a credibility asset.
+
+### ⛔ Blocking on Aron
+1. **Push B-115** (`3bdae9815`) — day 9 unpushed, 72 behind; the live site still scores the old model.
+2. **Install Build 81 and scan 5 real products** — nobody has ever run the shipped app; every UX claim in
+   the review is read from source code.
+3. **App Store Connect** — confirm the category/name/keyword findings and make (or delegate) the edits.
+4. **Resend migration** approval to implement + `--apply` on `score-rebake-weekly.yml:105` (the notify
+   step has been running as a dry run).
+
+---
+
 ## ▶ NEXT BUILD (Build 82, iOS) — Build 81 ✅ SHIPPED + LIVE 2026-07-14 (updated 2026-07-18)
 
 > 🟢 **Build 81 (v1.1) is DONE — approved 2026-07-08, released Manual 2026-07-14, now the LIVE App Store build.** The table below is the Build-81 worklist, kept for its still-open rows; **its ✅ rows are history, not pending work.** **Carry-forward into Build 82:** **NB-2** (B-23 — wire the remaining 6 `enriched.*` dims into scoring) · **NB-4** (B-67 GJF strip, still unrun) · **NB-7** (E-1 scoring-flags flip decision) · **widget revival** (target + Swift preserved, deployment target already at iOS 15.0; re-add to the App target's Embed phase + dependencies, and harden `ship-ios.sh:124`/`:203` for multi-target before `ship:ios` can carry it). Most of these are also v1.2 candidates — see the v1.2 plan doc referenced in the header, pending Aron's decisions. — **Historical (2026-07-07):** ✅ **Build 81 SUBMITTED to App Review, WIDGET-LESS (Manual release).** ⚑ **DECISION 2026-07-07: the Home-Screen widget is DROPPED from Build 81; v1.1 ships WITHOUT it.** Commit `7703c1602` decoupled `TruNorthWidgetExtension` from the App target (Embed phase + dependency) so the archive carries **no `.appex`**, and also landed the previously-uncommitted deployment-target fix **26.5 → 15.0** (moot for 81, kept correct for Build 82). Verified `xcodebuild` → **BUILD SUCCEEDED, 0 widget compiled** → Build 81 is **single-target again, so `ship:ios` works** (no Xcode Organizer archive needed). The widget target + Swift are **preserved for Build 82** (de-scope, not deletion). So the NB-10 "archive via Organizer because it carries the widget" caveat below is **no longer in force for Build 81** — revisit only when Build 82 re-adds the widget (and the `ship-ios.sh` multi-target hardening at `:124`/`:203` will matter again then). Build 80 was the last build shipped before this. Everything else below was reconciled 2026-06-27 — re-verify before acting.
