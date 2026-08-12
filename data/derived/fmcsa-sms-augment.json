@@ -3,12 +3,12 @@
   "sourceUrl": "https://ai.fmcsa.dot.gov/SMS/",
   "sourceKind": "synthetic",
   "snapshotDate": "2026-06",
-  "generatedAt": "2026-06-08T16:08:55.043Z",
-  "matchCount": 11,
-  "orphanCount": 1,
+  "generatedAt": "2026-08-12T08:01:14.148Z",
+  "matchCount": 12,
+  "orphanCount": 0,
   "routeCounts": {
-    "direct": 10,
-    "alias": 1,
+    "direct": 12,
+    "alias": 0,
     "parent-map": 0
   },
   "amazon": {
@@ -75,7 +75,7 @@
       "sourceUrl": "https://ai.fmcsa.dot.gov/SMS/Carrier/900002/Overview.aspx"
     }
   },
-  "ups": {
+  "united-parcel-service": {
     "labor": {
       "fmcsaSafetyScores": {
         "unsafeDriving": 28,
@@ -201,6 +201,38 @@
         "basicMax": 45
       },
       "sourceUrl": "https://ai.fmcsa.dot.gov/SMS/Carrier/900006/Overview.aspx"
+    }
+  },
+  "knight-swift-transportation": {
+    "labor": {
+      "fmcsaSafetyScores": {
+        "unsafeDriving": 52,
+        "hoursOfService": 47,
+        "vehicleMaintenance": 58,
+        "controlledSubstances": 11,
+        "hazmat": null,
+        "crashIndicator": 49
+      },
+      "outOfServiceRate": 6.2,
+      "fleetSize": 9800,
+      "driverCount": 10500,
+      "alertCount": 1,
+      "carrierCount": 1,
+      "carriers": [
+        {
+          "dotNumber": "900007",
+          "name": "KNIGHT TRANSPORTATION INC",
+          "parent": "KNIGHT SWIFT TRANSPORTATION HOLDINGS INC",
+          "city": "PHOENIX",
+          "state": "AZ"
+        }
+      ],
+      "worstCarrier": {
+        "dotNumber": "900007",
+        "name": "KNIGHT TRANSPORTATION INC",
+        "basicMax": 58
+      },
+      "sourceUrl": "https://ai.fmcsa.dot.gov/SMS/Carrier/900007/Overview.aspx"
     }
   },
   "werner-enterprises": {
