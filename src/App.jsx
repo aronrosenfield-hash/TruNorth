@@ -6187,7 +6187,20 @@ useEffect(() => {
     const q = query.trim();
     if (!q) return;
     const settle = setTimeout(() => {
-      track("search", { query: q.slice(0, 60), result_count: filtered.length });
+      // V-3 (2026-08-10): a search is only useful if it returns a brand we can
+      // actually answer for. `result_count` alone hid two different failures —
+      // "we have nothing" and "we have the brand but no grade" both looked like
+      // a successful search. Emit the graded count too, and a distinct
+      // `search_no_results` event carrying the query, which is the prioritized
+      // "what to grade next" queue. Without this the single most valuable
+      // dataset the app produces is discarded on every keystroke.
+      const gradedCount = filtered.reduce((n, c) => n + (c.grade && c.grade !== "?" ? 1 : 0), 0);
+      track("search", { query: q.slice(0, 60), result_count: filtered.length, graded_count: gradedCount });
+      if (filtered.length === 0) {
+        track("search_no_results", { query: q.slice(0, 60) });
+      } else if (gradedCount === 0) {
+        track("search_no_graded_result", { query: q.slice(0, 60), result_count: filtered.length });
+      }
       // 2026-06-12 review: this stash used to sit AFTER the cleanup `return`
       // below — unreachable since the M4 settle refactor, so "Recent" never
       // populated for anyone. Record settled, non-empty searches here.
