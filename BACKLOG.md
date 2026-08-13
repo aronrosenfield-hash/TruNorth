@@ -148,6 +148,12 @@
 > **The finding that reframed the plan:** TruNorth does not have a marketing problem yet — it has a
 > **correctness problem that gets worse with every visitor**. A launch that *works* is the risk.
 
+> ✅ **STATUS 2026-08-10 EOD — C-1…C-6, V-1…V-3 and the B-121 email migration are ALL DONE and committed
+> locally (10 commits, unpushed).** Catalog moved **3,065 → 2,586 graded** — a deliberate 479-grade
+> reduction buying correctness; findable coverage went the other way, with 5,241 shelf-brand names now
+> resolving (search correctness on real shelf brands: **top-1 28%→72%, top-3 31%→93%**). 68/68 tests
+> pass. **Still open: V-4 (dark enriched dims), L-1/L-3/L-4 (launch assets, App Store, creators).**
+
 ### C — Correctness (must land before ANY distribution work). Stop-ship gate.
 - **C-1 ✅ DONE (`b8f529575`) — 9,765 pages published a fabricated "F".** `Number(null)` is `0`, which IS
   finite, so `alternatives-seo.js` turned "no grade" into `grade(0)`="F" on every ungraded company; all
@@ -160,22 +166,22 @@
   $16.2M). Surgical data fix; **0 grade drift** (scoring reads structured `payRatio` first — which
   retroactively validates cutting the enriched ratio from B-115). ⚠️ **Upstream parser still broken —
   these regress on its next successful run (B-107/B-123).**
-- **C-3 — 82,553 `"Claude AI synthesis"` source strings across 11,187 brand files (87% of the catalog).**
+- **C-3 ✅ DONE (`a585101c1`) — 82,553 `"Claude AI synthesis"` source strings across 11,187 brand files (87% of the catalog).**
   On a "records, not opinions" product this is the single most dangerous string in the repo. Either cite
   the real record or drop the claim. **Highest remaining reputational risk.**
-- **C-4 — 1,298 graded brands (42%) rest on ONE category; 586 score exactly 50.000, which renders as "B".**
+- **C-4 ✅ DONE (`056784c71`) — 1,298 graded brands (42%) rested on ONE category; 586 score exactly 50.000, which renders as "B".**
   Live example: **23andMe grades "B"** off one `privacy:"mixed"` datapoint while its own narrative cites
   the CA AG suing it over a data breach. Show *"Not enough public record to grade"* instead. Grade-moving
   → rule #16, Aron approves drift.
-- **C-5 — same company, contradictory grades.** `Alaska Air Group=D` vs `Alaska Airlines=A`; `Apple=B` vs
+- **C-5 ✅ DONE (`1591a2793`) — same company, contradictory grades.** `Alaska Air Group=D` vs `Alaska Airlines=A`; `Apple=B` vs
   `Apple Store=A` vs `Apple Music=C`; `Amazon=C` vs `Amazon Go=F`; `CVS Health=D`/`CVS Pharmacy=C`. Of 602
   sub-brands graded beside a graded parent, **143 (24%) disagree, 32 by 2+ letters.** Keep legitimate
   divergence (Ben & Jerry's=A vs Unilever=C); suppress thin-data artifacts on the same business.
-- **C-6 — golden-set CI check that FAILS THE BUILD** if any brand asserts a grade unsupported by a record.
+- **C-6 ✅ DONE (`1cb740822`) — data-integrity gate that FAILS THE BUILD** if any brand asserts a grade unsupported by a record.
   The only control that keeps working when attention moves elsewhere.
 
 ### V — Coverage (the release feature)
-- **V-1 🔑 THE FLAGSHIP — wire the brand→parent map into SEARCH.** The scanner loads
+- **V-1 ✅ DONE (`0d1ea2f4c`) 🔑 THE FLAGSHIP — brand→parent map wired into SEARCH.** The scanner loads
   `brand-parent-map.json` (6,704 entries) at `App.jsx:149-190`; **the text-search path never does**
   (`App.jsx:5483-5521`). Measured: **4,902 shelf brands already resolve to an ALREADY-GRADED parent and
   are unfindable by typing the name** (4,389 high-confidence) — Nestlé 206 · P&G 180 · Unilever 179 ·
@@ -184,9 +190,9 @@
   Swiffer — same parent — return nothing.** ⚠️ **Design: ONE record, MANY aliases** ("Tide — made by
   Procter & Gamble, graded C on the parent"), NOT 4,902 new rows (that inflates the brand count and
   multiplies C-5). Never let an alias overwrite an independently-graded brand.
-- **V-2 — normalize 1,744 raw ALL-CAPS EDGAR display names** ("CLOROX CO", "J M SMUCKER"); 732 are graded
+- **V-2 ✅ DONE (`1d279f5b1`) — normalized 1,736 raw ALL-CAPS EDGAR display names** ("CLOROX CO", "J M SMUCKER"); 732 are graded
   and surface in results.
-- **V-3 — log zero-result searches.** The single most valuable dataset currently discarded; it becomes the
+- **V-3 ✅ DONE (`1d279f5b1`) — zero-result + no-graded-result searches now logged.** The single most valuable dataset currently discarded; it becomes the
   prioritized "what to grade next" queue.
 - **V-4 — depth over breadth:** wire 1–2 dark `enriched.*` dims (supplyChain, federalContracts, privacy,
   oshaSevereInjury) using the B-115 penalize-only template, targeting the 1,298 single-signal brands.
@@ -194,7 +200,7 @@
 ### L — Launch (late September)
 - **L-1 — hero asset: "Your grocery aisle is 10 companies."** Interactive, free, no app required. The
   parent map is the only dataset TruNorth owns that nobody else publishes.
-- **L-2 — `/methodology` + `/corrections` pages.** On a checkability product these are features, and they
+- **L-2 ✅ DONE (`a7a83ebaf`) — `/methodology` rewritten to match the code + public corrections log.** On a checkability product these are features, and they
   are the prerequisite for every partnership ask (ITEP permission is already on file, unused).
 - **L-3 — App Store listing overhaul.** Per agent research the app is filed under **News** (not Shopping),
   named "TruNorthApp" (zero keywords), and ranks **#4 for its own brand name**. ⚠️ Aron to confirm in ASC.
@@ -210,8 +216,10 @@
 2. **Install Build 81 and scan 5 real products** — nobody has ever run the shipped app; every UX claim in
    the review is read from source code.
 3. **App Store Connect** — confirm the category/name/keyword findings and make (or delegate) the edits.
-4. **Resend migration** approval to implement + `--apply` on `score-rebake-weekly.yml:105` (the notify
-   step has been running as a dry run).
+4. ✅ **Resend migration IMPLEMENTED** (`58dab0aa4`) — `--apply` now passed on
+   `score-rebake-weekly.yml`. ⚠️ **Nothing can send until you add `RESEND_API_KEY` to the repo
+   secrets** — that secret is the activation switch. Warm up deliverability on the small existing
+   list before any launch campaign.
 
 ---
 
