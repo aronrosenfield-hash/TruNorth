@@ -36,13 +36,13 @@ export default function Methodology({ onBack }) {
       <div style={{ maxWidth: 680, margin: "0 auto", padding: "calc(24px + env(safe-area-inset-top,0px)) 22px 80px" }}>
         <button onClick={onBack} style={{ background: "transparent", border: "none", color: C.accent, fontSize: 14, fontWeight: 600, cursor: "pointer", padding: "8px 0", marginBottom: 8 }}>← Back</button>
         <h1 style={{ fontFamily: "ui-serif, 'New York', Georgia, serif", fontSize: 32, fontWeight: 600, letterSpacing: -0.5, marginBottom: 6, color: C.text }}>How TruNorth grades work</h1>
-        <p style={{ fontSize: 13, color: C.textMute, marginBottom: 24 }}>Methodology, published in full. Last updated June 11, 2026.</p>
+        <p style={{ fontSize: 13, color: C.textMute, marginBottom: 24 }}>Methodology, published in full. Last updated August 10, 2026.</p>
 
         <P>Every grade in TruNorth is computed by the published formula on this page, from public records we cite. No grade is hand-set, no company can pay to change one, and the same math runs identically whether a brand leans left, right, or neither.</P>
 
         <H2>1. Where the data comes from</H2>
         <P>We pull from 200+ public sources on fixed schedules: federal regulators (FEC, OSHA, EPA, NLRB, SEC, CFPB, CPSC, FDA, ATF, CBP, DOL), court records, state regulators, international enforcement agencies, certification bodies (B Corp, Leaping Bunny, Fair Trade, FSC), and official disclosure filings (SEC pay ratios, IRS-990 grants, EEO-1 workforce reports). Each grade traces back to specific records. Those are representative anchors, though — we deliberately don't publish the complete feed list, because the exact source mix and pipeline is what keeps TruNorth from being trivially replicated.</P>
-        <P>Where a category shows a narrative researched with AI assistance, every claim required a citation URL to a verifiable source before it was written — uncited findings are discarded, and "no public record found" is always a permitted answer.</P>
+        <P>Some narratives were drafted with AI assistance from those records. <b>AI is never a source.</b> Every source we list is a public record — a regulator, a court, a filing or a certifying body — and in August 2026 we audited the whole catalog and removed every citation that named an AI tool rather than a record. Where a claim could not be traced back to a record, we deleted the claim, not just the citation. "No public record found" is always a permitted answer.</P>
 
         <H2>2. From records to category scores</H2>
         <P>Each of the 9 categories gets a 0–100 score from the records, using continuous formulas rather than buckets wherever the data allows:</P>
@@ -57,6 +57,7 @@ export default function Methodology({ onBack }) {
         <P>Brands start neutral (50) and every verified record moves them. Formally, the overall score is shrunk toward 50 by the evidence behind it:</P>
         <P><Code>score = (raw × N + 50 × 1.5) / (N + 1.5)</Code> — where <Code>N</Code> is the number of categories with real records. One strong record can earn a B; an A takes a broad, verified track record. This is the same estimator family IMDb uses for its Top 250.</P>
         <P>Brands with no scoreable records show <Code>?</Code> instead of a grade — we never average missing data into a fake C.</P>
+        <P><b>One ambiguous record is not evidence either.</b> If everything we hold on a brand is a single finding that points neither up nor down, we show <Code>?</Code> rather than a middling pass. Because the B threshold sits at 50 and "mixed" scores exactly 50, that case used to publish a <b>B</b> — a good grade built on nothing. In August 2026 we removed 463 such grades. Fewer brands carry a letter now, and the ones that do mean something.</P>
 
         <H2>4. Letter grades — fixed, published thresholds</H2>
         <P><Code>A ≥ 62 · B ≥ 50 · C ≥ 38 · D ≥ 33 · F &lt; 33</Code></P>
@@ -76,15 +77,20 @@ export default function Methodology({ onBack }) {
           <li><b>DEI, animal testing, and firearms are excluded from the neutral baseline grade entirely.</b> We show those facts as badges, but they only move a grade after you take a stance in the Match — the app takes no position on them. Political giving is the one stance-adjacent category we <i>do</i> fold into the baseline, through the balanced-vs-concentrated judgment described just above; the moment you state a political preference, your own weighting replaces that baseline.</li>
         </UL>
 
-        <H2>7. What we don't do</H2>
+        <H2>7. Brands, and the companies behind them</H2>
+        <P>Most things on a shelf are products, not companies. Tide, Oreo and Cheerios don't file with the SEC — Procter &amp; Gamble, Mondelez and General Mills do. So searching a product name takes you to the record of <b>the company that owns it</b>, and we name that company on the result.</P>
+        <P>A sub-brand keeps its own grade whenever it has its own record. Ben &amp; Jerry's is graded on Ben &amp; Jerry's, not on Unilever, and the two genuinely differ. What we no longer do is publish two contradictory answers for one business: when a thin sub-brand record disagreed sharply with the far better-documented parent — Amazon Go against Amazon, CVS Pharmacy against CVS Health — the app showed a different letter depending on which row you happened to land on. In those cases we now defer to the record with more behind it rather than inventing a second verdict.</P>
+
+        <H2>8. What we don't do</H2>
         <UL>
           <li>No pay-for-grades, no advertiser influence, no sponsored placements — ever.</li>
           <li>No accounts, no sale of personal data, no session recording. The Match lives on your device.</li>
           <li>No editorial overrides: if the records are wrong, we fix the records pipeline, not the letter.</li>
         </UL>
 
-        <H2>8. Corrections</H2>
+        <H2>9. Corrections</H2>
         <P>If we've mischaracterized a record or matched the wrong company, email <a href="mailto:corrections@trunorthapp.com" style={{ color: C.accent }}>corrections@trunorthapp.com</a> with a link to the underlying record. Verified corrections ship in the next data cycle, typically within a week.</P>
+        <P>We also correct ourselves without being asked. In August 2026 an internal audit found and fixed four errors worth naming here: pages that showed an <b>F</b> for companies we had never graded (a null score was being read as a zero); thirteen CEO pay ratios published wrong because the filing parser dropped a leading digit, including a Home Depot figure that was actually the filing year; an unsourced penalty claim against a named hospital system; and the 463 unsupported <b>B</b> grades described in section 3. All are fixed, and the checks that catch each one now run on every build — if any of them ever comes back, the build fails before it ships.</P>
 
         <div style={{ marginTop: 36, padding: "14px 16px", background: C.bgSoft, border: `1px solid ${C.border}`, borderRadius: 12 }}>
           <p style={{ fontSize: 13, lineHeight: 1.6, color: C.textMute, margin: 0 }}>
