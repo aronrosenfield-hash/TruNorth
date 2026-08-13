@@ -1,1 +1,231 @@
-{"name":"RTX","cat":"Manufacturing","init":"RTX","overall":38,"isPublic":true,"sc":{"political":"right","charity":"neutral","environment":"mixed","labor":"poor","dei":"pro_dei","animals":"na","guns":"very poor","privacy":"neutral","execPay":"na","violations_summary":"140 federal records; $1,682.5M penalties (2000-present): fraud $950.0M, export control $366.4M, FCPA $137.9M.","governance":"neutral"},"political":{"s":"FEC: $10K PAC donations; 89% to Republican, 11% to Democratic committees.  [CA CalAccess + NY COELIG + TX Ethics adds state-level totals.]","amt":"$1.9M","lean":"right","sources":["FEC.gov","state-lobbying-r5"]},"labor":{"s":"140 federal penalties totaling $1.7B since 2000 (Violation Tracker).","rating":"mixed","sources":["OSHA","NLRB"]},"dataLastUpdated":{"legacy":"2026-05-28","enrichedAugments":"2026-06-26T16:16:39.453Z"},"charity":{"s":"No public record found.","sources":["Claude AI synthesis"]},"environment":{"s":"CDP Climate Change: B (2024) — management-band disclosure; discloses emissions data but limited target ambition.","sources":["EPA","cdp-climate"]},"dei":{"s":"HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.","sources":["Claude AI synthesis","hrc-cei","hrc-cei","hrc-cei"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"SIPRI Top-100 rank #2 (2023 revenue): ~$40.6B in arms sales, 59% of total revenue.","sources":["sipri-arms"]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"ab":"#2a0d0d","ac":"#e24a4a","competitors":["lockheed-martin","boeing","northrop-grumman","general-dynamics","l3harris-technologies"],"wiki":{"founded":"2020-04-03","hq":"Waltham, Arlington County","employees":"181000","revenue":"55716000000","parent":"The Vanguard Group, Capital Group Companies, BlackRock, State Street Corporation, Dodge & Cox, Geode Capital Management, JPMorgan Chase, Morgan Stanley, Bank of America","industry":"weapons industry, aerospace industry","products":null,"keyPeople":null,"website":"https://www.rtx.com/","controversies":null,"logoUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/RTX_Raytheon_Technologies_logo.svg/330px-RTX_Raytheon_Technologies_logo.svg.png","wikipediaUrl":"https://en.wikipedia.org/wiki/RTX_Corporation","extract":"RTX Corporation, formerly Raytheon Technologies Corporation, is an American multinational aerospace and defense conglomerate headquartered in Arlington, Virginia. It is one of the largest aerospace and defense manufacturers in the world by revenue and market capitalization, as well as one of the largest providers of intelligence services. In 2023, the company's rank in the Forbes Global 2000 was 79. RTX manufactures aircraft engines, avionics, aerostructures, cybersecurity solutions, guided missiles, air defense systems, satellites, and drones. The company is a large military contractor, getti"},"bbb":{"rating":"A","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/pa/philadelphia/profile/advertising-agencies/rtx-platform-0241-236081328"},"secComplaints":{"count":10,"sample":[{"adsh":"0000101829-24-000033","date":"2024-10-16","filer":"RTX Corp  (RTX)  (CIK 0000101829)","form":"8-K"},{"adsh":"0000101829-24-000033","date":"2024-10-16","filer":"RTX Corp  (RTX)  (CIK 0000101829)","form":"8-K"},{"adsh":"0001104659-25-108696","date":"2025-11-10","filer":"Datavault AI Inc.  (DVLT)  (CIK 0001682149)","form":"8-K"}]},"deiBadges":[{"scoreType":"hrc_cei","score":100,"year":2025,"sourceUrl":"https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"},{"scoreType":"disability_in","score":100,"year":2024,"sourceUrl":"https://directemployers.org/2024/07/25/the-disability-inclusive-elite-2024-disability-equality-index-honors-200-de-members/"}],"slug":"rtx","news":null,"payRatio":null,"animalCerts":null,"logoUrl":null,"logoSource":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"fec":{"source":"FEC API","committeeId":"C00097568","committeeName":"EMPLOYEES OF RTX CORPORATION POLITICAL ACTION COMMITTEE","lean":"right","repTotal":8500,"demTotal":1000,"totalRaised":1943199,"totalRaisedFmt":"$1.9M","lastFilingDate":"2026-05-19","cycle":2026,"fetchedAt":"2026-05-28T00:26:59.119Z"},"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2023-03-13","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=RTX&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-28T00:26:59.731Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-28T00:27:03.645Z","realCats":2,"governance":{"s":"Wikidata: owned by JPMorgan Chase; HQ Arlington County. (Wikidata Q89368734)","sources":["wikidata"]},"flags":{"guns":{"na":true},"health":{"na":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true}},"csc":{"environment":50,"labor":8},"enriched":{"secTax":{"effectiveTaxRate":0.191,"taxExpenseUsd":1181000000,"pretaxIncomeUsd":6194000000,"year":2024,"cik":101829,"source":"SEC EDGAR XBRL"},"supplyChain":{"conflictMineralsFiler":true,"_sec":{"cik":"101829","displayName":"RTX Corp"},"lastUpdated":"2026-06-26T16:14:03.087Z"}}}
+{
+  "name": "RTX",
+  "cat": "Manufacturing",
+  "init": "RTX",
+  "overall": 38,
+  "isPublic": true,
+  "sc": {
+    "political": "right",
+    "charity": "neutral",
+    "environment": "mixed",
+    "labor": "poor",
+    "dei": "pro_dei",
+    "animals": "na",
+    "guns": "very poor",
+    "privacy": "neutral",
+    "execPay": "na",
+    "violations_summary": "140 federal records; $1,682.5M penalties (2000-present): fraud $950.0M, export control $366.4M, FCPA $137.9M.",
+    "governance": "neutral"
+  },
+  "political": {
+    "s": "FEC: $10K PAC donations; 89% to Republican, 11% to Democratic committees.  [CA CalAccess + NY COELIG + TX Ethics adds state-level totals.]",
+    "amt": "$1.9M",
+    "lean": "right",
+    "sources": [
+      "FEC.gov",
+      "state-lobbying-r5"
+    ]
+  },
+  "labor": {
+    "s": "140 federal penalties totaling $1.7B since 2000 (Violation Tracker).",
+    "rating": "mixed",
+    "sources": [
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dataLastUpdated": {
+    "legacy": "2026-05-28",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z"
+  },
+  "charity": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "environment": {
+    "s": "CDP Climate Change: B (2024) — management-band disclosure; discloses emissions data but limited target ambition.",
+    "sources": [
+      "EPA",
+      "cdp-climate"
+    ]
+  },
+  "dei": {
+    "s": "HRC Corporate Equality Index: 100/100 — Equality 100 Leader (2025). Top-rated LGBTQ+ workplace policies, benefits, and culture. HRC Corporate Equality Index 100/100 (2025) — top-tier LGBTQ+ workplace equality rating.",
+    "sources": [
+      "hrc-cei",
+      "hrc-cei",
+      "hrc-cei"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "guns": {
+    "s": "SIPRI Top-100 rank #2 (2023 revenue): ~$40.6B in arms sales, 59% of total revenue.",
+    "sources": [
+      "sipri-arms"
+    ]
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "ab": "#2a0d0d",
+  "ac": "#e24a4a",
+  "competitors": [
+    "lockheed-martin",
+    "boeing",
+    "northrop-grumman",
+    "general-dynamics",
+    "l3harris-technologies"
+  ],
+  "wiki": {
+    "founded": "2020-04-03",
+    "hq": "Waltham, Arlington County",
+    "employees": "181000",
+    "revenue": "55716000000",
+    "parent": "The Vanguard Group, Capital Group Companies, BlackRock, State Street Corporation, Dodge & Cox, Geode Capital Management, JPMorgan Chase, Morgan Stanley, Bank of America",
+    "industry": "weapons industry, aerospace industry",
+    "products": null,
+    "keyPeople": null,
+    "website": "https://www.rtx.com/",
+    "controversies": null,
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/RTX_Raytheon_Technologies_logo.svg/330px-RTX_Raytheon_Technologies_logo.svg.png",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/RTX_Corporation",
+    "extract": "RTX Corporation, formerly Raytheon Technologies Corporation, is an American multinational aerospace and defense conglomerate headquartered in Arlington, Virginia. It is one of the largest aerospace and defense manufacturers in the world by revenue and market capitalization, as well as one of the largest providers of intelligence services. In 2023, the company's rank in the Forbes Global 2000 was 79. RTX manufactures aircraft engines, avionics, aerostructures, cybersecurity solutions, guided missiles, air defense systems, satellites, and drones. The company is a large military contractor, getti"
+  },
+  "bbb": {
+    "rating": "A",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/pa/philadelphia/profile/advertising-agencies/rtx-platform-0241-236081328"
+  },
+  "secComplaints": {
+    "count": 10,
+    "sample": [
+      {
+        "adsh": "0000101829-24-000033",
+        "date": "2024-10-16",
+        "filer": "RTX Corp  (RTX)  (CIK 0000101829)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0000101829-24-000033",
+        "date": "2024-10-16",
+        "filer": "RTX Corp  (RTX)  (CIK 0000101829)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0001104659-25-108696",
+        "date": "2025-11-10",
+        "filer": "Datavault AI Inc.  (DVLT)  (CIK 0001682149)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "deiBadges": [
+    {
+      "scoreType": "hrc_cei",
+      "score": 100,
+      "year": 2025,
+      "sourceUrl": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/Report-Design-Graphics/CEI-images/CEI-2024/CEI-2025-Appendix-A-Company-6.pdf"
+    },
+    {
+      "scoreType": "disability_in",
+      "score": 100,
+      "year": 2024,
+      "sourceUrl": "https://directemployers.org/2024/07/25/the-disability-inclusive-elite-2024-disability-equality-index-honors-200-de-members/"
+    }
+  ],
+  "slug": "rtx",
+  "news": null,
+  "payRatio": null,
+  "animalCerts": null,
+  "logoUrl": null,
+  "logoSource": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "fec": {
+    "source": "FEC API",
+    "committeeId": "C00097568",
+    "committeeName": "EMPLOYEES OF RTX CORPORATION POLITICAL ACTION COMMITTEE",
+    "lean": "right",
+    "repTotal": 8500,
+    "demTotal": 1000,
+    "totalRaised": 1943199,
+    "totalRaisedFmt": "$1.9M",
+    "lastFilingDate": "2026-05-19",
+    "cycle": 2026,
+    "fetchedAt": "2026-05-28T00:26:59.119Z"
+  },
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2023-03-13",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=RTX&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-28T00:26:59.731Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-28T00:27:03.645Z",
+  "realCats": 2,
+  "governance": {
+    "s": "Wikidata: owned by JPMorgan Chase; HQ Arlington County. (Wikidata Q89368734)",
+    "sources": [
+      "wikidata"
+    ]
+  },
+  "flags": {
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    }
+  },
+  "csc": {
+    "environment": 50,
+    "labor": 8
+  },
+  "enriched": {
+    "secTax": {
+      "effectiveTaxRate": 0.191,
+      "taxExpenseUsd": 1181000000,
+      "pretaxIncomeUsd": 6194000000,
+      "year": 2024,
+      "cik": 101829,
+      "source": "SEC EDGAR XBRL"
+    },
+    "supplyChain": {
+      "conflictMineralsFiler": true,
+      "_sec": {
+        "cik": "101829",
+        "displayName": "RTX Corp"
+      },
+      "lastUpdated": "2026-06-26T16:14:03.087Z"
+    }
+  }
+}

@@ -2,13 +2,13 @@
   "name": "Labcorp Drug Development",
   "cat": "Healthcare",
   "init": "LABC",
-  "overall": 50,
+  "overall": null,
   "isPublic": true,
   "sc": {
     "political": "bipartisan",
     "charity": "neutral",
     "environment": "neutral",
-    "labor": "mixed",
+    "labor": "neutral",
     "dei": "neutral",
     "animals": "na",
     "guns": "neutral",
@@ -20,40 +20,29 @@
   "political": {
     "s": "FEC: $589K in executive political donations; partisan lean split across 17 executive donors.",
     "sources": [
-      "Claude AI synthesis",
       "exec-political-donations"
     ]
   },
   "labor": {
-    "s": "3 OSHA severe-injury reports since 2015.",
-    "sources": [
-      "Claude AI synthesis"
-    ]
+    "s": "No public record found.",
+    "sources": []
   },
   "dataLastUpdated": "2026-05-31",
   "charity": {
     "s": "No public record found.",
-    "sources": [
-      "Claude AI synthesis"
-    ]
+    "sources": []
   },
   "environment": {
     "s": "No public record found.",
-    "sources": [
-      "Claude AI synthesis"
-    ]
+    "sources": []
   },
   "dei": {
     "s": "No public record found.",
-    "sources": [
-      "Claude AI synthesis"
-    ]
+    "sources": []
   },
   "animals": {
     "s": "No public record found.",
-    "sources": [
-      "Claude AI synthesis"
-    ]
+    "sources": []
   },
   "guns": {
     "s": "No public record found.",
@@ -61,15 +50,11 @@
   },
   "privacy": {
     "s": "No public record found.",
-    "sources": [
-      "Claude AI synthesis"
-    ]
+    "sources": []
   },
   "execPay": {
     "s": "No public record found.",
-    "sources": [
-      "Claude AI synthesis"
-    ]
+    "sources": []
   },
   "ab": "#0d2318",
   "ac": "#4caf82",
@@ -127,7 +112,7 @@
   "health": {
     "s": "HHS Office of Inspector General: 1 recent OIG enforcement action (past 24mo)."
   },
-  "realCats": 1,
+  "realCats": 0,
   "governance": {
     "s": "Wikidata: owned by LabCorp; HQ Princeton. (Wikidata Q909356)",
     "sources": [
@@ -151,8 +136,5 @@
       "_inferred": true,
       "basis": "Healthcare"
     }
-  },
-  "csc": {
-    "labor": 50
   }
 }

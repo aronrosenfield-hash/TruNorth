@@ -2,7 +2,7 @@
   "name": "Mayo Clinic",
   "cat": "Healthcare",
   "init": "MC",
-  "overall": 27.5,
+  "overall": 33.5,
   "isPublic": false,
   "ticker": null,
   "sc": {
@@ -13,7 +13,7 @@
     "dei": "neutral",
     "animals": "neutral",
     "guns": "neutral",
-    "privacy": "poor",
+    "privacy": "neutral",
     "execPay": "neutral",
     "health": "good",
     "governance": "mixed"
@@ -22,17 +22,13 @@
     "s": "No public record found.",
     "amt": "$1,028,428 (2024 contributions) + $1,290,000 (2024 lobbying)",
     "lean": "Neutral",
-    "sources": [
-      "Claude AI synthesis"
-    ]
+    "sources": []
   },
   "charity": {
     "s": "No public record found.",
     "amt": "$14 million+ annual giving (2024)",
     "focus": "Healthcare access, community health needs, education, research",
-    "sources": [
-      "Claude AI synthesis"
-    ]
+    "sources": []
   },
   "environment": {
     "s": "environmental violation: $98K in federal penalties (Violation Tracker).",
@@ -53,37 +49,28 @@
     "s": "EEO-1 workforce demographics on federal record (FY2020, DOL OFCCP FOIA release): 65,145 US employees — 72.4% women, 15.6% racial/ethnic minorities; management 56.8% women, 9.3% minorities.",
     "stance": "Mixed",
     "sources": [
-      "Claude AI synthesis",
       "ofccp-eeo1"
     ]
   },
   "animals": {
     "s": "Not applicable to healthcare provider.",
     "verdict": "N/A",
-    "sources": [
-      "Claude AI synthesis"
-    ]
+    "sources": []
   },
   "guns": {
     "s": "Healthcare provider; no firearms manufactured or sold.",
     "verdict": "N/A",
-    "sources": [
-      "Claude AI synthesis"
-    ]
+    "sources": []
   },
   "privacy": {
-    "s": "Federal privacy violation resulted in $52.5M penalty; documented enforcement action on record.",
+    "s": "No public record found.",
     "grade": "Good",
-    "sources": [
-      "Claude AI synthesis"
-    ]
+    "sources": []
   },
   "execPay": {
     "s": "CEO-to-median-worker ratio not publicly disclosed.",
     "ratio": "Approximately 50:1 (CEO to average worker)",
-    "sources": [
-      "Claude AI synthesis"
-    ]
+    "sources": []
   },
   "execPayAPI": {
     "sec": {
@@ -187,7 +174,7 @@
       "health-pharma-r3"
     ]
   },
-  "realCats": 3,
+  "realCats": 2,
   "governance": {
     "s": "Wikipedia \"Criticism\" section: In May 2023, Mayo Clinic lobbied against two statewide health care bills, the Keeping Nurses at the Bedside Act (KNABA) and the Health Care Affordability Board, threatening to pull over 4 billion…",
     "sources": [
@@ -210,8 +197,7 @@
   },
   "csc": {
     "environment": 32.1,
-    "labor": 9.8,
-    "privacy": 8
+    "labor": 9.8
   },
   "dei_eeo1": {
     "year": 2020,

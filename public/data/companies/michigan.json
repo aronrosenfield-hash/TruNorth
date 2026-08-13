@@ -1,1 +1,219 @@
-{"name":"Michigan","cat":"Financial Services","init":"MICH","overall":33.2,"isPublic":true,"sc":{"political":"bipartisan","charity":"neutral","environment":"neutral","labor":"poor","dei":"neutral","animals":"na","guns":"neutral","privacy":"na","execPay":"na","governance":"neutral"},"political":{"s":"FEC: $127K in executive political donations; partisan lean split across 7 executive donors.","sources":["Claude AI synthesis","exec-political-donations"]},"labor":{"s":"3 federal penalties totaling $494.3M since 2000 (Violation Tracker).","rating":"good","sources":["OSHA","NLRB"]},"dataLastUpdated":{"legacy":"2026-05-31","enrichedAugments":"2026-06-26T16:16:39.453Z","lobbying":"2026-07-30T21:49:28.010Z"},"charity":{"s":"No public record found.","sources":["Claude AI synthesis"]},"environment":{"s":"No public record found.","sources":["EPA"]},"dei":{"s":"EEO-1 workforce demographics on federal record (FY2018, DOL OFCCP FOIA release): 100 US employees — 23% women, 12% racial/ethnic minorities; management 10.5% women, 5.3% minorities.","sources":["Claude AI synthesis","ofccp-eeo1"]},"animals":{"s":"No public record found.","sources":["Claude AI synthesis"]},"guns":{"s":"No public record found.","sources":[]},"privacy":{"s":"No public record found.","sources":["Claude AI synthesis"]},"execPay":{"s":"No public record found.","sources":["Claude AI synthesis"]},"ab":"#0d2318","ac":"#4caf82","bbb":{"rating":"A+","accredited":null,"complaintCount":null,"profileUrl":"https://www.bbb.org/us/mi/bloomfield-township/profile/basement-contractors/michigan-basements-0372-90023055"},"secComplaints":{"count":534,"sample":[{"adsh":"0001654954-24-010665","date":"2024-08-14","filer":"Zomedica Corp.  (ZOM)  (CIK 0001684144)","form":"8-K"},{"adsh":"0000106640-26-000015","date":"2026-04-01","filer":"WHIRLPOOL CORP /DE/  (WHR, WHR-PA)  (CIK 0000106640)","form":"8-K"},{"adsh":"0000106640-26-000017","date":"2026-04-03","filer":"WHIRLPOOL CORP /DE/  (WHR, WHR-PA)  (CIK 0000106640)","form":"8-K"}]},"logoUrl":"https://icons.duckduckgo.com/ip3/michigan.gov.ico","logoSource":"ddg_favicon_official","slug":"michigan","competitors":[],"wiki":null,"news":null,"payRatio":null,"deiBadges":null,"animalCerts":null,"products":null,"storeFootprint":null,"recalls":null,"origin":null,"ownership":null,"charity_irs990":null,"firearms_atf_ffl":null,"environment_ejscreen":null,"ownership_wikidata":null,"privacy_hibp_breaches":null,"litigation_courtlistener":null,"labor_dol_whd":null,"fec":null,"sec":{"source":"SEC EDGAR","filingFound":true,"filingDate":"2023-04-27","filingUrl":"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Michigan&type=DEF+14A&dateb=&owner=include&count=10","note":"Pay ratio extracted from proxy filing — verify manually for accuracy","fetchedAt":"2026-05-31T01:09:55.381Z"},"osha":null,"nlrb":null,"epa":null,"lastUpdated":"2026-05-31T01:09:57.112Z","realCats":1,"governance":{"s":"Wikidata: owned by Midwestern United States. (Wikidata Q1166)","sources":["wikidata"]},"flags":{"animals":{"na":true},"guns":{"na":true},"health":{"na":true},"dei":{"notDisclosed":true},"charity":{"notDisclosed":true},"transparency":{"notDisclosed":true},"environment":{"_inferred":true,"basis":"Financial Services"}},"csc":{"labor":8},"dei_eeo1":{"year":2018,"totalEmployees":100,"pctWomen":23,"pctMinority":12,"pctWomenMgmt":10.5,"pctMinorityMgmt":5.3,"source":"DOL OFCCP FOIA — Type 2 EEO-1","sourceUrl":"https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"},"enriched":{"openfdaRecalls":{"recallCount":36,"classI":36,"classII":0,"classIII":0,"mostRecent":{"date":"2020-08-12","reason":"Chemical contamination: product contains elevated levels of undeclared lead.","classification":"Class I","product":"BC Hemp Co., Full Spectrum Hemp Extract, CBD Oil, Berry Blast, 500mg CBD, 1 FL. OZ (30 ML) bottles, Distributed by: B.C. Hemp Co., LLC, P.O. Box 146, Eau Claire, MI 49111"},"byCategory":{"food":0,"drug":36,"device":0},"lastUpdated":"2026-06-26T16:14:03.164Z"},"political":{"lobbying":{"total_USD_last_4q":0,"total_USD_last_8q":0,"by_quarter":{},"top_issues":["Agriculture"],"agencies_lobbied":[],"primary_lobby_firm":"THE VOGEL GROUP","primary_lobby_firm_USD":0,"filings_count":1,"fara_active":false,"fara_foreign_principals":[],"fara_match_via":null,"source":"senate-ld2+fara","sourceUrl":"https://lda.senate.gov/","lastUpdated":"2026-07-30T21:49:28.010Z"}}}}
+{
+  "name": "Michigan",
+  "cat": "Financial Services",
+  "init": "MICH",
+  "overall": 33.2,
+  "isPublic": true,
+  "sc": {
+    "political": "bipartisan",
+    "charity": "neutral",
+    "environment": "neutral",
+    "labor": "poor",
+    "dei": "neutral",
+    "animals": "na",
+    "guns": "neutral",
+    "privacy": "na",
+    "execPay": "na",
+    "governance": "neutral"
+  },
+  "political": {
+    "s": "FEC: $127K in executive political donations; partisan lean split across 7 executive donors.",
+    "sources": [
+      "exec-political-donations"
+    ]
+  },
+  "labor": {
+    "s": "3 federal penalties totaling $494.3M since 2000 (Violation Tracker).",
+    "rating": "good",
+    "sources": [
+      "OSHA",
+      "NLRB"
+    ]
+  },
+  "dataLastUpdated": {
+    "legacy": "2026-05-31",
+    "enrichedAugments": "2026-06-26T16:16:39.453Z",
+    "lobbying": "2026-07-30T21:49:28.010Z"
+  },
+  "charity": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "environment": {
+    "s": "No public record found.",
+    "sources": [
+      "EPA"
+    ]
+  },
+  "dei": {
+    "s": "EEO-1 workforce demographics on federal record (FY2018, DOL OFCCP FOIA release): 100 US employees — 23% women, 12% racial/ethnic minorities; management 10.5% women, 5.3% minorities.",
+    "sources": [
+      "ofccp-eeo1"
+    ]
+  },
+  "animals": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "guns": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "privacy": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "execPay": {
+    "s": "No public record found.",
+    "sources": []
+  },
+  "ab": "#0d2318",
+  "ac": "#4caf82",
+  "bbb": {
+    "rating": "A+",
+    "accredited": null,
+    "complaintCount": null,
+    "profileUrl": "https://www.bbb.org/us/mi/bloomfield-township/profile/basement-contractors/michigan-basements-0372-90023055"
+  },
+  "secComplaints": {
+    "count": 534,
+    "sample": [
+      {
+        "adsh": "0001654954-24-010665",
+        "date": "2024-08-14",
+        "filer": "Zomedica Corp.  (ZOM)  (CIK 0001684144)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0000106640-26-000015",
+        "date": "2026-04-01",
+        "filer": "WHIRLPOOL CORP /DE/  (WHR, WHR-PA)  (CIK 0000106640)",
+        "form": "8-K"
+      },
+      {
+        "adsh": "0000106640-26-000017",
+        "date": "2026-04-03",
+        "filer": "WHIRLPOOL CORP /DE/  (WHR, WHR-PA)  (CIK 0000106640)",
+        "form": "8-K"
+      }
+    ]
+  },
+  "logoUrl": "https://icons.duckduckgo.com/ip3/michigan.gov.ico",
+  "logoSource": "ddg_favicon_official",
+  "slug": "michigan",
+  "competitors": [],
+  "wiki": null,
+  "news": null,
+  "payRatio": null,
+  "deiBadges": null,
+  "animalCerts": null,
+  "products": null,
+  "storeFootprint": null,
+  "recalls": null,
+  "origin": null,
+  "ownership": null,
+  "charity_irs990": null,
+  "firearms_atf_ffl": null,
+  "environment_ejscreen": null,
+  "ownership_wikidata": null,
+  "privacy_hibp_breaches": null,
+  "litigation_courtlistener": null,
+  "labor_dol_whd": null,
+  "fec": null,
+  "sec": {
+    "source": "SEC EDGAR",
+    "filingFound": true,
+    "filingDate": "2023-04-27",
+    "filingUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Michigan&type=DEF+14A&dateb=&owner=include&count=10",
+    "note": "Pay ratio extracted from proxy filing — verify manually for accuracy",
+    "fetchedAt": "2026-05-31T01:09:55.381Z"
+  },
+  "osha": null,
+  "nlrb": null,
+  "epa": null,
+  "lastUpdated": "2026-05-31T01:09:57.112Z",
+  "realCats": 1,
+  "governance": {
+    "s": "Wikidata: owned by Midwestern United States. (Wikidata Q1166)",
+    "sources": [
+      "wikidata"
+    ]
+  },
+  "flags": {
+    "animals": {
+      "na": true
+    },
+    "guns": {
+      "na": true
+    },
+    "health": {
+      "na": true
+    },
+    "dei": {
+      "notDisclosed": true
+    },
+    "charity": {
+      "notDisclosed": true
+    },
+    "transparency": {
+      "notDisclosed": true
+    },
+    "environment": {
+      "_inferred": true,
+      "basis": "Financial Services"
+    }
+  },
+  "csc": {
+    "labor": 8
+  },
+  "dei_eeo1": {
+    "year": 2018,
+    "totalEmployees": 100,
+    "pctWomen": 23,
+    "pctMinority": 12,
+    "pctWomenMgmt": 10.5,
+    "pctMinorityMgmt": 5.3,
+    "source": "DOL OFCCP FOIA — Type 2 EEO-1",
+    "sourceUrl": "https://www.dol.gov/agencies/ofccp/foia/library/Employment-Information-Reports"
+  },
+  "enriched": {
+    "openfdaRecalls": {
+      "recallCount": 36,
+      "classI": 36,
+      "classII": 0,
+      "classIII": 0,
+      "mostRecent": {
+        "date": "2020-08-12",
+        "reason": "Chemical contamination: product contains elevated levels of undeclared lead.",
+        "classification": "Class I",
+        "product": "BC Hemp Co., Full Spectrum Hemp Extract, CBD Oil, Berry Blast, 500mg CBD, 1 FL. OZ (30 ML) bottles, Distributed by: B.C. Hemp Co., LLC, P.O. Box 146, Eau Claire, MI 49111"
+      },
+      "byCategory": {
+        "food": 0,
+        "drug": 36,
+        "device": 0
+      },
+      "lastUpdated": "2026-06-26T16:14:03.164Z"
+    },
+    "political": {
+      "lobbying": {
+        "total_USD_last_4q": 0,
+        "total_USD_last_8q": 0,
+        "by_quarter": {},
+        "top_issues": [
+          "Agriculture"
+        ],
+        "agencies_lobbied": [],
+        "primary_lobby_firm": "THE VOGEL GROUP",
+        "primary_lobby_firm_USD": 0,
+        "filings_count": 1,
+        "fara_active": false,
+        "fara_foreign_principals": [],
+        "fara_match_via": null,
+        "source": "senate-ld2+fara",
+        "sourceUrl": "https://lda.senate.gov/",
+        "lastUpdated": "2026-07-30T21:49:28.010Z"
+      }
+    }
+  }
+}
