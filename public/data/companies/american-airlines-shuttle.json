@@ -2,7 +2,7 @@
   "name": "American Airlines Shuttle",
   "cat": "Hospitality",
   "init": "AMER",
-  "overall": 31.3,
+  "overall": null,
   "isPublic": false,
   "sc": {
     "political": "neutral",
@@ -136,5 +136,9 @@
     "environment": 50,
     "labor": 8,
     "privacy": 8
+  },
+  "_gradeSuppressed": {
+    "reason": "parent-child-conflict",
+    "parent": "american-airlines"
   }
 }

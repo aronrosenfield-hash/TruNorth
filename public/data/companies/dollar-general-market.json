@@ -2,7 +2,7 @@
   "name": "Dollar General Market",
   "cat": "Retail",
   "init": "DOLL",
-  "overall": 28.1,
+  "overall": null,
   "isPublic": false,
   "sc": {
     "political": "bipartisan",
@@ -175,5 +175,9 @@
     "environment": 35,
     "labor": 8.3,
     "privacy": 8
+  },
+  "_gradeSuppressed": {
+    "reason": "parent-child-conflict",
+    "parent": "dollar-general"
   }
 }

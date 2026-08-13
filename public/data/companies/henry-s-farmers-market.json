@@ -2,7 +2,7 @@
   "name": "Henry's Farmers Market",
   "cat": "Grocery",
   "init": "HENR",
-  "overall": 33.2,
+  "overall": null,
   "isPublic": false,
   "sc": {
     "political": "bipartisan",
@@ -121,5 +121,9 @@
   "inheritedFrom": "apollo-global-management",
   "csc": {
     "labor": 8
+  },
+  "_gradeSuppressed": {
+    "reason": "parent-child-conflict",
+    "parent": "apollo-global-management"
   }
 }

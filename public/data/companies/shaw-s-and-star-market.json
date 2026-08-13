@@ -2,7 +2,7 @@
   "name": "Shaw's and Star Market",
   "cat": "Grocery",
   "init": "SHAW",
-  "overall": 32.9,
+  "overall": null,
   "isPublic": false,
   "sc": {
     "political": "left",
@@ -140,5 +140,9 @@
     "charity": 50,
     "environment": 15,
     "labor": 8
+  },
+  "_gradeSuppressed": {
+    "reason": "parent-child-conflict",
+    "parent": "albertsons"
   }
 }

@@ -2,7 +2,7 @@
   "name": "Element Hotels",
   "cat": "Hospitality",
   "init": "ELEM",
-  "overall": 50,
+  "overall": null,
   "isPublic": false,
   "sc": {
     "political": "left-leaning",
@@ -138,5 +138,9 @@
   "csc": {
     "environment": 50,
     "labor": 50
+  },
+  "_gradeSuppressed": {
+    "reason": "parent-child-conflict",
+    "parent": "marriott-international"
   }
 }

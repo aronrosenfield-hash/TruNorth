@@ -496,6 +496,8 @@ const files = fs.readdirSync(COMPS).filter(f => f.endsWith(".json"));
 console.log(`[rebake] processing ${files.length} companies`);
 
 let updated = 0;
+// C-5: slug -> scored result, used by the parent/child conflict pass after the loop.
+const scored = new Map();
 const distOld = {}, distNew = {};
 const realCountDist = {};
 const allOveralls = [];
@@ -636,6 +638,60 @@ for (const f of files) {
     if (!DRY) fs.writeFileSync(filePath, JSON.stringify(d, null, 2));
     updated++;
   }
+  scored.set(slug, { overall: newOverall, cats: Object.keys(csc).length, name: d.name, filePath });
+}
+
+// ── C-5 SECOND PASS: same-company contradictory grades ─────────────────────
+// A user searching one company must not get opposite answers depending on which
+// row they land on: Amazon=C but Amazon Go=F, CVS Health=F but CVS Pharmacy=C,
+// Dollar General=C but Dollar General Market=F. Of 550 sub-brands graded beside
+// a graded parent, 120 (22%) disagreed and 28 by 2+ letter grades. That reads as
+// "this app is wrong", which is worse than "this app doesn't know".
+//
+// NOT every disagreement is a bug — Ben & Jerry's (A) genuinely differs from
+// Unilever (C), as do Patagonia, Prana, Toms and Caribou Coffee, each on their
+// own richer record. Suppress ONLY the artifact class: the child disagrees by
+// 2+ letter grades AND rests on strictly FEWER scored categories, i.e. a thin
+// slice of the same business shouting louder than the business itself.
+//
+// This must live inside the rebake (not a standalone script) or the next cron
+// run would silently recompute the contradiction back in.
+{
+  const GV = { A: 5, B: 4, C: 3, D: 2, F: 1 };
+  let suppressed = 0;
+  try {
+    const amap = JSON.parse(fs.readFileSync(path.join(ROOT, "public/data/_meta/brand-parent-map.json"), "utf8"));
+    // Alias keys are squashed ("americanairlinesshuttle") while slugs are
+    // hyphenated ("american-airlines-shuttle"), so match on a normalized form
+    // as well as the literal slug.
+    const nrm = (s) => String(s).toLowerCase().replace(/[^a-z0-9]/g, "");
+    const byNormSlug = new Map();
+    for (const [slug, v] of scored) {
+      const k = nrm(slug);
+      if (!byNormSlug.has(k)) byNormSlug.set(k, v);
+    }
+    const lookup = (s) => scored.get(String(s).toLowerCase()) || byNormSlug.get(nrm(s));
+    for (const [alias, info] of Object.entries(amap)) {
+      const kid = lookup(alias);
+      const par = lookup(info?.parent || "");
+      if (!kid || !par || kid.overall == null || par.overall == null) continue;
+      const kg = gradeFromOverall(kid.overall), pg = gradeFromOverall(par.overall);
+      if (!GV[kg] || !GV[pg]) continue;
+      if (Math.abs(GV[kg] - GV[pg]) < 2) continue;
+      if (!(kid.cats < par.cats)) continue; // child holds its own — keep it
+      if (!DRY) {
+        const d2 = JSON.parse(fs.readFileSync(kid.filePath, "utf8"));
+        d2.overall = null;
+        d2._gradeSuppressed = { reason: "parent-child-conflict", parent: String(info.parent) };
+        fs.writeFileSync(kid.filePath, JSON.stringify(d2, null, 2));
+      }
+      suppressed++;
+      console.log(`  [C-5] ${kid.name}=${kg} (${kid.cats} cats) -> "?"   [parent ${par.name}=${pg}, ${par.cats} cats]`);
+    }
+  } catch (err) {
+    console.warn("[rebake] C-5 pass skipped:", err.message);
+  }
+  console.log(`[rebake] C-5 suppressed ${suppressed} contradictory sub-brand grades.`);
 }
 
 // Quantile report — used once to derive the frozen V3 grade thresholds.
