@@ -276,11 +276,15 @@ function narrativeScore(text) {
     return 22; // clear negative signal, magnitude unknown
   }
   if (pos && !neg) return 78; // clear positive signal
-  if (neg && pos)  return 50; // mixed
-  // Narrative present but no scoring keywords found — treat as mild signal at 50.
-  // This is conservative: companies with neutral-toned narratives stay near
-  // the median rather than disappearing entirely.
-  return 50;
+  if (neg && pos)  return 50; // genuinely mixed evidence — a real, informative signal
+  // C-4 (2026-08-10): a narrative with NO directional keywords is NOT evidence.
+  // This used to return 50, described as "conservative" — it was the opposite.
+  // 50 clears the B threshold, so a company with a neutral-toned blurb and
+  // nothing else was published as a "B" on zero information: 231 brands held a
+  // B from a single neutral enum, and 23andMe scored B off one "mixed" privacy
+  // datapoint while its own record cited the CA AG suing it over a breach.
+  // No signal must mean NO GRADE, not a median grade.
+  return null;
 }
 
 // ─── Political signal differentiation (B-58 / Path B) ────────────────────
@@ -595,6 +599,19 @@ for (const f of files) {
     const onlyScore = Object.values(csc)[0];
     const isSevere = typeof onlyScore === "number" && onlyScore < SEVERE_NEG;
     if (!isSevere) newOverall = 46;
+  }
+  // C-4 (2026-08-10): a brand whose ENTIRE evidence is one category sitting on
+  // the exact neutral midpoint has no directional information — yet 50 clears
+  // the frozen B threshold, so it published as a "B". Live example: 23andMe held
+  // a B off a single privacy:"mixed" datapoint on a record that itself cites the
+  // California AG suing it over a data breach. "We found one ambiguous thing"
+  // must read as "?", not as a good grade. Thresholds are frozen, so this is
+  // expressed as evidence sufficiency (no grade) rather than a threshold change.
+  // Multi-category brands are untouched: averaging to 50 across several real
+  // records IS an informative result.
+  if (newOverall != null && signalCount === 1) {
+    const onlyScore = Object.values(csc)[0];
+    if (typeof onlyScore === "number" && Math.abs(onlyScore - 50) < 1e-9) newOverall = null;
   }
   trace.newOverall = newOverall;
   trace.newGrade = gradeFromOverall(newOverall);
