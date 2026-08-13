@@ -135,39 +135,36 @@ if (DRY_RUN) {
 // Shared with scripts/notify-newly-graded.mjs via the same env var.
 const FROM_EMAIL = process.env.TRUNORTH_FROM_EMAIL || "aron@trunorthapp.com";
 
-// ── Create campaign ──────────────────────────────────────────────────────────
-async function ml(endpoint, body, method = "POST") {
-  const res = await fetch(`https://connect.mailerlite.com/api/${endpoint}`, {
-    method,
-    headers: {
-      "Authorization": `Bearer ${KEY}`,
-      "Content-Type": "application/json",
-      "Accept": "application/json",
-    },
-    body: body ? JSON.stringify(body) : undefined,
-  });
-  const text = await res.text();
-  if (!res.ok) throw new Error(`MailerLite ${endpoint} ${res.status}: ${text.slice(0, 500)}`);
-  return text ? JSON.parse(text) : null;
+// ── Send (B-121, 2026-08-10) ────────────────────────────────────────────────
+// This used to POST a MailerLite campaign. MailerLite now answers that call with
+//   422 "Content submission is only available on Premium plan."
+// which killed the digest silently — two consecutive Sundays (08-02, 08-09) were
+// missed while signup kept working, so nothing looked broken from outside.
+// Aron's call: keep MailerLite as the LIST STORE (its subscriber endpoints are
+// unaffected) and deliver via Resend, already DNS-verified for trunorthapp.com
+// and already used by api/submit.js.
+const { fetchSubscribers, sendBulk, DRY_RUN: LIB_DRY } = await import("./lib/send-email.mjs");
+
+console.log("📧 Resolving digest recipients from MailerLite…");
+const recipients = await fetchSubscribers();
+console.log(`   ${recipients.length} active subscriber(s) in group ${GROUP_ID}`);
+if (!recipients.length) {
+  console.log("(No active subscribers — nothing to send.)");
+  process.exit(0);
+}
+if (DRY_RUN || LIB_DRY) {
+  console.log(`🧪 DRY RUN — would send "${subject}" to ${recipients.length} recipient(s). Nothing sent.`);
+  process.exit(0);
 }
 
-console.log("📧 Creating MailerLite campaign…");
-const campaign = await ml("campaigns", {
-  name: `Weekly digest · ${weekOf}`,
-  type: "regular",
-  emails: [{
-    subject,
-    from_name: "TruNorth",
-    from: FROM_EMAIL,
-    content: html,
-  }],
-  groups: [GROUP_ID],
-});
-
-const campaignId = campaign?.data?.id;
-if (!campaignId) throw new Error(`Campaign create returned no id: ${JSON.stringify(campaign).slice(0,300)}`);
-
-console.log(`✅ Campaign created (id: ${campaignId}). Scheduling immediate send…`);
-await ml(`campaigns/${campaignId}/schedule`, { delivery: "instant" });
-
-console.log(`✅ Sent. Campaign ${campaignId} → group ${GROUP_ID}`);
+const result = await sendBulk({ recipients, subject, html });
+console.log(`✅ Weekly digest sent: ${result.sent} delivered, ${result.failed} failed.`);
+if (result.failures.length) {
+  for (const f of result.failures.slice(0, 10)) console.error("   ✗ " + f);
+  // A partial failure must be loud. A green run that delivered nothing is the
+  // exact failure mode this migration exists to eliminate.
+  if (result.sent === 0) {
+    console.error("❌ Every send failed — failing the job so the cron does not report success.");
+    process.exit(1);
+  }
+}

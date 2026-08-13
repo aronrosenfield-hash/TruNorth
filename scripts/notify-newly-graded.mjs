@@ -24,11 +24,16 @@
  *   node scripts/notify-newly-graded.mjs --apply    # actually send
  *   node scripts/notify-newly-graded.mjs --apply --force   # bypass the blast guard
  *
- * HOW --apply SENDS: MailerLite campaigns target GROUPS, not arbitrary address
- * lists. So this sends ONE CAMPAIGN PER NEWLY-GRADED BRAND, to a throwaway
- * group holding only the people who asked about that brand. That is what lets
- * the email say "the brand YOU asked about is graded" rather than a generic
- * blast — which is the promise the app actually made.
+ * HOW --apply SENDS (rewritten 2026-08-10, B-121): one email per newly-graded
+ * brand, addressed only to the people who asked about that brand — so it can say
+ * "the brand YOU asked about is graded" rather than sending a generic blast,
+ * which is the promise the app actually made. Delivery is via Resend.
+ * Previously this created a throwaway MailerLite group per brand and posted a
+ * campaign to it, purely because MailerLite campaigns target groups rather than
+ * address lists. MailerLite now rejects campaign creation on the free plan with
+ * 422 "Content submission is only available on Premium plan.", so every one of
+ * these notifications was silently failing. Resend takes explicit addresses, so
+ * the group workaround is gone entirely.
  *
  * Three rails, because an email cannot be recalled:
  *   1. Dry run is the DEFAULT. --apply is required to send anything.
@@ -39,8 +44,9 @@
  *      brands_requested after a successful send, so a re-run or next week's
  *      cron can never notify the same person about the same brand twice.
  *
- * Env: MAILERLITE_API_KEY (required for both modes — the dry run still reads
- *      the subscriber list), MAILERLITE_GROUP_ID (optional, scopes the read),
+ * Env: RESEND_API_KEY (required to SEND — without it nothing can go out, which
+ *      is the activation switch), MAILERLITE_API_KEY (required for both modes —
+ *      the list still lives in MailerLite), MAILERLITE_GROUP_ID (optional),
  *      TRUNORTH_FROM_EMAIL (defaults to aron@trunorthapp.com, the AUTHENTICATED
  *      domain — shared with send-weekly-digest.mjs), NOTIFY_MAX_RECIPIENTS.
  */
@@ -52,6 +58,9 @@ import { fileURLToPath } from "url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CHANGES = path.join(ROOT, "public", "data", "weekly_changes.json");
 const APPLY = process.argv.includes("--apply");
+// B-121: delivery moved from MailerLite campaigns (422 on the free plan) to
+// Resend, which is already DNS-verified for trunorthapp.com.
+import { sendBulk } from "./lib/send-email.mjs";
 const ML_KEY = process.env.MAILERLITE_API_KEY;
 const ML_GROUP = process.env.MAILERLITE_GROUP_ID;
 const API = "https://connect.mailerlite.com/api";
@@ -246,11 +255,9 @@ async function main() {
   }
 
   // ── SEND ────────────────────────────────────────────────────────────────
-  // MailerLite campaigns target GROUPS, not arbitrary address lists. So we send
-  // ONE CAMPAIGN PER NEWLY-GRADED BRAND, to a throwaway group containing only
-  // the people who asked about that brand. That is what makes the email able to
-  // say "the brand YOU asked about is graded" instead of a generic blast — and
-  // it is the promise the app actually made.
+  // One email per newly-graded brand, addressed only to the people who asked
+  // about that brand — so it can say "the brand YOU asked about is graded"
+  // instead of a generic blast. That is the promise the app actually made.
   //
   // Blast guard: a bug upstream (a bad diff, a poisoned snapshot — see B-94)
   // could nominate thousands of "newly graded" brands. Refuse anything above
@@ -281,50 +288,34 @@ async function main() {
     const grade = (brand.detail.match(/·\s*([A-F])\s*$/) || [])[1] || "";
     console.log(`\n[notify] ${brand.name} → ${emails.length} subscriber(s)`);
 
-    // 1. throwaway group scoped to this brand + run
-    const group = await ml("groups", {
-      method: "POST",
-      body: JSON.stringify({ name: `notify · ${slug} · ${stamp}` }),
-    });
-    const groupId = group?.data?.id;
-    if (!groupId) throw new Error(`group create returned no id for ${slug}`);
-
-    // 2. add each waiting subscriber
-    for (const email of emails) {
-      const sub = await ml(`subscribers/${encodeURIComponent(email)}`).catch(() => null);
-      const subId = sub?.data?.id;
-      if (!subId) { console.warn(`  ! could not resolve subscriber ${email}`); continue; }
-      await ml(`subscribers/${subId}/groups/${groupId}`, { method: "POST" });
-    }
-
-    // 3. campaign — plain, factual, links straight to the brand
+    // B-121 (2026-08-10): this used to create a THROWAWAY MAILERLITE GROUP per
+    // brand and then post a campaign to it — a workaround that existed only
+    // because MailerLite campaigns target groups rather than address lists.
+    // MailerLite now answers campaign creation with
+    //   422 "Content submission is only available on Premium plan."
+    // so every one of these notifications silently failed, turning each
+    // "notify me when we grade this" signup into a broken promise. Resend sends
+    // to explicit addresses, so the group dance disappears entirely.
     const url = `${SITE}/company/${slug}`;
     const html =
       `<p>You asked us to tell you when <strong>${brand.name}</strong> was graded.</p>` +
       `<p>It now grades <strong>${grade || "—"}</strong> on TruNorth, built only from public records.</p>` +
       `<p><a href="${url}">See the record for ${brand.name} →</a></p>` +
       `<p style="color:#888;font-size:12px">You're getting this because you asked to be notified about this brand in the TruNorth app.</p>`;
-    const campaign = await ml("campaigns", {
-      method: "POST",
-      body: JSON.stringify({
-        name: `Newly graded · ${brand.name} · ${stamp}`,
-        type: "regular",
-        emails: [{
-          subject: `${brand.name} is now graded on TruNorth`,
-          from_name: "TruNorth",
-          from: FROM,
-          content: html,
-        }],
-        groups: [groupId],
-      }),
+
+    const res = await sendBulk({
+      recipients: emails,
+      subject: `${brand.name} is now graded on TruNorth`,
+      html,
     });
-    const campaignId = campaign?.data?.id;
-    if (!campaignId) throw new Error(`campaign create returned no id for ${slug}`);
-    await ml(`campaigns/${campaignId}/schedule`, {
-      method: "POST",
-      body: JSON.stringify({ delivery: "instant" }),
-    });
-    console.log(`  ✓ campaign ${campaignId} sent to group ${groupId}`);
+    console.log(`  ✓ ${res.sent} delivered, ${res.failed} failed`);
+    for (const f of res.failures.slice(0, 5)) console.warn("    ✗ " + f);
+    if (res.sent === 0) {
+      // Do NOT fall through to the idempotency step — clearing a subscriber's
+      // pending brand after a failed send would lose the request permanently.
+      console.error(`  ! no email delivered for ${brand.name}; leaving requests pending for a retry`);
+      continue;
+    }
     sent++;
 
     // 4. IDEMPOTENCY — drop the fulfilled brand from each subscriber's list so a

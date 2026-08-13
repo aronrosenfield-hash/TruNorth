@@ -11,7 +11,10 @@
 # rebake, or it will send last week's (or empty) data.
 #
 # Repo secrets required:
-#   MAILERLITE_API_KEY     — MailerLite API token (Subscribers + Campaigns scope)
+#   RESEND_API_KEY         — Resend API key. DELIVERY RUNS THROUGH RESEND (B-121);
+#                            without this secret the job cannot send anything.
+#   MAILERLITE_API_KEY     — MailerLite API token (Subscribers scope; it is now
+#                            only the LIST STORE — its campaign API 422s on free)
 #   MAILERLITE_GROUP_ID    — group of digest subscribers (see lib/marketing.js)
 #
 # Manual run also enabled — useful for "send a fresh digest today" or testing
@@ -44,6 +47,7 @@ jobs:
 
       - name: Send weekly digest
         env:
+          RESEND_API_KEY:      ${{ secrets.RESEND_API_KEY }}
           MAILERLITE_API_KEY:  ${{ secrets.MAILERLITE_API_KEY }}
           MAILERLITE_GROUP_ID: ${{ secrets.MAILERLITE_GROUP_ID }}
           APP_URL:             "https://trunorthapp.com"

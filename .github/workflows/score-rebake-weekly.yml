@@ -100,6 +100,12 @@ jobs:
       # step from ever failing the data job.
       - name: Notify-me dry run (newly graded brands)
         env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           MAILERLITE_API_KEY: ${{ secrets.MAILERLITE_API_KEY }}
           MAILERLITE_GROUP_ID: ${{ secrets.MAILERLITE_GROUP_ID }}
-        run: node scripts/notify-newly-graded.mjs || true
+        # B-121: this ran WITHOUT --apply, so the script's dry-run default meant it
+        # has never actually sent a notification — every "tell me when this brand is
+        # graded" signup was a dead letter even before MailerLite started 422ing.
+        # --apply is now passed; the real activation switch is the RESEND_API_KEY
+        # secret, so nothing can go out until that is set in the repo.
+        run: node scripts/notify-newly-graded.mjs --apply || true
