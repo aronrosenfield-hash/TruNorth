@@ -5502,7 +5502,33 @@ useEffect(() => {
       // Build 54: match the server-side build-tuned options. combineWith:AND
       // means multi-word queries ("General Mills") only return companies with
       // BOTH tokens (was returning 290 fuzzy matches before).
-      const results = searchIndex.search(q, { boost: { name: 5 }, prefix: true, fuzzy: 0.2, combineWith: "AND" });
+      // V-1 (2026-08-10): LAYERED search. A single fuzzy pass over name+aliases
+      // let weak fuzzy hits outrank exact ones — the pre-existing index already
+      // answered "Tide" with "Mr. Tire", "Nike" with "NICE" and "Cheerios" with
+      // "Cheetos", and folding 5,241 shelf-brand aliases into the same fuzzy pass
+      // made it worse (Colgate -> Danone, Starbucks -> Nestlé). Run strict layers
+      // in priority order and append, so an exact name always wins, a real
+      // shelf-brand alias comes next, and fuzzy is only ever a last resort.
+      //   1. name, exact/prefix, NO fuzzy      — "Colgate" -> COLGATE PALMOLIVE
+      //   2. aliases, exact/prefix, NO fuzzy   — "Tide"    -> Procter & Gamble
+      //   3. name+cat, fuzzy                   — typo recovery, last
+      // Aliases are stored squashed ("oldspice", "dietcoke"), so layer 2 also
+      // runs against the query with non-alphanumerics stripped.
+      const squashed = q.toLowerCase().replace(/[^a-z0-9]/g, "");
+      const results = [];
+      const runLayer = (query, opts) => {
+        if (!query) return;
+        try { for (const r of searchIndex.search(query, opts)) results.push(r); }
+        catch { /* a layer failing must not kill the search */ }
+      };
+      runLayer(q, { fields: ["name"], boost: { name: 5 }, prefix: false, fuzzy: false, combineWith: "AND" });
+      runLayer(q, { fields: ["aliases"], prefix: false, fuzzy: false, combineWith: "AND" });
+      if (squashed && squashed !== q.toLowerCase().trim()) {
+        runLayer(squashed, { fields: ["aliases"], prefix: false, fuzzy: false, combineWith: "AND" });
+      }
+      runLayer(q, { fields: ["name"], boost: { name: 5 }, prefix: true, fuzzy: false, combineWith: "AND" });
+      runLayer(q, { fields: ["aliases"], prefix: true, fuzzy: false, combineWith: "AND" });
+      runLayer(q, { fields: ["name", "cat"], boost: { name: 5 }, prefix: true, fuzzy: 0.2, combineWith: "AND" });
       // B-76 (2026-07-20): this used to collapse to a Set, throwing MiniSearch's
       // relevance order away — and `filtered` then re-sorted ALPHABETICALLY
       // (sort defaulted to "name"), so "coca" ranked COCA COLA FEMSA (?) above
