@@ -67,9 +67,11 @@ function grade(score, realCats) {
 }
 
 function ratingPercentile(score) {
-  // Google's AggregateRating wants a 0-5 scale typically
-  const n = Number(score);
-  if (!isFinite(n)) return null;
+  // Google's AggregateRating wants a 0-5 scale typically.
+  // Same null trap as grade(): Number(null) is 0, so an unguarded isFinite()
+  // would publish an aggregateRating of 0.0 for an ungraded company.
+  const n = numOrNull(score);
+  if (n == null) return null;
   return (n / 20).toFixed(1); // 0-100 → 0-5
 }
 

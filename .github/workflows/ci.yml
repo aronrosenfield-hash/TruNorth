@@ -64,3 +64,15 @@ jobs:
 
       - name: Scoring flags (B-96)
         run: node --test src/lib/scoringFlags.test.mjs
+
+      # C-6 STOP-SHIP GATE (2026-08-10). Every assertion in this file encodes a
+      # defect that actually shipped: an "F" published on 9,765 companies with no
+      # record, 82,553 "Claude AI synthesis" citations on a "records, not
+      # opinions" product, 463 brands holding a "B" on a single neutral
+      # datapoint, false CEO pay ratios (Home Depot "2026:1" — the filing year),
+      # and same-company contradictions (Amazon=C vs Amazon Go=F).
+      # Correctness work has no visible payoff and is the first thing to erode,
+      # so this is the control that keeps working when nobody is watching.
+      # It must FAIL THE BUILD, never warn.
+      - name: Data integrity — no unsupported public claims (C-6)
+        run: node --test scripts/data-integrity.test.mjs
