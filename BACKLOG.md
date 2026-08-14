@@ -6,9 +6,25 @@
 >
 > **🟢 LAUNCHED — Jun 23, 2026 · 2:01 AM CDT** (App Store · id `6775301458` · `https://apps.apple.com/app/id6775301458` · PH launched). **CURRENT LIVE BUILD = v1.1 Build 81** (approved 2026-07-08, released Manual **2026-07-14**) — it superseded v1.0 Build 75, which was live Jun 23 → Jul 14. **Next iOS ship = Build 82.** *(The 2026-06-11 "date is soft, get it right" call held through the Compass redesign; the experience shipped on the locked date. Go-live runbook: `docs/LAUNCH_DAY.md`.)*
 >
-> **Last updated:** 2026-08-12 22:10 CDT (daily doc-sync, covering **2026-08-12**). ⚠️ *The entry below is labelled "2026-08-12" but was written 2026-08-11 23:13 CDT and covers 08-11 — near-midnight syncs have been dating themselves a day ahead. Trust the coverage date.*
+> **Last updated:** 2026-08-13 22:30 CDT (daily doc-sync, covering **2026-08-13**).
 >
-> **ZERO human commits again — day 11 of the push freeze.** `origin/main`'s last human commit is still `e29deabd0` (2026-08-02 15:15 CDT, PR #156). Machine-side: only **2 bot data commits** today (`news-rss` 06:27, `ofac-sdn` 18:30), and **`index.json` was NOT touched — its last change on `origin/main` remains the 08-09 rebake `247dd4c87` → 0 grade movement.** **Local catalog re-counted from `index.json`: 12,830 tracked / 3,065 graded** (A 64 · B 1,170 · C 1,041 · D 534 · F 256), 9,765 "?". 🟢 **v1.1 Build 81 stays the LIVE App Store build; next iOS ship = Build 82** (no `ios/` or `android/` changes; Android still scaffold-only). ⏳ **The clone is now `81 behind / 17 ahead`** — behind-trend since 08-02: 24 → 34 → 42 → 48 → 51 → 55 → 67 → 73 → 79 → **81**. Still only **3 real code commits** in the pile (B-115, C-1, C-2); the other 14 are doc-sync noise.
+> 🚀🚀 **THE BIGGEST HUMAN-WORK DAY SINCE LAUNCH — 9 commits landed today (8 code + 1 backlog), and the v1.3 CORRECTNESS GATE IS CLOSED.** `C-3 · C-4 · C-5 · C-6 · V-1 · V-2 · V-3 · B-121 · L-2` all shipped **locally**. Combined with C-1/C-2 (2026-08-10), **every C item and V-1…V-3 are done.** **68/68 tests pass**, including a new **10-assertion `scripts/data-integrity.test.mjs` wired into `ci.yml` to FAIL THE BUILD** (verified by running it). `grep -rl "Claude AI synthesis" public/data/companies/` → **0 files** (was 11,187).
+>
+> 🔴🔴 **NONE OF IT IS LIVE, AND THE GAP IS NOW THE MOST IMPORTANT FACT ON THIS BOARD.** ⏳ **The clone is `83 behind / 27 ahead`** (28 once this sync's own commit lands) — behind-trend since 08-02: 24 → 34 → 42 → 48 → 51 → 55 → 67 → 73 → 79 → 81 → **83**. **The ahead pile is no longer mostly noise: 12 of the 27 are real code** (B-115 ×2, C-1, C-2, C-3, C-4, C-5, C-6, V-1, V-2/V-3, B-121, L-2); the other 15 are doc commits. 🚨 **`origin/main` still serves 3,060 graded — meaning the live site is STILL publishing the 479 unsupported grades C-4/C-5 removed, the fabricated "F" C-1 fixed, and the 13 false pay ratios C-2 fixed.** **Never describe any C or V item as "fixed" without the words "not yet live."**
+>
+> 📉 **THE HEADLINE NUMBER, STATED HONESTLY: local graded 3,065 → 2,586 (−479), ON PURPOSE.** Re-counted from `index.json`: **12,830 tracked / 2,586 graded** (A 62 · B 706 · C 1,029 · D 533 · F 256), 10,244 "?". The drop is almost entirely **B: 1,170 → 706 — 40% of every B grade rested on non-evidence.** `origin/main` for comparison: 3,060 graded (A 64 · B 1,175 · C 1,052 · D 529 · F 240). **Findable coverage moved the opposite way:** V-1 attached **5,241 shelf-brand names to 193 parents as searchable aliases** (ONE record, MANY aliases — no new catalog rows), taking shelf-brand search correctness **top-1 28%→72%, top-3 31%→93%**.
+>
+> ⚠️ **CONTRADICTION FOUND AND CORRECTED — this sprint was dated wrong everywhere.** Yesterday's backlog, the skill files, the C-6 comment in `.github/workflows/ci.yml:69`, and the memory file all label the whole v1.3 batch **"2026-08-10."** **Git says otherwise: only C-1 (`b8f529575`) and C-2 (`3c503eca1`) are 08-10. C-3 through L-2 are all authored 2026-08-13** — and yesterday's 08-12 sync independently confirmed they did not exist then. Docs and memory are corrected; **the `ci.yml` comment is code and was left alone — fix it on the next code touch.**
+>
+> 🟡 **B-121 IS CODE-COMPLETE BUT STILL CANNOT SEND — the blocker moved from a vendor plan to a missing secret.** `58dab0aa4` moves delivery off MailerLite campaigns (the 422) to **Resend** via a new `scripts/lib/send-email.mjs`; MailerLite stays the list store. `score-rebake-weekly.yml` also gains `--apply` — it had been running the notifier **without it, so it had never sent a single notification.** 🔴 **`send-email.mjs:72` returns `{ok:false, error:"RESEND_API_KEY not set"}` — nothing goes out until Aron adds `RESEND_API_KEY` to repo secrets. That is now the activation switch, and Sunday 2026-08-16 is 3 days away; a third miss makes it three weeks silent.** Note this also depends on the push — the workflow changes are in the unpushed pile.
+>
+> 📌 **Machine side was quiet and nothing regressed.** Only **2 bot data commits** on `origin/main` (`news-rss` 06:28Z, `ofac-sdn` 18:30Z), and **`index.json` was NOT touched — its last change on `origin/main` remains the 08-09 rebake `247dd4c87` → 0 live grade movement.** **#155 still 36 rows** (checked 2026-08-13T14:33Z) · **B-101 still 38 open PRs** · B-122 and B-125 unchanged (B-125's `faa`/`fra`/`gdelt` run Mondays; next evidence 2026-08-17). 🟢 **v1.1 Build 81 stays the LIVE App Store build; next iOS ship = Build 82** — **no `ios/` or `android/` changes today** (verified); Android still scaffold-only.
+>
+> 🔴 **STILL OPEN AND STILL ONLY ARON'S: ① push the 27 ahead-commits ② add `RESEND_API_KEY` ③ install Build 81 and scan 5 real products (nobody has run the shipped app).** ⚠️ **The rebase acceptance test in the docs is now WRONG: "expect 3,066 graded" predated C-4/C-5. After the rebase the rebake must be re-run and the new number recomputed — do not assert 3,066 or 2,586 as the post-rebase expectation.** Housekeeping unchanged, day 10: uncommitted `public/sitemap.xml` plus the 5 untracked `docs/` files. **Clear the sitemap before the rebase.**
+>
+> ---
+>
+> **[08-12 sync] ZERO human commits again — day 11 of the push freeze.** `origin/main`'s last human commit is still `e29deabd0` (2026-08-02 15:15 CDT, PR #156). Machine-side: only **2 bot data commits** today (`news-rss` 06:27, `ofac-sdn` 18:30), and **`index.json` was NOT touched — its last change on `origin/main` remains the 08-09 rebake `247dd4c87` → 0 grade movement.** **Local catalog re-counted from `index.json`: 12,830 tracked / 3,065 graded** (A 64 · B 1,170 · C 1,041 · D 534 · F 256), 9,765 "?". 🟢 **v1.1 Build 81 stays the LIVE App Store build; next iOS ship = Build 82** (no `ios/` or `android/` changes; Android still scaffold-only). ⏳ **The clone is now `81 behind / 17 ahead`** — behind-trend since 08-02: 24 → 34 → 42 → 48 → 51 → 55 → 67 → 73 → 79 → **81**. Still only **3 real code commits** in the pile (B-115, C-1, C-2); the other 14 are doc-sync noise.
 >
 > 🔴🔴 **NEW TODAY — B-124 IS RECURRING, NOT A ONE-OFF. YESTERDAY'S ENTRY IN THIS FILE WAS WRONG AND IS RETRACTED.** Yesterday I wrote "✅ B-124 did not recur — and the miss is now provably a one-off." **That was asserted from a query window starting 08-05.** Pulling the complete `data(news)` series exposes a **second lost night**: commits exist for 07-28…08-01, 08-03…08-08, 08-10, 08-11, 08-12 — **08-02 and 08-09 are BOTH missing.** Run **`30737556200`** (2026-08-02) was pulled; its log is the B-124 signature byte-for-byte — it printed `[main b341985] data(news): nightly RSS digest … 2026-08-02 [skip ci]`, then `Push attempt 1 failed` → `error: Pulling is not possible because you have unmerged files.` → attempts 2 and 3 died the same way → **GitHub lists the run as `success`.** **2 of the last 11 nights on this one workflow silently threw away a full run's data, and all 117 workflows share that push loop.** ⚠️ **Method rule this earns: "the only gap" describes your query window, not the data. Pull the full series before writing "only" or "one-off."** **The structural fix (`git rebase --abort || true` between attempts + a post-loop push check) is still unwritten in all 117 workflows — this is now a recurring data-loss bug, not a theoretical one.**
 >
@@ -148,11 +164,16 @@
 > **The finding that reframed the plan:** TruNorth does not have a marketing problem yet — it has a
 > **correctness problem that gets worse with every visitor**. A launch that *works* is the risk.
 
-> ✅ **STATUS 2026-08-10 EOD — C-1…C-6, V-1…V-3 and the B-121 email migration are ALL DONE and committed
-> locally (10 commits, unpushed).** Catalog moved **3,065 → 2,586 graded** — a deliberate 479-grade
-> reduction buying correctness; findable coverage went the other way, with 5,241 shelf-brand names now
-> resolving (search correctness on real shelf brands: **top-1 28%→72%, top-3 31%→93%**). 68/68 tests
-> pass. **Still open: V-4 (dark enriched dims), L-1/L-3/L-4 (launch assets, App Store, creators).**
+> ✅ **STATUS 2026-08-13 EOD — C-1…C-6, V-1…V-3, L-2 and the B-121 email migration are ALL DONE and
+> committed locally (12 code commits, ALL UNPUSHED).** ⚠️ **Dates, corrected from git:** C-1 and C-2
+> landed **2026-08-10**; **C-3, C-4, C-5, C-6, V-1, V-2/V-3, B-121 and L-2 all landed 2026-08-13** —
+> earlier notes labelling the whole batch "08-10" were wrong. Catalog moved **3,065 → 2,586 graded** — a
+> deliberate 479-grade reduction buying correctness (B alone: 1,170 → 706); findable coverage went the
+> other way, with 5,241 shelf-brand names now resolving (search correctness on real shelf brands:
+> **top-1 28%→72%, top-3 31%→93%**). **68/68 tests pass**, and `grep -rl "Claude AI synthesis"
+> public/data/companies/` returns **0**. 🔴 **`origin/main` still serves 3,060 graded — every one of these
+> fixes is on disk and NOT live.** **Still open: V-4 (dark enriched dims), L-1/L-3/L-4 (launch assets,
+> App Store, creators), the `sec-def14a` parser fix, and `RESEND_API_KEY`.**
 
 ### C — Correctness (must land before ANY distribution work). Stop-ship gate.
 - **C-1 ✅ DONE (`b8f529575`) — 9,765 pages published a fabricated "F".** `Number(null)` is `0`, which IS
@@ -313,8 +334,17 @@
   fixed these 3 — they are their own bug. Moved out to B-123.** With them reassigned, B-120's remaining
   unexplained residue is just the 3 unbunched post-destagger cancellations (`openstates`, `gao`,
   `oversight-ig`), which stay in B-107.
-- **B-121 🔴 NEW 2026-08-02 — outbound email is dead: MailerLite gates campaign content behind Premium.**
-  *(WS-B, S, **REQUIRES DECISION** — retention/marketing impact, no grade impact)* `weekly-digest` failed
+- **B-121 🟡 CODE DONE 2026-08-13 (`58dab0aa4`) — moved to Resend; now blocked ONLY on a secret.**
+  ✅ **Decision (b) executed.** Delivery moved off MailerLite campaigns to **Resend** behind a new
+  `scripts/lib/send-email.mjs`; **MailerLite stays the list store** (signup was never broken).
+  `send-weekly-digest.mjs` and `notify-newly-graded.mjs` both rewritten onto it, and
+  `score-rebake-weekly.yml` now passes **`--apply`** — it had been running the notifier without it, so
+  **notify-me had never sent a single email, ever.** 🔴 **NOTHING SENDS YET, for two reasons:**
+  ① `send-email.mjs:72` short-circuits with `{ok:false, error:"RESEND_API_KEY not set"}` — **Aron must add
+  `RESEND_API_KEY` to GitHub repo secrets**; ② the workflow changes are in the **unpushed** pile, so the
+  live crons still run the old MailerLite code. **Next send fires Sunday 2026-08-16; a third miss makes it
+  three weeks silent.** Original diagnosis kept below for the record:
+  *(WS-B, S — retention/marketing impact, no grade impact)* `weekly-digest` failed
   2026-08-02T18:58Z (run `30762336788`) after **7 straight clean Sundays**; the error is a **422 from
   MailerLite: `"Content submission is only available on Premium plan."`** against `POST /campaigns` at
   `scripts/send-weekly-digest.mjs:150`. **Not a code regression — the script is unchanged; the account's
