@@ -154,23 +154,15 @@
   },
   "enriched": {
     "execPay": {
-      "ceoName": null,
-      "ceoTotal": null,
-      "ceoBaseSalary": null,
-      "ceoBonus": null,
-      "ceoStockAwards": null,
-      "ceoOptionAwards": null,
-      "ceoNonEquityIncentive": null,
-      "ceoAllOtherComp": null,
       "medianEmployeePay": 48558,
-      "payRatio": 293,
-      "year": null,
       "ticker": "STZ",
       "cik": "0000016918",
       "filingDate": "2026-06-08",
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/16918/000001691826000023/stz-20260603.htm",
       "lastUpdated": "2026-06-11T03:48:51.753Z",
-      "source": "sec-def14a"
+      "source": "sec-def14a",
+      "_supersededBy": "payRatio",
+      "_note": "sec-def14a parse contradicted the authoritative payRatio record; bad values removed"
     },
     "openfdaRecalls": {
       "recallCount": 4,

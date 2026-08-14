@@ -46,6 +46,7 @@ const usdCompact = (n) =>
 const fmtRatio = (r) => (Number.isInteger(r) ? String(r) : String(r));
 
 const changes = [];
+const purged = [];
 for (const f of fs.readdirSync(COMPS).filter((x) => x.endsWith(".json"))) {
   const p = path.join(COMPS, f);
   let d;
@@ -53,10 +54,29 @@ for (const f of fs.readdirSync(COMPS).filter((x) => x.endsWith(".json"))) {
 
   const pr = d.payRatio;
   if (!pr || typeof pr.ratio !== "number" || !(pr.ratio > 0)) continue;
+
+  // STEP 1 — purge contradicting enriched values. This runs INDEPENDENTLY of the
+  // narrative check below: once a narrative has been corrected it stops matching,
+  // and an enriched-only cleanup nested inside that branch would silently never
+  // run again (exactly what let Home Depot's payRatio 2026 survive a rebase and
+  // trip the C-6 gate).
+  if (d.enriched?.execPay && typeof d.enriched.execPay.payRatio === "number"
+      && Math.abs(d.enriched.execPay.payRatio - pr.ratio) > 1) {
+    const e = d.enriched.execPay;
+    for (const k of ["payRatio", "ceoTotal", "ceoBaseSalary", "ceoBonus", "ceoStockAwards",
+                     "ceoOptionAwards", "ceoNonEquityIncentive", "ceoAllOtherComp", "ceoName", "year"]) {
+      delete e[k];
+    }
+    e._supersededBy = "payRatio";
+    e._note = "sec-def14a parse contradicted the authoritative payRatio record; bad values removed";
+    purged.push(d.name);
+    if (APPLY) fs.writeFileSync(p, JSON.stringify(d, null, 2));
+  }
+
   const s = d.execPay?.s;
   if (typeof s !== "string" || !s) continue;
 
-  // Only act on an EXPLICIT ratio claim in the narrative.
+  // STEP 2 — only act on an EXPLICIT ratio claim in the narrative.
   const m = s.match(/(ratio\s+)([\d][\d,]*(?:\.\d+)?)(\s*:\s*1)/i);
   if (!m) continue;
   const claimed = Number(m[2].replace(/,/g, ""));
@@ -86,18 +106,12 @@ for (const f of fs.readdirSync(COMPS).filter((x) => x.endsWith(".json"))) {
 
   if (APPLY) {
     d.execPay.s = next;
-    // Mark the contradicting enriched block so nothing downstream reads it.
-    if (d.enriched?.execPay && typeof d.enriched.execPay.payRatio === "number"
-        && Math.abs(d.enriched.execPay.payRatio - pr.ratio) > 1) {
-      d.enriched.execPay._supersededBy = "payRatio";
-      d.enriched.execPay._note =
-        "sec-def14a parse contradicted the authoritative payRatio record; not used for display or scoring";
-    }
     fs.writeFileSync(p, JSON.stringify(d, null, 2));
   }
 }
 
-console.log(`${APPLY ? "APPLIED" : "DRY RUN"} — ${changes.length} brand(s) publishing a pay ratio that contradicts the SEC record\n`);
+console.log(`${APPLY ? "APPLIED" : "DRY RUN"} — ${changes.length} narrative(s) corrected, ${purged.length} corrupt enriched.execPay block(s) purged\n`);
+if (purged.length) console.log(`   purged: ${purged.join(", ")}\n`);
 for (const c of changes) {
   console.log(`${c.name}  (${c.was}:1  ->  ${c.now}:1)${c.ceoFixed ? `   CEO comp ${c.ceoFixed}` : ""}`);
   console.log(`   old: ${c.oldS.slice(0, 150)}`);
