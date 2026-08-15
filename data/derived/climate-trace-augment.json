@@ -1,32 +1,32 @@
 {
   "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution.",
   "_source_url": "https://climatetrace.org/data",
-  "_generated_at": "2026-07-15T10:30:52.597Z",
-  "_upstream_file": "data/raw/climate-trace/2026-07-15.json",
+  "_generated_at": "2026-08-15T04:07:28.827Z",
+  "_upstream_file": "data/raw/climate-trace/2026-08-15.json",
   "_gas": "co2e_100yr",
   "_stats": {
-    "raw_ownership_rows": 45853,
-    "raw_emissions_rows": 53725,
-    "unique_parents": 6885,
+    "raw_ownership_rows": 45739,
+    "raw_emissions_rows": 53540,
+    "unique_parents": 6933,
     "matched_slugs": 212,
-    "orphan_parents": 6664,
+    "orphan_parents": 6712,
     "slug_collisions": 9,
     "routing": {
-      "direct-slug": 32,
-      "to-slug": 167,
+      "direct-slug": 31,
+      "to-slug": 168,
       "name-dash": 0,
       "compact": 12,
       "parent-map": 10,
-      "orphan": 6664
+      "orphan": 6712
     }
   },
   "companies": {
     "korea-electric-power": {
       "environment": {
-        "ghgCo2eKg": 59790438623,
+        "ghgCo2eKg": 72883298738,
         "ghgCo2eYear": 2026,
         "facilityCount": 69,
-        "ownershipPct": 63.9,
+        "ownershipPct": 63.5,
         "subsectors": [
           "electricity-generation"
         ],
@@ -61,10 +61,10 @@
     },
     "posco": {
       "environment": {
-        "ghgCo2eKg": 25887497938,
+        "ghgCo2eKg": 32457369235,
         "ghgCo2eYear": 2026,
         "facilityCount": 11,
-        "ownershipPct": 80.2,
+        "ownershipPct": 80.1,
         "subsectors": [
           "electricity-generation",
           "iron-and-steel"
@@ -93,7 +93,7 @@
     },
     "duke-energy": {
       "environment": {
-        "ghgCo2eKg": 25079998857,
+        "ghgCo2eKg": 30922139051,
         "ghgCo2eYear": 2026,
         "facilityCount": 41,
         "ownershipPct": 88.4,
@@ -121,10 +121,10 @@
     },
     "arcelormittal": {
       "environment": {
-        "ghgCo2eKg": 23717727706,
+        "ghgCo2eKg": 29365232823,
         "ghgCo2eYear": 2026,
         "facilityCount": 35,
-        "ownershipPct": 84.5,
+        "ownershipPct": 87.4,
         "subsectors": [
           "electricity-generation",
           "iron-and-steel"
@@ -164,7 +164,7 @@
     },
     "southern-company": {
       "environment": {
-        "ghgCo2eKg": 21532791510,
+        "ghgCo2eKg": 27258053475,
         "ghgCo2eYear": 2026,
         "facilityCount": 30,
         "ownershipPct": 86.6,
@@ -192,10 +192,10 @@
     },
     "vistra": {
       "environment": {
-        "ghgCo2eKg": 18753987020,
+        "ghgCo2eKg": 22021183166,
         "ghgCo2eYear": 2026,
-        "facilityCount": 37,
-        "ownershipPct": 98.6,
+        "facilityCount": 34,
+        "ownershipPct": 98.5,
         "subsectors": [
           "electricity-generation"
         ],
@@ -221,10 +221,10 @@
     },
     "berkshire-hathaway": {
       "environment": {
-        "ghgCo2eKg": 17045803733,
+        "ghgCo2eKg": 20817006434,
         "ghgCo2eYear": 2026,
-        "facilityCount": 68,
-        "ownershipPct": 61,
+        "facilityCount": 66,
+        "ownershipPct": 61.2,
         "subsectors": [
           "electricity-generation"
         ],
@@ -252,10 +252,10 @@
     },
     "american-electric-power-co": {
       "environment": {
-        "ghgCo2eKg": 14389113500,
+        "ghgCo2eKg": 17413263400,
         "ghgCo2eYear": 2026,
         "facilityCount": 23,
-        "ownershipPct": 90,
+        "ownershipPct": 90.3,
         "subsectors": [
           "electricity-generation"
         ],
@@ -280,10 +280,10 @@
     },
     "rwe": {
       "environment": {
-        "ghgCo2eKg": 13554432667,
+        "ghgCo2eKg": 16325130002,
         "ghgCo2eYear": 2026,
-        "facilityCount": 34,
-        "ownershipPct": 72.7,
+        "facilityCount": 30,
+        "ownershipPct": 73,
         "subsectors": [
           "electricity-generation"
         ],
@@ -311,9 +311,37 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "nextera-energy": {
+      "environment": {
+        "ghgCo2eKg": 15782325490,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 19,
+        "ownershipPct": 75.8,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "NextEra Energy Inc",
+        "parentHqCountry": "USA",
+        "parentLei": "254900RHL9MEUS5NKX63",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "tennessee-valley-authority": {
       "environment": {
-        "ghgCo2eKg": 12494680870,
+        "ghgCo2eKg": 15772185870,
         "ghgCo2eYear": 2026,
         "facilityCount": 17,
         "ownershipPct": 99.6,
@@ -339,37 +367,9 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "nextera-energy": {
-      "environment": {
-        "ghgCo2eKg": 12310133350,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 19,
-        "ownershipPct": 75.5,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "NextEra Energy Inc",
-        "parentHqCountry": "USA",
-        "parentLei": "254900RHL9MEUS5NKX63",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "cleveland-cliffs": {
       "environment": {
-        "ghgCo2eKg": 11316926670,
+        "ghgCo2eKg": 14486971815,
         "ghgCo2eYear": 2026,
         "facilityCount": 13,
         "ownershipPct": 99.2,
@@ -399,9 +399,9 @@
     },
     "mitsubishi-ufj-financial-group": {
       "environment": {
-        "ghgCo2eKg": 9479860146,
+        "ghgCo2eKg": 11980990674,
         "ghgCo2eYear": 2026,
-        "facilityCount": 351,
+        "facilityCount": 354,
         "ownershipPct": 3.4,
         "subsectors": [
           "cement",
@@ -464,10 +464,10 @@
     },
     "xcel-energy": {
       "environment": {
-        "ghgCo2eKg": 9475369040,
+        "ghgCo2eKg": 11822154780,
         "ghgCo2eYear": 2026,
         "facilityCount": 33,
-        "ownershipPct": 74.3,
+        "ownershipPct": 74.9,
         "subsectors": [
           "electricity-generation"
         ],
@@ -490,12 +490,42 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "nrg-energy": {
+      "environment": {
+        "ghgCo2eKg": 11126014069,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 19,
+        "ownershipPct": 73.5,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "AUS",
+          "TWN",
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "NRG Energy Inc",
+        "parentHqCountry": "USA",
+        "parentLei": "5E2UPK5SW04M13XY7I38",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "aes": {
       "environment": {
-        "ghgCo2eKg": 8476164891,
+        "ghgCo2eKg": 10588038802,
         "ghgCo2eYear": 2026,
         "facilityCount": 21,
-        "ownershipPct": 74.2,
+        "ownershipPct": 74,
         "subsectors": [
           "electricity-generation"
         ],
@@ -526,39 +556,9 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "nrg-energy": {
-      "environment": {
-        "ghgCo2eKg": 8358537355,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 19,
-        "ownershipPct": 73.4,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "AUS",
-          "TWN",
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "NRG Energy Inc",
-        "parentHqCountry": "USA",
-        "parentLei": "5E2UPK5SW04M13XY7I38",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "aluminum-corp-of-china": {
       "environment": {
-        "ghgCo2eKg": 7998887010,
+        "ghgCo2eKg": 9857132520,
         "ghgCo2eYear": 2026,
         "facilityCount": 14,
         "ownershipPct": 37.2,
@@ -586,10 +586,10 @@
     },
     "dominion-energy": {
       "environment": {
-        "ghgCo2eKg": 7910358000,
+        "ghgCo2eKg": 9761039000,
         "ghgCo2eYear": 2026,
         "facilityCount": 19,
-        "ownershipPct": 95.8,
+        "ownershipPct": 96.1,
         "subsectors": [
           "electricity-generation"
         ],
@@ -614,10 +614,10 @@
     },
     "ppl": {
       "environment": {
-        "ghgCo2eKg": 7566046677,
+        "ghgCo2eKg": 9463511382,
         "ghgCo2eYear": 2026,
         "facilityCount": 7,
-        "ownershipPct": 84.8,
+        "ownershipPct": 85.1,
         "subsectors": [
           "electricity-generation"
         ],
@@ -640,37 +640,9 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "entergy": {
-      "environment": {
-        "ghgCo2eKg": 7445602966,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 27,
-        "ownershipPct": 65.3,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Entergy Corp",
-        "parentHqCountry": "USA",
-        "parentLei": "4XM3TW50JULSLG8BNC79",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "ameren": {
       "environment": {
-        "ghgCo2eKg": 6979576666,
+        "ghgCo2eKg": 8698048206,
         "ghgCo2eYear": 2026,
         "facilityCount": 13,
         "ownershipPct": 100,
@@ -696,9 +668,37 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "entergy": {
+      "environment": {
+        "ghgCo2eKg": 8264431820,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 22,
+        "ownershipPct": 61.8,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Entergy Corp",
+        "parentHqCountry": "USA",
+        "parentLei": "4XM3TW50JULSLG8BNC79",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "emera": {
       "environment": {
-        "ghgCo2eKg": 6129062500,
+        "ghgCo2eKg": 7589818500,
         "ghgCo2eYear": 2026,
         "facilityCount": 11,
         "ownershipPct": 99.7,
@@ -729,10 +729,10 @@
     },
     "evergy": {
       "environment": {
-        "ghgCo2eKg": 5964798000,
+        "ghgCo2eKg": 7472669188,
         "ghgCo2eYear": 2026,
         "facilityCount": 18,
-        "ownershipPct": 69.4,
+        "ownershipPct": 69.3,
         "subsectors": [
           "electricity-generation"
         ],
@@ -755,12 +755,101 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "petrochina": {
+      "environment": {
+        "ghgCo2eKg": 5674538707,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 17,
+        "ownershipPct": 33.1,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "AUS",
+          "CHN",
+          "KAZ"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "PetroChina Co Ltd",
+        "parentHqCountry": "CHN",
+        "parentLei": "529900RPY4YG47TRSV05",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "cms-energy": {
+      "environment": {
+        "ghgCo2eKg": 5575228160,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 9,
+        "ownershipPct": 97.3,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "CMS Energy Corp",
+        "parentHqCountry": "USA",
+        "parentLei": "549300IA9XFBAGNIBW29",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "ternium-s-a": {
+      "environment": {
+        "ghgCo2eKg": 5569189407,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 4,
+        "ownershipPct": 61.4,
+        "subsectors": [
+          "electricity-generation",
+          "iron-and-steel"
+        ],
+        "iso3Countries": [
+          "ARG",
+          "BRA",
+          "MEX"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Ternium SA",
+        "parentHqCountry": "LUX",
+        "parentLei": "529900QG4KU23TEI2E46",
+        "routedVia": "compact",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "cemex-sab-de-cv": {
       "environment": {
-        "ghgCo2eKg": 4729487019,
+        "ghgCo2eKg": 5545668508,
         "ghgCo2eYear": 2026,
         "facilityCount": 37,
-        "ownershipPct": 96.1,
+        "ownershipPct": 96.2,
         "subsectors": [
           "cement"
         ],
@@ -794,101 +883,12 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "cms-energy": {
-      "environment": {
-        "ghgCo2eKg": 4548046620,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 9,
-        "ownershipPct": 97.3,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "CMS Energy Corp",
-        "parentHqCountry": "USA",
-        "parentLei": "549300IA9XFBAGNIBW29",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "petrochina": {
-      "environment": {
-        "ghgCo2eKg": 4502298061,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 17,
-        "ownershipPct": 33.3,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "AUS",
-          "CHN",
-          "KAZ"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "PetroChina Co Ltd",
-        "parentHqCountry": "CHN",
-        "parentLei": "529900RPY4YG47TRSV05",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "ternium-s-a": {
-      "environment": {
-        "ghgCo2eKg": 4388700797,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 4,
-        "ownershipPct": 61.7,
-        "subsectors": [
-          "electricity-generation",
-          "iron-and-steel"
-        ],
-        "iso3Countries": [
-          "ARG",
-          "BRA",
-          "MEX"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Ternium SA",
-        "parentHqCountry": "LUX",
-        "parentLei": "529900QG4KU23TEI2E46",
-        "routedVia": "compact",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "entergy-louisiana": {
       "environment": {
-        "ghgCo2eKg": 4330211300,
+        "ghgCo2eKg": 5532753654,
         "ghgCo2eYear": 2026,
         "facilityCount": 14,
-        "ownershipPct": 66.9,
+        "ownershipPct": 66.8,
         "subsectors": [
           "electricity-generation"
         ],
@@ -913,10 +913,10 @@
     },
     "alliant-energy": {
       "environment": {
-        "ghgCo2eKg": 4325061686,
+        "ghgCo2eKg": 5336364966,
         "ghgCo2eYear": 2026,
         "facilityCount": 17,
-        "ownershipPct": 58.7,
+        "ownershipPct": 58.8,
         "subsectors": [
           "electricity-generation"
         ],
@@ -941,10 +941,10 @@
     },
     "wec-energy": {
       "environment": {
-        "ghgCo2eKg": 4213804043,
+        "ghgCo2eKg": 5108940626,
         "ghgCo2eYear": 2026,
         "facilityCount": 16,
-        "ownershipPct": 69.4,
+        "ownershipPct": 68.8,
         "subsectors": [
           "electricity-generation"
         ],
@@ -967,40 +967,12 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "consumers-energy": {
-      "environment": {
-        "ghgCo2eKg": 4178047160,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 5,
-        "ownershipPct": 97.9,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Consumers Energy Co",
-        "parentHqCountry": "USA",
-        "parentLei": "7NKTFWJ1G6MELP9TU740",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "central-puerto-s-a": {
       "environment": {
-        "ghgCo2eKg": 3555176300,
+        "ghgCo2eKg": 4475275100,
         "ghgCo2eYear": 2026,
         "facilityCount": 8,
-        "ownershipPct": 78.8,
+        "ownershipPct": 78.6,
         "subsectors": [
           "electricity-generation"
         ],
@@ -1025,10 +997,10 @@
     },
     "hsbc": {
       "environment": {
-        "ghgCo2eKg": 3213784460,
+        "ghgCo2eKg": 4064661165,
         "ghgCo2eYear": 2026,
         "facilityCount": 19,
-        "ownershipPct": 20,
+        "ownershipPct": 20.2,
         "subsectors": [
           "electricity-generation"
         ],
@@ -1056,10 +1028,10 @@
     },
     "oge-energy": {
       "environment": {
-        "ghgCo2eKg": 3150595400,
+        "ghgCo2eKg": 3846211600,
         "ghgCo2eYear": 2026,
         "facilityCount": 10,
-        "ownershipPct": 91.7,
+        "ownershipPct": 91,
         "subsectors": [
           "electricity-generation"
         ],
@@ -1084,10 +1056,10 @@
     },
     "gerdau-s-a": {
       "environment": {
-        "ghgCo2eKg": 2900818955,
+        "ghgCo2eKg": 3168006576,
         "ghgCo2eYear": 2026,
         "facilityCount": 16,
-        "ownershipPct": 98.6,
+        "ownershipPct": 98.3,
         "subsectors": [
           "iron-and-steel"
         ],
@@ -1115,40 +1087,12 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "talen-energy": {
-      "environment": {
-        "ghgCo2eKg": 2741446780,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 8,
-        "ownershipPct": 37,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Talen Energy Corp",
-        "parentHqCountry": "USA",
-        "parentLei": null,
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "e-on-se": {
       "environment": {
-        "ghgCo2eKg": 2681485958,
+        "ghgCo2eKg": 3107553754,
         "ghgCo2eYear": 2026,
-        "facilityCount": 17,
-        "ownershipPct": 72.8,
+        "facilityCount": 13,
+        "ownershipPct": 72.9,
         "subsectors": [
           "electricity-generation"
         ],
@@ -1176,9 +1120,48 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "mitsubishi-motors-north-america": {
+      "environment": {
+        "ghgCo2eKg": 3024054019,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 18,
+        "ownershipPct": 28,
+        "subsectors": [
+          "electricity-generation",
+          "iron-and-steel"
+        ],
+        "iso3Countries": [
+          "BRA",
+          "CHL",
+          "IDN",
+          "JOR",
+          "JPN",
+          "MEX",
+          "NLD",
+          "QAT",
+          "SAU",
+          "TWN",
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Mitsubishi Corp",
+        "parentHqCountry": "JPN",
+        "parentLei": "KVIPTY4PULAPGC1VVD26",
+        "routedVia": "parent-map",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "transalta": {
       "environment": {
-        "ghgCo2eKg": 2437857000,
+        "ghgCo2eKg": 2994300500,
         "ghgCo2eYear": 2026,
         "facilityCount": 10,
         "ownershipPct": 91.5,
@@ -1205,26 +1188,16 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "mitsubishi-motors-north-america": {
+    "talen-energy": {
       "environment": {
-        "ghgCo2eKg": 2182391079,
+        "ghgCo2eKg": 2979622600,
         "ghgCo2eYear": 2026,
-        "facilityCount": 17,
-        "ownershipPct": 27.9,
+        "facilityCount": 7,
+        "ownershipPct": 34.8,
         "subsectors": [
-          "electricity-generation",
-          "iron-and-steel"
+          "electricity-generation"
         ],
         "iso3Countries": [
-          "BRA",
-          "CHL",
-          "IDN",
-          "JPN",
-          "MEX",
-          "NLD",
-          "QAT",
-          "SAU",
-          "TWN",
           "USA"
         ],
         "yearsAvailable": [
@@ -1235,20 +1208,20 @@
           2022,
           2021
         ],
-        "parentNameClimateTrace": "Mitsubishi Corp",
-        "parentHqCountry": "JPN",
-        "parentLei": "KVIPTY4PULAPGC1VVD26",
-        "routedVia": "parent-map",
+        "parentNameClimateTrace": "Talen Energy Corp",
+        "parentHqCountry": "USA",
+        "parentLei": null,
+        "routedVia": "to-slug",
         "sourceUrl": "https://climatetrace.org/data",
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
     "pinnacle-west-capital": {
       "environment": {
-        "ghgCo2eKg": 1994478016,
+        "ghgCo2eKg": 2714457156,
         "ghgCo2eYear": 2026,
         "facilityCount": 9,
-        "ownershipPct": 47.5,
+        "ownershipPct": 49.6,
         "subsectors": [
           "electricity-generation"
         ],
@@ -1271,23 +1244,16 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "exxon-mobil": {
+    "nucor": {
       "environment": {
-        "ghgCo2eKg": 1975619863,
+        "ghgCo2eKg": 2510958123,
         "ghgCo2eYear": 2026,
-        "facilityCount": 18,
-        "ownershipPct": 42.7,
+        "facilityCount": 17,
+        "ownershipPct": 96.4,
         "subsectors": [
-          "electricity-generation"
+          "iron-and-steel"
         ],
         "iso3Countries": [
-          "AUS",
-          "CAN",
-          "DEU",
-          "GBR",
-          "KAZ",
-          "NLD",
-          "SGP",
           "USA"
         ],
         "yearsAvailable": [
@@ -1298,9 +1264,9 @@
           2022,
           2021
         ],
-        "parentNameClimateTrace": "Exxon Mobil Corp",
+        "parentNameClimateTrace": "Nucor Corp",
         "parentHqCountry": "USA",
-        "parentLei": "J3WHBG0MTS7O8ZVMDC91",
+        "parentLei": "549300GGJCRSI2TIEJ46",
         "routedVia": "to-slug",
         "sourceUrl": "https://climatetrace.org/data",
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
@@ -1308,10 +1274,10 @@
     },
     "totalenergies-se": {
       "environment": {
-        "ghgCo2eKg": 1972186432,
+        "ghgCo2eKg": 2442544195,
         "ghgCo2eYear": 2026,
-        "facilityCount": 22,
-        "ownershipPct": 32.9,
+        "facilityCount": 21,
+        "ownershipPct": 32.3,
         "subsectors": [
           "electricity-generation"
         ],
@@ -1344,9 +1310,43 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "exxon-mobil": {
+      "environment": {
+        "ghgCo2eKg": 2420427277,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 17,
+        "ownershipPct": 42.5,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "AUS",
+          "CAN",
+          "GBR",
+          "KAZ",
+          "NLD",
+          "SGP",
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Exxon Mobil Corp",
+        "parentHqCountry": "USA",
+        "parentLei": "J3WHBG0MTS7O8ZVMDC91",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "nisource": {
       "environment": {
-        "ghgCo2eKg": 1964530000,
+        "ghgCo2eKg": 2399400000,
         "ghgCo2eYear": 2026,
         "facilityCount": 3,
         "ownershipPct": 100,
@@ -1374,10 +1374,10 @@
     },
     "fortis": {
       "environment": {
-        "ghgCo2eKg": 1945324240,
+        "ghgCo2eKg": 2384719470,
         "ghgCo2eYear": 2026,
         "facilityCount": 10,
-        "ownershipPct": 30.8,
+        "ownershipPct": 30.5,
         "subsectors": [
           "electricity-generation"
         ],
@@ -1401,40 +1401,12 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "nucor": {
-      "environment": {
-        "ghgCo2eKg": 1932516363,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 17,
-        "ownershipPct": 97,
-        "subsectors": [
-          "iron-and-steel"
-        ],
-        "iso3Countries": [
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Nucor Corp",
-        "parentHqCountry": "USA",
-        "parentLei": "549300GGJCRSI2TIEJ46",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "eni-spa": {
       "environment": {
-        "ghgCo2eKg": 1877739673,
+        "ghgCo2eKg": 2331741596,
         "ghgCo2eYear": 2026,
         "facilityCount": 18,
-        "ownershipPct": 59.2,
+        "ownershipPct": 59.4,
         "subsectors": [
           "electricity-generation"
         ],
@@ -1461,39 +1433,11 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "carlyle-group": {
-      "environment": {
-        "ghgCo2eKg": 1707465350,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 9,
-        "ownershipPct": 92.9,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Carlyle Group Inc",
-        "parentHqCountry": "USA",
-        "parentLei": "529900NGGVF94UK6PG95",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "mizuho-financial-group": {
       "environment": {
-        "ghgCo2eKg": 1557240786,
+        "ghgCo2eKg": 1936505837,
         "ghgCo2eYear": 2026,
-        "facilityCount": 332,
+        "facilityCount": 335,
         "ownershipPct": 0.6,
         "subsectors": [
           "cement",
@@ -1556,7 +1500,7 @@
     },
     "constellation-energy": {
       "environment": {
-        "ghgCo2eKg": 1489496200,
+        "ghgCo2eKg": 1897822900,
         "ghgCo2eYear": 2026,
         "facilityCount": 15,
         "ownershipPct": 100,
@@ -1584,7 +1528,7 @@
     },
     "citigroup": {
       "environment": {
-        "ghgCo2eKg": 1395036251,
+        "ghgCo2eKg": 1757716501,
         "ghgCo2eYear": 2026,
         "facilityCount": 23,
         "ownershipPct": 8.5,
@@ -1615,12 +1559,40 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "genesis-energy-lp": {
+      "environment": {
+        "ghgCo2eKg": 1733400000,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 1,
+        "ownershipPct": 100,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "NZL"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Genesis Energy Ltd",
+        "parentHqCountry": "NZL",
+        "parentLei": "254900HM1ABRDJ7T5718",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "itochu": {
       "environment": {
-        "ghgCo2eKg": 1394089452,
+        "ghgCo2eKg": 1718348116,
         "ghgCo2eYear": 2026,
         "facilityCount": 9,
-        "ownershipPct": 26.8,
+        "ownershipPct": 26.4,
         "subsectors": [
           "electricity-generation"
         ],
@@ -1645,37 +1617,9 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "portland-general-electric-co": {
-      "environment": {
-        "ghgCo2eKg": 1369454723,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 5,
-        "ownershipPct": 47.5,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Portland General Electric Co",
-        "parentHqCountry": "USA",
-        "parentLei": "GJOUP9M7C39GLSK9R870",
-        "routedVia": "direct-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "suncor-energy": {
       "environment": {
-        "ghgCo2eKg": 1346409786,
+        "ghgCo2eKg": 1650527224,
         "ghgCo2eYear": 2026,
         "facilityCount": 4,
         "ownershipPct": 84.3,
@@ -1701,9 +1645,39 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "kia-usa": {
+      "environment": {
+        "ghgCo2eKg": 1635217975,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 4,
+        "ownershipPct": 17.2,
+        "subsectors": [
+          "electricity-generation",
+          "iron-and-steel"
+        ],
+        "iso3Countries": [
+          "KOR",
+          "MRT"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Kia Corp",
+        "parentHqCountry": "KOR",
+        "parentLei": "988400V8MJK9N7OI5X76",
+        "routedVia": "parent-map",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "glencore-plc": {
       "environment": {
-        "ghgCo2eKg": 1324080805,
+        "ghgCo2eKg": 1611098637,
         "ghgCo2eYear": 2026,
         "facilityCount": 33,
         "ownershipPct": 6,
@@ -1734,53 +1708,16 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "kia-usa": {
+    "portland-general-electric-co": {
       "environment": {
-        "ghgCo2eKg": 1298242715,
+        "ghgCo2eKg": 1605025311,
         "ghgCo2eYear": 2026,
-        "facilityCount": 4,
-        "ownershipPct": 17.2,
-        "subsectors": [
-          "electricity-generation",
-          "iron-and-steel"
-        ],
-        "iso3Countries": [
-          "KOR",
-          "MRT"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Kia Corp",
-        "parentHqCountry": "KOR",
-        "parentLei": "988400V8MJK9N7OI5X76",
-        "routedVia": "parent-map",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "shell-usa": {
-      "environment": {
-        "ghgCo2eKg": 1271012838,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 24,
-        "ownershipPct": 39.5,
+        "facilityCount": 5,
+        "ownershipPct": 47.1,
         "subsectors": [
           "electricity-generation"
         ],
         "iso3Countries": [
-          "AUS",
-          "BRA",
-          "DEU",
-          "KAZ",
-          "NGA",
-          "NLD",
-          "OMN",
           "USA"
         ],
         "yearsAvailable": [
@@ -1791,39 +1728,9 @@
           2022,
           2021
         ],
-        "parentNameClimateTrace": "Shell PLC",
-        "parentHqCountry": "GBR",
-        "parentLei": "21380068P1DRHMJ8KU70",
-        "routedVia": "parent-map",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "mitsubishi-materials-corp": {
-      "environment": {
-        "ghgCo2eKg": 1252019122,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 8,
-        "ownershipPct": 43.7,
-        "subsectors": [
-          "cement",
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "JPN",
-          "VNM"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Mitsubishi Materials Corp",
-        "parentHqCountry": "JPN",
-        "parentLei": "35380076QOBOSOUBRT89",
+        "parentNameClimateTrace": "Portland General Electric Co",
+        "parentHqCountry": "USA",
+        "parentLei": "GJOUP9M7C39GLSK9R870",
         "routedVia": "direct-slug",
         "sourceUrl": "https://climatetrace.org/data",
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
@@ -1831,7 +1738,7 @@
     },
     "air-products-and-chemicals": {
       "environment": {
-        "ghgCo2eKg": 1181749000,
+        "ghgCo2eKg": 1579530000,
         "ghgCo2eYear": 2026,
         "facilityCount": 2,
         "ownershipPct": 46.2,
@@ -1858,12 +1765,42 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "mitsubishi-materials-corp": {
+      "environment": {
+        "ghgCo2eKg": 1486766353,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 8,
+        "ownershipPct": 44.7,
+        "subsectors": [
+          "cement",
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "JPN",
+          "VNM"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Mitsubishi Materials Corp",
+        "parentHqCountry": "JPN",
+        "parentLei": "35380076QOBOSOUBRT89",
+        "routedVia": "direct-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "chevron": {
       "environment": {
-        "ghgCo2eKg": 1170640462,
+        "ghgCo2eKg": 1442844368,
         "ghgCo2eYear": 2026,
         "facilityCount": 11,
-        "ownershipPct": 51.7,
+        "ownershipPct": 51.6,
         "subsectors": [
           "electricity-generation"
         ],
@@ -1888,37 +1825,9 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "idacorp": {
-      "environment": {
-        "ghgCo2eKg": 1116905130,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 5,
-        "ownershipPct": 40.1,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "IDACORP Inc",
-        "parentHqCountry": "USA",
-        "parentLei": "N134NUJDWN8UEFA8B673",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "iren": {
       "environment": {
-        "ghgCo2eKg": 1074222000,
+        "ghgCo2eKg": 1353123000,
         "ghgCo2eYear": 2026,
         "facilityCount": 4,
         "ownershipPct": 100,
@@ -1944,45 +1853,22 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "algoma-steel-group": {
+    "shell-usa": {
       "environment": {
-        "ghgCo2eKg": 1019072692,
+        "ghgCo2eKg": 1346700173,
         "ghgCo2eYear": 2026,
-        "facilityCount": 1,
-        "ownershipPct": 100,
-        "subsectors": [
-          "iron-and-steel"
-        ],
-        "iso3Countries": [
-          "CAN"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Algoma Steel Group Inc",
-        "parentHqCountry": "CAN",
-        "parentLei": "5493006RXIB5GVHWJS53",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "kenon": {
-      "environment": {
-        "ghgCo2eKg": 972719417,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 8,
-        "ownershipPct": 33.1,
+        "facilityCount": 21,
+        "ownershipPct": 38.7,
         "subsectors": [
           "electricity-generation"
         ],
         "iso3Countries": [
-          "ISR",
+          "AUS",
+          "BRA",
+          "KAZ",
+          "NGA",
+          "NLD",
+          "OMN",
           "USA"
         ],
         "yearsAvailable": [
@@ -1993,20 +1879,20 @@
           2022,
           2021
         ],
-        "parentNameClimateTrace": "Kenon Holdings Ltd",
-        "parentHqCountry": "SGP",
-        "parentLei": "254900N5LVBX92GMVN72",
-        "routedVia": "to-slug",
+        "parentNameClimateTrace": "Shell PLC",
+        "parentHqCountry": "GBR",
+        "parentLei": "21380068P1DRHMJ8KU70",
+        "routedVia": "parent-map",
         "sourceUrl": "https://climatetrace.org/data",
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "archer-daniels-midland": {
+    "idacorp": {
       "environment": {
-        "ghgCo2eKg": 968510000,
+        "ghgCo2eKg": 1332387590,
         "ghgCo2eYear": 2026,
-        "facilityCount": 4,
-        "ownershipPct": 100,
+        "facilityCount": 5,
+        "ownershipPct": 39.9,
         "subsectors": [
           "electricity-generation"
         ],
@@ -2021,9 +1907,9 @@
           2022,
           2021
         ],
-        "parentNameClimateTrace": "Archer-Daniels-Midland Co",
+        "parentNameClimateTrace": "IDACORP Inc",
         "parentHqCountry": "USA",
-        "parentLei": "549300LO13MQ9HYSTR83",
+        "parentLei": "N134NUJDWN8UEFA8B673",
         "routedVia": "to-slug",
         "sourceUrl": "https://climatetrace.org/data",
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
@@ -2031,10 +1917,10 @@
     },
     "general-electric": {
       "environment": {
-        "ghgCo2eKg": 965075891,
+        "ghgCo2eKg": 1246813615,
         "ghgCo2eYear": 2026,
         "facilityCount": 11,
-        "ownershipPct": 37,
+        "ownershipPct": 37.5,
         "subsectors": [
           "electricity-generation"
         ],
@@ -2060,9 +1946,37 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "rio-tinto": {
+      "environment": {
+        "ghgCo2eKg": 1237507600,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 3,
+        "ownershipPct": 47,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "AUS"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Rio Tinto Ltd",
+        "parentHqCountry": "AUS",
+        "parentLei": "529900X2VMAQT2PE0V24",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "pt-bukit-asam-tbk": {
       "environment": {
-        "ghgCo2eKg": 963079875,
+        "ghgCo2eKg": 1214349375,
         "ghgCo2eYear": 2026,
         "facilityCount": 2,
         "ownershipPct": 47.1,
@@ -2088,9 +2002,37 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "archer-daniels-midland": {
+      "environment": {
+        "ghgCo2eKg": 1196680000,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 4,
+        "ownershipPct": 100,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Archer-Daniels-Midland Co",
+        "parentHqCountry": "USA",
+        "parentLei": "549300LO13MQ9HYSTR83",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "mitsubishi-heavy-industries": {
       "environment": {
-        "ghgCo2eKg": 927953020,
+        "ghgCo2eKg": 1138414560,
         "ghgCo2eYear": 2026,
         "facilityCount": 5,
         "ownershipPct": 11.1,
@@ -2117,40 +2059,12 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "black-hills-corp": {
-      "environment": {
-        "ghgCo2eKg": 908093058,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 11,
-        "ownershipPct": 47.9,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Black Hills Corp",
-        "parentHqCountry": "USA",
-        "parentLei": "3MGELCRSTNSAMJ962671",
-        "routedVia": "direct-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "national-grid": {
       "environment": {
-        "ghgCo2eKg": 902747013,
+        "ghgCo2eKg": 1122848939,
         "ghgCo2eYear": 2026,
         "facilityCount": 10,
-        "ownershipPct": 97.5,
+        "ownershipPct": 97.6,
         "subsectors": [
           "electricity-generation"
         ],
@@ -2173,38 +2087,9 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "icici-bank": {
-      "environment": {
-        "ghgCo2eKg": 901170930,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 7,
-        "ownershipPct": 9.8,
-        "subsectors": [
-          "cement",
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "IND"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "ICICI Bank Ltd",
-        "parentHqCountry": "IND",
-        "parentLei": "R7RX8ER1V4666J8D1I38",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "sasol": {
       "environment": {
-        "ghgCo2eKg": 888792000,
+        "ghgCo2eKg": 1122563000,
         "ghgCo2eYear": 2026,
         "facilityCount": 2,
         "ownershipPct": 100,
@@ -2231,17 +2116,17 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "rio-tinto": {
+    "black-hills-corp": {
       "environment": {
-        "ghgCo2eKg": 867446500,
+        "ghgCo2eKg": 1038547718,
         "ghgCo2eYear": 2026,
-        "facilityCount": 3,
-        "ownershipPct": 47.8,
+        "facilityCount": 9,
+        "ownershipPct": 45.1,
         "subsectors": [
           "electricity-generation"
         ],
         "iso3Countries": [
-          "AUS"
+          "USA"
         ],
         "yearsAvailable": [
           2026,
@@ -2251,20 +2136,20 @@
           2022,
           2021
         ],
-        "parentNameClimateTrace": "Rio Tinto Ltd",
-        "parentHqCountry": "AUS",
-        "parentLei": "529900X2VMAQT2PE0V24",
-        "routedVia": "to-slug",
+        "parentNameClimateTrace": "Black Hills Corp",
+        "parentHqCountry": "USA",
+        "parentLei": "3MGELCRSTNSAMJ962671",
+        "routedVia": "direct-slug",
         "sourceUrl": "https://climatetrace.org/data",
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
     "otter-tail": {
       "environment": {
-        "ghgCo2eKg": 796295500,
+        "ghgCo2eKg": 945929400,
         "ghgCo2eYear": 2026,
         "facilityCount": 4,
-        "ownershipPct": 50.1,
+        "ownershipPct": 50.5,
         "subsectors": [
           "electricity-generation"
         ],
@@ -2289,7 +2174,7 @@
     },
     "sinopec-shanghai-petrochemical-co": {
       "environment": {
-        "ghgCo2eKg": 698100000,
+        "ghgCo2eKg": 866500000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -2317,7 +2202,7 @@
     },
     "westlake": {
       "environment": {
-        "ghgCo2eKg": 693460000,
+        "ghgCo2eKg": 861410000,
         "ghgCo2eYear": 2026,
         "facilityCount": 4,
         "ownershipPct": 100,
@@ -2345,10 +2230,10 @@
     },
     "bp-usa": {
       "environment": {
-        "ghgCo2eKg": 683402500,
+        "ghgCo2eKg": 845043500,
         "ghgCo2eYear": 2026,
         "facilityCount": 8,
-        "ownershipPct": 60,
+        "ownershipPct": 59.7,
         "subsectors": [
           "electricity-generation"
         ],
@@ -2375,9 +2260,38 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "icici-bank": {
+      "environment": {
+        "ghgCo2eKg": 844645981,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 6,
+        "ownershipPct": 9.8,
+        "subsectors": [
+          "cement",
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "IND"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "ICICI Bank Ltd",
+        "parentHqCountry": "IND",
+        "parentLei": "R7RX8ER1V4666J8D1I38",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "agricultural-bank-of-china": {
       "environment": {
-        "ghgCo2eKg": 653495360,
+        "ghgCo2eKg": 809941016,
         "ghgCo2eYear": 2026,
         "facilityCount": 18,
         "ownershipPct": 3.3,
@@ -2404,94 +2318,9 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "pgande": {
-      "environment": {
-        "ghgCo2eKg": 646790000,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 3,
-        "ownershipPct": 100,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "PG&E Corp",
-        "parentHqCountry": "USA",
-        "parentLei": "8YQ2GSDWYZXO2EDN3511",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "sempra": {
-      "environment": {
-        "ghgCo2eKg": 620326700,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 4,
-        "ownershipPct": 100,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "MEX",
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Sempra",
-        "parentHqCountry": "USA",
-        "parentLei": "PBBKGKLRK5S5C0Y4T545",
-        "routedVia": "direct-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "imperial-oil": {
-      "environment": {
-        "ghgCo2eKg": 618422500,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 5,
-        "ownershipPct": 57.6,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "CAN"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Imperial Oil Ltd",
-        "parentHqCountry": "CAN",
-        "parentLei": "549300JZNB745JT5WY51",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "steel-dynamics": {
       "environment": {
-        "ghgCo2eKg": 600205649,
+        "ghgCo2eKg": 783674062,
         "ghgCo2eYear": 2026,
         "facilityCount": 6,
         "ownershipPct": 100,
@@ -2517,9 +2346,37 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "imperial-oil": {
+      "environment": {
+        "ghgCo2eKg": 758100000,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 5,
+        "ownershipPct": 57.6,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "CAN"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Imperial Oil Ltd",
+        "parentHqCountry": "CAN",
+        "parentLei": "549300JZNB745JT5WY51",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "mge-energy": {
       "environment": {
-        "ghgCo2eKg": 592209926,
+        "ghgCo2eKg": 741641413,
         "ghgCo2eYear": 2026,
         "facilityCount": 10,
         "ownershipPct": 17.6,
@@ -2545,9 +2402,37 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "pgande": {
+      "environment": {
+        "ghgCo2eKg": 717670000,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 3,
+        "ownershipPct": 100,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "PG&E Corp",
+        "parentHqCountry": "USA",
+        "parentLei": "8YQ2GSDWYZXO2EDN3511",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "artisan-partners-asset-management": {
       "environment": {
-        "ghgCo2eKg": 565676974,
+        "ghgCo2eKg": 712299420,
         "ghgCo2eYear": 2026,
         "facilityCount": 74,
         "ownershipPct": 3.9,
@@ -2593,71 +2478,11 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "avista": {
+    "carlyle-group": {
       "environment": {
-        "ghgCo2eKg": 563432077,
+        "ghgCo2eKg": 697755600,
         "ghgCo2eYear": 2026,
         "facilityCount": 6,
-        "ownershipPct": 26,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Avista Corp",
-        "parentHqCountry": "USA",
-        "parentLei": "Q0IK63NITJD6RJ47SW96",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "tenaris": {
-      "environment": {
-        "ghgCo2eKg": 544396190,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 7,
-        "ownershipPct": 49.4,
-        "subsectors": [
-          "electricity-generation",
-          "iron-and-steel"
-        ],
-        "iso3Countries": [
-          "ARG",
-          "ITA",
-          "MEX",
-          "ROU"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Tenaris SA",
-        "parentHqCountry": "LUX",
-        "parentLei": "549300Y7C05BKC4HZB40",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "phillips-66": {
-      "environment": {
-        "ghgCo2eKg": 517890000,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 3,
         "ownershipPct": 100,
         "subsectors": [
           "electricity-generation"
@@ -2673,17 +2498,17 @@
           2022,
           2021
         ],
-        "parentNameClimateTrace": "Phillips 66",
+        "parentNameClimateTrace": "Carlyle Group Inc",
         "parentHqCountry": "USA",
-        "parentLei": "5493005JBO5YSIGK1814",
-        "routedVia": "direct-slug",
+        "parentLei": "529900NGGVF94UK6PG95",
+        "routedVia": "to-slug",
         "sourceUrl": "https://climatetrace.org/data",
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
     "franklin-resources": {
       "environment": {
-        "ghgCo2eKg": 515247346,
+        "ghgCo2eKg": 681440393,
         "ghgCo2eYear": 2026,
         "facilityCount": 22,
         "ownershipPct": 4.4,
@@ -2711,9 +2536,37 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "avista": {
+      "environment": {
+        "ghgCo2eKg": 662185589,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 6,
+        "ownershipPct": 25.8,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Avista Corp",
+        "parentHqCountry": "USA",
+        "parentLei": "Q0IK63NITJD6RJ47SW96",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "enel-chile-s-a": {
       "environment": {
-        "ghgCo2eKg": 514805650,
+        "ghgCo2eKg": 654775160,
         "ghgCo2eYear": 2026,
         "facilityCount": 4,
         "ownershipPct": 93.6,
@@ -2739,9 +2592,97 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "tenaris": {
+      "environment": {
+        "ghgCo2eKg": 654365628,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 7,
+        "ownershipPct": 48.2,
+        "subsectors": [
+          "electricity-generation",
+          "iron-and-steel"
+        ],
+        "iso3Countries": [
+          "ARG",
+          "ITA",
+          "MEX",
+          "ROU"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Tenaris SA",
+        "parentHqCountry": "LUX",
+        "parentLei": "549300Y7C05BKC4HZB40",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "tc-energy": {
+      "environment": {
+        "ghgCo2eKg": 633450000,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 3,
+        "ownershipPct": 100,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "CAN"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "TC Energy Corp",
+        "parentHqCountry": "CAN",
+        "parentLei": "549300UGKOFV2IWJJG27",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "phillips-66": {
+      "environment": {
+        "ghgCo2eKg": 633327700,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 3,
+        "ownershipPct": 100,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Phillips 66",
+        "parentHqCountry": "USA",
+        "parentLei": "5493005JBO5YSIGK1814",
+        "routedVia": "direct-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "royal-bank-of-canada": {
       "environment": {
-        "ghgCo2eKg": 510053519,
+        "ghgCo2eKg": 629071746,
         "ghgCo2eYear": 2026,
         "facilityCount": 31,
         "ownershipPct": 4.3,
@@ -2770,93 +2711,9 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "occidental-petroleum-de": {
-      "environment": {
-        "ghgCo2eKg": 506234820,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 3,
-        "ownershipPct": 100,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Occidental Petroleum Corp",
-        "parentHqCountry": "USA",
-        "parentLei": "IM7X0T3ECJW4C1T7ON55",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "tc-energy": {
-      "environment": {
-        "ghgCo2eKg": 494850000,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 3,
-        "ownershipPct": 100,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "CAN"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "TC Energy Corp",
-        "parentHqCountry": "CAN",
-        "parentLei": "549300UGKOFV2IWJJG27",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "eagle-materials": {
-      "environment": {
-        "ghgCo2eKg": 466408296,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 5,
-        "ownershipPct": 83.8,
-        "subsectors": [
-          "cement"
-        ],
-        "iso3Countries": [
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Eagle Materials Inc",
-        "parentHqCountry": "USA",
-        "parentLei": "529900KRXRGXL61SG039",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "cementos-pacasmayo-saa": {
       "environment": {
-        "ghgCo2eKg": 458828751,
+        "ghgCo2eKg": 628810482,
         "ghgCo2eYear": 2026,
         "facilityCount": 3,
         "ownershipPct": 100,
@@ -2882,9 +2739,123 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "kenon": {
+      "environment": {
+        "ghgCo2eKg": 622911934,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 6,
+        "ownershipPct": 26.6,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "ISR",
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Kenon Holdings Ltd",
+        "parentHqCountry": "SGP",
+        "parentLei": "254900N5LVBX92GMVN72",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "occidental-petroleum-de": {
+      "environment": {
+        "ghgCo2eKg": 620047480,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 3,
+        "ownershipPct": 100,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Occidental Petroleum Corp",
+        "parentHqCountry": "USA",
+        "parentLei": "IM7X0T3ECJW4C1T7ON55",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "sempra": {
+      "environment": {
+        "ghgCo2eKg": 592469690,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 4,
+        "ownershipPct": 77.3,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "MEX",
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Sempra",
+        "parentHqCountry": "USA",
+        "parentLei": "PBBKGKLRK5S5C0Y4T545",
+        "routedVia": "direct-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "eagle-materials": {
+      "environment": {
+        "ghgCo2eKg": 580707140,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 5,
+        "ownershipPct": 85.9,
+        "subsectors": [
+          "cement"
+        ],
+        "iso3Countries": [
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Eagle Materials Inc",
+        "parentHqCountry": "USA",
+        "parentLei": "529900KRXRGXL61SG039",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "marathon-petroleum": {
       "environment": {
-        "ghgCo2eKg": 433043000,
+        "ghgCo2eKg": 536944000,
         "ghgCo2eYear": 2026,
         "facilityCount": 5,
         "ownershipPct": 98.3,
@@ -2910,37 +2881,9 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "northwestern-energy-group": {
-      "environment": {
-        "ghgCo2eKg": 403510000,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 3,
-        "ownershipPct": 22.2,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "NorthWestern Energy Group Inc",
-        "parentHqCountry": "USA",
-        "parentLei": "254900N1WG46G1VMDM34",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "consolidated-edison": {
       "environment": {
-        "ghgCo2eKg": 400859000,
+        "ghgCo2eKg": 493880000,
         "ghgCo2eYear": 2026,
         "facilityCount": 3,
         "ownershipPct": 100,
@@ -2966,9 +2909,37 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "northwestern-energy-group": {
+      "environment": {
+        "ghgCo2eKg": 487528000,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 3,
+        "ownershipPct": 22.3,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "NorthWestern Energy Group Inc",
+        "parentHqCountry": "USA",
+        "parentLei": "254900N1WG46G1VMDM34",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "clearway-energy": {
       "environment": {
-        "ghgCo2eKg": 368868300,
+        "ghgCo2eKg": 454737516,
         "ghgCo2eYear": 2026,
         "facilityCount": 3,
         "ownershipPct": 82.5,
@@ -2996,7 +2967,7 @@
     },
     "northland-power-inc": {
       "environment": {
-        "ghgCo2eKg": 354603600,
+        "ghgCo2eKg": 434696800,
         "ghgCo2eYear": 2026,
         "facilityCount": 3,
         "ownershipPct": 92.6,
@@ -3022,70 +2993,9 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "solvay": {
-      "environment": {
-        "ghgCo2eKg": 346131052,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 7,
-        "ownershipPct": 62.3,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "BGR",
-          "ESP",
-          "FRA",
-          "ITA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Solvay SA",
-        "parentHqCountry": "BEL",
-        "parentLei": "549300MMVL80RTBP3O28",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "equinor-asa": {
-      "environment": {
-        "ghgCo2eKg": 343703628,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 7,
-        "ownershipPct": 54,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "DNK",
-          "GBR",
-          "NOR"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Equinor ASA",
-        "parentHqCountry": "NOR",
-        "parentLei": "OW6OFBNCKXC4US5C7523",
-        "routedVia": "direct-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "california-resources": {
       "environment": {
-        "ghgCo2eKg": 343664918,
+        "ghgCo2eKg": 434170268,
         "ghgCo2eYear": 2026,
         "facilityCount": 4,
         "ownershipPct": 67.1,
@@ -3111,9 +3021,70 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "equinor-asa": {
+      "environment": {
+        "ghgCo2eKg": 419131083,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 7,
+        "ownershipPct": 53.6,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "DNK",
+          "GBR",
+          "NOR"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Equinor ASA",
+        "parentHqCountry": "NOR",
+        "parentLei": "OW6OFBNCKXC4US5C7523",
+        "routedVia": "direct-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "solvay": {
+      "environment": {
+        "ghgCo2eKg": 414175454,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 7,
+        "ownershipPct": 61.7,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "BGR",
+          "ESP",
+          "FRA",
+          "ITA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Solvay SA",
+        "parentHqCountry": "BEL",
+        "parentLei": "549300MMVL80RTBP3O28",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "bank-of-montreal": {
       "environment": {
-        "ghgCo2eKg": 327840116,
+        "ghgCo2eKg": 405929806,
         "ghgCo2eYear": 2026,
         "facilityCount": 12,
         "ownershipPct": 5.2,
@@ -3142,16 +3113,17 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "edison-international": {
+    "blackstone": {
       "environment": {
-        "ghgCo2eKg": 314676700,
+        "ghgCo2eKg": 387192676,
         "ghgCo2eYear": 2026,
-        "facilityCount": 7,
-        "ownershipPct": 100,
+        "facilityCount": 3,
+        "ownershipPct": 97.2,
         "subsectors": [
           "electricity-generation"
         ],
         "iso3Countries": [
+          "ITA",
           "USA"
         ],
         "yearsAvailable": [
@@ -3162,9 +3134,9 @@
           2022,
           2021
         ],
-        "parentNameClimateTrace": "Edison International Corp",
+        "parentNameClimateTrace": "Blackstone Inc",
         "parentHqCountry": "USA",
-        "parentLei": "549300I7ROF15MAEVP56",
+        "parentLei": "5299004LW4QWGZUB8Y96",
         "routedVia": "to-slug",
         "sourceUrl": "https://climatetrace.org/data",
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
@@ -3172,7 +3144,7 @@
     },
     "public-service-enterprise-group": {
       "environment": {
-        "ghgCo2eKg": 310715284,
+        "ghgCo2eKg": 382817803,
         "ghgCo2eYear": 2026,
         "facilityCount": 2,
         "ownershipPct": 88.3,
@@ -3198,17 +3170,16 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "blackstone": {
+    "edison-international": {
       "environment": {
-        "ghgCo2eKg": 289509699,
+        "ghgCo2eKg": 366460100,
         "ghgCo2eYear": 2026,
-        "facilityCount": 3,
-        "ownershipPct": 96.9,
+        "facilityCount": 7,
+        "ownershipPct": 100,
         "subsectors": [
           "electricity-generation"
         ],
         "iso3Countries": [
-          "ITA",
           "USA"
         ],
         "yearsAvailable": [
@@ -3219,9 +3190,9 @@
           2022,
           2021
         ],
-        "parentNameClimateTrace": "Blackstone Inc",
+        "parentNameClimateTrace": "Edison International Corp",
         "parentHqCountry": "USA",
-        "parentLei": "5299004LW4QWGZUB8Y96",
+        "parentLei": "549300I7ROF15MAEVP56",
         "routedVia": "to-slug",
         "sourceUrl": "https://climatetrace.org/data",
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
@@ -3229,7 +3200,7 @@
     },
     "barrick-mining": {
       "environment": {
-        "ghgCo2eKg": 287164350,
+        "ghgCo2eKg": 358483950,
         "ghgCo2eYear": 2026,
         "facilityCount": 3,
         "ownershipPct": 61,
@@ -3256,9 +3227,37 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "algoma-steel-group": {
+      "environment": {
+        "ghgCo2eKg": 356701364,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 1,
+        "ownershipPct": 100,
+        "subsectors": [
+          "iron-and-steel"
+        ],
+        "iso3Countries": [
+          "CAN"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Algoma Steel Group Inc",
+        "parentHqCountry": "CAN",
+        "parentLei": "5493006RXIB5GVHWJS53",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "brookfield-asset-management": {
       "environment": {
-        "ghgCo2eKg": 277828678,
+        "ghgCo2eKg": 341457661,
         "ghgCo2eYear": 2026,
         "facilityCount": 12,
         "ownershipPct": 9.9,
@@ -3286,9 +3285,65 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "orix": {
+      "environment": {
+        "ghgCo2eKg": 332198600,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 1,
+        "ownershipPct": 11.9,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "IND"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "ORIX Corp",
+        "parentHqCountry": "JPN",
+        "parentLei": "35380016EMHNBOVYE123",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "morgan-stanley": {
+      "environment": {
+        "ghgCo2eKg": 326730000,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 1,
+        "ownershipPct": 100,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Morgan Stanley",
+        "parentHqCountry": "USA",
+        "parentLei": "IGJSJL3JD5P30I6NJZ34",
+        "routedVia": "direct-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "volkswagen-usa": {
       "environment": {
-        "ghgCo2eKg": 260722000,
+        "ghgCo2eKg": 315390000,
         "ghgCo2eYear": 2026,
         "facilityCount": 5,
         "ownershipPct": 100,
@@ -3316,66 +3371,9 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "exelon": {
-      "environment": {
-        "ghgCo2eKg": 251320000,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 2,
-        "ownershipPct": 100,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "CAN",
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Exelon Corp",
-        "parentHqCountry": "USA",
-        "parentLei": "3SOUA6IRML7435B56G12",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "morgan-stanley": {
-      "environment": {
-        "ghgCo2eKg": 248820000,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 1,
-        "ownershipPct": 100,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Morgan Stanley",
-        "parentHqCountry": "USA",
-        "parentLei": "IGJSJL3JD5P30I6NJZ34",
-        "routedVia": "direct-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "nn": {
       "environment": {
-        "ghgCo2eKg": 231427958,
+        "ghgCo2eKg": 284308646,
         "ghgCo2eYear": 2026,
         "facilityCount": 18,
         "ownershipPct": 4.8,
@@ -3404,7 +3402,7 @@
     },
     "brookfield-corp": {
       "environment": {
-        "ghgCo2eKg": 220556457,
+        "ghgCo2eKg": 271011841,
         "ghgCo2eYear": 2026,
         "facilityCount": 13,
         "ownershipPct": 7.6,
@@ -3432,93 +3430,9 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "martin-marietta-materials": {
-      "environment": {
-        "ghgCo2eKg": 216180797,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 1,
-        "ownershipPct": 100,
-        "subsectors": [
-          "cement"
-        ],
-        "iso3Countries": [
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Martin Marietta Materials Inc",
-        "parentHqCountry": "USA",
-        "parentLei": "5299005MZ4WZECVATV08",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "apa": {
-      "environment": {
-        "ghgCo2eKg": 210443000,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 3,
-        "ownershipPct": 100,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "AUS"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "APA Group",
-        "parentHqCountry": "AUS",
-        "parentLei": null,
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "agc": {
-      "environment": {
-        "ghgCo2eKg": 209202000,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 1,
-        "ownershipPct": 52.5,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "IDN"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "AGC Inc",
-        "parentHqCountry": "JPN",
-        "parentLei": "JE4WFFEELMVPFZ0G1E77",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "bhp-group": {
       "environment": {
-        "ghgCo2eKg": 208830000,
+        "ghgCo2eKg": 264510000,
         "ghgCo2eYear": 2026,
         "facilityCount": 2,
         "ownershipPct": 100,
@@ -3545,17 +3459,17 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "metlen-energy-and-metals-plc": {
+    "apa": {
       "environment": {
-        "ghgCo2eKg": 199620000,
+        "ghgCo2eKg": 264396000,
         "ghgCo2eYear": 2026,
-        "facilityCount": 1,
+        "facilityCount": 3,
         "ownershipPct": 100,
         "subsectors": [
           "electricity-generation"
         ],
         "iso3Countries": [
-          "GRC"
+          "AUS"
         ],
         "yearsAvailable": [
           2026,
@@ -3565,9 +3479,152 @@
           2022,
           2021
         ],
-        "parentNameClimateTrace": "Metlen Energy & Metals SA",
-        "parentHqCountry": "GRC",
-        "parentLei": "213800KT8MEUJEJ2KW41",
+        "parentNameClimateTrace": "APA Group",
+        "parentHqCountry": "AUS",
+        "parentLei": null,
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "martin-marietta-materials": {
+      "environment": {
+        "ghgCo2eKg": 264083732,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 1,
+        "ownershipPct": 100,
+        "subsectors": [
+          "cement"
+        ],
+        "iso3Countries": [
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Martin Marietta Materials Inc",
+        "parentHqCountry": "USA",
+        "parentLei": "5299005MZ4WZECVATV08",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "agc": {
+      "environment": {
+        "ghgCo2eKg": 263802000,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 1,
+        "ownershipPct": 52.5,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "IDN"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "AGC Inc",
+        "parentHqCountry": "JPN",
+        "parentLei": "JE4WFFEELMVPFZ0G1E77",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "mara": {
+      "environment": {
+        "ghgCo2eKg": 259860000,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 1,
+        "ownershipPct": 100,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Mara Holdings Inc",
+        "parentHqCountry": null,
+        "parentLei": null,
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "hdfc-bank": {
+      "environment": {
+        "ghgCo2eKg": 252650200,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 1,
+        "ownershipPct": 9,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "IND"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "HDFC Bank Ltd",
+        "parentHqCountry": "IND",
+        "parentLei": "335800ZQ6I4E2JXENC50",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "apollo-global-management": {
+      "environment": {
+        "ghgCo2eKg": 249210163,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 4,
+        "ownershipPct": 7.1,
+        "subsectors": [
+          "electricity-generation",
+          "iron-and-steel"
+        ],
+        "iso3Countries": [
+          "BRA",
+          "DEU",
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Apollo Global Management Inc",
+        "parentHqCountry": "USA",
+        "parentLei": "254900LMFT1CY9IYB476",
         "routedVia": "to-slug",
         "sourceUrl": "https://climatetrace.org/data",
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
@@ -3575,7 +3632,7 @@
     },
     "bank-of-new-york-mellon": {
       "environment": {
-        "ghgCo2eKg": 193118426,
+        "ghgCo2eKg": 244258531,
         "ghgCo2eYear": 2026,
         "facilityCount": 19,
         "ownershipPct": 1.2,
@@ -3599,6 +3656,176 @@
         "parentNameClimateTrace": "Bank of New York Mellon Corp",
         "parentHqCountry": "USA",
         "parentLei": "WFLLPEPC7FZXENRZV188",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "newmont-corp": {
+      "environment": {
+        "ghgCo2eKg": 229596050,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 3,
+        "ownershipPct": 39,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "DOM",
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Newmont Corp",
+        "parentHqCountry": "USA",
+        "parentLei": "549300VSP3RIX7FGDZ51",
+        "routedVia": "direct-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "cenovus-energy": {
+      "environment": {
+        "ghgCo2eKg": 212810000,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 2,
+        "ownershipPct": 100,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "CAN"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Cenovus Energy Inc",
+        "parentHqCountry": "CAN",
+        "parentLei": "549300F4XPHJ7NOSP309",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "commercial-metals": {
+      "environment": {
+        "ghgCo2eKg": 210594538,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 8,
+        "ownershipPct": 100,
+        "subsectors": [
+          "iron-and-steel"
+        ],
+        "iso3Countries": [
+          "POL",
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Commercial Metals Co",
+        "parentHqCountry": "USA",
+        "parentLei": "549300OQS2LO07ZJ7N73",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "eastman-chemical": {
+      "environment": {
+        "ghgCo2eKg": 206730000,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 1,
+        "ownershipPct": 100,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Eastman Chemical Co",
+        "parentHqCountry": "USA",
+        "parentLei": "FDPVHDGJ1IQZFK9KH630",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "adani-enterprises": {
+      "environment": {
+        "ghgCo2eKg": 206309764,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 2,
+        "ownershipPct": 57,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "IND"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Adani Enterprises Ltd",
+        "parentHqCountry": "IND",
+        "parentLei": "335800OTN96B3M38HC30",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "pbf-energy": {
+      "environment": {
+        "ghgCo2eKg": 203276000,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 2,
+        "ownershipPct": 100,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "PBF Energy Inc",
+        "parentHqCountry": "USA",
+        "parentLei": "2549003PBEDCSZMZIY02",
         "routedVia": "to-slug",
         "sourceUrl": "https://climatetrace.org/data",
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
@@ -3629,266 +3856,9 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "genesis-energy-lp": {
-      "environment": {
-        "ghgCo2eKg": 187180000,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 1,
-        "ownershipPct": 100,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "NZL"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Genesis Energy Ltd",
-        "parentHqCountry": "NZL",
-        "parentLei": "254900HM1ABRDJ7T5718",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "newmont-corp": {
-      "environment": {
-        "ghgCo2eKg": 183865650,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 3,
-        "ownershipPct": 39,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "DOM",
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Newmont Corp",
-        "parentHqCountry": "USA",
-        "parentLei": "549300VSP3RIX7FGDZ51",
-        "routedVia": "direct-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "orix": {
-      "environment": {
-        "ghgCo2eKg": 181019180,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 1,
-        "ownershipPct": 11.9,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "IND"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "ORIX Corp",
-        "parentHqCountry": "JPN",
-        "parentLei": "35380016EMHNBOVYE123",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "cenovus-energy": {
-      "environment": {
-        "ghgCo2eKg": 173600000,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 2,
-        "ownershipPct": 100,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "CAN"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Cenovus Energy Inc",
-        "parentHqCountry": "CAN",
-        "parentLei": "549300F4XPHJ7NOSP309",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "eastman-chemical": {
-      "environment": {
-        "ghgCo2eKg": 167790000,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 1,
-        "ownershipPct": 100,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Eastman Chemical Co",
-        "parentHqCountry": "USA",
-        "parentLei": "FDPVHDGJ1IQZFK9KH630",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "apollo-global-management": {
-      "environment": {
-        "ghgCo2eKg": 165319625,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 4,
-        "ownershipPct": 7.5,
-        "subsectors": [
-          "electricity-generation",
-          "iron-and-steel"
-        ],
-        "iso3Countries": [
-          "BRA",
-          "DEU",
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Apollo Global Management Inc",
-        "parentHqCountry": "USA",
-        "parentLei": "254900LMFT1CY9IYB476",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "pbf-energy": {
-      "environment": {
-        "ghgCo2eKg": 164992000,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 2,
-        "ownershipPct": 100,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "PBF Energy Inc",
-        "parentHqCountry": "USA",
-        "parentLei": "2549003PBEDCSZMZIY02",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "commercial-metals": {
-      "environment": {
-        "ghgCo2eKg": 163323778,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 8,
-        "ownershipPct": 100,
-        "subsectors": [
-          "iron-and-steel"
-        ],
-        "iso3Countries": [
-          "POL",
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Commercial Metals Co",
-        "parentHqCountry": "USA",
-        "parentLei": "549300OQS2LO07ZJ7N73",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "adani-enterprises": {
-      "environment": {
-        "ghgCo2eKg": 159023078,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 2,
-        "ownershipPct": 57,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "IND"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Adani Enterprises Ltd",
-        "parentHqCountry": "IND",
-        "parentLei": "335800OTN96B3M38HC30",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "olin-corporation": {
       "environment": {
-        "ghgCo2eKg": 149870000,
+        "ghgCo2eKg": 184650000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -3916,7 +3886,7 @@
     },
     "international-paper": {
       "environment": {
-        "ghgCo2eKg": 145809624,
+        "ghgCo2eKg": 179740437,
         "ghgCo2eYear": 2026,
         "facilityCount": 7,
         "ownershipPct": 80.6,
@@ -3943,37 +3913,9 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "hdfc-bank": {
-      "environment": {
-        "ghgCo2eKg": 137672260,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 1,
-        "ownershipPct": 9,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "IND"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "HDFC Bank Ltd",
-        "parentHqCountry": "IND",
-        "parentLei": "335800ZQ6I4E2JXENC50",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "icl-group": {
       "environment": {
-        "ghgCo2eKg": 136550000,
+        "ghgCo2eKg": 169750000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -3999,37 +3941,9 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "kkr-and-co": {
-      "environment": {
-        "ghgCo2eKg": 134502500,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 1,
-        "ownershipPct": 27.5,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "CAN"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "KKR & Co. Inc",
-        "parentHqCountry": "USA",
-        "parentLei": "54930013V5I303TF9571",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "smurfit-westrock": {
       "environment": {
-        "ghgCo2eKg": 134478000,
+        "ghgCo2eKg": 166687000,
         "ghgCo2eYear": 2026,
         "facilityCount": 6,
         "ownershipPct": 100,
@@ -4058,18 +3972,17 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "eos": {
+    "kkr-and-co": {
       "environment": {
-        "ghgCo2eKg": 131319786,
+        "ghgCo2eKg": 164862500,
         "ghgCo2eYear": 2026,
-        "facilityCount": 4,
-        "ownershipPct": 25.8,
+        "facilityCount": 1,
+        "ownershipPct": 27.5,
         "subsectors": [
           "electricity-generation"
         ],
         "iso3Countries": [
-          "ESP",
-          "ITA"
+          "CAN"
         ],
         "yearsAvailable": [
           2026,
@@ -4079,33 +3992,25 @@
           2022,
           2021
         ],
-        "parentNameClimateTrace": "EOS Holdings SA",
-        "parentHqCountry": "CHE",
-        "parentLei": "5067000GX56B8V5AV443",
+        "parentNameClimateTrace": "KKR & Co. Inc",
+        "parentHqCountry": "USA",
+        "parentLei": "54930013V5I303TF9571",
         "routedVia": "to-slug",
         "sourceUrl": "https://climatetrace.org/data",
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "credit-agricole-s-a": {
+    "metlen-energy-and-metals-plc": {
       "environment": {
-        "ghgCo2eKg": 123092134,
+        "ghgCo2eKg": 157521000,
         "ghgCo2eYear": 2026,
-        "facilityCount": 29,
-        "ownershipPct": 0.8,
+        "facilityCount": 1,
+        "ownershipPct": 65,
         "subsectors": [
           "electricity-generation"
         ],
         "iso3Countries": [
-          "BEL",
-          "CZE",
-          "DEU",
-          "FIN",
-          "IND",
-          "NLD",
-          "POL",
-          "SVK",
-          "USA"
+          "GRC"
         ],
         "yearsAvailable": [
           2026,
@@ -4115,17 +4020,17 @@
           2022,
           2021
         ],
-        "parentNameClimateTrace": "Crédit Agricole SA",
-        "parentHqCountry": "FRA",
-        "parentLei": "969500TJ5KRTCJQWXH05",
-        "routedVia": "compact",
+        "parentNameClimateTrace": "Metlen Energy & Metals SA",
+        "parentHqCountry": "GRC",
+        "parentLei": "213800KT8MEUJEJ2KW41",
+        "routedVia": "to-slug",
         "sourceUrl": "https://climatetrace.org/data",
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
     "excelerate-energy": {
       "environment": {
-        "ghgCo2eKg": 118050000,
+        "ghgCo2eKg": 149230000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -4153,7 +4058,7 @@
     },
     "patria-investments": {
       "environment": {
-        "ghgCo2eKg": 115846230,
+        "ghgCo2eKg": 143957340,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 50.1,
@@ -4177,9 +4082,38 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "eos": {
+      "environment": {
+        "ghgCo2eKg": 143358327,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 4,
+        "ownershipPct": 22.8,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "ESP",
+          "ITA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "EOS Holdings SA",
+        "parentHqCountry": "CHE",
+        "parentLei": "5067000GX56B8V5AV443",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "pembina-pipeline": {
       "environment": {
-        "ghgCo2eKg": 110047500,
+        "ghgCo2eKg": 134887500,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 22.5,
@@ -4205,9 +4139,72 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "credit-agricole-s-a": {
+      "environment": {
+        "ghgCo2eKg": 128063351,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 25,
+        "ownershipPct": 0.9,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "BEL",
+          "CZE",
+          "FIN",
+          "IND",
+          "NLD",
+          "POL",
+          "SVK",
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Crédit Agricole SA",
+        "parentHqCountry": "FRA",
+        "parentLei": "969500TJ5KRTCJQWXH05",
+        "routedVia": "compact",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "exelon": {
+      "environment": {
+        "ghgCo2eKg": 127430000,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 1,
+        "ownershipPct": 100,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "CAN"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Exelon Corp",
+        "parentHqCountry": "USA",
+        "parentLei": "3SOUA6IRML7435B56G12",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "peabody-energy": {
       "environment": {
-        "ghgCo2eKg": 98674100,
+        "ghgCo2eKg": 124817370,
         "ghgCo2eYear": 2026,
         "facilityCount": 2,
         "ownershipPct": 2.3,
@@ -4234,37 +4231,9 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "union-carbide": {
-      "environment": {
-        "ghgCo2eKg": 84280000,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 1,
-        "ownershipPct": 100,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Union Carbide Corp",
-        "parentHqCountry": "USA",
-        "parentLei": "QE84C8O80MNLK8IFRL44",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "max": {
       "environment": {
-        "ghgCo2eKg": 83830000,
+        "ghgCo2eKg": 108940000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -4279,7 +4248,8 @@
           2025,
           2024,
           2023,
-          2022
+          2022,
+          2021
         ],
         "parentNameClimateTrace": "MAX Group",
         "parentHqCountry": null,
@@ -4291,7 +4261,7 @@
     },
     "braskem": {
       "environment": {
-        "ghgCo2eKg": 83370000,
+        "ghgCo2eKg": 105517500,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 75,
@@ -4319,7 +4289,7 @@
     },
     "grupo-simec-s-a-b-de-c-v": {
       "environment": {
-        "ghgCo2eKg": 82170609,
+        "ghgCo2eKg": 104328666,
         "ghgCo2eYear": 2026,
         "facilityCount": 4,
         "ownershipPct": 100,
@@ -4346,9 +4316,37 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "union-carbide": {
+      "environment": {
+        "ghgCo2eKg": 103840000,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 1,
+        "ownershipPct": 100,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Union Carbide Corp",
+        "parentHqCountry": "USA",
+        "parentLei": "QE84C8O80MNLK8IFRL44",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "suzano-s-a": {
       "environment": {
-        "ghgCo2eKg": 79640000,
+        "ghgCo2eKg": 98970000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -4376,7 +4374,7 @@
     },
     "suncoke-energy": {
       "environment": {
-        "ghgCo2eKg": 76634000,
+        "ghgCo2eKg": 94418000,
         "ghgCo2eYear": 2026,
         "facilityCount": 2,
         "ownershipPct": 100,
@@ -4404,7 +4402,7 @@
     },
     "google-alphabet": {
       "environment": {
-        "ghgCo2eKg": 74210200,
+        "ghgCo2eKg": 91428820,
         "ghgCo2eYear": 2026,
         "facilityCount": 3,
         "ownershipPct": 33.1,
@@ -4432,7 +4430,7 @@
     },
     "hf-sinclair": {
       "environment": {
-        "ghgCo2eKg": 69960000,
+        "ghgCo2eKg": 86190000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -4458,9 +4456,42 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "goldman-sachs": {
+      "environment": {
+        "ghgCo2eKg": 83409419,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 12,
+        "ownershipPct": 5.5,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "BGR",
+          "CAN",
+          "ESP",
+          "FRA",
+          "ITA",
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Goldman Sachs Group Inc",
+        "parentHqCountry": "USA",
+        "parentLei": "784F5XWPLTWKTBV3E584",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "kimberly-clark": {
       "environment": {
-        "ghgCo2eKg": 65031000,
+        "ghgCo2eKg": 80122000,
         "ghgCo2eYear": 2026,
         "facilityCount": 3,
         "ownershipPct": 100,
@@ -4488,7 +4519,7 @@
     },
     "valero-energy": {
       "environment": {
-        "ghgCo2eKg": 64702000,
+        "ghgCo2eKg": 79716000,
         "ghgCo2eYear": 2026,
         "facilityCount": 3,
         "ownershipPct": 100,
@@ -4516,7 +4547,7 @@
     },
     "stellantis": {
       "environment": {
-        "ghgCo2eKg": 60330000,
+        "ghgCo2eKg": 74110000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -4544,7 +4575,7 @@
     },
     "merck-and-co": {
       "environment": {
-        "ghgCo2eKg": 59487000,
+        "ghgCo2eKg": 73316000,
         "ghgCo2eYear": 2026,
         "facilityCount": 3,
         "ownershipPct": 100,
@@ -4572,7 +4603,7 @@
     },
     "enbridge": {
       "environment": {
-        "ghgCo2eKg": 59395000,
+        "ghgCo2eKg": 72810000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 50,
@@ -4600,7 +4631,7 @@
     },
     "vulcan-materials": {
       "environment": {
-        "ghgCo2eKg": 58527170,
+        "ghgCo2eKg": 71354682,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -4626,97 +4657,9 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "leggett-and-platt": {
-      "environment": {
-        "ghgCo2eKg": 58468509,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 1,
-        "ownershipPct": 100,
-        "subsectors": [
-          "iron-and-steel"
-        ],
-        "iso3Countries": [
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Leggett & Platt Inc",
-        "parentHqCountry": "USA",
-        "parentLei": "DKOVQUCDW4ZLYCUD4T55",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "goldman-sachs": {
-      "environment": {
-        "ghgCo2eKg": 57524848,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 10,
-        "ownershipPct": 5.5,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "BGR",
-          "CAN",
-          "ESP",
-          "FRA",
-          "ITA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Goldman Sachs Group Inc",
-        "parentHqCountry": "USA",
-        "parentLei": "784F5XWPLTWKTBV3E584",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "brookfield-infrastructure-partners-l-p": {
-      "environment": {
-        "ghgCo2eKg": 56543200,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 1,
-        "ownershipPct": 56,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "CAN"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Brookfield Infrastructure Partners LP",
-        "parentHqCountry": "BMU",
-        "parentLei": "549300WEH5R2OODI7Y90",
-        "routedVia": "compact",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "greenidge-generation": {
       "environment": {
-        "ghgCo2eKg": 55920000,
+        "ghgCo2eKg": 70670000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -4742,9 +4685,37 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "brookfield-infrastructure-partners-l-p": {
+      "environment": {
+        "ghgCo2eKg": 69311200,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 1,
+        "ownershipPct": 56,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "CAN"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Brookfield Infrastructure Partners LP",
+        "parentHqCountry": "BMU",
+        "parentLei": "549300WEH5R2OODI7Y90",
+        "routedVia": "compact",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "bank-of-america": {
       "environment": {
-        "ghgCo2eKg": 53239111,
+        "ghgCo2eKg": 66218154,
         "ghgCo2eYear": 2026,
         "facilityCount": 11,
         "ownershipPct": 5.4,
@@ -4773,7 +4744,7 @@
     },
     "norinco-group": {
       "environment": {
-        "ghgCo2eKg": 51605328,
+        "ghgCo2eKg": 64058880,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 70.2,
@@ -4801,7 +4772,7 @@
     },
     "navigator": {
       "environment": {
-        "ghgCo2eKg": 51493000,
+        "ghgCo2eKg": 63767000,
         "ghgCo2eYear": 2026,
         "facilityCount": 2,
         "ownershipPct": 100,
@@ -4829,7 +4800,7 @@
     },
     "mosaic": {
       "environment": {
-        "ghgCo2eKg": 51216000,
+        "ghgCo2eKg": 63102000,
         "ghgCo2eYear": 2026,
         "facilityCount": 2,
         "ownershipPct": 100,
@@ -4855,9 +4826,37 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "ugi-pa": {
+      "environment": {
+        "ghgCo2eKg": 60950000,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 1,
+        "ownershipPct": 100,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "UGI Corp",
+        "parentHqCountry": "USA",
+        "parentLei": "DX6GCWD4Q1JO9CRE5I40",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "canadian-natural-resources": {
       "environment": {
-        "ghgCo2eKg": 49500000,
+        "ghgCo2eKg": 60680000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 50,
@@ -4883,14 +4882,70 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "ugi-pa": {
+    "pt-medco-energi-internasional-tbk": {
       "environment": {
-        "ghgCo2eKg": 48720000,
+        "ghgCo2eKg": 52776661,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 3,
+        "ownershipPct": 12,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "IDN"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "PT Medco Energi Internasional Tbk",
+        "parentHqCountry": "IDN",
+        "parentLei": "254900YN7RH1JFLP4J36",
+        "routedVia": "direct-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "new-fortress-energy": {
+      "environment": {
+        "ghgCo2eKg": 51812000,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 1,
+        "ownershipPct": 40,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "LKA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "New Fortress Energy Inc",
+        "parentHqCountry": "USA",
+        "parentLei": "254900EICTYTCHA5X705",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "leggett-and-platt": {
+      "environment": {
+        "ghgCo2eKg": 48567260,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
         "subsectors": [
-          "electricity-generation"
+          "iron-and-steel"
         ],
         "iso3Countries": [
           "USA"
@@ -4903,9 +4958,9 @@
           2022,
           2021
         ],
-        "parentNameClimateTrace": "UGI Corp",
+        "parentNameClimateTrace": "Leggett & Platt Inc",
         "parentHqCountry": "USA",
-        "parentLei": "DX6GCWD4Q1JO9CRE5I40",
+        "parentLei": "DKOVQUCDW4ZLYCUD4T55",
         "routedVia": "to-slug",
         "sourceUrl": "https://climatetrace.org/data",
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
@@ -4934,65 +4989,9 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "pt-medco-energi-internasional-tbk": {
-      "environment": {
-        "ghgCo2eKg": 41855856,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 3,
-        "ownershipPct": 12,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "IDN"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "PT Medco Energi Internasional Tbk",
-        "parentHqCountry": "IDN",
-        "parentLei": "254900YN7RH1JFLP4J36",
-        "routedVia": "direct-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "new-fortress-energy": {
-      "environment": {
-        "ghgCo2eKg": 40996000,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 1,
-        "ownershipPct": 40,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "LKA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "New Fortress Energy Inc",
-        "parentHqCountry": "USA",
-        "parentLei": "254900EICTYTCHA5X705",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "texaco": {
       "environment": {
-        "ghgCo2eKg": 37587500,
+        "ghgCo2eKg": 45352500,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 25,
@@ -5020,7 +5019,7 @@
     },
     "procter-and-gamble": {
       "environment": {
-        "ghgCo2eKg": 34377000,
+        "ghgCo2eKg": 42355000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -5048,10 +5047,10 @@
     },
     "alliancebernstein-l-p": {
       "environment": {
-        "ghgCo2eKg": 30132673,
+        "ghgCo2eKg": 36634426,
         "ghgCo2eYear": 2026,
         "facilityCount": 3,
-        "ownershipPct": 4.3,
+        "ownershipPct": 4.5,
         "subsectors": [
           "cement"
         ],
@@ -5078,7 +5077,7 @@
     },
     "access-industries": {
       "environment": {
-        "ghgCo2eKg": 29140670,
+        "ghgCo2eKg": 35797270,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 20.1,
@@ -5104,37 +5103,9 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "anheuser-busch": {
-      "environment": {
-        "ghgCo2eKg": 28592564,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 1,
-        "ownershipPct": 10,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "ITA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Stella Holding SpA",
-        "parentHqCountry": "ITA",
-        "parentLei": "8156005024F8E7B32D57",
-        "routedVia": "parent-map",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "packaging-corporation-of-america": {
       "environment": {
-        "ghgCo2eKg": 27623000,
+        "ghgCo2eKg": 34033000,
         "ghgCo2eYear": 2026,
         "facilityCount": 2,
         "ownershipPct": 100,
@@ -5162,7 +5133,7 @@
     },
     "ingredion": {
       "environment": {
-        "ghgCo2eKg": 25734000,
+        "ghgCo2eKg": 31706000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -5188,9 +5159,37 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "anheuser-busch": {
+      "environment": {
+        "ghgCo2eKg": 29893864,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 1,
+        "ownershipPct": 10,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "ITA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Stella Holding SpA",
+        "parentHqCountry": "ITA",
+        "parentLei": "8156005024F8E7B32D57",
+        "routedVia": "parent-map",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "sylvamo": {
       "environment": {
-        "ghgCo2eKg": 24076000,
+        "ghgCo2eKg": 29663000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -5218,7 +5217,7 @@
     },
     "api-group": {
       "environment": {
-        "ghgCo2eKg": 23790000,
+        "ghgCo2eKg": 29443000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -5246,7 +5245,7 @@
     },
     "tropicana-products": {
       "environment": {
-        "ghgCo2eKg": 23419000,
+        "ghgCo2eKg": 28854000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -5274,7 +5273,7 @@
     },
     "clearwater-paper": {
       "environment": {
-        "ghgCo2eKg": 22303000,
+        "ghgCo2eKg": 27479000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -5302,7 +5301,7 @@
     },
     "core-natural-resources": {
       "environment": {
-        "ghgCo2eKg": 22015000,
+        "ghgCo2eKg": 27125000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 50,
@@ -5330,7 +5329,7 @@
     },
     "algonquin-power-and-utilities": {
       "environment": {
-        "ghgCo2eKg": 21982000,
+        "ghgCo2eKg": 27083000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -5358,7 +5357,7 @@
     },
     "metallus": {
       "environment": {
-        "ghgCo2eKg": 20755635,
+        "ghgCo2eKg": 26857698,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -5384,9 +5383,37 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "barclays-bank": {
+      "environment": {
+        "ghgCo2eKg": 26649666,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 2,
+        "ownershipPct": 2.6,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "GBR"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Barclays Bank PLC",
+        "parentHqCountry": "GBR",
+        "parentLei": "G5GSEF7VJP5I7OUK5573",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "pfizer": {
       "environment": {
-        "ghgCo2eKg": 20730000,
+        "ghgCo2eKg": 25541000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -5414,7 +5441,7 @@
     },
     "graphic-packaging": {
       "environment": {
-        "ghgCo2eKg": 19616000,
+        "ghgCo2eKg": 24168000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -5442,7 +5469,7 @@
     },
     "goodyear-tire-and-rubber-co": {
       "environment": {
-        "ghgCo2eKg": 18471000,
+        "ghgCo2eKg": 22758000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -5470,7 +5497,7 @@
     },
     "t-rowe-price": {
       "environment": {
-        "ghgCo2eKg": 18372639,
+        "ghgCo2eKg": 22648066,
         "ghgCo2eYear": 2026,
         "facilityCount": 7,
         "ownershipPct": 10.2,
@@ -5499,7 +5526,7 @@
     },
     "ubs": {
       "environment": {
-        "ghgCo2eKg": 16523710,
+        "ghgCo2eKg": 20709705,
         "ghgCo2eYear": 2026,
         "facilityCount": 13,
         "ownershipPct": 0.5,
@@ -5528,37 +5555,9 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "dupont": {
-      "environment": {
-        "ghgCo2eKg": 14997000,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 1,
-        "ownershipPct": 100,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "NLD"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Dupont Inc",
-        "parentHqCountry": "USA",
-        "parentLei": "5493004JF0SDFLM8GD76",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "par-pacific": {
       "environment": {
-        "ghgCo2eKg": 14671800,
+        "ghgCo2eKg": 18076500,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 65,
@@ -5586,7 +5585,7 @@
     },
     "gem": {
       "environment": {
-        "ghgCo2eKg": 13509998,
+        "ghgCo2eKg": 16919296,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 12.5,
@@ -5614,7 +5613,7 @@
     },
     "cargill": {
       "environment": {
-        "ghgCo2eKg": 11438000,
+        "ghgCo2eKg": 14092000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -5640,93 +5639,9 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "enterprise-products-partners-l-p": {
-      "environment": {
-        "ghgCo2eKg": 10356964,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 1,
-        "ownershipPct": 100,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "USA"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Enterprise Products Partners LP",
-        "parentHqCountry": "USA",
-        "parentLei": "K4CDIF4M54DJZ6TB4Q48",
-        "routedVia": "compact",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "fresenius-se-and-co-kgaa": {
-      "environment": {
-        "ghgCo2eKg": 10085000,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 1,
-        "ownershipPct": 100,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "DEU"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "Fresenius SE & Co KGaA",
-        "parentHqCountry": "DEU",
-        "parentLei": "XDFJ0CYCOO1FXRFTQS51",
-        "routedVia": "direct-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
-    "astrazeneca": {
-      "environment": {
-        "ghgCo2eKg": 10070000,
-        "ghgCo2eYear": 2026,
-        "facilityCount": 1,
-        "ownershipPct": 100,
-        "subsectors": [
-          "electricity-generation"
-        ],
-        "iso3Countries": [
-          "GBR"
-        ],
-        "yearsAvailable": [
-          2026,
-          2025,
-          2024,
-          2023,
-          2022,
-          2021
-        ],
-        "parentNameClimateTrace": "AstraZeneca PLC",
-        "parentHqCountry": "GBR",
-        "parentLei": "PY6ZZQWO2IZFZC3IOL08",
-        "routedVia": "to-slug",
-        "sourceUrl": "https://climatetrace.org/data",
-        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
-      }
-    },
     "raytheon-technologies": {
       "environment": {
-        "ghgCo2eKg": 9670000,
+        "ghgCo2eKg": 13129000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -5752,9 +5667,9 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
-    "university-of-massachusetts-medical-school": {
+    "enterprise-products-partners-l-p": {
       "environment": {
-        "ghgCo2eKg": 9472000,
+        "ghgCo2eKg": 12760724,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -5772,17 +5687,45 @@
           2022,
           2021
         ],
-        "parentNameClimateTrace": "University of Massachusetts Medical School",
+        "parentNameClimateTrace": "Enterprise Products Partners LP",
         "parentHqCountry": "USA",
-        "parentLei": null,
-        "routedVia": "direct-slug",
+        "parentLei": "K4CDIF4M54DJZ6TB4Q48",
+        "routedVia": "compact",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
+    "astrazeneca": {
+      "environment": {
+        "ghgCo2eKg": 12347000,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 1,
+        "ownershipPct": 100,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "GBR"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "AstraZeneca PLC",
+        "parentHqCountry": "GBR",
+        "parentLei": "PY6ZZQWO2IZFZC3IOL08",
+        "routedVia": "to-slug",
         "sourceUrl": "https://climatetrace.org/data",
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
     "freeport-mcmoran": {
       "environment": {
-        "ghgCo2eKg": 9375573,
+        "ghgCo2eKg": 11821862,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 48.8,
@@ -5808,9 +5751,37 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "university-of-massachusetts-medical-school": {
+      "environment": {
+        "ghgCo2eKg": 11670000,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 1,
+        "ownershipPct": 100,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "USA"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "University of Massachusetts Medical School",
+        "parentHqCountry": "USA",
+        "parentLei": null,
+        "routedVia": "direct-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "fmc": {
       "environment": {
-        "ghgCo2eKg": 7896000,
+        "ghgCo2eKg": 9775000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -5838,7 +5809,7 @@
     },
     "gillette": {
       "environment": {
-        "ghgCo2eKg": 6462000,
+        "ghgCo2eKg": 7962000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -5866,7 +5837,7 @@
     },
     "macerich": {
       "environment": {
-        "ghgCo2eKg": 6405000,
+        "ghgCo2eKg": 7891000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -5894,7 +5865,7 @@
     },
     "north-carolina-state-university": {
       "environment": {
-        "ghgCo2eKg": 5605000,
+        "ghgCo2eKg": 6906000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -5922,7 +5893,7 @@
     },
     "avio-s-p-a": {
       "environment": {
-        "ghgCo2eKg": 5504400,
+        "ghgCo2eKg": 6812400,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 40,
@@ -5950,7 +5921,7 @@
     },
     "oneok-inc": {
       "environment": {
-        "ghgCo2eKg": 5205000,
+        "ghgCo2eKg": 6413000,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -5978,7 +5949,7 @@
     },
     "w-and-t-offshore": {
       "environment": {
-        "ghgCo2eKg": 4289900,
+        "ghgCo2eKg": 5285200,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -6006,7 +5977,7 @@
     },
     "bank-of-nova-scotia": {
       "environment": {
-        "ghgCo2eKg": 3332010,
+        "ghgCo2eKg": 4084410,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 3.3,
@@ -6034,7 +6005,7 @@
     },
     "caterpillar": {
       "environment": {
-        "ghgCo2eKg": 3161900,
+        "ghgCo2eKg": 3895700,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 100,
@@ -6060,9 +6031,37 @@
         "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
       }
     },
+    "dupont": {
+      "environment": {
+        "ghgCo2eKg": 3675928,
+        "ghgCo2eYear": 2026,
+        "facilityCount": 1,
+        "ownershipPct": 19.9,
+        "subsectors": [
+          "electricity-generation"
+        ],
+        "iso3Countries": [
+          "NLD"
+        ],
+        "yearsAvailable": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021
+        ],
+        "parentNameClimateTrace": "Dupont Inc",
+        "parentHqCountry": "USA",
+        "parentLei": "5493004JF0SDFLM8GD76",
+        "routedVia": "to-slug",
+        "sourceUrl": "https://climatetrace.org/data",
+        "_license": "CC BY 4.0 — Climate TRACE (https://climatetrace.org/terms). Commercial use permitted with attribution."
+      }
+    },
     "air-water-inc": {
       "environment": {
-        "ghgCo2eKg": 2638576,
+        "ghgCo2eKg": 3205442,
         "ghgCo2eYear": 2026,
         "facilityCount": 2,
         "ownershipPct": 0.5,
@@ -6091,7 +6090,7 @@
     },
     "samsung-usa": {
       "environment": {
-        "ghgCo2eKg": 1652900,
+        "ghgCo2eKg": 2238700,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 1,
@@ -6119,7 +6118,7 @@
     },
     "hyundai-usa": {
       "environment": {
-        "ghgCo2eKg": 1652900,
+        "ghgCo2eKg": 2238700,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 1,
@@ -6147,7 +6146,7 @@
     },
     "eversource-energy": {
       "environment": {
-        "ghgCo2eKg": 1370475,
+        "ghgCo2eKg": 1373241,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 2.4,
@@ -6175,7 +6174,7 @@
     },
     "adecoagro-s-a": {
       "environment": {
-        "ghgCo2eKg": 572962,
+        "ghgCo2eKg": 711969,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 66.7,
@@ -6203,7 +6202,7 @@
     },
     "credit-suisse-ag": {
       "environment": {
-        "ghgCo2eKg": 74607,
+        "ghgCo2eKg": 94748,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 0,
@@ -6231,7 +6230,7 @@
     },
     "invesco": {
       "environment": {
-        "ghgCo2eKg": 70512,
+        "ghgCo2eKg": 86294,
         "ghgCo2eYear": 2026,
         "facilityCount": 1,
         "ownershipPct": 0.1,
@@ -6260,9 +6259,19 @@
   },
   "orphans": [
     {
+      "parent_name": "China Energy Investment Corp",
+      "parent_hq_country": "CHN",
+      "ghgCo2eKg": 142480516974,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 161,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
       "parent_name": "NTPC Ltd",
       "parent_hq_country": "IND",
-      "ghgCo2eKg": 120197549220,
+      "ghgCo2eKg": 139866897850,
       "ghgCo2eYear": 2026,
       "facilityCount": 47,
       "subsectors": [
@@ -6270,19 +6279,9 @@
       ]
     },
     {
-      "parent_name": "China Energy Investment Corp",
-      "parent_hq_country": "CHN",
-      "ghgCo2eKg": 114724019738,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 160,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
       "parent_name": "Huaneng Power International Inc",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 95191763473,
+      "ghgCo2eKg": 117981428249,
       "ghgCo2eYear": 2026,
       "facilityCount": 90,
       "subsectors": [
@@ -6292,7 +6291,7 @@
     {
       "parent_name": "Eskom Holdings SOC Ltd",
       "parent_hq_country": "ZAF",
-      "ghgCo2eKg": 67560218000,
+      "ghgCo2eKg": 85436174000,
       "ghgCo2eYear": 2026,
       "facilityCount": 18,
       "subsectors": [
@@ -6302,9 +6301,9 @@
     {
       "parent_name": "China Shenhua Energy Co Ltd",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 61514393072,
+      "ghgCo2eKg": 77447793436,
       "ghgCo2eYear": 2026,
-      "facilityCount": 80,
+      "facilityCount": 81,
       "subsectors": [
         "electricity-generation"
       ]
@@ -6312,7 +6311,7 @@
     {
       "parent_name": "Saudi Electricity Co",
       "parent_hq_country": "SAU",
-      "ghgCo2eKg": 56084530000,
+      "ghgCo2eKg": 75016326000,
       "ghgCo2eYear": 2026,
       "facilityCount": 47,
       "subsectors": [
@@ -6322,29 +6321,19 @@
     {
       "parent_name": "China Huadian Corp Ltd",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 53284057426,
+      "ghgCo2eKg": 69574959166,
       "ghgCo2eYear": 2026,
-      "facilityCount": 76,
+      "facilityCount": 77,
       "subsectors": [
         "electricity-generation"
       ]
     },
     {
-      "parent_name": "Datang International Power Generation Co Ltd",
+      "parent_name": "State Power Investment Corp Ltd",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 49579849555,
+      "ghgCo2eKg": 61982555673,
       "ghgCo2eYear": 2026,
-      "facilityCount": 48,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "JERA Co Inc",
-      "parent_hq_country": "JPN",
-      "ghgCo2eKg": 46323066377,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 43,
+      "facilityCount": 75,
       "subsectors": [
         "electricity-generation"
       ]
@@ -6352,7 +6341,7 @@
     {
       "parent_name": "Public Investment Fund (Saudi Arabia)",
       "parent_hq_country": "SAU",
-      "ghgCo2eKg": 46304147307,
+      "ghgCo2eKg": 61449509540,
       "ghgCo2eYear": 2026,
       "facilityCount": 80,
       "subsectors": [
@@ -6362,11 +6351,31 @@
       ]
     },
     {
+      "parent_name": "Datang International Power Generation Co Ltd",
+      "parent_hq_country": "CHN",
+      "ghgCo2eKg": 61199759456,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 48,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
       "parent_name": "GD POWER Development Co Ltd",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 45684294841,
+      "ghgCo2eKg": 58110664483,
       "ghgCo2eYear": 2026,
-      "facilityCount": 60,
+      "facilityCount": 61,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
+      "parent_name": "JERA Co Inc",
+      "parent_hq_country": "JPN",
+      "ghgCo2eKg": 56882207373,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 43,
       "subsectors": [
         "electricity-generation"
       ]
@@ -6374,7 +6383,7 @@
     {
       "parent_name": "China Resources Power Holdings Co Ltd",
       "parent_hq_country": "HKG",
-      "ghgCo2eKg": 45680821110,
+      "ghgCo2eKg": 56616182640,
       "ghgCo2eYear": 2026,
       "facilityCount": 47,
       "subsectors": [
@@ -6384,7 +6393,7 @@
     {
       "parent_name": "Huadian Power International Co Ltd",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 44678833046,
+      "ghgCo2eKg": 55299729188,
       "ghgCo2eYear": 2026,
       "facilityCount": 53,
       "subsectors": [
@@ -6392,19 +6401,9 @@
       ]
     },
     {
-      "parent_name": "State Power Investment Corp Ltd",
-      "parent_hq_country": "CHN",
-      "ghgCo2eKg": 40148393084,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 58,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
       "parent_name": "China Datang Corp Ltd",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 39089172950,
+      "ghgCo2eKg": 48168215623,
       "ghgCo2eYear": 2026,
       "facilityCount": 52,
       "subsectors": [
@@ -6414,7 +6413,7 @@
     {
       "parent_name": "Zhejiang Zheneng Electric Power Co Ltd",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 36273164740,
+      "ghgCo2eKg": 44891877860,
       "ghgCo2eYear": 2026,
       "facilityCount": 32,
       "subsectors": [
@@ -6424,7 +6423,7 @@
     {
       "parent_name": "Inter RAO PJSC",
       "parent_hq_country": "RUS",
-      "ghgCo2eKg": 33587910790,
+      "ghgCo2eKg": 40832199020,
       "ghgCo2eYear": 2026,
       "facilityCount": 30,
       "subsectors": [
@@ -6434,19 +6433,9 @@
     {
       "parent_name": "China Huaneng Group Co Ltd",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 30322196251,
+      "ghgCo2eKg": 37710270097,
       "ghgCo2eYear": 2026,
-      "facilityCount": 60,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "Egyptian Electricity Holding Co",
-      "parent_hq_country": "EGY",
-      "ghgCo2eKg": 30306288000,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 35,
+      "facilityCount": 61,
       "subsectors": [
         "electricity-generation"
       ]
@@ -6454,7 +6443,7 @@
     {
       "parent_name": "Adani Power Ltd",
       "parent_hq_country": "IND",
-      "ghgCo2eKg": 29751846000,
+      "ghgCo2eKg": 36498340000,
       "ghgCo2eYear": 2026,
       "facilityCount": 10,
       "subsectors": [
@@ -6464,7 +6453,7 @@
     {
       "parent_name": "China Resources Holdings Co Ltd",
       "parent_hq_country": null,
-      "ghgCo2eKg": 28733472053,
+      "ghgCo2eKg": 35611873660,
       "ghgCo2eYear": 2026,
       "facilityCount": 47,
       "subsectors": [
@@ -6472,39 +6461,9 @@
       ]
     },
     {
-      "parent_name": "Federal Agency for State Property Management (Russia)",
-      "parent_hq_country": "RUS",
-      "ghgCo2eKg": 28332074180,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 94,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "Siberian Generating Company LLC",
-      "parent_hq_country": "RUS",
-      "ghgCo2eKg": 28285371800,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 16,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "Taiwan Power Co",
-      "parent_hq_country": "TWN",
-      "ghgCo2eKg": 27889606641,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 14,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
       "parent_name": "Ministry of Electricity and Renewable Energy (Egypt)",
       "parent_hq_country": "EGY",
-      "ghgCo2eKg": 27800028000,
+      "ghgCo2eKg": 35532257000,
       "ghgCo2eYear": 2026,
       "facilityCount": 35,
       "subsectors": [
@@ -6512,9 +6471,49 @@
       ]
     },
     {
+      "parent_name": "Egyptian Electricity Holding Co",
+      "parent_hq_country": "EGY",
+      "ghgCo2eKg": 35532257000,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 35,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
+      "parent_name": "Taiwan Power Co",
+      "parent_hq_country": "TWN",
+      "ghgCo2eKg": 35449581935,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 14,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
+      "parent_name": "Siberian Generating Company LLC",
+      "parent_hq_country": "RUS",
+      "ghgCo2eKg": 34484736920,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 16,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
+      "parent_name": "Federal Agency for State Property Management (Russia)",
+      "parent_hq_country": "RUS",
+      "ghgCo2eKg": 34286318248,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 93,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
       "parent_name": "PT PLN (Persero)",
       "parent_hq_country": "IDN",
-      "ghgCo2eKg": 27095670135,
+      "ghgCo2eKg": 34165428568,
       "ghgCo2eYear": 2026,
       "facilityCount": 63,
       "subsectors": [
@@ -6522,20 +6521,29 @@
       ]
     },
     {
-      "parent_name": "Baoshan Iron & Steel Co Ltd",
-      "parent_hq_country": "CHN",
-      "ghgCo2eKg": 26770821104,
+      "parent_name": "Ministry of Electricity (Iraq)",
+      "parent_hq_country": "IRQ",
+      "ghgCo2eKg": 31846080000,
       "ghgCo2eYear": 2026,
-      "facilityCount": 10,
+      "facilityCount": 38,
       "subsectors": [
-        "electricity-generation",
-        "iron-and-steel"
+        "electricity-generation"
+      ]
+    },
+    {
+      "parent_name": "Beijing Jingneng Power Co Ltd",
+      "parent_hq_country": null,
+      "ghgCo2eKg": 31783354804,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 28,
+      "subsectors": [
+        "electricity-generation"
       ]
     },
     {
       "parent_name": "Nippon Steel Corp",
       "parent_hq_country": "JPN",
-      "ghgCo2eKg": 26674517386,
+      "ghgCo2eKg": 31699190128,
       "ghgCo2eYear": 2026,
       "facilityCount": 42,
       "subsectors": [
@@ -6545,19 +6553,9 @@
       ]
     },
     {
-      "parent_name": "Beijing Jingneng Power Co Ltd",
-      "parent_hq_country": null,
-      "ghgCo2eKg": 25696262874,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 28,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
       "parent_name": "OGK-2 PJSC",
       "parent_hq_country": "RUS",
-      "ghgCo2eKg": 25003838000,
+      "ghgCo2eKg": 30519811900,
       "ghgCo2eYear": 2026,
       "facilityCount": 11,
       "subsectors": [
@@ -6565,29 +6563,20 @@
       ]
     },
     {
-      "parent_name": "Ministry of Electricity (Iraq)",
-      "parent_hq_country": "IRQ",
-      "ghgCo2eKg": 24370190000,
+      "parent_name": "Baoshan Iron & Steel Co Ltd",
+      "parent_hq_country": "CHN",
+      "ghgCo2eKg": 29689948681,
       "ghgCo2eYear": 2026,
-      "facilityCount": 38,
+      "facilityCount": 10,
       "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "Chubu Electric Power Co Inc",
-      "parent_hq_country": "JPN",
-      "ghgCo2eKg": 23326277960,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 48,
-      "subsectors": [
-        "electricity-generation"
+        "electricity-generation",
+        "iron-and-steel"
       ]
     },
     {
       "parent_name": "Comisión Federal de Electricidad EPE",
       "parent_hq_country": "MEX",
-      "ghgCo2eKg": 22957628000,
+      "ghgCo2eKg": 29062798000,
       "ghgCo2eYear": 2026,
       "facilityCount": 39,
       "subsectors": [
@@ -6595,11 +6584,21 @@
       ]
     },
     {
+      "parent_name": "Chubu Electric Power Co Inc",
+      "parent_hq_country": "JPN",
+      "ghgCo2eKg": 28649319481,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 48,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
       "parent_name": "Shaanxi Provincial People's Government State-owned Assets Supervision and Administration Commission",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 22151593672,
+      "ghgCo2eKg": 28148751069,
       "ghgCo2eYear": 2026,
-      "facilityCount": 35,
+      "facilityCount": 36,
       "subsectors": [
         "electricity-generation",
         "iron-and-steel"
@@ -6608,7 +6607,7 @@
     {
       "parent_name": "Tokyo Electric Power Co",
       "parent_hq_country": "JPN",
-      "ghgCo2eKg": 21055656620,
+      "ghgCo2eKg": 25856464561,
       "ghgCo2eYear": 2026,
       "facilityCount": 43,
       "subsectors": [
@@ -6618,9 +6617,9 @@
     {
       "parent_name": "The Master Trust Bank of Japan Ltd",
       "parent_hq_country": "JPN",
-      "ghgCo2eKg": 20268291230,
+      "ghgCo2eKg": 25610404468,
       "ghgCo2eYear": 2026,
-      "facilityCount": 351,
+      "facilityCount": 354,
       "subsectors": [
         "cement",
         "electricity-generation",
@@ -6630,7 +6629,7 @@
     {
       "parent_name": "Korea Development Bank Co",
       "parent_hq_country": "KOR",
-      "ghgCo2eKg": 20021595223,
+      "ghgCo2eKg": 24406027683,
       "ghgCo2eYear": 2026,
       "facilityCount": 71,
       "subsectors": [
@@ -6638,21 +6637,11 @@
       ]
     },
     {
-      "parent_name": "Tenaga Nasional Bhd",
-      "parent_hq_country": "MYS",
-      "ghgCo2eKg": 19675029303,
+      "parent_name": "Guangdong Electric Power Development Co Ltd",
+      "parent_hq_country": "CHN",
+      "ghgCo2eKg": 24136258570,
       "ghgCo2eYear": 2026,
-      "facilityCount": 15,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "MSEB Holding Co Ltd",
-      "parent_hq_country": "IND",
-      "ghgCo2eKg": 19519503280,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 9,
+      "facilityCount": 22,
       "subsectors": [
         "electricity-generation"
       ]
@@ -6660,7 +6649,7 @@
     {
       "parent_name": "Shaanxi Coal and Chemical Industry Co Ltd",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 19353575982,
+      "ghgCo2eKg": 23926401114,
       "ghgCo2eYear": 2026,
       "facilityCount": 28,
       "subsectors": [
@@ -6669,29 +6658,9 @@
       ]
     },
     {
-      "parent_name": "Guangdong Electric Power Development Co Ltd",
-      "parent_hq_country": "CHN",
-      "ghgCo2eKg": 19312241180,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 22,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "T Plus PJSC",
-      "parent_hq_country": "RUS",
-      "ghgCo2eKg": 19299960000,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 40,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
       "parent_name": "An Hui Wenergy Co Ltd",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 18982146100,
+      "ghgCo2eKg": 23244997030,
       "ghgCo2eYear": 2026,
       "facilityCount": 21,
       "subsectors": [
@@ -6699,52 +6668,11 @@
       ]
     },
     {
-      "parent_name": "Centrenergoholding PJSC",
+      "parent_name": "T Plus PJSC",
       "parent_hq_country": "RUS",
-      "ghgCo2eKg": 17777659022,
+      "ghgCo2eKg": 22977070000,
       "ghgCo2eYear": 2026,
-      "facilityCount": 22,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "Angang Steel Co Ltd",
-      "parent_hq_country": "CHN",
-      "ghgCo2eKg": 17368952699,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 5,
-      "subsectors": [
-        "electricity-generation",
-        "iron-and-steel"
-      ]
-    },
-    {
-      "parent_name": "Unipro PJSC",
-      "parent_hq_country": "RUS",
-      "ghgCo2eKg": 17023732000,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 5,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "Ministry of Electricity and Water and Renewable Energy (Kuwait)",
-      "parent_hq_country": "KWT",
-      "ghgCo2eKg": 16526800000,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 4,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "Gazprom PJSC",
-      "parent_hq_country": "RUS",
-      "ghgCo2eKg": 16499512355,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 47,
+      "facilityCount": 40,
       "subsectors": [
         "electricity-generation"
       ]
@@ -6752,7 +6680,7 @@
     {
       "parent_name": "U.P. Rajya Vidyut Utpadan Nigam Ltd",
       "parent_hq_country": "IND",
-      "ghgCo2eKg": 15840728800,
+      "ghgCo2eKg": 22552199000,
       "ghgCo2eYear": 2026,
       "facilityCount": 8,
       "subsectors": [
@@ -6760,9 +6688,40 @@
       ]
     },
     {
-      "parent_name": "Vietnam Electricity LLC",
-      "parent_hq_country": "VNM",
-      "ghgCo2eKg": 15822078931,
+      "parent_name": "MSEB Holding Co Ltd",
+      "parent_hq_country": "IND",
+      "ghgCo2eKg": 22450684650,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 9,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
+      "parent_name": "Angang Steel Co Ltd",
+      "parent_hq_country": "CHN",
+      "ghgCo2eKg": 21699334645,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 5,
+      "subsectors": [
+        "electricity-generation",
+        "iron-and-steel"
+      ]
+    },
+    {
+      "parent_name": "Centrenergoholding PJSC",
+      "parent_hq_country": "RUS",
+      "ghgCo2eKg": 21633526838,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 21,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
+      "parent_name": "Tenaga Nasional Bhd",
+      "parent_hq_country": "MYS",
+      "ghgCo2eKg": 21612885355,
       "ghgCo2eYear": 2026,
       "facilityCount": 15,
       "subsectors": [
@@ -6770,11 +6729,51 @@
       ]
     },
     {
+      "parent_name": "Ministry of Electricity and Water and Renewable Energy (Kuwait)",
+      "parent_hq_country": "KWT",
+      "ghgCo2eKg": 21256800000,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 4,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
+      "parent_name": "Unipro PJSC",
+      "parent_hq_country": "RUS",
+      "ghgCo2eKg": 20765698100,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 5,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
+      "parent_name": "Vietnam Electricity LLC",
+      "parent_hq_country": "VNM",
+      "ghgCo2eKg": 20347536615,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 15,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
+      "parent_name": "Gazprom PJSC",
+      "parent_hq_country": "RUS",
+      "ghgCo2eKg": 19675873468,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 46,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
       "parent_name": "Gazprom Energoholding LLC",
       "parent_hq_country": "RUS",
-      "ghgCo2eKg": 15809518480,
+      "ghgCo2eKg": 18851634035,
       "ghgCo2eYear": 2026,
-      "facilityCount": 45,
+      "facilityCount": 44,
       "subsectors": [
         "electricity-generation"
       ]
@@ -6782,7 +6781,7 @@
     {
       "parent_name": "Mosenergo PJSC",
       "parent_hq_country": "RUS",
-      "ghgCo2eKg": 15559400000,
+      "ghgCo2eKg": 18612170000,
       "ghgCo2eYear": 2026,
       "facilityCount": 12,
       "subsectors": [
@@ -6790,19 +6789,9 @@
       ]
     },
     {
-      "parent_name": "Electric Power Development Co Ltd",
-      "parent_hq_country": "JPN",
-      "ghgCo2eKg": 14329876027,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 29,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
       "parent_name": "Electricity Generating Authority of Thailand",
       "parent_hq_country": "THA",
-      "ghgCo2eKg": 14220645752,
+      "ghgCo2eKg": 18332832760,
       "ghgCo2eYear": 2026,
       "facilityCount": 32,
       "subsectors": [
@@ -6810,20 +6799,19 @@
       ]
     },
     {
-      "parent_name": "JSW Steel Ltd",
-      "parent_hq_country": "IND",
-      "ghgCo2eKg": 14160395085,
+      "parent_name": "Electric Power Development Co Ltd",
+      "parent_hq_country": "JPN",
+      "ghgCo2eKg": 17924726611,
       "ghgCo2eYear": 2026,
-      "facilityCount": 10,
+      "facilityCount": 40,
       "subsectors": [
-        "electricity-generation",
-        "iron-and-steel"
+        "electricity-generation"
       ]
     },
     {
       "parent_name": "Tianjin Jianlong Iron & Steel Industrial Co Ltd",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 14121580290,
+      "ghgCo2eKg": 17229566276,
       "ghgCo2eYear": 2026,
       "facilityCount": 16,
       "subsectors": [
@@ -6834,7 +6822,7 @@
     {
       "parent_name": "Jiangsu Guoxin Corp Ltd",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 13884441906,
+      "ghgCo2eKg": 17140002563,
       "ghgCo2eYear": 2026,
       "facilityCount": 12,
       "subsectors": [
@@ -6844,7 +6832,7 @@
     {
       "parent_name": "Huaihe Energy Holding Group Co Ltd",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 13722369960,
+      "ghgCo2eKg": 16872497640,
       "ghgCo2eYear": 2026,
       "facilityCount": 20,
       "subsectors": [
@@ -6852,29 +6840,9 @@
       ]
     },
     {
-      "parent_name": "Tohoku Electric Power Co Inc",
-      "parent_hq_country": "JPN",
-      "ghgCo2eKg": 13369302880,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 11,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "Damodar Valley Corp",
-      "parent_hq_country": "IND",
-      "ghgCo2eKg": 13321690000,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 8,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
       "parent_name": "Inner Mongolia MengDian HuaNeng Thermal Power Corp Ltd",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 13280222710,
+      "ghgCo2eKg": 16441588570,
       "ghgCo2eYear": 2026,
       "facilityCount": 13,
       "subsectors": [
@@ -6882,9 +6850,19 @@
       ]
     },
     {
-      "parent_name": "Shanxi State-Owned Capital Investment and Operation Co Ltd",
+      "parent_name": "Tohoku Electric Power Co Inc",
+      "parent_hq_country": "JPN",
+      "ghgCo2eKg": 16422468000,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 11,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
+      "parent_name": "Shanxi Provincial People's Government State-owned Assets Supervision and Administration Commission",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 13257611692,
+      "ghgCo2eKg": 16362941680,
       "ghgCo2eYear": 2026,
       "facilityCount": 52,
       "subsectors": [
@@ -6894,9 +6872,9 @@
       ]
     },
     {
-      "parent_name": "Shanxi Provincial People's Government State-owned Assets Supervision and Administration Commission",
+      "parent_name": "Shanxi State-Owned Capital Investment and Operation Co Ltd",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 13257611692,
+      "ghgCo2eKg": 16362941680,
       "ghgCo2eYear": 2026,
       "facilityCount": 52,
       "subsectors": [
@@ -6908,7 +6886,7 @@
     {
       "parent_name": "Gansu Provincial People's Government State-owned Assets Supervision and Administration Commission",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 13245051947,
+      "ghgCo2eKg": 16264742661,
       "ghgCo2eYear": 2026,
       "facilityCount": 16,
       "subsectors": [
@@ -6917,11 +6895,32 @@
       ]
     },
     {
+      "parent_name": "UltraTech Cement Ltd",
+      "parent_hq_country": "IND",
+      "ghgCo2eKg": 16038173835,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 37,
+      "subsectors": [
+        "cement",
+        "electricity-generation"
+      ]
+    },
+    {
+      "parent_name": "Damodar Valley Corp",
+      "parent_hq_country": "IND",
+      "ghgCo2eKg": 15791582000,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 8,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
       "parent_name": "member/employee owned",
       "parent_hq_country": null,
-      "ghgCo2eKg": 12928745702,
+      "ghgCo2eKg": 15771032819,
       "ghgCo2eYear": 2026,
-      "facilityCount": 157,
+      "facilityCount": 152,
       "subsectors": [
         "electricity-generation"
       ]
@@ -6929,7 +6928,7 @@
     {
       "parent_name": "SDIC Power Holdings Co Ltd",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 12662495640,
+      "ghgCo2eKg": 15750364400,
       "ghgCo2eYear": 2026,
       "facilityCount": 9,
       "subsectors": [
@@ -6937,9 +6936,19 @@
       ]
     },
     {
+      "parent_name": "Holcim AG",
+      "parent_hq_country": "CHE",
+      "ghgCo2eKg": 15396043184,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 73,
+      "subsectors": [
+        "cement"
+      ]
+    },
+    {
       "parent_name": "Hebei Construction Investment Energy Investment Co Ltd",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 12479247980,
+      "ghgCo2eKg": 15257081680,
       "ghgCo2eYear": 2026,
       "facilityCount": 19,
       "subsectors": [
@@ -6947,19 +6956,9 @@
       ]
     },
     {
-      "parent_name": "PGE Polska Grupa Energetyczna SA",
-      "parent_hq_country": "POL",
-      "ghgCo2eKg": 12287464356,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 13,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
       "parent_name": "Gansu Provincial State-owned Assets Investment Group Co Ltd",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 12286015822,
+      "ghgCo2eKg": 15088285192,
       "ghgCo2eYear": 2026,
       "facilityCount": 16,
       "subsectors": [
@@ -6970,7 +6969,7 @@
     {
       "parent_name": "China National Coal Group",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 12196903010,
+      "ghgCo2eKg": 15019706070,
       "ghgCo2eYear": 2026,
       "facilityCount": 15,
       "subsectors": [
@@ -6978,53 +6977,11 @@
       ]
     },
     {
-      "parent_name": "UltraTech Cement Ltd",
-      "parent_hq_country": "IND",
-      "ghgCo2eKg": 11897920197,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 37,
-      "subsectors": [
-        "cement",
-        "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "Ministry of State Treasury (Poland)",
+      "parent_name": "PGE Polska Grupa Energetyczna SA",
       "parent_hq_country": "POL",
-      "ghgCo2eKg": 11852971878,
+      "ghgCo2eKg": 14970773288,
       "ghgCo2eYear": 2026,
-      "facilityCount": 21,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "Holcim AG",
-      "parent_hq_country": "CHE",
-      "ghgCo2eKg": 11830998320,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 74,
-      "subsectors": [
-        "cement",
-        "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "Jindal Steel Ltd",
-      "parent_hq_country": "IND",
-      "ghgCo2eKg": 11745200000,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 4,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "Andhra Pradesh Power Generation Corp Ltd",
-      "parent_hq_country": "IND",
-      "ghgCo2eKg": 11726790000,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 4,
+      "facilityCount": 13,
       "subsectors": [
         "electricity-generation"
       ]
@@ -7032,9 +6989,30 @@
     {
       "parent_name": "JFE Holdings Inc",
       "parent_hq_country": "JPN",
-      "ghgCo2eKg": 11705815536,
+      "ghgCo2eKg": 14961175940,
       "ghgCo2eYear": 2026,
-      "facilityCount": 10,
+      "facilityCount": 11,
+      "subsectors": [
+        "electricity-generation",
+        "iron-and-steel"
+      ]
+    },
+    {
+      "parent_name": "Ministry of State Treasury (Poland)",
+      "parent_hq_country": "POL",
+      "ghgCo2eKg": 14587016318,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 21,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
+      "parent_name": "Vedanta Ltd",
+      "parent_hq_country": "IND",
+      "ghgCo2eKg": 14349662854,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 6,
       "subsectors": [
         "electricity-generation",
         "iron-and-steel"
@@ -7043,7 +7021,7 @@
     {
       "parent_name": "Beijing Jianlong Heavy Industry Group Co Ltd",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 11691356279,
+      "ghgCo2eKg": 14264481722,
       "ghgCo2eYear": 2026,
       "facilityCount": 16,
       "subsectors": [
@@ -7054,7 +7032,7 @@
     {
       "parent_name": "Nuclear Damage Compensation and Decommissioning Facilitation Corp",
       "parent_hq_country": "JPN",
-      "ghgCo2eKg": 11529244580,
+      "ghgCo2eKg": 14157967350,
       "ghgCo2eYear": 2026,
       "facilityCount": 43,
       "subsectors": [
@@ -7062,11 +7040,63 @@
       ]
     },
     {
-      "parent_name": "Reliance Power Ltd",
+      "parent_name": "Rajasthan Rajya Vidyut Utpadan Nigam Ltd",
       "parent_hq_country": "IND",
-      "ghgCo2eKg": 11328500000,
+      "ghgCo2eKg": 13939070000,
       "ghgCo2eYear": 2026,
-      "facilityCount": 2,
+      "facilityCount": 4,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
+      "parent_name": "Tata Power Company Ltd",
+      "parent_hq_country": "IND",
+      "ghgCo2eKg": 13930160500,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 5,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
+      "parent_name": "Tata Steel Ltd",
+      "parent_hq_country": "IND",
+      "ghgCo2eKg": 13895856067,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 11,
+      "subsectors": [
+        "electricity-generation",
+        "iron-and-steel"
+      ]
+    },
+    {
+      "parent_name": "Steel Authority of India Ltd",
+      "parent_hq_country": "IND",
+      "ghgCo2eKg": 13791073267,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 10,
+      "subsectors": [
+        "electricity-generation",
+        "iron-and-steel"
+      ]
+    },
+    {
+      "parent_name": "Andhra Pradesh Power Generation Corp Ltd",
+      "parent_hq_country": "IND",
+      "ghgCo2eKg": 13550840000,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 4,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
+      "parent_name": "Jinneng Holding Shanxi Electric Power Co Ltd",
+      "parent_hq_country": "CHN",
+      "ghgCo2eKg": 13549338530,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 12,
       "subsectors": [
         "electricity-generation"
       ]
@@ -7074,7 +7104,7 @@
     {
       "parent_name": "Beijing Jianlong Investment Co Ltd",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 10989653937,
+      "ghgCo2eKg": 13408348312,
       "ghgCo2eYear": 2026,
       "facilityCount": 16,
       "subsectors": [
@@ -7083,51 +7113,19 @@
       ]
     },
     {
-      "parent_name": "Jinneng Holding Shanxi Electric Power Co Ltd",
-      "parent_hq_country": "CHN",
-      "ghgCo2eKg": 10946685900,
+      "parent_name": "Saudi Arabian Oil Co",
+      "parent_hq_country": "SAU",
+      "ghgCo2eKg": 13368503146,
       "ghgCo2eYear": 2026,
-      "facilityCount": 12,
+      "facilityCount": 68,
       "subsectors": [
         "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "Rosneftegaz JSC",
-      "parent_hq_country": "RUS",
-      "ghgCo2eKg": 10929574236,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 83,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "En+ Group PJSC",
-      "parent_hq_country": "RUS",
-      "ghgCo2eKg": 10733950408,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 32,
-      "subsectors": [
-        "cement",
-        "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "Vedanta Ltd",
-      "parent_hq_country": "IND",
-      "ghgCo2eKg": 10695943177,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 6,
-      "subsectors": [
-        "electricity-generation",
-        "iron-and-steel"
       ]
     },
     {
       "parent_name": "Jinghua Rigang Holding Group Co Ltd",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 10661076971,
+      "ghgCo2eKg": 13292718306,
       "ghgCo2eYear": 2026,
       "facilityCount": 5,
       "subsectors": [
@@ -7136,9 +7134,41 @@
       ]
     },
     {
+      "parent_name": "Rosneftegaz JSC",
+      "parent_hq_country": "RUS",
+      "ghgCo2eKg": 13216540443,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 82,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
+      "parent_name": "JSW Steel Ltd",
+      "parent_hq_country": "IND",
+      "ghgCo2eKg": 13206789524,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 10,
+      "subsectors": [
+        "electricity-generation",
+        "iron-and-steel"
+      ]
+    },
+    {
+      "parent_name": "Hunan Valin Steel Co Ltd",
+      "parent_hq_country": "CHN",
+      "ghgCo2eKg": 13169826868,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 6,
+      "subsectors": [
+        "electricity-generation",
+        "iron-and-steel"
+      ]
+    },
+    {
       "parent_name": "Heidelberg Materials AG",
       "parent_hq_country": "DEU",
-      "ghgCo2eKg": 10381158240,
+      "ghgCo2eKg": 13071854975,
       "ghgCo2eYear": 2026,
       "facilityCount": 76,
       "subsectors": [
@@ -7147,19 +7177,70 @@
       ]
     },
     {
-      "parent_name": "China Power International Development Co Ltd",
-      "parent_hq_country": "HKG",
-      "ghgCo2eKg": 10208633500,
+      "parent_name": "En+ Group PJSC",
+      "parent_hq_country": "RUS",
+      "ghgCo2eKg": 12999462899,
       "ghgCo2eYear": 2026,
-      "facilityCount": 17,
+      "facilityCount": 32,
+      "subsectors": [
+        "cement",
+        "electricity-generation"
+      ]
+    },
+    {
+      "parent_name": "Malakoff Corporation Bhd",
+      "parent_hq_country": "MYS",
+      "ghgCo2eKg": 12867403520,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 6,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
+      "parent_name": "Turkmenenergo",
+      "parent_hq_country": "TKM",
+      "ghgCo2eKg": 12791150000,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 12,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
+      "parent_name": "Ministry of Energy (Turkmenistan)",
+      "parent_hq_country": "TKM",
+      "ghgCo2eKg": 12791150000,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 12,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
+      "parent_name": "ENGIE SA",
+      "parent_hq_country": "FRA",
+      "ghgCo2eKg": 12786483984,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 64,
       "subsectors": [
         "electricity-generation"
       ]
     },
     {
       "parent_name": "China Power International Ltd",
-      "parent_hq_country": null,
-      "ghgCo2eKg": 10208633500,
+      "parent_hq_country": "CHN",
+      "ghgCo2eKg": 12696990140,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 20,
+      "subsectors": [
+        "electricity-generation"
+      ]
+    },
+    {
+      "parent_name": "China Power International Development Co Ltd",
+      "parent_hq_country": "HKG",
+      "ghgCo2eKg": 12642284140,
       "ghgCo2eYear": 2026,
       "facilityCount": 17,
       "subsectors": [
@@ -7169,102 +7250,9 @@
     {
       "parent_name": "Inner Mongolia Energy Power Generation Investment Group Co Ltd",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 10169329000,
+      "ghgCo2eKg": 12594474000,
       "ghgCo2eYear": 2026,
       "facilityCount": 12,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "Tata Steel Ltd",
-      "parent_hq_country": "IND",
-      "ghgCo2eKg": 10144044985,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 11,
-      "subsectors": [
-        "electricity-generation",
-        "iron-and-steel"
-      ]
-    },
-    {
-      "parent_name": "Hunan Valin Steel Co Ltd",
-      "parent_hq_country": "CHN",
-      "ghgCo2eKg": 10135022655,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 6,
-      "subsectors": [
-        "electricity-generation",
-        "iron-and-steel"
-      ]
-    },
-    {
-      "parent_name": "ENGIE SA",
-      "parent_hq_country": "FRA",
-      "ghgCo2eKg": 10093707172,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 64,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "Beijing Shougang Co Ltd",
-      "parent_hq_country": "CHN",
-      "ghgCo2eKg": 10076683924,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 3,
-      "subsectors": [
-        "electricity-generation",
-        "iron-and-steel"
-      ]
-    },
-    {
-      "parent_name": "Malakoff Corporation Bhd",
-      "parent_hq_country": "MYS",
-      "ghgCo2eKg": 10076427110,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 6,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "Ministry of Energy (Turkmenistan)",
-      "parent_hq_country": "TKM",
-      "ghgCo2eKg": 10053440000,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 12,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "Turkmenenergo",
-      "parent_hq_country": "TKM",
-      "ghgCo2eKg": 10053440000,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 12,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "Saudi Arabian Oil Co",
-      "parent_hq_country": "SAU",
-      "ghgCo2eKg": 10022149975,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 68,
-      "subsectors": [
-        "electricity-generation"
-      ]
-    },
-    {
-      "parent_name": "Inter RAO Capital JSC",
-      "parent_hq_country": "RUS",
-      "ghgCo2eKg": 9928654556,
-      "ghgCo2eYear": 2026,
-      "facilityCount": 30,
       "subsectors": [
         "electricity-generation"
       ]
@@ -7272,7 +7260,7 @@
     {
       "parent_name": "Telangana State Power Generation Corporation Ltd",
       "parent_hq_country": "IND",
-      "ghgCo2eKg": 9905400000,
+      "ghgCo2eKg": 12439400000,
       "ghgCo2eYear": 2026,
       "facilityCount": 4,
       "subsectors": [
@@ -7280,11 +7268,21 @@
       ]
     },
     {
-      "parent_name": "Guangdong Hanjian Holding Co Ltd",
+      "parent_name": "Inner Mongolia BaoTou Steel Union Co Ltd",
       "parent_hq_country": "CHN",
-      "ghgCo2eKg": 9742840000,
+      "ghgCo2eKg": 12292670066,
       "ghgCo2eYear": 2026,
-      "facilityCount": 3,
+      "facilityCount": 1,
+      "subsectors": [
+        "iron-and-steel"
+      ]
+    },
+    {
+      "parent_name": "Bangladesh Power Development Board",
+      "parent_hq_country": "BGD",
+      "ghgCo2eKg": 12170263188,
+      "ghgCo2eYear": 2026,
+      "facilityCount": 33,
       "subsectors": [
         "electricity-generation"
       ]
