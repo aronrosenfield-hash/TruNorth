@@ -1,0 +1,164 @@
+{
+  "merged_at": "2026-08-16T18:17:54.972Z",
+  "source_file": "public/data/nhtsa-auto.json",
+  "total_brands": 28,
+  "merged_count": 21,
+  "skipped_count": 3,
+  "orphan_count": 4,
+  "error_count": 0,
+  "orphans": [
+    "ram",
+    "mazda",
+    "volvo",
+    "polestar"
+  ],
+  "merged": [
+    {
+      "brand": "tesla",
+      "target": "tesla",
+      "routed_via": "direct",
+      "totalRecalls": 33,
+      "totalComplaints": 4730
+    },
+    {
+      "brand": "ford",
+      "target": "ford",
+      "routed_via": "direct",
+      "totalRecalls": 206,
+      "totalComplaints": 7199
+    },
+    {
+      "brand": "chevrolet",
+      "target": "chevrolet",
+      "routed_via": "direct",
+      "totalRecalls": 70,
+      "totalComplaints": 5660
+    },
+    {
+      "brand": "chrysler",
+      "target": "chrysler",
+      "routed_via": "direct",
+      "totalRecalls": 25,
+      "totalComplaints": 619
+    },
+    {
+      "brand": "dodge",
+      "target": "dodge",
+      "routed_via": "direct",
+      "totalRecalls": 22,
+      "totalComplaints": 359
+    },
+    {
+      "brand": "jeep",
+      "target": "jeep",
+      "routed_via": "direct",
+      "totalRecalls": 69,
+      "totalComplaints": 4283
+    },
+    {
+      "brand": "toyota",
+      "target": "toyota-usa",
+      "routed_via": "parent",
+      "totalRecalls": 78,
+      "totalComplaints": 5308
+    },
+    {
+      "brand": "honda",
+      "target": "honda-motor-co",
+      "routed_via": "parent",
+      "totalRecalls": 55,
+      "totalComplaints": 7852
+    },
+    {
+      "brand": "nissan",
+      "target": "nissan-technical-center-north-america",
+      "routed_via": "parent",
+      "totalRecalls": 49,
+      "totalComplaints": 2762
+    },
+    {
+      "brand": "hyundai",
+      "target": "hyundai-usa",
+      "routed_via": "parent",
+      "totalRecalls": 73,
+      "totalComplaints": 6537
+    },
+    {
+      "brand": "kia",
+      "target": "kia-usa",
+      "routed_via": "parent",
+      "totalRecalls": 65,
+      "totalComplaints": 4151
+    },
+    {
+      "brand": "subaru",
+      "target": "subaru-usa",
+      "routed_via": "parent",
+      "totalRecalls": 23,
+      "totalComplaints": 1687
+    },
+    {
+      "brand": "volkswagen",
+      "target": "volkswagen-usa",
+      "routed_via": "alias",
+      "totalRecalls": 51,
+      "totalComplaints": 2629
+    },
+    {
+      "brand": "audi",
+      "target": "volkswagen-usa",
+      "routed_via": "parent",
+      "totalRecalls": 21,
+      "totalComplaints": 631
+    },
+    {
+      "brand": "bmw",
+      "target": "bmw-usa",
+      "routed_via": "alias",
+      "totalRecalls": 75,
+      "totalComplaints": 1272
+    },
+    {
+      "brand": "mercedes-benz",
+      "target": "mercedes-benz-usa",
+      "routed_via": "alias",
+      "totalRecalls": 21,
+      "totalComplaints": 1173
+    },
+    {
+      "brand": "porsche",
+      "target": "porsche",
+      "routed_via": "direct",
+      "totalRecalls": 24,
+      "totalComplaints": 191
+    },
+    {
+      "brand": "ferrari",
+      "target": "ferrari-n-v",
+      "routed_via": "parent",
+      "totalRecalls": 1,
+      "totalComplaints": 1
+    },
+    {
+      "brand": "lamborghini",
+      "target": "volkswagen-usa",
+      "routed_via": "parent",
+      "totalRecalls": 4,
+      "totalComplaints": 3
+    },
+    {
+      "brand": "rivian",
+      "target": "rivian-automotive",
+      "routed_via": "parent",
+      "totalRecalls": 23,
+      "totalComplaints": 299
+    },
+    {
+      "brand": "lucid",
+      "target": "lucid-motors",
+      "routed_via": "alias",
+      "totalRecalls": 18,
+      "totalComplaints": 84
+    }
+  ]
+}
