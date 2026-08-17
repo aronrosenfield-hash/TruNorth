@@ -1,5 +1,5 @@
 {
-  "merged_at": "2026-08-10T04:58:19.947Z",
+  "merged_at": "2026-08-17T04:06:27.411Z",
   "source_file": "public/data/cisa-kev.json",
   "total_vendors": 276,
   "merged_count": 2,
@@ -8,16 +8,16 @@
   "error_count": 0,
   "merged_vendors": [
     {
-      "vendor": "IBM",
-      "target": "ibm",
+      "vendor": "Microsoft",
+      "target": "microsoft",
       "routed_via": "override",
-      "cves": 8
+      "cves": 383
     },
     {
-      "vendor": "N-able",
-      "target": "n-able",
-      "routed_via": "direct",
-      "cves": 4
+      "vendor": "Cisco",
+      "target": "cisco",
+      "routed_via": "override",
+      "cves": 96
     }
   ],
   "top_orphans": [

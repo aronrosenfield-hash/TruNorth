@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-08-10T04:58:19.842Z",
-  "catalog_version": "2026.08.07",
-  "catalog_released": "2026-08-07T16:45:47.0648Z",
-  "total_cve_count": 1662,
+  "generated_at": "2026-08-17T04:06:27.363Z",
+  "catalog_version": "2026.08.14",
+  "catalog_released": "2026-08-14T16:34:49.0391Z",
+  "total_cve_count": 1665,
   "vendor_count": 276,
   "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
   "vendors": [
     {
       "vendor": "Microsoft",
-      "total_cve_count": 382,
-      "recent_12mo_count": 44,
-      "ransomware_count": 104,
+      "total_cve_count": 383,
+      "recent_12mo_count": 43,
+      "ransomware_count": 112,
       "product_breakdown": [
         {
           "label": "Windows",
@@ -55,6 +55,17 @@
       ],
       "top_cves": [
         {
+          "cveID": "CVE-2026-68820",
+          "product": "Windows Ancillary Function Driver for WinSock ",
+          "vulnerabilityName": "Microsoft Windows Ancillary Function Driver for WinSock Use-After-Free Vulnerability",
+          "dateAdded": "2026-08-11",
+          "dueDate": "2026-08-25",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Microsoft Windows Ancillary Function Driver for WinSock contains a use-after-free vulnerability that allows an authorized attacker to elevate privileges locally.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-68820"
+        },
+        {
           "cveID": "CVE-2026-50522",
           "product": "SharePoint",
           "vulnerabilityName": "Microsoft SharePoint Deserialization of Untrusted Data Vulnerability ",
@@ -97,20 +108,17 @@
           "shortDescription": "Microsoft SharePoint contains a missing authentication for critical function vulnerability that allows an unauthorized attacker to elevate privileges over a network.",
           "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56164"
-        },
+        }
+      ],
+      "highest_severity": [
         {
           "cveID": "CVE-2026-45659",
           "product": "SharePoint Server",
           "vulnerabilityName": "Microsoft SharePoint Server Deserialization of Untrusted Data Vulnerability",
           "dateAdded": "2026-07-01",
-          "dueDate": "2026-07-04",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Microsoft SharePoint Server contains a deserialization of untrusted data vulnerability which allows an authorized attacker to execute code over a network.",
-          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "knownRansomwareCampaignUse": "Known",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45659"
-        }
-      ],
-      "highest_severity": [
+        },
         {
           "cveID": "CVE-2026-33825",
           "product": "Defender",
@@ -120,20 +128,20 @@
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33825"
         },
         {
-          "cveID": "CVE-2023-21529",
-          "product": "Exchange Server",
-          "vulnerabilityName": "Microsoft Exchange Server Deserialization of Untrusted Data Vulnerability",
+          "cveID": "CVE-2025-60710",
+          "product": "Windows",
+          "vulnerabilityName": "Microsoft Windows Link Following Vulnerability",
           "dateAdded": "2026-04-13",
           "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-21529"
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-60710"
         },
         {
-          "cveID": "CVE-2025-49704",
-          "product": "SharePoint",
-          "vulnerabilityName": "Microsoft SharePoint Code Injection Vulnerability",
-          "dateAdded": "2025-07-22",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-49704"
+          "cveID": "CVE-2026-68820",
+          "product": "Windows Ancillary Function Driver for WinSock ",
+          "vulnerabilityName": "Microsoft Windows Ancillary Function Driver for WinSock Use-After-Free Vulnerability",
+          "dateAdded": "2026-08-11",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-68820"
         },
         {
           "cveID": "CVE-2026-50522",
@@ -142,21 +150,13 @@
           "dateAdded": "2026-07-22",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50522"
-        },
-        {
-          "cveID": "CVE-2026-58644",
-          "product": "SharePoint",
-          "vulnerabilityName": "Microsoft SharePoint Deserialization of Untrusted Data Vulnerability",
-          "dateAdded": "2026-07-16",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58644"
         }
       ]
     },
     {
       "vendor": "Cisco",
-      "total_cve_count": 95,
-      "recent_12mo_count": 17,
+      "total_cve_count": 96,
+      "recent_12mo_count": 18,
       "ransomware_count": 6,
       "product_breakdown": [
         {
@@ -202,6 +202,17 @@
       ],
       "top_cves": [
         {
+          "cveID": "CVE-2026-20349",
+          "product": "Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD) ",
+          "vulnerabilityName": "Cisco Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD) Heap Inspection Vulnerability",
+          "dateAdded": "2026-08-11",
+          "dueDate": "2026-08-14",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Cisco Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD) contain a heap inspection vulnerability that could allow an unauthenticated, remote attacker to cause the device to reload unexpectedly, resulting in a denial of service (DoS) condition.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20349"
+        },
+        {
           "cveID": "CVE-2026-20316",
           "product": "Secure Firewall Management Center (FMC)",
           "vulnerabilityName": "Cisco Secure Firewall Management Center Use of Hard-coded Password Vulnerability",
@@ -244,17 +255,6 @@
           "shortDescription": "Cisco Catalyst SD-WAN Manager contains a directory or path traversal vulnerability that could allow an authenticated, remote attacker to create a file or overwrite any file on the filesystem of an affected system.",
           "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20262"
-        },
-        {
-          "cveID": "CVE-2026-20245",
-          "product": "Catalyst SD-WAN Manager",
-          "vulnerabilityName": "Cisco Catalyst SD-WAN Manager Improper Encoding or Escaping of Output Vulnerability",
-          "dateAdded": "2026-06-09",
-          "dueDate": "2026-06-23",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Cisco Catalyst SD-WAN Manager formerly SD-WAN vManage contains an improper encoding or escaping of output vulnerability. This vulnerability could allow an authenticated, local attacker to execute arbitrary commands as root by supplying a crafted file to the affected system.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20245"
         }
       ],
       "highest_severity": [
@@ -283,20 +283,20 @@
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-20269"
         },
         {
+          "cveID": "CVE-2026-20349",
+          "product": "Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD) ",
+          "vulnerabilityName": "Cisco Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD) Heap Inspection Vulnerability",
+          "dateAdded": "2026-08-11",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20349"
+        },
+        {
           "cveID": "CVE-2026-20316",
           "product": "Secure Firewall Management Center (FMC)",
           "vulnerabilityName": "Cisco Secure Firewall Management Center Use of Hard-coded Password Vulnerability",
           "dateAdded": "2026-07-29",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20316"
-        },
-        {
-          "cveID": "CVE-2008-4128",
-          "product": "IOS",
-          "vulnerabilityName": "Cisco IOS Cross-Site Request Forgery Vulnerability",
-          "dateAdded": "2026-07-13",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2008-4128"
         }
       ]
     },
@@ -1134,7 +1134,7 @@
       "vendor": "Fortinet",
       "total_cve_count": 29,
       "recent_12mo_count": 9,
-      "ransomware_count": 13,
+      "ransomware_count": 14,
       "product_breakdown": [
         {
           "label": "FortiOS",
@@ -4359,7 +4359,7 @@
       "vendor": "Sophos",
       "total_cve_count": 7,
       "recent_12mo_count": 0,
-      "ransomware_count": 1,
+      "ransomware_count": 2,
       "product_breakdown": [
         {
           "label": "Firewall",
@@ -4404,7 +4404,7 @@
           "vulnerabilityName": "CyberoamOS (CROS) SQL Injection Vulnerability",
           "dateAdded": "2025-02-06",
           "dueDate": "2025-02-27",
-          "knownRansomwareCampaignUse": "Unknown",
+          "knownRansomwareCampaignUse": "Known",
           "shortDescription": "CyberoamOS (CROS) contains a SQL injection vulnerability in the WebAdmin that allows an unauthenticated attacker to execute arbitrary SQL statements remotely.",
           "requiredAction": "The impacted product is end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue utilization of the product.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-29574"
@@ -4445,6 +4445,14 @@
       ],
       "highest_severity": [
         {
+          "cveID": "CVE-2020-29574",
+          "product": "CyberoamOS",
+          "vulnerabilityName": "CyberoamOS (CROS) SQL Injection Vulnerability",
+          "dateAdded": "2025-02-06",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-29574"
+        },
+        {
           "cveID": "CVE-2020-12271",
           "product": "SFOS",
           "vulnerabilityName": "Sophos SFOS SQL Injection Vulnerability",
@@ -4461,12 +4469,12 @@
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-15069"
         },
         {
-          "cveID": "CVE-2020-29574",
-          "product": "CyberoamOS",
-          "vulnerabilityName": "CyberoamOS (CROS) SQL Injection Vulnerability",
-          "dateAdded": "2025-02-06",
+          "cveID": "CVE-2023-1671",
+          "product": "Web Appliance",
+          "vulnerabilityName": "Sophos Web Appliance Command Injection Vulnerability",
+          "dateAdded": "2023-11-16",
           "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-29574"
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-1671"
         }
       ]
     },
@@ -4474,7 +4482,7 @@
       "vendor": "Red Hat",
       "total_cve_count": 7,
       "recent_12mo_count": 0,
-      "ransomware_count": 3,
+      "ransomware_count": 4,
       "product_breakdown": [
         {
           "label": "Polkit",
@@ -4526,7 +4534,7 @@
           "vulnerabilityName": "Red Hat Polkit Out-of-Bounds Read and Write Vulnerability",
           "dateAdded": "2022-06-27",
           "dueDate": "2022-07-18",
-          "knownRansomwareCampaignUse": "Unknown",
+          "knownRansomwareCampaignUse": "Known",
           "shortDescription": "The Red Hat polkit pkexec utility contains an out-of-bounds read and write vulnerability that allows for privilege escalation with administrative rights.",
           "requiredAction": "Apply updates per vendor instructions.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-4034"
@@ -4556,6 +4564,14 @@
       ],
       "highest_severity": [
         {
+          "cveID": "CVE-2021-4034",
+          "product": "Polkit",
+          "vulnerabilityName": "Red Hat Polkit Out-of-Bounds Read and Write Vulnerability",
+          "dateAdded": "2022-06-27",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-4034"
+        },
+        {
           "cveID": "CVE-2010-1428",
           "product": "JBoss",
           "vulnerabilityName": "Red Hat JBoss Information Disclosure Vulnerability",
@@ -4570,14 +4586,6 @@
           "dateAdded": "2022-05-25",
           "knownRansomwareCampaignUse": "Known",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-0738"
-        },
-        {
-          "cveID": "CVE-2017-12149",
-          "product": "JBoss Application Server",
-          "vulnerabilityName": "Red Hat JBoss Application Server Remote Code Execution Vulnerability",
-          "dateAdded": "2021-12-10",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-12149"
         },
         {
           "cveID": "CVE-2018-14667",
@@ -5222,7 +5230,7 @@
     {
       "vendor": "RARLAB",
       "total_cve_count": 5,
-      "recent_12mo_count": 2,
+      "recent_12mo_count": 1,
       "ransomware_count": 4,
       "product_breakdown": [
         {
@@ -5619,7 +5627,7 @@
     {
       "vendor": "N-able",
       "total_cve_count": 4,
-      "recent_12mo_count": 4,
+      "recent_12mo_count": 2,
       "ransomware_count": 0,
       "product_breakdown": [
         {
@@ -8775,6 +8783,60 @@
           "dateAdded": "2021-11-03",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-10987"
+        }
+      ]
+    },
+    {
+      "vendor": "Metabase",
+      "total_cve_count": 2,
+      "recent_12mo_count": 1,
+      "ransomware_count": 0,
+      "product_breakdown": [
+        {
+          "label": "Metabase",
+          "count": 2
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-72898",
+          "product": "Metabase",
+          "vulnerabilityName": "Metabase SQL Injection Vulnerability",
+          "dateAdded": "2026-08-11",
+          "dueDate": "2026-08-14",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Metabase contains a SQL Injection vulnerability that allows an unauthenticated remote attacker to inject arbitrary SQL into the Metabase application database, which can give them administrator access to the instance. From there, the attacker could change the application configuration, steal stored credentials for the connected databases, read any data accessible through those connections, and export data.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-72898"
+        },
+        {
+          "cveID": "CVE-2021-41277",
+          "product": "Metabase",
+          "vulnerabilityName": "Metabase GeoJSON API Local File Inclusion Vulnerability",
+          "dateAdded": "2024-11-12",
+          "dueDate": "2024-12-03",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Metabase contains a local file inclusion vulnerability in the custom map support in the API to read GeoJSON formatted data.",
+          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-41277"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2026-72898",
+          "product": "Metabase",
+          "vulnerabilityName": "Metabase SQL Injection Vulnerability",
+          "dateAdded": "2026-08-11",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-72898"
+        },
+        {
+          "cveID": "CVE-2021-41277",
+          "product": "Metabase",
+          "vulnerabilityName": "Metabase GeoJSON API Local File Inclusion Vulnerability",
+          "dateAdded": "2024-11-12",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-41277"
         }
       ]
     },
@@ -13358,41 +13420,6 @@
           "dateAdded": "2024-12-03",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-45727"
-        }
-      ]
-    },
-    {
-      "vendor": "Metabase",
-      "total_cve_count": 1,
-      "recent_12mo_count": 0,
-      "ransomware_count": 0,
-      "product_breakdown": [
-        {
-          "label": "Metabase",
-          "count": 1
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2021-41277",
-          "product": "Metabase",
-          "vulnerabilityName": "Metabase GeoJSON API Local File Inclusion Vulnerability",
-          "dateAdded": "2024-11-12",
-          "dueDate": "2024-12-03",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Metabase contains a local file inclusion vulnerability in the custom map support in the API to read GeoJSON formatted data.",
-          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-41277"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2021-41277",
-          "product": "Metabase",
-          "vulnerabilityName": "Metabase GeoJSON API Local File Inclusion Vulnerability",
-          "dateAdded": "2024-11-12",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-41277"
         }
       ]
     },
