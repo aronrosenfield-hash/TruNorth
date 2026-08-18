@@ -6,9 +6,44 @@
 >
 > **🟢 LAUNCHED — Jun 23, 2026 · 2:01 AM CDT** (App Store · id `6775301458` · `https://apps.apple.com/app/id6775301458` · PH launched). **CURRENT LIVE BUILD = v1.1 Build 81** (approved 2026-07-08, released Manual **2026-07-14**) — it superseded v1.0 Build 75, which was live Jun 23 → Jul 14. **Next iOS ship = Build 82.** *(The 2026-06-11 "date is soft, get it right" call held through the Compass redesign; the experience shipped on the locked date. Go-live runbook: `docs/LAUNCH_DAY.md`.)*
 >
-> **Last updated:** 2026-08-16 22:30 CDT (daily doc-sync, covering **2026-08-16**).
+> **Last updated:** 2026-08-17 23:15 CDT (daily doc-sync, covering **2026-08-17**).
 >
-> 🔴📌 **A BUSY, BAD SUNDAY. STILL ZERO HUMAN COMMITS AND ZERO GRADE MOVEMENT — BUT TWO PIPELINES FAILED TO DELIVER, AND ONE OF THEM FAILED SILENTLY.** 9 bot data commits landed on `origin/main` (`cfpb` 03:47, `lawsuits` 05:00, `cpsc` 05:18, `cruelty-free` 05:34, `doj` 07:09, `epa-echo` 08:00, `ofac-sdn` 17:50, `nhtsa` 18:17, `sec` 21:01). **None touched `public/data/index.json`**, whose last change on `origin/main` is still the push `c2c1216de` → **0 grade movement.** The clone was 9 behind at sync start; rebased cleanly to **`0 0`**, nothing lost.
+> 📌 **A QUIET MACHINE DAY THAT PRODUCED THE SHARPEST EMAIL EVIDENCE YET — AND EXPOSED THAT V-4 IS FIVE TIMES BIGGER THAN THIS BOARD SAYS.** 6 bot data commits landed on `origin/main` (`cisa-kev` 04:06, `news` 05:43, `msha` 15:38, `ntsb` 17:31, `ofac-sdn` 17:58, `phmsa` 19:34). **Zero human commits. Zero code changes** — the diff touches nothing under `src/`, `scripts/`, `ios/`, `android/`, `.github/workflows/` or `package.json` (verified by `git diff --name-only`). **`public/data/index.json` untouched → 0 grade movement.** The clone was 6 behind at sync start; rebased cleanly, nothing lost.
+>
+> ✅ **RE-VERIFIED AT THE CDN, NOT INFERRED FROM GIT** (`curl https://www.trunorthapp.com/data/index.json`): **12,830 tracked / 2,590 graded — A 62 · B 706 · C 1,029 · D 537 · F 256**, 10,240 "?". **Identical to local and to the last three days. Quote 2,590.**
+>
+> 🔴🧾 **THE EMAIL OUTAGE IS NO LONGER ABSTRACT — THERE ARE FOUR REAL SUBSCRIBERS AND ALL FOUR WERE MISSED, ON TAPE.** Pulled the log for `weekly-digest` run **`31964140063`** (2026-08-16 18:00Z). It resolved the list from MailerLite — **`4 active subscriber(s)`** — attempted delivery, and printed:
+>
+> > `✅ Weekly digest sent: 0 delivered, 4 failed.`
+> > `   ✗ aron.rosenfield@gmail.com: RESEND_API_KEY not set`
+> > `   ✗ aron+postfix-test-…@trunorthapp.com: RESEND_API_KEY not set`
+> > `   ✗ aron+recheck-…@trunorthapp.com: RESEND_API_KEY not set`
+> > `   ✗ jlougee24@live.com: RESEND_API_KEY not set`
+> > `❌ Every send failed — failing the job so the cron does not report success.`
+>
+> 🔑 **THREE THINGS THIS SETTLES.** ① **A real third party is on that list** (`jlougee24@live.com`) — this is not a self-test that nobody notices; an outside subscriber has now missed three weekly digests. ② **`weekly-digest` is a SEPARATE workflow from the rebake's `Notify-me` step and it is NOT blocked by B-127** — it fires on its own schedule (Sunday 18:00 UTC, `.github/workflows/weekly-digest.yml:28`), it ran to completion, and **the missing secret is its only blocker.** ⚠️ **This corrects yesterday's framing that "both blockers must be fixed before any email can send" — that is true of `Notify-me`, but NOT of the weekly digest, which will send the moment the secret exists.** ③ **It fails honestly** (`exit 1`, no soft-fail) — the opposite of B-126, and the reason it shows on the watchdog at all. ⚠️ **The B-127 caveat that DOES survive: `weekly_changes.json` was last written 2026-08-09 by `247dd4c87`, so with the secret set today the digest would ship 8-day-old change data. Fix B-127 too, but for content accuracy — not to unblock the send.**
+>
+> 🔬🔴 **B-125 CONFIRMED AGAIN — THIRD CONSECUTIVE MONDAY, SAME THREE CRONS, SAME STEP, SAME CAPS.** The Monday weeklies ran today and all three were killed inside the **fetch** step with every later step skipped: **`faa-weekly` `32018127077` — 1,815s** · **`fra-weekly` `32025687480` — 1,816s** · **`gdelt-weekly` `32027864201` — 5,416s.** Every one is within ~16s of its configured `timeout-minutes`. Kill dates now **08-03, 08-10, 08-17.** ⚠️ **This is no longer "awaiting evidence" — it is a proven weekly-recurring failure with three data points. `faa-weekly`'s one lifetime success had 37s of margin, so `faa-weekly.yml:25` is still the calibrated one-line fix.**
+>
+> 🔴 **B-127 UNCHANGED AND STILL ARMED FOR SUNDAY.** `public/data/_meta/grade-snapshot.json` on `origin/main` is byte-identical to yesterday: **`takenAt 2026-08-09T17:00:25.665Z`, 3,060 entries** — still the pre-push catalog. **The next rebake (Sunday 2026-08-23) will fail at step 9 in exactly the same way and discard its own output again.** Nothing was re-baselined today. **Still the highest-leverage open fix on the board.**
+>
+> ✅ **`data(news)` FOR 08-17 LANDED** (`5bdfc6c81`, run `31997590919`). **Lost nights stand at 08-02, 08-09, 08-16 — 3 in 16 days.** 🚨 **Do NOT read this as recovery.** The 08-10→08-15 six-night green streak was followed immediately by a loss; B-124 is a race that looks healthy most days and only the commit series is evidence (`git log origin/main --grep='data(news)'`).
+>
+> 🆕🕳️ **NEW TODAY — B-129: THE TRANSPORT + CYBER WEEKLIES FETCH REAL DATA AND MATCH ALMOST NOTHING, WHILE REPORTING SUCCESS.** Read the merge logs from `origin/main` rather than the run statuses. **`ntsb` merged 0 of 528 brands** (`merged_count: 0 · skipped: 528 · orphan: 0 · error: 0`) — and it committed a 1,058-line refresh to do it; the 08-10 log is identical, so this is not a one-week anomaly. **`cisa-kev` merged 2 vendors and orphaned 238 of 276 (86%).** **`msha` 70/528**, **`phmsa` 30/528.** ⚠️ **Nothing here is silent-failure in the B-123/B-124 sense — the data lands. The defect is that the brand-matching layer resolves almost nothing, so four sources advertised on the app's Sources screen (`src/App.jsx:4917/4925/4971` and NHTSA at `:4897`) contribute essentially nothing to any brand record.**
+>
+> 🆕📊 **NEW TODAY — V-4 IS 5× BIGGER THAN THIS BOARD RECORDS, AND THE "animalCerts IS WIRED TO SCORING" NOTE IS IMPRECISE.** Counted every `enriched.*` sub-key across all 12,830 company files: **33 distinct dimensions exist, not 7.** Then read the actual accesses in `scripts/rebake-scoring.mjs` — it references `enriched` on exactly **five lines**, and reads exactly **two dimensions**: **`enriched.execPay.payRatio` (`:142`)** and **`enriched.tax` (`:182`)** — both B-115. **Everything else moves no grade.** 🔑 **`enriched.animalCerts` is wired to a BADGE, not a grade** — `scripts/lib/index-entry.mjs:111` sets `acertB: 1` from it. Earlier notes saying it is "wired to scoring" should read "wired to the badge flag." **The 31 dark dims by brand count: `secTax` 3,415 · `supplyChain` 869 · `openfdaRecalls` 362 · `privacy` 344 · `oshaSevereInjury` 251 · `pharmaConduct` 211 · `federalContracts` 210 · `political` 80 · `msha` 70 · `secLitigation` 62 · `newsweekMrc` 58 · `cpaZicklin` 48 · `laborWages` 48 · `asYouSow` 42 · `ungc` 41 · `knowTheChain` 38 · `fdic` 38 · `cisaKev` 37 · `supply_chain` 27 · `cftc` 24 · `fedReserve` 23 · `animalCerts` 19 · `osv` 9 · `rainforestAlliance` 8 · `ferc` 7 · `githubAdvisories` 5 · `dojFcpa` 5 · `goodWeave` 4 · `cdcFoodOutbreaks` 4 · `climateNeutral` 3 · `fairTrade` 3.** ⚠️ **`secTax` at 3,415 brands is the single biggest dark dimension in the catalog and is not named in V-4's current one-line scope.** ⚠️ **Also dark and NOT under `enriched`: `phmsa` sits as a top-level key on 30 company files and is read by neither `rebake-scoring.mjs` nor `src/App.jsx` — written every week, never used.**
+>
+> 🟡 **B-101 UP TO 40 open data PRs** (39 yesterday, 39 the day before). Oldest is **#116, now 49 days**. 🚨 **Both must-not-merge landmines still open — #134 (CC-BY-NC augment B-63 stripped) and #165 (synthetic `.gov`-attributed data). Drain by hand, never in bulk, never on the title.**
+>
+> 🟡 **B-128 DRIFTED THE WRONG WAY: 389 single-line / 12,441 pretty** (was 387 / 12,443). Two more files flipped to the unmergeable format. The oscillation continues every day nobody picks a serializer.
+>
+> 📌 **Everything else unchanged.** **#155 now 37 rows** (was 36; rewritten 2026-08-17T13:52Z) — the additions are today's Monday weeklies rolling their latest run to a failure. **B-122 unchanged** — `bis-entity-list-weekly` failed again today (`31986924514`); its failure dates are now 08-03, 08-10, 08-17 against a last success of 07-27, still blocked on Aron requesting a free `api.data.gov` key. **Chronic and NOT new:** `fcc-weekly` (3 straight failures), `fsis-weekly` and `fsis-dw-weekly` (6+ straight each). 🟢 **v1.1 Build 81 stays the LIVE App Store build; next iOS ship = Build 82** — no `ios/` or `android/` changes today. Android still scaffold-only. ⚠️ **The push shipped WEB ONLY — never say "Build 81 has the C-fixes."** ⚠️ **Housekeeping: the 5 untracked `docs/` files remain, day 14.**
+>
+> 🔴 **WHAT ARON STILL OWES — unchanged at 2, but ① is now sharper:** ① **add `RESEND_API_KEY`** — **an outside subscriber has missed 3 digests, and the weekly digest is blocked by NOTHING ELSE; the secret alone turns it on.** ② **install Build 81 and scan 5 real products** — still nobody has run the shipped app. 🧭 **Next engineering work, unchanged in order: B-127 (one re-baseline unblocks every future Sunday rebake), then B-128, then V-4 — now re-scoped to 31 dark dims led by `secTax` at 3,415 brands — then B-129 and L-1/L-3/L-4.**
+>
+> ---
+>
+> **[08-16 sync] A BUSY, BAD SUNDAY. STILL ZERO HUMAN COMMITS AND ZERO GRADE MOVEMENT — BUT TWO PIPELINES FAILED TO DELIVER, AND ONE OF THEM FAILED SILENTLY.** 9 bot data commits landed on `origin/main` (`cfpb` 03:47, `lawsuits` 05:00, `cpsc` 05:18, `cruelty-free` 05:34, `doj` 07:09, `epa-echo` 08:00, `ofac-sdn` 17:50, `nhtsa` 18:17, `sec` 21:01). **None touched `public/data/index.json`**, whose last change on `origin/main` is still the push `c2c1216de` → **0 grade movement.** The clone was 9 behind at sync start; rebased cleanly to **`0 0`**, nothing lost.
 >
 > ✅ **RE-VERIFIED AT THE CDN, NOT INFERRED FROM GIT** (`curl https://www.trunorthapp.com/data/index.json`): **12,830 tracked / 2,590 graded — A 62 · B 706 · C 1,029 · D 537 · F 256**, 10,240 "?". **Identical to local and to yesterday. Local == live == 2,590 — that is the number to quote.** Spot-check held: **23andMe is still `"?"` in production.** ✅ `grep -rl "Claude AI synthesis" public/data/` → **0 files**; `sourceKind: "synthetic"` → **0 files.**
 >
@@ -294,8 +329,28 @@
   and surface in results.
 - **V-3 ✅ DONE (`1d279f5b1`) — zero-result + no-graded-result searches now logged.** The single most valuable dataset currently discarded; it becomes the
   prioritized "what to grade next" queue.
-- **V-4 — depth over breadth:** wire 1–2 dark `enriched.*` dims (supplyChain, federalContracts, privacy,
-  oshaSevereInjury) using the B-115 penalize-only template, targeting the 1,298 single-signal brands.
+- **V-4 — depth over breadth:** wire 1–2 dark `enriched.*` dims using the B-115 penalize-only template,
+  targeting the 1,298 single-signal brands.
+  🔬 **RE-SCOPED 2026-08-17 — MEASURED, NOT ESTIMATED. THE DARK SURFACE IS 5× WHAT THIS ITEM SAID.**
+  Counted every `enriched.*` sub-key across all 12,830 company files: **33 distinct dimensions exist.**
+  `scripts/rebake-scoring.mjs` mentions `enriched` on **five lines** and reads exactly **two** of them —
+  **`enriched.execPay.payRatio` (`:142`)** and **`enriched.tax` (`:182`)**, both B-115. **The other 31
+  move no grade.**
+  🔑 **Correction to carry forward: `enriched.animalCerts` is wired to a BADGE, not to scoring** —
+  `scripts/lib/index-entry.mjs:111` sets `acertB: 1` from it. Prior notes calling it "the one dim wired
+  to scoring" are imprecise; nothing but `execPay` and `tax` touches a grade.
+  📊 **Dark dims by brand count:** `secTax` **3,415** · `supplyChain` 869 · `openfdaRecalls` 362 ·
+  `privacy` 344 · `oshaSevereInjury` 251 · `pharmaConduct` 211 · `federalContracts` 210 · `political` 80 ·
+  `msha` 70 · `secLitigation` 62 · `newsweekMrc` 58 · `cpaZicklin` 48 · `laborWages` 48 · `asYouSow` 42 ·
+  `ungc` 41 · `knowTheChain` 38 · `fdic` 38 · `cisaKev` 37 · `supply_chain` 27 · `cftc` 24 ·
+  `fedReserve` 23 · `animalCerts` 19 · `osv` 9 · `rainforestAlliance` 8 · `ferc` 7 ·
+  `githubAdvisories` 5 · `dojFcpa` 5 · `goodWeave` 4 · `cdcFoodOutbreaks` 4 · `climateNeutral` 3 ·
+  `fairTrade` 3.
+  🧭 **Start with `secTax` (3,415 brands — by far the largest) and `supplyChain` (869), not the four
+  originally named here.** ⚠️ **Also dark and NOT under `enriched`: `phmsa` is a top-level key on 30
+  company files, read by neither `rebake-scoring.mjs` nor `src/App.jsx`.** ⚠️ **`supplyChain` and
+  `supply_chain` are two different keys (869 + 27) — reconcile the naming before wiring either.**
+  ⚠️ **Anything wired here is grade-moving → rule #16, Aron approves drift.**
 
 ### L — Launch (late September)
 - **L-1 — hero asset: "Your grocery aisle is 10 companies."** Interactive, free, no app required. The
@@ -312,7 +367,7 @@
   brands with ≥3 categories <1,000, stop building and keep the site as a credibility asset.
 
 ### ⛔ Blocking on Aron
-1. 🔴 **PUSH — and the ask is now BIGGER than B-115.** As of 2026-08-11 the clone is **73 behind / 15 ahead**, and the pile carries **three** payloads: **B-115 Pay & Tax** (`3bdae9815`, day 9 — the live site still scores the old model), **C-1** (`b8f529575`), and **C-2** (`3c503eca1`). ⚠️ **C-1 and C-2 fix false claims the live site is publishing about named real companies — every day unpushed is another day those pages serve a fabricated F and a false pay ratio.** Sequence: rebase → **re-run the rebake (mandatory, not optional — the 08-09 rebake moved 4 grades B-115 has never seen)** → expected end state **3,066 graded** (38 tax downgrades + 6 new-D + the 4 CPPA privacy moves). That count is the acceptance test.
+1. ✅ **PUSH — DONE 2026-08-14 (`c2c1216de`). STALE ITEM, CLOSED 2026-08-17.** The 12-commit pile (B-115 ×2, C-1…C-6, V-1, V-2/V-3, B-121, L-2) was rebased onto 84 bot commits and pushed; CI ran and passed (`31798426525`); production serves **12,830 tracked / 2,590 graded**, verified at the CDN. ⚠️ **The old text here still said "73 behind / 15 ahead" and predicted "3,066 graded" — both were superseded three days ago. The shipped number is 2,590; the clone is 0 ahead.** ⚠️ **The push shipped WEB ONLY — Build 81 does not contain the C-fixes.**
 2. **Install Build 81 and scan 5 real products** — nobody has ever run the shipped app; every UX claim in
    the review is read from source code.
 3. **App Store Connect** — confirm the category/name/keyword findings and make (or delegate) the edits.
@@ -418,9 +473,19 @@
   `gh secret list` (2026-08-16) returns the same 7 secrets and **no `RESEND_API_KEY`**. Today's Sunday
   send produced nothing for **two independent reasons**: **(a)** the secret is still absent, and
   **(b)** **B-127 killed `score-rebake-weekly` at step 9, so step 11 `Notify-me` never ran at all.**
-  ⚠️ **Both must be fixed for a send to happen — adding the secret alone will NOT produce an email while
-  B-127 blocks the workflow.** ⚠️ **Report this as an ongoing outage with a miss count, not as a new
-  countdown to the next Sunday; the countdown framing has now failed twice to produce action.**
+  🔑 **REFINED 2026-08-17 FROM THE ACTUAL LOG — the "both blockers" framing was too broad and is corrected
+  here.** `weekly-digest` run **`31964140063`** (2026-08-16 18:00Z) is a **separate workflow** from the
+  rebake's `Notify-me` step (`.github/workflows/weekly-digest.yml:28`, Sunday 18:00 UTC), it is **NOT
+  blocked by B-127**, and it **ran to completion.** It resolved **`4 active subscriber(s)`** from
+  MailerLite and printed `✅ Weekly digest sent: 0 delivered, 4 failed.` with each recipient annotated
+  **`RESEND_API_KEY not set`**, then `❌ Every send failed — failing the job` and `exit 1`.
+  🚨 **One of the four is a real third party — `jlougee24@live.com` — who has now missed three weekly
+  digests.** ✅ **So: the secret ALONE turns the weekly digest back on.** ⚠️ **What B-127 still costs is
+  content accuracy, not delivery: `public/data/weekly_changes.json` was last written 2026-08-09 by
+  `247dd4c87`, so a digest sent today would carry 8-day-old change claims. Fix B-127 too — for the
+  content, not to unblock the send.** ⚠️ **`Notify-me` (inside `score-rebake-weekly`, step 11) DOES need
+  both.** ⚠️ **Report this as an ongoing outage with a miss count, not as a new countdown to the next
+  Sunday; the countdown framing has now failed twice to produce action.**
   ✅ **Decision (b) executed.** Delivery moved off MailerLite campaigns to **Resend** behind a new
   `scripts/lib/send-email.mjs`; **MailerLite stays the list store** (signup was never broken).
   `send-weekly-digest.mjs` and `notify-newly-graded.mjs` both rewritten onto it, and
@@ -522,6 +587,30 @@
   regenerated push silently arms this same failure a week later. Worth a follow-up assertion in
   `scripts/data-integrity.test.mjs` so a stale baseline fails CI at push time rather than on Sunday.
 
+- **B-129 🟡 NEW 2026-08-17 — four weekly sources fetch real records and match almost no brands, while
+  reporting success. The pipelines work; the brand-matching layer does not.**
+  *(WS-B, M — fix the matcher/alias table, or stop advertising the source)*
+  **What happened.** Read from the merge logs on `origin/main`, not from run statuses:
+  **`ntsb-weekly` merged 0 of 528 brands** (`public/data/_meta/ntsb-merge-log.json`, 2026-08-17T17:31Z —
+  `merged_count: 0 · skipped_count: 528 · orphan_count: 0 · error_count: 0`) while committing a
+  **1,058-line refresh** of `public/data/ntsb-accidents.json`. **The 2026-08-10 log is identical, so this
+  is structural, not a bad week.** **`cisa-kev` merged 2 vendors and orphaned 238 of 276 (86%).**
+  **`msha` merged 70/528. `phmsa` merged 30/528.**
+  **Why it matters.** All four are advertised to users on the app's Sources screen —
+  `src/App.jsx:4917` (PHMSA), `:4925` (MSHA), `:4971` (NTSB), plus NHTSA at `:4897` — as part of the
+  "100 public-records sources" claim, while contributing essentially nothing to any brand record. On a
+  product whose entire pitch is checkability, an advertised source that resolves to zero brands is a
+  credibility exposure, not just wasted compute.
+  ⚠️ **This is NOT a silent-failure bug — keep it separate from B-123/B-124.** The fetch succeeds, the
+  merge runs, the commit lands. The defect is that operator/vendor names in these federal datasets
+  (mine operators, pipeline operators, NTSB parties, CVE vendors) do not resolve to catalog slugs.
+  **Fix shape.** Sample 20 unmatched `orphan` names per source and check whether the miss is a missing
+  alias (fixable via `brand-parent-map.json`, the V-1 machinery) or a genuine non-consumer entity
+  (in which case the honest move is to drop the source from the Sources screen). **Decide per source —
+  NTSB at 0/528 is the one most likely to be genuinely inapplicable to a consumer-brand catalog.**
+  ⚠️ **Related but distinct: `phmsa` also writes a top-level key on 30 company files that nothing reads
+  (see V-4). Matching more brands into a key no consumer of the data reads changes nothing on its own.**
+
 - **B-128 🟡 NEW 2026-08-16 — two JSON serializers are fighting over `public/data/companies/`, which
   causes unmergeable whole-file conflicts (the likely upstream driver of B-124) and unreadable diffs.**
   *(WS-B, M — pick one format and enforce it in the writers)*
@@ -587,6 +676,17 @@
   snapshot it read is `sourceKind: "synthetic"` (or when the fetch soft-failed) — a soft-fail should
   keep the last-known-good augment too, not regenerate one from the fixture. Also worth a sweep:
   any other fetcher carrying `--keep-last-on-fail` that still runs its merge unconditionally.
+- **B-125 🔴 CONFIRMED RECURRING 2026-08-17 — third consecutive Monday, same three crons, same step.**
+  The Monday weeklies ran again today and all three were killed inside the **fetch** step with every
+  later step skipped: **`faa-weekly` `32018127077` — 1,815s** · **`fra-weekly` `32025687480` — 1,816s** ·
+  **`gdelt-weekly` `32027864201` — 5,416s.** Each is within ~16s of its configured `timeout-minutes`.
+  **Kill dates: 08-03, 08-10, 08-17.** ⚠️ **This item is no longer "awaiting evidence" — it is a proven
+  weekly-recurring failure with three clean data points, and every Monday it stays open is another week
+  of FAA, FRA and GDELT data never collected.** 🔑 **`faa-weekly`'s single lifetime success finished with
+  37s of margin, so raising the cap at `.github/workflows/faa-weekly.yml:25` remains the calibrated
+  one-line fix.** ⚠️ **`fra-weekly` and `gdelt-weekly` have never succeeded once — for those, a higher cap
+  is a guess, not a calibrated fix; profile the fetch before changing the number.**
+
 - **B-125 🔬 NEW 2026-08-11 — the residual `timeout-minutes` kills are PROVEN, and `faa-weekly` has a
   calibrated one-line fix while `fra`/`gdelt` have never once completed.** *(WS-B, S for `faa` / M for the
   other two; no grade impact until they first succeed — then see [[data-crons-can-move-grades]])*
