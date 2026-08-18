@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-11T10:52:28.365Z",
+  "generated_at": "2026-08-18T10:28:31.455Z",
   "smoke_mode": false,
   "brand_count": 528,
   "with_enforcement_count": 0,
@@ -339,22 +339,22 @@
       "status": "edos_unreachable",
       "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
       "bank_cert_numbers": [
-        34585,
         28818,
+        34585,
         26325
       ],
       "bank_names": [
         {
-          "cert": 34585,
-          "name": "Pacific Crest Bank",
-          "state": "WA",
+          "cert": 28818,
+          "name": "Crest Savings Bank",
+          "state": "NJ",
           "active": 1,
           "bkclass": "SI"
         },
         {
-          "cert": 28818,
-          "name": "Crest Savings Bank",
-          "state": "NJ",
+          "cert": 34585,
+          "name": "Pacific Crest Bank",
+          "state": "WA",
           "active": 1,
           "bkclass": "SI"
         },
@@ -938,8 +938,7 @@
       "status": "edos_unreachable",
       "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
       "bank_cert_numbers": [
-        9261,
-        1018
+        9261
       ],
       "bank_names": [
         {
@@ -948,13 +947,6 @@
           "state": "IL",
           "active": 0,
           "bkclass": "NM"
-        },
-        {
-          "cert": 1018,
-          "name": "M&I Bank of Burlington",
-          "state": "WI",
-          "active": 0,
-          "bkclass": "SM"
         }
       ]
     },
@@ -2010,8 +2002,8 @@
         10600,
         32906,
         4768,
-        17438,
-        9575
+        9575,
+        17438
       ],
       "bank_names": [
         {
@@ -2078,17 +2070,17 @@
           "bkclass": "N"
         },
         {
-          "cert": 17438,
-          "name": "First National Bank of America",
-          "state": "MI",
-          "active": 1,
-          "bkclass": "N"
-        },
-        {
           "cert": 9575,
           "name": "Bank of America Utah, National Association",
           "state": "UT",
           "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 17438,
+          "name": "First National Bank of America",
+          "state": "MI",
+          "active": 1,
           "bkclass": "N"
         }
       ]
@@ -2109,10 +2101,8 @@
         1230,
         26983,
         27930,
-        18694,
         14533,
-        13849,
-        16309,
+        18694,
         16853,
         19501,
         27076,
@@ -2121,9 +2111,11 @@
         4448,
         5208,
         5457,
-        15277,
         2843,
-        3667
+        13849,
+        16309,
+        2210,
+        15277
       ],
       "bank_names": [
         {
@@ -2197,13 +2189,6 @@
           "bkclass": "N"
         },
         {
-          "cert": 18694,
-          "name": "Wells Fargo Bank Wisconsin, National Association",
-          "state": "WI",
-          "active": 0,
-          "bkclass": "N"
-        },
-        {
           "cert": 14533,
           "name": "Wells Fargo Bank Texas, National Association",
           "state": "TX",
@@ -2211,16 +2196,9 @@
           "bkclass": "N"
         },
         {
-          "cert": 13849,
-          "name": "Wells Fargo Bank Indiana, National Association",
-          "state": "IN",
-          "active": 0,
-          "bkclass": "N"
-        },
-        {
-          "cert": 16309,
-          "name": "Wells Fargo Bank Montana, National Association",
-          "state": "MT",
+          "cert": 18694,
+          "name": "Wells Fargo Bank Wisconsin, National Association",
+          "state": "WI",
           "active": 0,
           "bkclass": "N"
         },
@@ -2281,13 +2259,6 @@
           "bkclass": "N"
         },
         {
-          "cert": 15277,
-          "name": "Wells Fargo Bank South Dakota, National Association",
-          "state": "SD",
-          "active": 0,
-          "bkclass": "N"
-        },
-        {
           "cert": 2843,
           "name": "Wells Fargo Bank of Arizona, National Association",
           "state": "AZ",
@@ -2295,9 +2266,30 @@
           "bkclass": "N"
         },
         {
-          "cert": 3667,
-          "name": "Wells Fargo Bank Illinois, National Association",
-          "state": "IL",
+          "cert": 13849,
+          "name": "Wells Fargo Bank Indiana, National Association",
+          "state": "IN",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 16309,
+          "name": "Wells Fargo Bank Montana, National Association",
+          "state": "MT",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 2210,
+          "name": "Wells Fargo Bank Wyoming, National Association",
+          "state": "WY",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 15277,
+          "name": "Wells Fargo Bank South Dakota, National Association",
+          "state": "SD",
           "active": 0,
           "bkclass": "N"
         }
