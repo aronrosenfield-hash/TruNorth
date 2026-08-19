@@ -6,9 +6,33 @@
 >
 > **🟢 LAUNCHED — Jun 23, 2026 · 2:01 AM CDT** (App Store · id `6775301458` · `https://apps.apple.com/app/id6775301458` · PH launched). **CURRENT LIVE BUILD = v1.1 Build 81** (approved 2026-07-08, released Manual **2026-07-14**) — it superseded v1.0 Build 75, which was live Jun 23 → Jul 14. **Next iOS ship = Build 82.** *(The 2026-06-11 "date is soft, get it right" call held through the Compass redesign; the experience shipped on the locked date. Go-live runbook: `docs/LAUNCH_DAY.md`.)*
 >
-> **Last updated:** 2026-08-17 23:15 CDT (daily doc-sync, covering **2026-08-17**).
+> **Last updated:** 2026-08-18 23:10 CDT (daily doc-sync, covering **2026-08-18**).
 >
-> 📌 **A QUIET MACHINE DAY THAT PRODUCED THE SHARPEST EMAIL EVIDENCE YET — AND EXPOSED THAT V-4 IS FIVE TIMES BIGGER THAN THIS BOARD SAYS.** 6 bot data commits landed on `origin/main` (`cisa-kev` 04:06, `news` 05:43, `msha` 15:38, `ntsb` 17:31, `ofac-sdn` 17:58, `phmsa` 19:34). **Zero human commits. Zero code changes** — the diff touches nothing under `src/`, `scripts/`, `ios/`, `android/`, `.github/workflows/` or `package.json` (verified by `git diff --name-only`). **`public/data/index.json` untouched → 0 grade movement.** The clone was 6 behind at sync start; rebased cleanly, nothing lost.
+> 📌 **ANOTHER ZERO-CODE MACHINE DAY — BUT IT FOUND A SECOND, SEPARATE CLASS OF DEAD DATA, AND ONE CRON THAT COMMITS NOTHING BUT A TIMESTAMP.** 6 bot data commits landed on `origin/main` (`news` 05:36, `fdic` 10:28, `finra` 11:05, `nrc` 17:07, `occ` 17:50, `ofac-sdn` 17:57). **Zero human commits. Zero code changes** — the diff touches nothing under `src/`, `scripts/`, `ios/`, `android/`, `.github/workflows/` or `package.json` (verified by `git diff --name-only ebc53d801..5e44daf2a`). **`public/data/index.json` untouched → 0 grade movement** (its last change on `origin/main` is still the 08-14 push `c2c1216de`). The clone was 6 behind at sync start; fast-forwarded cleanly to `0 0`, nothing lost. **Every one of today's 8 workflow runs reported `success` — no new cron failures.**
+>
+> ✅ **RE-VERIFIED AT THE CDN, NOT INFERRED FROM GIT** (`curl https://www.trunorthapp.com/data/index.json`): **12,830 tracked / 2,590 graded — A 62 · B 706 · C 1,029 · D 537 · F 256**, 10,240 "?". **Byte-identical to local and to the last four days. Quote 2,590.** ✅ `grep -rl "Claude AI synthesis" public/data/` → **0 files**; `sourceKind: "synthetic"` → **0 files.**
+>
+> 🆕🕳️🚨 **NEW TODAY — B-130: `nrc-weekly` IS NOT A MATCHING PROBLEM. IT COMMITS A TIMESTAMP AND NOTHING ELSE, EVERY WEEK, AND REPORTS SUCCESS.** This is a *different and worse* failure than B-129 and deserves its own line. Run `32163102119` → `success`, commit `e765b7e7b`. **The entire commit is 2 files and 7 changed lines.** `public/data/nrc-events.json` says **`operator_count: 5`, `with_records_count: 0`** — and every one of the 5 operators has **empty `sample_events`, empty `sample_violations`, empty `top_action_types`.** The diff is **literally nothing but `generated_at` and five `scraped_at` timestamps rolling forward.** The merge log confirms the consequence: **`total_brands: 5 · merged_count: 0 · skipped: 5 · orphan_count: 0 · merged_brands: []`.** 🔑 **Two things separate this from B-129:** ① **the universe is 5 operators, not 528** — NRC was scoped to nuclear utilities only; ② **there are ZERO orphans**, which means nothing failed to match — **there was nothing to match, because the fetch returns no records at all.** ⚠️ **So the alias/matcher fix prescribed for B-129 would do nothing here. The upstream scrape is returning empty and the job still exits 0.** 🚨 **It is advertised to users at `src/App.jsx:4918` ("NRC Event Reports … enforcement actions per nuclear utility").**
+>
+> 🆕📊🕳️ **NEW TODAY — THE DARK-DATA PROBLEM IS BIGGER THAN `enriched.*`. THERE IS A SECOND CLASS: TOP-LEVEL COMPANY-FILE KEYS THAT NOTHING READS.** Yesterday's V-4 count (33 `enriched.*` dims, only 2 scored) was correct but **incomplete** — it only looked under `enriched`. Today's `finra` and `occ` merges write **top-level** keys instead, so they were invisible to that count. Verified by grep across the whole repo: **`finra`, `occ`, `nrc` and `phmsa` have 0 references in `scripts/rebake-scoring.mjs`, 0 in `scripts/lib/index-entry.mjs`, and appear in `src/App.jsx` ONLY inside the static Sources array** (`:4884` FINRA, `:4881` OCC, `:4918` NRC, `:4917` PHMSA) — that array is a citation list, not a data consumer. **Counted across all 12,830 company files: `finra` 92 · `phmsa` 30 · `occ` 14 = 136 top-level key placements with zero consumers.** ⚠️ **Method correction for V-4: enumerate ALL company-file keys, not just `enriched.*`, or the scope will keep under-counting. The two classes together are 31 dark `enriched` dims + at least 3 dark top-level keys.**
+>
+> 🕳️ **B-129 EXPANDS FROM 4 SOURCES TO 7 — TODAY'S THREE BANKING/FINANCE WEEKLIES ARE THE SAME DEFECT.** From today's merge logs on `origin/main`, not run statuses: **`fdic` merged 0 of 528** (`merged_partial_count: 38 · skipped: 483 · orphan: 7`) — and **the 08-11 log is identical (`merged 0 · partial 38`), so this is structural, not a bad week**; **`occ` merged 14 of 528** (skipped 511, orphan 3); **`finra` merged 93 of 528** (skipped 421, orphan 14) — the best match rate of any B-129 source so far, and still under 18%. **Running list: `ntsb` 0/528 · `fdic` 0/528 (38 partial) · `occ` 14/528 · `phmsa` 30/528 · `msha` 70/528 · `finra` 93/528 · `cisa-kev` 2 vendors with 238/276 orphaned.** ⚠️ **`fdic` is the interesting one — `merged_count: 0` but `merged_partial_count: 38`, so its 38 writes land under `enriched.fdic` via a partial path. Any fix must read BOTH counters; `merged_count` alone reads as a total failure when 38 files were in fact written.**
+>
+> 🔴 **B-127 UNCHANGED AND STILL ARMED FOR SUNDAY 2026-08-23.** `public/data/_meta/grade-snapshot.json` is byte-identical to the last three days: **`takenAt 2026-08-09T17:00:25.665Z`, 3,060 entries**, still last written by `247dd4c87` on 08-09 — the pre-push catalog. **Nothing was re-baselined today. The next rebake will fail at step 9 the same way and discard its own output again.** Still the highest-leverage open fix on the board.
+>
+> ✅ **`data(news)` FOR 08-18 LANDED** (`2e421f956`, run `32102061878` — 20,180 insertions across 12 files). **Lost nights stand at 08-02, 08-09, 08-16 — 3 in 17 days, unchanged.** 🚨 **Two green nights is not recovery.** The 08-10→08-15 six-night streak was broken immediately afterwards; B-124 is a race that looks healthy most days. **Only the commit series is evidence: `git log origin/main --grep='data(news)'`.**
+>
+> 🟡 **B-101 FLAT AT 40 open data PRs** (40 yesterday, 39 the day before). Oldest is **#116, now 50 days**. 🚨 **Both must-not-merge landmines still open — #134 (CC-BY-NC augment B-63 stripped) and #165 (synthetic `.gov`-attributed data). Drain by hand, never in bulk, never on the title.**
+>
+> 🟢 **B-128 HELD FLAT TODAY: 389 single-line / 12,441 pretty** — identical to yesterday. **Today's four merge crons rewrote only files that were already single-line, so nothing new flipped.** ⚠️ **Do not read this as stabilizing — the split has oscillated every day the crons touch a prettified file, and no serializer has been chosen. Flat for one day is noise, not a trend.**
+>
+> 📌 **Everything else unchanged.** **#155 still 37 rows** (rewritten 2026-08-18T13:56Z) — same set as yesterday; today's runs were all green so nothing cleared and nothing was added. **B-122 unchanged** — `bis-entity-list-weekly` is a Monday weekly, last failed 08-17 (`31986924514`); failures 08-03, 08-10, 08-17 vs last success 07-27, still blocked on Aron requesting a free `api.data.gov` key. **B-125 unchanged** — `faa`/`fra`/`gdelt` are Monday weeklies; **next evidence Monday 2026-08-24.** **Chronic and NOT new:** `fcc-weekly` (3 straight failures), `fsis-weekly` and `fsis-dw-weekly` (6+ straight each). 🟢 **v1.1 Build 81 stays the LIVE App Store build; next iOS ship = Build 82** — repo confirms `CURRENT_PROJECT_VERSION = 81`, `MARKETING_VERSION = 1.1`, no `ios/` or `android/` changes today. Android still scaffold-only. ⚠️ **The push shipped WEB ONLY — never say "Build 81 has the C-fixes."** ⚠️ **Housekeeping: the 5 untracked `docs/` files remain, day 15.**
+>
+> 🔴 **WHAT ARON STILL OWES — unchanged at 2:** ① **add `RESEND_API_KEY`** — `gh secret list` today returns the same **7** secrets and no Resend key; **an outside subscriber (`jlougee24@live.com`) has missed 3 digests, and the weekly digest is blocked by NOTHING ELSE — the secret alone turns it on.** ② **install Build 81 and scan 5 real products** — still nobody has run the shipped app. 🧭 **Next engineering work: B-127 (one re-baseline unblocks every future Sunday rebake), then B-128, then V-4 — now re-scoped to 31 dark `enriched` dims led by `secTax` at 3,415 brands PLUS the newly-found top-level dark keys — then B-129/B-130 and L-1/L-3/L-4.**
+>
+> ---
+>
+> **[08-17 sync]** 📌 **A QUIET MACHINE DAY THAT PRODUCED THE SHARPEST EMAIL EVIDENCE YET — AND EXPOSED THAT V-4 IS FIVE TIMES BIGGER THAN THIS BOARD SAYS.** 6 bot data commits landed on `origin/main` (`cisa-kev` 04:06, `news` 05:43, `msha` 15:38, `ntsb` 17:31, `ofac-sdn` 17:58, `phmsa` 19:34). **Zero human commits. Zero code changes** — the diff touches nothing under `src/`, `scripts/`, `ios/`, `android/`, `.github/workflows/` or `package.json` (verified by `git diff --name-only`). **`public/data/index.json` untouched → 0 grade movement.** The clone was 6 behind at sync start; rebased cleanly, nothing lost.
 >
 > ✅ **RE-VERIFIED AT THE CDN, NOT INFERRED FROM GIT** (`curl https://www.trunorthapp.com/data/index.json`): **12,830 tracked / 2,590 graded — A 62 · B 706 · C 1,029 · D 537 · F 256**, 10,240 "?". **Identical to local and to the last three days. Quote 2,590.**
 >
@@ -347,9 +371,23 @@
   `githubAdvisories` 5 · `dojFcpa` 5 · `goodWeave` 4 · `cdcFoodOutbreaks` 4 · `climateNeutral` 3 ·
   `fairTrade` 3.
   🧭 **Start with `secTax` (3,415 brands — by far the largest) and `supplyChain` (869), not the four
-  originally named here.** ⚠️ **Also dark and NOT under `enriched`: `phmsa` is a top-level key on 30
-  company files, read by neither `rebake-scoring.mjs` nor `src/App.jsx`.** ⚠️ **`supplyChain` and
-  `supply_chain` are two different keys (869 + 27) — reconcile the naming before wiring either.**
+  originally named here.** ⚠️ **`supplyChain` and `supply_chain` are two different keys (869 + 27) —
+  reconcile the naming before wiring either.**
+  🆕🕳️ **SCOPE CORRECTION 2026-08-18 — THERE IS A SECOND CLASS OF DARK DATA, AND THE 08-17 COUNT MISSED
+  IT ENTIRELY.** The count above enumerated sub-keys **under `enriched` only**. Several crons write
+  **top-level** company-file keys instead, so they never appeared in it. Verified by grep across the
+  repo: **`finra`, `occ`, `nrc` and `phmsa` have 0 references in `scripts/rebake-scoring.mjs` and 0 in
+  `scripts/lib/index-entry.mjs`**, and appear in `src/App.jsx` **only inside the static Sources array**
+  (`:4884` FINRA, `:4881` OCC, `:4918` NRC, `:4917` PHMSA) — **that array is a citation list, not a data
+  consumer.** **Counted across all 12,830 company files: `finra` 92 · `phmsa` 30 · `occ` 14 = 136
+  top-level key placements with zero consumers.**
+  ⚠️ **METHOD RULE: enumerate EVERY company-file key, not just `enriched.*`, or this scope keeps
+  under-counting.** Current known total: **31 dark `enriched` dims + at least 3 dark top-level keys**,
+  plus the display-only datasets (`nhtsa-auto.json`, `ntsb-accidents.json`) that never enter a company
+  file at all.
+  ⚠️ **Sequencing note vs B-129/B-130: matching more brands into a key nothing reads changes nothing.**
+  Wiring a consumer and fixing the matcher are two halves of the same fix — **decide the consumer
+  first**, otherwise B-129 work produces better-populated dead keys.
   ⚠️ **Anything wired here is grade-moving → rule #16, Aron approves drift.**
 
 ### L — Launch (late September)
@@ -587,8 +625,35 @@
   regenerated push silently arms this same failure a week later. Worth a follow-up assertion in
   `scripts/data-integrity.test.mjs` so a stale baseline fails CI at push time rather than on Sunday.
 
-- **B-129 🟡 NEW 2026-08-17 — four weekly sources fetch real records and match almost no brands, while
-  reporting success. The pipelines work; the brand-matching layer does not.**
+- **B-130 🔴 NEW 2026-08-18 — `nrc-weekly` commits a timestamp and nothing else, every week, and
+  reports `success`. The scrape returns zero records; this is NOT the B-129 matcher defect.**
+  *(WS-B, S — fix or retire the NRC fetcher; do NOT prescribe the B-129 alias fix here)*
+  **What happened.** Run `32163102119` → `success`; commit `e765b7e7b` is **2 files, 7 changed lines.**
+  `public/data/nrc-events.json` reports **`operator_count: 5`, `with_records_count: 0`**, and all five
+  operators carry **empty `sample_events`, empty `sample_violations`, empty `top_action_types`**. The
+  diff contains **only `generated_at` plus five `scraped_at` timestamps rolling forward** — verified by
+  reading `git show e765b7e7b -- public/data/nrc-events.json`, not inferred. `public/data/_meta/nrc-merge-log.json`
+  closes it: **`total_brands: 5 · merged_count: 0 · skipped_count: 5 · orphan_count: 0 · merged_brands: []`.**
+  🔑 **Two facts separate this from B-129.** ① **The universe is 5 operators, not 528** — NRC was scoped
+  to nuclear utilities only, so a low absolute number was always expected. ② **`orphan_count` is 0**,
+  meaning *nothing failed to match* — **there was nothing to match, because the fetch produced no
+  records at all.** ⚠️ **Therefore the alias/`brand-parent-map.json` fix prescribed for B-129 would
+  change nothing here. The defect is upstream in the fetcher (or the NRC endpoint), and the job still
+  exits 0 on an empty result — the same "green cron proves nothing" family as B-123/B-124/B-126,
+  though with a different mechanism.**
+  **Why it matters.** It is advertised to users at **`src/App.jsx:4918`** ("NRC Event Reports … event
+  notification reports + enforcement actions per nuclear utility") as part of the "100 public-records
+  sources" claim, while contributing literally nothing. It also burns a weekly commit that makes the
+  data log look busier than it is.
+  **Fix shape.** Run the NRC fetcher locally and see whether the endpoint returns records at all
+  (**B-122's lesson: reproduce off-runner before rewriting any URL**). If it does, the parser is broken;
+  if it does not, the source moved and the honest move is to retire it from the Sources screen. Either
+  way **add a non-empty assertion so a zero-record fetch fails the job instead of committing a
+  timestamp.**
+
+- **B-129 🟡 NEW 2026-08-17, EXPANDED 2026-08-18 to SEVEN sources — weekly sources fetch real records
+  and match almost no brands, while reporting success. The pipelines work; the brand-matching layer
+  does not.**
   *(WS-B, M — fix the matcher/alias table, or stop advertising the source)*
   **What happened.** Read from the merge logs on `origin/main`, not from run statuses:
   **`ntsb-weekly` merged 0 of 528 brands** (`public/data/_meta/ntsb-merge-log.json`, 2026-08-17T17:31Z —
@@ -596,20 +661,36 @@
   **1,058-line refresh** of `public/data/ntsb-accidents.json`. **The 2026-08-10 log is identical, so this
   is structural, not a bad week.** **`cisa-kev` merged 2 vendors and orphaned 238 of 276 (86%).**
   **`msha` merged 70/528. `phmsa` merged 30/528.**
-  **Why it matters.** All four are advertised to users on the app's Sources screen —
-  `src/App.jsx:4917` (PHMSA), `:4925` (MSHA), `:4971` (NTSB), plus NHTSA at `:4897` — as part of the
-  "100 public-records sources" claim, while contributing essentially nothing to any brand record. On a
-  product whose entire pitch is checkability, an advertised source that resolves to zero brands is a
-  credibility exposure, not just wasted compute.
+  **🆕 Three more found 2026-08-18 — the banking/finance weeklies are the same defect.**
+  **`fdic` merged 0 of 528** (`merged_partial_count: 38 · skipped: 483 · orphan: 7`, 2026-08-18T10:28Z) —
+  **and the 08-11 log is identical (`merged 0 · partial 38`), so structural here too.**
+  **`occ` merged 14 of 528** (skipped 511, orphan 3). **`finra` merged 93 of 528** (skipped 421,
+  orphan 14) — **the best rate of any B-129 source and still under 18%.**
+  ⚠️ **`fdic` needs BOTH counters read.** `merged_count: 0` alongside `merged_partial_count: 38` means
+  38 files *were* written, via a partial path, under `enriched.fdic`. **Judging `fdic` on `merged_count`
+  alone reads as a total failure when it is not.** No other B-129 source emits a `partial` counter.
+  **Running list (merged / attempted):** `ntsb` 0/528 · `fdic` 0/528 (+38 partial) · `occ` 14/528 ·
+  `phmsa` 30/528 · `msha` 70/528 · `finra` 93/528 · `cisa-kev` 2 vendors, 238/276 orphaned.
+  **Why it matters.** All are advertised to users on the app's Sources screen —
+  `src/App.jsx:4917` (PHMSA), `:4925` (MSHA), `:4971` (NTSB), `:4884` (FINRA), `:4881` (OCC), plus
+  NHTSA at `:4897` — as part of the "100 public-records sources" claim, while contributing essentially
+  nothing to any brand record. On a product whose entire pitch is checkability, an advertised source
+  that resolves to zero brands is a credibility exposure, not just wasted compute.
   ⚠️ **This is NOT a silent-failure bug — keep it separate from B-123/B-124.** The fetch succeeds, the
   merge runs, the commit lands. The defect is that operator/vendor names in these federal datasets
-  (mine operators, pipeline operators, NTSB parties, CVE vendors) do not resolve to catalog slugs.
+  (mine operators, pipeline operators, NTSB parties, CVE vendors, bank charters, broker-dealers) do not
+  resolve to catalog slugs.
+  ⚠️ **Keep B-130 (`nrc`) OUT of this item.** NRC reports `orphan_count: 0` on a 5-operator universe
+  with zero fetched records — nothing failed to match, so the alias fix below does not apply to it.
   **Fix shape.** Sample 20 unmatched `orphan` names per source and check whether the miss is a missing
   alias (fixable via `brand-parent-map.json`, the V-1 machinery) or a genuine non-consumer entity
   (in which case the honest move is to drop the source from the Sources screen). **Decide per source —
-  NTSB at 0/528 is the one most likely to be genuinely inapplicable to a consumer-brand catalog.**
-  ⚠️ **Related but distinct: `phmsa` also writes a top-level key on 30 company files that nothing reads
-  (see V-4). Matching more brands into a key no consumer of the data reads changes nothing on its own.**
+  NTSB at 0/528 is the one most likely to be genuinely inapplicable to a consumer-brand catalog, and
+  FINRA/OCC/FDIC are the most likely to be fixable, since bank and broker-dealer names map cleanly onto
+  catalog slugs the app already carries.**
+  ⚠️ **Related but distinct: matching more brands into a key that no consumer of the data reads changes
+  nothing on its own. `phmsa` (30 files), `finra` (92) and `occ` (14) all write TOP-LEVEL keys that
+  neither `rebake-scoring.mjs` nor `index-entry.mjs` reads — see V-4.**
 
 - **B-128 🟡 NEW 2026-08-16 — two JSON serializers are fighting over `public/data/companies/`, which
   causes unmergeable whole-file conflicts (the likely upstream driver of B-124) and unreadable diffs.**
