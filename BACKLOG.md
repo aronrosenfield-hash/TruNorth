@@ -6,7 +6,35 @@
 >
 > **🟢 LAUNCHED — Jun 23, 2026 · 2:01 AM CDT** (App Store · id `6775301458` · `https://apps.apple.com/app/id6775301458` · PH launched). **CURRENT LIVE BUILD = v1.1 Build 81** (approved 2026-07-08, released Manual **2026-07-14**) — it superseded v1.0 Build 75, which was live Jun 23 → Jul 14. **Next iOS ship = Build 82.** *(The 2026-06-11 "date is soft, get it right" call held through the Compass redesign; the experience shipped on the locked date. Go-live runbook: `docs/LAUNCH_DAY.md`.)*
 >
-> **Last updated:** 2026-08-19 22:15 CDT (daily doc-sync, covering **2026-08-19**).
+> **Last updated:** 2026-08-20 18:55 CDT (daily doc-sync, covering **2026-08-20**).
+>
+> 🆕📊🚨 **THE FIRST USER-VISIBLE DATA CHANGE SINCE THE 08-14 PUSH — AND IT CAME FROM A CRON THAT HAD NEVER RUN BEFORE.** `irs990pf-annual` fired at 14:19Z (run `32379403648`, `success`, commit `1fc8dc7e7`) and it is **the only run in that workflow's entire lifetime** — `gh run list --workflow=irs990pf-annual.yml -L 20` returns exactly one row. Its schedule is `"40 13 20 8 *"` — **once a year, August 20.** 🔑 **It is NOT a B-123 victim:** it stages `data/derived/…` and `public/data/companies/` (both tracked), so `git add` succeeded and the commit landed. **3 bot commits total today** — `news` 05:37Z `9d179d6cd`, `charity` 14:19Z `1fc8dc7e7`, `ofac-sdn` 17:59Z `032908800`. **5 workflow runs, all 5 `success`.** **Zero human commits. Zero code changes** — `git diff --name-only 51793c171..HEAD` touches only `public/data/companies/` (53), `public/data/news/` (3), `data/derived/` (2), `data/raw/ofac-sdn/` (1); nothing under `src/`, `scripts/`, `ios/`, `android/`, `.github/workflows/` or `package.json`. The clone was 3 behind at sync start; rebased cleanly to `0 0`, nothing lost.
+>
+> 🔴🧭 **THE HEALTH CHECK THIS BOARD HAS USED FOR FIVE DAYS JUST BROKE — AND IT IS BENIGN. STOP COMPARING LOCAL `index.json` TO THE CDN.** Today the CDN copy and the repo copy are **no longer byte-identical** (cdn 9,989,042 bytes vs local 9,989,382; md5 `21aac7da8…` vs `411e9271…`). **This is NOT drift, corruption, or a failed deploy.** 🔑 **`package.json:build` is `node scripts/rebuild-bundle-index.mjs && node scripts/generate-sitemap.mjs && vite build`, and `scripts/rebuild-bundle-index.mjs:25` writes `public/data/index.json` — so the DEPLOY regenerates the index from the per-company files.** The charity cron rewrote 53 company files; the deploy rebuilt the index from them; the repo's checked-in `index.json` is still the 08-14 artifact (`c2c1216de`, unchanged). **Consequence: the repo file is a stale build input, and only the CDN copy describes what users have.** ✅ **The standing rule is now doubly correct — verify the catalog at the CDN, never from git — but the "byte-identical to local" clause must be dropped from every future sync. A mismatch is expected any day a cron rewrites company files.**
+>
+> ✅ **CATALOG COUNTS HELD — RE-VERIFIED AT THE CDN** (`curl https://www.trunorthapp.com/data/index.json`): **12,830 tracked / 2,590 graded — A 62 · B 706 · C 1,029 · D 537 · F 256**, 10,240 "?". **Quote 2,590.** Local parses to the identical distribution. ✅ `grep -rl "Claude AI synthesis" public/data/` → **0 files**; `sourceKind: "synthetic"` → **0 files.** ✅ **IRS 990-PF provenance is clean — no B-63-class licence trap:** the augment header reads `"US Government work — public domain. IRS EO BMF + SOI 990-PF extract."`, `_source_url` is `irs.gov/statistics/soi-tax-stats-annual-extract-of-tax-exempt-organization-financial-data`.
+>
+> 📊 **EXACTLY WHAT THE CHARITY CRON MOVED — 40 BRANDS, MEASURED BY DIFFING THE CDN INDEX AGAINST LOCAL, NOT BY READING THE COMMIT.** The augment grew to **340 brands** (`_stats: {"brands":340,"ambiguous":95,"noFinancials":86,"belowThreshold":86}`), adding **41 new slugs**. **40 index entries changed, and only two fields moved on any of them: `sc` (40) and `excl` (38).** **Every one of the 40 is the same transition — `sc.charity` `neutral → positive`, with `charity` dropped out of `excl`** because the narrative stopped being "No public record found." Example (`qualcomm-de.json`): `charity.s` went from `"No public record found."` / `sources: []` to **`"Operates the Qualcomm Charitable Foundation: $2.1M in charitable contributions, gifts & grants paid (FY2023, IRS Form 990-PF)."` / `sources: ["irs990pf-foundations"]`** — real, sourced, quantified. **Stored `grade`, `score` and `realCats` did NOT change on a single one** (`grade moves: 0 · score moves: 0`), which is why the A–F counts above are unchanged. Profile of the 40: **33 currently `?` · 3 B · 2 D · 2 F**; **32 sit at `realCats: 0`.**
+>
+> ⚠️🅰️ **BUT DO NOT CONCLUDE "NO GRADE IMPACT" — THE DISPLAYED GRADE IS COMPUTED ON DEVICE, AND ITS INPUTS JUST CHANGED.** `src/App.jsx` does not render the stored `grade`; it calls **`computeScore(co, profile)`** in ~14 places (`:1196`, `:1214`, `:2004`, `:3158`, `:5930`, …) and grades the result with `scoreGrade(...)`. `scripts/lib/index-entry.mjs:38-41` says the index ships `excl` and `flags` **precisely so `computeScore()` gets identical inputs** on the row and the detail card. 🔑 **So for these 40 brands, charity moved from "excluded from weighted scoring" to "positive" in the exact inputs the app scores from — the personalised grade a user sees can shift TODAY, with no rebake.** ✅ **`realCats` did not move because it comes from the rebake overlay (`csc`), not from `sc`** — which is also why the catalog A–F counts are untouched. ⚠️ **Separately, at the next successful rebake these brands score charity at exactly 65, not higher:** `rebake-scoring.mjs:413-421` returns `charityGivingScore(d, …) ?? 65`, and `charityGivingScore` (`:241`) reads **`d.charity_irs990.totalGrants`** — a key the 990-PF path **does not write.** **Measured before (`51793c171`) and after today across all 12,830 company files: brands sourced to `irs990pf-foundations` went 300 -> 340, while brands with a NUMERIC `charity_irs990.totalGrants` stayed flat at 43** — today added 40 sourced brands and zero structured totals. **Only 13 of the 340 have a numeric total; 327 are prose-only.** ⚠️ **Do not measure this by key presence — `charity_irs990` exists on 11,202 files; the only valid test is `typeof d.charity_irs990.totalGrants === "number"`.** ✅ **The pipeline can produce the right shape — `walmart.json` carries `{foundationName, ein, totalGrants: 131129959, fiscalYear: 2024, propublicaUrl}`.** **65 is the documented "positive but unquantified" floor from the 2026-07-04 diligence call — correct behaviour, not a bug. The bug is that the $2.1M figure is formatted into prose and then discarded, so it moves no grade. That is B-133, and fixing it moves up to 327 brands.** ✅ **`consumerFacing` is unaffected** — `index-entry.mjs:57` gates on `storeFootprint || logoUrl || recalls || upcCount || products`, and charity sources are not evidence.
+>
+> 📉🚨 **B-131 IS NOW THIRTEEN STRAIGHT DAYS OF ZERO `company_view` EVENTS.** Tonight's `trending-refresh` run `32424993937` finished **`success`** and logged the same two lines verbatim: **`📊 Querying top 15 brands (last 7 days)…`** → **`(No company_view events in the lookback window — leaving trending.json alone.)`** → **`No changes — trending.json unchanged this run.`** `public/data/trending.json` is still the 2026-08-07T22:48:29Z file (`ae9d88a41`) holding one brand, `rocket-lab`, `views: 1`. **Still no commit since 08-07, still no watchdog row.** 🧭 **Aron's item ② remains the cheapest experiment on the board: install Build 81, open 5 brand cards, `workflow_dispatch` `trending-refresh`. It separates "no users" from "broken client analytics" in five minutes** — and the charity change gives 40 newly-sourced brands worth opening.
+>
+> 🔴 **B-127 UNCHANGED AND ARMED FOR SUNDAY 2026-08-23 — NOW WITH A SIXTH DAY AND A NEW REASON TO CARE.** `public/data/_meta/grade-snapshot.json` is byte-identical for the **sixth** day (md5 `195a5e9ccf5714807fb8f9678ed91d68`): **`takenAt 2026-08-09T17:00:25.665Z`, 3,060 entries**, still last written by `247dd4c87`. **Nothing was re-baselined today.** ⚠️ **Today's charity data raises the stakes: the rebake is the only thing that turns 40 brands' new charity signal into scored `csc`/`realCats` — and it is the exact job that will fail at step 9 and discard its own output in three days.** Still the highest-leverage open fix on the board.
+>
+> ✅ **`data(news)` FOR 08-20 LANDED** (`9d179d6cd`, run `32334877680`). **Lost nights stand at 08-02, 08-09, 08-16 — 3 in 19 days, unchanged.** 🚨 **Four green nights is not recovery** — the 08-10→08-15 six-night streak broke the very next night. **Only the commit series is evidence: `git log origin/main --grep='data(news)'`.** 📊 **Match rate again 100%: `total_items: 24 · brand_count: 13 · merged_count: 13 · orphan_count: 0`.** **Second straight day confirming B-129 is a per-source key/alias defect, not a shared-matcher defect.**
+>
+> 🟡 **B-128 MOVED AGAIN — 385 single-line / 12,445 pretty** (was 389 / 12,441 for three days). **Four files flipped single-line → pretty**, and the cause is visible: the charity cron's `apply-augments-to-companies.mjs` writes pretty and touched 53 files. 🚨 **This ends the "flat three days" reading — the split oscillates whenever a cron touches a file in the other serializer's format, exactly as predicted. No serializer has been chosen.**
+>
+> 🟡 **B-101 FLAT AT 40 open data PRs for the fourth day** (40, 40, 40, 39). Oldest is **#116, now 52 days**. 🚨 **Both must-not-merge landmines still open — #134 (CC-BY-NC augment B-63 stripped) and #165 (synthetic `.gov`-attributed data). Drain by hand, never in bulk, never on the title.**
+>
+> 📌 **Everything else unchanged.** **#155 still 37 rows** (rewritten 2026-08-20T13:59Z) — same set; today's five runs were all green, so nothing cleared and nothing was added, and `irs990pf-annual` never appears because it succeeded. ⚠️ **The row count is a FLOOR — blind to B-124-class green-but-discarded runs and to B-131 entirely.** **B-122 unchanged** — `bis-entity-list-weekly` last failed 08-17 (`31986924514`), still blocked on Aron requesting a free `api.data.gov` key. **B-125 unchanged — `faa`/`fra`/`gdelt` are Monday weeklies; next evidence Monday 2026-08-24.** **Chronic and NOT new:** `fcc-weekly`, `fsis-weekly`, `fsis-dw-weekly`. **OFAC augment moved timestamps only — `matched_slug_count: 91`, unchanged.** 🟢 **v1.1 Build 81 stays the LIVE App Store build; next iOS ship = Build 82** — repo confirms `CURRENT_PROJECT_VERSION = 81`, `MARKETING_VERSION = 1.1`, no `ios/` or `android/` changes today. Android still scaffold-only. ⚠️ **The 08-14 push shipped WEB ONLY — never say "Build 81 has the C-fixes."** ⚠️ **Housekeeping: the 5 untracked `docs/` files remain, day 17.**
+>
+> 🔴 **WHAT ARON STILL OWES — still 2, unchanged:** ① **add `RESEND_API_KEY`** — `gh secret list` today returns the same **7** secrets (`ANTHROPIC_API_KEY`, `COMPANIES_HOUSE_API_KEY`, `DOL_API_KEY`, `MAILERLITE_API_KEY`, `MAILERLITE_GROUP_ID`, `OPENSTATES_API_KEY`, `POSTHOG_API_KEY`) and no Resend key; **an outside subscriber (`jlougee24@live.com`) has now missed 3 digests, and the weekly digest is blocked by NOTHING ELSE — the secret alone turns it on.** ② **install Build 81 and open 5 brand cards** — 13 days of zero recorded brand views; this one action distinguishes "no users" from "broken client analytics." 🧭 **Next engineering work: B-127 (one re-baseline unblocks every future Sunday rebake, and is now the only path from today's charity data to a scored grade), then B-128, then V-4 — 31 dark `enriched` dims led by `secTax` at 3,415 brands, plus the dark top-level keys — then B-129/B-130 and L-1/L-3/L-4.**
+>
+> ---
+>
+> **[08-19 sync]**
 >
 > 📌 **THE QUIETEST MACHINE DAY YET — AND IT SURFACED THE FIRST HARD USAGE NUMBER SINCE LAUNCH: ZERO.** Only **2 bot data commits** landed on `origin/main` (`news` 05:36Z `76af48bf7`, `ofac-sdn` 17:53Z `6608f898f`) and only **4 workflow runs fired all day** — `news-rss-nightly`, `cron-health-daily`, `ofac-sdn-daily`, `trending-refresh` — **all four `success`.** The drop from yesterday's 8 runs is **expected, not a failure: Wednesday carries no weeklies.** **Zero human commits. Zero code changes** — `git diff --name-only 957956106..HEAD` touches only `data/derived/` (1), `data/raw/ofac-sdn/` (1), `public/data/companies/` (11) and `public/data/news/` (3); nothing under `src/`, `scripts/`, `ios/`, `android/`, `.github/workflows/` or `package.json`. **`public/data/index.json` untouched → 0 grade movement**; its last change is still the 08-14 push `c2c1216de`. The clone was 2 behind at sync start; rebased cleanly to `0 0`, nothing lost.
 >
@@ -686,9 +714,73 @@
   deliberately keeps the curated fallback (`Patagonia, Amazon, Costco, Tesla, Nike`) whenever fewer
   than 3 brands match, precisely so a low-signal day cannot ship a 1-chip row. **The guard is
   correct and users see nothing wrong. The defect is upstream of the display.**
+  📅 **Status 2026-08-20 — day 13, unchanged.** Run `32424993937` finished `success` and logged the
+  identical two lines; `trending.json` still the 08-07 one-brand file, still no commit, still no
+  watchdog row. **Count the days from the commit series, not from this line.**
   ⚠️ **Watchdog blind spot (extends B-105/#155):** a cron that legitimately commits only on change
   can go dead-quiet for weeks while reporting `success` and never appears on #155. **Judge
   `trending-refresh` by its commit series, not its run status** — same rule as B-124.
+
+- **B-133 🟡 NEW 2026-08-20 — The IRS 990-PF path writes the grant dollars into PROSE but not into
+  the structured key the scorer reads, so 327 of 340 charity-sourced brands are pinned to the flat
+  65 floor instead of the 60–100 spread the engine was built for.**
+  *(WS-B, S — one object in the 990-PF fetcher / `apply-augments-to-companies.mjs`)*
+  **What happened.** `irs990pf-annual` (first-ever run, 2026-08-20, `1fc8dc7e7`) sets
+  `sc.charity = "positive"` and writes a real, sourced, QUANTIFIED narrative — `qualcomm-de.json`:
+  `"Operates the Qualcomm Charitable Foundation: $2.1M in charitable contributions, gifts & grants
+  paid (FY2023, IRS Form 990-PF)."`, `sources: ["irs990pf-foundations"]`.
+  **But it does not write `charity_irs990.totalGrants`, the key the scorer actually reads.**
+  **Measured across all 12,830 company files, before (`51793c171`) and after today:** brands sourced
+  to `irs990pf-foundations` went **300 → 340**, while brands carrying a **numeric
+  `charity_irs990.totalGrants` stayed flat at 43.** Today's run added **40 sourced brands and zero
+  structured totals.** 🔑 **Of the 340 IRS-990-sourced brands only 13 carry a numeric `totalGrants`;
+  327 are prose-only.**
+  ⚠️ **Do NOT measure this by key presence — `charity_irs990` exists on 11,202 files.** The only
+  valid test is `typeof d.charity_irs990.totalGrants === "number"`.
+  ✅ **The pipeline is capable of the right shape — `walmart.json` proves it:**
+  `{"foundationName":"Wal Mart Foundation","ein":"20-5639919","totalGrants":131129959,`
+  `"fiscalYear":2024,"givingAsPctRev":null,"propublicaUrl":"…"}`. **The 990-PF path just is not
+  emitting it.**
+  **Why it matters.** `scripts/rebake-scoring.mjs:413-421` scores charity as
+  `charityGivingScore(d, REVENUE[d?.slug]?.revenue) ?? 65`, and `charityGivingScore` (`:241`) reads
+  **exactly `d?.charity_irs990?.totalGrants`**, returning `null` when absent. So every prose-only
+  brand falls to the documented **65 "documented but unquantified"** floor — even though the grant
+  total is demonstrably in hand, since the fetcher formatted it into a sentence. The engine's
+  60–100 log spread (`$10K→60 · $1M→76 · $100M→92 · ≥$1B→100`, revenue-share adjusted at R7.1) sits
+  unused on data we already have.
+  ✅ **65 is NOT a bug** — it is the deliberate 2026-07-04 diligence outcome that killed the flat 85.
+  **The bug is that quantified giving is discarded at write time and then re-read as unquantified.**
+  **Fix.** Emit the same `charity_irs990` object the pipeline already produces for `walmart.json`
+  (`foundationName`, `ein`, `totalGrants`, `fiscalYear`) alongside the narrative, then assert in
+  `data-integrity.test.mjs` that any company whose `charity.sources` includes
+  `irs990pf-foundations` also carries a numeric `totalGrants`.
+  ⚠️ **Do it in the fetcher/rebake path, never as a cleanup script** — see "fix it in the rebake,
+  not a cleanup script" (C-5).
+  ⚠️ **This moves grades on up to 327 brands** at the next publishing rebake (each leaves the 65
+  floor for its true band, in BOTH directions — a small foundation scores below 65). **327/3,060 is
+  10.7%, far over the 2% drift guard, so re-baselining `grade-snapshot.json` (B-127) in the same
+  pass is mandatory, not optional.**
+
+- **B-132 🟢 NEW 2026-08-20 — The checked-in `public/data/index.json` is a stale build INPUT, not
+  the shipped artifact. Stop using "local == CDN" as a health check.**
+  *(WS-B, XS to document / S to fix properly — no user impact)*
+  **What happened.** For five days this board recorded that the CDN copy of `index.json` was
+  byte-identical to the repo copy. Today it is not: **cdn 9,989,042 bytes / md5 `21aac7da8…` vs
+  local 9,989,382 / md5 `411e9271…`**, with **40 entries differing.**
+  **This is benign and fully explained.** `package.json:build` is
+  `node scripts/rebuild-bundle-index.mjs && node scripts/generate-sitemap.mjs && vite build`, and
+  `scripts/rebuild-bundle-index.mjs:25` writes `public/data/index.json`. **The Vercel deploy
+  regenerates the index from the per-company files.** Today's charity cron rewrote 53 company files,
+  the deploy rebuilt the index from them, and the repo's committed copy — last touched 08-14 by
+  `c2c1216de` — did not move.
+  **Why it matters.** ① **Any future sync that compares local to the CDN and calls a mismatch
+  "drift" will be raising a false alarm.** ② A committed file that the build overwrites is a
+  confusing artifact: it looks authoritative in git and is not.
+  **Fix (pick one, low urgency).** Either stop committing the generated `index.json` and let the
+  build own it, or have the weekly rebake regenerate and commit it so git and the CDN agree.
+  ✅ **Standing rule is unchanged and now doubly justified: verify the catalog at the CDN
+  (`curl https://www.trunorthapp.com/data/index.json`), never from git.** ⚠️ **Delete the
+  "byte-identical to local" clause from the sync template.**
 
 - **B-130 🔴 NEW 2026-08-18 — `nrc-weekly` commits a timestamp and nothing else, every week, and
   reports `success`. The scrape returns zero records; this is NOT the B-129 matcher defect.**
