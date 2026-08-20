@@ -6,9 +6,29 @@
 >
 > **🟢 LAUNCHED — Jun 23, 2026 · 2:01 AM CDT** (App Store · id `6775301458` · `https://apps.apple.com/app/id6775301458` · PH launched). **CURRENT LIVE BUILD = v1.1 Build 81** (approved 2026-07-08, released Manual **2026-07-14**) — it superseded v1.0 Build 75, which was live Jun 23 → Jul 14. **Next iOS ship = Build 82.** *(The 2026-06-11 "date is soft, get it right" call held through the Compass redesign; the experience shipped on the locked date. Go-live runbook: `docs/LAUNCH_DAY.md`.)*
 >
-> **Last updated:** 2026-08-18 23:10 CDT (daily doc-sync, covering **2026-08-18**).
+> **Last updated:** 2026-08-19 22:15 CDT (daily doc-sync, covering **2026-08-19**).
 >
-> 📌 **ANOTHER ZERO-CODE MACHINE DAY — BUT IT FOUND A SECOND, SEPARATE CLASS OF DEAD DATA, AND ONE CRON THAT COMMITS NOTHING BUT A TIMESTAMP.** 6 bot data commits landed on `origin/main` (`news` 05:36, `fdic` 10:28, `finra` 11:05, `nrc` 17:07, `occ` 17:50, `ofac-sdn` 17:57). **Zero human commits. Zero code changes** — the diff touches nothing under `src/`, `scripts/`, `ios/`, `android/`, `.github/workflows/` or `package.json` (verified by `git diff --name-only ebc53d801..5e44daf2a`). **`public/data/index.json` untouched → 0 grade movement** (its last change on `origin/main` is still the 08-14 push `c2c1216de`). The clone was 6 behind at sync start; fast-forwarded cleanly to `0 0`, nothing lost. **Every one of today's 8 workflow runs reported `success` — no new cron failures.**
+> 📌 **THE QUIETEST MACHINE DAY YET — AND IT SURFACED THE FIRST HARD USAGE NUMBER SINCE LAUNCH: ZERO.** Only **2 bot data commits** landed on `origin/main` (`news` 05:36Z `76af48bf7`, `ofac-sdn` 17:53Z `6608f898f`) and only **4 workflow runs fired all day** — `news-rss-nightly`, `cron-health-daily`, `ofac-sdn-daily`, `trending-refresh` — **all four `success`.** The drop from yesterday's 8 runs is **expected, not a failure: Wednesday carries no weeklies.** **Zero human commits. Zero code changes** — `git diff --name-only 957956106..HEAD` touches only `data/derived/` (1), `data/raw/ofac-sdn/` (1), `public/data/companies/` (11) and `public/data/news/` (3); nothing under `src/`, `scripts/`, `ios/`, `android/`, `.github/workflows/` or `package.json`. **`public/data/index.json` untouched → 0 grade movement**; its last change is still the 08-14 push `c2c1216de`. The clone was 2 behind at sync start; rebased cleanly to `0 0`, nothing lost.
+>
+> ✅ **RE-VERIFIED AT THE CDN, NOT INFERRED FROM GIT** (`curl https://www.trunorthapp.com/data/index.json`): **12,830 tracked / 2,590 graded — A 62 · B 706 · C 1,029 · D 537 · F 256**, 10,240 "?". **Byte-identical to local and to the last FIVE days. Quote 2,590.** ✅ `grep -rl "Claude AI synthesis" public/data/` → **0 files**; `sourceKind: "synthetic"` → **0 files.**
+>
+> 🆕📉🚨 **NEW TODAY — B-131: POSTHOG HAS RECORDED ZERO `company_view` EVENTS FOR TWELVE STRAIGHT DAYS. NOBODY IS OPENING BRAND CARDS IN THE SHIPPED APP.** This is the first *measured* answer to "is anyone using it," and it did not come from a failure — it came from a **green** cron. `trending-refresh` run `32309351311` finished `success` tonight and its own log reads: **`📊 Querying top 15 brands (last 7 days)…`** then **`(No company_view events in the lookback window — leaving trending.json alone.)`** **`public/data/trending.json` was last written 2026-08-07T22:48:29Z (`ae9d88a41`) and contains exactly ONE brand — `rocket-lab`, `views: 1`, `uniques: 1`.** The cron has committed **58 times** in its life and **not once since 08-07**. 🔑 **The instrumentation is NOT broken, and I checked before saying so:** `src/App.jsx:3252` emits `track("company_view", { slug, name, grade, … })` and `scripts/refresh-trending.mjs:64` queries `WHERE event = 'company_view'` — **the event names match exactly**, and the PostHog query returned a result set rather than erroring. ⚠️ **Two readings remain and both matter:** ① **genuinely zero brand-detail opens in 12 days** — the likeliest reading, and it is exactly what "nobody has run the shipped app" predicts; ② the analytics **transport** is dropping events before PostHog ingests them (an app-side `track()` no-op, a consent gate, or a dead key on the client — note `POSTHOG_API_KEY` here is the *server* read key and proves nothing about the client). 🧭 **Distinguishing them is cheap and is now the single best reason to do item ② below: install Build 81, open 5 brand cards, then re-run `trending-refresh` via `workflow_dispatch`. If the events appear, usage is the problem; if they do not, the client instrumentation is.** ✅ **This is NOT a UI defect and must not be "fixed" as one** — `src/App.jsx:6170-6178` deliberately keeps the curated fallback (`Patagonia, Amazon, Costco, Tesla, Nike`) whenever fewer than 3 brands match, so the stale one-brand file is invisible to users. **The guard is correct. Leave it alone.**
+>
+> 🔴 **B-127 UNCHANGED AND STILL ARMED FOR SUNDAY 2026-08-23.** `public/data/_meta/grade-snapshot.json` is byte-identical for the fifth day running (md5 `195a5e9ccf5714807fb8f9678ed91d68`): **`takenAt 2026-08-09T17:00:25.665Z`, 3,060 entries**, still last written by `247dd4c87` on 08-09 — the pre-push catalog, against a shipped catalog of 2,590 graded. **Nothing was re-baselined today. The next rebake fails at step 9 the same way and discards its own output again — four days from now.** Still the highest-leverage open fix on the board.
+>
+> ✅ **`data(news)` FOR 08-19 LANDED** (`76af48bf7`, run `32218622484`). **Lost nights stand at 08-02, 08-09, 08-16 — 3 in 18 days, unchanged.** 🚨 **Three green nights is not recovery.** The 08-10→08-15 six-night streak was broken the very next night; B-124 is a race that looks healthy most days. **Only the commit series is evidence: `git log origin/main --grep='data(news)'`.** 📊 **Worth recording for contrast with B-129: today's news merge log reports `total_items: 33 · brand_count: 11 · merged_count: 11` — a 100% match rate.** **The brand matcher is not globally broken; the news path resolves everything it is handed.** That makes B-129 a per-source key/alias problem, not a shared-matcher problem.
+>
+> 🟡 **B-101 FLAT AT 40 open data PRs for the third day** (40, 40, 39). Oldest is **#116, now 51 days**. 🚨 **Both must-not-merge landmines still open — #134 (CC-BY-NC augment B-63 stripped) and #165 (synthetic `.gov`-attributed data). Drain by hand, never in bulk, never on the title.**
+>
+> 🟢 **B-128 HELD FLAT A THIRD DAY: 389 single-line / 12,441 pretty** — identical on 08-17, 08-18 and 08-19. **Today's news merge rewrote 11 company files and flipped none, so they were already single-line.** ⚠️ **Three flat days is still not stabilization — no serializer has been chosen, and the split has only held because the crons happened to touch files already in their own format.**
+>
+> 📌 **Everything else unchanged.** **#155 still 37 rows** (rewritten 2026-08-19T13:57Z) — same set as yesterday; today's four runs were green so nothing cleared and nothing was added. ⚠️ **The row count is a FLOOR — it lists only crons whose LATEST run did not succeed, so it is blind to B-124-class green-but-discarded runs and to B-131 entirely.** **B-122 unchanged** — `bis-entity-list-weekly` last failed 08-17 (`31986924514`), still blocked on Aron requesting a free `api.data.gov` key. **B-125 unchanged — `faa`/`fra`/`gdelt` are Monday weeklies; next evidence Monday 2026-08-24.** **Chronic and NOT new:** `fcc-weekly`, `fsis-weekly`, `fsis-dw-weekly`. **OFAC augment moved timestamps only** — `matched_slug_count: 91`, unchanged. 🟢 **v1.1 Build 81 stays the LIVE App Store build; next iOS ship = Build 82** — repo confirms `CURRENT_PROJECT_VERSION = 81`, `MARKETING_VERSION = 1.1`, no `ios/` or `android/` changes today. Android still scaffold-only. ⚠️ **The push shipped WEB ONLY — never say "Build 81 has the C-fixes."** ⚠️ **Housekeeping: the 5 untracked `docs/` files remain, day 16.**
+>
+> 🔴 **WHAT ARON STILL OWES — still 2, and ② just became the higher-value one:** ① **add `RESEND_API_KEY`** — `gh secret list` today returns the same **7** secrets (`ANTHROPIC`, `COMPANIES_HOUSE`, `DOL`, `MAILERLITE_API_KEY`, `MAILERLITE_GROUP_ID`, `OPENSTATES`, `POSTHOG`) and no Resend key; **an outside subscriber (`jlougee24@live.com`) has missed 3 digests, and the weekly digest is blocked by NOTHING ELSE — the secret alone turns it on.** ② **install Build 81 and open 5 brand cards** — **this is no longer just hygiene. B-131 means 12 days of zero recorded brand views, and this one action distinguishes "no users" from "broken client analytics" in about five minutes.** 🧭 **Next engineering work: B-127 (one re-baseline unblocks every future Sunday rebake), then B-128, then V-4 — 31 dark `enriched` dims led by `secTax` at 3,415 brands, plus the dark top-level keys — then B-129/B-130 and L-1/L-3/L-4.**
+>
+> ---
+>
+> **[08-18 sync]** 📌 **ANOTHER ZERO-CODE MACHINE DAY — BUT IT FOUND A SECOND, SEPARATE CLASS OF DEAD DATA, AND ONE CRON THAT COMMITS NOTHING BUT A TIMESTAMP.** 6 bot data commits landed on `origin/main` (`news` 05:36, `fdic` 10:28, `finra` 11:05, `nrc` 17:07, `occ` 17:50, `ofac-sdn` 17:57). **Zero human commits. Zero code changes** — the diff touches nothing under `src/`, `scripts/`, `ios/`, `android/`, `.github/workflows/` or `package.json` (verified by `git diff --name-only ebc53d801..5e44daf2a`). **`public/data/index.json` untouched → 0 grade movement** (its last change on `origin/main` is still the 08-14 push `c2c1216de`). The clone was 6 behind at sync start; fast-forwarded cleanly to `0 0`, nothing lost. **Every one of today's 8 workflow runs reported `success` — no new cron failures.**
 >
 > ✅ **RE-VERIFIED AT THE CDN, NOT INFERRED FROM GIT** (`curl https://www.trunorthapp.com/data/index.json`): **12,830 tracked / 2,590 graded — A 62 · B 706 · C 1,029 · D 537 · F 256**, 10,240 "?". **Byte-identical to local and to the last four days. Quote 2,590.** ✅ `grep -rl "Claude AI synthesis" public/data/` → **0 files**; `sourceKind: "synthetic"` → **0 files.**
 >
@@ -406,8 +426,15 @@
 
 ### ⛔ Blocking on Aron
 1. ✅ **PUSH — DONE 2026-08-14 (`c2c1216de`). STALE ITEM, CLOSED 2026-08-17.** The 12-commit pile (B-115 ×2, C-1…C-6, V-1, V-2/V-3, B-121, L-2) was rebased onto 84 bot commits and pushed; CI ran and passed (`31798426525`); production serves **12,830 tracked / 2,590 graded**, verified at the CDN. ⚠️ **The old text here still said "73 behind / 15 ahead" and predicted "3,066 graded" — both were superseded three days ago. The shipped number is 2,590; the clone is 0 ahead.** ⚠️ **The push shipped WEB ONLY — Build 81 does not contain the C-fixes.**
-2. **Install Build 81 and scan 5 real products** — nobody has ever run the shipped app; every UX claim in
-   the review is read from source code.
+2. 🔺 **Install Build 81, open 5 brand cards, then re-run `trending-refresh` via `workflow_dispatch`**
+   — nobody has ever run the shipped app; every UX claim in the review is read from source code.
+   🚨 **RAISED IN PRIORITY 2026-08-19 (B-131).** PostHog has logged **zero `company_view` events for
+   12 straight days** and `public/data/trending.json` has been frozen since 08-07 holding a single
+   brand. **This one action is now the cheapest possible diagnostic on the board:** events show up
+   → the app works and the problem is adoption; events do not show up → the shipped client is not
+   reporting analytics at all, which is a code defect nobody has detected in two months live.
+   ⚠️ **Scanning 5 products is not a substitute — the event fires on the brand DETAIL card
+   (`src/App.jsx:3252`), so open the cards.**
 3. **App Store Connect** — confirm the category/name/keyword findings and make (or delegate) the edits.
 4. ✅ **Resend migration IMPLEMENTED** (`58dab0aa4`) — `--apply` now passed on
    `score-rebake-weekly.yml`. ⚠️ **Nothing can send until you add `RESEND_API_KEY` to the repo
@@ -624,6 +651,44 @@
   lesson:** the snapshot must be re-baselined after **any** out-of-band catalog change — a hand-
   regenerated push silently arms this same failure a week later. Worth a follow-up assertion in
   `scripts/data-integrity.test.mjs` so a stale baseline fails CI at push time rather than on Sunday.
+
+- **B-131 🔴 NEW 2026-08-19 — PostHog has recorded ZERO `company_view` events for 12 straight days.
+  Either nobody is opening brand cards in the shipped app, or the client analytics transport is
+  dead. A GREEN nightly cron is what surfaced it.**
+  *(WS-A, S to diagnose — Aron can settle it in ~5 minutes; see "Blocking on Aron" ②)*
+  **What happened.** `trending-refresh` run `32309351311` completed `success` on 2026-08-19 at
+  22:33Z. Its log:
+  `📊 Querying top 15 brands (last 7 days)…` →
+  `(No company_view events in the lookback window — leaving trending.json alone.)`
+  `public/data/trending.json` was last written **2026-08-07T22:48:29Z** by `ae9d88a41` and holds
+  **exactly one brand — `rocket-lab`, `views: 1`, `uniques: 1`.** The cron has committed **58 times**
+  in its life (`git log origin/main --grep='chore(trending)' | wc -l`) and **not once since 08-07**.
+  Because the workflow only commits `if ! git diff --quiet public/data/trending.json`
+  (`.github/workflows/trending-refresh.yml:47`), 12 nights of empty results produce 12 green runs,
+  no commits, and no watchdog row.
+  **The instrumentation is NOT mismatched — verify this before re-diagnosing.** `src/App.jsx:3252`
+  emits `track("company_view", { slug, name, grade, graded, score, category })`;
+  `scripts/refresh-trending.mjs:64` queries `WHERE event = 'company_view'`. **The names match**, and
+  the PostHog query returned a result set rather than erroring, so the server-side read path works.
+  **Two live hypotheses, both material:**
+  ① **Genuinely zero brand-detail opens in 12 days.** The likeliest reading, and exactly what the
+  standing "nobody has run the shipped app" gap predicts. If true this is a distribution problem,
+  not a code problem, and it is the most important number on this board.
+  ② **The client never sends the event.** A `track()` no-op, a consent/opt-out gate, or a missing
+  client-side PostHog key in the shipped bundle. ⚠️ **`POSTHOG_API_KEY` in Actions is the SERVER
+  read key and proves nothing about the client** — do not cite its presence as evidence the app is
+  reporting.
+  **Fix / next step.** Do NOT touch the fetcher or the UI first. **Install Build 81, open 5 brand
+  cards, wait for the flush, then re-run `trending-refresh` via `workflow_dispatch`.** Events appear
+  → hypothesis ①, and the work is adoption. Events do not appear → hypothesis ②, and the work is
+  client instrumentation. **One run distinguishes them.**
+  ✅ **DO NOT "fix" the stale one-brand `trending.json` as a UI bug.** `src/App.jsx:6170-6178`
+  deliberately keeps the curated fallback (`Patagonia, Amazon, Costco, Tesla, Nike`) whenever fewer
+  than 3 brands match, precisely so a low-signal day cannot ship a 1-chip row. **The guard is
+  correct and users see nothing wrong. The defect is upstream of the display.**
+  ⚠️ **Watchdog blind spot (extends B-105/#155):** a cron that legitimately commits only on change
+  can go dead-quiet for weeks while reporting `success` and never appears on #155. **Judge
+  `trending-refresh` by its commit series, not its run status** — same rule as B-124.
 
 - **B-130 🔴 NEW 2026-08-18 — `nrc-weekly` commits a timestamp and nothing else, every week, and
   reports `success`. The scrape returns zero records; this is NOT the B-129 matcher defect.**
