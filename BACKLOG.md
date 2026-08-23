@@ -6,7 +6,41 @@
 >
 > **🟢 LAUNCHED — Jun 23, 2026 · 2:01 AM CDT** (App Store · id `6775301458` · `https://apps.apple.com/app/id6775301458` · PH launched). **CURRENT LIVE BUILD = v1.1 Build 81** (approved 2026-07-08, released Manual **2026-07-14**) — it superseded v1.0 Build 75, which was live Jun 23 → Jul 14. **Next iOS ship = Build 82.** *(The 2026-06-11 "date is soft, get it right" call held through the Compass redesign; the experience shipped on the locked date. Go-live runbook: `docs/LAUNCH_DAY.md`.)*
 >
-> **Last updated:** 2026-08-20 18:55 CDT (daily doc-sync, covering **2026-08-20**).
+> **Last updated:** 2026-08-22 23:20 CDT (daily doc-sync, covering **2026-08-21 AND 2026-08-22** — see the missed-sync note below).
+>
+> ⚠️🗓️ **THIS SYNC COVERS TWO DAYS — NO DOC-SYNC RAN ON 08-21.** The previous entry is `45ecddbf4` (08-20 18:53 CDT); there is no `docs(backlog)` commit for 08-21. Everything below spans `45ecddbf4..HEAD` = **5 bot commits** (`news` 08-21 05:39Z `e784a9e07`, `ofac-sdn` 08-21 18:00Z `c462153bd`, `news` 08-22 05:28Z `7c75b5296`, `ofac-sdn` 08-22 17:51Z `bd31bfe2a`, `cfpb` 08-23 03:50Z `4886b816e`). **Zero human commits. Zero code changes** — `git diff --name-only 45ecddbf4..HEAD` touches only `public/data/companies/` (95), `public/data/news/` (5), `data/raw/ofac-sdn/` (2), `public/data/_meta/` (1), `public/data/cfpb-complaints.json`, `data/derived/` (1); **nothing under `src/`, `scripts/`, `ios/`, `android/`, `.github/workflows/` or `package.json`.** The clone was 5 behind at sync start; rebased cleanly to `0 0`, nothing lost. **All 9 workflow runs across the window reported `success`.**
+>
+> 🆕🔴🎯 **ROOT CAUSE FOUND — B-124 IS NOT A RANDOM RACE. IT IS SUNDAY-ONLY, AND THE COUNTERPARTY IS THE SUNDAY WEEKLY-MERGE CLUSTER. THIS IS THE BIGGEST FINDING IN WEEKS.** For eleven months the three lost news nights (**08-02, 08-09, 08-16**) have been treated as an intermittent race that "looks healthy most days." **They are all Sundays, and every single Mon–Sat night from 07-21 through 08-22 landed without exception.** Verified two ways: ① `git log origin/main --grep='data(news)'` day-of-week over 33 consecutive days — **Mon–Sat 100%, Sunday 0% since 08-02**; ② Sundays **06-28, 07-05, 07-12, 07-19, 07-26 all LANDED**, then 08-02/08-09/08-16 all failed. 🔑 **What changed between 07-26 and 08-02 is a single human commit: `9f4bf87b2` (2026-08-01, "fix(ci): destagger crons + isolate long-runners — end the mass cancellation (B-120)"). It rewrote the schedule of every Sunday weekly and PINNED `news-rss-nightly` at `48 4 * * *` (04:48 UTC).** The destagger spread crons evenly across 24h, which on Sunday packs the weekly-merge cluster straight into the pinned news window: **`cfpb` 02:44 · `courtlistener` 04:06 · `cpsc` 04:41 · `news` 04:48 · `cruelty-free` 05:04 · `doj` 06:15 · `epa-echo` 07:25** — all UTC, and **all six of those weeklies rewrite `public/data/companies/*.json`, the same files news rewrites.** ✅ **CONFIRMED FROM THE ACTUAL LOG, not inferred:** run `31928275753` (08-16, conclusion **`success`**) contains `CONFLICT (content): Merge conflict in public/data/companies/{anheuser-busch,coca-cola,heinz,hershey,pepsi}.json` → `error: could not apply 7f57f64... data(news) …` → `Push attempt 1 failed, retrying…` → **`error: Pulling is not possible because you have unmerged files.`** ×2 → exit 0. **`cpsc` landed 05:18:43Z that morning; the news push blew up at 05:30:43Z on five food-and-beverage brands CPSC had just rewritten.** 🔑 **So B-124's known defect (no `git rebase --abort` in the retry loop) is real and is the correct fix, but it only ever fires when a second cron pushes inside the news window — which the 08-01 destagger guaranteed on Sundays.** 🧭 **Two independent fixes, both cheap: ① add `git rebase --abort ||true` at the top of the retry loop (fixes the whole class, every workflow); ② move `news-rss-nightly` off 04:48 UTC into a Sunday-clear slot (fixes news specifically).** ⚠️ **Do ① — ② alone leaves the other 100+ shared-group crons exposed.** 🚨 **PREDICTION ON THE RECORD: it is 04:12 UTC Sunday 2026-08-23 as this is written, `cfpb` already landed at 03:50Z, and news fires at 04:48Z. If nothing changed, `data(news)` for 08-23 will NOT land. Check `git log origin/main --grep='data(news)'` — that single line either confirms or kills this whole diagnosis.**
+>
+> 🆕🚨🧾 **NEW TODAY — B-134: `finra-weekly` ATTACHES UNRELATED BROKER-DEALERS TO CONSUMER BRANDS AND WRITES FALSE REGULATORY COUNTS INTO 92 COMPANY FILES.** B-129 has been recording FINRA as a *coverage* problem ("93 of 528, under 18%"). **It is worse than that: the 93 it does match are substantially WRONG.** Read straight from `public/data/finra-disclosures.json` (68 firms with `status: "ok"`): **`nike` → `FIRST TRUST PORTFOLIOS L.P.` (4 disclosures) · `red-bull` → `PROSPERA FINANCIAL SERVICES, INC.` (13) · `johnson-johnson` → `JOHNSON TRADING, JV` (2) · `oracle` → `NORTHLAND SECURITIES, INC.` (7) · `general-mills` → `FSC SECURITIES CORPORATION` (47) · `mars` → `FARRELL MARSH & CO.` · `circle-k` → `UNITED PLANNERS' FINANCIAL SERVICES OF AMERICA` (15) · `abbott-laboratories` → `STEIN ABBOTT AND COMPANY INC.` · `abercrombie-and-fitch` → `HOLLISTER ASSOCIATES, LLC` · `dawn` → `OSAIC FS, INC.` (28) · `sonic` → `EVOLUTION FINANCIAL TECHNOLOGIES, LLC`.** **32 of the 68 matched firm names do not even contain the first token of the brand slug**, and the token-matching ones are no safer — `quaker` → `QUAKER SECURITIES, INC.` and `burlington` → `BURLINGTON CAPITAL MARKETS INC.` are unrelated companies that merely share a word. **2,934 total disclosures are distributed across these 68 firms, and the `finra` key is now on 92 company files.** ⚠️ **Even the genuinely-financial brands are only mostly right — 9 of 12 are correct (`charles-schwab`, `vanguard`, `robinhood`, `goldman-sachs`, `morgan-stanley`, `jpmorgan-chase`, `wells-fargo`, `sofi`, `fidelity`) but 3 are plausible-looking and WRONG: `bank-of-america` → `COMMONWEALTH FINANCIAL NETWORK`, `citi` → `CITIZENS SECURITIES, INC.`, `american-express` → `AMERIPRISE FINANCIAL SERVICES, LLC`.** ✅ **NOT user-visible today, and that is the only reason this is not a P0** — `finra` has **0 refs in `scripts/rebake-scoring.mjs`, 0 in `scripts/lib/index-entry.mjs`**, and appears in `src/App.jsx` only in the static Sources citation array (`:4884`). 🚨 **It is a loaded gun pointed at V-4: the moment anyone wires the dark keys into scoring or the brand card, TruNorth publishes fabricated FINRA-attributed enforcement data about Nike, J&J and Oracle.** 🔑 **This is the same failure class as B-126/PR #165 (`.gov`-attributed fiction), and it must be fixed BEFORE V-4 touches `finra`, not after.**
+>
+> 🆕🕳️ **NEW TODAY — `cfpb` IS A FIFTH DARK TOP-LEVEL KEY, AND IT IS THE BEST-QUALITY DATA IN THE DARK SET.** `cfpb-weekly` ran for the first time in this board's window (run `32553419256`… `cfpb-weekly` at 03:32Z, commit `4886b816e`, `success`). It merged into **82 brands** and writes a **top-level `cfpb` key** carrying genuinely structured numerics — `abbott-laboratories` gets `{"totalComplaints":77,"recent12moCount":8,"timelyResponseRate":87,"topIssues":[…5 labelled counts…],"topProducts":[…]}`. **Verified consumers: 0 in `rebake-scoring.mjs`, 0 in `index-entry.mjs`, and in `src/App.jsx` only the Sources array (`:4895`) and the `ANCHOR_NAMES` citation list (`:8082`) — neither renders it.** ⚠️ **The Sources entry advertises to users "Per-brand: top issues, products, timely-response rate" — data that exists in the files and is never displayed.** 📊 **Dark top-level key census re-run across all 12,830 company files: `finra` 92 · `cfpb` 80 · `phmsa` 30 · `occ` 14 · `fdic` 38 (under `enriched.fdic`) · `nrc` 0 · `ntsb` 0 = 216 top-level placements with zero consumers** (was 136 on 08-18 — **the count grew because CFPB is new, so treat 216 as current, not final**). 🧭 **V-4 scope note: `cfpb` is the most attractive dark key to wire up first — it is numeric, per-brand, weekly-refreshed and already licence-clean — but do it AFTER B-134, because the same matcher family produced both.**
+>
+> 🆕📐 **METHOD CORRECTION — THE B-129 "x of 528" DENOMINATOR IS WRONG AND HAS BEEN OVERSTATING THE MATCHER FAILURE.** Every B-129 line on this board reads `merged_count / total_brands`, e.g. "`occ` 14/528 = 2.7%". **`total_brands` is the size of the brand list the cron SWEEPS, not the number of brands the upstream source actually has records for.** The source files carry the real denominator: **`cfpb` `with_complaints_count: 92` → merged 82 + orphan 10 = 82/92 = 89% · `occ` `with_actions_count: 17` → 14/17 = 82% · `phmsa` `with_records_count: 40` → 30/40 = 75% · `msha` `with_records_count: 78` → 70/78 = 90%.** ✅ **On the true denominator these matchers are working at 75–90%, not 3–18%.** 🔑 **The remaining orphans are the real B-129 defect and they are a much smaller, much more tractable problem than this board has been describing** — `cfpb`'s 10 orphans are named in the merge log (`overstock`, `asus`, `linear`, `block`, `plaid`, `us-bank`, `sofi`, `ram`, `volvo`, `ninja`) and are mostly obvious alias misses. ⚠️ **Correct the framing everywhere: read `with_*_count` from the SOURCE file, then `merged_count` and `orphan_count` from the merge log. `merged_count / total_brands` is meaningless.**
+>
+> 🆕🔀 **RECLASSIFICATION — `ntsb` IS B-130 (DEAD FETCH), NOT B-129 (BAD MATCHER). AND SO IS `fdic`.** Applying B-130's own diagnostic (`zero orphans on a nonzero universe = FETCH bug`) to the payloads: **`public/data/ntsb-accidents.json` holds 528 brand entries and every one reads `status: "not_available"` with `source_status: {aviation: "endpoint_error", …}` — 0 entries carry a single non-empty record array.** `ntsb-merge-log` is `merged 0 · skipped 528 · orphan 0` **because there was nothing to match, not because matching failed.** Likewise **`fdic-enforcement.json` reports `with_enforcement_count: 0` and `edos_unreachable_count: 45`** — the EDOS endpoint is unreachable, so its 38 `merged_partial` writes are bank-identity metadata, not enforcement records. 🔑 **The B-129 alias fix would do NOTHING for either.** ✅ **Corrected B-129 roster (genuine matcher defects only): `occ`, `phmsa`, `msha`, `finra` (and `finra` is really B-134), `cisa-kev` (238/276 orphaned).** ✅ **Corrected B-130 roster (dead fetch, green cron): `nrc`, `ntsb`, `fdic`.**
+>
+> ✅ **CATALOG HELD — RE-VERIFIED AT THE CDN** (`curl https://www.trunorthapp.com/data/index.json`): **12,830 tracked / 2,590 graded — A 62 · B 706 · C 1,029 · D 537 · F 256**, 10,240 "?". **Quote 2,590.** ✅ `"Claude AI synthesis"` → **0 files**; `sourceKind: "synthetic"` → **0 files.** 📌 **CDN md5 `21aac7da8b481018ba8dcb88d9449c48` is UNCHANGED across 08-20→08-22, and that is exactly what B-132 predicts, not a stalled deploy:** the 95 company files that moved carry only `news`, `ofac` timestamps and the new dark `cfpb` key — **none of which feed `index-entry.mjs`** — so the deploy's regenerated index is byte-identical. **Treat an unchanged CDN md5 alongside changed company files as a CONSISTENCY CHECK PASSING.**
+>
+> ⚠️🧮 **CONTRADICTION FOUND AND CORRECTED — the 08-20 sync's `index.json` BYTE COUNTS were wrong by exactly 141 on both figures.** It recorded **cdn 9,989,042 / local 9,989,382**; the true sizes are **cdn 9,989,183 / local 9,989,523**, with the md5s it recorded (`21aac7da8…`, `411e9271…`) both still correct and unchanged. **Local `index.json` is clean in the worktree and last committed at `c2c1216de` (08-14), so its size cannot have moved** — the 08-20 measurement was simply off. 🔑 **Quote the md5, not the byte count. The md5s were right; the byte counts were not.**
+>
+> 🔴🚨 **B-127 IS UNCHANGED AND FIRES TODAY.** `public/data/_meta/grade-snapshot.json` is byte-identical for the **eighth** day (md5 `195a5e9ccf5714807fb8f9678ed91d68`): **`takenAt 2026-08-09T17:00:25.665Z`, 3,060 entries**, still last written by `247dd4c87`. **Nothing was re-baselined on 08-21 or 08-22.** ⏰ **`score-rebake-weekly` is `"20 16 * * 0"` — it runs at 16:20 UTC TODAY, Sunday 2026-08-23, roughly 12 hours from this sync.** It will hit the 2% drift guard against a 3,060-entry pre-push baseline versus a 2,590-graded shipped catalog, fail at step 9, and **discard its own output including the 40 charity brands from 08-20 and today's 82 CFPB brands.** ✅ **The guard is CORRECT — never weaken it.** **Still the highest-leverage open fix on the board, and it is now overdue rather than pending.**
+>
+> ✅ **`data(news)` LANDED BOTH NIGHTS** — 08-21 (`e784a9e07`, run `32449929833`) and 08-22 (`7c75b5296`, run `32553419256`). **`brand_count: 528`; `total_items` 34,804 (08-21) and 34,589 (08-22).** **Lost nights remain 08-02, 08-09, 08-16 — 3 in 21 days.** 🚨 **Six green nights is STILL not recovery, and now we know precisely why: 08-17 through 08-22 are Mon–Sat. The test is tomorrow morning's Sunday run, not the streak.**
+>
+> 📉🚨 **B-131 IS NOW FIFTEEN STRAIGHT DAYS OF ZERO `company_view` EVENTS.** `trending-refresh` ran **08-21 22:33Z and 08-22 22:31Z, both `success`, both committing nothing.** `public/data/trending.json` is still the 2026-08-07T22:48:29Z file (`ae9d88a41`) holding one brand, `rocket-lab`, `views: 1`, `uniques: 1`. **No commit since 08-07; still no watchdog row.** 🧭 **Unchanged and still the cheapest experiment on the board: install Build 81, open 5 brand cards, `workflow_dispatch` `trending-refresh`.**
+>
+> 🟡 **B-128 MOVED AGAIN — 387 single-line / 12,443 pretty** (was 385 / 12,445 on 08-20, 389 / 12,441 for the three days before). **Two files flipped pretty → single-line**, the opposite direction from 08-20. 🚨 **Third distinct value in four days. It oscillates; it does not stabilize. No serializer has been chosen** — and B-124's conflicts land on exactly these single-line files, which cannot auto-merge. **Fixing B-128 shrinks the B-124 blast radius.**
+>
+> 🟡 **B-101 FLAT AT 40 open data PRs for the sixth day.** Oldest is **#116, now 55 days**. 🚨 **Both must-not-merge landmines still open — #134 (CC-BY-NC augment B-63 stripped) and #165 (synthetic `.gov`-attributed data). Drain by hand, never in bulk, never on the title.** ⚠️ **B-134 adds a third review criterion: reject any FINRA-derived PR until the firm matcher is fixed.**
+>
+> 📌 **Everything else unchanged.** **#155 still 37 rows** (rewritten 2026-08-22T13:44Z) — same set; all nine runs in the window were green, so nothing cleared and nothing was added. ⚠️ **The row count is a FLOOR — blind to B-124-class green-but-discarded runs, to B-131, and to B-134 entirely (a cron writing wrong data is a `success`).** **B-122 unchanged** — `bis-entity-list-weekly` last failed 08-17 (`31986924514`), still blocked on Aron requesting a free `api.data.gov` key. **B-125 unchanged — `faa`/`fra`/`gdelt` are Monday weeklies; next evidence Monday 2026-08-24.** **Chronic and NOT new:** `fcc-weekly`, `fsis-weekly`, `fsis-dw-weekly`. **OFAC augment moved timestamps only — `matched_slug_count: 91`, unchanged.** 🟢 **v1.1 Build 81 stays the LIVE App Store build; next iOS ship = Build 82** — repo confirms `CURRENT_PROJECT_VERSION = 81`, `MARKETING_VERSION = 1.1`, no `ios/` or `android/` changes in the window. Android still scaffold-only. ⚠️ **The 08-14 push shipped WEB ONLY — never say "Build 81 has the C-fixes."** ⚠️ **Housekeeping: the 5 untracked `docs/` files remain, day 19.**
+>
+> 🔴 **WHAT ARON STILL OWES — still 2, unchanged:** ① **add `RESEND_API_KEY`** — `gh secret list` still returns the same **7** secrets (`ANTHROPIC_API_KEY`, `COMPANIES_HOUSE_API_KEY`, `DOL_API_KEY`, `MAILERLITE_API_KEY`, `MAILERLITE_GROUP_ID`, `OPENSTATES_API_KEY`, `POSTHOG_API_KEY`) and no Resend key; **`jlougee24@live.com` has now missed 3 digests and the weekly digest is blocked by NOTHING ELSE — the secret alone turns it on.** ② **install Build 81 and open 5 brand cards** — 15 days of zero recorded brand views. 🧭 **Next engineering work, re-ordered by today's findings: ① B-124 `git rebase --abort` (one line, fixes a proven Sunday data-loss class), ② B-127 re-baseline (overdue, fires today), ③ B-134 FINRA matcher (fabricated data, must land before V-4), then B-128, then V-4 — now led by `cfpb` and `secTax` — then B-129/B-130 and L-1/L-3/L-4.**
+>
+> ---
+>
+> **[08-20 sync]**
 >
 > 🆕📊🚨 **THE FIRST USER-VISIBLE DATA CHANGE SINCE THE 08-14 PUSH — AND IT CAME FROM A CRON THAT HAD NEVER RUN BEFORE.** `irs990pf-annual` fired at 14:19Z (run `32379403648`, `success`, commit `1fc8dc7e7`) and it is **the only run in that workflow's entire lifetime** — `gh run list --workflow=irs990pf-annual.yml -L 20` returns exactly one row. Its schedule is `"40 13 20 8 *"` — **once a year, August 20.** 🔑 **It is NOT a B-123 victim:** it stages `data/derived/…` and `public/data/companies/` (both tracked), so `git add` succeeded and the commit landed. **3 bot commits total today** — `news` 05:37Z `9d179d6cd`, `charity` 14:19Z `1fc8dc7e7`, `ofac-sdn` 17:59Z `032908800`. **5 workflow runs, all 5 `success`.** **Zero human commits. Zero code changes** — `git diff --name-only 51793c171..HEAD` touches only `public/data/companies/` (53), `public/data/news/` (3), `data/derived/` (2), `data/raw/ofac-sdn/` (1); nothing under `src/`, `scripts/`, `ios/`, `android/`, `.github/workflows/` or `package.json`. The clone was 3 behind at sync start; rebased cleanly to `0 0`, nothing lost.
 >
@@ -721,6 +755,56 @@
   can go dead-quiet for weeks while reporting `success` and never appears on #155. **Judge
   `trending-refresh` by its commit series, not its run status** — same rule as B-124.
 
+- **B-134 🔴 NEW 2026-08-22 — `finra-weekly` attaches UNRELATED broker-dealers to consumer
+  brands and writes fabricated FINRA-attributed disclosure counts into 92 company files.**
+  *(WS-B, M — the firm-resolution step in the FINRA fetcher)*
+  **What happened.** B-129 has been logging FINRA as a coverage problem (`merged_count: 93` of 528).
+  The coverage framing hid a correctness defect: the firms it *does* match are largely the wrong
+  companies. From `public/data/finra-disclosures.json` (68 firms at `status: "ok"`):
+  `nike` -> `FIRST TRUST PORTFOLIOS L.P.` (4 disclosures), `red-bull` -> `PROSPERA FINANCIAL
+  SERVICES, INC.` (13), `johnson-johnson` -> `JOHNSON TRADING, JV`, `oracle` -> `NORTHLAND
+  SECURITIES, INC.`, `general-mills` -> `FSC SECURITIES CORPORATION` (47), `circle-k` -> `UNITED
+  PLANNERS' FINANCIAL SERVICES OF AMERICA`, `abbott-laboratories` -> `STEIN ABBOTT AND COMPANY INC.`,
+  `abercrombie-and-fitch` -> `HOLLISTER ASSOCIATES, LLC`. **32 of 68 matched firm names do not
+  contain even the first token of the brand slug**, and token matches are not safe either --
+  `quaker` -> `QUAKER SECURITIES, INC.` and `burlington` -> `BURLINGTON CAPITAL MARKETS INC.` are
+  unrelated firms sharing a word. 2,934 disclosures are spread across the 68; the `finra` key now
+  sits on 92 company files. Even the real financial brands are only 9-of-12 correct --
+  `bank-of-america` -> `COMMONWEALTH FINANCIAL NETWORK`, `citi` -> `CITIZENS SECURITIES, INC.` and
+  `american-express` -> `AMERIPRISE FINANCIAL SERVICES, LLC` are plausible-looking and wrong.
+  **Why it is not a P0 today.** `finra` is a dark key: 0 refs in `scripts/rebake-scoring.mjs`,
+  0 in `scripts/lib/index-entry.mjs`, and in `src/App.jsx` only the static Sources citation array
+  (`:4884`). Nothing renders it and nothing scores it, so no user has seen it.
+  **Why it is urgent anyway.** It is a loaded gun aimed at V-4. The moment the dark keys get wired
+  into scoring or the brand card, TruNorth publishes invented FINRA enforcement data about Nike,
+  J&J and Oracle -- the same failure class as B-126 / PR #165.
+  **Fix.** Require an explicit CRD/firm-id mapping or an exact legal-name match; never fuzzy-match a
+  brand slug against a broker-dealer name. Assert in `data-integrity.test.mjs` that every `finra`
+  block carries a verified firm id. **Must land BEFORE V-4 touches `finra`.**
+  **Do NOT** "improve" the fuzzy matcher's threshold -- the approach itself is wrong.
+
+- **B-135 🔴 NEW 2026-08-22 — B-124's data loss is Sunday-only: the 08-01 cron destagger put
+  six weekly merge crons inside the pinned nightly-news push window, and the retry loop has no
+  `git rebase --abort`.**
+  *(WS-B, S — one line in the shared push retry loop; optionally re-time `news-rss-nightly`)*
+  **What happened.** The three lost news nights (08-02, 08-09, 08-16) are all Sundays. Every Mon-Sat
+  night from 07-21 through 08-22 landed. Sundays 06-28 through 07-26 all landed; the losses begin on
+  the first Sunday after `9f4bf87b2` (2026-08-01, the B-120 destagger), which pinned
+  `news-rss-nightly` at `48 4 * * *` and spread the Sunday weeklies into the same window:
+  `cfpb` 02:44Z, `courtlistener` 04:06Z, `cpsc` 04:41Z, **news 04:48Z**, `cruelty-free` 05:04Z,
+  `doj` 06:15Z, `epa-echo` 07:25Z -- all of which rewrite `public/data/companies/*.json`.
+  **Proof, from run `31928275753` (08-16, conclusion `success`):**
+  `CONFLICT (content): Merge conflict in public/data/companies/{anheuser-busch,coca-cola,heinz,
+  hershey,pepsi}.json` -> `error: could not apply 7f57f64... data(news)` -> `Push attempt 1 failed`
+  -> `error: Pulling is not possible because you have unmerged files.` x2 -> exit 0. `cpsc` landed
+  05:18:43Z; the news push died at 05:30:43Z on five brands CPSC had just rewritten.
+  **Fix (do both, ① first).** ① Add `git rebase --abort || true` at the top of the push retry loop in
+  the shared workflow step -- fixes the entire class for all ~104 shared-group crons.
+  ② Move `news-rss-nightly` off 04:48 UTC into a Sunday-clear slot.
+  **Related.** B-128 makes this worse: single-line company JSON cannot auto-merge, so every
+  collision becomes a hard conflict. Fixing B-128 shrinks the blast radius.
+  **Verify with** `git log origin/main --grep='data(news)'`, never a run conclusion.
+
 - **B-133 🟡 NEW 2026-08-20 — The IRS 990-PF path writes the grant dollars into PROSE but not into
   the structured key the scorer reads, so 327 of 340 charity-sourced brands are pinned to the flat
   65 floor instead of the 60–100 spread the engine was built for.**
@@ -782,7 +866,7 @@
   (`curl https://www.trunorthapp.com/data/index.json`), never from git.** ⚠️ **Delete the
   "byte-identical to local" clause from the sync template.**
 
-- **B-130 🔴 NEW 2026-08-18 — `nrc-weekly` commits a timestamp and nothing else, every week, and
+- **B-130 🔴 NEW 2026-08-18, EXPANDED 2026-08-22 to THREE sources (`nrc`, `ntsb`, `fdic`) — `nrc-weekly` commits a timestamp and nothing else, every week, and
   reports `success`. The scrape returns zero records; this is NOT the B-129 matcher defect.**
   *(WS-B, S — fix or retire the NRC fetcher; do NOT prescribe the B-129 alias fix here)*
   **What happened.** Run `32163102119` → `success`; commit `e765b7e7b` is **2 files, 7 changed lines.**
@@ -811,6 +895,19 @@
 - **B-129 🟡 NEW 2026-08-17, EXPANDED 2026-08-18 to SEVEN sources — weekly sources fetch real records
   and match almost no brands, while reporting success. The pipelines work; the brand-matching layer
   does not.**
+  ⚠️ **SCOPE AND METHOD CORRECTED 2026-08-22 — this entry has been OVERSTATING the defect.**
+  ① **The `x of 528` denominator is wrong.** `total_brands` is the list the cron sweeps, not the
+  brands the upstream source has records for. Read `with_*_count` from the SOURCE file:
+  `cfpb` 82/92 = **89%** · `msha` 70/78 = **90%** · `occ` 14/17 = **82%** · `phmsa` 30/40 = **75%**.
+  These matchers run at 75-90%, not 3-18%. The real defect is the residual orphan list, which is
+  small and named in each merge log (`cfpb`: overstock, asus, linear, block, plaid, us-bank, sofi,
+  ram, volvo, ninja -- mostly obvious alias misses).
+  ② **`ntsb` and `fdic` do not belong here — they are B-130 (dead fetch).** `ntsb-accidents.json`
+  has 528 entries all reading `status: "not_available"` / `source_status: {aviation: "endpoint_error"}`
+  with zero record arrays; `fdic-enforcement.json` reports `with_enforcement_count: 0` and
+  `edos_unreachable_count: 45`. Zero orphans on a nonzero universe = FETCH bug, per B-130's own rule.
+  ③ **`finra` does not belong here either — it is B-134 (fabricated matches), a correctness bug.**
+  ✅ **Corrected B-129 roster: `occ`, `phmsa`, `msha`, `cisa-kev`.**
   *(WS-B, M — fix the matcher/alias table, or stop advertising the source)*
   **What happened.** Read from the merge logs on `origin/main`, not from run statuses:
   **`ntsb-weekly` merged 0 of 528 brands** (`public/data/_meta/ntsb-merge-log.json`, 2026-08-17T17:31Z —
@@ -951,6 +1048,9 @@
     guess, not a fix: profile the fetcher locally first** (`gdelt` already has 90 minutes and still dies).
 - **B-124 🔴🔴 NEW 2026-08-10 · ⬆️ ESCALATED 2026-08-12 — the shared push retry loop in 117 workflows is BOTH
   unrecoverable AND silent: a cron can fetch, commit, fail to push, discard everything, and REPORT SUCCESS.**
+  🆕 **ROOT-CAUSED 2026-08-22 — see B-135. The trigger is not random: it is the Sunday weekly-merge
+  cluster that `9f4bf87b2` (08-01 destagger) moved into the pinned 04:48Z news window. All three lost
+  nights are Sundays; every Mon-Sat night for 33 days landed. Log proof in B-135.**
   ⭐⭐ **Highest-severity infrastructure item open — it invalidates "the cron is green" as evidence anywhere
   in this repo.** *(WS-B, S — a 2-line change per workflow, but it touches 117 files; no grade impact by itself)*
   🔴🔴 **2026-08-16 — RECURRED A THIRD TIME, AND THE ENTIRE MECHANISM IS NOW ON TAPE IN ONE LOG.**
