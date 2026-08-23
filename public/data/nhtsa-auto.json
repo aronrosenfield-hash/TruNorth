@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T18:17:54.916Z",
+  "generated_at": "2026-08-23T18:22:56.399Z",
   "years_covered": [
     2026,
     2025,
@@ -18,22 +18,22 @@
       "name": "Tesla",
       "nhtsa_make": "TESLA",
       "status": "ok",
-      "total_recalls": 33,
-      "total_complaints": 4730,
+      "total_recalls": 35,
+      "total_complaints": 4753,
       "open_investigations_count": 0,
       "open_investigations_note": "NHTSA investigations endpoint is auth-gated; not fetched.",
       "top_issues": [
         {
           "label": "FORWARD COLLISION AVOIDANCE",
-          "count": 853
+          "count": 857
         },
         {
           "label": "UNKNOWN OR OTHER",
-          "count": 469
+          "count": 473
         },
         {
           "label": "STEERING",
-          "count": 273
+          "count": 277
         },
         {
           "label": "VEHICLE SPEED CONTROL,FORWARD COLLISION AVOIDANCE",
@@ -54,6 +54,19 @@
           "consequence": "Headlight low beams that are too bright can reduce visibility for oncoming drivers, increasing the risk of a crash.",
           "remedy": "The remedy is currently under development. Owner notification letters are expected to be mailed September 15, 2026. Owners may contact Tesla customer service at 1-877-798-3752. Tesla's number for this",
           "modelYear": "2023",
+          "model": "MODEL 3",
+          "parkIt": false,
+          "parkOutside": false,
+          "overTheAirUpdate": false
+        },
+        {
+          "campaign": "26V445000",
+          "date": "2026-07-07",
+          "component": "STRUCTURE:BODY:BUMPERS",
+          "summary": "Tesla, Inc. (Tesla) is recalling certain 2026 Model Y and 2024 Model 3 vehicles. The vehicles were originally built for a foreign market and do not have knee air bags, may not be equipped with certain interior safety countermeasures, and may not have been tested for bumper impact resistance procedures. As such, these vehicles fail to comply with the requirements of Federal Motor Vehicle Safety Sta",
+          "consequence": "A noncompliant vehicle may have reduced occupant protections, increasing the risk of injury during a crash.",
+          "remedy": "Tesla will repurchase noncompliant vehicles currently registered in the United States, free of charge. Owner notification letters are expected to be mailed September 5, 2026. Owners may contact Tesla ",
+          "modelYear": "2024",
           "model": "MODEL 3",
           "parkIt": false,
           "parkOutside": false,
@@ -97,19 +110,6 @@
           "parkIt": false,
           "parkOutside": false,
           "overTheAirUpdate": false
-        },
-        {
-          "campaign": "25V735000",
-          "date": "2025-10-28",
-          "component": "EXTERIOR LIGHTING",
-          "summary": "Tesla, Inc. (Tesla) is recalling certain 2024 Cybertruck vehicles equipped with a service-installed off-road light bar accessory. An incorrect surface primer may have been used to attach the lightbar to the windshield, causing the light bar to loosen and detach.",
-          "consequence": "A detached light bar may fall, creating a road hazard for other vehicles and increasing the risk of a crash.",
-          "remedy": "Tesla Service will inspect the light bar and install an additional mechanical attachment or replace the light bar using tape to adhere the light bar to the windshield as well as an additional mechanic",
-          "modelYear": "2024",
-          "model": "CYBERTRUCK",
-          "parkIt": false,
-          "parkOutside": false,
-          "overTheAirUpdate": false
         }
       ],
       "models_seen": 31,
@@ -121,37 +121,37 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T16:40:04.446Z"
+      "scraped_at": "2026-08-23T16:40:10.337Z"
     },
     {
       "slug": "ford",
       "name": "Ford",
       "nhtsa_make": "FORD",
       "status": "ok",
-      "total_recalls": 206,
-      "total_complaints": 7199,
+      "total_recalls": 198,
+      "total_complaints": 7247,
       "open_investigations_count": 0,
       "open_investigations_note": "NHTSA investigations endpoint is auth-gated; not fetched.",
       "top_issues": [
         {
           "label": "POWER TRAIN",
-          "count": 818
+          "count": 821
         },
         {
           "label": "ELECTRICAL SYSTEM",
-          "count": 639
+          "count": 642
         },
         {
           "label": "UNKNOWN OR OTHER",
-          "count": 593
+          "count": 594
         },
         {
           "label": "SERVICE BRAKES",
-          "count": 339
+          "count": 340
         },
         {
           "label": "ENGINE",
-          "count": 330
+          "count": 329
         }
       ],
       "most_recent_recall_date": "2026-07-20",
@@ -162,7 +162,7 @@
           "component": "ENGINE",
           "summary": "Ford Motor Company (Ford) is recalling certain 2021-2026 Bronco and Bronco Raptor vehicles. The engine compartment wiring harness may become damaged and short circuit.",
           "consequence": "A short circuit in the engine compartment can create heat or spark, increasing the risk of a fire.",
-          "remedy": "Dealers will install sheathing over the wiring, free of charge. Owner notification letters were mailed August 5, 2026. Owners may contact Ford customer service at 1-866-436-7332. Ford's number for thi",
+          "remedy": "Dealers will install sheathing over the wiring, free of charge. This is a Phased campaign. Phase 1 will include 2026 Bronco Raptor notified owners on 7/31/2026. Phase 2 will include 2021-2025 Bronco R",
           "modelYear": "2024",
           "model": "BRONCO",
           "parkIt": false,
@@ -189,7 +189,7 @@
           "summary": "Ford Motor Company (Ford) is recalling certain 2024-2026 Mustang and 2025-2026 Mustang GTD vehicles. During certain cold temperature conditions, the windshield wipers may function only at their high-speed setting and the washing system may fail to function properly.",
           "consequence": "Windshield wipers or a washing system that fails to function as intended can reduce visibility, increasing the risk of a crash.",
           "remedy": "Dealers will inspect and replace the wiper motor as necessary, free of charge. Owner notification letters were mailed August 11, 2026.  Owners may contact Ford customer service at 1-866-436-7332. Ford",
-          "modelYear": "2026",
+          "modelYear": "2025",
           "model": "MUSTANG",
           "parkIt": false,
           "parkOutside": false,
@@ -222,7 +222,7 @@
           "overTheAirUpdate": false
         }
       ],
-      "models_seen": 212,
+      "models_seen": 215,
       "http_errors": 0,
       "years_covered": [
         2026,
@@ -231,7 +231,7 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T16:51:46.769Z"
+      "scraped_at": "2026-08-23T16:52:41.981Z"
     },
     {
       "slug": "gm",
@@ -244,33 +244,46 @@
       "nhtsa_make": "CHEVROLET",
       "status": "ok",
       "total_recalls": 70,
-      "total_complaints": 5660,
+      "total_complaints": 5709,
       "open_investigations_count": 0,
       "open_investigations_note": "NHTSA investigations endpoint is auth-gated; not fetched.",
       "top_issues": [
         {
           "label": "ENGINE",
-          "count": 797
+          "count": 803
         },
         {
           "label": "POWER TRAIN",
-          "count": 531
+          "count": 536
         },
         {
           "label": "UNKNOWN OR OTHER",
-          "count": 416
+          "count": 422
         },
         {
           "label": "ELECTRICAL SYSTEM",
-          "count": 414
+          "count": 419
         },
         {
           "label": "SERVICE BRAKES",
-          "count": 240
+          "count": 241
         }
       ],
-      "most_recent_recall_date": "2026-05-14",
+      "most_recent_recall_date": "2026-08-13",
       "sample_recent_recalls": [
+        {
+          "campaign": "26V530000",
+          "date": "2026-08-13",
+          "component": "TIRES:PRESSURE MONITORING AND REGULATING SYSTEMS",
+          "summary": "General Motors, LLC (GM) is recalling certain 2024-2025 Chevrolet Silverado 2500 and GMC Sierra 2500 vehicles equipped with the enhanced towing option and 20-inch accessory tire/wheel package. The tire information label may state the incorrect rear tire pressure, resulting in underinflated tires and preventing the tire pressure monitoring system (TPMS) from displaying a low tire pressure warning.",
+          "consequence": "Driving with underinflated tires can increase the risk of a crash.",
+          "remedy": "Dealers will inspect, update the engine control module (ECM) software, apply a tire label overlay, inflate tires to the correct pressure, and perform a tire pressure monitor system (TPMS) re-learn pro",
+          "modelYear": "2025",
+          "model": "SILVERADO 2500",
+          "parkIt": false,
+          "parkOutside": false,
+          "overTheAirUpdate": false
+        },
         {
           "campaign": "26V304000",
           "date": "2026-05-14",
@@ -278,22 +291,9 @@
           "summary": "General Motors, LLC is recalling certain 2025–2026 Cadillac Escalade, Escalade ESV, Chevrolet Suburban 1500, Tahoe, GMC Yukon, and Yukon XL vehicles with 24-inch wheels. Incorrect bolts may have been installed on the left and right front wheel hubs, which can result in the bolts loosening or deforming over time.",
           "consequence": "A bolt that loosens or breaks during vehicle operation can result in loss of vehicle control, increasing the risk of a crash.",
           "remedy": "Dealers will replace the front left and right wheel hub bolts, free of charge. Owner notification letters were mailed June 18, 2026. Owners may contact GMC customer service at 1-800-462-8782, Chevrole",
-          "modelYear": "2026",
+          "modelYear": "2025",
           "model": "TAHOE",
           "parkIt": false,
-          "parkOutside": false,
-          "overTheAirUpdate": false
-        },
-        {
-          "campaign": "26V289000",
-          "date": "2026-05-07",
-          "component": "POWER TRAIN:TRANSFER CASE (4-WHEEL DRIVE)",
-          "summary": "General Motors, LLC (GM) is recalling certain 2026 Cadillac Escalade and Escalade ESV, Chevrolet Silverado 1500, Suburban, and Tahoe, and GMC Sierra 1500, Yukon, and Yukon XL vehicles with four-wheel (4WD) or all-wheel drive (AWD), and certain 2015-2020 Suburban, Escalade, Escalade ESV, Yukon, Yukon XL, and Tahoe vehicles. A component missing from the drivetrain transfer case may cause the front a",
-          "consequence": "Front or rear wheel lockup increases the risk of a crash.",
-          "remedy": "Owners are advised not to drive their vehicle until the remedy is completed. Dealers will inspect and, if necessary, replace the transfer case assembly, free of charge. Owner notification letters were",
-          "modelYear": "2026",
-          "model": "SILVERADO 1500",
-          "parkIt": true,
           "parkOutside": false,
           "overTheAirUpdate": false
         },
@@ -346,7 +346,7 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T16:57:52.834Z"
+      "scraped_at": "2026-08-23T16:59:09.110Z"
     },
     {
       "slug": "chrysler",
@@ -354,7 +354,7 @@
       "nhtsa_make": "CHRYSLER",
       "status": "ok",
       "total_recalls": 25,
-      "total_complaints": 619,
+      "total_complaints": 625,
       "open_investigations_count": 0,
       "open_investigations_note": "NHTSA investigations endpoint is auth-gated; not fetched.",
       "top_issues": [
@@ -364,7 +364,7 @@
         },
         {
           "label": "AIR BAGS",
-          "count": 56
+          "count": 58
         },
         {
           "label": "ENGINE",
@@ -376,7 +376,7 @@
         },
         {
           "label": "UNKNOWN OR OTHER",
-          "count": 37
+          "count": 38
         }
       ],
       "most_recent_recall_date": "2026-06-04",
@@ -401,7 +401,7 @@
           "summary": "Braun Corporation (Braun) is recalling certain 2023-2026 Chrysler Pacifica and Voyager vehicles. The spring inside the front seat harness connector may contact electrical terminals.",
           "consequence": "The unintended connection may prevent the air bags from deploying, increasing the risk of injury during a crash.",
           "remedy": "Dealers will replace the spring, free of charge. Owner notification letters were mailed July 16, 2026. Owners may contact Braun's customer service at 1-800-488-0359.",
-          "modelYear": "2026",
+          "modelYear": "2025",
           "model": "PACIFICA",
           "parkIt": false,
           "parkOutside": false,
@@ -427,7 +427,7 @@
           "summary": "Braun Corporation (Braun) is recalling certain 2023-2026 Chrysler Pacifica vehicles. The retractors may not lock, preventing the wheelchair from being properly secured.",
           "consequence": "An unsecured wheelchair can move during transit, increasing the risk of injury.",
           "remedy": "Braun will work with Q'Straint to inspect and replace the retractors as necessary, free of charge. Owner notification letters were mailed June 16, 2026. Owners may contact Braun's customer service at ",
-          "modelYear": "2026",
+          "modelYear": "2025",
           "model": "PACIFICA",
           "parkIt": false,
           "parkOutside": false,
@@ -440,14 +440,14 @@
           "summary": "Chrysler (FCA US, LLC) is recalling certain 2022-2026 Pacifica and Voyager vehicles. The right and left side curtain air bags may have insufficient pressure retention from improperly sealed seams. As such, these vehicles fail to comply with the requirements of Federal Motor Vehicle Safety Standard (FMVSS) number 226, \"Ejection Mitigation.\"",
           "consequence": "Air bags with insufficient pressure retention increase the risk of ejection and injury during a crash.",
           "remedy": "Dealers will replace the side curtain air bags, as necessary, free of charge. Owner notification letters were mailed May 14, 2026. Owners may contact Chrysler customer service at 800-853-1403. Chrysle",
-          "modelYear": "2026",
+          "modelYear": "2025",
           "model": "PACIFICA",
           "parkIt": false,
           "parkOutside": false,
           "overTheAirUpdate": false
         }
       ],
-      "models_seen": 16,
+      "models_seen": 18,
       "http_errors": 0,
       "years_covered": [
         2026,
@@ -456,21 +456,21 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T16:58:43.981Z"
+      "scraped_at": "2026-08-23T17:00:07.314Z"
     },
     {
       "slug": "dodge",
       "name": "Dodge",
       "nhtsa_make": "DODGE",
       "status": "ok",
-      "total_recalls": 22,
-      "total_complaints": 359,
+      "total_recalls": 23,
+      "total_complaints": 364,
       "open_investigations_count": 0,
       "open_investigations_note": "NHTSA investigations endpoint is auth-gated; not fetched.",
       "top_issues": [
         {
           "label": "ELECTRICAL SYSTEM",
-          "count": 32
+          "count": 33
         },
         {
           "label": "EXTERIOR LIGHTING",
@@ -478,7 +478,7 @@
         },
         {
           "label": "UNKNOWN OR OTHER",
-          "count": 20
+          "count": 21
         },
         {
           "label": "SERVICE BRAKES",
@@ -489,8 +489,21 @@
           "count": 15
         }
       ],
-      "most_recent_recall_date": "2026-08-06",
+      "most_recent_recall_date": "2026-08-13",
       "sample_recent_recalls": [
+        {
+          "campaign": "26V528000",
+          "date": "2026-08-13",
+          "component": "STRUCTURE:BODY:HATCHBACK/LIFTGATE",
+          "summary": "Chrysler (FCA US, LLC) is recalling certain 2021-2023 Dodge Durango vehicles. The rear spoiler may not be aligned properly with the roof, possibly resulting in damage to the spoiler during liftgate use.",
+          "consequence": "A damaged rear spoiler may detach and create a road hazard, increasing the risk of a crash.",
+          "remedy": "The remedy is currently under development. Owner notification letters are expected to be mailed beginning September 10, 2026. Owners may contact Chrysler customer service at 1-800-853-1403.  Chrysler'",
+          "modelYear": "2023",
+          "model": "DURANGO",
+          "parkIt": false,
+          "parkOutside": false,
+          "overTheAirUpdate": false
+        },
         {
           "campaign": "26V510000",
           "date": "2026-08-06",
@@ -542,19 +555,6 @@
           "parkIt": false,
           "parkOutside": false,
           "overTheAirUpdate": false
-        },
-        {
-          "campaign": "25V246000",
-          "date": "2025-04-15",
-          "component": "BACK OVER PREVENTION: SENSING SYSTEM: CAMERA",
-          "summary": "Chrysler (FCA US, LLC) is recalling certain 2023-2025 Alfa Romeo Tonale and Dodge Hornet vehicles.  The display module may not show the rearview camera image.  As such, these vehicles fail to comply with the requirements of Federal Motor Vehicle Safety Standard (FMVSS) number 111, \"Rear Visibility.\"",
-          "consequence": "A rearview image that does not display reduces the driver's view of what is behind the vehicle, increasing the risk of a crash.",
-          "remedy": "Dealers will update the software or replace the display as necessary free of charge.  Owner notification letters were mailed beginning May 13, 2025.  Owners may contact Chrysler customer service at 80",
-          "modelYear": "2025",
-          "model": "HORNET",
-          "parkIt": false,
-          "parkOutside": false,
-          "overTheAirUpdate": false
         }
       ],
       "models_seen": 34,
@@ -566,67 +566,41 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T17:00:25.050Z"
+      "scraped_at": "2026-08-23T17:02:47.498Z"
     },
     {
       "slug": "jeep",
       "name": "Jeep",
       "nhtsa_make": "JEEP",
       "status": "ok",
-      "total_recalls": 69,
-      "total_complaints": 4283,
+      "total_recalls": 66,
+      "total_complaints": 4311,
       "open_investigations_count": 0,
       "open_investigations_note": "NHTSA investigations endpoint is auth-gated; not fetched.",
       "top_issues": [
         {
           "label": "ELECTRICAL SYSTEM",
-          "count": 550
+          "count": 552
         },
         {
           "label": "ELECTRICAL SYSTEM,ENGINE",
-          "count": 294
+          "count": 297
         },
         {
           "label": "UNKNOWN OR OTHER",
-          "count": 255
+          "count": 256
         },
         {
           "label": "ENGINE",
-          "count": 244
+          "count": 249
         },
         {
           "label": "POWER TRAIN",
-          "count": 171
+          "count": 172
         }
       ],
-      "most_recent_recall_date": "2026-07-16",
+      "most_recent_recall_date": "2026-06-30",
       "sample_recent_recalls": [
-        {
-          "campaign": "26V456000",
-          "date": "2026-07-16",
-          "component": "WHEELS",
-          "summary": "Chrysler (FCA US, LLC) is recalling certain 2026 Jeep Gladiator and Jeep Wrangler vehicles. The walls for the steel wheels may be too thin, allowing them to crack or detach, which can result in a loss of vehicle control.",
-          "consequence": "Loss of vehicle control increases the risk of a crash.",
-          "remedy": "Dealers will inspect and replace the steel wheels and valve stems, as necessary, free of charge. Owner notification letters are expected to be mailed September 4, 2026. Owners may contact FCA customer",
-          "modelYear": "2026",
-          "model": "GLADIATOR",
-          "parkIt": false,
-          "parkOutside": false,
-          "overTheAirUpdate": false
-        },
-        {
-          "campaign": "26V414000",
-          "date": "2026-06-30",
-          "component": "ELECTRONIC STABILITY CONTROL (ESC)",
-          "summary": "Chrysler (FCA US, LLC) is recalling certain 2026 Jeep Grand Wagoneer and Jeep Grand Wagoneer L vehicles. The brake system control module software may cause a loss of electronic stability control and a loss of electronic brake assist. As such, these vehicles fail to comply with the requirements of Federal Motor Vehicle Safety Standard numbers 126, \"Electronic Stability Control Systems\" and 135, \"Li",
-          "consequence": "A loss of electronic stability control and/or electronic brake assist increases the risk of a crash.",
-          "remedy": "Dealers will update the brake system control module software, free of charge. Owner notification letters are expected to be mailed July 30, 2026. Owners may contact Chrysler customer service at 800-85",
-          "modelYear": "2026",
-          "model": "GRAND WAGONEER",
-          "parkIt": false,
-          "parkOutside": false,
-          "overTheAirUpdate": false
-        },
         {
           "campaign": "26V413000",
           "date": "2026-06-30",
@@ -660,14 +634,40 @@
           "summary": "Chrysler (FCA US, LLC) is recalling certain 2022-2026 Jeep Grand Cherokee and 2023-2025 Jeep Grand Cherokee L vehicles. A software error in the occupant restraint controller module may cause the delayed deployment of the side air bags during a crash. As such, these vehicles fail to comply with the requirements of Federal Motor Vehicle Safety Standard number 214, \"Side Impact Protection.\"",
           "consequence": "Delayed air bag deployment during a crash increases the risk of injury.",
           "remedy": "Dealers will update the occupant restraint controller module software, free of charge. Some owner notification letters are expected to be mailed June 18, 2026. Owners may contact Chrysler customer ser",
-          "modelYear": "2026",
-          "model": "GRAND CHEROKEE",
+          "modelYear": "2025",
+          "model": "GRAND CHEROKEE L",
+          "parkIt": false,
+          "parkOutside": false,
+          "overTheAirUpdate": false
+        },
+        {
+          "campaign": "26V290000",
+          "date": "2026-05-07",
+          "component": "POWER TRAIN",
+          "summary": "Chrysler (FCA US LLC) is recalling certain 2019-2023 Jeep Cherokee vehicles. The power transfer unit (PTU) may fail.",
+          "consequence": "A failed PTU may result in a loss of drive power or vehicle rollaway, increasing the risk of a crash or injury.",
+          "remedy": "The remedy is currently under development. Interim owner notification letters explaining the safety risk are expected to be mailed June 25, 2026. Additional letters will be sent once the final remedy ",
+          "modelYear": "2023",
+          "model": "CHEROKEE",
+          "parkIt": false,
+          "parkOutside": false,
+          "overTheAirUpdate": false
+        },
+        {
+          "campaign": "26V262000",
+          "date": "2026-04-23",
+          "component": "ELECTRICAL SYSTEM: INSTRUMENT CLUSTER/PANEL",
+          "summary": "Chrysler (FCA US, LLC) is recalling certain 2024-2025 Jeep Wagoneer S and Dodge Charger electric vehicles. A software error may cause the instrument panel display to fail. As such, these vehicles fail to comply with the requirements of Federal Motor Vehicle Safety Standard numbers 108, \"Lamps, Reflective Devices, and Associated Equipment,\" 126, \"Electronic Stability Control Systems for Light Vehic",
+          "consequence": "An instrument panel display that fails to show critical safety information, such as gear selection and warning lights, increases the risk of a crash.",
+          "remedy": "Dealers will update the instrument panel software, free of charge. Owner notification letters were mailed May 14, 2026. Owners may contact FCA customer service at 1-800-853-1403. FCA's number for this",
+          "modelYear": "2025",
+          "model": "WAGONEER S",
           "parkIt": false,
           "parkOutside": false,
           "overTheAirUpdate": false
         }
       ],
-      "models_seen": 74,
+      "models_seen": 76,
       "http_errors": 0,
       "years_covered": [
         2026,
@@ -676,7 +676,7 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T17:05:00.980Z"
+      "scraped_at": "2026-08-23T17:08:00.187Z"
     },
     {
       "slug": "ram",
@@ -684,17 +684,17 @@
       "nhtsa_make": "RAM",
       "status": "ok",
       "total_recalls": 29,
-      "total_complaints": 2095,
+      "total_complaints": 2120,
       "open_investigations_count": 0,
       "open_investigations_note": "NHTSA investigations endpoint is auth-gated; not fetched.",
       "top_issues": [
         {
-          "label": "POWER TRAIN",
-          "count": 195
+          "label": "ELECTRICAL SYSTEM",
+          "count": 198
         },
         {
-          "label": "ELECTRICAL SYSTEM",
-          "count": 193
+          "label": "POWER TRAIN",
+          "count": 195
         },
         {
           "label": "ENGINE",
@@ -702,11 +702,11 @@
         },
         {
           "label": "UNKNOWN OR OTHER",
-          "count": 135
+          "count": 137
         },
         {
           "label": "SERVICE BRAKES",
-          "count": 82
+          "count": 83
         }
       ],
       "most_recent_recall_date": "2026-04-09",
@@ -786,7 +786,7 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T17:09:55.270Z"
+      "scraped_at": "2026-08-23T17:13:15.784Z"
     },
     {
       "slug": "stellantis",
@@ -798,30 +798,30 @@
       "name": "Toyota",
       "nhtsa_make": "TOYOTA",
       "status": "ok",
-      "total_recalls": 78,
-      "total_complaints": 5308,
+      "total_recalls": 77,
+      "total_complaints": 5366,
       "open_investigations_count": 0,
       "open_investigations_note": "NHTSA investigations endpoint is auth-gated; not fetched.",
       "top_issues": [
         {
           "label": "UNKNOWN OR OTHER",
-          "count": 553
-        },
-        {
-          "label": "POWER TRAIN",
-          "count": 339
+          "count": 560
         },
         {
           "label": "ENGINE",
-          "count": 339
+          "count": 344
+        },
+        {
+          "label": "POWER TRAIN",
+          "count": 341
         },
         {
           "label": "SEATS",
-          "count": 301
+          "count": 304
         },
         {
           "label": "SERVICE BRAKES",
-          "count": 295
+          "count": 298
         }
       ],
       "most_recent_recall_date": "2026-08-06",
@@ -840,14 +840,14 @@
           "overTheAirUpdate": false
         },
         {
-          "campaign": "26V437000",
-          "date": "2026-07-08",
-          "component": "POWER TRAIN:AXLE ASSEMBLY",
-          "summary": "Toyota Motor Engineering & Manufacturing (Toyota) is recalling certain 2026 Lexus TX Plug-In Hybrid, TX Hybrid, TX, Toyota Grand Highlander Hybrid, and Grand Highlander vehicles. The rear axle carriers may have been manufactured with insufficient material strength and could break.",
-          "consequence": "A broken rear axle carrier can cause a sudden loss of vehicle stability and control, increasing the risk of a crash.",
-          "remedy": "Dealers will inspect the rear axle carrier sub-assembly code, and replace the sub-assemblies as necessary, free of charge. Owner notification letters are expected to be mailed August 23, 2026. Owners ",
-          "modelYear": "2026",
-          "model": "GRAND HIGHLANDER",
+          "campaign": "26V514000",
+          "date": "2026-08-06",
+          "component": "SUSPENSION:REAR:SHOCK ABSORBER",
+          "summary": "Toyota Motor Engineering & Manufacturing (Toyota) is recalling certain 2024 Tacoma Hybrid and 2024-2025 Tacoma vehicles. The metal flange on the front and rear shock absorbers may corrode and fail, resulting in detachment of the external oil reservoir.",
+          "consequence": "An oil reservoir that detaches can create a road hazard, increasing the risk of a crash.",
+          "remedy": "Dealers will inspect and replace the front and rear shock absorber assemblies, as necessary, free of charge. Owner notification letters are expected to be mailed September 21, 2026. Owners may contact",
+          "modelYear": "2025",
+          "model": "TACOMA",
           "parkIt": false,
           "parkOutside": false,
           "overTheAirUpdate": false
@@ -866,19 +866,6 @@
           "overTheAirUpdate": false
         },
         {
-          "campaign": "26V433000",
-          "date": "2026-07-06",
-          "component": "EQUIPMENT:OTHER:LABELS",
-          "summary": "Southeast Toyota Distributors, LLC (SET) is recalling one 2026 Tundra truck. The current load carrying capacity modification label is incorrect. As such, this vehicle fails to comply with the requirements of Federal Motor Vehicle Safety Standard number 110, \"Tire Selection and Rims.\"",
-          "consequence": "An incorrect load carrying capacity modification label may lead to improper loading of the vehicle, increasing the risk of a crash.",
-          "remedy": "SET will provide the owner with a new load carrying capacity modification label, free of charge. An owner notification letter was mailed August 6, 2026. The owner may contact SET's customer service at",
-          "modelYear": "2026",
-          "model": "TUNDRA",
-          "parkIt": false,
-          "parkOutside": false,
-          "overTheAirUpdate": false
-        },
-        {
           "campaign": "26V341000",
           "date": "2026-05-27",
           "component": "ELECTRICAL SYSTEM: INSTRUMENT CLUSTER/PANEL",
@@ -890,9 +877,22 @@
           "parkIt": false,
           "parkOutside": false,
           "overTheAirUpdate": false
+        },
+        {
+          "campaign": "26V320000",
+          "date": "2026-05-20",
+          "component": "ENGINE AND ENGINE COOLING:ENGINE:HARD PARTS INTERNAL/MECHANICAL",
+          "summary": "Toyota Motor Engineering & Manufacturing (Toyota) is recalling certain 2024 Tundra vehicles equipped with a V35A engine. Debris from the manufacturing process may contaminate the engine and cause a main bearing to fail, which can result in an engine stall and loss of drive power.",
+          "consequence": "A loss of drive power increases the risk of a crash.",
+          "remedy": "Dealers will perform an inspection on the #1 main bearing using vehicle inspection software and drive data, and if necessary, replace the engine. Repairs will be performed free of charge. Interim lett",
+          "modelYear": "2024",
+          "model": "TUNDRA",
+          "parkIt": false,
+          "parkOutside": false,
+          "overTheAirUpdate": false
         }
       ],
-      "models_seen": 127,
+      "models_seen": 126,
       "http_errors": 0,
       "years_covered": [
         2026,
@@ -901,37 +901,37 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T17:18:24.178Z"
+      "scraped_at": "2026-08-23T17:20:43.178Z"
     },
     {
       "slug": "honda",
       "name": "Honda",
       "nhtsa_make": "HONDA",
       "status": "ok",
-      "total_recalls": 55,
-      "total_complaints": 7852,
+      "total_recalls": 54,
+      "total_complaints": 7933,
       "open_investigations_count": 0,
       "open_investigations_note": "NHTSA investigations endpoint is auth-gated; not fetched.",
       "top_issues": [
         {
           "label": "STEERING",
-          "count": 1947
+          "count": 1956
         },
         {
           "label": "UNKNOWN OR OTHER",
-          "count": 725
+          "count": 731
         },
         {
           "label": "VISIBILITY/WIPER",
-          "count": 452
+          "count": 455
         },
         {
           "label": "ELECTRICAL SYSTEM",
-          "count": 363
+          "count": 370
         },
         {
           "label": "FORWARD COLLISION AVOIDANCE",
-          "count": 326
+          "count": 329
         }
       ],
       "most_recent_recall_date": "2026-07-30",
@@ -945,19 +945,6 @@
           "remedy": "Dealers will replace the lock screw and apply thread lock, free of charge. Interim letters notifying owners of the safety risk are expected to be mailed  September 21, 2026. Additional letters will be",
           "modelYear": "2023",
           "model": "CMX300",
-          "parkIt": false,
-          "parkOutside": false,
-          "overTheAirUpdate": false
-        },
-        {
-          "campaign": "26V424000",
-          "date": "2026-07-01",
-          "component": "SUSPENSION:REAR",
-          "summary": "Honda (American Honda Motor Co.) is recalling certain 2026 Pilot and Passport vehicles. The rear subframe bolts may have been tightened improperly.",
-          "consequence": "Loose rear subframe bolts can lead to a loss of vehicle stability or rear subframe detachment, increasing the risk of a crash or injury.",
-          "remedy": "Dealers will inspect and replace the rear subframe bolts as necessary, free of charge. Owner notification letters are expected to be mailed August 24, 2026. Owners may contact Honda's customer service",
-          "modelYear": "2026",
-          "model": "PASSPORT",
           "parkIt": false,
           "parkOutside": false,
           "overTheAirUpdate": false
@@ -995,7 +982,20 @@
           "summary": "Honda (American Honda Motor Co.) is recalling certain 2018-2021, 2023 Acura TLX, 2019-2024 RDX, 2017-2020, 2022-2026 MDX, 2017-2021, 2023, 2025 Honda Ridgeline, 2017-2022 Pilot, 2019-2021 Passport, 2018-2026 Odyssey, 2019-2022 Insight, 2019-2021 HR-V, 2018-2020 Fit, 2020-2022 CR-V Hybrid, 2017-2022 CR-V, 2017-2018, 2021 Civic Type R, 2017-2021 Civic hatchback, 2016-2020 Civic coupe, 2016-2022 Civi",
           "consequence": "Air bags that deploy unintentionally during a crash increase the risk of injury.",
           "remedy": "Dealers will replace the seat weight sensors, free of charge. Owner notification letters were mailed July 7, 2026. Owners may contact Honda's customer service at 1-888-234-2138. Honda's numbers for th",
-          "modelYear": "2026",
+          "modelYear": "2025",
+          "model": "ODYSSEY",
+          "parkIt": false,
+          "parkOutside": false,
+          "overTheAirUpdate": false
+        },
+        {
+          "campaign": "26V227000",
+          "date": "2026-04-09",
+          "component": "AIR BAGS: AIR BAG/RESTRAINT CONTROL MODULE:SOFTWARE",
+          "summary": "Honda (American Honda Motor Co.) is recalling certain 2018-2022 Odyssey vehicles. A software programming error can cause the side and side curtain air bags to deploy unexpectedly.",
+          "consequence": "Air bags that deploy unexpectedly can increase the risk of injury.",
+          "remedy": "Dealers will reprogram the supplemental restraint system (SRS) electronic control unit (ECU) software or replace the  ECU, as necessary, free of charge. Owner notification letters were mailed May 27, ",
+          "modelYear": "2022",
           "model": "ODYSSEY",
           "parkIt": false,
           "parkOutside": false,
@@ -1011,29 +1011,29 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T17:24:49.599Z"
+      "scraped_at": "2026-08-23T17:26:40.048Z"
     },
     {
       "slug": "nissan",
       "name": "Nissan",
       "nhtsa_make": "NISSAN",
       "status": "ok",
-      "total_recalls": 49,
-      "total_complaints": 2762,
+      "total_recalls": 47,
+      "total_complaints": 2786,
       "open_investigations_count": 0,
       "open_investigations_note": "NHTSA investigations endpoint is auth-gated; not fetched.",
       "top_issues": [
         {
           "label": "UNKNOWN OR OTHER",
-          "count": 353
+          "count": 355
         },
         {
           "label": "ENGINE",
-          "count": 279
+          "count": 281
         },
         {
           "label": "ENGINE AND ENGINE COOLING",
-          "count": 148
+          "count": 149
         },
         {
           "label": "POWER TRAIN",
@@ -1041,11 +1041,24 @@
         },
         {
           "label": "VISIBILITY/WIPER",
-          "count": 133
+          "count": 135
         }
       ],
-      "most_recent_recall_date": "2026-07-15",
+      "most_recent_recall_date": "2026-08-13",
       "sample_recent_recalls": [
+        {
+          "campaign": "26V526000",
+          "date": "2026-08-13",
+          "component": "AIR BAGS:CRITICAL FASTENERS",
+          "summary": "Nissan North America, Inc. (Nissan) is recalling certain 2025 Altima vehicles. The front passenger air bag and front passenger knee air bag may have been installed with incorrect mounting fasteners, which can cause the air bags not to deploy as intended.",
+          "consequence": "Air bags that do not deploy as intended increase the risk of injury in a crash.",
+          "remedy": "Dealers will replace the air bag mounting fasteners, free of charge. Owner notification letters are expected to be mailed September 25, 2026. Owners may contact Nissan’s customer service at 1-800-867-",
+          "modelYear": "2025",
+          "model": "ALTIMA",
+          "parkIt": false,
+          "parkOutside": false,
+          "overTheAirUpdate": false
+        },
         {
           "campaign": "26V455000",
           "date": "2026-07-15",
@@ -1053,21 +1066,8 @@
           "summary": "Nissan North America, Inc. (Nissan) is recalling certain 2020-2026 Nissan Armada, 2011-2013 Infiniti QX56, and 2014-2027 QX80 vehicles equipped with 22\" wheels. The Gross Axle Weight Rating (GAWR) listed on the certification label is incorrect, which can allow the vehicle to be overloaded. As such, these vehicles fail to comply with the requirements of Federal Motor Vehicle Safety Standard number ",
           "consequence": "An overloaded vehicle can increase the risk of a crash.",
           "remedy": "Dealers will install new labels, free of charge. Additionally, Nissan will mail replacement labels to owners. Interim letters notifying owners of the safety risk are expected to be mailed August 21, 2",
-          "modelYear": "2026",
+          "modelYear": "2025",
           "model": "ARMADA",
-          "parkIt": false,
-          "parkOutside": false,
-          "overTheAirUpdate": false
-        },
-        {
-          "campaign": "26V419000",
-          "date": "2026-06-30",
-          "component": "POWER TRAIN:AUTOMATIC TRANSMISSION:GEAR POSITION INDICATION (PRNDL)",
-          "summary": "Nissan North America, Inc. (Nissan) is recalling certain 2026 Rogue vehicles. The instrument panel may not display the transmission gear selection indicator. As such, these vehicles fail to comply with the requirements of Federal Motor Vehicle Safety Standard number 102, \"Transmission Shift Lever Sequence, Starter Interlock, and Transmission Braking Effect.\"",
-          "consequence": "A missing gear selection indicator may lead to unintended vehicle movement or a vehicle rollaway, increasing the risk of a crash.",
-          "remedy": "Dealers will inspect and replace the transmission control valve assembly as necessary, free of charge. Owner notification letters are expected to be mailed August 19, 2026. Owners may contact Nissan's",
-          "modelYear": "2026",
-          "model": "ROGUE",
           "parkIt": false,
           "parkOutside": false,
           "overTheAirUpdate": false
@@ -1091,28 +1091,28 @@
           "component": "ELECTRICAL SYSTEM: INSTRUMENT CLUSTER/PANEL",
           "summary": "Nissan North America, Inc. (Nissan) is recalling certain 2025-2026 Kicks vehicles. A software error in the combination meter may cause the screen display to go partially or fully blank. As such, these vehicles fail to comply with the requirements of Federal Motor Vehicle Safety Standard number 101, \"Control and Displays.\"",
           "consequence": "A partial or blank screen display will not show critical safety information such as vehicle speed and warning lights, increasing the risk of a crash.",
-          "remedy": "Dealers will update the combination meter software, free of charge. Owner notification letters were mailed July 6, 2026. Owners may contact Nissan's customer service at 800-647-7261. Nissan's number f",
-          "modelYear": "2026",
+          "remedy": "Dealers will resume the software reprogramming of the combination meter software, free of charge. Owner notification letters were mailed July 6, 2026. Owners may contact Nissan's customer service at 8",
+          "modelYear": "2025",
           "model": "KICKS",
           "parkIt": false,
           "parkOutside": false,
           "overTheAirUpdate": false
         },
         {
-          "campaign": "26V145000",
-          "date": "2026-03-13",
-          "component": "SEATS",
-          "summary": "Nissan North America, Inc. (Nissan) is recalling certain 2026 Kicks and Sentra vehicles. The hook bracket of the front seat frames may be insufficiently welded, which can cause the front seat frames to become loose. As such, these vehicles fail to comply with the requirements of Federal Motor Vehicle Safety Standard (FMVSS) numbers 207, \"Seating Systems\" and 210, \"Seat Belt Assembly Anchorages.\"",
-          "consequence": "A loose seat may not restrain the occupant as intended, increasing the risk of injury during a crash.",
-          "remedy": "Dealers will replace the front seat assemblies, free of charge. Owner notification letters were mailed May 18, 2026. Owners may contact Nissan's customer service at 800-647-7261. Nissan's number for t",
-          "modelYear": "2026",
-          "model": "SENTRA",
+          "campaign": "26V080000",
+          "date": "2026-02-12",
+          "component": "ENGINE AND ENGINE COOLING:ENGINE:HARD PARTS INTERNAL/MECHANICAL",
+          "summary": "Nissan North America, Inc. (Nissan) is recalling certain 2023-2025 Rogue vehicles equipped with 3-cylinder 1.5L variable compression turbo (VC-Turbo) engines. Increased temperatures can break down the engine oil, which may cause the engine bearings to seize and become damaged, leading to engine failure.",
+          "consequence": "Engine failure can cause a loss of drive power, increasing the risk of a crash. A bearing failure may cause a breach in the engine block, allowing hot oil to be discharged, increasing the risk of an e",
+          "remedy": "Dealers will reprogram the engine control module (ECM) software, inspect for diagnostic trouble codes, and test drive the vehicle, free of charge. The dealer may also inspect the oil pan for metal deb",
+          "modelYear": "2025",
+          "model": "ROGUE",
           "parkIt": false,
           "parkOutside": false,
           "overTheAirUpdate": false
         }
       ],
-      "models_seen": 74,
+      "models_seen": 75,
       "http_errors": 0,
       "years_covered": [
         2026,
@@ -1121,25 +1121,25 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T17:29:27.188Z"
+      "scraped_at": "2026-08-23T17:31:23.304Z"
     },
     {
       "slug": "hyundai",
       "name": "Hyundai",
       "nhtsa_make": "HYUNDAI",
       "status": "ok",
-      "total_recalls": 73,
-      "total_complaints": 6537,
+      "total_recalls": 70,
+      "total_complaints": 6589,
       "open_investigations_count": 0,
       "open_investigations_note": "NHTSA investigations endpoint is auth-gated; not fetched.",
       "top_issues": [
         {
           "label": "ELECTRICAL SYSTEM",
-          "count": 900
+          "count": 905
         },
         {
           "label": "UNKNOWN OR OTHER",
-          "count": 568
+          "count": 574
         },
         {
           "label": "SERVICE BRAKES",
@@ -1147,11 +1147,11 @@
         },
         {
           "label": "POWER TRAIN",
-          "count": 325
+          "count": 329
         },
         {
           "label": "FORWARD COLLISION AVOIDANCE",
-          "count": 303
+          "count": 306
         }
       ],
       "most_recent_recall_date": "2026-07-14",
@@ -1163,8 +1163,8 @@
           "summary": "Hyundai Motor America (Hyundai) is recalling certain 2025 Kona Electric and 2026 Kona vehicles. The seat belt buckle in the rear center seat may fail to properly restrain an occupant during a crash.",
           "consequence": "A seat belt buckle that fails to properly restrain an occupant in a crash increases the risk of injury.",
           "remedy": "Passengers are advised not to use the rear center seat until the recall remedy is performed. Dealers will replace the seat belt buckle assembly, free of charge. Owner notification letters are expected",
-          "modelYear": "2026",
-          "model": "KONA",
+          "modelYear": "2025",
+          "model": "KONA ELECTRIC",
           "parkIt": false,
           "parkOutside": false,
           "overTheAirUpdate": false
@@ -1189,8 +1189,8 @@
           "summary": "Hyundai Motor America (Hyundai) is recalling certain 2025-2026 Tucson, Tucson Hybrid, Tucson Plug-In Hybrid Electric (PHEV) vehicles. Due to a software error, the instrument panel display may fail. As such, these vehicles fail to comply with the requirements of Federal Motor Vehicle Safety Standard (FMVSS) number 101, \"Controls and Displays.\"",
           "consequence": "An instrument panel display that fails to show critical safety information, such as the speedometer or warning lights, increases the risk of a crash.",
           "remedy": "The instrument panel display software will be updated over-the-air (OTA) or by a dealer, free of charge. Owner notification letters are expected to be mailed August 22, 2026. Owners may contact Hyunda",
-          "modelYear": "2026",
-          "model": "TUCSON",
+          "modelYear": "2025",
+          "model": "TUCSON HYBRID",
           "parkIt": false,
           "parkOutside": false,
           "overTheAirUpdate": false
@@ -1202,7 +1202,7 @@
           "summary": "Hyundai Motor America (Hyundai) is recalling certain 2025-2026 Santa Cruz, Tucson, Tucson Hybrid, and Tucson Plug-In Hybrid Electric (PHEV) vehicles. Software in the front cameras may cause the forward collision avoidance system to activate prematurely and unexpectedly apply the brakes.",
           "consequence": "Unexpected braking increases the risk of a crash.",
           "remedy": "Dealers will update the front camera software, free of charge. Owner notification letters are expected to be mailed July 17, 2026. Owners may contact Hyundai customer service at 1-855-371-9460. Hyunda",
-          "modelYear": "2026",
+          "modelYear": "2025",
           "model": "SANTA CRUZ",
           "parkIt": false,
           "parkOutside": false,
@@ -1231,33 +1231,33 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T17:35:28.216Z"
+      "scraped_at": "2026-08-23T17:37:21.148Z"
     },
     {
       "slug": "kia",
       "name": "Kia",
       "nhtsa_make": "KIA",
       "status": "ok",
-      "total_recalls": 65,
-      "total_complaints": 4151,
+      "total_recalls": 64,
+      "total_complaints": 4181,
       "open_investigations_count": 0,
       "open_investigations_note": "NHTSA investigations endpoint is auth-gated; not fetched.",
       "top_issues": [
         {
           "label": "ELECTRICAL SYSTEM",
-          "count": 546
+          "count": 551
         },
         {
           "label": "UNKNOWN OR OTHER",
-          "count": 527
+          "count": 531
         },
         {
           "label": "ENGINE",
-          "count": 228
+          "count": 232
         },
         {
           "label": "VISIBILITY/WIPER",
-          "count": 198
+          "count": 199
         },
         {
           "label": "POWER TRAIN",
@@ -1299,21 +1299,8 @@
           "summary": "Kia America, Inc. (Kia) is recalling certain 2022-2026 Carnival vehicles. Fuel may leak at the pipe connection between the fuel pipe and fuel rail.",
           "consequence": "A fuel leak increases the risk of a fire.",
           "remedy": "Dealers will inspect and tighten, or replace the fuel pipe as necessary, free of charge. Owner notification letters were mailed June 2, 2026. Owners may contact Kia customer service at 1-800-333-4542.",
-          "modelYear": "2026",
+          "modelYear": "2025",
           "model": "CARNIVAL",
-          "parkIt": false,
-          "parkOutside": false,
-          "overTheAirUpdate": false
-        },
-        {
-          "campaign": "26V135000",
-          "date": "2026-03-06",
-          "component": "SEAT BELTS:REAR/OTHER:ANCHORAGE",
-          "summary": "Kia America, Inc (Kia) is recalling certain 2027 Kia Telluride and 2026 Kia K4 vehicles. The rear center seat belt anchor buckle in the 2026 K4 and the third-row center seat belt anchor buckle in the 2027 Telluride may not latch properly.",
-          "consequence": "A seat belt buckle that is not latched properly can fail to restrain an occupant in a crash, increasing the risk of injury.",
-          "remedy": "Dealers will inspect and replace the anchor buckle assembly, as necessary, free of charge. Owner notification letters were mailed May 5, 2026. Owners may contact Kia at 1-800-333-4542. Kia's number fo",
-          "modelYear": "2026",
-          "model": "K4",
           "parkIt": false,
           "parkOutside": false,
           "overTheAirUpdate": false
@@ -1330,9 +1317,22 @@
           "parkIt": false,
           "parkOutside": false,
           "overTheAirUpdate": false
+        },
+        {
+          "campaign": "26V046000",
+          "date": "2026-01-27",
+          "component": "ELECTRICAL SYSTEM: INSTRUMENT CLUSTER/PANEL",
+          "summary": "Kia America, Inc. (Kia) is recalling certain 2025 Kia K4, 2025-2026 Sorento, Sorento Hybrid, Sorento Plug-In Hybrid Electric (PHEV), 2026 Sportage, Sportage Hybrid, Sportage PHEV,  K5, EV9, Carnival, and Carnival Hybrid vehicles. Due to a software error, the instrument panel display may fail. As such, these vehicles fail to comply with the requirements of Federal Motor Vehicle Safety Standard (FMV",
+          "consequence": "An instrument panel display that fails to show critical safety information, such as the speedometer, tire pressure, or warning lights, increases the risk of a crash.",
+          "remedy": "The instrument panel display software will be updated over-the-air (OTA) or by a dealer, free of charge. Owner notification letters are expected to be mailed March 26, 2026. Owners may contact Kia Cus",
+          "modelYear": "2025",
+          "model": "SORENTO HYBRID",
+          "parkIt": false,
+          "parkOutside": false,
+          "overTheAirUpdate": false
         }
       ],
-      "models_seen": 80,
+      "models_seen": 81,
       "http_errors": 0,
       "years_covered": [
         2026,
@@ -1341,7 +1341,7 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T17:40:06.797Z"
+      "scraped_at": "2026-08-23T17:41:12.608Z"
     },
     {
       "slug": "mazda",
@@ -1349,13 +1349,13 @@
       "nhtsa_make": "MAZDA",
       "status": "ok",
       "total_recalls": 14,
-      "total_complaints": 1071,
+      "total_complaints": 1080,
       "open_investigations_count": 0,
       "open_investigations_note": "NHTSA investigations endpoint is auth-gated; not fetched.",
       "top_issues": [
         {
           "label": "STEERING",
-          "count": 158
+          "count": 160
         },
         {
           "label": "UNKNOWN OR OTHER",
@@ -1367,11 +1367,11 @@
         },
         {
           "label": "ENGINE",
-          "count": 44
+          "count": 45
         },
         {
           "label": "ELECTRICAL SYSTEM",
-          "count": 43
+          "count": 44
         }
       ],
       "most_recent_recall_date": "2025-10-29",
@@ -1442,7 +1442,7 @@
           "overTheAirUpdate": false
         }
       ],
-      "models_seen": 39,
+      "models_seen": 40,
       "http_errors": 0,
       "years_covered": [
         2026,
@@ -1451,37 +1451,37 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T17:42:20.078Z"
+      "scraped_at": "2026-08-23T17:43:21.686Z"
     },
     {
       "slug": "subaru",
       "name": "Subaru",
       "nhtsa_make": "SUBARU",
       "status": "ok",
-      "total_recalls": 23,
-      "total_complaints": 1687,
+      "total_recalls": 21,
+      "total_complaints": 1716,
       "open_investigations_count": 0,
       "open_investigations_note": "NHTSA investigations endpoint is auth-gated; not fetched.",
       "top_issues": [
         {
           "label": "VISIBILITY/WIPER",
-          "count": 376
+          "count": 378
         },
         {
           "label": "UNKNOWN OR OTHER",
-          "count": 250
+          "count": 251
         },
         {
           "label": "ELECTRICAL SYSTEM",
-          "count": 96
+          "count": 102
         },
         {
           "label": "VISIBILITY",
-          "count": 90
+          "count": 91
         },
         {
           "label": "EXTERIOR LIGHTING",
-          "count": 78
+          "count": 81
         }
       ],
       "most_recent_recall_date": "2026-07-07",
@@ -1493,33 +1493,7 @@
           "summary": "Subaru of America, Inc. (Subaru) is recalling certain 2026 Crosstrek Hybrid, 2025-2026 Forester Hybrid, Forester, and 2019-2026 Ascent vehicles. These vehicles were manufactured with an incorrect Gross Axle Weight Rating (GAWR) on the certification label. As such, these vehicles fail to comply with the requirements of Federal Motor Vehicle Safety Standard (FMVSS) 110, \"Tire selection and rims.\"",
           "consequence": "An incorrect GAWR label may lead to an overloaded vehicle, increasing the risk of a crash.",
           "remedy": "Subaru will mail a new certification label to owners, free of charge. Owners may also choose to have a dealer install the new label, free of charge. Letters informing owners of the safety risk are exp",
-          "modelYear": "2026",
-          "model": "FORESTER",
-          "parkIt": false,
-          "parkOutside": false,
-          "overTheAirUpdate": false
-        },
-        {
-          "campaign": "26V346000",
-          "date": "2026-05-28",
-          "component": "VISIBILITY:SUN/MOON ROOF ASSEMBLY",
-          "summary": "Subaru of America, Inc. (Subaru) is recalling certain 2026 Forester and Forester Hybrid vehicles. The sliding glass panel of the power moonroof assembly may have been improperly bonded to the sliding frame, allowing the glass panel to detach from the vehicle.",
-          "consequence": "A detached glass panel may become a road hazard, increasing the risk of a crash.",
-          "remedy": "Dealers will inspect the power moonroof glass panel for proper adhesion and, if necessary, replace the glass panel assembly, free of charge. Owner notification letters were mailed July 6, 2026. Owners",
-          "modelYear": "2026",
-          "model": "FORESTER",
-          "parkIt": false,
-          "parkOutside": false,
-          "overTheAirUpdate": false
-        },
-        {
-          "campaign": "25V889000",
-          "date": "2025-12-18",
-          "component": "STRUCTURE:BODY:HATCHBACK/LIFTGATE:HINGE AND ATTACHMENTS",
-          "summary": "Subaru of America, Inc. (Subaru) is recalling certain 2026 Forester vehicles. These vehicles may have been manufactured with an incorrect and/or incorrectly oriented rear hatch support bracket which can detach without prior warning.",
-          "consequence": "A rear hatch support bracket that detaches can allow the rear hatch to fall unexpectedly during use and increase the risk of injury.",
-          "remedy": "Dealers will inspect the rear hatch support brackets and, if necessary, replace the stay and support bracket, free of charge. Owner notification letters were mailed January 29, 2026. Owners may contac",
-          "modelYear": "2026",
+          "modelYear": "2025",
           "model": "FORESTER",
           "parkIt": false,
           "parkOutside": false,
@@ -1550,6 +1524,32 @@
           "parkIt": false,
           "parkOutside": false,
           "overTheAirUpdate": false
+        },
+        {
+          "campaign": "25V419000",
+          "date": "2025-06-19",
+          "component": "CHILD SEAT",
+          "summary": "Subaru of America, Inc. (Subaru) is recalling certain 2025 Forester vehicles. The child seat anchor bolts may have been improperly tightened, allowing the bolts to come loose.",
+          "consequence": "A loose child seat anchor bolt increases the risk of injury to a child during a crash.",
+          "remedy": "Dealers will inspect the child seat anchor bolts and, if necessary, tighten the bolts, free of charge. Owner notification letters are expected to be mailed August 15, 2025. Owners may contact Subaru c",
+          "modelYear": "2025",
+          "model": "FORESTER",
+          "parkIt": false,
+          "parkOutside": false,
+          "overTheAirUpdate": false
+        },
+        {
+          "campaign": "25V033000",
+          "date": "2025-01-23",
+          "component": "WHEELS",
+          "summary": "Subaru of America, Inc. (Subaru) is recalling certain 2025 Forester vehicles equipped with 18\" aluminum alloy wheels.  The wheels may have been manufactured with an incorrectly specified lug seat surface, which can result in the wheel being improperly attached and cause a loss of vehicle stability.",
+          "consequence": "A loss of vehicle stability increases the risk of a crash.",
+          "remedy": "Dealers will inspect and replace the wheels, as necessary, free of charge.  Owner notification letters were mailed February 28, 2025.  Owners may contact Subaru customer service at 1-844-373-6614.  Su",
+          "modelYear": "2025",
+          "model": "FORESTER",
+          "parkIt": false,
+          "parkOutside": false,
+          "overTheAirUpdate": false
         }
       ],
       "models_seen": 53,
@@ -1561,7 +1561,7 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T17:45:27.119Z"
+      "scraped_at": "2026-08-23T17:45:56.627Z"
     },
     {
       "slug": "mitsubishi",
@@ -1577,14 +1577,14 @@
       "name": "Volkswagen",
       "nhtsa_make": "VOLKSWAGEN",
       "status": "ok",
-      "total_recalls": 51,
-      "total_complaints": 2629,
+      "total_recalls": 50,
+      "total_complaints": 2648,
       "open_investigations_count": 0,
       "open_investigations_note": "NHTSA investigations endpoint is auth-gated; not fetched.",
       "top_issues": [
         {
           "label": "UNKNOWN OR OTHER",
-          "count": 257
+          "count": 258
         },
         {
           "label": "ENGINE",
@@ -1592,11 +1592,11 @@
         },
         {
           "label": "SERVICE BRAKES",
-          "count": 182
+          "count": 184
         },
         {
           "label": "ELECTRICAL SYSTEM",
-          "count": 171
+          "count": 174
         },
         {
           "label": "POWER TRAIN",
@@ -1612,7 +1612,7 @@
           "summary": "Volkswagen Group of America, Inc. (Volkswagen) is recalling 2024-2026 Atlas Cross Sport and Atlas vehicles.  The vehicles may experience a low-voltage electrical event that affects display screen functions. As a result, the rearview camera image may fail to display as intended.",
           "consequence": "A rearview camera that fails to display an image can reduce the driver’s view behind the vehicle, increasing the risk of a crash.",
           "remedy": "Dealers will update the rearview camera software, free of charge. Owner notification letters were mailed August 4, 2026. Owners may contact Volkswagen customer service at 1-800-893-5298. Volkswagen's ",
-          "modelYear": "2026",
+          "modelYear": "2025",
           "model": "ATLAS",
           "parkIt": false,
           "parkOutside": false,
@@ -1638,7 +1638,7 @@
           "summary": "Volkswagen Group of America, Inc. (Volkswagen) is recalling certain 2025-2026 Taos vehicles. In the event of a rear-end crash, the fuel pressure sensor may dislodge or separate from the fuel tank. As such, these vehicles fail to comply with the requirements of Federal Motor Vehicle Safety Standard number 301, \"Fuel System Integrity.\"",
           "consequence": "A fuel tank with a dislodged or separated fuel pressure sensor can leak fuel after a rollover crash, increasing the risk of a fire.",
           "remedy": "Dealers will install a fuel pressure sensor wiring harness extension, free of charge. Owner notification letters were mailed June 4, 2026. Owners may contact Volkswagen customer service at 1-800-893-5",
-          "modelYear": "2026",
+          "modelYear": "2025",
           "model": "TAOS",
           "parkIt": false,
           "parkOutside": false,
@@ -1664,14 +1664,14 @@
           "summary": "Volkswagen Group of America, Inc. (Volkswagen) is recalling certain 2025-2026 Jetta vehicles. The transmission ground wire may not have been properly connected during assembly, causing an open electrical circuit.",
           "consequence": "An open circuit may draw a higher current and increase the risk of a fire.",
           "remedy": "Dealers will inspect and repair transmission ground wire as necessary, free of charge. Owner notification letters were mailed March 31, 2026. Owners may contact Volkswagen customer service at 1-800-89",
-          "modelYear": "2026",
+          "modelYear": "2025",
           "model": "JETTA",
           "parkIt": false,
           "parkOutside": false,
           "overTheAirUpdate": false
         }
       ],
-      "models_seen": 47,
+      "models_seen": 48,
       "http_errors": 0,
       "years_covered": [
         2026,
@@ -1680,21 +1680,21 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T17:48:15.161Z"
+      "scraped_at": "2026-08-23T17:48:39.785Z"
     },
     {
       "slug": "audi",
       "name": "Audi",
       "nhtsa_make": "AUDI",
       "status": "ok",
-      "total_recalls": 21,
-      "total_complaints": 631,
+      "total_recalls": 20,
+      "total_complaints": 644,
       "open_investigations_count": 0,
       "open_investigations_note": "NHTSA investigations endpoint is auth-gated; not fetched.",
       "top_issues": [
         {
           "label": "ELECTRICAL SYSTEM",
-          "count": 92
+          "count": 94
         },
         {
           "label": "UNKNOWN OR OTHER",
@@ -1702,11 +1702,11 @@
         },
         {
           "label": "FORWARD COLLISION AVOIDANCE",
-          "count": 33
+          "count": 35
         },
         {
           "label": "ENGINE",
-          "count": 27
+          "count": 28
         },
         {
           "label": "TIRES",
@@ -1724,19 +1724,6 @@
           "remedy": "Dealers will replace the driver and front passenger seat belts as necessary, free of charge. Owner notification letters were mailed May 29, 2026. Owners may contact Audi's customer service at 1-800-25",
           "modelYear": "2025",
           "model": "Q5",
-          "parkIt": false,
-          "parkOutside": false,
-          "overTheAirUpdate": false
-        },
-        {
-          "campaign": "26V209000",
-          "date": "2026-04-01",
-          "component": "VISIBILITY:SUN/MOON ROOF ASSEMBLY",
-          "summary": "Volkswagen Group of America, Inc. (Audi) is recalling certain 2026 Q3 vehicles. Incorrect software may allow remote sunroof closing from a distance that prevents the operator from clearly seeing the sunroof. As such, these vehicles fail to comply with the requirements of Federal Motor Vehicle Safety Standard number 118, \"Power-Operated Window Systems.\"",
-          "consequence": "Closing the sunroof without the ability to see it can increase the risk of injury to occupants.",
-          "remedy": "Dealers will update the sunroof control module software and the owner's manual, free of charge. Owner notification letters were mailed April 22, 2026. Owners may contact Audi customer service at 1-800",
-          "modelYear": "2026",
-          "model": "Q3",
           "parkIt": false,
           "parkOutside": false,
           "overTheAirUpdate": false
@@ -1779,9 +1766,22 @@
           "parkIt": false,
           "parkOutside": false,
           "overTheAirUpdate": false
+        },
+        {
+          "campaign": "25V637000",
+          "date": "2025-09-24",
+          "component": "FUEL SYSTEM, GASOLINE:DELIVERY:FUEL PUMP",
+          "summary": "Volkswagen Group of America, Inc. (Volkswagen) is recalling one Audi SQ7 vehicles. The fasteners securing the high pressure fuel pump may not be tightened properly, resulting in a fuel leak.",
+          "consequence": "A fuel leak in the presence of an ignition source increases the risk of a fire.",
+          "remedy": "Dealers will inspect and tighten the screw connections and replace the high pressure fuel pump and fuel lines as necessary, free of charge. The one affected vehicle was repaired. Owners may contact Vo",
+          "modelYear": "2025",
+          "model": "SQ7",
+          "parkIt": false,
+          "parkOutside": false,
+          "overTheAirUpdate": false
         }
       ],
-      "models_seen": 97,
+      "models_seen": 101,
       "http_errors": 0,
       "years_covered": [
         2026,
@@ -1790,15 +1790,15 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T17:52:48.732Z"
+      "scraped_at": "2026-08-23T17:53:34.001Z"
     },
     {
       "slug": "bmw",
       "name": "BMW",
       "nhtsa_make": "BMW",
       "status": "ok",
-      "total_recalls": 75,
-      "total_complaints": 1272,
+      "total_recalls": 73,
+      "total_complaints": 1281,
       "open_investigations_count": 0,
       "open_investigations_note": "NHTSA investigations endpoint is auth-gated; not fetched.",
       "top_issues": [
@@ -1808,23 +1808,49 @@
         },
         {
           "label": "UNKNOWN OR OTHER",
-          "count": 95
+          "count": 96
         },
         {
           "label": "SERVICE BRAKES",
-          "count": 93
+          "count": 94
         },
         {
           "label": "ELECTRICAL SYSTEM",
-          "count": 73
+          "count": 74
         },
         {
           "label": "POWER TRAIN",
           "count": 66
         }
       ],
-      "most_recent_recall_date": "2026-07-23",
+      "most_recent_recall_date": "2026-08-12",
       "sample_recent_recalls": [
+        {
+          "campaign": "26V524000",
+          "date": "2026-08-12",
+          "component": "STEERING:LINKAGES:KNUCKLE:SPINDLE:ARM",
+          "summary": "BMW of North America, LLC (BMW) is recalling certain 2024-2026 X3 sDrive30i, X3 30 xDrive, and X3 M50 xDrive vehicles. The steering spindle may have been incorrectly attached to the steering column.",
+          "consequence": "An incorrectly attached steering spindle can lead to a loss of steering control, increasing the risk of a crash.",
+          "remedy": "Dealers will inspect the steering connection and replace hardware or replace the spindle and column, as necessary, free of charge. Owner notification letters are expected to be mailed October 2, 2026.",
+          "modelYear": "2025",
+          "model": "X3",
+          "parkIt": false,
+          "parkOutside": false,
+          "overTheAirUpdate": false
+        },
+        {
+          "campaign": "26V525000",
+          "date": "2026-08-12",
+          "component": "POWER TRAIN:DRIVELINE:DRIVESHAFT",
+          "summary": "BMW of North America, LLC (BMW) is recalling certain 2022-2026 840i, 840i xDrive, 2021-2023 540i, 540i xDrive, M550i xDrive, and 2024-2026 750e xDrive vehicles. The connection between the driveshaft and the rear differential may become damaged, possibly resulting in a loss of power to the rear wheels or a vehicle rollaway.",
+          "consequence": "An unexpected loss of drive power can increase the risk of a crash. In addition, a damaged driveshaft can result in a vehicle rollaway if the parking brake is not applied, increasing the risk of a cra",
+          "remedy": "Dealers will inspect the connection between the driveshaft and rear axle differential, and apply adhesive or replace the driveshaft and rear axle differential, as necessary, free of charge. Owner noti",
+          "modelYear": "2022",
+          "model": "M550I",
+          "parkIt": false,
+          "parkOutside": false,
+          "overTheAirUpdate": false
+        },
         {
           "campaign": "26V478000",
           "date": "2026-07-23",
@@ -1863,35 +1889,9 @@
           "parkIt": false,
           "parkOutside": false,
           "overTheAirUpdate": false
-        },
-        {
-          "campaign": "26V214000",
-          "date": "2026-04-02",
-          "component": "POWER TRAIN:MANUAL TRANSMISSION:SEALS/GASKETS",
-          "summary": "BMW of North America, LLC (BMW) is recalling certain 2017-2025 K 1600 GT, GTL, B and 2018-2025 Grand America vehicles. The seal for the reverse gear control unit may deteriorate and allow moisture inside the control unit, which can result in the unit overheating.",
-          "consequence": "An overheated reverse gear control unit increases the risk of a fire.",
-          "remedy": "Dealers will replace the reverse gear control unit, free of charge. Letters informing owners of the safety risk were mailed May 28, 2026. A second letter will be mailed once the remedy is available. O",
-          "modelYear": "2025",
-          "model": "K 1600 B",
-          "parkIt": false,
-          "parkOutside": false,
-          "overTheAirUpdate": false
-        },
-        {
-          "campaign": "26V056000",
-          "date": "2026-01-30",
-          "component": "ELECTRICAL SYSTEM:STARTER ASSEMBLY",
-          "summary": "BMW of North America, LLC (BMW) is recalling certain 2021-2023 Toyota Supra, 2022-2023 2 Series Coupe, 2021-2024 5 Series (xDrive), 2021-2022 Z4, 2022-2024 4 Series (Gran Coupe), 2021-2024 4 Series (Convertible and xDrive Convertible), 2021-2023 4 Series (Coupe), 2021-2024 3 Series, 2021-2023 X4, 2021-2024 X3 vehicles. Please see the recall report for a complete list of all models. The engine star",
-          "consequence": "Fire increases the risk of injury.",
-          "remedy": "Dealers will replace the engine starter, free of charge. Owner notification letters were mailed July 21, 2026. Owners may contact BMW customer service at 1-800-525-7417 or Toyota's customer service at",
-          "modelYear": "2024",
-          "model": "530I",
-          "parkIt": false,
-          "parkOutside": false,
-          "overTheAirUpdate": false
         }
       ],
-      "models_seen": 149,
+      "models_seen": 150,
       "http_errors": 0,
       "years_covered": [
         2026,
@@ -1900,29 +1900,29 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T17:59:34.020Z"
+      "scraped_at": "2026-08-23T18:01:08.264Z"
     },
     {
       "slug": "mercedes-benz",
       "name": "Mercedes-Benz",
       "nhtsa_make": "MERCEDES-BENZ",
       "status": "ok",
-      "total_recalls": 21,
-      "total_complaints": 1173,
+      "total_recalls": 22,
+      "total_complaints": 1180,
       "open_investigations_count": 0,
       "open_investigations_note": "NHTSA investigations endpoint is auth-gated; not fetched.",
       "top_issues": [
         {
           "label": "ELECTRICAL SYSTEM",
-          "count": 149
+          "count": 150
         },
         {
           "label": "UNKNOWN OR OTHER",
-          "count": 115
+          "count": 116
         },
         {
           "label": "FORWARD COLLISION AVOIDANCE",
-          "count": 60
+          "count": 61
         },
         {
           "label": "ENGINE",
@@ -1944,6 +1944,19 @@
           "remedy": "Dealers will replace the driver's door lock, free of charge. Owner notification letters are expected to be mailed September 18, 2026. Owners may contact MBUSA customer service at 1-800-367-6372. Vehic",
           "modelYear": "2026",
           "model": "GLB 250",
+          "parkIt": false,
+          "parkOutside": false,
+          "overTheAirUpdate": false
+        },
+        {
+          "campaign": "26V278000",
+          "date": "2026-05-01",
+          "component": "SEAT BELTS:FRONT:RETRACTOR",
+          "summary": "Mercedes-Benz USA, LLC (MBUSA) is recalling certain 2026 CLA 350 4MATIC (EV) and  CLA 250+ (EV) vehicles. The front passenger seat belt retractor may have been manufactured with a defect that prevents the deactivation of the child seat safety function (Automatic Locking Retractor). As a result, the seat belt may remain in a locked position and cannot be extended.",
+          "consequence": "A passenger who is unable to fasten their seat belt is not properly restrained, increasing their risk of injury in a crash.",
+          "remedy": "Dealers will replace the front passenger seat belt, free of charge. Owner notification letters were mailed July 24, 2026. Owners may contact MBUSA customer service at 1-800-367-6372. Vehicle Identific",
+          "modelYear": "2026",
+          "model": "CLA 250+ (EV)",
           "parkIt": false,
           "parkOutside": false,
           "overTheAirUpdate": false
@@ -1986,22 +1999,9 @@
           "parkIt": false,
           "parkOutside": true,
           "overTheAirUpdate": false
-        },
-        {
-          "campaign": "25V894000",
-          "date": "2025-12-19",
-          "component": "ELECTRICAL SYSTEM:PROPULSION SYSTEM:TRACTION BATTERY",
-          "summary": "Mercedes-Benz USA, LLC (MBUSA) is recalling certain 2023 EQB 250, 2022-2023 EQB 300 4MATIC, and EQB 350 4MATIC vehicles. The high voltage battery may fail internally and lead to a vehicle fire while parked or driving.",
-          "consequence": "A vehicle fire while parked or driving can increase the risk of injury.",
-          "remedy": "Owners are advised to only charge their vehicles to a maximum of 80% battery capacity until the repair has been completed.  Vehicles previously repaired under Recall 25V050 will need to be repaired ag",
-          "modelYear": "2022",
-          "model": "EQB 300 4MATIC",
-          "parkIt": false,
-          "parkOutside": true,
-          "overTheAirUpdate": false
         }
       ],
-      "models_seen": 159,
+      "models_seen": 162,
       "http_errors": 0,
       "years_covered": [
         2026,
@@ -2010,7 +2010,7 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T18:07:37.603Z"
+      "scraped_at": "2026-08-23T18:11:11.639Z"
     },
     {
       "slug": "porsche",
@@ -2018,7 +2018,7 @@
       "nhtsa_make": "PORSCHE",
       "status": "ok",
       "total_recalls": 24,
-      "total_complaints": 191,
+      "total_complaints": 193,
       "open_investigations_count": 0,
       "open_investigations_note": "NHTSA investigations endpoint is auth-gated; not fetched.",
       "top_issues": [
@@ -2120,7 +2120,7 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T18:11:44.624Z"
+      "scraped_at": "2026-08-23T18:15:21.826Z"
     },
     {
       "slug": "volvo",
@@ -2128,13 +2128,13 @@
       "nhtsa_make": "VOLVO",
       "status": "ok",
       "total_recalls": 41,
-      "total_complaints": 630,
+      "total_complaints": 634,
       "open_investigations_count": 0,
       "open_investigations_note": "NHTSA investigations endpoint is auth-gated; not fetched.",
       "top_issues": [
         {
           "label": "UNKNOWN OR OTHER",
-          "count": 71
+          "count": 72
         },
         {
           "label": "BACK OVER PREVENTION",
@@ -2142,7 +2142,7 @@
         },
         {
           "label": "ELECTRICAL SYSTEM",
-          "count": 63
+          "count": 64
         },
         {
           "label": "SERVICE BRAKES",
@@ -2221,7 +2221,7 @@
           "overTheAirUpdate": false
         }
       ],
-      "models_seen": 82,
+      "models_seen": 83,
       "http_errors": 0,
       "years_covered": [
         2026,
@@ -2230,7 +2230,7 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T18:15:58.009Z"
+      "scraped_at": "2026-08-23T18:20:41.561Z"
     },
     {
       "slug": "ferrari",
@@ -2276,7 +2276,7 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T18:16:06.991Z"
+      "scraped_at": "2026-08-23T18:20:51.131Z"
     },
     {
       "slug": "lamborghini",
@@ -2373,7 +2373,7 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T18:16:20.687Z"
+      "scraped_at": "2026-08-23T18:21:06.812Z"
     },
     {
       "slug": "rivian",
@@ -2381,7 +2381,7 @@
       "nhtsa_make": "RIVIAN",
       "status": "ok",
       "total_recalls": 23,
-      "total_complaints": 299,
+      "total_complaints": 301,
       "open_investigations_count": 0,
       "open_investigations_note": "NHTSA investigations endpoint is auth-gated; not fetched.",
       "top_issues": [
@@ -2395,7 +2395,7 @@
         },
         {
           "label": "SEAT BELTS",
-          "count": 17
+          "count": 18
         },
         {
           "label": "AIR BAGS,SEATS",
@@ -2483,7 +2483,7 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T18:17:07.810Z"
+      "scraped_at": "2026-08-23T18:22:06.536Z"
     },
     {
       "slug": "lucid",
@@ -2491,7 +2491,7 @@
       "nhtsa_make": "LUCID",
       "status": "ok",
       "total_recalls": 18,
-      "total_complaints": 84,
+      "total_complaints": 86,
       "open_investigations_count": 0,
       "open_investigations_note": "NHTSA investigations endpoint is auth-gated; not fetched.",
       "top_issues": [
@@ -2593,7 +2593,7 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T18:17:29.933Z"
+      "scraped_at": "2026-08-23T18:22:31.904Z"
     },
     {
       "slug": "polestar",
@@ -2703,7 +2703,7 @@
         2023,
         2022
       ],
-      "scraped_at": "2026-08-16T18:17:54.915Z"
+      "scraped_at": "2026-08-23T18:22:56.398Z"
     }
   ]
 }
