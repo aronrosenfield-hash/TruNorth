@@ -1,23 +1,29 @@
 {
-  "merged_at": "2026-08-17T04:06:27.411Z",
+  "merged_at": "2026-08-24T04:09:44.040Z",
   "source_file": "public/data/cisa-kev.json",
-  "total_vendors": 276,
-  "merged_count": 2,
-  "skipped_count": 36,
-  "orphan_count": 238,
+  "total_vendors": 278,
+  "merged_count": 3,
+  "skipped_count": 35,
+  "orphan_count": 240,
   "error_count": 0,
   "merged_vendors": [
     {
       "vendor": "Microsoft",
       "target": "microsoft",
       "routed_via": "override",
-      "cves": 383
+      "cves": 385
     },
     {
-      "vendor": "Cisco",
-      "target": "cisco",
+      "vendor": "Apple",
+      "target": "apple",
       "routed_via": "override",
-      "cves": 96
+      "cves": 94
+    },
+    {
+      "vendor": "Broadcom",
+      "target": "broadcom",
+      "routed_via": "direct",
+      "cves": 5
     }
   ],
   "top_orphans": [
@@ -49,7 +55,7 @@
     {
       "vendor": "Synacor",
       "vendor_slug": "synacor",
-      "cves": 18
+      "cves": 19
     },
     {
       "vendor": "SonicWall",
