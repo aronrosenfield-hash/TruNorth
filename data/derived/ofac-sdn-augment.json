@@ -1,8 +1,8 @@
 {
   "source": "ofac-sdn",
   "source_url": "https://www.treasury.gov/ofac/downloads/sdn.csv",
-  "generated_at": "2026-08-23T17:50:38.976Z",
-  "snapshot_date": "2026-08-23",
+  "generated_at": "2026-08-24T18:01:41.359Z",
+  "snapshot_date": "2026-08-24",
   "matched_slug_count": 91,
   "companies": {
     "azul-sa": {
@@ -203,6 +203,11 @@
         {
           "name": "NORTH STAR",
           "program": "IRAN-EO13902",
+          "sanction_date": null
+        },
+        {
+          "name": "STAR PIONE",
+          "program": "IRAN-EO13846",
           "sanction_date": null
         }
       ],
@@ -1883,6 +1888,11 @@
       "entities": [
         {
           "name": "QUANTUM STAR",
+          "program": "IRAN-EO13902",
+          "sanction_date": null
+        },
+        {
+          "name": "QUANTUM HOPE",
           "program": "IRAN-EO13902",
           "sanction_date": null
         }
