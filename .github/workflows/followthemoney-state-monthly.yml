@@ -12,9 +12,26 @@ name: followthemoney-state-monthly
 # https://www.followthemoney.org/our-data/apis to obtain one (free for
 # non-commercial use). If unset, fetch fails fast.
 
+# ─────────────────────────────────────────────────────────────────────────────
+# 🚫 DISABLED 2026-08-26 — LICENSE INCOMPATIBLE WITH A PAID APP.
+#
+# FollowTheMoney / NIMP data is free for NON-COMMERCIAL use only, with
+# attribution. TruNorth ships a paid Pro tier, so this is the same exposure as
+# B-63 (OpenSanctions CC-BY-NC) and B-67 (GJF) — both of which had to be
+# stripped out after the data had already landed.
+#
+# This one is still LATENT and that is the whole point of disabling it now:
+# FTM_API_KEY has never been set, so the fetch has always failed fast and no
+# derived output has ever been committed. Nothing to strip. Adding that one
+# secret would have started writing NC-licensed fields into per-company JSONs
+# every month via apply-augments-to-companies.mjs.
+#
+# The `schedule:` trigger is REMOVED so this can never fire on its own. The
+# job is also disabled at GitHub (`gh workflow disable`). The fetcher and its
+# tests are kept intact so this is a one-line revival IF Aron obtains written
+# commercial terms from NIMP — do not re-enable without them.
+# ─────────────────────────────────────────────────────────────────────────────
 on:
-  schedule:
-    - cron: "56 10 1 * *"   # 10:56 UTC · spread (B-120)
   workflow_dispatch:
     inputs:
       apply:
