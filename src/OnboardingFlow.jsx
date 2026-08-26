@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { GRADE_COLORS } from "./lib/theme";
+import { CATALOG_GRADED_LABEL, CATALOG_TRACKED_LABEL } from "./lib/catalog-stats";
 
 // QA fix 2026-06-10: these hardcoded "live example" grades had drifted from
 // the real bundle (Tesla showed C, actual B; Shein showed D, actual C) — the
@@ -87,7 +88,11 @@ export default function OnboardingFlow({ onComplete }) {
                 where 76% of entries have no gradeable record and render "?".
                 Lead with what we actually grade; the tracked total and the
                 honest reason for "?" follow below. */}
-            {[["3,000+","Brands graded"],["9","Categories"],["200+","Public sources"]].map(([num,label]) => (
+            {/* 2026-08-26: "3,000+" was hand-typed and had gone stale — the v1.3
+                correctness sprint cut graded coverage to 2,590, turning a correct
+                round-down into a live over-claim on the first screen every new
+                user sees. Now generated from the shipped catalog at build time. */}
+            {[[CATALOG_GRADED_LABEL,"Brands graded"],["9","Categories"],["200+","Public sources"]].map(([num,label]) => (
               <div key={label} style={{ textAlign:"center" }}>
                 <div style={s.statNum}>{num}</div>
                 <div style={s.statLabel}>{label}</div>
@@ -95,7 +100,7 @@ export default function OnboardingFlow({ onComplete }) {
             ))}
           </div>
           <p style={{ ...s.statLabel, marginTop:10, textAlign:"center", lineHeight:1.5 }}>
-            of 12,800+ brands tracked — the rest have no public record yet, and we don’t guess.
+            of {CATALOG_TRACKED_LABEL} brands tracked — the rest have no public record yet, and we don’t guess.
           </p>
           <p style={{ ...s.terms, marginTop:14 }}>By continuing you agree to our <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" style={{ color:"#38C0CE", textDecoration:"none" }}>Terms</a> & <a href="https://www.trunorthapp.com/#privacy" target="_blank" rel="noopener noreferrer" style={{ color:"#38C0CE", textDecoration:"none" }}>Privacy Policy</a>.</p>
         </div>

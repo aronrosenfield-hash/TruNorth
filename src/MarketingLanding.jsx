@@ -10,6 +10,7 @@
 
 import React, { useState } from "react";
 import { subscribeEmail } from "./lib/marketing";
+import { CATALOG_GRADED_LABEL, CATALOG_TRACKED_LABEL } from "./lib/catalog-stats";
 import { GRADE_COLORS } from "./lib/theme";
 
 // ─── helpers ────────────────────────────────────────────────────────────────
@@ -147,7 +148,7 @@ const VALUE_PROPS = [
   },
   {
     icon:"⌕",
-    title:"Scan or search 12,800+ brands",
+    title:`Scan or search ${CATALOG_TRACKED_LABEL} brands`,
     body:"Search by name or scan a product barcode in store. Subsidiaries roll up to parents — no more accidentally rewarding the parent company behind a brand you scanned.",
   },
   {
@@ -349,7 +350,7 @@ export default function MarketingLanding({ onOpenPrivacy }) {
               }}>See every brand's record.</span>
             </h1>
             <Lead style={{ marginBottom:28 }}>
-              TruNorth tracks 12,800+ companies and fully grades 3,000+ of them across 9 categories — campaign finance (FEC), environment (EPA), worker safety (OSHA), labor disputes (NLRB), data privacy (CISA, NIST NVD), corporate enforcement (DOJ, SEC, CFPB), product safety (NHTSA, CPSC, OpenFDA), and 190+ more. <strong style={{color:C.text}}>200+ public-records sources</strong> in total. Real records, not opinions.
+              TruNorth tracks {CATALOG_TRACKED_LABEL} companies and fully grades {CATALOG_GRADED_LABEL} of them across 9 categories — campaign finance (FEC), environment (EPA), worker safety (OSHA), labor disputes (NLRB), data privacy (CISA, NIST NVD), corporate enforcement (DOJ, SEC, CFPB), product safety (NHTSA, CPSC, OpenFDA), and 190+ more. <strong style={{color:C.text}}>200+ public-records sources</strong> in total. Real records, not opinions.
             </Lead>
             <div className="tn-cta-row">
               {/* The iOS CTA points at the live App Store listing (APP_STORE_URL).

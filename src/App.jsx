@@ -12,6 +12,7 @@ import MarketingLanding from "./MarketingLanding";
 import PrivacyPolicy from "./PrivacyPolicy";
 import Methodology from "./Methodology";
 import { initAnalytics, track } from "./lib/analytics";
+import { CATALOG_GRADED_LABEL, CATALOG_TRACKED_LABEL, CATALOG_UNGRADED_LABEL } from "./lib/catalog-stats";
 import { ErrorBoundary } from "./lib/ErrorBoundary";
 import { isSplitBundleEnabled, loadCompanyIndex, loadCompanyDetail, loadSearchIndex, loadBrandParentMap, loadUpcCache, loadFeatureFlags, featureFlagsEnabled, fetchAppData, getNativeDataSource, apiUrl, getAliasMap } from "./lib/dataSource";
 import { getCategoryFlagRender, isCategoryExcludedByFlags } from "./lib/scoringFlags";
@@ -1575,7 +1576,7 @@ function PaywallScreen({ onSubscribe, onClose, initialEmail="" }) {
             // MarketingLanding.jsx and the Account card.
             { feat: "Personalized letter grade",             free: true,     pro: true },
             { feat: "45-second values Match",                free: true,     pro: true },
-            { feat: "Browse 12,800+ brands (3,000+ graded)", free: true,     pro: true },
+            { feat: `Browse ${CATALOG_TRACKED_LABEL} brands (${CATALOG_GRADED_LABEL} graded)`, free: true, pro: true },
             { feat: "In-store barcode scanner",              free: true,     pro: true },
             { feat: "Full brand profile — /100 score, all 9 categories, per-grade citations",
                                                              free: "1/day",  pro: "∞", hi: true },
@@ -2288,16 +2289,20 @@ function WhatsNewModal({ companyCount }) {
           </div>
         </div>
         <div style={{ background:T.accentBg, border:`1px solid ${T.accent}`, borderRadius:10, padding:"14px 16px", marginBottom:14 }}>
-          <div style={{ fontSize:28, fontWeight:800, color:T.accent2, lineHeight:1.1 }}>3,000+</div>
+          <div style={{ fontSize:28, fontWeight:800, color:T.accent2, lineHeight:1.1 }}>{CATALOG_GRADED_LABEL}</div>
           {/* 2026-07-03 (diligence): lead with the HONEST graded number, not the
-              12,800+ tracked figure — the tracked count as the headline read as
-              an over-promise when a first search hit a "?". Graded is the promise.
-              2026-08-01: "12,000+ more tracked" was wrong arithmetic — it implied
-              ~14,800 total. The remainder is tracked-minus-graded, not the whole
-              catalog. Counts here are rounded DOWN from index.json (3,054 graded
-              / 12,830 tracked / 9,776 ungraded) so they never over-claim. */}
+              tracked figure — the tracked count as the headline read as an
+              over-promise when a first search hit a "?". Graded is the promise.
+              2026-08-01: "12,000+ more tracked" was wrong arithmetic — the
+              remainder is tracked-minus-graded, not the whole catalog.
+              2026-08-26: these were hand-typed and had gone STALE — the copy
+              still read "3,000+ / 9,700+ more" after the v1.3 correctness sprint
+              cut graded coverage to 2,590. The rounding policy was right; the
+              numbers drifted from the data anyway. Now generated from the shipped
+              index.json at build time (src/lib/catalog-stats.js) and stated
+              EXACTLY, so the claim cannot drift again. */}
           <div style={{ fontSize:13, color:T.txt2, marginTop:4, lineHeight:1.4 }}>
-            brands fully graded across 9 categories from US public records — campaign finance (FEC), environment (EPA), worker safety (OSHA), labor disputes (NLRB), and corporate filings (SEC). 9,700+ more tracked; ungraded brands show a “?”, never a fake grade.
+            brands fully graded across 9 categories from US public records — campaign finance (FEC), environment (EPA), worker safety (OSHA), labor disputes (NLRB), and corporate filings (SEC). {CATALOG_UNGRADED_LABEL} more tracked; ungraded brands show a “?”, never a fake grade.
           </div>
         </div>
         <ul style={{ listStyle:"none", padding:0, margin:0, fontSize:13.5, color:T.txt2, lineHeight:1.65 }}>
