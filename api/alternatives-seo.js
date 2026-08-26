@@ -3,7 +3,7 @@
 // Targets the literal query people type into answer engines:
 // "ethical alternatives to <brand>", "better-graded brands than <brand>".
 // Served as a fast, crawler-readable static content page (no SPA mount) with
-// ItemList + FAQPage structured data and links into each brand's /company page.
+// ItemList structured data and links into each brand's /company page.
 //
 // Alternatives = same category, higher TruNorth overall grade. Prefers the
 // brand's own listed competitors when they out-grade it; falls back to the
@@ -71,6 +71,9 @@ export default async function handler(req) {
   const cat = company.cat || "";
   const overall = numOrNull(company.overall);
   const overallG = overall != null ? grade(overall, company.realCats) : null;
+  // When the SUBJECT is ungraded, "brands that grade higher than X" still implies
+  // X graded worse — a negative claim inferred from absence of a record. The page
+  // stays reachable (the peer list is real), but it is not indexable.
 
   const index = await getIndex(url.origin);
   const compSet = new Set((company.competitors || []).map(c => String(c).toLowerCase()));
@@ -118,20 +121,9 @@ export default async function handler(req) {
       name: `${a.name} — TruNorth grade ${a.g}`,
     })),
   };
-  const faq = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [{
-      "@type": "Question",
-      name: `What are higher-graded alternatives to ${name}?`,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: alts.length
-          ? `Based on public records, ${cat || "category"} brands that grade higher than ${name} on TruNorth include ${alts.map(a => `${a.name} (grade ${a.g})`).join(", ")}.`
-          : `TruNorth does not currently list a higher-graded alternative to ${name} in ${cat || "its category"}.`,
-      },
-    }],
-  };
+  // FAQPage JSON-LD removed 2026-08-26. Google stopped showing FAQ rich results
+  // on 2026-05-07, so it earns nothing, and machine-readable answer blocks are
+  // exactly what let a wrong claim be lifted verbatim by an answer engine.
 
   const rows = alts.map(a => `
     <li style="border-top:1px solid #2a2a2a;padding:16px 0;display:flex;align-items:center;gap:14px">
@@ -150,7 +142,7 @@ export default async function handler(req) {
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}" />
 <link rel="canonical" href="${BASE}/alternatives/${encodeURIComponent(slug)}" />
-<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
+<meta name="robots" content="${overall == null ? "noindex,follow" : "index,follow,max-snippet:-1,max-image-preview:large"}" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="${esc(title)}" />
 <meta property="og:description" content="${esc(description)}" />
@@ -158,7 +150,6 @@ export default async function handler(req) {
 <meta property="og:site_name" content="TruNorth" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <script type="application/ld+json">${JSON.stringify(itemList).replace(/</g, "\\u003c")}</script>
-<script type="application/ld+json">${JSON.stringify(faq).replace(/</g, "\\u003c")}</script>
 </head>
 <body style="background:#0f0f0f;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
 <main style="padding:28px 24px 56px;max-width:720px;margin:0 auto;color:#f2f2f2">

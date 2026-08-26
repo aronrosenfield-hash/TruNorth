@@ -52,13 +52,30 @@ async function main() {
   const lastmod = new Date().toISOString().slice(0, 10);
 
   // ── GEO landing URLs ──────────────────────────────────────────────────────
-  // /alternatives/<slug>: only for brands that (a) grade below B (<65) and
-  // (b) have at least one higher-graded same-category peer — i.e. the brands
-  // users actually seek alternatives to. /compare/<a>-vs-<b>: from each brand's
-  // listed competitors, as canonical alphabetical pairs, deduped.
+  // /alternatives/<slug>: only for GRADED brands that (a) grade below B (<65)
+  // and (b) have at least MIN_PEERS higher-graded same-category peers — i.e. the
+  // brands users actually seek alternatives to, and only where the page has
+  // enough real content to be worth indexing. /compare/<a>-vs-<b>: from each
+  // brand's listed competitors, as canonical alphabetical pairs, deduped, and
+  // ONLY where BOTH brands are graded.
+  //
+  // 2026-08-26 null-coercion fix. `Number(null)` is 0 — which IS finite — so the
+  // previous `Number(co.overall ?? co.score)` + `isFinite()` pair treated every
+  // ungraded brand as a 0-scoring "F" and emitted a page for it. That published
+  // 10,273 /alternatives/ URLs and 6,691 /compare/ URLs carrying a fabricated
+  // failing grade on companies with no public record at all. Absence of a record
+  // is NOT a score, and it must never generate an indexable URL.
+  const MIN_PEERS = 3;
   const slugOf = (co) => co.slug || co.id;
-  const overallOf = (co) => Number(co.overall ?? co.score);
+  const overallOf = (co) => {
+    const v = co.overall ?? co.score;
+    if (v == null || v === "") return null;
+    const n = Number(v);
+    return isFinite(n) ? n : null;
+  };
+  const isGraded = (co) => overallOf(co) != null;
   const valid = new Set(index.map(slugOf).filter(Boolean).map(String));
+  const gradedSlugs = new Set(index.filter(isGraded).map(slugOf).filter(Boolean).map(String));
 
   const byCat = new Map();
   for (const co of index) {
@@ -70,20 +87,25 @@ async function main() {
   const altSlugs = [];
   for (const co of index) {
     const o = overallOf(co);
-    if (!isFinite(o) || o >= 65) continue; // B and above don't need an alternatives page
+    if (o == null) continue;              // ungraded — nothing to offer an alternative TO
+    if (o >= 65) continue;                // B and above don't need an alternatives page
     const peers = byCat.get(co.cat || "") || [];
-    if (peers.some(p => slugOf(p) !== slugOf(co) && overallOf(p) > o)) {
-      altSlugs.push(String(slugOf(co)));
-    }
+    const higher = peers.filter(p => {
+      if (slugOf(p) === slugOf(co)) return false;
+      const po = overallOf(p);
+      return po != null && po > o;
+    }).length;
+    if (higher >= MIN_PEERS) altSlugs.push(String(slugOf(co)));
   }
 
   const comparePairs = new Set();
   for (const co of index) {
     const a = String(slugOf(co) || "");
-    if (!a) continue;
+    if (!a || !gradedSlugs.has(a)) continue;   // subject must be graded
     for (const comp of co.competitors || []) {
       const b = String(comp || "").toLowerCase();
       if (!b || !valid.has(b) || b === a) continue;
+      if (!gradedSlugs.has(b)) continue;       // and so must the counterparty
       const [x, y] = [a, b].sort();
       comparePairs.add(`${x}-vs-${y}`);
     }
@@ -127,8 +149,10 @@ async function main() {
 
   fs.writeFileSync(OUT_PATH, xml);
   const total = HARDCODED_PAGES.length + index.length + altSlugs.length + comparePairs.size;
+  const gradedCount = index.filter(isGraded).length;
   console.log(`✅ Wrote ${OUT_PATH}`);
   console.log(`   ${HARDCODED_PAGES.length} static + ${index.length} companies + ${altSlugs.length} alternatives + ${comparePairs.size} comparisons = ${total} URLs`);
+  console.log(`   catalog: ${gradedCount} graded / ${index.length} tracked — GEO URLs are emitted for graded brands only`);
 }
 
 main().catch(err => {
