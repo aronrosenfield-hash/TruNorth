@@ -8,10 +8,10 @@
  * Encoded via querystring so the URL is fully cacheable:
  *
  *   /api/og/values
- *     ?p=political     (lean: left|right|neutral)
- *     &d=dei           (pro|anti|neutral)
- *     &a=animals       (dealbreaker|prefer_not|neutral)
- *     &g=guns          (avoid|support|neutral)
+ *     ?p / &d / &a / &g   accepted but IGNORED since 2026-08-26 — these were
+ *                         the political / DEI / animals / firearms stance
+ *                         chips, removed as anti-pattern #4. Old share links
+ *                         still render; the chips just no longer appear.
  *     &u=union         (pro|anti|neutral)
  *     &env=4           (importance 0–5)
  *     &lab=5           (importance 0–5)
@@ -37,26 +37,13 @@ const TXT3    = "#6E6A60";
 const GREEN   = "#9CC98A";
 const GOLD    = "#C9A86A";
 
-const LEAN_LABEL = {
-  left:    { label: "Progressive",   color: "#4a90e2" },
-  right:   { label: "Conservative",  color: "#e24a4a" },
-  neutral: { label: "Independent",   color: TXT2     },
-};
-const DEI_LABEL = {
-  pro:     { label: "Pro-DEI",   color: GREEN },
-  anti:    { label: "Anti-DEI",  color: "#e24a4a" },
-  neutral: { label: "Neutral",   color: TXT2 },
-};
-const ANIMAL_LABEL = {
-  dealbreaker: { label: "Cruelty-free", color: GREEN },
-  prefer_not:  { label: "Prefers CF",   color: "#8bc34a" },
-  neutral:     { label: "Neutral",      color: TXT2 },
-};
-const GUN_LABEL = {
-  avoid:   { label: "Anti-firearms",  color: "#e24a4a" },
-  support: { label: "Pro-2A",         color: "#4a90e2" },
-  neutral: { label: "Neutral",        color: TXT2 },
-};
+// 2026-08-26 — stance chips REMOVED (locked stickiness anti-pattern #4).
+// This card is built to be shared publicly. It used to print the user's
+// political lean ("Progressive"/"Conservative"), DEI stance, and firearms
+// stance as coloured chips, which turns a shopping tool into a broadcast of
+// someone's political identity. The share card reports OUTCOMES and how much
+// each issue matters to the user — never which side they are on.
+// LEAN_LABEL / DEI_LABEL / ANIMAL_LABEL / GUN_LABEL deleted with it.
 
 function bar({ label, value, max = 5, color = ACCENT }) {
   const pct = Math.max(0, Math.min(1, (value || 0) / max));
@@ -89,22 +76,13 @@ function bar({ label, value, max = 5, color = ACCENT }) {
   };
 }
 
-function chip({ label, color }) {
-  return {
-    type: "div",
-    props: {
-      style: { display: "flex", padding: "6px 14px", borderRadius: 8, background: `${color}22`, border: `1.5px solid ${color}55`, color, fontSize: 18, fontWeight: 600 },
-      children: label,
-    },
-  };
-}
 
 export default function handler(req) {
   const u = new URL(req.url);
-  const p = u.searchParams.get("p") || "neutral";
-  const d = u.searchParams.get("d") || "neutral";
-  const a = u.searchParams.get("a") || "neutral";
-  const g = u.searchParams.get("g") || "neutral";
+  // p / d / a / g (political lean, DEI, animals, firearms stances) are no
+  // longer read — see the anti-pattern note above. Share URLs already in the
+  // wild still carry them; unknown params are simply ignored, so old links
+  // keep rendering, just without the stance chips.
   const env = parseInt(u.searchParams.get("env") || "3", 10);
   const lab = parseInt(u.searchParams.get("lab") || "3", 10);
   const pri = parseInt(u.searchParams.get("pri") || "3", 10);
@@ -112,10 +90,6 @@ export default function handler(req) {
   const cha = parseInt(u.searchParams.get("cha") || "3", 10);
   const top = u.searchParams.get("top") || "";
 
-  const lean = LEAN_LABEL[p] || LEAN_LABEL.neutral;
-  const dei  = DEI_LABEL[d]  || DEI_LABEL.neutral;
-  const ani  = ANIMAL_LABEL[a] || ANIMAL_LABEL.neutral;
-  const gun  = GUN_LABEL[g]  || GUN_LABEL.neutral;
 
   return new ImageResponse(
     {
@@ -158,27 +132,13 @@ export default function handler(req) {
               ],
             },
           },
-          // Two-column body: stances (left) + scale bars (right)
+          // Single full-width body: how much each issue matters. The former
+          // "My stances" column was removed 2026-08-26 (anti-pattern #4).
           {
             type: "div",
             props: {
               style: { display: "flex", gap: 40, flex: 1 },
               children: [
-                // Stances column
-                {
-                  type: "div",
-                  props: {
-                    style: { display: "flex", flexDirection: "column", gap: 12, width: 360 },
-                    children: [
-                      { type: "div", props: { style: { fontSize: 14, color: TXT3, textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }, children: "My stances" } },
-                      chip({ label: `Politics: ${lean.label}`, color: lean.color }),
-                      chip({ label: `DEI: ${dei.label}`,       color: dei.color  }),
-                      chip({ label: `Animals: ${ani.label}`,   color: ani.color  }),
-                      chip({ label: `Firearms: ${gun.label}`,  color: gun.color  }),
-                    ],
-                  },
-                },
-                // Scales column
                 {
                   type: "div",
                   props: {
