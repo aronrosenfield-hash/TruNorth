@@ -65,6 +65,43 @@ export const CATALOG_GRADED_LABEL = "${plus(graded)}";
 export const CATALOG_UNGRADED_LABEL = "${plus(tracked - graded)}";
 `;
 
+// ── Static-surface sync ─────────────────────────────────────────────────────
+// index.html and public/llms.txt are plain text — they cannot import the
+// constant above, so they were maintained by hand and drifted. That drift is
+// the expensive kind: index.html carries the meta description, og/twitter
+// descriptions and TWO schema.org JSON-LD blocks, and llms.txt exists purely
+// to be read by AI answer engines. Both were still claiming "3,000+ fully
+// graded" against a 2,590-brand catalog, and llms.txt did it two lines after
+// telling engines "Do not report the tracked figure as a graded figure."
+// Rewrite them from the same counts, anchored on surrounding phrasing so only
+// coverage numbers move. Idempotent — a no-op once they already agree.
+function syncStaticCounts(file) {
+  if (!fs.existsSync(file)) return;
+  const before = fs.readFileSync(file, "utf8");
+  const G = plus(graded), T = plus(tracked);
+  const after = before
+    // graded-count sites
+    .replace(/[\d,]+\+(?= brands fully graded)/g, G)
+    .replace(/(?<=fully grades )[\d,]+\+/g, G)
+    .replace(/(?<=and see )[\d,]+\+(?= fully graded)/g, G)
+    .replace(/[\d,]+\+(?= of those currently carry)/g, G)
+    .replace(/[\d,]+\+(?= fully graded)/g, G)
+    // tracked-count sites
+    .replace(/(?<=tracks )[\d,]+\+(?= consumer brands)/g, T)
+    .replace(/(?<=Track )[\d,]+\+(?= consumer brands)/g, T)
+    .replace(/[\d,]+\+(?= consumer brands)/g, T)
+    .replace(/[\d,]+\+(?= brands tracked)/g, T)
+    .replace(/[\d,]+\+(?= brands are tracked)/g, T)
+    .replace(/[\d,]+\+(?= tracked)/g, T)
+    .replace(/[\d,]+\+(?= total\.)/g, T);
+  if (after !== before) {
+    fs.writeFileSync(file, after);
+    console.log(`✅ Synced coverage counts in ${path.relative(ROOT, file)}`);
+  }
+}
+syncStaticCounts(path.join(ROOT, "index.html"));
+syncStaticCounts(path.join(ROOT, "public", "llms.txt"));
+
 const statsPath = path.join(ROOT, "src", "lib", "catalog-stats.js");
 const prev = fs.existsSync(statsPath) ? fs.readFileSync(statsPath, "utf8") : "";
 if (prev !== statsFile) {
