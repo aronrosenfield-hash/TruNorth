@@ -807,9 +807,41 @@
   regenerated push silently arms this same failure a week later. Worth a follow-up assertion in
   `scripts/data-integrity.test.mjs` so a stale baseline fails CI at push time rather than on Sunday.
 
-- **B-131 🔴 NEW 2026-08-19 — PostHog has recorded ZERO `company_view` events for 12 straight days.
-  Either nobody is opening brand cards in the shipped app, or the client analytics transport is
-  dead. A GREEN nightly cron is what surfaced it.**
+- **B-131 🟢 ROOT-CAUSED AND FIXED 2026-08-26 — `company_view` was instrumented on a DEAD CODE
+  PATH. Both hypotheses were partly right; the code defect was real and is now fixed.**
+  🔑 **The root cause.** `CompanyCard` initialized its expanded state from a prop —
+  `const [open, setOpen] = useState(!!initiallyOpen)` — and `track("company_view")` lived inside
+  `handleTap`, which **only runs when a user taps a COLLAPSED row.** Every programmatic navigation
+  goes through `openBrand()`, which sets `deepLinkSlug`, so the card **mounts already-expanded and
+  `handleTap` never runs.** The event was therefore impossible to fire from: search typeahead,
+  barcode scanner match, Today story / weekly story / shelf tile, Brand-of-Day, editorial, Day-7
+  card, saved-updates row, weekly digest row, Library, History, universal link, Reveal
+  winner/worst, and the basket clash chip. **Only a plain list-row tap ever emitted.**
+  ⚠️ **This is the SAME CLASS as the 2026-06-10 QA fix** that moved the *detail fetch* out of
+  `handleTap` into an `open`-keyed effect. That pass fixed the fetch and **left the analytics and
+  the paywall quota behind.** When fixing a `handleTap`-resident behaviour, sweep for siblings.
+  🔑 **BOTH hypotheses held, and the reconciliation matters.** ② is confirmed — the client genuinely
+  never sent the event on any programmatic path. But ① is also directionally true: the list-tap path
+  *did* emit, and `public/data/trending.json`'s own git history (40 commits, each a dated PostHog
+  reading) reconstructs to **26 → 22 → 14 → 9 → 4 → 3 → 3 → 2 → 1 → 1 → 0 company_views per rolling
+  week** between 07-07 and 08-08. **A broken client produces a cliff; that is a curve.** So peak
+  measured engagement was ~26 brand-card opens per week across the entire user base — **a FLOOR,
+  undercounted by this bug, but real.** Do not now claim "usage was fine, the analytics were just
+  broken." Both things are true.
+  ✅ **Fixed 2026-08-26.** `company_view` moved out of `handleTap` into an `open`-keyed effect beside
+  the detail-fetch effect, guarded by a ref so it fires **exactly once per expansion**. Added an
+  **`entry` property — `"list_tap"` vs `"programmatic"`** — so the funnel finally shows which
+  surface is the real front door. Verified live against the dev server with a temporary local event
+  sink (never forwarded to production PostHog): deep link → 1 event, `entry: "programmatic"`;
+  collapsed-row tap → 1 event, `entry: "list_tap"`; ungraded brand → `graded: false`, still free.
+  🧭 **The old "install Build 81 and open 5 cards" experiment is now OBSOLETE — do not run it.**
+  It would have produced events either way and mis-attributed the result.
+  ⚠️ **Baseline discontinuity: `company_view` volume will JUMP once this ships in Build 82.** That
+  is the instrumentation fix landing, **not** a growth signal. Do not report it as adoption.
+  ⚠️ **Not yet shipped to users** — this is a `src/` change, so unlike a data fix it needs Build 82.
+
+  <details><summary>Original 2026-08-19 diagnosis (kept for the reasoning trail)</summary>
+
   📉 **UPDATED 2026-08-23 — NOW SIXTEEN STRAIGHT DAYS.** `trending-refresh` ran 08-23T22:30:49Z,
   `success`, committing nothing. Last `chore(trending)` commit is still `ae9d88a41` (08-07);
   `trending.json` still reads `generatedAt 2026-08-07T22:48:29.341Z` with one brand (`rocket-lab`,
@@ -851,6 +883,38 @@
   ⚠️ **Watchdog blind spot (extends B-105/#155):** a cron that legitimately commits only on change
   can go dead-quiet for weeks while reporting `success` and never appears on #155. **Judge
   `trending-refresh` by its commit series, not its run status** — same rule as B-124.
+
+  </details>
+
+- **B-136 🔴 NEW 2026-08-26 — REVENUE LEAK: the 1-free-profile-per-day paywall was bypassed on
+  every programmatic path. Free users could read UNLIMITED full brand profiles by using the search
+  typeahead instead of tapping a list row.** ✅ **FIXED 2026-08-26, same commit as B-131.**
+  🔑 **Same single root cause as B-131.** The quota check also lived inside `handleTap`, so any card
+  that mounted already-expanded (`initiallyOpen`) handed a free user a complete paid profile and
+  **never touched `tn_freeViewed`.** Every surface listed in B-131 was a free bypass: typeahead,
+  scanner match, Today, Brand-of-Day, Day-7, Library, History, weekly digest, universal link,
+  Reveal, basket chip. **The advertised "1 brand profile/day" limit only ever bit on the one surface
+  users are least likely to use.**
+  ⚠️ **This compounds B-85.** That fix (2026-07-20) removed the dismissal cooldown so the limit
+  "always applies" — but the limit was still unreachable from most of the app. B-85 closed the
+  cooldown hole; this closes the one that mattered more.
+  ✅ **The fix.** Quota logic extracted from `handleTap` into `checkFreeViewQuota(slug)` and called
+  from **both** the tap path and the programmatic path. The programmatic call runs in a
+  **`React.useLayoutEffect`, not `useEffect`**, so the collapse commits **before the browser paints
+  — no flash of paid content.** A `paywallBlockedRef` stops the passive `company_view` effect from
+  the same commit logging a view that was actually refused.
+  🔑 **Behaviour preserved exactly** — verified, not assumed: gradeless (`"?"` / `overall == null`)
+  brands are still free and still consume no quota; already-viewed slugs still re-open free;
+  the day key is still local-date; `tn_paywallDismissedAt` is still written and still non-gating.
+  ✅ **Verified live** on the dev server: 1st graded brand via deep link → allowed, quota records it;
+  2nd unique graded brand via deep link → `paywall_shown { reason: "free_quota_exhausted" }`,
+  **`company_view` NOT logged**, quota unchanged; same result via a collapsed-row tap
+  (`kellogg-s`); ungraded brand → free, quota untouched.
+  💰 **Revenue relevance.** Every "why isn't anyone converting?" number before Build 82 is suspect —
+  a meaningful share of free users were never actually asked to pay. **Do not treat pre-Build-82
+  conversion as a baseline for any pricing decision.**
+  ⚠️ **Not yet shipped** — `src/` change, needs Build 82.
+  *(WS-A, S — done; ships with Build 82)*
 
 - **B-134 🔴 NEW 2026-08-22 — `finra-weekly` attaches UNRELATED broker-dealers to consumer
   brands and writes fabricated FINRA-attributed disclosure counts into 92 company files.**

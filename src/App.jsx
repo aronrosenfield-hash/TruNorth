@@ -3158,6 +3158,72 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
   const ps = computeScore(enriched, profile);
   const grade = scoreGrade(ps, userRelevantRealCats(enriched, profile));
 
+  // ── B-131 + B-136: one root cause, two bugs ─────────────────────────────
+  // `open` initializes from `initiallyOpen` (see useState above), so a card
+  // reached through openBrand() mounts ALREADY EXPANDED and handleTap never
+  // runs. Both the company_view event and the free-view quota used to live
+  // inside handleTap, so BOTH were skipped on every programmatic path:
+  // typeahead, scanner match, Today story/shelf, Brand-of-Day, Day-7, Library,
+  // History, weekly digest, universal link, Reveal winner/worst, basket chip.
+  // That is why PostHog logged zero company_view events (B-131) and why a free
+  // user could read unlimited full profiles by using the typeahead (B-136).
+  // Same class as the 2026-06-10 detail-fetch fix above — that pass moved the
+  // fetch out of handleTap and left these two behind.
+  const viewTrackedRef    = React.useRef(false);
+  const entryRef          = React.useRef(initiallyOpen ? "programmatic" : null);
+  const quotaCheckedRef   = React.useRef(false);
+  const paywallBlockedRef = React.useRef(false);
+
+  // Returns true when this open is allowed, false when the daily free profile
+  // is already spent (and fires `paywall_shown`). Callers own onUpgrade(), so
+  // the tap path can bail early and the programmatic path can collapse.
+  const checkFreeViewQuota = (slug) => {
+    if (isPaid) return true;
+    // Ungraded ("?") / zero-data brands are FREE — they deliver no paid value,
+    // so don't spend the user's one daily view on them or paywall on them
+    // (diligence: burning the free view on "No scoreable record" then getting
+    // paywalled off a real grade felt like bait-and-switch).
+    const gradeless = grade === "?" || enriched.overall == null;
+    const now = new Date();
+    // 2026-06-01 (user pick): switched from 1 free view/week → 1 free
+    // view/day. Same field name `log.week` retained but it now holds a
+    // YYYY-MM-DD day key.
+    // QA fix 2026-06-10: was toISOString() (UTC) — for US users the free
+    // view reset at 7-8pm local, granting two views some calendar days and
+    // a confusing mid-evening reset. Local-date key resets at the user's
+    // own midnight.
+    const dayKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+    let log = {};
+    try { log = JSON.parse(localStorage.getItem("tn_freeViewed") || "{}"); } catch {}
+    if (log.week !== dayKey) log = { week: dayKey, slugs: [] };
+    // H1 fix (audit 2026-06-01): cooldown was sessionStorage (clears on tab
+    // close → mobile web reopens evict it instantly → paywall fired every
+    // tap, training users to dismiss reflexively). Now localStorage with a
+    // 7-day window: dismiss once, get the rest of the free-quota week
+    // uninterrupted.
+    // B-85 (2026-07-20, Aron's call): the 7-day dismissal cooldown used to
+    // SUSPEND THE QUOTA ENTIRELY — and the timestamp was written on every
+    // paywall close, including a voluntary price check from the gold banner
+    // or Account. So the single most purchase-curious action a user could
+    // take bought them a free week of the whole product, and the advertised
+    // "1 brand profile/day" limit never actually bit. Decision: the limit is
+    // the product boundary, so it always applies — past the daily profile,
+    // the upgrade screen is what you get. `tn_paywallDismissedAt` is still
+    // written (analytics//future interstitial pacing) but no longer gates.
+    const alreadyViewed = log.slugs.includes(slug);
+    // 1 full brand profile per day: paywall fires on the 2nd unique tap.
+    if (!gradeless && !alreadyViewed && log.slugs.length >= 1) {
+      track("paywall_shown", { reason: "free_quota_exhausted", slug, viewed_this_week: log.slugs.length });
+      return false;
+    }
+    if (!gradeless && !alreadyViewed) {
+      log.slugs.push(slug);
+      try { localStorage.setItem("tn_freeViewed", JSON.stringify(log)); } catch {}
+    }
+    return true;
+  };
+
+
   // QA CRITICAL fix 2026-06-10: cards opened ALREADY-EXPANDED (deep links,
   // universal links, scanner match, Better-Alts navigation → initiallyOpen)
   // never ran handleTap, so the detail JSON was never fetched and every
@@ -3179,59 +3245,55 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open, company.slug]);
 
+  // B-131: fire company_view for EVERY expansion, however it happened — the
+  // old call sat inside handleTap and so never ran for programmatic opens.
+  // `entry` distinguishes the two so the funnel shows which surface is the
+  // real front door: "list_tap" (user tapped a collapsed row) vs
+  // "programmatic" (typeahead, scanner, Today, deep link, Reveal, …).
+  // Guarded by a ref so it fires once per expansion, not on every re-render
+  // when the detail JSON lands and re-derives `grade`/`ps`.
+  useEffect(() => {
+    if (!open) { viewTrackedRef.current = false; return; }
+    // The quota gate below collapses the card in a layout effect, but this
+    // passive effect from the same commit still flushes — so check explicitly
+    // rather than relying on `open` having been reset in time.
+    if (paywallBlockedRef.current) return;
+    if (viewTrackedRef.current) return;
+    viewTrackedRef.current = true;
+    track("company_view", {
+      slug: company.slug || company.id,
+      name: company.name,
+      grade,
+      graded: grade !== "?",
+      score: ps,
+      category: company.cat,
+      entry: entryRef.current || "list_tap",
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open]);
+
+  // B-136: the free-view quota also lived only in handleTap, so any card that
+  // mounted already-expanded handed a free user a full paid profile. Run the
+  // same check on the programmatic path. useLayoutEffect (not useEffect) so
+  // the collapse commits BEFORE the browser paints — no flash of paid content.
+  React.useLayoutEffect(() => {
+    if (!initiallyOpen || quotaCheckedRef.current) return;
+    quotaCheckedRef.current = true;
+    if (!checkFreeViewQuota(company.slug || company.id)) {
+      paywallBlockedRef.current = true;
+      setOpen(false);
+      onUpgrade();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const handleTap = () => {
-    // 2026-06-01 (user pick), updated: 1 free company view per DAY, then paywall.
-    // Refined from the previous "0 free / paywall on first tap" — that was
-    // too aggressive; users couldn't even sample the product before being
-    // gated. 1 free view lets them experience the depth of one brand
-    // profile, builds the desire, then the paywall asks for $1.99/mo to
-    // unlock the rest. Cooldown preserved so dismissers can browse for 4h.
-    //
-    // Re-opening an already-viewed company doesn't punish the user.
-    if (!isPaid && !open) {
+    if (!open) {
       const slug = company.slug || company.id;
-      // Ungraded ("?") / zero-data brands are FREE — they deliver no paid value,
-      // so don't spend the user's one daily view on them or paywall on them
-      // (diligence: burning the free view on "No scoreable record" then getting
-      // paywalled off a real grade felt like bait-and-switch).
-      const gradeless = grade === "?" || enriched.overall == null;
-      const now = new Date();
-      // 2026-06-01 (user pick): switched from 1 free view/week → 1 free
-      // view/day. Same field name `log.week` retained but it now holds a
-      // YYYY-MM-DD day key.
-      // QA fix 2026-06-10: was toISOString() (UTC) — for US users the free
-      // view reset at 7-8pm local, granting two views some calendar days and
-      // a confusing mid-evening reset. Local-date key resets at the user's
-      // own midnight.
-      const dayKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
-      let log = {};
-      try { log = JSON.parse(localStorage.getItem("tn_freeViewed") || "{}"); } catch {}
-      if (log.week !== dayKey) log = { week: dayKey, slugs: [] };
-      // H1 fix (audit 2026-06-01): cooldown was sessionStorage (clears on tab
-      // close → mobile web reopens evict it instantly → paywall fired every
-      // tap, training users to dismiss reflexively). Now localStorage with a
-      // 7-day window: dismiss once, get the rest of the free-quota week
-      // uninterrupted.
-      // B-85 (2026-07-20, Aron's call): the 7-day dismissal cooldown used to
-      // SUSPEND THE QUOTA ENTIRELY — and the timestamp was written on every
-      // paywall close, including a voluntary price check from the gold banner
-      // or Account. So the single most purchase-curious action a user could
-      // take bought them a free week of the whole product, and the advertised
-      // "1 brand profile/day" limit never actually bit. Decision: the limit is
-      // the product boundary, so it always applies — past the daily profile,
-      // the upgrade screen is what you get. `tn_paywallDismissedAt` is still
-      // written (analytics//future interstitial pacing) but no longer gates.
-      const alreadyViewed = log.slugs.includes(slug);
-      // 1 full brand profile per day: paywall fires on the 2nd unique tap.
-      if (!gradeless && !alreadyViewed && log.slugs.length >= 1) {
-        track("paywall_shown", { reason: "free_quota_exhausted", slug, viewed_this_week: log.slugs.length });
-        onUpgrade();
-        return;
-      }
-      if (!gradeless && !alreadyViewed) {
-        log.slugs.push(slug);
-        try { localStorage.setItem("tn_freeViewed", JSON.stringify(log)); } catch {}
-      }
+      if (!checkFreeViewQuota(slug)) { onUpgrade(); return; }
+      // Cleared so a later legitimate open (e.g. after upgrading) is tracked.
+      paywallBlockedRef.current = false;
+      entryRef.current = "list_tap";
     }
     // Phase 5.al (item #2): record view to local History list — capped
     // at 100, most-recent first, dedup by slug so re-views bump rather
@@ -3248,8 +3310,9 @@ const CompanyCard = React.memo(function CompanyCard({ company, catFilter, profil
     }
     setOpen(o => {
       if (!o) {
-        // Expanding — track view + lazily fetch detail if needed
-        track("company_view", { slug: company.slug || company.id, name: company.name, grade, graded: grade !== "?", score: ps, category: company.cat });
+        // Expanding — lazily fetch detail if needed. The company_view event
+        // moved OUT of here into the `open`-keyed effect above, so it also
+        // fires for cards that mount already-expanded (B-131).
         if (isSplitBundleEnabled() && company.slug && !detail && !loadingDetail) {
           setLoadingDetail(true);
           loadCompanyDetail(company.slug)
