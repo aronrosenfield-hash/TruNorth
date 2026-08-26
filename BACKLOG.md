@@ -768,8 +768,30 @@
   standing between us and it is a free `api.data.gov` key. ⚠️ **Probe the specific host, not the domain:**
   a `*.trade.gov` wildcard lapse does NOT expire uniformly across the hosts that serve it, so
   "trade.gov is fixed" is not a checkable claim — `api.trade.gov` is.
-- **B-127 🔴 NEW 2026-08-16 — the weekly rebake is now HARD-BLOCKED on a stale `grade-snapshot.json`
-  baseline, and it discards its own output every Sunday until someone re-baselines it.**
+- **B-127 🟢 RESOLVED 2026-08-26 — snapshot re-baselined; the weekly rebake is unblocked.**
+  ✅ **Re-baselined from the shipped catalog: 3,060 → 2,590 entries, `takenAt` 2026-08-09 →
+  2026-08-26**, written with the script's own exported `snapshotFromIndex()` so the format is
+  byte-compatible. **Verified after:** `[weekly-changes] baseline check OK — snapshot matches
+  committed index on 2590/2590 brands.` *(The accompanying "0 change(s) this week" is expected — the
+  baseline was just taken. **Sunday 08-30 diffs against this and should publish for the first time
+  since 08-09.**)*
+  🔑 **The 17.52% drift was fully explained before anything was overwritten** — reproduced locally at
+  the documented **536/3060**, then decomposed against the 2026-08-14 v1.3 push with **nothing
+  unaccounted for**: **476 graded → "?"** (correctness-sprint removals) · **60 letter → letter**
+  (59 down + 1 up — Pay & Tax penalties and the C-fixes) · **0 "?" → graded** · **0 missing**.
+  The 6 newly-gained brands from that push produce no disagreement because they were never in the
+  old snapshot (it holds only the then-graded 3,060). **The baseline was stale for a known,
+  already-shipped reason — not a new defect.**
+  🚫 **THE GUARD WAS CORRECT AND MUST NEVER BE WEAKENED.** It caught a poisoned baseline exactly as
+  designed and refused to publish grade-change claims about named companies. **The fix is always to
+  re-baseline after an out-of-band catalog change — never to raise `SNAPSHOT_DRIFT_MAX_PCT`.**
+  ⚠️ **Re-baselining is now a REQUIRED step of rule #16.** Any push that moves grades out of band
+  (a manual rebake, a correctness sprint, a big augment) must re-baseline in the SAME pass, or the
+  next Sunday silently throws away a full catalog rebuild. **Fixing B-133 will trip this again —
+  327 brands ≈ 10.7%.**
+
+  <details><summary>Original 2026-08-16 diagnosis and the two failed Sundays (kept for the trail)</summary>
+
   🚨 **FIRED AND FAILED AGAIN 2026-08-23 — SECOND CONSECUTIVE SUNDAY, IDENTICAL NUMBERS.** Run
   **`32652695665`** (16:46:05Z) → **`failure`**, same message, same **536/3060 = 17.52%**. Nothing has
   been re-baselined; `grade-snapshot.json` is byte-identical for a **ninth** day (md5
@@ -806,6 +828,8 @@
   lesson:** the snapshot must be re-baselined after **any** out-of-band catalog change — a hand-
   regenerated push silently arms this same failure a week later. Worth a follow-up assertion in
   `scripts/data-integrity.test.mjs` so a stale baseline fails CI at push time rather than on Sunday.
+
+  </details>
 
 - **B-131 🟢 ROOT-CAUSED AND FIXED 2026-08-26 — `company_view` was instrumented on a DEAD CODE
   PATH. Both hypotheses were partly right; the code defect was real and is now fixed.**
@@ -885,6 +909,43 @@
   `trending-refresh` by its commit series, not its run status** — same rule as B-124.
 
   </details>
+
+- **B-137 🟢 FIXED 2026-08-26 — the live coverage claim had DRIFTED from the catalog: the site and
+  the app said "3,000+ brands fully graded" while the shipped catalog held 2,590.**
+  🔑 **The rounding convention was never the problem.** `formatCompanyCount()` has said since
+  2026-06-01: round DOWN, append "+", never over-claim. **"3,000+" was a CORRECT round-down of 3,054
+  when it was typed** — it silently became an **over-claim** when the v1.3 sprint cut graded coverage
+  to 2,590, because these were hand-typed strings that bypassed the helper and nothing recomputed them.
+  ⚠️ **Worst instance was `src/OnboardingFlow.jsx:90`** — the stat row on the one screen 100% of new
+  users see.
+  ✅ **Fix: derive it, don't retype it.** `rebuild-bundle-index.mjs` now emits
+  **`src/lib/catalog-stats.js`** counted from the `index.json` it just built; it already runs on every
+  `npm run build`, so the constant always matches the catalog being shipped. Labels round DOWN to the
+  nearest 100 with a "+", mirroring the helper — **"12,800+" is preserved, "3,000+" becomes an honest
+  "2,500+", "9,700+ more" becomes "10,200+"** — and exact integers are exported alongside for logic.
+  🚫 **Never hard-code a coverage number in a component again.** Import from `catalog-stats.js`.
+  🔴 **STILL OPEN — needs Aron: the "200+ public sources" claim.** `SOURCES.md` holds **199** rows and
+  only **~4 sources actually reach a grade**. That needs a framing decision, not a silent edit.
+
+- **B-138 🟢 FIXED 2026-08-26 — the values share card was publishing the user's POLITICAL STANCE.**
+  `api/og/values.js` rendered `Politics: Progressive` / `Conservative`, `DEI:`, `Animals:` and
+  `Firearms: Anti-firearms` as coloured chips under a **"My stances"** heading — on a card built to be
+  shared publicly. **That is #4 on the locked stickiness anti-pattern list, and it was LIVE.**
+  ✅ Stances column removed; the "How much it matters" scales now span the card. **Outcomes and issue
+  weighting stay; which side the user is on does not.** `LEAN_LABEL`/`DEI_LABEL`/`ANIMAL_LABEL`/
+  `GUN_LABEL` and the unused `chip()` helper deleted. `p`/`d`/`a`/`g` params are accepted-but-ignored
+  so **share URLs already in the wild still render**, just without the chips.
+  ✅ **Shipped to production immediately** (API route) — unlike the `App.jsx` work, which needs Build 82.
+
+- **B-139 🟢 CLOSED 2026-08-26 — `followthemoney-state-monthly` disabled BEFORE it landed any data.**
+  FTM/NIMP is **free for NON-COMMERCIAL use only**; TruNorth ships a paid tier. Same exposure class as
+  **B-63** (OpenSanctions CC-BY-NC) and **B-67** (GJF) — both of which had to be stripped *after* the
+  data landed. **This one was still latent, and that is the whole point.** Verified before acting:
+  `FTM_API_KEY` **is not in the repo secrets**; both scheduled runs **failed** (07-01, 08-01) on the
+  missing key; **0 company files** contain `FollowTheMoney`/`NIMP`; the derived augment file was never
+  produced. **Nothing to strip.** ✅ `schedule:` trigger removed **and** `gh workflow disable`
+  (now `disabled_manually`). Fetcher, seeds and tests kept intact — **one-line revival IF written
+  commercial terms are obtained from NIMP. Do not re-enable without them.**
 
 - **B-136 🔴 NEW 2026-08-26 — REVENUE LEAK: the 1-free-profile-per-day paywall was bypassed on
   every programmatic path. Free users could read UNLIMITED full brand profiles by using the search
