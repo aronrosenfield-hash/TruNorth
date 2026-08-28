@@ -6,7 +6,35 @@
 >
 > **🟢 LAUNCHED — Jun 23, 2026 · 2:01 AM CDT** (App Store · id `6775301458` · `https://apps.apple.com/app/id6775301458` · PH launched). **CURRENT LIVE BUILD = v1.1 Build 81** (approved 2026-07-08, released Manual **2026-07-14**) — it superseded v1.0 Build 75, which was live Jun 23 → Jul 14. **Next iOS ship = Build 82.** *(The 2026-06-11 "date is soft, get it right" call held through the Compass redesign; the experience shipped on the locked date. Go-live runbook: `docs/LAUNCH_DAY.md`.)*
 >
-> **Last updated:** 2026-08-27 00:20 CDT (daily doc-sync, covering **2026-08-26** — the first real human engineering day in three weeks, and the day three long-open items closed at once).
+> **Last updated:** 2026-08-27 23:30 CDT (daily doc-sync, covering **2026-08-27** — a bot-only engineering day with one high-value human walkthrough: the "200+ sources" gap got materially worse under measurement, and the oldest open blocker moved for the first time in four weeks.)
+>
+> 🆕🔴🧾 **BIGGEST FINDING TODAY — THE "200+ SOURCES" GAP IS WORSE THAN THE BOARD RECORDED TWICE OVER. `docs/SOURCES.md` DOCUMENTS 118 SOURCES, NOT 149 AND NOT 199.** Yesterday's sync corrected 199 → **149** by subtracting 25 headers and 25 separators. **That correction was right about the method and still wrong about the answer.** Parsed table-by-table today: the file holds **25 tables, 149 data rows — but only 19 of those tables are source registries.** The other **six are not sources at all**: a `| Status | Count |` summary (6 rows) and five cost tables — `| Service | Cost | Could re-enable |` (4), `| Service | Cost | What it adds |` (4), `| Service | Cost | What |` (7), `| Service | Cost | Used for |` (7), `| Item | Cost | Status |` (3) = **31 rows that are line items in a budget, not feeds.** 🔑 **149 − 31 = 118 rows under a `| Source | URL | … |` header, and 118 unique source names — no duplicates.** 📊 **The three numbers that matter, all measured today: public claim `200+` · documented registry **118** · in-app Sources screen **104** items across 18 groups** (`SOURCES_DATA` in `src/App.jsx:4935`, counted by evaluating the array, not by grepping it). 🚨 **A user can audit the weakest of these themselves — open the Sources screen and count 104.** 🔴 **This is still Aron's framing call, but the call is now against a 118-vs-200+ gap, not 149-vs-200+.**
+>
+> 🆕🧮🎯 **AND B-137 MISSED A SITE — ON THE EXACT SCREEN IT WAS OPENED FOR. `src/OnboardingFlow.jsx:95` HARD-CODES `"200+"` ON THE SAME LINE AS THE GENERATED BRAND COUNT.** The line reads `{[[CATALOG_GRADED_LABEL,"Brands graded"],["9","Categories"],["200+","Public sources"]]...}` — **B-137 replaced the first stat with a build-time constant and left the third hand-typed, three tokens away, under a fresh comment explaining why hand-typed coverage numbers are dangerous.** ⚠️ **Same pattern twice more in `src/App.jsx:8155` and `:8220`, where `"200+"` sits in the SAME SENTENCE as a computed `SOURCES_DATA.length`** — *"Every score is researched from 200+ primary public-record sources … The {totalSources} highest-signal feeds span {SOURCES_DATA.length} categories; the full 200+ refresh continuously"*. **One sentence, one derived number and two typed ones.** 🔑 **THE REUSABLE LESSON, AND IT IS THE SAME ONE B-140 TAUGHT: B-137 fixed the number it was reported about and did not enumerate the class. A coverage claim is not just the brand count — the source count is one too.** 📍 **Full enumeration, 11 lines across 6 files (10 rendered + 1 comment):** `src/OnboardingFlow.jsx:95` · `src/MarketingLanding.jsx:142`, `:353` · `src/Methodology.jsx:44` · `src/App.jsx:4136`, `:4156` (comment), `:4183`, `:8155`, `:8220` · `index.html:73` · `public/llms.txt:3`. **Yesterday's board said "8+ places" and listed 10 — it missed `OnboardingFlow.jsx:95`, the first screen every new user sees.** ✅ **Checked and cleared: the four `200+` hits in `src/companies.js` and one in `src/companies.json` are unrelated pay-ratio prose (`"1,200+:1"`), and the `catalog-stats.js` hit is the substring inside `"10,200+"`. Don't re-flag them.**
+>
+> 🆕📐🕳️ **A SECOND, DEEPER FINDING FROM THE SAME WALKTHROUGH — FOUR OF THE NINE CATEGORIES CANNOT PRODUCE A BASELINE GRADE, AND THE CODE COMMENT SAYS THREE.** `scripts/rebake-scoring.mjs:381` and `:558` both read `if (k === "political" || k === "dei" || k === "animals" || k === "guns") return null;` — **`political` is a stance category and is excluded from the un-quizzed baseline exactly like `dei`/`animals`/`guns`.** ⚠️ **But the explanatory comment at `:86` reads "R4 Stance categories (dei / animals / guns) are EXCLUDED" — it names three and the code enforces four. The comment is stale and will mislead the next person who reads it before the code.** 🔑 **WHY THIS MATTERS MORE THAN A COMMENT TYPO: political is TruNorth's best-covered category by a wide margin, and it is structurally barred from creating a grade.** 🧭 **That reframes the "?" wall: a meaningful share of the 10,240 ungraded brands is not missing data — it is data landing in a category that cannot score.** ✅ **This is working as designed (V3/R4, 2026-06-11 OFCCP regression guard) and must NOT be "fixed" by letting stance categories into the baseline — the app takes no position on contested values until the user takes one.** 🧭 **It does mean "add more sources" is the wrong lever, which is exactly what the 08-26 growth plan concluded from the other direction.**
+>
+> 🆕📧🟢 **REAL PROGRESS ON THE OLDEST OPEN BLOCKER — ARON DID THE DNS HALF OF RESEND TODAY, AND HE DID IT SAFELY.** `resend._domainkey.trunorthapp.com` returned **empty at 15:36Z during the walkthrough** and now returns a **published DKIM public key**, confirmed at the authoritative nameserver (`dns1.registrar-servers.com`), and `send.trunorthapp.com` carries `10 feedback-smtp.us-east-1.amazonses.com`. ✅ **THE HAZARD WAS AVOIDED: the root `MX` is still Google Workspace only** — `1 aspmx.l.google.com` plus the four `alt*` records, unchanged. **Adding Resend's MX at the root would have broken his own email; the records went on the `send.` subdomain instead.** ✅ **SPF is still a single record** (`v=spf1 include:_spf.google.com include:_spf.mlsend.com ~all`) — no second SPF was added, which would have invalidated both. 🔴 **BUT THE DIGEST IS STILL DEAD, AND IT IS NOW BLOCKED ON EXACTLY ONE STEP: `gh secret list` still returns the same 7 secrets and no `RESEND_API_KEY`.** 🧭 **Remaining path is three actions: create the Resend API key → add it as `RESEND_API_KEY` at `https://github.com/aronrosenfield-hash/TruNorth/settings/secrets/actions` → run `weekly-digest.yml` manually with Dry run `true` before letting it send.** ⏰ **Sunday 2026-08-30 is the fifth scheduled digest; it will miss again unless the secret lands first.**
+>
+> 🆕🕳️🤖 **B-141 (NEW) — THE CRON WATCHDOG DOES NOT FILTER `disabled_manually` WORKFLOWS. YESTERDAY'S SYNC PREDICTED THIS IN WRITING AND THE PREDICTION HELD.** The 08-26 entry said the stale `followthemoney-state-monthly` row "should drop off tomorrow's watchdog run — **if it is still there on 08-28, the watchdog does not filter `disabled_manually` workflows and that is a real (small) defect.**" ✅ **Issue #155 was rewritten `2026-08-27T22:57:44Z`, 26 hours after the workflow was disabled, and `followthemoney-state-monthly` is still listed as `failure (2026-08-01)`.** ✅ **Confirmed at the API: `gh api …/actions/workflows` reports `followthemoney-state-monthly :: disabled_manually`.** 🔑 **So the watchdog reports a workflow that can never run again, and will keep reporting it forever.** 🧭 **Fix: `cron-health-daily` must skip workflows whose `state !== "active"`. Small, but it is the SECOND way [[watchdog-blind-to-cancelled-crons]] misleads — the first was under-reporting, this one over-reports.** ⚠️ **Consequence for the row count: 37 is now 36 real + 1 permanent phantom (`canada-comp-monthly`) + 1 disabled phantom (`followthemoney-state-monthly`) = 35 live rows. Adjust the arithmetic in that memory.**
+>
+> 🤖 **OTHERWISE A BOT-ONLY ENGINEERING DAY — AND MEASURED PER-BRAND, ZERO GRADE INPUTS MOVED.** Two data commits landed: `data(news)` **`11e84d711`** (10:57 CDT, 13 company files) and `data(ofac-sdn)` **`edd09fd9d`** (20:37 CDT, `data/derived/` + `data/raw/` only, no company files). **Parsed all 13 changed company files object-by-object across `5c36d3be6..origin/main`: `sc` changed on 0 · `excl` on 0 · `flags` on 0 · stored `grade` on 0.** Keys that actually moved: **`news` 13 · `news_items` 13 · `dataLastUpdated` 13 · `recent_events` 10** — display-only, every one. **`git diff --name-only` returns 0 paths under `src/`, `scripts/`, `ios/`, `android/`, `.github/workflows/` or `package.json`.** **All four scheduled runs today reported `success`** — `trending-refresh` `33035207266` · `news-rss-nightly` · `cron-health-daily` · `ofac-sdn-daily`. **News merge log is clean: `total_items 35, brand_count 13, merged_count 13, orphan_count 0, error_count 0`.**
+>
+> 🧭💬 **A HUMAN SESSION DID RUN — IT WAS A DECISION WALKTHROUGH, AND IT SHIPPED NOTHING BY DESIGN.** The 08-26 growth session resumed at **15:33Z** with "walk me through these" and produced the two findings above plus the 24-step Resend runbook. **No commits, no file changes, no new untracked docs.** 🔑 **Aron acted on exactly one half of it — the DNS records — and has not yet answered the "200+" framing question.** ⚠️ **The proposed answer on the table is "change 200+ to 100+ and derive it from `SOURCES_DATA` at build time, exactly like `catalog-stats.js`" — 104 is the only number a user can independently verify, and deriving it means it can never drift again. It has NOT been approved and nothing was edited.**
+>
+> ✅📊 **CATALOG HELD — THIRTEENTH CONSECUTIVE DAY AT THE SAME CDN MD5.** `curl https://www.trunorthapp.com/data/index.json` → **12,830 tracked / 2,590 graded — A 62 · B 706 · C 1,029 · D 537 · F 256**, 10,240 "?", md5 **`21aac7da8b481018ba8dcb88d9449c48`**, 9,989,183 B. **Unchanged 08-15 → 08-27. Quote 2,590, and quote the md5, not the byte count.**
+>
+> ✅🎯 **B-124 HELD — THURSDAY LANDED.** `data(news)` for 2026-08-27 landed at **`11e84d711`**. Day-of-week is now **Mon–Sat 38-for-38, Sunday 0-for-4 (08-02, 08-09, 08-16, 08-23).** 🚨 **NOTHING HAS BEEN FIXED — the one-line `git rebase --abort || true` is still not in. The next real test is Sunday 2026-08-30, and a weekday success is the model working, not recovery.**
+>
+> 🟡 **B-128 FLAT FOR A FOURTH CONSECUTIVE DAY — 406 single-line / 12,424 pretty**, byte-identical to 08-26, 08-25 and 08-24 (405/12,425 on 08-23; 387/12,443 on 08-22). **Today's news cron rewrote 13 company files without moving the split at all.** 🔑 **Four flat days is STILL not stabilisation — there has been no Sunday in the streak, and the oscillation model says the single-line writers cluster on Sunday. 08-30 is the test.**
+>
+> 📌 **Everything else re-verified and unchanged.** **B-131 — `trending.json` still reads `generatedAt 2026-08-27T03:03:58.276Z`, one brand (`mondelez-international`, 1 view); `trending-refresh` has not run again since, so there is no new signal either way. The fix ships with Build 82.** **Weekly digest still at four misses** (08-02, 08-09, 08-16, 08-23) — **DNS is now done, the secret is not; next test 08-30.** **B-133 flat at 43** — `typeof …totalGrants === "number"` on 43 files, measured the correct way. **#155 still 37 rows**, rewritten **2026-08-27T22:57Z** — **and one of those rows is now provably a phantom, see B-141.** **B-101 flat at 41 open data PRs**; oldest **#116, now 59 days**; **#134 and #165 remain the two must-not-merge landmines.** **B-122, B-125, B-129, B-130, B-134 all untouched today.** **B-127 unchanged and still unproven in production — `score-rebake-weekly` is a Sunday cron, last scheduled run failed 08-23 (pre-fix), first real test 08-30.** 🟢 **v1.1 Build 81 remains the LIVE App Store build; no `ios/` or `android/` changes. Next iOS ship = Build 82 — it carries B-131 + B-136.** ⚠️ **Housekeeping: 16 untracked `docs/` files, unchanged, day 24. None added today.**
+>
+> 🔴 **WHAT ARON STILL OWES — ITEM ① IS NOW HALF DONE.** ① **`RESEND_API_KEY`** — **DNS is done and verified; create the key and add the secret. Three steps from a working digest, and five missed Sundays if 08-30 passes without it.** ② **the "200+ public sources" framing call** — **the documented roster is 118, not 149**; the claim is on 10 rendered surfaces including the first onboarding screen; the recommendation on the table is "100+, derived at build time." ③ **the three still-open growth decisions** from the 08-26 session: the price overrule, the CDP licence, and the public-face call. 🧭 **ENGINEERING ORDER, UNCHANGED AT THE TOP: ① B-124 `git rebase --abort` — one line, still the highest-leverage open item. ② Ship Build 82 — B-131 and B-136 are worth nothing until it ships and B-136 is a live revenue leak. ③ B-134 FINRA matcher (must land before V-4; exposure 93 brands). Then B-128, then V-4 led by `cfpb` and `secTax`, then B-129 and B-130.** 🆕 **B-141 joins the cheap pile — one `state !== "active"` filter in `cron-health-daily`.** ⏰ **Sunday 2026-08-30 is now a QUADRUPLE test day: B-127's first real rebake, B-124's next Sunday, B-128's oscillation model, and the weekly digest.**
+>
+> ---
+>
+> **[08-26 sync]**
 >
 > 🆕🟢🎯 **BIGGEST FACT TODAY — THE BOARD MOVED FOR THE FIRST TIME SINCE 08-14. EIGHT HUMAN COMMITS, THREE PRODUCTION DEPLOYS, SIX ITEMS CLOSED.** After **eleven consecutive bot-only days**, a human session shipped: **B-127 RESOLVED** (snapshot re-baselined) · **B-131 ROOT-CAUSED AND FIXED** (dead code path) · **B-136 FOUND AND FIXED** (revenue leak, same root cause) · **B-137 FIXED** (coverage claim drift) · **B-138 FIXED** (political stance on a public share card) · **B-139 CLOSED** (non-commercial licence, disabled before it landed data) · **B-140 NEW AND FIXED** (fabricated "F" grades on 6,691 `/compare/` pages). Commits: `2432b85d2` `f8c6818e9` `75fa9e0aa` `77c158e0f` `04d4ddd71` `2e3eac15f` `e9fbca446` `a1efa81ad`. **Three `ci` push runs, all `success` (`33004292650`, `33013266747`, `33014056323`).**
 >
@@ -964,17 +992,41 @@
   nearest 100 with a "+", mirroring the helper — **"12,800+" is preserved, "3,000+" becomes an honest
   "2,500+", "9,700+ more" becomes "10,200+"** — and exact integers are exported alongside for logic.
   🚫 **Never hard-code a coverage number in a component again.** Import from `catalog-stats.js`.
-  🔴 **STILL OPEN — needs Aron: the "200+ public sources" claim.** `SOURCES.md` holds **199** rows and
-  only **~4 sources actually reach a grade**. That needs a framing decision, not a silent edit.
-  ⚠️🧾 **CORRECTED 2026-08-27 (doc-sync) — THE ROSTER IS 149, NOT 199, AND THE GAP IS THEREFORE BIGGER
-  THAN THIS ENTRY RECORDED.** "199" is `grep -c '^|'`, which counts **every pipe line — including 25
-  table headers and 25 separator rows across 25 tables.** Parsed properly: **149 data rows + 25
-  headers + 25 separators = 199 lines.** 🔑 **The documented source roster is 149 against a published
-  claim of "200+".** The claim appears in at least **8 user-facing places** — `src/MarketingLanding.jsx:142`
-  and `:353`, `src/Methodology.jsx:44`, `src/App.jsx:4136`/`:4156`/`:4183`/`:8155`/`:8220`,
-  `public/llms.txt:3`, `index.html:73`. 🚫 **Do not "fix" this by editing the number** — B-137 proved
-  the failure mode is hand-typed claims drifting from reality, and the right answer here is Aron's
-  framing call on what "source" means (feeds swept vs. feeds that reach a grade), then derive it.
+  🔴 **STILL OPEN — needs Aron: the "200+ public sources" claim.** ~~`SOURCES.md` holds **199** rows~~
+  ~~and only **~4 sources actually reach a grade**.~~ **BOTH of those numbers were wrong. Corrected
+  twice; use only the figures below.**
+  ⚠️🧾 **CORRECTED 2026-08-27 (doc-sync) — THE DOCUMENTED ROSTER IS 118. Not 199, and not the 149 this
+  entry was corrected to on 08-26.**
+  · **199** = `grep -c '^|'` — every pipe line, including headers and separators. Wrong.
+  · **149** = data rows after subtracting **25 headers + 25 separators** across 25 tables. Better
+    method, still wrong answer — **it counts rows in tables that do not list sources.**
+  · **118** = rows under a `| Source | URL | … |` header. **19 of the 25 tables are source
+    registries; the other six are a `| Status | Count |` summary (6 rows) and five cost tables —
+    `| Service | Cost | Could re-enable |` (4) · `| Service | Cost | What it adds |` (4) ·
+    `| Service | Cost | What |` (7) · `| Service | Cost | Used for |` (7) · `| Item | Cost | Status |`
+    (3) = **31 rows that are budget line items, not feeds.** 149 − 31 = **118**, and all 118 first-column
+    values are unique.
+  📊 **THE THREE NUMBERS THAT MATTER:** published claim **`200+`** · documented registry **118** ·
+  in-app Sources screen **104** items across 18 groups (`SOURCES_DATA`, `src/App.jsx:4935` — count it
+  by evaluating the array, not by grepping). 🚨 **104 is the number a user can audit themselves.**
+  ⚠️ **ALSO CORRECTED: "~4 sources reach a grade" was an agent estimate and is too harsh — 23 scripts
+  write the scorer's actual inputs.** Do not repeat the ~4 figure.
+  📍 **The claim appears on 11 lines across 6 files (10 rendered + 1 comment)** — `src/OnboardingFlow.jsx:95`,
+  `src/MarketingLanding.jsx:142`/`:353`, `src/Methodology.jsx:44`,
+  `src/App.jsx:4136`/`:4156` (comment)/`:4183`/`:8155`/`:8220`, `index.html:73`, `public/llms.txt:3`.
+  🆕🚨 **`src/OnboardingFlow.jsx:95` IS NEW TO THIS LIST AND IS THE WORST ONE — B-137 MISSED IT ON THE
+  SCREEN B-137 WAS OPENED FOR.** The line reads
+  `{[[CATALOG_GRADED_LABEL,"Brands graded"],["9","Categories"],["200+","Public sources"]]…}` — the
+  brand count was replaced with a build-time constant and the source count was left hand-typed three
+  tokens away. **Same pattern in `src/App.jsx:8155` and `:8220`, where `"200+"` sits in the same
+  sentence as a computed `SOURCES_DATA.length`.**
+  ✅ **Checked and cleared — do not re-flag:** the four `200+` hits in `src/companies.js` and one in
+  `src/companies.json` are pay-ratio prose (`"1,200+:1"`), and the `src/lib/catalog-stats.js` hit is
+  the substring inside `"10,200+"`.
+  🚫 **Do not "fix" this by editing the number** — B-137 proved the failure mode is hand-typed claims
+  drifting from reality. 🧭 **Recommendation on the table (NOT approved): change `200+` → `100+` and
+  emit it from `SOURCES_DATA` at build time, exactly like `catalog-stats.js`, so it can never drift
+  again.** It is Aron's framing call on what "source" means, then derive it.
 
 - **B-138 🟢 FIXED 2026-08-26 — the values share card was publishing the user's POLITICAL STANCE.**
   `api/og/values.js` rendered `Politics: Progressive` / `Conservative`, `DEI:`, `Animals:` and
@@ -1032,6 +1084,26 @@
   are correctly preceded by an explicit `== null` check.**
   ✅ **LIVE** — API routes + sitemap, deployed on push; no Build 82 dependency.
   *(WS-A, S — done)*
+
+- **B-141 🆕 NEW 2026-08-27 — the cron watchdog reports workflows that can never run again. It does
+  not filter `disabled_manually`.** *(P3 — small, cheap, and it corrupts a number the board reads
+  daily.)*
+  🔑 **Predicted in writing on 08-26 and confirmed on 08-27.** The 08-26 sync said the stale
+  `followthemoney-state-monthly` row "should drop off tomorrow's watchdog run — if it is still there
+  on 08-28, the watchdog does not filter `disabled_manually` workflows and that is a real (small)
+  defect." **Issue #155 was rewritten `2026-08-27T22:57:44Z`, 26 hours after the disable, and the row
+  is still there, listed as `failure (2026-08-01)`.**
+  ✅ **Confirmed at the API, not inferred:** `gh api repos/aronrosenfield-hash/TruNorth/actions/workflows`
+  reports `followthemoney-state-monthly :: disabled_manually`. **A disabled workflow has no future
+  scheduled run, so its "latest scheduled run did not succeed" row is permanent and meaningless.**
+  🧭 **Fix: `cron-health-daily` must skip workflows whose `state !== "active"`.**
+  ⚠️ **CONSEQUENCE FOR THE ROW COUNT — apply this before quoting 37 again:** #155's 37 rows are
+  **35 live + 1 permanent phantom (`canada-comp-monthly`) + 1 disabled phantom
+  (`followthemoney-state-monthly`)**.
+  🔑 **This is the SECOND way the watchdog misleads and it points the opposite direction from the
+  first.** [[watchdog-blind-to-cancelled-crons]] records that the count is a FLOOR (it under-reports
+  by being blind to B-124-class silent data loss). B-141 is over-reporting. **Both are live at once —
+  the number is neither an upper nor a lower bound, which is why the rule is to read the issue BODY.**
 
 - **B-136 🟢 NEW AND FIXED 2026-08-26 — REVENUE LEAK: the 1-free-profile-per-day paywall was bypassed on
   every programmatic path. Free users could read UNLIMITED full brand profiles by using the search
