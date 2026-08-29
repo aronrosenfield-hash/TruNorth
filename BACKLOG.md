@@ -6,7 +6,35 @@
 >
 > **🟢 LAUNCHED — Jun 23, 2026 · 2:01 AM CDT** (App Store · id `6775301458` · `https://apps.apple.com/app/id6775301458` · PH launched). **CURRENT LIVE BUILD = v1.1 Build 81** (approved 2026-07-08, released Manual **2026-07-14**) — it superseded v1.0 Build 75, which was live Jun 23 → Jul 14. **Next iOS ship = Build 82.** *(The 2026-06-11 "date is soft, get it right" call held through the Compass redesign; the experience shipped on the locked date. Go-live runbook: `docs/LAUNCH_DAY.md`.)*
 >
-> **Last updated:** 2026-08-27 23:30 CDT (daily doc-sync, covering **2026-08-27** — a bot-only engineering day with one high-value human walkthrough: the "200+ sources" gap got materially worse under measurement, and the oldest open blocker moved for the first time in four weeks.)
+> **Last updated:** 2026-08-28 21:30 CDT (daily doc-sync, covering **2026-08-28** — a fully bot-only day, zero human sessions, and one finding that matters: the cron watchdog **silently deleted a broken cron from its own report**, so #155's row count fell for a reason that has nothing to do with anything being fixed.)
+>
+> 🆕🔴🕳️ **BIGGEST FINDING TODAY — B-142 (NEW): THE CRON WATCHDOG SILENTLY DROPS THE LONGEST-BROKEN CRONS OFF ITS OWN REPORT. ISSUE #155 WENT 37 ROWS → 36, AND NOTHING GOT FIXED.** Diffed the two issue bodies row-by-row (yesterday's roster recovered from run `33124490241`'s log, today's from the live issue): exactly one name disappeared — **`bcorp-quarterly`** — and nothing was added. ✅ **It did NOT turn green.** The workflow is still `active`, and `gh run list --workflow=bcorp-quarterly.yml` still shows its latest scheduled run as **`cancelled` on 2026-06-15T18:56:56Z**. 🔑 **ROOT CAUSE, MEASURED TO THE MINUTE:** `.github/workflows/cron-health-daily.yml:51` derives the entire roster from `gh run list --repo "$REPO" --limit 800`. **That 800-run window today spans `2026-06-15T19:12:21Z` → `2026-08-29T01:07:28Z` — 75 days at ≈10.7 runs/day — and `bcorp-quarterly`'s last scheduled run is 15 minutes 25 seconds OLDER than the cutoff.** It fell off the edge overnight, the `group_by(.workflowName)` never saw it, and the row evaporated. ⚠️ **The file's own comment claims that window covers "~50 days"; it is 75 today, and it SHRINKS as run volume grows.**
+>
+> 🚨🧮 **THE RULE THIS FORCES, AND IT INVERTS THE OBVIOUS READING OF #155: A FALLING ROW COUNT IS NOT PROGRESS — AND IS NOT EVEN NEUTRAL. IT CAN MEAN A BROKEN CRON WAS ERASED.** The count can fall three ways: a cron actually went green, a workflow got disabled, or **its last run aged out**. Only the first is good news, and today's fall was the third. 🔑 **Never quote the #155 row count as a health number. Diff the roster and name the rows that changed — the integer carries no signal.** 🚨 **THIS IS THE THIRD WAY THE WATCHDOG MISLEADS, AND THE WORST: under-reporting was #1 (B-124-class silent success), over-reporting was #2 (B-141 `disabled_manually`), and this is a silent DELETE that removes crons in order of how long they have been broken.**
+>
+> ⏰ **IT HITS THE WORST CRONS FIRST, AND THE NEXT CASUALTIES ARE ALREADY NAMEABLE.** Rare-cadence crons have the sparsest runs, so quarterly/annual failures are structurally the first to be erased. `bcorp-quarterly` runs `23 0 15 3,6,9,12 *` — the 15th of Mar/Jun/Sep/Dec — so its next scheduled run is **2026-09-15 and it is invisible for 18 days while still broken.** **Five rows dated `2026-07-01` sit nearest the edge:** `animal-welfare-union-quarterly`, `nhtsa-safety-quarterly`, `peta-bwb-quarterly`, `privacy-policy-quarterly`, `usaspending-quarterly`. **133 in-window runs predate 07-01, so at today's rate the edge passes them in roughly 12 days (~2026-09-09) and #155 would fall 36 → 31 with nothing repaired.** *(That date is an ESTIMATE from a measured rate, not a fact.)*
+>
+> 🧭 **THE FIX IS ONE FILE AND IT CLOSES B-141 TOO — DO THEM TOGETHER.** Stop deriving the roster from a run-count window. Enumerate `gh api /repos/$REPO/actions/workflows`, keep only `state == "active"` (**that IS B-141**), then query each workflow's own latest scheduled run via `.../actions/workflows/$id/runs?event=schedule&per_page=1`. Cadence-agnostic and window-free — which is what the B-105 rewrite comment already claims the design is. 🔑 **Doing only B-141 leaves the silent delete in place.** ✅ **B-141 held a second day and the API pinned it exactly: #155 was rewritten `2026-08-28T23:02:18Z` and still lists `followthemoney-state-monthly`; across all 169 workflows the API returns 168 `active` + exactly 1 `disabled_manually`, and that one is it — so the filter is provably sufficient and provably scoped to one row.** 🔎 **Honest arithmetic today: 36 rows = 34 live + 2 phantoms (`canada-comp-monthly`, `followthemoney-state-monthly`) + 1 broken cron now hidden entirely (`bcorp-quarterly`).**
+>
+> ⚖️📉 **B-131 — READ TODAY'S `trending.json` CAREFULLY: IT IS THE SAME SINGLE EVENT AGING THROUGH THE WINDOW, NOT A SECOND VIEW.** `trending-refresh` ran and committed (`ac95ac8df`, 06:04Z); the file now reads `generatedAt 2026-08-28T06:04:02.715Z` with **one brand, `mondelez-international`, `views: 1, uniques: 1` — a byte-identical brand payload to the 08-27 refresh, which also read `mondelez-international / 1`.** 🔑 **`lookbackDays` is 7, so the one `company_view` that fired around 08-26 is still inside the window and will keep reappearing until roughly 09-02. Two files showing "1 view" is ONE event counted twice, not two events.** 🚨 **Do not write "1 view/day" or "views are recovering." The correct statement: exactly one `company_view` has fired since the 19-day zero streak, transport is proven alive, and volume stays near zero until Build 82 ships the `handleTap` fix.**
+>
+> 🤖📊 **AN ENTIRELY BOT-ONLY DAY — AND MEASURED PER-BRAND, ZERO GRADE INPUTS MOVED.** Three commits landed since yesterday's sync: `chore(trending)` **`ac95ac8df`**, `data(news)` **`049b32f41`** (10:19 CDT, 15 company files), `data(ofac-sdn)` **`7af90eb4d`** (18:07 CDT, `data/derived/` + `data/raw/` only). **Parsed all 15 changed company files object-by-object across `408867599..origin/main`: `sc` changed on 0 · `excl` on 0 · `flags` on 0 · stored `grade` on 0 · `overall` on 0.** Keys that moved: **`news` 15 · `news_items` 15 · `dataLastUpdated` 15 · `recent_events` 10** — display-only, every one. **`git diff --name-only` returns 0 paths under `src/`, `scripts/`, `ios/`, `android/`, `.github/workflows/` or `package.json`.** **All four scheduled runs reported `success`.** News merge log clean: **`total_items 42, brand_count 15, merged_count 15, orphan_count 0, error_count 0`.**
+>
+> 🧭💬 **ZERO HUMAN ACTIVITY TODAY — VERIFIED, NOT ASSUMED.** The 08-26 growth session's transcript holds **0 entries timestamped 2026-08-28**; its last entry is `2026-08-27T17:00:57Z`. `find . -newermt "2026-08-28 00:00"` outside `public/data/`, `data/`, `.git/` and `node_modules/` returns **nothing**. 🔑 **So none of your three open calls moved, and the 08-27 walkthrough findings are unchanged rather than stale.**
+>
+> ✅📊 **CATALOG HELD — FOURTEENTH CONSECUTIVE DAY AT THE SAME CDN MD5.** `curl https://www.trunorthapp.com/data/index.json` → HTTP 200, **12,830 tracked / 2,590 graded — A 62 · B 706 · C 1,029 · D 537 · F 256**, 10,240 "?", md5 **`21aac7da8b481018ba8dcb88d9449c48`**, 9,989,183 B. **Unchanged 08-15 → 08-28. Quote 2,590, and quote the md5, not the byte count.**
+>
+> ✅🎯 **B-124 HELD — FRIDAY LANDED.** `data(news)` for 2026-08-28 landed at **`049b32f41`**. Day-of-week is now **Mon–Sat 39-for-39, Sunday 0-for-4 (08-02, 08-09, 08-16, 08-23)** — both 08-16 and 08-23 are visibly absent from `git log --grep='data(news)'`. 🚨 **NOTHING HAS BEEN FIXED — the one-line `git rebase --abort || true` is still not in. The next real test is Sunday 2026-08-30, and a weekday success is the model working, not recovery.**
+>
+> 🟡 **B-128 FLAT FOR A FIFTH CONSECUTIVE DAY — 406 single-line / 12,424 pretty**, byte-identical to 08-27, 08-26, 08-25 and 08-24 (405/12,425 on 08-23; 387/12,443 on 08-22). **Today's news cron rewrote 15 company files without moving the split at all.** 🔑 **Five flat days is STILL not stabilisation — there has been no Sunday in the streak, and the oscillation model says the single-line writers cluster on Sunday. 08-30 is the test.**
+>
+> 📌 **Everything else re-verified and unchanged.** **B-133 flat at 43** — measured the correct way (`typeof …totalGrants === "number"` on 43 files; the string `charity_irs990` appears in **11,202** files, which is exactly why key-presence is the wrong test). **B-101 flat at 41 open data PRs**; oldest **#116, now 60 days**; **#134 and #165 remain the two must-not-merge landmines.** **Weekly digest still at four misses** (08-02, 08-09, 08-16, 08-23) — **`gh secret list` still returns the same 7 secrets and no `RESEND_API_KEY`; DNS is done, the secret is not.** **B-127 unchanged and still unproven in production — `score-rebake-weekly`'s last scheduled run is the pre-fix 08-23 failure; first real test 08-30.** **B-122, B-125, B-129, B-130, B-134, B-137, B-140 all untouched today** — B-137's 11 lines across 6 files are still live, including `src/OnboardingFlow.jsx:95`. 🟢 **v1.1 Build 81 remains the LIVE App Store build; no `ios/` or `android/` changes. Next iOS ship = Build 82 — it carries B-131 + B-136.** ⚠️ **Housekeeping: 16 untracked `docs/` files, unchanged, day 25. None added today.**
+>
+> 🔴 **WHAT YOU STILL OWE — UNCHANGED, NOTHING MOVED TODAY.** ① **`RESEND_API_KEY`** — DNS is done and verified; create the key, add the secret, dry-run `weekly-digest.yml`. **Three steps from a working digest, and 08-30 makes it five missed Sundays.** ② **the "200+ public sources" framing call** — documented roster is **118**, in-app Sources screen shows **104**, and the claim is on 10 rendered surfaces including the first onboarding screen; recommendation on the table is "100+, derived at build time." ③ **the three still-open growth decisions** from 08-26: the price overrule, the CDP licence, and the public-face call. 🧭 **ENGINEERING ORDER, UNCHANGED AT THE TOP: ① B-124 `git rebase --abort` — one line, still the highest-leverage open item. ② Ship Build 82 — B-131 and B-136 are worth nothing until it ships, and B-136 is a live revenue leak. ③ B-134 FINRA matcher (must land before V-4; exposure 93 brands). Then B-128, then V-4 led by `cfpb` and `secTax`, then B-129 and B-130.** 🆕 **B-142 + B-141 are now ONE cheap job in ONE file — rewrite `cron-health-daily.yml` to enumerate workflows instead of runs.** ⏰ **Sunday 2026-08-30 is a QUADRUPLE test day: B-127's first real rebake, B-124's next Sunday, B-128's oscillation model, and the weekly digest.**
+>
+> ---
+>
+> **[08-27 sync]**
 >
 > 🆕🔴🧾 **BIGGEST FINDING TODAY — THE "200+ SOURCES" GAP IS WORSE THAN THE BOARD RECORDED TWICE OVER. `docs/SOURCES.md` DOCUMENTS 118 SOURCES, NOT 149 AND NOT 199.** Yesterday's sync corrected 199 → **149** by subtracting 25 headers and 25 separators. **That correction was right about the method and still wrong about the answer.** Parsed table-by-table today: the file holds **25 tables, 149 data rows — but only 19 of those tables are source registries.** The other **six are not sources at all**: a `| Status | Count |` summary (6 rows) and five cost tables — `| Service | Cost | Could re-enable |` (4), `| Service | Cost | What it adds |` (4), `| Service | Cost | What |` (7), `| Service | Cost | Used for |` (7), `| Item | Cost | Status |` (3) = **31 rows that are line items in a budget, not feeds.** 🔑 **149 − 31 = 118 rows under a `| Source | URL | … |` header, and 118 unique source names — no duplicates.** 📊 **The three numbers that matter, all measured today: public claim `200+` · documented registry **118** · in-app Sources screen **104** items across 18 groups** (`SOURCES_DATA` in `src/App.jsx:4935`, counted by evaluating the array, not by grepping it). 🚨 **A user can audit the weakest of these themselves — open the Sources screen and count 104.** 🔴 **This is still Aron's framing call, but the call is now against a 118-vs-200+ gap, not 149-vs-200+.**
 >
@@ -1085,6 +1113,55 @@
   ✅ **LIVE** — API routes + sitemap, deployed on push; no Build 82 dependency.
   *(WS-A, S — done)*
 
+- **B-142 🆕 NEW 2026-08-28 — the cron watchdog SILENTLY DELETES broken crons from its own report
+  when their last run ages out of an 800-run window. #155 fell 37 → 36 and nothing was fixed.**
+  *(P2 — cheap to fix, but it makes the board's headline number actively misleading, and it hides
+  the crons that have been broken the longest.)*
+  🔑 **Found by diffing the roster, not by reading the count.** Yesterday's 37 names were recovered
+  from `cron-health-daily` run `33124490241`'s log; today's 36 from the live issue body. **Exactly
+  one name disappeared — `bcorp-quarterly` — and none were added.**
+  ✅ **It did NOT turn green.** The workflow is still `active`, and `gh run list
+  --workflow=bcorp-quarterly.yml` still reports its latest scheduled run as **`cancelled` on
+  `2026-06-15T18:56:56Z`**. Its only lifetime success is a `workflow_dispatch` on 06-07.
+  🔑 **ROOT CAUSE, MEASURED TO THE MINUTE.** `.github/workflows/cron-health-daily.yml:51` derives the
+  entire roster from `gh run list --repo "$REPO" --limit 800`. **That window today spans
+  `2026-06-15T19:12:21Z` → `2026-08-29T01:07:28Z` — 75 days at ≈10.7 runs/day — so
+  `bcorp-quarterly`'s last scheduled run is 15 minutes 25 seconds OLDER than the cutoff.** The
+  `group_by(.workflowName)` never saw the workflow and the row evaporated overnight.
+  ⚠️ **The file's own comment claims that window covers "~50 days." It is 75 today, and it SHRINKS
+  as run volume grows — so the eviction rate is not stable and cannot be reasoned about from the
+  comment.**
+  🚨 **WHY IT HITS THE WORST CRONS FIRST.** The window evicts in order of how long a cron has been
+  broken, and rare-cadence crons have the sparsest runs — so quarterly and annual failures are
+  structurally the first to be erased. `bcorp-quarterly` runs `23 0 15 3,6,9,12 *`; its next
+  scheduled run is **2026-09-15**, so it is invisible for 18 days while still broken.
+  ⏰ **NEXT CASUALTIES, ALREADY NAMEABLE — five rows dated `2026-07-01`:** `animal-welfare-union-quarterly`,
+  `nhtsa-safety-quarterly`, `peta-bwb-quarterly`, `privacy-policy-quarterly`, `usaspending-quarterly`.
+  **133 in-window runs predate 07-01, so at today's rate the edge passes them in roughly 12 days
+  (~2026-09-09) and #155 would fall 36 → 31 with nothing repaired.** *(Estimate from a measured
+  rate, not a fact — the edge moves with run volume.)*
+  🚨 **THE DURABLE RULE: a falling #155 row count is not progress, and is not even neutral.** It can
+  fall three ways — a cron went green, a workflow was disabled, or **its last run aged out.** Only
+  the first is good news and today's was the third. **Never quote the row count as a health number;
+  diff the roster and name the rows that changed.**
+  🔑 **THIRD WAY THE WATCHDOG MISLEADS, AND THE WORST.** [[watchdog-blind-to-cancelled-crons]]
+  records under-reporting (#1, B-124-class silent success) and B-141 records over-reporting (#2,
+  `disabled_manually`). **This is a silent DELETE — the report loses rows without saying so.**
+  🧭 **FIX — one file, and it closes B-141 in the same pass.** Stop deriving the roster from a
+  run-count window. Enumerate `gh api /repos/$REPO/actions/workflows`, keep only
+  `state == "active"` (**that IS B-141**), then query each workflow's own latest scheduled run via
+  `.../actions/workflows/$id/runs?event=schedule&per_page=1`. Cadence-agnostic and window-free —
+  which is exactly what the B-105 rewrite comment already claims the design is.
+  🔑 **Do NOT ship B-141 alone** — the `state` filter leaves the silent delete in place, and the
+  row count would fall again for the wrong reason. Fix the class, not the ticket.
+  🔎 **Honest arithmetic to quote today: 36 rows = 34 live + 2 phantoms (`canada-comp-monthly`,
+  `followthemoney-state-monthly`) + 1 broken cron now hidden entirely (`bcorp-quarterly`).**
+  ❌ **THIS RETIRES A CLAIM THE DOCS REPEATED TWICE:** the 08-06 note and the Cron-health section of
+  the data-pipeline reference both said a deleted workflow's row "can never age out" and
+  `canada-comp-monthly` "will appear in #155 forever." **Rows DO age out — that is the defect.**
+  `canada-comp-monthly`'s last run is `2026-07-02` and it will vanish on its own. Both places have
+  been corrected in the reference.
+
 - **B-141 🆕 NEW 2026-08-27 — the cron watchdog reports workflows that can never run again. It does
   not filter `disabled_manually`.** *(P3 — small, cheap, and it corrupts a number the board reads
   daily.)*
@@ -1100,6 +1177,13 @@
   ⚠️ **CONSEQUENCE FOR THE ROW COUNT — apply this before quoting 37 again:** #155's 37 rows are
   **35 live + 1 permanent phantom (`canada-comp-monthly`) + 1 disabled phantom
   (`followthemoney-state-monthly`)**.
+  ❌ **SUPERSEDED 2026-08-28 by B-142 — both halves of that sentence were wrong.** The count is now
+  **36 = 34 live + 2 phantoms + 1 broken cron hidden entirely (`bcorp-quarterly`)**, and the
+  `canada-comp-monthly` phantom is **temporary, not permanent** — its row ages out with the 800-run
+  window like any other. ✅ **Re-confirmed 08-28: #155 was rewritten `2026-08-28T23:02:18Z` and still
+  lists `followthemoney-state-monthly`; the API returns 168 `active` + exactly 1 `disabled_manually`
+  across all 169 workflows, so the `state` filter is provably sufficient and scoped to one row.**
+  🚨 **SHIP THIS WITH B-142, NOT ALONE** — the `state` filter alone leaves the silent delete in place.
   🔑 **This is the SECOND way the watchdog misleads and it points the opposite direction from the
   first.** [[watchdog-blind-to-cancelled-crons]] records that the count is a FLOOR (it under-reports
   by being blind to B-124-class silent data loss). B-141 is over-reporting. **Both are live at once —
