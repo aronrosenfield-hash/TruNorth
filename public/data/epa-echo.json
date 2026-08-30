@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-23T08:12:50.438Z",
+  "generated_at": "2026-08-30T13:11:55.336Z",
   "brand_count": 528,
-  "with_facilities_count": 5,
-  "no_facilities_count": 521,
-  "error_count": 2,
+  "with_facilities_count": 7,
+  "no_facilities_count": 520,
+  "error_count": 1,
   "facilities": [
     {
       "slug": "coca-cola",
@@ -182,8 +182,17 @@
     {
       "slug": "mars",
       "name": "Mars",
-      "status": "error",
-      "error": "The operation was aborted due to timeout"
+      "status": "ok",
+      "query_id": "483",
+      "total_facilities": 2009,
+      "sampled_facilities": 0,
+      "total_inspections": 0,
+      "total_violations": 0,
+      "recent_violations_24mo": 0,
+      "top_violation_types": [],
+      "total_penalties_usd": 24500521,
+      "top_facilities": [],
+      "scraped_at": "2026-08-30T13:01:54.410Z"
     },
     {
       "slug": "mms",
@@ -405,7 +414,7 @@
       "slug": "cascade",
       "name": "Cascade",
       "status": "ok",
-      "query_id": "786",
+      "query_id": "546",
       "total_facilities": 422,
       "sampled_facilities": 0,
       "total_inspections": 0,
@@ -414,7 +423,7 @@
       "top_violation_types": [],
       "total_penalties_usd": 5740709,
       "top_facilities": [],
-      "scraped_at": "2026-08-23T07:58:22.740Z"
+      "scraped_at": "2026-08-30T13:02:38.675Z"
     },
     {
       "slug": "clorox",
@@ -606,7 +615,7 @@
       "slug": "marlboro",
       "name": "Marlboro",
       "status": "ok",
-      "query_id": "857",
+      "query_id": "591",
       "total_facilities": 78,
       "sampled_facilities": 0,
       "total_inspections": 0,
@@ -615,7 +624,7 @@
       "top_violation_types": [],
       "total_penalties_usd": 36517,
       "top_facilities": [],
-      "scraped_at": "2026-08-23T07:59:03.123Z"
+      "scraped_at": "2026-08-30T13:03:16.762Z"
     },
     {
       "slug": "camel",
@@ -1004,8 +1013,17 @@
     {
       "slug": "burlington",
       "name": "Burlington",
-      "status": "error",
-      "error": "The operation was aborted due to timeout"
+      "status": "ok",
+      "query_id": "693",
+      "total_facilities": 2100,
+      "sampled_facilities": 0,
+      "total_inspections": 0,
+      "total_violations": 0,
+      "recent_violations_24mo": 0,
+      "top_violation_types": [],
+      "total_penalties_usd": 1558710,
+      "top_facilities": [],
+      "scraped_at": "2026-08-30T13:04:35.685Z"
     },
     {
       "slug": "homegoods",
@@ -1178,8 +1196,8 @@
     {
       "slug": "7-eleven",
       "name": "7-Eleven",
-      "status": "no_facilities",
-      "total_facilities": 0
+      "status": "error",
+      "error": "HTTP 500"
     },
     {
       "slug": "wawa",
@@ -2427,7 +2445,7 @@
       "slug": "ford",
       "name": "Ford",
       "status": "ok",
-      "query_id": "528",
+      "query_id": "69",
       "total_facilities": 370,
       "sampled_facilities": 0,
       "total_inspections": 0,
@@ -2436,7 +2454,7 @@
       "top_violation_types": [],
       "total_penalties_usd": 5300000,
       "top_facilities": [],
-      "scraped_at": "2026-08-23T08:09:59.914Z"
+      "scraped_at": "2026-08-30T13:09:20.858Z"
     },
     {
       "slug": "gm",
@@ -2460,7 +2478,7 @@
       "slug": "dodge",
       "name": "Dodge",
       "status": "ok",
-      "query_id": "543",
+      "query_id": "75",
       "total_facilities": 855,
       "sampled_facilities": 0,
       "total_inspections": 0,
@@ -2469,7 +2487,7 @@
       "top_violation_types": [],
       "total_penalties_usd": 103258,
       "top_facilities": [],
-      "scraped_at": "2026-08-23T08:10:06.034Z"
+      "scraped_at": "2026-08-30T13:09:25.846Z"
     },
     {
       "slug": "jeep",
@@ -2481,7 +2499,7 @@
       "slug": "ram",
       "name": "Ram",
       "status": "ok",
-      "query_id": "553",
+      "query_id": "78",
       "total_facilities": 3559,
       "sampled_facilities": 0,
       "total_inspections": 0,
@@ -2490,7 +2508,7 @@
       "top_violation_types": [],
       "total_penalties_usd": 5924896,
       "top_facilities": [],
-      "scraped_at": "2026-08-23T08:10:20.659Z"
+      "scraped_at": "2026-08-30T13:09:28.429Z"
     },
     {
       "slug": "stellantis",
