@@ -6,7 +6,29 @@
 >
 > **🟢 LAUNCHED — Jun 23, 2026 · 2:01 AM CDT** (App Store · id `6775301458` · `https://apps.apple.com/app/id6775301458` · PH launched). **CURRENT LIVE BUILD = v1.1 Build 81** (approved 2026-07-08, released Manual **2026-07-14**) — it superseded v1.0 Build 75, which was live Jun 23 → Jul 14. **Next iOS ship = Build 82.** *(The 2026-06-11 "date is soft, get it right" call held through the Compass redesign; the experience shipped on the locked date. Go-live runbook: `docs/LAUNCH_DAY.md`.)*
 >
-> **Last updated:** 2026-08-30 01:15 CDT (daily doc-sync, covering the window since the 08-29 sync — a full day, three bot commits, **zero grade inputs moved, zero human activity.** One genuinely new finding, and it is about the clock rather than the data: **every daily cron in this repo is now arriving hours late, and that lands squarely on top of today's B-124 test.**)
+> **Last updated:** 2026-08-31 01:10 CDT (daily doc-sync, covering the 08-30 quadruple-test Sunday — nine bot commits, zero human activity, zero code changes. **Three of the four tests resolved, and the results split: B-127 is CLOSED, B-124 is CONFIRMED a fifth time, the digest missed a fifth time, and B-128's model is WRONG.** The catalog moved for the first time in sixteen days.)
+>
+> 🟢✅ **BIGGEST WIN — B-127 IS CLOSED, PROVEN IN PRODUCTION, AND THE CATALOG MOVED FOR THE FIRST TIME SINCE 08-15.** `score-rebake-weekly` ran `2026-08-30T19:21:08Z` and reported **`success`** — its first green scheduled run after **two consecutive failures (08-16, 08-23)** — and it committed **`77e25635d`**. `public/data/_meta/grade-snapshot.json` was re-taken in the same pass: **`takenAt 2026-08-30T19:21:58.382Z`, 2,622 entries.** ✅ **The drift guard passed on its own, with no threshold change.** 📊 **CDN VERIFIED LIVE** (`curl https://www.trunorthapp.com/data/index.json` → HTTP 200): **12,830 tracked / 2,622 graded — A 63 · B 738 · C 1,031 · D 535 · F 255**, 10,208 "?", md5 **`1527f2e9ec86cd9555075f0162978532`** (was `21aac7da8b48…` for sixteen days), 9,989,657 B. 🔑 **QUOTE 2,622 FROM NOW ON, NOT 2,590.** 🔑 **The durable rule held exactly as written: the out-of-band re-baseline on 08-26 was what let this run pass. Do not relitigate it, and never raise `SNAPSHOT_DRIFT_MAX_PCT`.**
+>
+> 🆕🚨📐 **BIGGEST FINDING — THE REBAKE MOVED 43 BRANDS ON THE UN-QUIZZED GRADE PATH AND *ZERO* ON THE QUIZZED ONE. THE TWO PATHS HAVE VISIBLY DIVERGED, AND ONE OF OUR STANDING MEMORY NOTES IS HALF-WRONG.** Parsed all **441** company files changed across the whole day (`da40df2dc..HEAD`) object-by-object: **`sc` changed on 0 · `excl` on 0 · `flags` on 0 · stored `grade` on 0.** What moved: **`overall` on 43 · `csc` on 43 · `realCats` on 40.** 🔑 **`src/App.jsx:812` is the whole story — `computeScore()` opens with `if (!profile) return co.overall;`.** So: **a user who has NOT taken the quiz reads `overall`, which moved on 43 brands. A user who HAS taken the quiz is scored from `sc`, which moved on none.** 📊 The rebake's own `weekly_changes.json` (`generatedAt 2026-08-30T19:21:58.382Z`) lists **39 grade changes** — real, multi-letter ones: **ExxonMobil F → C** (`overall` 32.8 → 38.6, `realCats` 3 → 4), **Golf Galaxy C → F** (38.8 → 32.3), **Trane Technologies B → A** (61 → 68.6), Xcel Energy D → C, Yelp D → C. **All three spot-checked brands confirmed on the live CDN entry.** 🚨 **THE CORRECTION THIS FORCES: "the displayed grade is computed on device, so unchanged A–F counts prove nothing" is TRUE ONLY FOR QUIZZED USERS. For un-quizzed users the index/CDN grade IS what renders. Today is the inverse case — the counts changed while `sc` did not.** ⚠️ **OPEN QUESTION FOR YOU (new, call it B-143): is it intended that ExxonMobil reads C to a fresh user and F-equivalent to a quizzed one? `scripts/rebuild-bundle-index.mjs:5–7` says the two grade surfaces "must produce the same grade." I did NOT change anything — this is a decision, not a defect I should fix unilaterally.**
+>
+> 🔴🎯 **B-124 CONFIRMED A FIFTH CONSECUTIVE SUNDAY — AND FOR THE FIRST TIME WE HAVE THE SHA OF THE COMMIT IT DESTROYED.** `news-rss-nightly` ran **`2026-08-30T10:07:34Z`**, reported **`success`**, and committed **nothing**. There is no `data(news)` commit carrying digest date `2026-08-30`. Pulled run `33305707816`'s log — the signature is exact and complete: **`CONFLICT (content)` on 14 company files**, then **`error: could not apply c8da38a... data(news): ... 2026-08-30 [skip ci]`**, then `Push attempt 1 failed` → **`error: Pulling is not possible because you have unmerged files`** → `fatal: Exiting because of an unresolved conflict` → attempts 2 and 3 → loop ends → **exit 0 → green.** 🔑 **`c8da38a` is the destroyed commit. The digest-date series is now clean and unambiguous: 08-14…08-30 present every day EXCEPT 08-16, 08-23 and 08-30 — all Sundays. Day-of-week: Mon–Sat 41-for-41, Sunday 0-for-5 (08-02, 08-09, 08-16, 08-23, 08-30).** ✅ `grep -rn "rebase --abort" .github/workflows/` still returns **nothing** — the one-line fix is still not in.
+>
+> 🆕🧭 **AND THE TEST WAS NOT DEGRADED AFTER ALL — YESTERDAY'S CAVEAT IS RETIRED BY THE EVIDENCE, AND THE COLLIDER MODEL NEEDS WIDENING.** Yesterday's board warned that the GitHub scheduler delay made this test a coin flip, because news might simply miss the weekly crons. **It ran +5h19m late — 10:07Z instead of 04:48Z — and collided anyway.** 🔑 **The collider is NAMED for a third time, and it is a DIFFERENT cron than the previous two namings: all 14 conflicted files (`anheuser-busch`, `chobani`, `coca-cola`, `dr-pepper`, `general-mills`, `heinz`, `hershey`, `hormel-foods`, `kellogg-s`, `mondelez-international`, `nestl`, `pepsi`, `tyson-foods`, `unilever`) were written by `d2aae481d` — `data(lawsuits)`, the weekly CourtListener merge, committed 10:11Z, four minutes into the news run.** 🚨 **STOP MODELLING THIS AS "`cpsc-weekly` COLLIDES WITH NEWS." The real model: the 08-01 destagger packed SIX weekly merge crons into a multi-hour Sunday block (today: cfpb 08:48Z, lawsuits 10:11Z, cruelty-free 10:26Z, doj 12:05Z, epa-echo 13:11Z, sec 23:01Z), and that block is WIDE ENOUGH that news lands inside it no matter where a five-hour delay puts it. Whichever cron happens to be writing is the collider.** ✅ **That makes the evidence STRONGER, not weaker: the race survived a five-hour perturbation. There is nothing left to watch. Land the one line.**
+>
+> 🟡📉 **B-128 — THE SIX-DAY FLAT STREAK BROKE, AND IT BROKE THE OPPOSITE WAY FROM THE PREDICTION. THE OSCILLATION MODEL IS WRONG.** Today: **376 single-line / 12,454 pretty** (was 406 / 12,424 flat for six days, 08-25 → 08-30). 🔑 **The model said "single-line writers cluster on Sunday," so Sunday should have pushed the count UP. It went DOWN by 30 — the pretty side gained.** The reason is visible in the commits: `rebake-scoring.mjs:637` writes `JSON.stringify(d, null, 2)` (pretty) across 135 files, while the SEC cron wrote single-line. ✅ **Both writers are still fighting — the defect is unchanged — but "single-line clusters on Sunday" is retired. The rebake is the biggest PRETTY writer and it only runs on Sunday.** 📄 **Also verified, and this is the memory rule paying off: `data(sec)` `f5e9ae3aa` showed 4,066 deletions and it is 100% REFORMAT — `american-eagle` 806 lines → 1, `dove` 749 → 1, `heinz` 825 → 1, with key count IDENTICAL (58→58, 61→61, 59→59), zero keys lost, and only `dataLastUpdated` + `enriched` actually different. Parse the objects; never read `--stat`.**
+>
+> 🔴📧 **WEEKLY DIGEST MISSED A FIFTH TIME — AND IT IS FAILING, NOT SKIPPING.** `weekly-digest` ran `2026-08-30T20:20:35Z` → **`failure`**. Run history is now **five consecutive failures: 08-02, 08-09, 08-16, 08-23, 08-30**; last success **2026-07-26**. 🔑 **Unchanged diagnosis: the ONLY blocker is the `RESEND_API_KEY` secret. DNS/DKIM was published and verified 08-27. This is three steps and it is entirely yours.**
+>
+> 📌 **EVERYTHING ELSE RE-VERIFIED AND FLAT.** **B-133 still exactly 43** — measured `typeof …totalGrants === "number"`; the `charity_irs990` key is present on **11,202** files, which is why key-presence is the wrong test. **B-101 flat at 41 open PRs**, oldest **#116, now 62 days**; **#134 and #165 remain the two must-not-merge landmines.** **#155 rewritten `2026-08-30T17:28:59Z`, still 36 rows** — `bcorp-quarterly` still absent (B-142 erasure standing), all five `2026-07-01` rows still listed (`animal-welfare-union-quarterly`, `nhtsa-safety-quarterly`, `peta-bwb-quarterly`, `privacy-policy-quarterly`, `usaspending-quarterly`); **nothing repaired, B-141 and B-142 exactly as recorded.** **B-122, B-125, B-129, B-130, B-134, B-137, B-140 untouched.** **Zero human activity — `find . -newermt "2026-08-30 01:15"` outside `public/data/`, `data/`, `.git/`, `node_modules/` returns nothing, and `git diff --name-only` returns 0 paths under `src/`, `scripts/`, `ios/`, `android/`, `.github/workflows/` or `package.json`.** 🟢 **v1.1 Build 81 remains the LIVE App Store build. Next iOS ship = Build 82 — it carries B-131 + B-136.** ⚠️ **Housekeeping: 16 untracked `docs/` files, unchanged, day 28.**
+>
+> ⚖️📉 **B-131 — THE SINGLE EVENT IS NOW FIVE FILES DEEP.** `trending-refresh` committed **`0153a4d40`** (`2026-08-31T00:24Z`), diff again **one insertion / one deletion**. 08-27 → 08-31 all read **one brand, `mondelez-international`, `views: 1, uniques: 1`.** 🔑 **`lookbackDays: 7` — the single `company_view` from ~08-26 keeps reappearing until roughly 09-02.** 🚨 **FIVE consecutive "1 view" files is ONE event counted five times. Never write "1 view/day" and never write "views are recovering."** ⏰ **Check ~09-02: the event ages out and `trending.json` should return to zero brands. A DIFFERENT slug before then is a genuine second event.**
+>
+> 🔴 **WHAT YOU STILL OWE.** ① **`RESEND_API_KEY`** — five missed Sundays now; DNS is done, create the key, add the secret, dry-run `weekly-digest.yml`. ② **the "200+ public sources" framing call** — documented roster is **118**, in-app Sources screen shows **104**; recommendation on the table is "100+, derived at build time." ③ **the three still-open growth decisions** from 08-26: the price overrule, the CDP licence, the public-face call. 🆕 ④ **B-143 — the quizzed/un-quizzed grade divergence above. Decide whether it is intended before V-4 widens it.** 🧭 **ENGINEERING ORDER: ① B-124 `git rebase --abort` — one line, five confirmed Sundays, a destroyed commit SHA on the record, and today proved the race survives a five-hour perturbation. There is nothing left to learn by watching. ② Ship Build 82 — B-136 is a live revenue leak. ③ B-134 FINRA matcher before V-4 (exposure 93 brands). Then B-128, V-4 led by `cfpb`/`secTax`, B-129, B-130, and B-141+B-142 as one cheap rewrite of `cron-health-daily.yml`.**
+>
+> ---
+>
+> **[08-30 01:15 sync]**
 >
 > 🆕🔴⏱️ **BIGGEST FINDING TODAY — GITHUB IS RUNNING EVERY SCHEDULED CRON IN THIS REPO HOURS LATE, AND IT STARTED 2026-08-27. THIS IS NOT A CONFIG CHANGE: NO WORKFLOW FILE HAS BEEN TOUCHED SINCE 2026-06-11.** Measured each daily cron's scheduled `createdAt` against its own `cron:` expression. **The delay was a tight 17–50 minutes for eleven straight days (08-16 → 08-26) and then stepped up by an order of magnitude on 08-27, on all four crons at once:** `news-rss-nightly` (`48 4 * * *`) sat in a 05:05–05:24Z band through 08-26, then ran **15:32Z (+10h44m), 16:55Z (+12h07m), 11:21Z (+6h33m)** on 08-27/28/29 · `ofac-sdn-daily` (`34 17 * * *`) was +27m on 08-24/25, then **+8h03m, +7h33m, +2h23m** · `trending-refresh` (`3 22 * * *`) was +32m, then **+5h00m, +8h00m, +5h35m, +2h04m** · `cron-health-daily` (`12 13 * * *`) was +49m, then **+9h45m, +9h49m, +3h55m.** ✅ **NOTHING HAS BEEN LOST TO IT — all four reported `success` and all four committed.** 📉 **The delay is already shrinking: today's four are the smallest of the three affected days (+2h04m to +6h33m).** 🔑 **This is a GitHub-side scheduler queue, not a TruNorth defect. Do not "fix" a cron over it.**
 >
@@ -902,7 +924,15 @@
   standing between us and it is a free `api.data.gov` key. ⚠️ **Probe the specific host, not the domain:**
   a `*.trade.gov` wildcard lapse does NOT expire uniformly across the hosts that serve it, so
   "trade.gov is fixed" is not a checkable claim — `api.trade.gov` is.
-- **B-127 🟢 RESOLVED 2026-08-26 — snapshot re-baselined; the weekly rebake is unblocked.**
+- **B-127 🟢🔒 CLOSED — PROVEN IN PRODUCTION 2026-08-30. Snapshot re-baselined 08-26; the weekly rebake ran green and published.**
+  ✅ **PRODUCTION PROOF (added 2026-08-31 doc-sync):** `score-rebake-weekly` scheduled run
+  **`2026-08-30T19:21:08Z` → `success`** — the first green scheduled run after two consecutive
+  failures (08-16, 08-23) — and it **committed `77e25635d`**. The snapshot was re-taken in the same
+  pass: **`takenAt 2026-08-30T19:21:58.382Z`, 2,622 entries.** The drift guard passed on its own with
+  **no threshold change**. `weekly_changes.json` published **39 grade changes** for the first time
+  since 08-09. **CDN verified live: 12,830 tracked / 2,622 graded — A 63 · B 738 · C 1,031 · D 535 ·
+  F 255, md5 `1527f2e9ec86cd9555075f0162978532`.** 🚫 **Stop citing B-127 as a blocker or as
+  "unproven." It is closed.**
   ✅ **Re-baselined from the shipped catalog: 3,060 → 2,590 entries, `takenAt` 2026-08-09 →
   2026-08-26**, written with the script's own exported `snapshotFromIndex()` so the format is
   byte-compatible. **Verified after:** `[weekly-changes] baseline check OK — snapshot matches
@@ -1150,6 +1180,32 @@
   are correctly preceded by an explicit `== null` check.**
   ✅ **LIVE** — API routes + sitemap, deployed on push; no Build 82 dependency.
   *(WS-A, S — done)*
+
+- **B-143 🆕 NEW 2026-08-31 — the quizzed and un-quizzed grade paths have visibly DIVERGED. The
+  2026-08-30 rebake moved 43 brands on the un-quizzed path and ZERO on the quizzed one.**
+  *(P2 — NOT a fix I should make unilaterally; this is a product decision. Needs Aron's call before
+  V-4 widens the gap.)*
+  📐 **THE MEASUREMENT.** Parsed all **441** company files changed across `da40df2dc..HEAD`
+  (the whole 08-30 bot day) object-by-object: **`sc` changed on 0 · `excl` on 0 · `flags` on 0 ·
+  stored `grade` on 0.** What moved: **`overall` on 43 · `csc` on 43 · `realCats` on 40.**
+  🔑 **THE MECHANISM IS ONE LINE — `src/App.jsx:812`: `computeScore()` opens with
+  `if (!profile) return co.overall;`.** So an un-quizzed user reads `overall` (which moved on 43
+  brands), and a quizzed user is scored from the `sc` enum map (which moved on none). The rebake
+  writes `csc` → `overall`; the crons write `sc`. **They are two independent pipelines feeding two
+  independent audiences.**
+  📊 **CONCRETE, CONFIRMED ON THE LIVE CDN ENTRY:** **ExxonMobil `overall` 32.8 → 38.6, `realCats`
+  3 → 4, catalog grade F → C** · **Golf Galaxy 38.8 → 32.3, C → F** · **Trane Technologies 61 → 68.6,
+  B → A** · Xcel Energy D → C · Yelp D → C. All five have **byte-identical `sc`** before and after.
+  ⚠️ **`scripts/rebuild-bundle-index.mjs:5–7` states the two grade surfaces "must produce the same
+  grade — no grade flicker on tap."** Today's data means a fresh user and a quizzed user can read
+  ExxonMobil two letter grades apart on the same screen session.
+  🚫 **DO NOT "FIX" THIS BY FORCING ONE PATH INTO THE OTHER WITHOUT A DECISION.** Personalisation is
+  the product; the un-quizzed grade is the SEO/marketing surface. The question is whether the
+  un-quizzed baseline should track `overall` (today's behaviour) or be derived from the same `sc`
+  the quiz uses. **Aron decides. Then it becomes a one-place change in the rebake, per rule
+  "fix it in the rebake, not a cleanup script."**
+  🧭 **Blocks nothing today, but V-4 wires dark dims into scoring — which writes `csc`/`overall` and
+  will widen this gap on every brand it touches. Settle B-143 before V-4.**
 
 - **B-142 🆕 NEW 2026-08-28 — the cron watchdog SILENTLY DELETES broken crons from its own report
   when their last run ages out of an 800-run window. #155 fell 37 → 36 and nothing was fixed.**
@@ -1464,6 +1520,19 @@
   08-22, 385 / 12,445 on 08-20). **+18 single-line files in one day, and that day is Sunday** — the
   day the weekly-merge cluster runs. 🔑 **B-128 and B-124/B-135 share a driver.** Fixing the serializer
   shrinks the Sunday blast radius; it does **not** replace the `git rebase --abort` fix.
+  🔄🚨 **CORRECTED 2026-08-31 — THE OSCILLATION MODEL IS WRONG. Today: 376 single-line / 12,454
+  pretty** (was **406 / 12,424**, flat and byte-identical for six days, 08-25 → 08-30). **The model
+  predicted Sunday would push single-line UP; it went DOWN by 30 — the PRETTY side gained.**
+  🔑 **Reason, visible in the commits: `rebake-scoring.mjs:637` writes `JSON.stringify(d, null, 2)`
+  (pretty) across 135 files, and the rebake ONLY runs on Sunday. It is the single biggest pretty
+  writer in the repo.** The SEC cron wrote single-line the same day; net −30.
+  ✅ **Both writers are still fighting — the DEFECT is unchanged. What is retired is the claim that
+  "single-line writers cluster on Sunday." Sunday is when the biggest PRETTY writer runs.**
+  📄 **Companion verification, and the reason the memory rule exists:** `data(sec)` **`f5e9ae3aa`**
+  showed **4,066 deletions** and is **100% reformat** — `american-eagle` 806 lines → 1, `dove`
+  749 → 1, `heinz` 825 → 1, **key counts IDENTICAL (58→58, 61→61, 59→59), zero keys lost**, and only
+  `dataLastUpdated` + `enriched` actually different. 🚨 **A huge deletion count in a bot commit is a
+  FORMATTING question first. Parse the objects; never read `--stat`.**
   *(WS-B, M — pick one format and enforce it in the writers)*
   **What happened.** The cron merge scripts write per-company JSON as a **single line**; the local
   rebake/regeneration path writes it **pretty-printed**. The 2026-08-14 push `c2c1216de` prettified
@@ -1569,6 +1638,30 @@
   nights are Sundays; every Mon-Sat night for 33 days landed. Log proof in B-135.**
   ⭐⭐ **Highest-severity infrastructure item open — it invalidates "the cron is green" as evidence anywhere
   in this repo.** *(WS-B, S — a 2-line change per workflow, but it touches 117 files; no grade impact by itself)*
+  🔴🔴🔴 **2026-08-30 — FIFTH CONSECUTIVE SUNDAY. THE DESTROYED COMMIT NOW HAS A SHA, AND THE COLLIDER
+  MODEL IS WRONG AND MUST BE WIDENED.** `news-rss-nightly` run **`33305707816`** started
+  **`2026-08-30T10:07:34Z`**, reported **`success`**, committed **nothing** — there is no `data(news)`
+  commit carrying digest date `2026-08-30`. The log has the complete signature: **`CONFLICT (content)`
+  on 14 company files**, then **`error: could not apply c8da38a... data(news): ... 2026-08-30
+  [skip ci]`**, then `Push attempt 1 failed` → **`error: Pulling is not possible because you have
+  unmerged files`** → `fatal: Exiting because of an unresolved conflict` (attempts 2 and 3) → loop
+  ends → **exit 0 → green.** 🔑 **`c8da38a` is the destroyed commit.**
+  📅 **Digest-date series is now clean and complete: 08-14 … 08-30 present EVERY day except 08-16,
+  08-23 and 08-30 — all Sundays. Day-of-week: Mon–Sat 41-for-41, Sunday 0-for-5 (08-02, 08-09, 08-16,
+  08-23, 08-30).**
+  🆕🧭 **THE COLLIDER IS A BLOCK, NOT A CRON — RETIRE "`cpsc-weekly` COLLIDES WITH NEWS."** All 14
+  conflicted files (`anheuser-busch`, `chobani`, `coca-cola`, `dr-pepper`, `general-mills`, `heinz`,
+  `hershey`, `hormel-foods`, `kellogg-s`, `mondelez-international`, `nestl`, `pepsi`, `tyson-foods`,
+  `unilever`) were written by **`d2aae481d` — `data(lawsuits)`, the weekly CourtListener merge**,
+  committed 10:11Z, four minutes into the news run. That is a **third** distinct collider naming.
+  The real model: the 08-01 destagger packed **six** weekly merge crons into a multi-hour Sunday
+  block (08-30: cfpb 08:48Z, lawsuits 10:11Z, cruelty-free 10:26Z, doj 12:05Z, epa-echo 13:11Z,
+  sec 23:01Z), and **that block is wide enough that news lands inside it wherever a delay puts it.**
+  ✅ **THIS ALSO RETIRES THE 08-30 "DEGRADED TEST" CAVEAT.** The prior sync warned the GitHub
+  scheduler delay would make this Sunday a coin flip. **News ran +5h19m late and collided anyway.**
+  The race survived a five-hour perturbation — that is STRONGER evidence, not weaker.
+  🚫 **THERE IS NOTHING LEFT TO LEARN BY WATCHING ANOTHER SUNDAY. `grep -rn "rebase --abort"
+  .github/workflows/` still returns nothing. Land the one line.**
   🔴🔴 **2026-08-16 — RECURRED A THIRD TIME, AND THE ENTIRE MECHANISM IS NOW ON TAPE IN ONE LOG.**
   `news-rss-nightly` run **`31928275753`** reported **`success`**, and **no `data(news)` commit exists on
   `origin/main` for 08-16** — breaking the 08-10→08-15 six-day streak (`ofac-sdn` landed that day; `news`
