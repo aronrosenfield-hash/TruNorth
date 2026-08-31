@@ -1,29 +1,35 @@
 {
-  "merged_at": "2026-08-24T04:09:44.040Z",
+  "merged_at": "2026-08-31T09:52:42.372Z",
   "source_file": "public/data/cisa-kev.json",
-  "total_vendors": 278,
-  "merged_count": 3,
+  "total_vendors": 281,
+  "merged_count": 4,
   "skipped_count": 35,
-  "orphan_count": 240,
+  "orphan_count": 242,
   "error_count": 0,
   "merged_vendors": [
     {
       "vendor": "Microsoft",
       "target": "microsoft",
       "routed_via": "override",
-      "cves": 385
+      "cves": 386
     },
     {
-      "vendor": "Apple",
-      "target": "apple",
-      "routed_via": "override",
-      "cves": 94
+      "vendor": "Oracle",
+      "target": "oracle-cloud",
+      "routed_via": "parent",
+      "cves": 46
     },
     {
-      "vendor": "Broadcom",
-      "target": "broadcom",
+      "vendor": "Red Hat",
+      "target": "red-hat",
       "routed_via": "direct",
-      "cves": 5
+      "cves": 9
+    },
+    {
+      "vendor": "JFrog",
+      "target": "jfrog",
+      "routed_via": "direct",
+      "cves": 1
     }
   ],
   "top_orphans": [
@@ -40,7 +46,7 @@
     {
       "vendor": "Linux",
       "vendor_slug": "linux",
-      "cves": 26
+      "cves": 28
     },
     {
       "vendor": "D-Link",
@@ -50,7 +56,7 @@
     {
       "vendor": "Citrix",
       "vendor_slug": "citrix",
-      "cves": 22
+      "cves": 23
     },
     {
       "vendor": "Synacor",

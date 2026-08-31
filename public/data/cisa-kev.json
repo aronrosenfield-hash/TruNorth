@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-08-24T04:09:43.996Z",
-  "catalog_version": "2026.08.21",
-  "catalog_released": "2026-08-21T17:46:43.6019Z",
-  "total_cve_count": 1674,
-  "vendor_count": 278,
+  "generated_at": "2026-08-31T09:52:42.320Z",
+  "catalog_version": "2026.08.27",
+  "catalog_released": "2026-08-27T17:00:36.6632Z",
+  "total_cve_count": 1685,
+  "vendor_count": 281,
   "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
   "vendors": [
     {
       "vendor": "Microsoft",
-      "total_cve_count": 385,
-      "recent_12mo_count": 45,
+      "total_cve_count": 386,
+      "recent_12mo_count": 46,
       "ransomware_count": 114,
       "product_breakdown": [
         {
@@ -55,6 +55,17 @@
       ],
       "top_cves": [
         {
+          "cveID": "CVE-2019-1068",
+          "product": "SQL Server",
+          "vulnerabilityName": "Microsoft SQL Server Remote Code Execution Vulnerability",
+          "dateAdded": "2026-08-26",
+          "dueDate": "2026-08-29",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Microsoft SQL Server contains a remote code execution vulnerability that could allow an attacker to execute code in the context of the SQL Server Database Engine service account.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-1068"
+        },
+        {
           "cveID": "CVE-2026-33824",
           "product": "Internet Key Exchange (IKE) Service Extensions",
           "vulnerabilityName": "Microsoft Internet Key Exchange (IKE) Service Extensions Double Free Vulnerability",
@@ -97,17 +108,6 @@
           "shortDescription": "Microsoft SharePoint contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network.",
           "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50522"
-        },
-        {
-          "cveID": "CVE-2026-58644",
-          "product": "SharePoint",
-          "vulnerabilityName": "Microsoft SharePoint Deserialization of Untrusted Data Vulnerability",
-          "dateAdded": "2026-07-16",
-          "dueDate": "2026-07-19",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Microsoft SharePoint contains a deserialization of untrusted data vulnerability that allows an unauthorized attacker to execute code over a network.",
-          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58644"
         }
       ],
       "highest_severity": [
@@ -136,20 +136,20 @@
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-60710"
         },
         {
+          "cveID": "CVE-2019-1068",
+          "product": "SQL Server",
+          "vulnerabilityName": "Microsoft SQL Server Remote Code Execution Vulnerability",
+          "dateAdded": "2026-08-26",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-1068"
+        },
+        {
           "cveID": "CVE-2026-33824",
           "product": "Internet Key Exchange (IKE) Service Extensions",
           "vulnerabilityName": "Microsoft Internet Key Exchange (IKE) Service Extensions Double Free Vulnerability",
           "dateAdded": "2026-08-18",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33824"
-        },
-        {
-          "cveID": "CVE-2026-55040",
-          "product": "SharePoint",
-          "vulnerabilityName": "Microsoft SharePoint Weak Authentication Vulnerability",
-          "dateAdded": "2026-08-18",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55040"
         }
       ]
     },
@@ -691,8 +691,8 @@
     },
     {
       "vendor": "Oracle",
-      "total_cve_count": 45,
-      "recent_12mo_count": 6,
+      "total_cve_count": 46,
+      "recent_12mo_count": 7,
       "ransomware_count": 13,
       "product_breakdown": [
         {
@@ -720,6 +720,10 @@
           "count": 2
         },
         {
+          "label": "HTTP Server and Oracle Weblogic Server Proxy Plug-in",
+          "count": 1
+        },
+        {
           "label": " PeopleSoft Enterprise PeopleTools",
           "count": 1
         },
@@ -730,13 +734,20 @@
         {
           "label": "Java SE and JRockit",
           "count": 1
-        },
-        {
-          "label": "Solaris",
-          "count": 1
         }
       ],
       "top_cves": [
+        {
+          "cveID": "CVE-2026-21962",
+          "product": "HTTP Server and Oracle Weblogic Server Proxy Plug-in",
+          "vulnerabilityName": "Oracle HTTP Server and Oracle Weblogic Server Proxy Plug-in Improper Access Control Vulnerability",
+          "dateAdded": "2026-08-24",
+          "dueDate": "2026-08-27",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Oracle HTTP Server and Oracle Weblogic Server Proxy Plug-in contain an improper access control vulnerability that can result in unauthorized creation, deletion or modification access to critical data as well as unauthorized access to critical data or complete access to all Oracle HTTP Server and Oracle Weblogic Server Proxy Plug-in accessible data.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-21962"
+        },
         {
           "cveID": "CVE-2026-46817",
           "product": "E-Business Suite",
@@ -780,17 +791,6 @@
           "shortDescription": "Oracle Fusion Middleware contains a missing authentication for critical function vulnerability, allowing unauthenticated remote attackers to take over Identity Manager.",
           "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-61757"
-        },
-        {
-          "cveID": "CVE-2025-61884",
-          "product": "E-Business Suite",
-          "vulnerabilityName": "Oracle E-Business Suite Server-Side Request Forgery (SSRF) Vulnerability",
-          "dateAdded": "2025-10-20",
-          "dueDate": "2025-11-10",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "Oracle E-Business Suite contains a server-side request forgery (SSRF) vulnerability in the Runtime component of Oracle Configurator. This vulnerability is remotely exploitable without authentication.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-61884"
         }
       ],
       "highest_severity": [
@@ -819,20 +819,20 @@
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-61882"
         },
         {
+          "cveID": "CVE-2026-21962",
+          "product": "HTTP Server and Oracle Weblogic Server Proxy Plug-in",
+          "vulnerabilityName": "Oracle HTTP Server and Oracle Weblogic Server Proxy Plug-in Improper Access Control Vulnerability",
+          "dateAdded": "2026-08-24",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-21962"
+        },
+        {
           "cveID": "CVE-2026-46817",
           "product": "E-Business Suite",
           "vulnerabilityName": "Oracle E-Business Suite Improper Privilege Management Vulnerability",
           "dateAdded": "2026-07-15",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46817"
-        },
-        {
-          "cveID": "CVE-2024-21182",
-          "product": "WebLogic Server",
-          "vulnerabilityName": "Oracle WebLogic Server Unspecified Vulnerability",
-          "dateAdded": "2026-06-01",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-21182"
         }
       ]
     },
@@ -1275,16 +1275,38 @@
     },
     {
       "vendor": "Linux",
-      "total_cve_count": 26,
-      "recent_12mo_count": 5,
+      "total_cve_count": 28,
+      "recent_12mo_count": 7,
       "ransomware_count": 2,
       "product_breakdown": [
         {
           "label": "Kernel",
-          "count": 26
+          "count": 28
         }
       ],
       "top_cves": [
+        {
+          "cveID": "CVE-2026-53362",
+          "product": "Kernel",
+          "vulnerabilityName": "Linux Kernel Unspecified Vulnerability",
+          "dateAdded": "2026-08-27",
+          "dueDate": "2026-08-30",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Linux Kernel contains an unspecified vulnerability that can allow for privilege escalation via IPv6 networking subsystem. This vulnerability can impact multiple products, including but not limited to Suse, Red Hat, and other products using Linux. ",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53362"
+        },
+        {
+          "cveID": "CVE-2022-0995",
+          "product": "Kernel",
+          "vulnerabilityName": "Linux Kernel Out-of-Bounds Write Vulnerability",
+          "dateAdded": "2026-08-26",
+          "dueDate": "2026-09-09",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Linux Kernel contains an out-of-bounds memory write vulnerability which could allow a local user to gain privileged access or cause a denial of service on the system.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-0995"
+        },
         {
           "cveID": "CVE-2022-0492",
           "product": "Kernel",
@@ -1317,28 +1339,6 @@
           "shortDescription": "Linux Kernel contains an integer overflow vulnerability in the create_elf_tables() function which could allow an unprivileged local user with access to SUID (or otherwise privileged) binary to escalate their privileges on the system.",
           "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-14634"
-        },
-        {
-          "cveID": "CVE-2021-22555",
-          "product": "Kernel",
-          "vulnerabilityName": "Linux Kernel Heap Out-of-Bounds Write Vulnerability",
-          "dateAdded": "2025-10-06",
-          "dueDate": "2025-10-27",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Linux Kernel contains a heap out-of-bounds write vulnerability that could allow an attacker to gain privileges or cause a DoS (via heap memory corruption) through user name space.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-22555"
-        },
-        {
-          "cveID": "CVE-2025-38352",
-          "product": "Kernel",
-          "vulnerabilityName": "Linux Kernel Time-of-Check Time-of-Use (TOCTOU) Race Condition Vulnerability",
-          "dateAdded": "2025-09-04",
-          "dueDate": "2025-09-25",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Linux kernel contains a time-of-check time-of-use (TOCTOU) race condition vulnerability that has a high impact on confidentiality, integrity, and availability.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-38352"
         }
       ],
       "highest_severity": [
@@ -1359,20 +1359,20 @@
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-1086"
         },
         {
-          "cveID": "CVE-2022-0492",
+          "cveID": "CVE-2026-53362",
           "product": "Kernel",
-          "vulnerabilityName": "Linux Kernel Improper Authentication Vulnerability",
-          "dateAdded": "2026-06-02",
+          "vulnerabilityName": "Linux Kernel Unspecified Vulnerability",
+          "dateAdded": "2026-08-27",
           "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-0492"
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-53362"
         },
         {
-          "cveID": "CVE-2026-31431",
+          "cveID": "CVE-2022-0995",
           "product": "Kernel",
-          "vulnerabilityName": "Linux Kernel Incorrect Resource Transfer Between Spheres Vulnerability",
-          "dateAdded": "2026-05-01",
+          "vulnerabilityName": "Linux Kernel Out-of-Bounds Write Vulnerability",
+          "dateAdded": "2026-08-26",
           "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-31431"
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-0995"
         }
       ]
     },
@@ -1664,13 +1664,13 @@
     },
     {
       "vendor": "Citrix",
-      "total_cve_count": 22,
-      "recent_12mo_count": 4,
+      "total_cve_count": 23,
+      "recent_12mo_count": 2,
       "ransomware_count": 7,
       "product_breakdown": [
         {
           "label": "NetScaler ADC and NetScaler Gateway",
-          "count": 4
+          "count": 5
         },
         {
           "label": "Application Delivery Controller (ADC), Gateway, and SD-WAN WANOP Appliance",
@@ -1710,6 +1710,17 @@
         }
       ],
       "top_cves": [
+        {
+          "cveID": "CVE-2026-8452",
+          "product": "NetScaler ADC and NetScaler Gateway",
+          "vulnerabilityName": "Citrix NetScaler ADC and NetScaler Gateway Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
+          "dateAdded": "2026-08-26",
+          "dueDate": "2026-08-29",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Citrix NetScaler ADC and NetScaler Gateway contain an improper restriction of operations within the bounds of a memory buffer vulnerability which could lead to denial of service. ",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8452"
+        },
         {
           "cveID": "CVE-2026-3055",
           "product": "NetScaler",
@@ -1753,17 +1764,6 @@
           "shortDescription": "Citrix Session Recording contains a deserialization of untrusted data vulnerability that allows limited remote code execution with privilege of a NetworkService Account access. Attacker must be an authenticated user on the same intranet as the session recording server.",
           "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-8069"
-        },
-        {
-          "cveID": "CVE-2025-5777",
-          "product": "NetScaler ADC and Gateway",
-          "vulnerabilityName": "Citrix NetScaler ADC and Gateway Out-of-Bounds Read Vulnerability",
-          "dateAdded": "2025-07-10",
-          "dueDate": "2025-07-11",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "Citrix NetScaler ADC and Gateway contain an out-of-bounds read vulnerability due to insufficient input validation. This vulnerability can lead to memory overread when the NetScaler is configured as a Gateway (VPN virtual server, ICA Proxy, CVPN, RDP Proxy) OR AAA virtual server.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-5777"
         }
       ],
       "highest_severity": [
@@ -1792,20 +1792,20 @@
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-3519"
         },
         {
+          "cveID": "CVE-2026-8452",
+          "product": "NetScaler ADC and NetScaler Gateway",
+          "vulnerabilityName": "Citrix NetScaler ADC and NetScaler Gateway Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
+          "dateAdded": "2026-08-26",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8452"
+        },
+        {
           "cveID": "CVE-2026-3055",
           "product": "NetScaler",
           "vulnerabilityName": "Citrix NetScaler Out-of-Bounds Read Vulnerability",
           "dateAdded": "2026-03-30",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-3055"
-        },
-        {
-          "cveID": "CVE-2025-7775",
-          "product": "NetScaler",
-          "vulnerabilityName": "Citrix NetScaler Memory Overflow Vulnerability",
-          "dateAdded": "2025-08-26",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-7775"
         }
       ]
     },
@@ -3436,6 +3436,141 @@
       ]
     },
     {
+      "vendor": "Red Hat",
+      "total_cve_count": 9,
+      "recent_12mo_count": 2,
+      "ransomware_count": 4,
+      "product_breakdown": [
+        {
+          "label": "Polkit",
+          "count": 2
+        },
+        {
+          "label": "JBoss",
+          "count": 2
+        },
+        {
+          "label": "Libuser",
+          "count": 1
+        },
+        {
+          "label": "Automatic Bug Reporting Tool",
+          "count": 1
+        },
+        {
+          "label": "JBoss RichFaces Framework",
+          "count": 1
+        },
+        {
+          "label": "JBoss Application Server",
+          "count": 1
+        },
+        {
+          "label": "JBoss Seam 2",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2015-3246",
+          "product": "Libuser",
+          "vulnerabilityName": "Red Hat Libuser Race Condition Vulnerability",
+          "dateAdded": "2026-08-26",
+          "dueDate": "2026-09-09",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Red Hat libuser contains a race condition vulnerability that allows authenticated local users to corrupt the /etc/passwd file to cause a denial of service or privilege escalation. ",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2015-3246"
+        },
+        {
+          "cveID": "CVE-2015-5287",
+          "product": "Automatic Bug Reporting Tool",
+          "vulnerabilityName": "Red Hat Automatic Bug Reporting Tool Privilege Escalation Vulnerability",
+          "dateAdded": "2026-08-26",
+          "dueDate": "2026-09-09",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Red Hat Automatic Bug Reporting Tool (ABRT) contains a privilege escalation vulnerability that could allow local users with certain permissions to gain privileges via a symlink attack on a file with a predictable name. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2015-5287"
+        },
+        {
+          "cveID": "CVE-2018-14667",
+          "product": "JBoss RichFaces Framework",
+          "vulnerabilityName": "Red Hat JBoss RichFaces Framework Expression Language Injection Vulnerability",
+          "dateAdded": "2023-09-28",
+          "dueDate": "2023-10-19",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Red Hat JBoss RichFaces Framework contains an expression language injection vulnerability via the UserResource resource. A remote, unauthenticated attacker could exploit this vulnerability to execute malicious code using a chain of Java serialized objects via org.ajax4jsf.resource.UserResource$UriData.",
+          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-14667"
+        },
+        {
+          "cveID": "CVE-2021-3560",
+          "product": "Polkit",
+          "vulnerabilityName": "Red Hat Polkit Incorrect Authorization Vulnerability",
+          "dateAdded": "2023-05-12",
+          "dueDate": "2023-06-02",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Red Hat Polkit contains an incorrect authorization vulnerability through the bypassing of credential checks for D-Bus requests, allowing for privilege escalation.",
+          "requiredAction": "Apply updates per vendor instructions.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-3560"
+        },
+        {
+          "cveID": "CVE-2021-4034",
+          "product": "Polkit",
+          "vulnerabilityName": "Red Hat Polkit Out-of-Bounds Read and Write Vulnerability",
+          "dateAdded": "2022-06-27",
+          "dueDate": "2022-07-18",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "The Red Hat polkit pkexec utility contains an out-of-bounds read and write vulnerability that allows for privilege escalation with administrative rights.",
+          "requiredAction": "Apply updates per vendor instructions.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-4034"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2021-4034",
+          "product": "Polkit",
+          "vulnerabilityName": "Red Hat Polkit Out-of-Bounds Read and Write Vulnerability",
+          "dateAdded": "2022-06-27",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-4034"
+        },
+        {
+          "cveID": "CVE-2010-1428",
+          "product": "JBoss",
+          "vulnerabilityName": "Red Hat JBoss Information Disclosure Vulnerability",
+          "dateAdded": "2022-05-25",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-1428"
+        },
+        {
+          "cveID": "CVE-2010-0738",
+          "product": "JBoss",
+          "vulnerabilityName": "Red Hat JBoss Authentication Bypass Vulnerability",
+          "dateAdded": "2022-05-25",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-0738"
+        },
+        {
+          "cveID": "CVE-2015-3246",
+          "product": "Libuser",
+          "vulnerabilityName": "Red Hat Libuser Race Condition Vulnerability",
+          "dateAdded": "2026-08-26",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2015-3246"
+        },
+        {
+          "cveID": "CVE-2015-5287",
+          "product": "Automatic Bug Reporting Tool",
+          "vulnerabilityName": "Red Hat Automatic Bug Reporting Tool Privilege Escalation Vulnerability",
+          "dateAdded": "2026-08-26",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2015-5287"
+        }
+      ]
+    },
+    {
       "vendor": "Progress",
       "total_cve_count": 9,
       "recent_12mo_count": 1,
@@ -4475,133 +4610,6 @@
           "dateAdded": "2023-11-16",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-1671"
-        }
-      ]
-    },
-    {
-      "vendor": "Red Hat",
-      "total_cve_count": 7,
-      "recent_12mo_count": 0,
-      "ransomware_count": 4,
-      "product_breakdown": [
-        {
-          "label": "Polkit",
-          "count": 2
-        },
-        {
-          "label": "JBoss",
-          "count": 2
-        },
-        {
-          "label": "JBoss RichFaces Framework",
-          "count": 1
-        },
-        {
-          "label": "JBoss Application Server",
-          "count": 1
-        },
-        {
-          "label": "JBoss Seam 2",
-          "count": 1
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2018-14667",
-          "product": "JBoss RichFaces Framework",
-          "vulnerabilityName": "Red Hat JBoss RichFaces Framework Expression Language Injection Vulnerability",
-          "dateAdded": "2023-09-28",
-          "dueDate": "2023-10-19",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Red Hat JBoss RichFaces Framework contains an expression language injection vulnerability via the UserResource resource. A remote, unauthenticated attacker could exploit this vulnerability to execute malicious code using a chain of Java serialized objects via org.ajax4jsf.resource.UserResource$UriData.",
-          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-14667"
-        },
-        {
-          "cveID": "CVE-2021-3560",
-          "product": "Polkit",
-          "vulnerabilityName": "Red Hat Polkit Incorrect Authorization Vulnerability",
-          "dateAdded": "2023-05-12",
-          "dueDate": "2023-06-02",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Red Hat Polkit contains an incorrect authorization vulnerability through the bypassing of credential checks for D-Bus requests, allowing for privilege escalation.",
-          "requiredAction": "Apply updates per vendor instructions.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-3560"
-        },
-        {
-          "cveID": "CVE-2021-4034",
-          "product": "Polkit",
-          "vulnerabilityName": "Red Hat Polkit Out-of-Bounds Read and Write Vulnerability",
-          "dateAdded": "2022-06-27",
-          "dueDate": "2022-07-18",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "The Red Hat polkit pkexec utility contains an out-of-bounds read and write vulnerability that allows for privilege escalation with administrative rights.",
-          "requiredAction": "Apply updates per vendor instructions.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-4034"
-        },
-        {
-          "cveID": "CVE-2010-1428",
-          "product": "JBoss",
-          "vulnerabilityName": "Red Hat JBoss Information Disclosure Vulnerability",
-          "dateAdded": "2022-05-25",
-          "dueDate": "2022-06-15",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "Unauthenticated access to the JBoss Application Server Web Console (/web-console) is blocked by default. However, it was found that this block was incomplete, and only blocked GET and POST HTTP verbs. A remote attacker could use this flaw to gain access to sensitive information.",
-          "requiredAction": "Apply updates per vendor instructions.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-1428"
-        },
-        {
-          "cveID": "CVE-2010-0738",
-          "product": "JBoss",
-          "vulnerabilityName": "Red Hat JBoss Authentication Bypass Vulnerability",
-          "dateAdded": "2022-05-25",
-          "dueDate": "2022-06-15",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "The JMX-Console web application in JBossAs in Red Hat JBoss Enterprise Application Platform performs access control only for the GET and POST methods, which allows remote attackers to send requests to this application's GET handler by using a different method.",
-          "requiredAction": "Apply updates per vendor instructions.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-0738"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2021-4034",
-          "product": "Polkit",
-          "vulnerabilityName": "Red Hat Polkit Out-of-Bounds Read and Write Vulnerability",
-          "dateAdded": "2022-06-27",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-4034"
-        },
-        {
-          "cveID": "CVE-2010-1428",
-          "product": "JBoss",
-          "vulnerabilityName": "Red Hat JBoss Information Disclosure Vulnerability",
-          "dateAdded": "2022-05-25",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-1428"
-        },
-        {
-          "cveID": "CVE-2010-0738",
-          "product": "JBoss",
-          "vulnerabilityName": "Red Hat JBoss Authentication Bypass Vulnerability",
-          "dateAdded": "2022-05-25",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-0738"
-        },
-        {
-          "cveID": "CVE-2018-14667",
-          "product": "JBoss RichFaces Framework",
-          "vulnerabilityName": "Red Hat JBoss RichFaces Framework Expression Language Injection Vulnerability",
-          "dateAdded": "2023-09-28",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-14667"
-        },
-        {
-          "cveID": "CVE-2021-3560",
-          "product": "Polkit",
-          "vulnerabilityName": "Red Hat Polkit Incorrect Authorization Vulnerability",
-          "dateAdded": "2023-05-12",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-3560"
         }
       ]
     },
@@ -7453,7 +7461,7 @@
     {
       "vendor": "Sangoma",
       "total_cve_count": 3,
-      "recent_12mo_count": 3,
+      "recent_12mo_count": 2,
       "ransomware_count": 0,
       "product_breakdown": [
         {
@@ -8867,6 +8875,64 @@
           "dateAdded": "2021-11-03",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-10987"
+        }
+      ]
+    },
+    {
+      "vendor": "ownCloud",
+      "total_cve_count": 2,
+      "recent_12mo_count": 1,
+      "ransomware_count": 0,
+      "product_breakdown": [
+        {
+          "label": "ownCloud",
+          "count": 1
+        },
+        {
+          "label": "ownCloud graphapi",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2023-49105",
+          "product": "ownCloud",
+          "vulnerabilityName": "ownCloud Improper Authentication Vulnerability",
+          "dateAdded": "2026-08-27",
+          "dueDate": "2026-08-30",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "ownCloud contains an improper authentication vulnerability that allows an attacker to access, modify, or delete any file without authentication if the username of a victim is known, and the victim has no signing-key configured.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-49105"
+        },
+        {
+          "cveID": "CVE-2023-49103",
+          "product": "ownCloud graphapi",
+          "vulnerabilityName": "ownCloud graphapi Information Disclosure Vulnerability",
+          "dateAdded": "2023-11-30",
+          "dueDate": "2023-12-21",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "ownCloud graphapi contains an information disclosure vulnerability that can reveal sensitive data stored in phpinfo() via GetPhpInfo.php, including administrative credentials.",
+          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-49103"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2023-49105",
+          "product": "ownCloud",
+          "vulnerabilityName": "ownCloud Improper Authentication Vulnerability",
+          "dateAdded": "2026-08-27",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-49105"
+        },
+        {
+          "cveID": "CVE-2023-49103",
+          "product": "ownCloud graphapi",
+          "vulnerabilityName": "ownCloud graphapi Information Disclosure Vulnerability",
+          "dateAdded": "2023-11-30",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-49103"
         }
       ]
     },
@@ -11373,6 +11439,111 @@
       ]
     },
     {
+      "vendor": "JFrog",
+      "total_cve_count": 1,
+      "recent_12mo_count": 1,
+      "ransomware_count": 0,
+      "product_breakdown": [
+        {
+          "label": "Artifactory",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-66384",
+          "product": "Artifactory",
+          "vulnerabilityName": "JFrog Artifactory Improper Limitation of a Pathname to a Restricted Directory Vulnerability",
+          "dateAdded": "2026-08-27",
+          "dueDate": "2026-09-10",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "JFrog Artifactory contains an improper limitation of a pathname to a restricted directory vulnerability. This can allow an authenticated user to write data outside the intended Docker cache path under specific remote-repository conditions.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-66384"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2026-66384",
+          "product": "Artifactory",
+          "vulnerabilityName": "JFrog Artifactory Improper Limitation of a Pathname to a Restricted Directory Vulnerability",
+          "dateAdded": "2026-08-27",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-66384"
+        }
+      ]
+    },
+    {
+      "vendor": "Ajax.NET Professional",
+      "total_cve_count": 1,
+      "recent_12mo_count": 1,
+      "ransomware_count": 0,
+      "product_breakdown": [
+        {
+          "label": "Ajax.NET Professional",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2021-23758",
+          "product": "Ajax.NET Professional",
+          "vulnerabilityName": "Ajax.NET Professional Deserialization of Untrusted Data Vulnerability",
+          "dateAdded": "2026-08-26",
+          "dueDate": "2026-09-09",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Ajax.NET Professional (AjaxPro) contains a deserialization of untrusted data vulnerability that could allow for remote code execution via arbitrary .NET classes. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-23758"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2021-23758",
+          "product": "Ajax.NET Professional",
+          "vulnerabilityName": "Ajax.NET Professional Deserialization of Untrusted Data Vulnerability",
+          "dateAdded": "2026-08-26",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-23758"
+        }
+      ]
+    },
+    {
+      "vendor": "Gitea",
+      "total_cve_count": 1,
+      "recent_12mo_count": 1,
+      "ransomware_count": 0,
+      "product_breakdown": [
+        {
+          "label": "Gitea",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-60004",
+          "product": "Gitea",
+          "vulnerabilityName": "Gitea Code Injection Vulnerability",
+          "dateAdded": "2026-08-25",
+          "dueDate": "2026-08-28",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Gitea contains a code injection vulnerability that allows an attacker with repository write access to send a malicious patch to the diffpatch API endpoint to plant an executable Git hook and run shell commands as the Gitea service account.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60004"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2026-60004",
+          "product": "Gitea",
+          "vulnerabilityName": "Gitea Code Injection Vulnerability",
+          "dateAdded": "2026-08-25",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60004"
+        }
+      ]
+    },
+    {
       "vendor": "MLflow",
       "total_cve_count": 1,
       "recent_12mo_count": 1,
@@ -12775,7 +12946,7 @@
     {
       "vendor": "Git",
       "total_cve_count": 1,
-      "recent_12mo_count": 1,
+      "recent_12mo_count": 0,
       "ransomware_count": 0,
       "product_breakdown": [
         {
@@ -14029,41 +14200,6 @@
           "dateAdded": "2023-12-11",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-6448"
-        }
-      ]
-    },
-    {
-      "vendor": "ownCloud",
-      "total_cve_count": 1,
-      "recent_12mo_count": 0,
-      "ransomware_count": 0,
-      "product_breakdown": [
-        {
-          "label": "ownCloud graphapi",
-          "count": 1
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2023-49103",
-          "product": "ownCloud graphapi",
-          "vulnerabilityName": "ownCloud graphapi Information Disclosure Vulnerability",
-          "dateAdded": "2023-11-30",
-          "dueDate": "2023-12-21",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "ownCloud graphapi contains an information disclosure vulnerability that can reveal sensitive data stored in phpinfo() via GetPhpInfo.php, including administrative credentials.",
-          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-49103"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2023-49103",
-          "product": "ownCloud graphapi",
-          "vulnerabilityName": "ownCloud graphapi Information Disclosure Vulnerability",
-          "dateAdded": "2023-11-30",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-49103"
         }
       ]
     },
