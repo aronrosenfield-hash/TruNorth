@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-01T05:53:50.125Z",
+  "generated_at": "2026-09-01T16:59:24.366Z",
   "brand_count": 528,
-  "leie_rows": 3432,
-  "enforcement_actions_24mo": 1685,
-  "excluded_brand_count": 43,
+  "leie_rows": 3446,
+  "enforcement_actions_24mo": 1674,
+  "excluded_brand_count": 44,
   "with_recent_action_count": 35,
   "sources": {
     "leie": "https://oig.hhs.gov/exclusions/downloadables/UPDATED.csv",
@@ -824,7 +824,7 @@
           "state": "FL"
         }
       ],
-      "recent_fraud_actions_24mo": 19,
+      "recent_fraud_actions_24mo": 17,
       "sample_actions": [
         {
           "date": "July 20, 2026",
@@ -1432,8 +1432,22 @@
           "state": "ME"
         }
       ],
-      "recent_fraud_actions_24mo": 4,
+      "recent_fraud_actions_24mo": 6,
       "sample_actions": [
+        {
+          "date": "Aug. 10, 2026",
+          "title": "Northampton County Caregiver Charged with Neglect Following Death of Care-Dependent Woman",
+          "action_type": "State Enforcement Agencies",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/northampton-county-caregiver-charged-with-neglect-following-death-of-care-dependent-woman/"
+        },
+        {
+          "date": "Aug. 5, 2026",
+          "title": "AG Sunday’s Medicaid Fraud Control Section Charges 4 Warren County Home Care Workers with Neglect of Care-Dependent Resident who Died",
+          "action_type": "State Enforcement Agencies",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/ag-sundays-medicaid-fraud-control-section-charges-4-warren-county-home-care-workers-with-neglect-of-care-dependent-resident-who-died/"
+        },
         {
           "date": "June 10, 2026",
           "title": "Sarcone Leads Revival of NDNY Health Care Fraud Task Force",
@@ -1454,13 +1468,6 @@
           "action_type": "Criminal and Civil Actions",
           "fine_amount": 5000000,
           "url": "https://oig.hhs.gov/fraud/enforcement/american-health-imaging-inc-and-scott-arant-to-pay-over-5-million-to-resolve-allegations-of-healthcare-kickbacks/"
-        },
-        {
-          "date": "Oct. 29, 2024",
-          "title": "AG&#x27;s Office Reaches Settlement With Swampscott-Based Medical Transportation Company To Resolve False Billing Allegations",
-          "action_type": "State Enforcement Agencies",
-          "fine_amount": null,
-          "url": "https://oig.hhs.gov/fraud/enforcement/ags-office-reaches-settlement-with-swampscott-based-medical-transportation-company-to-resolve-false-billing-allegations/"
         }
       ]
     },
@@ -1856,9 +1863,24 @@
     {
       "slug": "target",
       "name": "Target",
-      "is_excluded": false,
-      "exclusion_count": 0,
-      "exclusion_sample": [],
+      "is_excluded": true,
+      "exclusion_count": 2,
+      "exclusion_sample": [
+        {
+          "busname": "MAGNOLIA DIAGNOSTICS, LLC",
+          "exclDate": "20260722",
+          "exclType": "1128b7",
+          "city": "DALLAS",
+          "state": "TX"
+        },
+        {
+          "busname": "MAGNOLIA HEALTH, LLC",
+          "exclDate": "20260722",
+          "exclType": "1128b7",
+          "city": "DALLAS",
+          "state": "TX"
+        }
+      ],
       "recent_fraud_actions_24mo": 14,
       "sample_actions": [
         {
@@ -1958,8 +1980,29 @@
           "state": "SD"
         }
       ],
-      "recent_fraud_actions_24mo": 88,
+      "recent_fraud_actions_24mo": 89,
       "sample_actions": [
+        {
+          "date": "Aug. 18, 2026",
+          "title": "Former Senior NIAID Official Pleads Guilty to Charges Connected to Concealing Federal Records During COVID-19 Pandemic",
+          "action_type": "COVID-19",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/former-senior-niaid-official-pleads-guilty-to-charges-connected-to-concealing-federal-records-during-covid-19-pandemic/"
+        },
+        {
+          "date": "Aug. 14, 2026",
+          "title": "Ohio Man Pleads Guilty to Laundering Health Care Fraud Proceeds for Transnational Criminal Organization",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/ohio-man-pleads-guilty-to-laundering-health-care-fraud-proceeds-for-transnational-criminal-organization/"
+        },
+        {
+          "date": "Aug. 12, 2026",
+          "title": "Former Brooklyn Bank Manager Sentenced to Prison for Laundering Proceeds of Medicare Fraud for Transnational Criminal Organization",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/former-brooklyn-bank-manager-sentenced-to-prison-for-laundering-proceeds-of-medicare-fraud-for-transnational-criminal-organization/"
+        },
         {
           "date": "July 17, 2026",
           "title": "New Jersey Man Sentenced to 48 Months in Prison for Role in Multi-State Prescription Fraud Ring",
@@ -1973,27 +2016,6 @@
           "action_type": "State Enforcement Agencies",
           "fine_amount": null,
           "url": "https://oig.hhs.gov/fraud/enforcement/attorney-general-griffin-announces-arrest-of-siloam-springs-woman-for-exploitation-of-a-vulnerable-person/"
-        },
-        {
-          "date": "July 13, 2026",
-          "title": "Nebraska Woman Sentenced to more than 6 Years in Federal Prison for Wire Fraud and Money Laundering",
-          "action_type": "Criminal and Civil Actions",
-          "fine_amount": null,
-          "url": "https://oig.hhs.gov/fraud/enforcement/nebraska-woman-sentenced-to-more-than-6-years-in-federal-prison-for-wire-fraud-and-money-laundering/"
-        },
-        {
-          "date": "July 6, 2026",
-          "title": "Gardner Man Agrees to Plead Guilty to Tampering with Oxycodone",
-          "action_type": "Criminal and Civil Actions",
-          "fine_amount": null,
-          "url": "https://oig.hhs.gov/fraud/enforcement/gardner-man-agrees-to-plead-guilty-to-tampering-with-oxycodone/"
-        },
-        {
-          "date": "June 25, 2026",
-          "title": "New York City Woman Pleads Guilty for Role in Multi-State Prescription Fraud Ring",
-          "action_type": "Criminal and Civil Actions",
-          "fine_amount": null,
-          "url": "https://oig.hhs.gov/fraud/enforcement/new-york-city-woman-pleads-guilty-for-role-in-multi-state-prescription-fraud-ring/"
         }
       ]
     },
@@ -3413,7 +3435,7 @@
           "state": "FL"
         }
       ],
-      "recent_fraud_actions_24mo": 7,
+      "recent_fraud_actions_24mo": 6,
       "sample_actions": [
         {
           "date": "April 10, 2026",
@@ -4533,7 +4555,7 @@
       "is_excluded": false,
       "exclusion_count": 0,
       "exclusion_sample": [],
-      "recent_fraud_actions_24mo": 5,
+      "recent_fraud_actions_24mo": 4,
       "sample_actions": [
         {
           "date": "June 30, 2025",
@@ -4562,13 +4584,6 @@
           "action_type": "Criminal and Civil Actions",
           "fine_amount": null,
           "url": "https://oig.hhs.gov/fraud/enforcement/us-attorney-totten-announces-second-wave-of-enforcement-in-nationwide-telemedicine-fraud-schemes/"
-        },
-        {
-          "date": "Aug. 20, 2024",
-          "title": "Nationwide Home Healthcare And Hospice Provider To Pay $3.85M To Resolve False Claims Act Allegations",
-          "action_type": "Criminal and Civil Actions",
-          "fine_amount": 3850000,
-          "url": "https://oig.hhs.gov/fraud/enforcement/nationwide-home-healthcare-and-hospice-provider-to-pay-385m-to-resolve-false-claims-act-allegations/"
         }
       ]
     },
@@ -4964,7 +4979,7 @@
           "state": "MA"
         }
       ],
-      "recent_fraud_actions_24mo": 28,
+      "recent_fraud_actions_24mo": 27,
       "sample_actions": [
         {
           "date": "July 9, 2026",
@@ -5220,8 +5235,15 @@
           "state": "NY"
         }
       ],
-      "recent_fraud_actions_24mo": 51,
+      "recent_fraud_actions_24mo": 50,
       "sample_actions": [
+        {
+          "date": "Aug. 17, 2026",
+          "title": "U.S. Attorney’s Office Files Civil Complaint against Texas Corporation and North Carolina Man for Allegedly Defrauding Medicare",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/us-attorneys-office-files-civil-complaint-against-texas-corporation-and-north-carolina-man-for-allegedly-defrauding-medicare/"
+        },
         {
           "date": "July 21, 2026",
           "title": "Home Health Care Operator Sentenced for Defrauding Missouri Medicaid",
@@ -5249,13 +5271,6 @@
           "action_type": "State Enforcement Agencies",
           "fine_amount": 36500000,
           "url": "https://oig.hhs.gov/fraud/enforcement/attorney-general-james-secures-365-million-from-cvs-for-defrauding-medicaid/"
-        },
-        {
-          "date": "May 29, 2026",
-          "title": "AG Campbell Sues United Healthcare for Defrauding MassHealth Out of $100 Million",
-          "action_type": "State Enforcement Agencies",
-          "fine_amount": 100000000,
-          "url": "https://oig.hhs.gov/fraud/enforcement/ag-campbell-sues-united-healthcare-for-defrauding-masshealth-out-of-100-million/"
         }
       ]
     },
@@ -5829,42 +5844,42 @@
           "state": "NY"
         }
       ],
-      "recent_fraud_actions_24mo": 89,
+      "recent_fraud_actions_24mo": 90,
       "sample_actions": [
         {
-          "date": "July 23, 2026",
-          "title": "CEO Of Bay Area Home Health Agency Convicted Of Health Care Fraud Conspiracy Targeting Medicare",
+          "date": "Aug. 20, 2026",
+          "title": "Former Owner of Montgomery County-Based Home Care Agency Jailed for Multi-Million Dollar Medicaid Fraud Scheme",
+          "action_type": "State Enforcement Agencies",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/former-owner-of-montgomery-county-based-home-care-agency-jailed-for-multi-million-dollar-medicaid-fraud-scheme/"
+        },
+        {
+          "date": "Aug. 17, 2026",
+          "title": "Attorney General James Secures $6 Million from Three Buffalo Nursing Homes for Years-Long Fraudulent Billing Scheme",
+          "action_type": "State Enforcement Agencies",
+          "fine_amount": 6000000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/attorney-general-james-secures-6-million-from-three-buffalo-nursing-homes-for-years-long-fraudulent-billing-scheme/"
+        },
+        {
+          "date": "Aug. 5, 2026",
+          "title": "AG Sunday’s Medicaid Fraud Control Section Charges 4 Warren County Home Care Workers with Neglect of Care-Dependent Resident who Died",
+          "action_type": "State Enforcement Agencies",
+          "fine_amount": null,
+          "url": "https://oig.hhs.gov/fraud/enforcement/ag-sundays-medicaid-fraud-control-section-charges-4-warren-county-home-care-workers-with-neglect-of-care-dependent-resident-who-died/"
+        },
+        {
+          "date": "Aug. 4, 2026",
+          "title": "Philadelphia In-Home Care Services Provider Agrees to Pay $1 Million to Resolve Allegations of False Claims Act Violations",
+          "action_type": "Criminal and Civil Actions",
+          "fine_amount": 1000000,
+          "url": "https://oig.hhs.gov/fraud/enforcement/philadelphia-in-home-care-services-provider-agrees-to-pay-1-million-to-resolve-allegations-of-false-claims-act-violations/"
+        },
+        {
+          "date": "Aug. 4, 2026",
+          "title": "The Fraud Division Announces Charges Against 19 Defendants for Medicaid Home Health Aid Schemes Expands",
           "action_type": "Criminal and Civil Actions",
           "fine_amount": null,
-          "url": "https://oig.hhs.gov/fraud/enforcement/ceo-of-bay-area-home-health-agency-convicted-of-health-care-fraud-conspiracy-targeting-medicare/"
-        },
-        {
-          "date": "July 22, 2026",
-          "title": "Attorney General James Announces Arrest of Buffalo Nursing Home Worker Charged With Sexual Assault of a Vulnerable Resident",
-          "action_type": "State Enforcement Agencies",
-          "fine_amount": null,
-          "url": "https://oig.hhs.gov/fraud/enforcement/attorney-general-james-announces-arrest-of-buffalo-nursing-home-worker-charged-with-sexual-assault-of-a-vulnerable-resident/"
-        },
-        {
-          "date": "July 22, 2026",
-          "title": "Attorney General Alan Wilson announces Latta woman charged with stealing more than $34,000 from nursing home resident",
-          "action_type": "State Enforcement Agencies",
-          "fine_amount": 34000,
-          "url": "https://oig.hhs.gov/fraud/enforcement/attorney-general-alan-wilson-announces-latta-woman-charged-with-stealing-more-than-34000-from-nursing-home-resident/"
-        },
-        {
-          "date": "July 21, 2026",
-          "title": "Home Health Care Operator Sentenced for Defrauding Missouri Medicaid",
-          "action_type": "Criminal and Civil Actions",
-          "fine_amount": null,
-          "url": "https://oig.hhs.gov/fraud/enforcement/home-health-care-operator-sentenced-for-defrauding-missouri-medicaid/"
-        },
-        {
-          "date": "July 20, 2026",
-          "title": "Attorney General James Announces Arrest of Rochester Nursing Home Employee for Stealing $150,000 from Residents",
-          "action_type": "State Enforcement Agencies",
-          "fine_amount": 150000,
-          "url": "https://oig.hhs.gov/fraud/enforcement/attorney-general-james-announces-arrest-of-rochester-nursing-home-employee-for-stealing-150000-from-residents/"
+          "url": "https://oig.hhs.gov/fraud/enforcement/the-fraud-division-announces-charges-against-19-defendants-for-medicaid-home-health-aid-schemes-expands/"
         }
       ]
     },
