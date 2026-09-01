@@ -6,7 +6,37 @@
 >
 > **🟢 LAUNCHED — Jun 23, 2026 · 2:01 AM CDT** (App Store · id `6775301458` · `https://apps.apple.com/app/id6775301458` · PH launched). **CURRENT LIVE BUILD = v1.1 Build 81** (approved 2026-07-08, released Manual **2026-07-14**) — it superseded v1.0 Build 75, which was live Jun 23 → Jul 14. **Next iOS ship = Build 82.** *(The 2026-06-11 "date is soft, get it right" call held through the Compass redesign; the experience shipped on the locked date. Go-live runbook: `docs/LAUNCH_DAY.md`.)*
 >
-> **Last updated:** 2026-08-31 01:10 CDT (daily doc-sync, covering the 08-30 quadruple-test Sunday — nine bot commits, zero human activity, zero code changes. **Three of the four tests resolved, and the results split: B-127 is CLOSED, B-124 is CONFIRMED a fifth time, the digest missed a fifth time, and B-128's model is WRONG.** The catalog moved for the first time in sixteen days.)
+> **Last updated:** 2026-09-01 01:12 CDT (daily doc-sync covering **2026-08-31**, a Monday — eight bot commits, zero human activity, zero code changes. **The headline is a cron that finally beat its timeout and still shipped nothing: `faa-weekly` succeeded for the first time in five weeks and returned zero records on all 528 brands.** The catalog held.)
+>
+> 🆕🔴⏱️🕳️ **BIGGEST FINDING — `faa-weekly` SUCCEEDED, IN-CAP, AND DELIVERED ABSOLUTELY NOTHING. B-125's FAA RECOMMENDATION IS ANSWERED, AND IT WAS THE WRONG LEVER.** Run `33417825413` ran **`2026-08-31T17:07:08Z → 17:33:42Z` = 26m34s against a 30m cap (3m26s of margin)** and reported **`success`** — its first non-`cancelled` scheduled run after **four consecutive Monday timeout kills (08-03, 08-10, 08-17, 08-24)**. It committed `236c71e21`. 🚨 **And `public/data/faa-safety.json` came back `brand_count 528 · with_records 0 · no_records 0 · not_available 528 · error_count 0`, with `faa-merge-log.json` reading `merged_count 0 · skipped_count 528 · orphan_count 0`.** 🔑 **The per-brand `source_status` names the cause outright: `{ ads: "endpoint_error", sdrs: "endpoint_error", accidents: "no_data" }` on every one of the 528.** 📉 **AND IT HAS NEVER BEEN OTHERWISE — parsed all five historical writes of `faa-safety.json`: 2026-06-08 and the three 2026-07-20 writes all read `with_records: 0` too (528 `no_records`, endpoints answering but matching nothing). `with_records` has been 0 on every write since the file was created.** 🚫 **DO NOT RAISE `faa-weekly.yml:25`. Today is the experiment that recommendation was asking for, and it ran to completion inside the cap and produced zero rows. A bigger timeout buys a greener cron and not one datum.** ✅ **RECLASSIFY: `faa` moves OUT of B-125 (timeout) and INTO B-130 (dead fetch), where it now sits next to `ntsb` with the identical `not_available: 528 / merged 0 / orphans 0` signature. B-125's remaining scope is `fra` and `gdelt` only — and both of those have never succeeded, so a timeout bump there is still a guess.**
+>
+> 🔴⏱️ **B-125 FOR `fra` AND `gdelt` — A FIFTH CONSECUTIVE MONDAY, STILL TIMED TO THE SECOND.** `fra-weekly` `17:58:27Z → 18:28:45Z` = **30m18s against a 30m cap**; `gdelt-weekly` `18:10:47Z → 19:41:07Z` = **90m20s against a 90m cap**. Both `cancelled`. That is **08-03, 08-10, 08-17, 08-24, 08-31** for both. ✅ No workflow file has been touched since **2026-08-01** (`9f4bf87b2`), so nothing on our side moved.
+>
+> 🆕🕳️🚨 **THE CRON WATCHDOG MISLEADS IN A *FOURTH* DIRECTION — IT RACES IN-FLIGHT RUNS, AND TODAY IT HID A CRON THAT FAILED ELEVEN MINUTES LATER.** `cron-health-daily` ran **`2026-08-31T19:29:57Z`** and rewrote #155 at **19:30:23Z**. **`gdelt-weekly` was still in progress at that instant — it was not `cancelled` until `19:41:07Z`. So gdelt is ABSENT from today's roster despite failing today.** 🔑 **Add this to the three known directions (under-reports · over-reports · silently deletes): the daily snapshot only sees runs that have already concluded, so any cron that fails after ~19:30Z is invisible until the next day.** 📊 **Today's #155 = 33 rows (was 36) — and audited against the real workflow list, that is 31 REAL + 2 PHANTOMS:** `canada-comp-monthly` (**no workflow file exists on disk at all**) and `followthemoney-state-monthly` (**`disabled_manually`** — B-141, confirmed against `gh api .../actions/workflows`: 169 workflows, 168 `active`, exactly 1 `disabled_manually`). ➕ **And it hides at least two genuinely broken crons: `bcorp-quarterly` (on disk, latest scheduled run `2026-06-15 cancelled`, still erased — B-142 standing) and `gdelt-weekly` (the new in-flight race).** ✅ **`faa-weekly` left the roster legitimately — a run that later succeeds clears itself, exactly as designed.** 🚨 **The 36 → 33 drop is NOT three repairs. One real clear, one new blind spot, one unidentified. The count carries no signal — diff the roster and name the rows.** 🧭 **This is now a THREE-bug rewrite of `cron-health-daily.yml`, still one cheap pass: enumerate workflows → filter `state == "active"` → query each one's own latest scheduled run → and run the check late enough (or re-check) that same-day runs have concluded.**
+>
+> 📊✅ **CATALOG HELD — DAY 1 AT THE NEW MD5.** `curl https://www.trunorthapp.com/data/index.json` → HTTP 200, **12,830 tracked / 2,622 graded — A 63 · B 738 · C 1,031 · D 535 · F 255**, 10,208 "?", md5 **`1527f2e9ec86cd9555075f0162978532`**, 9,989,657 B — **byte-identical to yesterday's post-rebake reading.** 🔑 **Quote 2,622.** ⚠️ **Field note for anyone re-running this: in `index.json` the graded letter lives on `grade`; `overall` is `null` on all 12,830 entries. Count `grade`, not `overall`.**
+>
+> ✅🎯 **B-124 — THE MONDAY LANDED, AS THE MODEL PREDICTS.** `data(news)` `45a3b790e` committed **`11:32Z` carrying digest date `2026-08-31`**. **Day-of-week record is now Mon–Sat 42-for-42, Sunday 0-for-5.** ✅ `grep -rn "rebase --abort" .github/workflows/` **still returns nothing** — the one-line fix is still not in, on a day when nothing else competed for your time. 🚫 **A Monday landing is not evidence of a fix; it is the control arm.**
+>
+> 🟡📉 **B-128 — BOTH SERIALIZERS STILL FIGHTING; SINGLE-LINE GAINED 5.** **381 single-line / 12,449 pretty** (was 376 / 12,454 yesterday). The mover is the MSHA writer. 📄 **And the memory rule paid off again: `data(msha)` `e3882c92f` shows `campbells.json` at **534 deletions** — parsed object-by-object it is **100% reformat, 57 top-level keys before and 57 after, zero keys lost.** 🚨 **A huge deletion count in a bot commit is a FORMATTING question first — parse the objects, never read `--stat`.**
+>
+> 🆕⏱️🧭 **CORRECTION TO YESTERDAY'S BOARD — THE GITHUB SCHEDULER DELAY HAS PLATEAUED, IT IS NOT "ALREADY SHRINKING."** Measured today against each cron's own `cron:` expression: **`news-rss-nightly` (`48 4 * * *`) ran 11:09Z = +6h21m · `cron-health-daily` (`12 13 * * *`) ran 19:29Z = +6h18m · `ofac-sdn-daily` (`34 17 * * *`) ran 22:00Z = +4h27m · `trending-refresh` (`3 22 * * *`) ran 01:12Z = +3h10m.** Yesterday's band was **+2h04m to +6h33m**; today's is **+3h10m to +6h21m** — the same elevated band, not a smaller one. 🔑 **Five days into the delay it is holding, not decaying. Still a GitHub-side queue, still no TruNorth defect, and still not a reason to touch a cron.**
+>
+> ⚖️📉 **B-131 — THE SINGLE EVENT IS NOW SIX FILES DEEP.** `93832fb24` (`generatedAt 2026-09-01T01:12:59.989Z`), diff again **one insertion / one deletion**. 08-27 → 09-01 all read **one brand, `mondelez-international`, `views: 1, uniques: 1`.** 🔑 **`lookbackDays: 7` — the single ~08-26 `company_view` keeps reappearing until ~09-02.** 🚨 **Six "1 view" files is ONE event counted six times. Never "1 view/day," never "recovering."** ⏰ **The check is now imminent: within roughly 24 hours the event should age out and `trending.json` should return to zero brands. A DIFFERENT slug before then is a genuine second event.**
+>
+> 🕳️ **B-130 `ntsb` RE-CONFIRMED, AND IT BURNED A RUN TO PROVE IT.** `ntsb-weekly` succeeded `21:38Z`, committed `f5d366c76` with **1,058 changed lines in `ntsb-accidents.json`**, and the file reads **`with_records 0 · no_records 0 · not_available 528`**, merge log **`merged_count 0 · orphan_count 0`**. 🔑 **The diagnostic holds exactly: zero orphans on a nonzero universe = FETCH bug, not matcher bug.** ➕ **`faa` now shows the identical signature — see the headline.**
+>
+> 📊 **B-129 SOURCES THAT DID WORK TODAY.** `msha-weekly` **merged 70 / skipped 450 / 8 orphans** (3,097,950 violation rows, 274,567 accident rows; top by citations: `enterprise` → `enterprise-rent-a-car` 39,408 citations / 4 fatalities-5y / $13,084,435 penalties). `phmsa-weekly` **merged 30 / skipped 488 / 10 orphans**. ✅ **Checked all 18 orphan slugs against `public/data/companies/` — not one has a file at that exact slug, so by B-129's corrected definition these are genuine orphans, not matcher misses.** ⚠️ **TWO near-misses that look aliasable and MUST NOT be auto-aliased: `block` (there is a `block-inc.json`) and `pandora` (there is a `pandora-a-s.json`). That is precisely the `metlife` → `metlife-pet-insurance` trap — auto-aliasing on name proximity manufactures a B-134-class fabrication.**
+>
+> 📌 **EVERYTHING ELSE RE-VERIFIED.** **B-133 still exactly 43** (`typeof …totalGrants === "number"`; the `charity_irs990` key is present on **11,202** files). **B-101 UP ONE to 42 open data PRs** — the new one is **#169 `data(la-county-restaurants): weekly refresh`**; **oldest is still #116, now 63 days**; **#134 and #165 remain the two must-not-merge landmines.** **Also failing today, all consistent with the record: `bis-entity-list-weekly` (B-122, expired source cert), `fcc-weekly` (the one broken cron with a known-good run to diff), `fsis-weekly` and `fsis-dw-weekly` (both 0% lifetime).** **B-122, B-129, B-134, B-137, B-140, B-143 untouched.** **Zero human activity — `find . -newermt "2026-08-31 01:10"` outside `public/data/`, `data/`, `.git/`, `node_modules/` and `dist/` returns nothing, and `git diff --name-only 9446a5a88..HEAD` returns 0 paths under `src/`, `scripts/`, `ios/`, `android/`, `.github/` or `package.json`.** 🟢 **v1.1 Build 81 remains the LIVE App Store build. Next iOS ship = Build 82 — it carries B-131 + B-136.** ⚠️ **16 untracked `docs/` files, unchanged, day 29.**
+>
+> 🔴 **WHAT YOU STILL OWE.** ① **`RESEND_API_KEY`** — five missed Sundays; DNS/DKIM done 08-27; create the key, add the secret, dry-run `weekly-digest.yml`. ② **the "200+ public sources" framing call** — documented roster **118**, in-app Sources screen **104**; recommendation on the table is "100+, derived at build time." ③ **the three still-open growth decisions from 08-26** — the price overrule, the CDP licence, the public-face call. ④ **B-143 — the quizzed/un-quizzed grade divergence. Decide whether it is intended before V-4 widens it.** 🧭 **ENGINEERING ORDER, UNCHANGED AT THE TOP: ① B-124 `git rebase --abort` — one line, five confirmed Sundays, a destroyed commit SHA on the record. ② Ship Build 82 — B-136 is a live revenue leak. ③ B-134 FINRA matcher before V-4 (exposure 93 brands). Then B-128, V-4 led by `cfpb`/`secTax`, B-129, B-130 (now `ntsb` + `faa` + `fdic`'s 45), and the B-141/B-142/in-flight-race rewrite of `cron-health-daily.yml`.**
+>
+> ---
+>
+> **[08-31 01:10 sync]**
+>
+> *Daily doc-sync covering the 08-30 quadruple-test Sunday — nine bot commits, zero human activity, zero code changes. Three of the four tests resolved and the results split: B-127 is CLOSED, B-124 is CONFIRMED a fifth time, the digest missed a fifth time, and B-128's model is WRONG. The catalog moved for the first time in sixteen days.*
 >
 > 🟢✅ **BIGGEST WIN — B-127 IS CLOSED, PROVEN IN PRODUCTION, AND THE CATALOG MOVED FOR THE FIRST TIME SINCE 08-15.** `score-rebake-weekly` ran `2026-08-30T19:21:08Z` and reported **`success`** — its first green scheduled run after **two consecutive failures (08-16, 08-23)** — and it committed **`77e25635d`**. `public/data/_meta/grade-snapshot.json` was re-taken in the same pass: **`takenAt 2026-08-30T19:21:58.382Z`, 2,622 entries.** ✅ **The drift guard passed on its own, with no threshold change.** 📊 **CDN VERIFIED LIVE** (`curl https://www.trunorthapp.com/data/index.json` → HTTP 200): **12,830 tracked / 2,622 graded — A 63 · B 738 · C 1,031 · D 535 · F 255**, 10,208 "?", md5 **`1527f2e9ec86cd9555075f0162978532`** (was `21aac7da8b48…` for sixteen days), 9,989,657 B. 🔑 **QUOTE 2,622 FROM NOW ON, NOT 2,590.** 🔑 **The durable rule held exactly as written: the out-of-band re-baseline on 08-26 was what let this run pass. Do not relitigate it, and never raise `SNAPSHOT_DRIFT_MAX_PCT`.**
 >
@@ -1207,6 +1237,33 @@
   🧭 **Blocks nothing today, but V-4 wires dark dims into scoring — which writes `csc`/`overall` and
   will widen this gap on every brand it touches. Settle B-143 before V-4.**
 
+- **B-144 🆕 NEW 2026-08-31 — the cron watchdog RACES IN-FLIGHT RUNS. A cron that fails after the daily
+  check simply does not appear, and today that hid `gdelt-weekly`.** *(WS-B, S — fix in the same pass as
+  B-141 and B-142)*
+  **THE EVIDENCE.** `cron-health-daily` ran **`2026-08-31T19:29:57Z`** and rewrote issue **#155** at
+  **`19:30:23Z`**. `gdelt-weekly` had started at `18:10:47Z` and was **still in progress** at that
+  instant — it was not `cancelled` until **`19:41:07Z`, eleven minutes later**. **So `gdelt-weekly` is
+  absent from today's roster despite failing today**, on the fifth consecutive Monday it has failed.
+  **WHY IT MATTERS.** This is a **fourth** independent way #155 misleads, and it is the one that bites
+  hardest on Monday, when six weekly crons run between 17:00Z and 23:10Z — i.e. mostly *after* the
+  13:12Z-scheduled check. Combined with the other three, today's roster of **33 rows** decomposes as
+  **31 real + 2 phantoms**, while hiding **at least 2 genuinely broken crons**.
+  **THE FOUR DIRECTIONS, for the record:** ① **UNDER-reports** — non-success only, latest run only.
+  ② **OVER-reports** (B-141) — `disabled_manually` never filtered; today's phantom is
+  `followthemoney-state-monthly`. ③ **SILENTLY DELETES** (B-142) — roster built from
+  `gh run list --limit 800`, so the longest-broken crons age off; `bcorp-quarterly` is still erased
+  (on disk, latest scheduled run `2026-06-15 cancelled`). ④ **RACES IN-FLIGHT RUNS** (this item).
+  ➕ A fifth, smaller phantom class also confirmed today: **`canada-comp-monthly` has no `.yml` on disk
+  at all** and is still reported.
+  **Fix — one pass on `.github/workflows/cron-health-daily.yml`, closing B-141 + B-142 + B-144:**
+  enumerate workflows via `gh api repos/:owner/:repo/actions/workflows --paginate` → keep only
+  `state == "active"` **and** only those with a `.yml` still on disk → for each, query **that workflow's
+  own** latest `-e schedule` run → and either move the schedule late enough that same-day weeklies have
+  concluded, or re-check in-progress runs before writing the issue.
+  🚨 **STANDING RULE, REINFORCED: the row count carries no signal. 36 → 33 today was one legitimate
+  clear (`faa-weekly` succeeded), one new blind spot (`gdelt-weekly`), and one unidentified — not three
+  repairs. Diff the roster and name the rows.**
+
 - **B-142 🆕 NEW 2026-08-28 — the cron watchdog SILENTLY DELETES broken crons from its own report
   when their last run ages out of an 800-run window. #155 fell 37 → 36 and nothing was fixed.**
   *(P2 — cheap to fix, but it makes the board's headline number actively misleading, and it hides
@@ -1434,6 +1491,23 @@
   (`curl https://www.trunorthapp.com/data/index.json`), never from git.** ⚠️ **Delete the
   "byte-identical to local" clause from the sync template.**
 
+- **B-130 🔀 EXPANDED 2026-08-31 to a FOURTH source — `faa` moves here from B-125, and it is the worst
+  of the set: it has never produced a single record.**
+  `faa-weekly` finally beat its 30m cap on 08-31 (26m34s, `success`, commit `236c71e21`) and still wrote
+  **`with_records 0 · no_records 0 · not_available 528`** with **`merged_count 0 · orphan_count 0`** —
+  the exact `ntsb` signature. Per-brand `source_status` is
+  **`{ ads: "endpoint_error", sdrs: "endpoint_error", accidents: "no_data" }`**.
+  📉 **All five historical writes of `faa-safety.json` read `with_records: 0`** (06-08 and the three
+  07-20 writes reported `no_records: 528`; 08-31 reports `not_available: 528`) — so this is not a
+  regression, it is a fetcher that has never matched anything.
+  🔑 **The B-130 diagnostic held perfectly and now has two clean instances: `orphan_count: 0` on a
+  nonzero universe = FETCH bug, not matcher bug.** ⚠️ **Reproduce the AD/SDR endpoint errors off-runner
+  before rewriting any URL (the B-122 rule).**
+  📊 **Current B-130 split — four sources, four different stories:** `faa` = 528 not_available, never
+  worked · `ntsb` = 528 not_available, re-confirmed 08-31 (`f5d366c76`, 1,058 lines changed, zero data)
+  · `nrc` = 5 operators / 0 records · `fdic` = 528 swept but **483 `no_bank` (CORRECT — they are not
+  banks) and only 45 `edos_unreachable`**, i.e. a 45-brand bug, not a 528-brand one.
+
 - **B-130 🔴 NEW 2026-08-18, EXPANDED 2026-08-22 to THREE sources (`nrc`, `ntsb`, `fdic`) — `nrc-weekly` commits a timestamp and nothing else, every week, and
   reports `success`. The scrape returns zero records; this is NOT the B-129 matcher defect.**
   *(WS-B, S — fix or retire the NRC fetcher; do NOT prescribe the B-129 alias fix here)*
@@ -1596,6 +1670,34 @@
   snapshot it read is `sourceKind: "synthetic"` (or when the fetch soft-failed) — a soft-fail should
   keep the last-known-good augment too, not regenerate one from the fixture. Also worth a sweep:
   any other fetcher carrying `--keep-last-on-fail` that still runs its merge unconditionally.
+- **B-125 🔀 SCOPE CUT IN HALF 2026-08-31 — `faa` IS NOT A TIMEOUT BUG. IT SUCCEEDED IN-CAP AND STILL
+  RETURNED ZERO RECORDS ON ALL 528 BRANDS. MOVE IT TO B-130.**
+  `faa-weekly` run `33417825413` ran **`2026-08-31T17:07:08Z → 17:33:42Z` = 26m34s against the 30m cap
+  at `.github/workflows/faa-weekly.yml:25`** — **3m26s of margin** — and reported **`success`**, its first
+  non-`cancelled` scheduled run after four consecutive Monday kills (08-03, 08-10, 08-17, 08-24). It
+  committed `236c71e21`. 🚨 **And it carried nothing:** `public/data/faa-safety.json` reads
+  **`brand_count 528 · with_records 0 · no_records 0 · not_available 528 · error_count 0`**, and
+  `public/data/_meta/faa-merge-log.json` reads **`merged_count 0 · skipped_count 528 · orphan_count 0`**.
+  Every brand entry carries **`source_status: { ads: "endpoint_error", sdrs: "endpoint_error",
+  accidents: "no_data" }`**.
+  📉 **AND IT NEVER WORKED.** Parsed all five historical writes of `faa-safety.json` — `9ca4413a0`
+  (06-08), `5a0021c86` / `b0e2adba0` / `fd84d7e81` (07-20), `236c71e21` (08-31): **`with_records` is `0`
+  on every single one.** The earlier four read `no_records: 528` (endpoints answered, matched nothing);
+  today's reads `not_available: 528` (endpoints erroring). Two different failure modes, same zero rows.
+  🚫 **DO NOT RAISE `faa-weekly.yml:25`.** The 08-17 entry below called that "the calibrated one-line
+  fix" on the strength of a 37s margin. Today ran that experiment to completion inside the cap and it
+  produced zero data. A bigger cap buys a greener cron and not one datum.
+  ✅ **ACTION: reclassify `faa` under B-130 (dead fetch), next to `ntsb` — identical
+  `not_available: 528 / merged 0 / orphans 0` signature. Fix the fetcher's AD and SDR endpoints, and
+  reproduce off-runner first (the B-122 rule).**
+  🔴 **B-125's REMAINING SCOPE IS `fra` AND `gdelt` ONLY** — both fired a **fifth consecutive Monday**
+  on 08-31 and both still die at their exact cap inside the fetch step: `fra-weekly`
+  **`17:58:27Z → 18:28:45Z` = 30m18s vs `30`** (`fra-weekly.yml:27`); `gdelt-weekly`
+  **`18:10:47Z → 19:41:07Z` = 90m20s vs `90`** (`gdelt-weekly.yml:28`). Kill dates for both: **08-03,
+  08-10, 08-17, 08-24, 08-31.** ⚠️ **Neither has ever succeeded, so a higher cap on those is a guess.
+  Profile the fetch off-runner before changing either number — and note that `faa` is now a worked
+  example of a cap raise that would have bought nothing.**
+
 - **B-125 🔴 CONFIRMED RECURRING 2026-08-17 — third consecutive Monday, same three crons, same step.**
   The Monday weeklies ran again today and all three were killed inside the **fetch** step with every
   later step skipped: **`faa-weekly` `32018127077` — 1,815s** · **`fra-weekly` `32025687480` — 1,816s** ·
