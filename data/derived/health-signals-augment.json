@@ -10,10 +10,10 @@
     "openfda_tobacco_problem": "https://api.fda.gov/tobacco/problem.json",
     "epa_tri": "https://enviro.epa.gov/enviro/efservice/TRI_FACILITY_FULL"
   },
-  "_generated_at": "2026-07-01T13:54:38.146Z",
-  "_source_file": "data/raw/health-signals/2026-07-01.json",
+  "_generated_at": "2026-09-01T16:56:18.872Z",
+  "_source_file": "data/raw/health-signals/2026-09-01.json",
   "_stats": {
-    "companies_tagged": 135,
+    "companies_tagged": 138,
     "orphan_firms": 200,
     "top_carcinogen_emitters": [],
     "top_class1_recallers": [
@@ -63,7 +63,7 @@
     "perrigo-co": {
       "health": {
         "recallEvents5y": 81,
-        "adverseEvents5y": 304903,
+        "adverseEvents5y": 298801,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -71,7 +71,7 @@
           "drugRecalls": 81,
           "deviceRecalls": 0,
           "foodRecalls": 0,
-          "drugEvents": 304903,
+          "drugEvents": 298801,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
@@ -111,45 +111,18 @@
         ]
       }
     },
-    "deckers-outdoor": {
-      "health": {
-        "recallEvents5y": 88,
-        "adverseEvents5y": 1435028,
-        "warningLetters5y": 121,
-        "carcinogenEmissionsKg": 0,
-        "class1RecallCount": 3,
-        "breakdown": {
-          "drugRecalls": 88,
-          "deviceRecalls": 0,
-          "foodRecalls": 0,
-          "drugEvents": 1435028,
-          "deviceEvents": 0,
-          "tobaccoEvents": 0,
-          "boxedWarningLabels": 121,
-          "drugRecallsCls1": 3,
-          "deviceRecallsCls1": 0,
-          "foodRecallsCls1": 0
-        },
-        "chemicals": [],
-        "sourceUrls": [
-          "https://api.fda.gov/drug/enforcement.json",
-          "https://api.fda.gov/drug/event.json",
-          "https://api.fda.gov/drug/label.json"
-        ]
-      }
-    },
     "pfizer": {
       "health": {
-        "recallEvents5y": 40,
-        "adverseEvents5y": 470869,
+        "recallEvents5y": 37,
+        "adverseEvents5y": 476187,
         "warningLetters5y": 30,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 10,
         "breakdown": {
-          "drugRecalls": 40,
+          "drugRecalls": 37,
           "deviceRecalls": 0,
           "foodRecalls": 0,
-          "drugEvents": 470869,
+          "drugEvents": 476187,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 30,
@@ -165,10 +138,37 @@
         ]
       }
     },
+    "deckers-outdoor": {
+      "health": {
+        "recallEvents5y": 68,
+        "adverseEvents5y": 1414849,
+        "warningLetters5y": 115,
+        "carcinogenEmissionsKg": 0,
+        "class1RecallCount": 2,
+        "breakdown": {
+          "drugRecalls": 68,
+          "deviceRecalls": 0,
+          "foodRecalls": 0,
+          "drugEvents": 1414849,
+          "deviceEvents": 0,
+          "tobaccoEvents": 0,
+          "boxedWarningLabels": 115,
+          "drugRecallsCls1": 2,
+          "deviceRecallsCls1": 0,
+          "foodRecallsCls1": 0
+        },
+        "chemicals": [],
+        "sourceUrls": [
+          "https://api.fda.gov/drug/enforcement.json",
+          "https://api.fda.gov/drug/event.json",
+          "https://api.fda.gov/drug/label.json"
+        ]
+      }
+    },
     "acme-united": {
       "health": {
         "recallEvents5y": 22,
-        "adverseEvents5y": 272288,
+        "adverseEvents5y": 279852,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -176,7 +176,7 @@
           "drugRecalls": 22,
           "deviceRecalls": 0,
           "foodRecalls": 0,
-          "drugEvents": 272288,
+          "drugEvents": 279852,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
@@ -193,19 +193,19 @@
     },
     "viatris": {
       "health": {
-        "recallEvents5y": 43,
-        "adverseEvents5y": 2201390,
-        "warningLetters5y": 130,
+        "recallEvents5y": 44,
+        "adverseEvents5y": 2187552,
+        "warningLetters5y": 126,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 4,
         "breakdown": {
-          "drugRecalls": 43,
+          "drugRecalls": 44,
           "deviceRecalls": 0,
           "foodRecalls": 0,
-          "drugEvents": 2201390,
+          "drugEvents": 2187552,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
-          "boxedWarningLabels": 130,
+          "boxedWarningLabels": 126,
           "drugRecallsCls1": 4,
           "deviceRecallsCls1": 0,
           "foodRecallsCls1": 0
@@ -221,7 +221,7 @@
     "bayer": {
       "health": {
         "recallEvents5y": 22,
-        "adverseEvents5y": 338488,
+        "adverseEvents5y": 346357,
         "warningLetters5y": 18,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 9,
@@ -229,8 +229,8 @@
           "drugRecalls": 20,
           "deviceRecalls": 2,
           "foodRecalls": 0,
-          "drugEvents": 330613,
-          "deviceEvents": 7875,
+          "drugEvents": 338850,
+          "deviceEvents": 7507,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 18,
           "drugRecallsCls1": 9,
@@ -249,17 +249,17 @@
     },
     "johnson-and-johnson": {
       "health": {
-        "recallEvents5y": 49,
-        "adverseEvents5y": 255180,
+        "recallEvents5y": 50,
+        "adverseEvents5y": 260357,
         "warningLetters5y": 23,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 2,
         "breakdown": {
           "drugRecalls": 20,
-          "deviceRecalls": 29,
+          "deviceRecalls": 30,
           "foodRecalls": 0,
-          "drugEvents": 191626,
-          "deviceEvents": 63554,
+          "drugEvents": 197157,
+          "deviceEvents": 63200,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 23,
           "drugRecallsCls1": 2,
@@ -305,7 +305,7 @@
     "procter-and-gamble": {
       "health": {
         "recallEvents5y": 28,
-        "adverseEvents5y": 164543,
+        "adverseEvents5y": 168886,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 7,
@@ -313,7 +313,7 @@
           "drugRecalls": 21,
           "deviceRecalls": 0,
           "foodRecalls": 7,
-          "drugEvents": 164543,
+          "drugEvents": 168886,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
@@ -331,19 +331,19 @@
     },
     "baxter-international": {
       "health": {
-        "recallEvents5y": 237,
-        "adverseEvents5y": 834432,
-        "warningLetters5y": 29,
+        "recallEvents5y": 242,
+        "adverseEvents5y": 884131,
+        "warningLetters5y": 30,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 1,
         "breakdown": {
-          "drugRecalls": 14,
-          "deviceRecalls": 223,
+          "drugRecalls": 15,
+          "deviceRecalls": 227,
           "foodRecalls": 0,
-          "drugEvents": 766656,
-          "deviceEvents": 67776,
+          "drugEvents": 816591,
+          "deviceEvents": 67540,
           "tobaccoEvents": 0,
-          "boxedWarningLabels": 29,
+          "boxedWarningLabels": 30,
           "drugRecallsCls1": 1,
           "deviceRecallsCls1": 0,
           "foodRecallsCls1": 0
@@ -360,17 +360,17 @@
     },
     "cardinal-health": {
       "health": {
-        "recallEvents5y": 21,
-        "adverseEvents5y": 541492,
+        "recallEvents5y": 20,
+        "adverseEvents5y": 554525,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 7,
         "breakdown": {
           "drugRecalls": 14,
-          "deviceRecalls": 7,
+          "deviceRecalls": 6,
           "foodRecalls": 0,
-          "drugEvents": 539389,
-          "deviceEvents": 2103,
+          "drugEvents": 552457,
+          "deviceEvents": 2068,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
           "drugRecallsCls1": 7,
@@ -388,13 +388,13 @@
     },
     "dupont": {
       "health": {
-        "recallEvents5y": 10,
+        "recallEvents5y": 9,
         "adverseEvents5y": 0,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 1,
         "breakdown": {
-          "drugRecalls": 10,
+          "drugRecalls": 9,
           "deviceRecalls": 0,
           "foodRecalls": 0,
           "drugEvents": 0,
@@ -411,16 +411,43 @@
         ]
       }
     },
+    "amgen": {
+      "health": {
+        "recallEvents5y": 8,
+        "adverseEvents5y": 178804,
+        "warningLetters5y": 13,
+        "carcinogenEmissionsKg": 0,
+        "class1RecallCount": 0,
+        "breakdown": {
+          "drugRecalls": 8,
+          "deviceRecalls": 0,
+          "foodRecalls": 0,
+          "drugEvents": 178804,
+          "deviceEvents": 0,
+          "tobaccoEvents": 0,
+          "boxedWarningLabels": 13,
+          "drugRecallsCls1": 0,
+          "deviceRecallsCls1": 0,
+          "foodRecallsCls1": 0
+        },
+        "chemicals": [],
+        "sourceUrls": [
+          "https://api.fda.gov/drug/enforcement.json",
+          "https://api.fda.gov/drug/event.json",
+          "https://api.fda.gov/drug/label.json"
+        ]
+      }
+    },
     "fresenius-medical-care": {
       "health": {
-        "recallEvents5y": 54,
+        "recallEvents5y": 55,
         "adverseEvents5y": 0,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
         "breakdown": {
           "drugRecalls": 8,
-          "deviceRecalls": 46,
+          "deviceRecalls": 47,
           "foodRecalls": 0,
           "drugEvents": 0,
           "deviceEvents": 0,
@@ -440,7 +467,7 @@
     "gsk": {
       "health": {
         "recallEvents5y": 13,
-        "adverseEvents5y": 268053,
+        "adverseEvents5y": 242653,
         "warningLetters5y": 6,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 3,
@@ -448,7 +475,7 @@
           "drugRecalls": 13,
           "deviceRecalls": 0,
           "foodRecalls": 0,
-          "drugEvents": 268053,
+          "drugEvents": 242653,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 6,
@@ -464,10 +491,37 @@
         ]
       }
     },
+    "novartis": {
+      "health": {
+        "recallEvents5y": 8,
+        "adverseEvents5y": 391457,
+        "warningLetters5y": 28,
+        "carcinogenEmissionsKg": 0,
+        "class1RecallCount": 2,
+        "breakdown": {
+          "drugRecalls": 8,
+          "deviceRecalls": 0,
+          "foodRecalls": 0,
+          "drugEvents": 391457,
+          "deviceEvents": 0,
+          "tobaccoEvents": 0,
+          "boxedWarningLabels": 28,
+          "drugRecallsCls1": 2,
+          "deviceRecallsCls1": 0,
+          "foodRecallsCls1": 0
+        },
+        "chemicals": [],
+        "sourceUrls": [
+          "https://api.fda.gov/drug/enforcement.json",
+          "https://api.fda.gov/drug/event.json",
+          "https://api.fda.gov/drug/label.json"
+        ]
+      }
+    },
     "haleon": {
       "health": {
         "recallEvents5y": 6,
-        "adverseEvents5y": 309464,
+        "adverseEvents5y": 313059,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 3,
@@ -475,7 +529,7 @@
           "drugRecalls": 6,
           "deviceRecalls": 0,
           "foodRecalls": 0,
-          "drugEvents": 309464,
+          "drugEvents": 313059,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
@@ -487,33 +541,6 @@
         "sourceUrls": [
           "https://api.fda.gov/drug/enforcement.json",
           "https://api.fda.gov/drug/event.json"
-        ]
-      }
-    },
-    "novartis": {
-      "health": {
-        "recallEvents5y": 7,
-        "adverseEvents5y": 410901,
-        "warningLetters5y": 29,
-        "carcinogenEmissionsKg": 0,
-        "class1RecallCount": 2,
-        "breakdown": {
-          "drugRecalls": 7,
-          "deviceRecalls": 0,
-          "foodRecalls": 0,
-          "drugEvents": 410901,
-          "deviceEvents": 0,
-          "tobaccoEvents": 0,
-          "boxedWarningLabels": 29,
-          "drugRecallsCls1": 2,
-          "deviceRecallsCls1": 0,
-          "foodRecallsCls1": 0
-        },
-        "chemicals": [],
-        "sourceUrls": [
-          "https://api.fda.gov/drug/enforcement.json",
-          "https://api.fda.gov/drug/event.json",
-          "https://api.fda.gov/drug/label.json"
         ]
       }
     },
@@ -546,7 +573,7 @@
     "abbvie": {
       "health": {
         "recallEvents5y": 4,
-        "adverseEvents5y": 525830,
+        "adverseEvents5y": 536392,
         "warningLetters5y": 11,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -554,8 +581,8 @@
           "drugRecalls": 4,
           "deviceRecalls": 0,
           "foodRecalls": 0,
-          "drugEvents": 523069,
-          "deviceEvents": 2761,
+          "drugEvents": 533729,
+          "deviceEvents": 2663,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 11,
           "drugRecallsCls1": 0,
@@ -571,37 +598,10 @@
         ]
       }
     },
-    "eli-lilly": {
-      "health": {
-        "recallEvents5y": 4,
-        "adverseEvents5y": 393906,
-        "warningLetters5y": 10,
-        "carcinogenEmissionsKg": 0,
-        "class1RecallCount": 1,
-        "breakdown": {
-          "drugRecalls": 4,
-          "deviceRecalls": 0,
-          "foodRecalls": 0,
-          "drugEvents": 393906,
-          "deviceEvents": 0,
-          "tobaccoEvents": 0,
-          "boxedWarningLabels": 10,
-          "drugRecallsCls1": 1,
-          "deviceRecallsCls1": 0,
-          "foodRecallsCls1": 0
-        },
-        "chemicals": [],
-        "sourceUrls": [
-          "https://api.fda.gov/drug/enforcement.json",
-          "https://api.fda.gov/drug/event.json",
-          "https://api.fda.gov/drug/label.json"
-        ]
-      }
-    },
     "alcon": {
       "health": {
         "recallEvents5y": 71,
-        "adverseEvents5y": 49770,
+        "adverseEvents5y": 51475,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 1,
@@ -610,7 +610,7 @@
           "deviceRecalls": 68,
           "foodRecalls": 0,
           "drugEvents": 0,
-          "deviceEvents": 49770,
+          "deviceEvents": 51475,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
           "drugRecallsCls1": 1,
@@ -625,22 +625,22 @@
         ]
       }
     },
-    "amgen": {
+    "eli-lilly": {
       "health": {
         "recallEvents5y": 3,
-        "adverseEvents5y": 155799,
-        "warningLetters5y": 13,
+        "adverseEvents5y": 385354,
+        "warningLetters5y": 9,
         "carcinogenEmissionsKg": 0,
-        "class1RecallCount": 0,
+        "class1RecallCount": 1,
         "breakdown": {
           "drugRecalls": 3,
           "deviceRecalls": 0,
           "foodRecalls": 0,
-          "drugEvents": 155799,
+          "drugEvents": 385354,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
-          "boxedWarningLabels": 13,
-          "drugRecallsCls1": 0,
+          "boxedWarningLabels": 9,
+          "drugRecallsCls1": 1,
           "deviceRecallsCls1": 0,
           "foodRecallsCls1": 0
         },
@@ -680,7 +680,7 @@
     "walmart": {
       "health": {
         "recallEvents5y": 7,
-        "adverseEvents5y": 1212163,
+        "adverseEvents5y": 1252977,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 3,
@@ -688,7 +688,7 @@
           "drugRecalls": 3,
           "deviceRecalls": 0,
           "foodRecalls": 4,
-          "drugEvents": 1212163,
+          "drugEvents": 1252977,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
@@ -731,17 +731,17 @@
     },
     "ge-healthcare": {
       "health": {
-        "recallEvents5y": 332,
-        "adverseEvents5y": 11022,
+        "recallEvents5y": 321,
+        "adverseEvents5y": 11340,
         "warningLetters5y": 8,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
         "breakdown": {
           "drugRecalls": 2,
-          "deviceRecalls": 330,
+          "deviceRecalls": 319,
           "foodRecalls": 0,
           "drugEvents": 0,
-          "deviceEvents": 11022,
+          "deviceEvents": 11340,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 8,
           "drugRecallsCls1": 0,
@@ -785,17 +785,17 @@
     },
     "icu-medical": {
       "health": {
-        "recallEvents5y": 77,
-        "adverseEvents5y": 11816,
+        "recallEvents5y": 80,
+        "adverseEvents5y": 13060,
         "warningLetters5y": 4,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 3,
         "breakdown": {
           "drugRecalls": 4,
-          "deviceRecalls": 73,
+          "deviceRecalls": 76,
           "foodRecalls": 0,
           "drugEvents": 0,
-          "deviceEvents": 11816,
+          "deviceEvents": 13060,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 4,
           "drugRecallsCls1": 3,
@@ -814,18 +814,18 @@
     "merck": {
       "health": {
         "recallEvents5y": 5,
-        "adverseEvents5y": 137128,
-        "warningLetters5y": 9,
+        "adverseEvents5y": 136434,
+        "warningLetters5y": 8,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 1,
         "breakdown": {
           "drugRecalls": 5,
           "deviceRecalls": 0,
           "foodRecalls": 0,
-          "drugEvents": 137128,
+          "drugEvents": 136434,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
-          "boxedWarningLabels": 9,
+          "boxedWarningLabels": 8,
           "drugRecallsCls1": 1,
           "deviceRecallsCls1": 0,
           "foodRecallsCls1": 0
@@ -842,7 +842,7 @@
       "health": {
         "recallEvents5y": 2,
         "adverseEvents5y": 0,
-        "warningLetters5y": 7,
+        "warningLetters5y": 5,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
         "breakdown": {
@@ -852,7 +852,7 @@
           "drugEvents": 0,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
-          "boxedWarningLabels": 7,
+          "boxedWarningLabels": 5,
           "drugRecallsCls1": 0,
           "deviceRecallsCls1": 0,
           "foodRecallsCls1": 0
@@ -868,7 +868,7 @@
       "health": {
         "recallEvents5y": 2,
         "adverseEvents5y": 0,
-        "warningLetters5y": 2,
+        "warningLetters5y": 1,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
         "breakdown": {
@@ -878,7 +878,7 @@
           "drugEvents": 0,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
-          "boxedWarningLabels": 2,
+          "boxedWarningLabels": 1,
           "drugRecallsCls1": 0,
           "deviceRecallsCls1": 0,
           "foodRecallsCls1": 0
@@ -919,7 +919,7 @@
     "astrazeneca": {
       "health": {
         "recallEvents5y": 1,
-        "adverseEvents5y": 312183,
+        "adverseEvents5y": 323151,
         "warningLetters5y": 5,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -927,7 +927,7 @@
           "drugRecalls": 1,
           "deviceRecalls": 0,
           "foodRecalls": 0,
-          "drugEvents": 312183,
+          "drugEvents": 323151,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 5,
@@ -1021,7 +1021,7 @@
     "kenvue": {
       "health": {
         "recallEvents5y": 1,
-        "adverseEvents5y": 404138,
+        "adverseEvents5y": 411110,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -1029,7 +1029,7 @@
           "drugRecalls": 1,
           "deviceRecalls": 0,
           "foodRecalls": 0,
-          "drugEvents": 404138,
+          "drugEvents": 411110,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
@@ -1047,18 +1047,18 @@
     "sanofi": {
       "health": {
         "recallEvents5y": 1,
-        "adverseEvents5y": 541422,
-        "warningLetters5y": 14,
+        "adverseEvents5y": 578986,
+        "warningLetters5y": 13,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
         "breakdown": {
           "drugRecalls": 1,
           "deviceRecalls": 0,
           "foodRecalls": 0,
-          "drugEvents": 541422,
+          "drugEvents": 578986,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
-          "boxedWarningLabels": 14,
+          "boxedWarningLabels": 13,
           "drugRecallsCls1": 0,
           "deviceRecallsCls1": 0,
           "foodRecallsCls1": 0
@@ -1073,17 +1073,17 @@
     },
     "boston-scientific": {
       "health": {
-        "recallEvents5y": 291,
-        "adverseEvents5y": 312310,
+        "recallEvents5y": 308,
+        "adverseEvents5y": 316996,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
         "breakdown": {
           "drugRecalls": 0,
-          "deviceRecalls": 291,
+          "deviceRecalls": 308,
           "foodRecalls": 0,
           "drugEvents": 0,
-          "deviceEvents": 312310,
+          "deviceEvents": 316996,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
           "drugRecallsCls1": 0,
@@ -1099,17 +1099,17 @@
     },
     "medtronic": {
       "health": {
-        "recallEvents5y": 367,
-        "adverseEvents5y": 1503642,
+        "recallEvents5y": 381,
+        "adverseEvents5y": 1537357,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
         "breakdown": {
           "drugRecalls": 0,
-          "deviceRecalls": 367,
+          "deviceRecalls": 381,
           "foodRecalls": 0,
           "drugEvents": 0,
-          "deviceEvents": 1503642,
+          "deviceEvents": 1537357,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
           "drugRecallsCls1": 0,
@@ -1125,14 +1125,14 @@
     },
     "siemens-healthineers": {
       "health": {
-        "recallEvents5y": 120,
+        "recallEvents5y": 124,
         "adverseEvents5y": 0,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
         "breakdown": {
           "drugRecalls": 0,
-          "deviceRecalls": 120,
+          "deviceRecalls": 124,
           "foodRecalls": 0,
           "drugEvents": 0,
           "deviceEvents": 0,
@@ -1150,17 +1150,17 @@
     },
     "stryker": {
       "health": {
-        "recallEvents5y": 184,
-        "adverseEvents5y": 44335,
+        "recallEvents5y": 196,
+        "adverseEvents5y": 43328,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
         "breakdown": {
           "drugRecalls": 0,
-          "deviceRecalls": 184,
+          "deviceRecalls": 196,
           "foodRecalls": 0,
           "drugEvents": 0,
-          "deviceEvents": 44335,
+          "deviceEvents": 43328,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
           "drugRecallsCls1": 0,
@@ -1177,7 +1177,7 @@
     "merit-medical-systems": {
       "health": {
         "recallEvents5y": 89,
-        "adverseEvents5y": 1591,
+        "adverseEvents5y": 1755,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -1186,7 +1186,7 @@
           "deviceRecalls": 89,
           "foodRecalls": 0,
           "drugEvents": 0,
-          "deviceEvents": 1591,
+          "deviceEvents": 1755,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
           "drugRecallsCls1": 0,
@@ -1202,17 +1202,17 @@
     },
     "becton-dickinson": {
       "health": {
-        "recallEvents5y": 131,
-        "adverseEvents5y": 93239,
+        "recallEvents5y": 142,
+        "adverseEvents5y": 92560,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
         "breakdown": {
           "drugRecalls": 0,
-          "deviceRecalls": 131,
+          "deviceRecalls": 142,
           "foodRecalls": 0,
           "drugEvents": 0,
-          "deviceEvents": 93239,
+          "deviceEvents": 92560,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
           "drugRecallsCls1": 0,
@@ -1228,17 +1228,17 @@
     },
     "intuitive-surgical": {
       "health": {
-        "recallEvents5y": 64,
-        "adverseEvents5y": 111589,
+        "recallEvents5y": 65,
+        "adverseEvents5y": 118555,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
         "breakdown": {
           "drugRecalls": 0,
-          "deviceRecalls": 64,
+          "deviceRecalls": 65,
           "foodRecalls": 0,
           "drugEvents": 0,
-          "deviceEvents": 111589,
+          "deviceEvents": 118555,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
           "drugRecallsCls1": 0,
@@ -1280,7 +1280,7 @@
     "avanos-medical": {
       "health": {
         "recallEvents5y": 46,
-        "adverseEvents5y": 3266,
+        "adverseEvents5y": 3501,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -1289,7 +1289,7 @@
           "deviceRecalls": 46,
           "foodRecalls": 0,
           "drugEvents": 0,
-          "deviceEvents": 3266,
+          "deviceEvents": 3501,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
           "drugRecallsCls1": 0,
@@ -1303,10 +1303,35 @@
         ]
       }
     },
+    "encore-medical": {
+      "health": {
+        "recallEvents5y": 42,
+        "adverseEvents5y": 0,
+        "warningLetters5y": 0,
+        "carcinogenEmissionsKg": 0,
+        "class1RecallCount": 0,
+        "breakdown": {
+          "drugRecalls": 0,
+          "deviceRecalls": 42,
+          "foodRecalls": 0,
+          "drugEvents": 0,
+          "deviceEvents": 0,
+          "tobaccoEvents": 0,
+          "boxedWarningLabels": 0,
+          "drugRecallsCls1": 0,
+          "deviceRecallsCls1": 0,
+          "foodRecallsCls1": 0
+        },
+        "chemicals": [],
+        "sourceUrls": [
+          "https://api.fda.gov/device/recall.json"
+        ]
+      }
+    },
     "abbott-laboratories": {
       "health": {
         "recallEvents5y": 182,
-        "adverseEvents5y": 519654,
+        "adverseEvents5y": 594739,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 41,
@@ -1315,7 +1340,7 @@
           "deviceRecalls": 122,
           "foodRecalls": 60,
           "drugEvents": 0,
-          "deviceEvents": 519654,
+          "deviceEvents": 594739,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
           "drugRecallsCls1": 0,
@@ -1333,7 +1358,7 @@
     "edwards-lifesciences": {
       "health": {
         "recallEvents5y": 19,
-        "adverseEvents5y": 44208,
+        "adverseEvents5y": 44516,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -1342,7 +1367,7 @@
           "deviceRecalls": 19,
           "foodRecalls": 0,
           "drugEvents": 0,
-          "deviceEvents": 44208,
+          "deviceEvents": 44516,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
           "drugRecallsCls1": 0,
@@ -1384,7 +1409,7 @@
     "dexcom": {
       "health": {
         "recallEvents5y": 18,
-        "adverseEvents5y": 1482328,
+        "adverseEvents5y": 1495980,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -1393,7 +1418,7 @@
           "deviceRecalls": 18,
           "foodRecalls": 0,
           "drugEvents": 0,
-          "deviceEvents": 1482328,
+          "deviceEvents": 1495980,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
           "drugRecallsCls1": 0,
@@ -1410,7 +1435,7 @@
     "smith-and-nephew": {
       "health": {
         "recallEvents5y": 27,
-        "adverseEvents5y": 37617,
+        "adverseEvents5y": 36941,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -1419,7 +1444,7 @@
           "deviceRecalls": 27,
           "foodRecalls": 0,
           "drugEvents": 0,
-          "deviceEvents": 37617,
+          "deviceEvents": 36941,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
           "drugRecallsCls1": 0,
@@ -1436,7 +1461,7 @@
     "st-jude-medical": {
       "health": {
         "recallEvents5y": 13,
-        "adverseEvents5y": 17843,
+        "adverseEvents5y": 17475,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -1445,7 +1470,7 @@
           "deviceRecalls": 13,
           "foodRecalls": 0,
           "drugEvents": 0,
-          "deviceEvents": 17843,
+          "deviceEvents": 17475,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
           "drugRecallsCls1": 0,
@@ -1461,17 +1486,17 @@
     },
     "staar-surgical": {
       "health": {
-        "recallEvents5y": 11,
-        "adverseEvents5y": 22074,
+        "recallEvents5y": 13,
+        "adverseEvents5y": 21270,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
         "breakdown": {
           "drugRecalls": 0,
-          "deviceRecalls": 11,
+          "deviceRecalls": 13,
           "foodRecalls": 0,
           "drugEvents": 0,
-          "deviceEvents": 22074,
+          "deviceEvents": 21270,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
           "drugRecallsCls1": 0,
@@ -1488,7 +1513,7 @@
     "lemaitre-vascular": {
       "health": {
         "recallEvents5y": 10,
-        "adverseEvents5y": 1013,
+        "adverseEvents5y": 1085,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -1497,7 +1522,7 @@
           "deviceRecalls": 10,
           "foodRecalls": 0,
           "drugEvents": 0,
-          "deviceEvents": 1013,
+          "deviceEvents": 1085,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
           "drugRecallsCls1": 0,
@@ -1514,7 +1539,7 @@
     "tandem-diabetes-care": {
       "health": {
         "recallEvents5y": 11,
-        "adverseEvents5y": 974477,
+        "adverseEvents5y": 996315,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -1523,7 +1548,7 @@
           "deviceRecalls": 11,
           "foodRecalls": 0,
           "drugEvents": 0,
-          "deviceEvents": 974477,
+          "deviceEvents": 996315,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
           "drugRecallsCls1": 0,
@@ -1540,7 +1565,7 @@
     "globus-medical": {
       "health": {
         "recallEvents5y": 6,
-        "adverseEvents5y": 1846,
+        "adverseEvents5y": 1841,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -1549,7 +1574,7 @@
           "deviceRecalls": 6,
           "foodRecalls": 0,
           "drugEvents": 0,
-          "deviceEvents": 1846,
+          "deviceEvents": 1841,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
           "drugRecallsCls1": 0,
@@ -1566,7 +1591,7 @@
     "inspire-medical-systems": {
       "health": {
         "recallEvents5y": 5,
-        "adverseEvents5y": 2768,
+        "adverseEvents5y": 2866,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -1575,7 +1600,7 @@
           "deviceRecalls": 5,
           "foodRecalls": 0,
           "drugEvents": 0,
-          "deviceEvents": 2768,
+          "deviceEvents": 2866,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
           "drugRecallsCls1": 0,
@@ -1692,7 +1717,7 @@
     "beta-bionics": {
       "health": {
         "recallEvents5y": 3,
-        "adverseEvents5y": 49378,
+        "adverseEvents5y": 58275,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -1701,7 +1726,7 @@
           "deviceRecalls": 3,
           "foodRecalls": 0,
           "drugEvents": 0,
-          "deviceEvents": 49378,
+          "deviceEvents": 58275,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
           "drugRecallsCls1": 0,
@@ -1737,6 +1762,33 @@
         "chemicals": [],
         "sourceUrls": [
           "https://api.fda.gov/device/recall.json"
+        ]
+      }
+    },
+    "henry-schein": {
+      "health": {
+        "recallEvents5y": 2,
+        "adverseEvents5y": 145626,
+        "warningLetters5y": 43,
+        "carcinogenEmissionsKg": 0,
+        "class1RecallCount": 0,
+        "breakdown": {
+          "drugRecalls": 0,
+          "deviceRecalls": 2,
+          "foodRecalls": 0,
+          "drugEvents": 145626,
+          "deviceEvents": 0,
+          "tobaccoEvents": 0,
+          "boxedWarningLabels": 43,
+          "drugRecallsCls1": 0,
+          "deviceRecallsCls1": 0,
+          "foodRecallsCls1": 0
+        },
+        "chemicals": [],
+        "sourceUrls": [
+          "https://api.fda.gov/device/recall.json",
+          "https://api.fda.gov/drug/event.json",
+          "https://api.fda.gov/drug/label.json"
         ]
       }
     },
@@ -1866,6 +1918,31 @@
         ]
       }
     },
+    "icecure-medical": {
+      "health": {
+        "recallEvents5y": 1,
+        "adverseEvents5y": 0,
+        "warningLetters5y": 0,
+        "carcinogenEmissionsKg": 0,
+        "class1RecallCount": 0,
+        "breakdown": {
+          "drugRecalls": 0,
+          "deviceRecalls": 1,
+          "foodRecalls": 0,
+          "drugEvents": 0,
+          "deviceEvents": 0,
+          "tobaccoEvents": 0,
+          "boxedWarningLabels": 0,
+          "drugRecallsCls1": 0,
+          "deviceRecallsCls1": 0,
+          "foodRecallsCls1": 0
+        },
+        "chemicals": [],
+        "sourceUrls": [
+          "https://api.fda.gov/device/recall.json"
+        ]
+      }
+    },
     "life-technologies": {
       "health": {
         "recallEvents5y": 1,
@@ -1891,7 +1968,7 @@
         ]
       }
     },
-    "retractable-technologies": {
+    "r-j-reynolds-tobacco-company": {
       "health": {
         "recallEvents5y": 1,
         "adverseEvents5y": 0,
@@ -1919,7 +1996,7 @@
     "harris-teeter": {
       "health": {
         "recallEvents5y": 85,
-        "adverseEvents5y": 626763,
+        "adverseEvents5y": 642898,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 85,
@@ -1927,7 +2004,7 @@
           "drugRecalls": 0,
           "deviceRecalls": 0,
           "foodRecalls": 85,
-          "drugEvents": 626763,
+          "drugEvents": 642898,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
@@ -1944,7 +2021,7 @@
     },
     "wegmans-food-markets": {
       "health": {
-        "recallEvents5y": 28,
+        "recallEvents5y": 27,
         "adverseEvents5y": 0,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
@@ -1952,7 +2029,7 @@
         "breakdown": {
           "drugRecalls": 0,
           "deviceRecalls": 0,
-          "foodRecalls": 28,
+          "foodRecalls": 27,
           "drugEvents": 0,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
@@ -1994,7 +2071,7 @@
     },
     "danone": {
       "health": {
-        "recallEvents5y": 20,
+        "recallEvents5y": 22,
         "adverseEvents5y": 0,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
@@ -2002,7 +2079,7 @@
         "breakdown": {
           "drugRecalls": 0,
           "deviceRecalls": 0,
-          "foodRecalls": 20,
+          "foodRecalls": 22,
           "drugEvents": 0,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
@@ -2168,6 +2245,31 @@
         ]
       }
     },
+    "amy-s-kitchen": {
+      "health": {
+        "recallEvents5y": 4,
+        "adverseEvents5y": 0,
+        "warningLetters5y": 0,
+        "carcinogenEmissionsKg": 0,
+        "class1RecallCount": 0,
+        "breakdown": {
+          "drugRecalls": 0,
+          "deviceRecalls": 0,
+          "foodRecalls": 4,
+          "drugEvents": 0,
+          "deviceEvents": 0,
+          "tobaccoEvents": 0,
+          "boxedWarningLabels": 0,
+          "drugRecallsCls1": 0,
+          "deviceRecallsCls1": 0,
+          "foodRecallsCls1": 0
+        },
+        "chemicals": [],
+        "sourceUrls": [
+          "https://api.fda.gov/food/enforcement.json"
+        ]
+      }
+    },
     "dream-pops": {
       "health": {
         "recallEvents5y": 4,
@@ -2293,31 +2395,6 @@
         ]
       }
     },
-    "amy-s-kitchen": {
-      "health": {
-        "recallEvents5y": 3,
-        "adverseEvents5y": 0,
-        "warningLetters5y": 0,
-        "carcinogenEmissionsKg": 0,
-        "class1RecallCount": 0,
-        "breakdown": {
-          "drugRecalls": 0,
-          "deviceRecalls": 0,
-          "foodRecalls": 3,
-          "drugEvents": 0,
-          "deviceEvents": 0,
-          "tobaccoEvents": 0,
-          "boxedWarningLabels": 0,
-          "drugRecallsCls1": 0,
-          "deviceRecallsCls1": 0,
-          "foodRecallsCls1": 0
-        },
-        "chemicals": [],
-        "sourceUrls": [
-          "https://api.fda.gov/food/enforcement.json"
-        ]
-      }
-    },
     "b-and-g-foods": {
       "health": {
         "recallEvents5y": 3,
@@ -2390,6 +2467,33 @@
         "chemicals": [],
         "sourceUrls": [
           "https://api.fda.gov/food/enforcement.json"
+        ]
+      }
+    },
+    "general-mills": {
+      "health": {
+        "recallEvents5y": 5,
+        "adverseEvents5y": 462585,
+        "warningLetters5y": 32,
+        "carcinogenEmissionsKg": 0,
+        "class1RecallCount": 3,
+        "breakdown": {
+          "drugRecalls": 0,
+          "deviceRecalls": 0,
+          "foodRecalls": 5,
+          "drugEvents": 462585,
+          "deviceEvents": 0,
+          "tobaccoEvents": 0,
+          "boxedWarningLabels": 32,
+          "drugRecallsCls1": 0,
+          "deviceRecallsCls1": 0,
+          "foodRecallsCls1": 3
+        },
+        "chemicals": [],
+        "sourceUrls": [
+          "https://api.fda.gov/food/enforcement.json",
+          "https://api.fda.gov/drug/event.json",
+          "https://api.fda.gov/drug/label.json"
         ]
       }
     },
@@ -2471,7 +2575,7 @@
     "target": {
       "health": {
         "recallEvents5y": 3,
-        "adverseEvents5y": 906615,
+        "adverseEvents5y": 911875,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 1,
@@ -2479,7 +2583,7 @@
           "drugRecalls": 0,
           "deviceRecalls": 0,
           "foodRecalls": 3,
-          "drugEvents": 906615,
+          "drugEvents": 911875,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
@@ -2516,33 +2620,6 @@
         "chemicals": [],
         "sourceUrls": [
           "https://api.fda.gov/food/enforcement.json"
-        ]
-      }
-    },
-    "general-mills": {
-      "health": {
-        "recallEvents5y": 2,
-        "adverseEvents5y": 452741,
-        "warningLetters5y": 32,
-        "carcinogenEmissionsKg": 0,
-        "class1RecallCount": 3,
-        "breakdown": {
-          "drugRecalls": 0,
-          "deviceRecalls": 0,
-          "foodRecalls": 2,
-          "drugEvents": 452741,
-          "deviceEvents": 0,
-          "tobaccoEvents": 0,
-          "boxedWarningLabels": 32,
-          "drugRecallsCls1": 0,
-          "deviceRecallsCls1": 0,
-          "foodRecallsCls1": 3
-        },
-        "chemicals": [],
-        "sourceUrls": [
-          "https://api.fda.gov/food/enforcement.json",
-          "https://api.fda.gov/drug/event.json",
-          "https://api.fda.gov/drug/label.json"
         ]
       }
     },
@@ -2624,7 +2701,7 @@
     "whole-foods-market": {
       "health": {
         "recallEvents5y": 2,
-        "adverseEvents5y": 181521,
+        "adverseEvents5y": 185944,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 2,
@@ -2632,7 +2709,7 @@
           "drugRecalls": 0,
           "deviceRecalls": 0,
           "foodRecalls": 2,
-          "drugEvents": 181521,
+          "drugEvents": 185944,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
@@ -2700,7 +2777,7 @@
     "zimmer-biomet": {
       "health": {
         "recallEvents5y": 0,
-        "adverseEvents5y": 37488,
+        "adverseEvents5y": 37195,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -2709,32 +2786,7 @@
           "deviceRecalls": 0,
           "foodRecalls": 0,
           "drugEvents": 0,
-          "deviceEvents": 37488,
-          "tobaccoEvents": 0,
-          "boxedWarningLabels": 0,
-          "drugRecallsCls1": 0,
-          "deviceRecallsCls1": 0,
-          "foodRecallsCls1": 0
-        },
-        "chemicals": [],
-        "sourceUrls": [
-          "https://api.fda.gov/device/event.json"
-        ]
-      }
-    },
-    "procept-biorobotics": {
-      "health": {
-        "recallEvents5y": 0,
-        "adverseEvents5y": 1196,
-        "warningLetters5y": 0,
-        "carcinogenEmissionsKg": 0,
-        "class1RecallCount": 0,
-        "breakdown": {
-          "drugRecalls": 0,
-          "deviceRecalls": 0,
-          "foodRecalls": 0,
-          "drugEvents": 0,
-          "deviceEvents": 1196,
+          "deviceEvents": 37195,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
           "drugRecallsCls1": 0,
@@ -2750,7 +2802,7 @@
     "kestra-medical-technologies": {
       "health": {
         "recallEvents5y": 0,
-        "adverseEvents5y": 1112,
+        "adverseEvents5y": 1244,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -2759,7 +2811,32 @@
           "deviceRecalls": 0,
           "foodRecalls": 0,
           "drugEvents": 0,
-          "deviceEvents": 1112,
+          "deviceEvents": 1244,
+          "tobaccoEvents": 0,
+          "boxedWarningLabels": 0,
+          "drugRecallsCls1": 0,
+          "deviceRecallsCls1": 0,
+          "foodRecallsCls1": 0
+        },
+        "chemicals": [],
+        "sourceUrls": [
+          "https://api.fda.gov/device/event.json"
+        ]
+      }
+    },
+    "procept-biorobotics": {
+      "health": {
+        "recallEvents5y": 0,
+        "adverseEvents5y": 1210,
+        "warningLetters5y": 0,
+        "carcinogenEmissionsKg": 0,
+        "class1RecallCount": 0,
+        "breakdown": {
+          "drugRecalls": 0,
+          "deviceRecalls": 0,
+          "foodRecalls": 0,
+          "drugEvents": 0,
+          "deviceEvents": 1210,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
           "drugRecallsCls1": 0,
@@ -2775,18 +2852,18 @@
     "anheuser-busch": {
       "health": {
         "recallEvents5y": 0,
-        "adverseEvents5y": 1041406,
-        "warningLetters5y": 51,
+        "adverseEvents5y": 1064136,
+        "warningLetters5y": 52,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
         "breakdown": {
           "drugRecalls": 0,
           "deviceRecalls": 0,
           "foodRecalls": 0,
-          "drugEvents": 1041406,
+          "drugEvents": 1064136,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
-          "boxedWarningLabels": 51,
+          "boxedWarningLabels": 52,
           "drugRecallsCls1": 0,
           "deviceRecallsCls1": 0,
           "foodRecallsCls1": 0
@@ -2801,7 +2878,7 @@
     "cvs-pharmacy": {
       "health": {
         "recallEvents5y": 0,
-        "adverseEvents5y": 2243744,
+        "adverseEvents5y": 2268589,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -2809,7 +2886,7 @@
           "drugRecalls": 0,
           "deviceRecalls": 0,
           "foodRecalls": 0,
-          "drugEvents": 2243744,
+          "drugEvents": 2268589,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
@@ -2826,7 +2903,7 @@
     "rite-aid": {
       "health": {
         "recallEvents5y": 0,
-        "adverseEvents5y": 1106096,
+        "adverseEvents5y": 1122523,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -2834,32 +2911,7 @@
           "drugRecalls": 0,
           "deviceRecalls": 0,
           "foodRecalls": 0,
-          "drugEvents": 1106096,
-          "deviceEvents": 0,
-          "tobaccoEvents": 0,
-          "boxedWarningLabels": 0,
-          "drugRecallsCls1": 0,
-          "deviceRecallsCls1": 0,
-          "foodRecallsCls1": 0
-        },
-        "chemicals": [],
-        "sourceUrls": [
-          "https://api.fda.gov/drug/event.json"
-        ]
-      }
-    },
-    "empire": {
-      "health": {
-        "recallEvents5y": 0,
-        "adverseEvents5y": 1144046,
-        "warningLetters5y": 0,
-        "carcinogenEmissionsKg": 0,
-        "class1RecallCount": 0,
-        "breakdown": {
-          "drugRecalls": 0,
-          "deviceRecalls": 0,
-          "foodRecalls": 0,
-          "drugEvents": 1144046,
+          "drugEvents": 1122523,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
@@ -2876,7 +2928,7 @@
     "h-e-b": {
       "health": {
         "recallEvents5y": 0,
-        "adverseEvents5y": 1034997,
+        "adverseEvents5y": 1138241,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -2884,7 +2936,32 @@
           "drugRecalls": 0,
           "deviceRecalls": 0,
           "foodRecalls": 0,
-          "drugEvents": 1034997,
+          "drugEvents": 1138241,
+          "deviceEvents": 0,
+          "tobaccoEvents": 0,
+          "boxedWarningLabels": 0,
+          "drugRecallsCls1": 0,
+          "deviceRecallsCls1": 0,
+          "foodRecallsCls1": 0
+        },
+        "chemicals": [],
+        "sourceUrls": [
+          "https://api.fda.gov/drug/event.json"
+        ]
+      }
+    },
+    "empire": {
+      "health": {
+        "recallEvents5y": 0,
+        "adverseEvents5y": 1131225,
+        "warningLetters5y": 0,
+        "carcinogenEmissionsKg": 0,
+        "class1RecallCount": 0,
+        "breakdown": {
+          "drugRecalls": 0,
+          "deviceRecalls": 0,
+          "foodRecalls": 0,
+          "drugEvents": 1131225,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
@@ -2901,7 +2978,7 @@
     "schwarz-group": {
       "health": {
         "recallEvents5y": 0,
-        "adverseEvents5y": 352541,
+        "adverseEvents5y": 361468,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -2909,7 +2986,7 @@
           "drugRecalls": 0,
           "deviceRecalls": 0,
           "foodRecalls": 0,
-          "drugEvents": 352541,
+          "drugEvents": 361468,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
@@ -2926,7 +3003,7 @@
     "grocery-outlet": {
       "health": {
         "recallEvents5y": 0,
-        "adverseEvents5y": 364230,
+        "adverseEvents5y": 373729,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -2934,7 +3011,7 @@
           "drugRecalls": 0,
           "deviceRecalls": 0,
           "foodRecalls": 0,
-          "drugEvents": 364230,
+          "drugEvents": 373729,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
@@ -2951,7 +3028,7 @@
     "ingles-markets": {
       "health": {
         "recallEvents5y": 0,
-        "adverseEvents5y": 178598,
+        "adverseEvents5y": 182715,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -2959,7 +3036,7 @@
           "drugRecalls": 0,
           "deviceRecalls": 0,
           "foodRecalls": 0,
-          "drugEvents": 178598,
+          "drugEvents": 182715,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
@@ -2976,7 +3053,7 @@
     "family-dollar": {
       "health": {
         "recallEvents5y": 0,
-        "adverseEvents5y": 161348,
+        "adverseEvents5y": 300065,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -2984,7 +3061,7 @@
           "drugRecalls": 0,
           "deviceRecalls": 0,
           "foodRecalls": 0,
-          "drugEvents": 161348,
+          "drugEvents": 300065,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
@@ -3001,7 +3078,7 @@
     "cvs-health": {
       "health": {
         "recallEvents5y": 0,
-        "adverseEvents5y": 157229,
+        "adverseEvents5y": 160958,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -3009,7 +3086,7 @@
           "drugRecalls": 0,
           "deviceRecalls": 0,
           "foodRecalls": 0,
-          "drugEvents": 157229,
+          "drugEvents": 160958,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
@@ -3026,7 +3103,7 @@
     "7-eleven": {
       "health": {
         "recallEvents5y": 0,
-        "adverseEvents5y": 154379,
+        "adverseEvents5y": 157043,
         "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
@@ -3034,7 +3111,7 @@
           "drugRecalls": 0,
           "deviceRecalls": 0,
           "foodRecalls": 0,
-          "drugEvents": 154379,
+          "drugEvents": 157043,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
           "boxedWarningLabels": 0,
@@ -3048,29 +3125,28 @@
         ]
       }
     },
-    "henry-schein": {
+    "bausch-and-lomb": {
       "health": {
         "recallEvents5y": 0,
-        "adverseEvents5y": 141635,
-        "warningLetters5y": 43,
+        "adverseEvents5y": 134718,
+        "warningLetters5y": 0,
         "carcinogenEmissionsKg": 0,
         "class1RecallCount": 0,
         "breakdown": {
           "drugRecalls": 0,
           "deviceRecalls": 0,
           "foodRecalls": 0,
-          "drugEvents": 141635,
+          "drugEvents": 134718,
           "deviceEvents": 0,
           "tobaccoEvents": 0,
-          "boxedWarningLabels": 43,
+          "boxedWarningLabels": 0,
           "drugRecallsCls1": 0,
           "deviceRecallsCls1": 0,
           "foodRecallsCls1": 0
         },
         "chemicals": [],
         "sourceUrls": [
-          "https://api.fda.gov/drug/event.json",
-          "https://api.fda.gov/drug/label.json"
+          "https://api.fda.gov/drug/event.json"
         ]
       }
     },
@@ -3528,7 +3604,7 @@
   "orphans": [
     {
       "firm": "Aurobindo Pharma Limited",
-      "total": 1676112,
+      "total": 1709766,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -3536,15 +3612,7 @@
     },
     {
       "firm": "Sun Pharmaceutical Industries, Inc.",
-      "total": 1305096,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
-      ]
-    },
-    {
-      "firm": "Rising Pharma Holdings, Inc.",
-      "total": 1266553,
+      "total": 1359230,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -3552,22 +3620,15 @@
     },
     {
       "firm": "Chartwell RX, LLC",
-      "total": 1263031,
+      "total": 1286258,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
       ]
     },
     {
-      "firm": "CAREFUSION SD",
-      "total": 1248851,
-      "sourceUrls": [
-        "https://api.fda.gov/device/event.json"
-      ]
-    },
-    {
       "firm": "Hikma Pharmaceuticals USA Inc.",
-      "total": 1245703,
+      "total": 1264670,
       "sourceUrls": [
         "https://api.fda.gov/drug/enforcement.json",
         "https://api.fda.gov/drug/event.json",
@@ -3575,16 +3636,31 @@
       ]
     },
     {
-      "firm": "Camber Pharmaceuticals, Inc.",
-      "total": 1220172,
+      "firm": "Rising Pharma Holdings, Inc.",
+      "total": 1254808,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
       ]
     },
     {
+      "firm": "Camber Pharmaceuticals, Inc.",
+      "total": 1251728,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
+      ]
+    },
+    {
+      "firm": "CAREFUSION SD",
+      "total": 1238735,
+      "sourceUrls": [
+        "https://api.fda.gov/device/event.json"
+      ]
+    },
+    {
       "firm": "Zydus Lifesciences Limited",
-      "total": 1205945,
+      "total": 1232772,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -3592,7 +3668,7 @@
     },
     {
       "firm": "Amneal Pharmaceuticals LLC",
-      "total": 1129037,
+      "total": 1154011,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -3600,7 +3676,7 @@
     },
     {
       "firm": "Fresenius Kabi USA, LLC",
-      "total": 1118511,
+      "total": 1132490,
       "sourceUrls": [
         "https://api.fda.gov/drug/enforcement.json",
         "https://api.fda.gov/device/recall.json",
@@ -3610,23 +3686,7 @@
     },
     {
       "firm": "Zydus Pharmaceuticals USA Inc.",
-      "total": 1025171,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
-      ]
-    },
-    {
-      "firm": "Amneal Pharmaceuticals NY LLC",
-      "total": 996960,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
-      ]
-    },
-    {
-      "firm": "Alembic Pharmaceuticals Inc.",
-      "total": 959881,
+      "total": 1035213,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -3634,7 +3694,23 @@
     },
     {
       "firm": "NorthStar Rx LLC",
-      "total": 944044,
+      "total": 1002664,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
+      ]
+    },
+    {
+      "firm": "Amneal Pharmaceuticals NY LLC",
+      "total": 993774,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
+      ]
+    },
+    {
+      "firm": "Alembic Pharmaceuticals Inc.",
+      "total": 982737,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -3642,7 +3718,7 @@
     },
     {
       "firm": "Alembic Pharmaceuticals Limited",
-      "total": 927352,
+      "total": 950099,
       "sourceUrls": [
         "https://api.fda.gov/drug/enforcement.json",
         "https://api.fda.gov/drug/event.json",
@@ -3651,22 +3727,23 @@
     },
     {
       "firm": "INSTITUT STRAUMANN AG",
-      "total": 922609,
+      "total": 934022,
       "sourceUrls": [
         "https://api.fda.gov/device/event.json"
       ]
     },
     {
-      "firm": "Actavis Pharma, Inc.",
-      "total": 893086,
+      "firm": "Ascend Laboratories, LLC",
+      "total": 900147,
       "sourceUrls": [
+        "https://api.fda.gov/drug/enforcement.json",
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
       ]
     },
     {
       "firm": "Sandoz Inc",
-      "total": 869798,
+      "total": 894433,
       "sourceUrls": [
         "https://api.fda.gov/drug/enforcement.json",
         "https://api.fda.gov/drug/event.json",
@@ -3674,17 +3751,25 @@
       ]
     },
     {
-      "firm": "Ascend Laboratories, LLC",
-      "total": 867189,
+      "firm": "Actavis Pharma, Inc.",
+      "total": 879144,
       "sourceUrls": [
-        "https://api.fda.gov/drug/enforcement.json",
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
       ]
     },
     {
       "firm": "ANI Pharmaceuticals, Inc.",
-      "total": 829132,
+      "total": 862124,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/enforcement.json",
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
+      ]
+    },
+    {
+      "firm": "Sagent Pharmaceuticals",
+      "total": 817919,
       "sourceUrls": [
         "https://api.fda.gov/drug/enforcement.json",
         "https://api.fda.gov/drug/event.json",
@@ -3693,24 +3778,15 @@
     },
     {
       "firm": "Lupin Pharmaceuticals, Inc.",
-      "total": 807329,
+      "total": 814977,
       "sourceUrls": [
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
-      ]
-    },
-    {
-      "firm": "Sagent Pharmaceuticals",
-      "total": 797289,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/enforcement.json",
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
       ]
     },
     {
       "firm": "Apotex Corp.",
-      "total": 776176,
+      "total": 794211,
       "sourceUrls": [
         "https://api.fda.gov/drug/enforcement.json",
         "https://api.fda.gov/drug/event.json",
@@ -3719,7 +3795,7 @@
     },
     {
       "firm": "Eugia US LLC",
-      "total": 767848,
+      "total": 785761,
       "sourceUrls": [
         "https://api.fda.gov/drug/enforcement.json",
         "https://api.fda.gov/drug/event.json",
@@ -3728,7 +3804,7 @@
     },
     {
       "firm": "Accord Healthcare Inc.",
-      "total": 766251,
+      "total": 785096,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -3736,7 +3812,7 @@
     },
     {
       "firm": "Strides Pharma Science Limited",
-      "total": 754154,
+      "total": 755690,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -3744,7 +3820,7 @@
     },
     {
       "firm": "Quallent Pharmaceuticals Health LLC",
-      "total": 722872,
+      "total": 738049,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -3752,7 +3828,7 @@
     },
     {
       "firm": "Macleods Pharmaceuticals Limited",
-      "total": 687238,
+      "total": 708892,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -3760,23 +3836,7 @@
     },
     {
       "firm": "Heritage Pharmaceuticals Inc. d/b/a Avet Pharmaceuticals Inc.",
-      "total": 686308,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
-      ]
-    },
-    {
-      "firm": "Dr. Reddy's Laboratories Limited",
-      "total": 679095,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
-      ]
-    },
-    {
-      "firm": "Hospira, Inc.",
-      "total": 673583,
+      "total": 695910,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -3784,30 +3844,15 @@
     },
     {
       "firm": "Gland Pharma Limited",
-      "total": 670230,
+      "total": 688923,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
       ]
     },
     {
-      "firm": "Amneal Pharmaceuticals of New York LLC",
-      "total": 656848,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
-      ]
-    },
-    {
-      "firm": "NOBEL BIOCARE AB",
-      "total": 648765,
-      "sourceUrls": [
-        "https://api.fda.gov/device/event.json"
-      ]
-    },
-    {
-      "firm": "NorthStar RxLLC",
-      "total": 636776,
+      "firm": "Hospira, Inc.",
+      "total": 686523,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -3815,23 +3860,46 @@
     },
     {
       "firm": "Cipla USA Inc.",
-      "total": 633627,
+      "total": 655210,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
       ]
     },
     {
-      "firm": "Westminster Pharmaceuticals, LLC",
-      "total": 610906,
+      "firm": "Dr. Reddy's Laboratories Limited",
+      "total": 643127,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
+      ]
+    },
+    {
+      "firm": "NorthStar RxLLC",
+      "total": 641981,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
+      ]
+    },
+    {
+      "firm": "Amneal Pharmaceuticals of New York LLC",
+      "total": 630824,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
+      ]
+    },
+    {
+      "firm": "NOBEL BIOCARE AB",
+      "total": 621693,
+      "sourceUrls": [
+        "https://api.fda.gov/device/event.json"
       ]
     },
     {
       "firm": "Padagis Israel Pharmaceuticals Ltd",
-      "total": 598610,
+      "total": 613023,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -3839,7 +3907,7 @@
     },
     {
       "firm": "Glenmark Pharmaceuticals Inc., USA",
-      "total": 590178,
+      "total": 606106,
       "sourceUrls": [
         "https://api.fda.gov/drug/enforcement.json",
         "https://api.fda.gov/drug/event.json",
@@ -3847,15 +3915,23 @@
       ]
     },
     {
+      "firm": "Westminster Pharmaceuticals, LLC",
+      "total": 600846,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
+      ]
+    },
+    {
       "firm": "Walgreen Company",
-      "total": 581202,
+      "total": 593463,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Granules Pharmaceuticals Inc.",
-      "total": 579074,
+      "total": 590750,
       "sourceUrls": [
         "https://api.fda.gov/drug/enforcement.json",
         "https://api.fda.gov/drug/event.json",
@@ -3864,22 +3940,22 @@
     },
     {
       "firm": "PAI Holdings, LLC dba PAI Pharma",
-      "total": 574035,
+      "total": 587067,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
       ]
     },
     {
-      "firm": "Meijer Distribution Inc",
-      "total": 559539,
+      "firm": "Amazon.com Services LLC",
+      "total": 566780,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
-      "firm": "Par Health USA, LLC",
-      "total": 555595,
+      "firm": "Major Pharmaceuticals",
+      "total": 561793,
       "sourceUrls": [
         "https://api.fda.gov/drug/enforcement.json",
         "https://api.fda.gov/drug/event.json",
@@ -3887,37 +3963,38 @@
       ]
     },
     {
-      "firm": "Amazon.com Services LLC",
-      "total": 553112,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
       "firm": "Wal-Mart Stores Inc",
-      "total": 546579,
+      "total": 557329,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
-      "firm": "Major Pharmaceuticals",
-      "total": 541906,
+      "firm": "Meijer Distribution Inc",
+      "total": 556352,
       "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Par Health USA, LLC",
+      "total": 552967,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/enforcement.json",
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
       ]
     },
     {
       "firm": "Strategic Sourcing Services LLC",
-      "total": 539272,
+      "total": 552133,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "L. Perrigo Company",
-      "total": 535805,
+      "total": 545139,
       "sourceUrls": [
         "https://api.fda.gov/drug/enforcement.json",
         "https://api.fda.gov/drug/event.json"
@@ -3925,72 +4002,64 @@
     },
     {
       "firm": "Kroger Company",
-      "total": 530575,
+      "total": 542462,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Civica, Inc.",
-      "total": 529263,
+      "total": 541959,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
       ]
     },
     {
-      "firm": "Publix Super Markets Inc",
-      "total": 524158,
+      "firm": "Topco Associates LLC",
+      "total": 535130,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
-      "firm": "Topco Associates LLC",
-      "total": 522001,
+      "firm": "Publix Super Markets Inc",
+      "total": 534272,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Amerisource Bergen",
-      "total": 516299,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Upsher-Smith Laboratories, LLC",
-      "total": 514680,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
-      ]
-    },
-    {
-      "firm": "Meijer, Inc.",
-      "total": 513823,
+      "total": 528644,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Sam's West Inc",
-      "total": 511358,
+      "total": 521101,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "United Natural Foods, Inc. dba UNFI",
-      "total": 507955,
+      "total": 520816,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Meijer, Inc.",
+      "total": 516938,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Lannett Company, Inc.",
-      "total": 503569,
+      "total": 515572,
       "sourceUrls": [
         "https://api.fda.gov/drug/enforcement.json",
         "https://api.fda.gov/drug/event.json",
@@ -3999,22 +4068,7 @@
     },
     {
       "firm": "Novadoz Pharmaceuticals LLC",
-      "total": 488250,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
-      ]
-    },
-    {
-      "firm": "Rugby Laboratories",
-      "total": 481406,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Ajanta Pharma USA Inc.",
-      "total": 480731,
+      "total": 503818,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -4022,61 +4076,83 @@
     },
     {
       "firm": "HyVee Inc",
-      "total": 478248,
+      "total": 498215,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
-      "firm": "Micro Labs Limited",
-      "total": 472842,
+      "firm": "Rugby Laboratories",
+      "total": 495027,
       "sourceUrls": [
-        "https://api.fda.gov/drug/enforcement.json",
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Upsher-Smith Laboratories, LLC",
+      "total": 485604,
+      "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
       ]
     },
     {
-      "firm": "Accord Healthcare, Inc.",
-      "total": 471895,
+      "firm": "Dr. Reddy's Laboratories Inc.",
+      "total": 483765,
       "sourceUrls": [
-        "https://api.fda.gov/drug/enforcement.json",
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
       ]
     },
     {
       "firm": "Dolgencorp, LLC",
-      "total": 470496,
+      "total": 481256,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Accord Healthcare, Inc.",
+      "total": 480515,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/enforcement.json",
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
       ]
     },
     {
       "firm": "Cardinal Health 110, LLC. dba Leader",
-      "total": 470151,
+      "total": 479337,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
+      "firm": "NOBEL BIOCARE AB GÖTEBORG",
+      "total": 472992,
+      "sourceUrls": [
+        "https://api.fda.gov/device/event.json"
+      ]
+    },
+    {
       "firm": "Meitheal Pharmaceuticals Inc.",
-      "total": 459160,
+      "total": 471395,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
       ]
     },
     {
-      "firm": "P & L Development, LLC",
-      "total": 444905,
+      "firm": "Unichem Pharmaceuticals (USA), Inc.",
+      "total": 463756,
       "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
       ]
     },
     {
-      "firm": "Torrent Pharmaceuticals Limited",
-      "total": 439740,
+      "firm": "Ajanta Pharma USA Inc.",
+      "total": 457227,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -4084,87 +4160,78 @@
     },
     {
       "firm": "Allegiant Health",
-      "total": 439573,
+      "total": 450727,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Bi-Mart",
-      "total": 434552,
+      "total": 445301,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
-      "firm": "Unichem Pharmaceuticals (USA), Inc.",
-      "total": 433403,
+      "firm": "Torrent Pharmaceuticals Limited",
+      "total": 444271,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
       ]
     },
     {
-      "firm": "NOBEL BIOCARE AB GÖTEBORG",
-      "total": 432339,
-      "sourceUrls": [
-        "https://api.fda.gov/device/event.json"
-      ]
-    },
-    {
-      "firm": "WinCo Foods, LLC",
-      "total": 430405,
+      "firm": "P & L Development, LLC",
+      "total": 440129,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "CHAIN DRUG MARKETING ASSOCIATION, INC.",
-      "total": 426486,
+      "total": 436906,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "CVS WOONSOCKET PRESCRIPTION CENTER, INCORPORATED",
-      "total": 422148,
+      "total": 435563,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "DISCOUNT DRUG MART",
-      "total": 419162,
+      "total": 428530,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "VALU MERCHANDISERS COMPANY",
-      "total": 415988,
+      "total": 425939,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "BJWC",
-      "total": 414786,
+      "total": 421548,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
-      "firm": "Genentech, Inc.",
-      "total": 411281,
+      "firm": "WinCo Foods, LLC",
+      "total": 421242,
       "sourceUrls": [
-        "https://api.fda.gov/drug/enforcement.json",
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
+        "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "TIME CAP LABORATORIES, INC",
-      "total": 409854,
+      "total": 419714,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -4172,14 +4239,14 @@
     },
     {
       "firm": "Costco Wholesale Company",
-      "total": 409784,
+      "total": 416750,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Advagen Pharma Limited",
-      "total": 405165,
+      "total": 413954,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -4187,21 +4254,31 @@
     },
     {
       "firm": "Lil' Drug Store Products, Inc.",
-      "total": 401933,
+      "total": 410826,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "American Health Packaging",
+      "total": 409891,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/enforcement.json",
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
       ]
     },
     {
       "firm": "Walgreens",
-      "total": 399131,
+      "total": 404778,
       "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
       ]
     },
     {
       "firm": "MARKSANS PHARMA LIMITED",
-      "total": 392140,
+      "total": 400685,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -4209,24 +4286,15 @@
     },
     {
       "firm": "Solco Healthcare US, LLC",
-      "total": 391874,
+      "total": 400254,
       "sourceUrls": [
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
-      ]
-    },
-    {
-      "firm": "American Health Packaging",
-      "total": 390610,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/enforcement.json",
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
       ]
     },
     {
       "firm": "Method Pharmaceuticals, LLC",
-      "total": 390010,
+      "total": 398298,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -4234,56 +4302,49 @@
     },
     {
       "firm": "Dolgencorp Inc",
-      "total": 389078,
+      "total": 398112,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "STRATEGIC SOURCING SERVICES LLC",
-      "total": 382525,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "American Sales Company",
-      "total": 379986,
+      "total": 391907,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Geri-Care Pharmaceutical Corp",
-      "total": 378508,
+      "total": 387901,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Better Living Brands, LLC",
-      "total": 377284,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Aurohealth LLC",
-      "total": 374151,
+      "total": 386619,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Unifirst First Aid Corporation",
-      "total": 373350,
+      "total": 382847,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
-      "firm": "Azurity Pharmaceuticals, Inc.",
-      "total": 366833,
+      "firm": "American Sales Company",
+      "total": 381603,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Genentech, Inc.",
+      "total": 381524,
       "sourceUrls": [
         "https://api.fda.gov/drug/enforcement.json",
         "https://api.fda.gov/drug/event.json",
@@ -4291,8 +4352,49 @@
       ]
     },
     {
+      "firm": "Aurohealth LLC",
+      "total": 380532,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "XLCare Pharmaceuticals Inc.",
+      "total": 376968,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
+      ]
+    },
+    {
+      "firm": "Micro Labs Limited",
+      "total": 375961,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/enforcement.json",
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
+      ]
+    },
+    {
+      "firm": "Azurity Pharmaceuticals, Inc.",
+      "total": 372611,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/enforcement.json",
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
+      ]
+    },
+    {
+      "firm": "ScieGen Pharmaceuticals, Inc.",
+      "total": 370334,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
+      ]
+    },
+    {
       "firm": "Northstar Rx LLC",
-      "total": 362950,
+      "total": 370296,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -4300,44 +4402,35 @@
     },
     {
       "firm": "WALGREENS",
-      "total": 361655,
+      "total": 369918,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Allergan, Inc.",
-      "total": 361096,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
       ]
     },
     {
       "firm": "Better Living Brands LLC",
-      "total": 359630,
+      "total": 369077,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
-      "firm": "ScieGen Pharmaceuticals, Inc.",
-      "total": 359142,
+      "firm": "HART Health",
+      "total": 367002,
       "sourceUrls": [
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
+        "https://api.fda.gov/drug/event.json"
       ]
     },
     {
-      "firm": "HART Health",
-      "total": 357749,
+      "firm": "Chain Drug Marketing Association, Inc.",
+      "total": 364355,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "AvKARE",
-      "total": 356089,
+      "total": 362184,
       "sourceUrls": [
         "https://api.fda.gov/drug/enforcement.json",
         "https://api.fda.gov/drug/event.json",
@@ -4345,31 +4438,8 @@
       ]
     },
     {
-      "firm": "Exelan Pharmaceuticals, Inc.",
-      "total": 354550,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
-      ]
-    },
-    {
-      "firm": "Marc Glassman, Inc.",
-      "total": 352627,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "XLCare Pharmaceuticals Inc.",
-      "total": 351236,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
-      ]
-    },
-    {
       "firm": "Advagen Pharma Ltd",
-      "total": 350063,
+      "total": 358081,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -4377,78 +4447,85 @@
     },
     {
       "firm": "Advanced Rx LLC",
-      "total": 347822,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Chain Drug Marketing Association, Inc.",
-      "total": 347412,
+      "total": 357710,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Pharmadel LLC",
-      "total": 346583,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "KROGER COMPANY",
-      "total": 346147,
+      "total": 355454,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "BETTER LIVING BRANDS LLC.",
-      "total": 345862,
+      "total": 355300,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "KROGER COMPANY",
+      "total": 354293,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "FSA STORE INC.",
-      "total": 345468,
+      "total": 353688,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Reliable 1 Laboratories LLC",
-      "total": 344893,
+      "total": 353495,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "MAJOR PHARMACEUTICALS",
-      "total": 344003,
+      "total": 353368,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
       ]
     },
     {
+      "firm": "Marc Glassman, Inc.",
+      "total": 353060,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
       "firm": "BETTER LIVING BRANDS, LLC",
-      "total": 343425,
+      "total": 351473,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Dolgencorp, Inc. (DOLLAR GENERAL & REXALL)",
-      "total": 342566,
+      "total": 351075,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Pioneer Life Sciences, LLC",
+      "total": 349933,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "XLCare Pharmaceuticals, Inc.",
-      "total": 341493,
+      "total": 349580,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -4456,28 +4533,21 @@
     },
     {
       "firm": "Cintas Corporation",
-      "total": 340887,
+      "total": 349412,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Retail Business Services, LLC",
-      "total": 340679,
+      "total": 348868,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
-      "firm": "DOLGENCORP, LLC",
-      "total": 339831,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Leading Pharma, LLC",
-      "total": 339465,
+      "firm": "Padagis US LLC",
+      "total": 348414,
       "sourceUrls": [
         "https://api.fda.gov/drug/enforcement.json",
         "https://api.fda.gov/drug/event.json",
@@ -4485,8 +4555,15 @@
       ]
     },
     {
+      "firm": "DOLGENCORP, LLC",
+      "total": 348350,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
       "firm": "Prasco Laboratories",
-      "total": 338087,
+      "total": 347645,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -4494,14 +4571,78 @@
     },
     {
       "firm": "Wildman Business Group",
-      "total": 337573,
+      "total": 346081,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
-      "firm": "Padagis US LLC",
-      "total": 336705,
+      "firm": "JHK Inc dba American Safety & First Aid",
+      "total": 344922,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Allergan, Inc.",
+      "total": 344798,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
+      ]
+    },
+    {
+      "firm": "TOPCO ASSOCIATES LLC",
+      "total": 344710,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Unishield",
+      "total": 342759,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Discount Drug Mart",
+      "total": 341373,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Family Dollar Services Inc",
+      "total": 341203,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "L.N.K. International, Inc.",
+      "total": 340004,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "SAM'S WEST INC",
+      "total": 339657,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "NUVICARE LLC",
+      "total": 339456,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Bionpharma Inc.",
+      "total": 339094,
       "sourceUrls": [
         "https://api.fda.gov/drug/enforcement.json",
         "https://api.fda.gov/drug/event.json",
@@ -4509,87 +4650,22 @@
       ]
     },
     {
-      "firm": "JHK Inc dba American Safety & First Aid",
-      "total": 336515,
+      "firm": "Trifecta Pharmaceuticals USA LLC",
+      "total": 338721,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
-      "firm": "TOPCO ASSOCIATES LLC",
-      "total": 336203,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Unishield",
-      "total": 334419,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Family Dollar Services Inc",
-      "total": 333141,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Discount Drug Mart",
-      "total": 332658,
+      "firm": "PUBLIX SUPER MARKETS INC",
+      "total": 338307,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Kesin Pharma Corporation",
-      "total": 332064,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
-      ]
-    },
-    {
-      "firm": "L.N.K. International, Inc.",
-      "total": 332007,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "SAM'S WEST INC",
-      "total": 331196,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Trifecta Pharmaceuticals USA LLC",
-      "total": 330352,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Dr. Reddy's Laboratories Inc.",
-      "total": 330155,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
-      ]
-    },
-    {
-      "firm": "PUBLIX SUPER MARKETS INC",
-      "total": 329940,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Cadila Pharmaceuticals Limited",
-      "total": 329199,
+      "total": 337676,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -4597,151 +4673,14 @@
     },
     {
       "firm": "AMERIFOODS TRADING COMPANY",
-      "total": 328243,
+      "total": 336359,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
-      "firm": "MARC GLASSMAN, INC.",
-      "total": 327557,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "AAA Pharmaceutical, Inc.",
-      "total": 324973,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "RETAIL BUSINESS SERVICES , LLC.",
-      "total": 324632,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Chain Drug Marketing Association",
-      "total": 324450,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Strive Pharmaceuticals Inc.",
-      "total": 323824,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Topco Associates, LLC",
-      "total": 323301,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Exelan Pharmaceuticals Inc.",
-      "total": 321107,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
-      ]
-    },
-    {
-      "firm": "Viona Pharmaceuticals Inc",
-      "total": 320412,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
-      ]
-    },
-    {
-      "firm": "Cardinal Health 110, LLC. DBA Leader",
-      "total": 320219,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "ARMY AND AIR FORCE EXCHANGE SERVICE",
-      "total": 320080,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "CHAIN DRUG MARKETING ASSOCIATION INC",
-      "total": 318320,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "HYVEE INC",
-      "total": 317071,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Chain Drug Consortium",
-      "total": 316099,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "BJWC (Berkley & Jensen / BJ's)",
-      "total": 315699,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "WALGREEN CO.",
-      "total": 315646,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Zydus Pharmaceuticals (USA) Inc.",
-      "total": 314979,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
-      ]
-    },
-    {
-      "firm": "Meijer Distribution, Inc.",
-      "total": 312595,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Health Pharma USA LLC",
-      "total": 312305,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Ingenus Pharmaceuticals, LLC",
-      "total": 310263,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
-      ]
-    },
-    {
-      "firm": "Bionpharma Inc.",
-      "total": 309814,
+      "firm": "Leading Pharma, LLC",
+      "total": 335830,
       "sourceUrls": [
         "https://api.fda.gov/drug/enforcement.json",
         "https://api.fda.gov/drug/event.json",
@@ -4749,165 +4688,293 @@
       ]
     },
     {
+      "firm": "Cadila Pharmaceuticals Limited",
+      "total": 335825,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
+      ]
+    },
+    {
+      "firm": "MARC GLASSMAN, INC.",
+      "total": 335657,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "AAA Pharmaceutical, Inc.",
+      "total": 333287,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "RETAIL BUSINESS SERVICES , LLC.",
+      "total": 332790,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Strive Pharmaceuticals Inc.",
+      "total": 331913,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Exelan Pharmaceuticals, Inc.",
+      "total": 331827,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
+      ]
+    },
+    {
+      "firm": "Topco Associates, LLC",
+      "total": 331307,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Medline Industries, LP",
+      "total": 329885,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/enforcement.json",
+        "https://api.fda.gov/device/recall.json",
+        "https://api.fda.gov/device/event.json",
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Cardinal Health 110, LLC. DBA Leader",
+      "total": 328339,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "ARMY AND AIR FORCE EXCHANGE SERVICE",
+      "total": 328046,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Exelan Pharmaceuticals Inc.",
+      "total": 326566,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
+      ]
+    },
+    {
+      "firm": "CHAIN DRUG MARKETING ASSOCIATION INC",
+      "total": 326407,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Viona Pharmaceuticals Inc",
+      "total": 325760,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
+      ]
+    },
+    {
+      "firm": "HYVEE INC",
+      "total": 325249,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "QUAGEN PHARMACEUTICALS LLC",
+      "total": 324985,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
+      ]
+    },
+    {
+      "firm": "Chain Drug Marketing Association",
+      "total": 324857,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "BJWC (Berkley & Jensen / BJ's)",
+      "total": 323802,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "WALGREEN CO.",
+      "total": 322887,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Zydus Pharmaceuticals (USA) Inc.",
+      "total": 320901,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
+      ]
+    },
+    {
+      "firm": "Meijer Distribution, Inc.",
+      "total": 320567,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Health Pharma USA LLC",
+      "total": 320354,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "RESPIRONICS, INC.",
+      "total": 317441,
+      "sourceUrls": [
+        "https://api.fda.gov/device/event.json"
+      ]
+    },
+    {
       "firm": "Salado Sales, Inc.",
-      "total": 308969,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "COSTCO WHOLESALE CORPORATION",
-      "total": 308498,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Valu Merchandisers Company",
-      "total": 307762,
+      "total": 316841,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Magno-Humphries, Inc.",
-      "total": 307388,
+      "total": 316513,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "COSTCO WHOLESALE CORPORATION",
+      "total": 316391,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Valu Merchandisers Company",
+      "total": 315959,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Richmond Pharmaceuticals, Inc.",
-      "total": 307199,
+      "total": 315517,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
-      "firm": "AMERISOURCE BERGEN",
-      "total": 306264,
+      "firm": "Ingenus Pharmaceuticals, LLC",
+      "total": 315305,
       "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
       ]
     },
     {
       "firm": "TWIN MED LLC",
-      "total": 301535,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Pioneer Life Sciences, LLC",
-      "total": 299023,
+      "total": 309991,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Chartwell Governmental & Specialty RX, LLC.",
-      "total": 296792,
+      "total": 303053,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
       ]
     },
     {
-      "firm": "RESPIRONICS, INC.",
-      "total": 295841,
-      "sourceUrls": [
-        "https://api.fda.gov/device/event.json"
-      ]
-    },
-    {
       "firm": "New World Imports, Inc",
-      "total": 291588,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Thompson",
-      "total": 290976,
+      "total": 299873,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Geri-Care Pharmaceuticals, Corp",
-      "total": 290852,
+      "total": 299076,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Thompson",
+      "total": 298946,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Lifestar Pharma LLC",
-      "total": 289312,
+      "total": 296665,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
       ]
     },
     {
-      "firm": "NUVICARE LLC",
-      "total": 288236,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
       "firm": "FSA Store Inc.",
-      "total": 287281,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Pangea Pharmaceuticals, LLC",
-      "total": 287166,
+      "total": 295425,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Akron Pharma Inc.",
-      "total": 283791,
+      "total": 291977,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
-      "firm": "Organon LLC",
-      "total": 283152,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
-      ]
-    },
-    {
-      "firm": "Family Dollar (FAMILY WELLNESS)",
-      "total": 282712,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
-      "firm": "Gobrands, Inc",
-      "total": 282553,
+      "firm": "Pangea Pharmaceuticals, LLC",
+      "total": 290932,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "WALGREEN COMPANY",
-      "total": 281625,
+      "total": 288962,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Family Dollar (FAMILY WELLNESS)",
+      "total": 288802,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "PureTek Corporation",
-      "total": 281450,
+      "total": 286420,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -4915,21 +4982,21 @@
     },
     {
       "firm": "Advance Pharmaceutical Inc.",
-      "total": 277575,
+      "total": 285288,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Meijer",
-      "total": 277515,
+      "total": 285277,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
-      "firm": "Chartwell RX, LLC.",
-      "total": 275156,
+      "firm": "Encube Ethicals, Inc.",
+      "total": 284105,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
@@ -4937,102 +5004,116 @@
     },
     {
       "firm": "Pharbest Pharmaceuticals, Inc.",
-      "total": 273320,
+      "total": 281034,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Medtech Products Inc.",
-      "total": 272987,
+      "total": 280583,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Chartwell RX, LLC.",
+      "total": 279958,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
       ]
     },
     {
       "firm": "Kroger",
-      "total": 272118,
+      "total": 279710,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
-      "firm": "QUAGEN PHARMACEUTICALS LLC",
-      "total": 270621,
+      "firm": "Family Dollar Stores, LLC",
+      "total": 275017,
       "sourceUrls": [
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
-      ]
-    },
-    {
-      "firm": "Granules India Ltd",
-      "total": 269599,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json",
-        "https://api.fda.gov/drug/label.json"
+        "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "FOODHOLD U.S.A., LLC",
-      "total": 266882,
+      "total": 274537,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "HHH Pharmaceuticals",
-      "total": 266113,
+      "total": 273714,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "WG Critical Care, LLC",
-      "total": 265263,
+      "total": 271173,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
       ]
     },
     {
-      "firm": "Granulation Technology, Inc.",
-      "total": 263252,
-      "sourceUrls": [
-        "https://api.fda.gov/drug/event.json"
-      ]
-    },
-    {
       "firm": "Pinnacle RX LLC",
-      "total": 263217,
+      "total": 270745,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
-      "firm": "TIME CAP LABS INC",
-      "total": 262875,
+      "firm": "Hi-Tech Nutraceuticals, LLC",
+      "total": 270449,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "McKesson Medical-Surgical, Inc.",
-      "total": 262872,
+      "total": 270413,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "TIME CAP LABS INC",
+      "total": 270409,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json"
+      ]
+    },
+    {
+      "firm": "Granulation Technology, Inc.",
+      "total": 266726,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json"
       ]
     },
     {
       "firm": "Advagen Pharma Ltd.",
-      "total": 262555,
+      "total": 266533,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
       ]
     },
     {
-      "firm": "Encube Ethicals, Inc.",
-      "total": 261101,
+      "firm": "Lupin Pharmaceuticals,Inc.",
+      "total": 265228,
+      "sourceUrls": [
+        "https://api.fda.gov/drug/event.json",
+        "https://api.fda.gov/drug/label.json"
+      ]
+    },
+    {
+      "firm": "Natco Pharma USA LLC",
+      "total": 262760,
       "sourceUrls": [
         "https://api.fda.gov/drug/event.json",
         "https://api.fda.gov/drug/label.json"
