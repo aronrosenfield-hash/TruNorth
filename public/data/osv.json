@@ -1,60 +1,60 @@
 {
-  "generated_at": "2026-08-01T19:39:19.719Z",
+  "generated_at": "2026-09-01T21:08:48.582Z",
   "source": "osv.dev",
   "source_url": "https://osv.dev",
   "vendor_count": 10,
   "vendors": [
     {
       "vendor": "Mozilla",
-      "total_vulnerabilities": 1124,
-      "recent_24mo": 358,
+      "total_vulnerabilities": 1165,
+      "recent_24mo": 389,
       "critical_count": 1,
       "sample_top_vulns": [
         {
-          "id": "DEBIAN-CVE-2026-16412",
+          "id": "DEBIAN-CVE-2026-84145",
           "summary": "",
-          "published": "2026-07-21T13:17:16.630Z",
-          "modified": "2026-07-27T04:00:20.196580711Z",
+          "published": "2026-09-01T13:20:08.673Z",
+          "modified": "2026-09-01T20:06:48.615789415Z",
           "aliases": [],
-          "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-16412"
+          "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-84145"
         },
         {
-          "id": "DEBIAN-CVE-2026-16405",
+          "id": "DEBIAN-CVE-2026-84143",
           "summary": "",
-          "published": "2026-07-21T13:17:15.910Z",
-          "modified": "2026-07-27T04:00:20.960351345Z",
+          "published": "2026-09-01T13:20:08.457Z",
+          "modified": "2026-09-01T20:06:48.676676268Z",
           "aliases": [],
-          "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-16405"
+          "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-84143"
         },
         {
-          "id": "DEBIAN-CVE-2026-16396",
+          "id": "DEBIAN-CVE-2026-84131",
           "summary": "",
-          "published": "2026-07-21T13:17:14.853Z",
-          "modified": "2026-07-27T04:00:19.163725565Z",
+          "published": "2026-09-01T13:20:07.123Z",
+          "modified": "2026-09-01T20:06:48.549210212Z",
           "aliases": [],
-          "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-16396"
+          "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-84131"
         },
         {
-          "id": "DEBIAN-CVE-2026-16391",
+          "id": "DEBIAN-CVE-2026-84124",
           "summary": "",
-          "published": "2026-07-21T13:17:14.290Z",
-          "modified": "2026-07-27T04:00:17.255481220Z",
+          "published": "2026-09-01T13:20:06.290Z",
+          "modified": "2026-09-01T20:06:48.567815354Z",
           "aliases": [],
-          "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-16391"
+          "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-84124"
         },
         {
-          "id": "DEBIAN-CVE-2026-16390",
+          "id": "DEBIAN-CVE-2026-84122",
           "summary": "",
-          "published": "2026-07-21T13:17:14.160Z",
-          "modified": "2026-07-27T04:00:20.199649187Z",
+          "published": "2026-09-01T13:20:06.040Z",
+          "modified": "2026-09-01T20:06:48.609333708Z",
           "aliases": [],
-          "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-16390"
+          "url": "https://osv.dev/vulnerability/DEBIAN-CVE-2026-84122"
         }
       ],
       "package_breakdown": [
         {
           "label": "Debian:12/firefox-esr",
-          "count": 1045
+          "count": 1086
         },
         {
           "label": "Debian:12/nss",
@@ -69,16 +69,27 @@
     },
     {
       "vendor": "Google",
-      "total_vulnerabilities": 115,
-      "recent_24mo": 54,
+      "total_vulnerabilities": 116,
+      "recent_24mo": 55,
       "critical_count": 8,
       "sample_top_vulns": [
+        {
+          "id": "GO-2026-6303",
+          "summary": "Source-address critical option not enforced for non-public-key auth callbacks in golang.org/x/crypto/ssh",
+          "published": "2026-08-28T14:47:45Z",
+          "modified": "2026-08-29T10:10:52.440319762Z",
+          "aliases": [
+            "CVE-2026-56854"
+          ],
+          "url": "https://osv.dev/vulnerability/GO-2026-6303"
+        },
         {
           "id": "GO-2026-5942",
           "summary": "Parsing an invalid SVCB or HTTPS RR can panic in golang.org/x/net/dns/dnsmessage",
           "published": "2026-07-14T17:29:16Z",
-          "modified": "2026-07-22T20:59:39.532205173Z",
+          "modified": "2026-08-17T12:25:32.471119200Z",
           "aliases": [
+            "BIT-golang-2026-46600",
             "CVE-2026-46600"
           ],
           "url": "https://osv.dev/vulnerability/GO-2026-5942"
@@ -112,23 +123,12 @@
             "GO-2026-5021"
           ],
           "url": "https://osv.dev/vulnerability/GHSA-5cgq-3rg8-m6cv"
-        },
-        {
-          "id": "GHSA-rm3j-f69w-wqmq",
-          "summary": "golang.org/x/crypto vulnerable to infinite loop on large channel writes",
-          "published": "2026-06-25T22:21:40Z",
-          "modified": "2026-07-07T15:30:10.026194814Z",
-          "aliases": [
-            "CVE-2026-39834",
-            "GO-2026-5020"
-          ],
-          "url": "https://osv.dev/vulnerability/GHSA-rm3j-f69w-wqmq"
         }
       ],
       "package_breakdown": [
         {
           "label": "Go/golang.org/x/crypto",
-          "count": 55
+          "count": 56
         },
         {
           "label": "Go/golang.org/x/net",
