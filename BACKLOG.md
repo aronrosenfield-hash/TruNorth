@@ -6,7 +6,41 @@
 >
 > **🟢 LAUNCHED — Jun 23, 2026 · 2:01 AM CDT** (App Store · id `6775301458` · `https://apps.apple.com/app/id6775301458` · PH launched). **CURRENT LIVE BUILD = v1.1 Build 81** (approved 2026-07-08, released Manual **2026-07-14**) — it superseded v1.0 Build 75, which was live Jun 23 → Jul 14. **Next iOS ship = Build 82.** *(The 2026-06-11 "date is soft, get it right" call held through the Compass redesign; the experience shipped on the locked date. Go-live runbook: `docs/LAUNCH_DAY.md`.)*
 >
-> **Last updated:** 2026-09-01 01:12 CDT (daily doc-sync covering **2026-08-31**, a Monday — eight bot commits, zero human activity, zero code changes. **The headline is a cron that finally beat its timeout and still shipped nothing: `faa-weekly` succeeded for the first time in five weeks and returned zero records on all 528 brands.** The catalog held.)
+> **Last updated:** 2026-09-01 23:15 CDT (daily doc-sync covering **2026-09-01**, a Tuesday and the first of the month — **27 bot commits**, zero human activity, zero code changes. Month-start fired every monthly cron at once, which is why today reads heavier than a normal day. **The headline is a cron that succeeded for the first time ever and shipped a completely empty production data file — and the workflow file itself explains why it can never do otherwise.** The catalog held.)
+>
+> 🆕🔴🟢🕳️ **BIGGEST FINDING — `openstates-monthly` REPORTED SUCCESS, SHIPPED A BRAND-NEW PRODUCTION DATA FILE, AND THAT FILE IS 100% EMPTY. THE WORKFLOW'S OWN COMMENT EXPLAINS WHY IT CAN NEVER WORK.** Run `2026-09-01T20:21:35Z` → **`success`**, its **first non-`cancelled` scheduled run ever** (prior history: 4 `cancelled`, 0 `success`). Commit `52eadf85e` **ADDED** two files that had never existed: `public/data/openstates-bills.json` and `public/data/_meta/openstates-merge-log.json`. 🚨 **The data file reads `brand_count 528 · with_bills_count 0 · no_bills_count 0 · rate_limited_count 348 · error_count 180` — and 348 + 180 = 528, so EVERY BRAND FAILED.** Merge log: **`merged_count 0 · skipped_count 528 · orphan_count 0`.** 🔑 **The cause is written in `.github/workflows/openstates-monthly.yml` lines 7–9: "Free tier is ~500 req/day, which is roughly one full sweep of our 528 brands." 528 > 500. The design cannot finish a sweep inside its own quota — this is not an outage to wait out.** 🚨 **AND BECAUSE IT IS GREEN, IT NOW CLEARS ITSELF OFF #155 PERMANENTLY.** It joins the B-126 soft-fail class and is worse in one way: B-126 at least produced rows. This produces nothing, on a monthly cadence nobody watches. ➕ **Same file carries the B-124 defect verbatim — `git pull --rebase` in a 3-attempt loop with no `rebase --abort`.** 🧭 **MVP fix: fail the job when `rate_limited_count + error_count > 5%` of `brand_count`. Page the sweep across days second.** 🚫 **DO NOT read `openstates-bills.json` as evidence of anything — it is a 528-row record of failures.** *(New: **B-145**.)*
+>
+> 🆕🔴📅 **SECOND FINDING — MONTH-START EXPOSED THREE BROKEN MONTHLY CRONS AT ONCE. TWO HAVE NEVER SUCCEEDED; ONE IS A REAL REGRESSION.** These fire on day 1, so a daily sync sees them **once every 30 days** — 09-01 is the first look since 08-01. ① **`usda-aphis-monthly` — 0-for-3 lifetime** (07-02, 08-02, 09-01): **HTTP 404 on BOTH APHIS listing URLs**; the index was restructured. ② **`dol-ofccp-monthly` — 0-for-3 lifetime** (07-01, 08-01, 09-01): **HTTP 403 on listing pages 0/1/2**, DOL's Akamai edge. ③ **`stanford-scac-monthly` — REGRESSION:** `success 07-02`, then `failure 08-01`, `failure 09-01`, **HTTP 403 for `securities.stanford.edu/filings.html`** at `scripts/stanford-scac-fetch.mjs:121`. ✅ **ALL THREE REPRODUCE OFF-RUNNER — probed from your Mac today: stanford 403, dol 403 (with and without a browser UA), aphis 404/000.** 🔑 **So none is the `ofac` CI-only-403 "wait one cycle" pattern; all three match B-122 (BIS) — a real upstream change.** 🚨 **THE TRAP: both the APHIS and OFCCP fetchers print *"The github-actions runner usually succeeds where local dev does not."* NEITHER HAS EVER SUCCEEDED ON THE RUNNER. That line will send the next session hunting a CI-vs-local difference that does not exist — delete it in the fix.** ✅ **"Crons that have never succeeded" moves from SIX to EIGHT.** 🧭 **`stanford-scac` is the cheapest of the three — it is the second cron with a known-good run to diff (the other is `fcc-weekly`).** *(New: **B-146**.)*
+>
+> 🆕🕳️📊 **THIRD FINDING — `just-capital-annual` LANDED ITS FIRST-EVER REAL DATASET, AND IT IS ENTIRELY DARK.** `public/data/just-capital.json` was **ADDED** today: `ranking_year 2025 · brand_count 528 · matched_count 67 · no_match_count 461`, **merged 64**, 3 orphans. **63 company files now carry a `justCapital` key — and `grep` across `rebake-scoring.mjs`, `index-entry.mjs` and `App.jsx` returns ZERO references.** 📉 **Dark-data inventory is now `finra` 92 · `cfpb` 80 · `enriched.fdic` 38 · `phmsa` 30 · `occ` 14 · 🆕 `justCapital` 63 = 317 placements across 6 keys.** ⚠️ **AND IT SURFACED A SAFE ORPHAN CLASS B-129 SHOULD SPLIT OUT:** its orphans are `procter-gamble`, `johnson-johnson`, `metlife` — the first two resolve to **`procter-and-gamble.json`** and **`johnson-and-johnson.json`**, pure `-and-` punctuation normalization, unambiguous and the same company; the third is the known **subsidiary trap**. 🔑 **A `-and-`/`&` normalization miss is safe to fix in the NORMALIZER. A name-proximity match to a different legal entity (`metlife`, `block`, `pandora`) is a B-134-class fabrication. Never the fuzzy threshold.** *(New: **B-147**.)*
+>
+> 📊✅ **CATALOG HELD — DAY 2 AT THE SAME MD5.** `curl https://www.trunorthapp.com/data/index.json` → HTTP 200, **12,830 tracked / 2,622 graded — A 63 · B 738 · C 1,031 · D 535 · F 255**, 10,208 "?", md5 **`1527f2e9ec86cd9555075f0162978532`**, 9,989,657 B — byte-identical to 08-31. 🔑 **Quote 2,622.** ⚠️ **Count `grade`; `overall` is `null` on all 12,830 index entries.**
+>
+> ✅📐 **27 BOT COMMITS, 308 COMPANY FILES REWRITTEN, AND MEASURED PER-BRAND: ZERO GRADE INPUTS MOVED.** Parsed every changed file object-by-object across `5b364a873..HEAD`: **`sc` 0 · `excl` 0 · `flags` 0 · stored `grade` 0 · `overall` 0 · `csc` 0 · `realCats` 0.** What actually moved: **`dataLastUpdated` 308 · `enriched` 294 · `finra` 92 · `hhsOig` 55 · `news` 15 · `news_items` 15 · `occ` 14 · `recent_events` 12 · `dea` 7 · `accc` 6 · `pcaob` 5 · `gsaSam` 1** — display or dark, every one. **Zero paths under `src/`, `scripts/`, `ios/`, `android/`, `.github/` or `package.json`.**
+>
+> ✅🎯 **B-124 — TUESDAY LANDED. CONTROL ARM, NOT A FIX.** `data(news)` `89d857085` committed **09-01 02:58 CDT carrying digest date `2026-09-01`**. **Day-of-week record: Mon–Sat 43-for-43, Sunday 0-for-5.** ✅ `grep -rn "rebase --abort" .github/workflows/` **still returns nothing** — and B-145 just added a seventh workflow with the same retry loop. 🚫 **A weekday landing is not evidence. Land the one line.**
+>
+> 🕳️🚨 **B-144 FIRED AGAIN AND HARDER — TODAY THE WATCHDOG HID TWO FAILURES *AND* LIBELLED A SUCCESS.** `cron-health-daily` snapshotted **`2026-09-01T17:19:31Z`**. After that instant: **`openstates-monthly` SUCCEEDED at 20:21Z** (row still shows its `2026-08-01 cancelled`), **`stanford-scac-monthly` FAILED at 22:50Z** (row shows `2026-08-01`), **`usda-aphis-monthly` FAILED at 09-02T01:22Z** (row shows `2026-08-02`). 🔑 **So the race is not only "misses late failures" — it also keeps reporting a STALE FAILURE for a cron that has since gone green. Widen B-144's statement.** 📊 **#155 is now 31 rows (was 33).** **Both phantoms confirmed still present: `canada-comp-monthly` (no `.yml` on disk — verified) and `followthemoney-state-monthly` (`disabled_manually` — still the only non-active workflow of 169).** **`bcorp-quarterly` still erased (B-142).** 🚨 **The count still carries no signal — diff the roster, name the rows.**
+>
+> 🟡📉 **B-128 — SINGLE-LINE GAINED 35 ON A MONTH-START DAY. 416 single-line / 12,414 pretty** (was 381 / 12,449). The movers are the monthly single-line writers that only fire on day 1. 🔑 **Consistent with the retired-oscillation position: the split tracks WHICH writer ran, not the day of week.**
+>
+> ⏱️🧭 **SCHEDULER DELAY SHRANK TODAY — FIRST DOWN-DAY IN SIX, AND IT CORRECTS YESTERDAY'S "PLATEAUED" CALL.** Measured against each cron's own expression: **`news-rss-nightly` (`48 4`) ran 09:36Z = +4h48m · `cron-health-daily` (`12 13`) ran 17:19Z = +4h07m · `ofac-sdn-daily` (`34 17`) ran 20:07Z = +2h33m · `trending-refresh` (`3 22`) ran 23:58Z = +1h55m.** Band **+1h55m → +4h48m**, against yesterday's **+3h10m → +6h21m**. ⚠️ **One down-day is a measurement, not a trend — do not forecast a recovery from it.** ✅ Still a GitHub-side queue, still no workflow file touched since 08-01, still not a reason to touch a cron.
+>
+> ⚖️📉 **B-131 — SEVENTH FILE, SAME ONE EVENT.** `d34be5dcc` (`generatedAt 2026-09-01T23:58:56.255Z`) — still **one brand, `mondelez-international`, `views: 1, uniques: 1`.** 🔑 **`lookbackDays: 7`; the single ~08-26 `company_view` has now been counted seven times.** ⏰ **The age-out is due within about a day. Zero brands is the EXPECTED result and is not a regression. A DIFFERENT slug before then is a genuine second event.**
+>
+> 🕳️ **B-130 RE-CONFIRMED ON BOTH CRONS THAT RAN.** `nrc-events.json`: **`operator_count 5 · with_records_count 0`**, merge log `merged 0 / skipped 5 / orphan 0`. `fdic-enforcement.json`: **`brand_count 528 · with_enforcement_count 0 · no_bank_count 483 · edos_unreachable_count 45 · bankfind_error_count 0`** — the 45-brand bug is exactly as recorded, unchanged.
+>
+> 🧾 **B-134 RE-WROTE ITS FABRICATIONS TODAY, AND ONE MEMORY DETAIL IS CORRECTED.** `finra-weekly` merged **93**; `nike.json` still carries **`firmId 28519 / "FIRST TRUST PORTFOLIOS L.P."`**. **92 company files hold a `finra` key; 40 of them do not contain the slug's first token anywhere in the object.** ✅ **CORRECTION: `routed_via` lives in the MERGE LOG, not the company file** (`grep -rl routed_via public/data/companies/` = **0**). Today's routing: **`direct` 59 · `parent` 28 · `alias` 6** — so **34 brands inherit, not 25.** 🚨 **Fix before V-4 touches `finra`.**
+>
+> 📊 **B-129 — SOURCES THAT DID WORK.** `hhs-oig` merged **55**/471/2 · `occ` **14**/511/3 · `dea` **7**/521/0 · `accc` **7**/521/1 · `pcaob` **5**/522/1 · `gsa-sam` **1**/527/0. ✅ **Every orphan slug checked against `public/data/companies/` — not one has a file at its exact slug, so all are genuine orphans by the corrected definition.** ⚠️ **The recurring trap slugs are unchanged: `metlife`, `block`, `pandora`, `us-bank`, `ram`.**
+>
+> 📌 **EVERYTHING ELSE RE-VERIFIED.** **B-133 exactly 43, flat** — `typeof …totalGrants === "number"`; the `charity_irs990` key is present on **11,202** files (confirmed both by `grep -rl` and by `"charity_irs990" in d`), which is why key-presence is the wrong test. **B-101 FLAT at 42 open data PRs**; oldest still **#116, now 64 days**; **#134 and #165 remain the two must-not-merge landmines.** **B-122, B-123, B-125, B-137, B-140, B-141, B-142, B-143 untouched.** **Zero human activity — `find . -newermt "2026-09-01 01:20"` outside `public/data/`, `data/`, `.git/`, `node_modules/` and `dist/` returns nothing.** 🟢 **v1.1 Build 81 remains the LIVE App Store build. Next iOS ship = Build 82 — it carries B-131 + B-136.** ⚠️ **16 untracked `docs/` files, unchanged, day 30.**
+>
+> 🔴 **WHAT YOU STILL OWE.** ① **`RESEND_API_KEY`** — five missed Sundays; DNS/DKIM done 08-27; create the key, add the secret, dry-run `weekly-digest.yml`. ② **the "200+ public sources" framing call** — documented roster **118**, in-app Sources screen **104**; recommendation on the table is "100+, derived at build time." ③ **the three still-open growth decisions from 08-26** — the price overrule, the CDP licence, the public-face call. ④ **B-143 — the quizzed/un-quizzed grade divergence. Decide before V-4 widens it.** 🧭 **ENGINEERING ORDER, UNCHANGED AT THE TOP: ① B-124 `git rebase --abort` — one line, five confirmed Sundays, a destroyed commit SHA on the record, and now a seventh workflow carrying the same loop. ② Ship Build 82 — B-136 is a live revenue leak. ③ B-134 FINRA matcher before V-4 (93 merges / 92 files / 34 inherited). Then B-145's 5% guard (cheap, stops the next invisible empty artifact), B-128, V-4 led by `cfpb`/`secTax`, B-129 + B-146, B-130, and the B-141/B-142/B-144 rewrite of `cron-health-daily.yml`.**
+>
+> ---
+>
+> **[09-01 01:12 sync]**
 >
 > 🆕🔴⏱️🕳️ **BIGGEST FINDING — `faa-weekly` SUCCEEDED, IN-CAP, AND DELIVERED ABSOLUTELY NOTHING. B-125's FAA RECOMMENDATION IS ANSWERED, AND IT WAS THE WRONG LEVER.** Run `33417825413` ran **`2026-08-31T17:07:08Z → 17:33:42Z` = 26m34s against a 30m cap (3m26s of margin)** and reported **`success`** — its first non-`cancelled` scheduled run after **four consecutive Monday timeout kills (08-03, 08-10, 08-17, 08-24)**. It committed `236c71e21`. 🚨 **And `public/data/faa-safety.json` came back `brand_count 528 · with_records 0 · no_records 0 · not_available 528 · error_count 0`, with `faa-merge-log.json` reading `merged_count 0 · skipped_count 528 · orphan_count 0`.** 🔑 **The per-brand `source_status` names the cause outright: `{ ads: "endpoint_error", sdrs: "endpoint_error", accidents: "no_data" }` on every one of the 528.** 📉 **AND IT HAS NEVER BEEN OTHERWISE — parsed all five historical writes of `faa-safety.json`: 2026-06-08 and the three 2026-07-20 writes all read `with_records: 0` too (528 `no_records`, endpoints answering but matching nothing). `with_records` has been 0 on every write since the file was created.** 🚫 **DO NOT RAISE `faa-weekly.yml:25`. Today is the experiment that recommendation was asking for, and it ran to completion inside the cap and produced zero rows. A bigger timeout buys a greener cron and not one datum.** ✅ **RECLASSIFY: `faa` moves OUT of B-125 (timeout) and INTO B-130 (dead fetch), where it now sits next to `ntsb` with the identical `not_available: 528 / merged 0 / orphans 0` signature. B-125's remaining scope is `fra` and `gdelt` only — and both of those have never succeeded, so a timeout bump there is still a guess.**
 >
@@ -1211,6 +1245,83 @@
   ✅ **LIVE** — API routes + sitemap, deployed on push; no Build 82 dependency.
   *(WS-A, S — done)*
 
+- **B-145 🆕 NEW 2026-09-01 — `openstates-monthly` reported SUCCESS, committed a brand-new production
+  data file, and that file is 100% EMPTY. The workflow's own comment documents why it can never work.**
+  *(WS-B, M — new class: a green cron that ships a zero-record artifact and then clears itself off the
+  watchdog)*
+  **THE EVIDENCE.** `openstates-monthly` ran `2026-09-01T20:21:35Z` → **`success`** — its **first
+  non-`cancelled` scheduled run ever** (prior history: 4 `cancelled`, 0 `success`). It committed
+  `52eadf85e`, which **ADDED** two files that had never existed: `public/data/openstates-bills.json`
+  and `public/data/_meta/openstates-merge-log.json`. The data file reads
+  **`brand_count 528 · with_bills_count 0 · no_bills_count 0 · rate_limited_count 348 ·
+  error_count 180`** — and `348 + 180 = 528`, so **every single brand failed**. The merge log agrees:
+  **`merged_count 0 · skipped_count 528 · orphan_count 0 · error_count 0`.**
+  **THE ROOT CAUSE IS WRITTEN IN THE WORKFLOW FILE.** `.github/workflows/openstates-monthly.yml`
+  lines 7–9 say it plainly: *"Free tier is ~500 req/day, which is roughly one full sweep of our 528
+  brands, hence MONTHLY not weekly."* **528 > 500.** The design cannot complete a sweep inside the
+  quota, and the 348 rate-limited brands are exactly that ceiling being hit. This is not an outage to
+  wait out.
+  **WHY IT MATTERS MORE THAN THE ZERO ROWS.** Because the run is **green**, `openstates-monthly` now
+  **clears itself off issue #155 permanently**. It joins the B-126 class (a soft-fail that looks
+  healthy) but is worse in one respect: B-126 at least produced rows, albeit fabricated ones. This
+  produces nothing and reports fine, forever, on a monthly cadence nobody watches.
+  ➕ Same file also carries the **B-124 defect verbatim** — `git pull --rebase origin main` inside a
+  3-attempt retry loop with **no `git rebase --abort`**. One more file for that one-line sweep.
+  **FIX — pick one, do not leave it green:** ① page the sweep across days (~170 brands/run, 4 runs) and
+  merge the partials, or ② fail the job when `rate_limited_count + error_count > 0.05 * brand_count`,
+  so an empty sweep is red instead of green. **② is the MVP and should land regardless of ①** — the
+  guard is what stops the next empty artifact from being invisible.
+  🚨 **DO NOT read `openstates-bills.json` as evidence of anything. It is a 528-row record of failures.**
+
+- **B-146 🆕 NEW 2026-09-01 — month-start exposed THREE broken monthly crons at once: two that have
+  NEVER succeeded, one real regression — and both fetchers print a FALSE diagnostic that will
+  mislead the next session.** *(WS-B, M)*
+  **WHY IT SURFACED TODAY AND NOT BEFORE.** These fire on day 1 of the month. A daily doc-sync sees them
+  **once every 30 days**, so 09-01 is the first observation since 08-01. Expect the same on 10-01.
+  **THE THREE, MEASURED FROM FULL RUN HISTORY:**
+  ① **`usda-aphis-monthly` — 0-for-3 lifetime** (`2026-07-02`, `2026-08-02`, `2026-09-01`, all
+  `failure`). Cause: **HTTP 404 on BOTH listing URLs** —
+  `…/aphis/ourfocus/animalwelfare/news-info/enforcement` and `…/sa_enforcement_archive`. The APHIS index
+  was restructured; the fetcher's URLs are dead.
+  ② **`dol-ofccp-monthly` — 0-for-3 lifetime** (`2026-07-01`, `2026-08-01`, `2026-09-01`). Cause:
+  **HTTP 403 on listing pages 0, 1 and 2** — the DOL/Akamai edge blocks it.
+  ③ **`stanford-scac-monthly` — a REGRESSION, not a zombie.** `success 2026-07-02`, then
+  `failure 2026-08-01`, `failure 2026-09-01`. Cause: **HTTP 403 for
+  `https://securities.stanford.edu/filings.html`** at `scripts/stanford-scac-fetch.mjs:121`. **This is
+  the second cron with a known-good run to diff** (the other is `fcc-weekly`), which makes it the
+  cheapest of the three to fix.
+  **ALL THREE REPRODUCE OFF-RUNNER — PROBED FROM ARON'S MAC, 09-01:** stanford **403**, dol **403**
+  (identical with and without a browser UA), aphis **404/000**. 🔑 **So none of these is the
+  `ofac-403-only-on-ci-runner` "wait one cycle" pattern. They match B-122 (BIS): a real upstream
+  change. Do not wait them out.**
+  🚨 **THE TRAP — TWO FETCHERS LIE IN THEIR OWN ERROR OUTPUT.** Both `usda-aphis` and `dol-ofccp` print
+  *"The github-actions runner usually succeeds where local dev does not."* **Neither has ever succeeded
+  on the runner.** That line will send the next session hunting a CI-vs-local difference that does not
+  exist. **Delete it from both scripts as part of the fix.**
+  ✅ **This moves "crons that have never succeeded" from SIX to EIGHT** — joining `tosdr`,
+  `au-fair-work`, `fra`, `gdelt`, `fsis-weekly`, `fsis-dw-weekly`.
+
+- **B-147 🆕 NEW 2026-09-01 — `just-capital-annual` landed its first-ever real dataset and it is
+  entirely DARK: 63 brands carry it, ZERO code reads it.** *(WS-B, S — V-4 candidate)*
+  **THE GOOD NEWS FIRST.** `just-capital-annual` ran today and **ADDED** `public/data/just-capital.json`
+  (first write ever). Unlike openstates it returned **real rows**: `ranking_year 2025 · brand_count 528 ·
+  matched_count 67 · no_match_count 461`, merged **64** with **3 orphans**. **63 company files now carry
+  a `justCapital` key.**
+  **THE PROBLEM.** `grep` across `scripts/rebake-scoring.mjs`, `scripts/index-entry.mjs` and
+  `src/App.jsx` returns **zero references** to `justCapital` / `just_capital` / `just-capital`. It is a
+  sixth dark key. **Running dark-data inventory: `finra` 92 · `cfpb` 80 · `enriched.fdic` 38 · `phmsa`
+  30 · `occ` 14 · 🆕 `justCapital` 63 = 317 placements across 6 keys.**
+  🧭 **V-4 note:** a curated Russell-1000 ranking is a *ranking*, not a record of conduct. Wiring it to a
+  grade is a scoring-semantics decision, not a plumbing job — it belongs behind `cfpb`/`secTax` in the
+  V-4 order, and behind Aron's B-143 call.
+  ⚠️ **AND IT SURFACED A SAFE ORPHAN CLASS THAT B-129 SHOULD SPLIT OUT.** Its 3 orphans are
+  `procter-gamble`, `johnson-johnson`, `metlife`. The first two resolve to **`procter-and-gamble.json`**
+  and **`johnson-and-johnson.json`** — pure `-and-` punctuation normalization, **unambiguous, same
+  company**. The third is the known `metlife` → `metlife-pet-insurance` **subsidiary trap**.
+  🔑 **B-129 currently treats all orphans alike. It should not: a `-and-`/`&` normalization miss is
+  safe to alias mechanically; a name-proximity match to a different legal entity (`metlife`, `block`,
+  `pandora`) manufactures a B-134-class fabrication. Fix the normalizer, never the fuzzy threshold.**
+
 - **B-143 🆕 NEW 2026-08-31 — the quizzed and un-quizzed grade paths have visibly DIVERGED. The
   2026-08-30 rebake moved 43 brands on the un-quizzed path and ZERO on the quizzed one.**
   *(P2 — NOT a fix I should make unilaterally; this is a product decision. Needs Aron's call before
@@ -1263,6 +1374,15 @@
   🚨 **STANDING RULE, REINFORCED: the row count carries no signal. 36 → 33 today was one legitimate
   clear (`faa-weekly` succeeded), one new blind spot (`gdelt-weekly`), and one unidentified — not three
   repairs. Diff the roster and name the rows.**
+  🆕 **2026-09-01 — WIDEN THE STATEMENT. The race does not only HIDE late failures; it also keeps
+  reporting a STALE FAILURE for a cron that has since gone green.** Today's snapshot was
+  `2026-09-01T17:19:31Z`. After that instant: **`openstates-monthly` SUCCEEDED at 20:21Z** and #155
+  still shows its `2026-08-01 cancelled`; **`stanford-scac-monthly` FAILED at 22:50Z** (row shows the
+  08-01 run); **`usda-aphis-monthly` FAILED at 09-02T01:22Z** (row shows 08-02). **Three of today's
+  outcomes are misreported in one snapshot — one false-negative direction and one false-positive.**
+  📊 #155 today: **31 rows** (was 33). Both phantoms re-verified present (`canada-comp-monthly` has no
+  `.yml`; `followthemoney-state-monthly` is still the only non-`active` workflow of 169);
+  `bcorp-quarterly` still erased.
 
 - **B-142 🆕 NEW 2026-08-28 — the cron watchdog SILENTLY DELETES broken crons from its own report
   when their last run ages out of an 800-run window. #155 fell 37 → 36 and nothing was fixed.**
