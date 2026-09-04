@@ -6,7 +6,41 @@
 >
 > **🟢 LAUNCHED — Jun 23, 2026 · 2:01 AM CDT** (App Store · id `6775301458` · `https://apps.apple.com/app/id6775301458` · PH launched). **CURRENT LIVE BUILD = v1.1 Build 81** (approved 2026-07-08, released Manual **2026-07-14**) — it superseded v1.0 Build 75, which was live Jun 23 → Jul 14. **Next iOS ship = Build 82.** *(The 2026-06-11 "date is soft, get it right" call held through the Compass redesign; the experience shipped on the locked date. Go-live runbook: `docs/LAUNCH_DAY.md`.)*
 >
-> **Last updated:** 2026-09-03 01:15 CDT (daily doc-sync covering **2026-09-02**, a Wednesday — **8 bot commits**, zero human activity, zero code changes. **The headline is the first full key-by-key census of the company files: the standing dark-data inventory was never a census, it undercounts by two orders of magnitude, and the grep path this project has cited for weeks does not exist.** Three more crons join the never-succeeded list, B-131's event aged out, and the catalog held a third day.)
+> **Last updated:** 2026-09-04 01:10 CDT (daily doc-sync covering **2026-09-03**, a Thursday — **4 bot commits**, zero human activity, zero code changes, and **zero cron failures — the first completely clean cron day on record.** **The headline is that the CI gate has not executed in 8 days and has never once run against a data change.** The catalog held a fourth day, B-149's frozen surface got a second confirmation, and a long-standing note about the index is corrected.)
+>
+> 🆕🔴🧪 **BIGGEST FINDING — B-82's CI GATE HAS RUN ZERO TIMES SINCE 2026-08-26, AND IT HAS NEVER ONCE GATED A DATA-CRON CHANGE. BOTH OF ITS TRIGGERS ARE DEAD, FOR TWO DIFFERENT REASONS.** `ci.yml` fires on `pull_request:` and `push: branches:[main]`. **Neither path has executed a job in eight days.** ① **THE PUSH PATH IS SKIPPED BY DESIGN — every one of the last 40 commits on `main` carries `[skip ci]`** (`git log -40 --pretty=%s | grep -c 'skip ci'` → **40 of 40**). The workflow file says so itself at `ci.yml:42`: *"Data crons commit with [skip ci]; GitHub already honors that for pushes."* **The last `push` CI run was `2026-08-26T21:10:05Z`; the last non-`[skip ci]` commit on main was `a1efa81ad` (2026-08-26).** ② **THE PULL_REQUEST PATH IS HELD UNRUN BY GITHUB — the last 16 `pull_request` CI runs are ALL `action_required`, going back to 2026-08-05.** Today's (`33753810943`, branch `data/state-regulators-r3`) has **`status: completed`, `conclusion: action_required`, `triggering_actor: github-actions[bot]` — and `/jobs` returns an EMPTY array. Not one job was ever dispatched.** These are in-repo branches, not forks (`git ls-remote origin refs/heads/data/state-regulators-r3` resolves). GitHub holds bot-triggered PR workflow runs for manual approval, so the run is created, stamped, and never runs. 📉 **Before 08-05 they were not green either — the 4 prior `pull_request` runs (08-01 → 08-03) are `failure`.** Lifetime tally over the last 100 CI runs: **`pull_request` → 16 `action_required` · 4 `failure` · 1 `success`** (and that one success was a human branch, `docs/geo-audit-2026-08-01`); **`push` → 30 `success` · 1 `failure`, none since 08-26.** 🚨 **CONSEQUENCE: the 28 frozen-threshold scoring tests, the `vite build` App.jsx syntax gate, `ui-guards`, `resolve-brand` and `scoringFlags` — B-82's entire stated purpose — have not run since 08-26 and have NEVER run against a data change.** The gate reads green in the Actions list only because the last thing it saw was a human commit eight days ago. 🔑 **This directly compounds B-101: the 42 open bot PRs cannot be validated before merge, because their CI is un-runnable without someone clicking "Approve and run." "Drain by hand" is therefore riskier than recorded — there is no automated check standing behind ANY of them.** 🧭 **MVP fix, in order: ① flip the repo setting so bot-authored PR runs dispatch without approval (or approve them as they arrive); ② add a `workflow_dispatch` + nightly `schedule` trigger to `ci.yml` so the scoring tests run at least daily regardless of `[skip ci]`. The second is three lines and does not depend on a settings change.** 🚫 **Never again read "CI is green" off the workflow list without checking the DATE and EVENT of the last run.** *(New: **B-151**.)*
+>
+> 🆕✅📊 **SECOND FINDING — A STANDING WARNING ABOUT `index.json` IS WRONG, AND THE CORRECTION MAKES COUNTING EASIER.** The note carried for weeks reads *"Count `grade`; `overall` is `null` on all 12,830 index entries."* **The second half is false.** Measured against the live CDN file today: **`overall` is non-null on exactly 2,622 entries**, and that set is **identical** to the set where `grade !== "?"` — **intersection 2,622 of 2,622, both sides 2,622.** 🔑 **`grade` and `overall` agree perfectly on the CDN index; either one gives 2,622.** ⚠️ **The trap the note was REALLY pointing at is different and still real: `grade` is PRESENT on all 12,830 entries as the literal string `"?"` for ungraded brands, so counting entries that merely *have* a `grade` key returns 12,830.** ✅ **Correct test: `grade !== "?"` (or equivalently `overall !== null`).** *(Sample ungraded entry: `{"slug":"47","grade":"?","score":null,"overall":null,"realCats":0}`. Sample graded: `{"slug":"10x-genomics","grade":"B","score":61,"overall":61,"realCats":1}`.)*
+>
+> 🆕📬🔁 **THIRD FINDING — B-101's PR COUNT IS FLAT BECAUSE THE MONTHLY CRONS RE-PUSH ONTO EXISTING PRs, NOT BECAUSE NOTHING HAPPENED.** `state-regulators-r3-monthly` ran today (`33753433894`, 12:07:28Z, **success**) and **committed nothing to `main`**. It force-updated branch `data/state-regulators-r3` to a **single** commit (`b462e1597`, "monthly enforcement refresh") and thereby updated **PR #126 — open since 2026-07-03, 62 days old.** ✅ **No new PR was created; the newest PR in the repo is still #169 from 08-31.** 🔑 **So "42 open, FLAT" does not mean the queue was idle — it means a cron overwrote a two-month-old PR in place. The branch holds ONE commit ahead of main, so July's and August's refreshes were replaced, not accumulated: each PR's diff is the CURRENT snapshot only.** 🚫 **Never read a flat B-101 count as "no data-PR activity." Diff the branch heads and the PR `updatedAt`, not the count.**
+>
+> 📊✅ **CATALOG HELD — DAY 4 AT THE SAME MD5.** `curl https://www.trunorthapp.com/data/index.json` → HTTP 200, **12,830 tracked / 2,622 graded — A 63 · B 738 · C 1,031 · D 535 · F 255**, 10,208 `"?"`, md5 **`1527f2e9ec86cd9555075f0162978532`**, 9,989,657 B — byte-identical to 08-31, 09-01 and 09-02. 🔑 **Quote 2,622.** ✅ **Count `grade !== "?"` — see the correction above.**
+>
+> ✅📐 **4 BOT COMMITS, 23 COMPANY FILES REWRITTEN, MEASURED PER-BRAND: ZERO GRADE INPUTS MOVED.** Parsed every changed file object-by-object across `9bdc60d83..HEAD`: **`sc` 0 · `excl` 0 · `flags` 0 · stored `grade` 0 · `overall` 0 · `csc` 0 · `realCats` 0.** What moved: **`dataLastUpdated` 23 · `news` 23 · `news_items` 23 · `recent_events` 18** — display or dark, every one. **Zero paths under `src/`, `scripts/`, `ios/`, `android/`, `.github/` or `package.json`.** Commits: `7697bccc5` cftc-enforcement · `e3e946860` news · `57a541c94` nlrb-vr · `e77d319af` ofac-sdn.
+>
+> ✅🎯 **B-124 — THURSDAY LANDED. CONTROL ARM, NOT A FIX.** `data(news)` `e3e946860` committed **09-03 02:35 PDT carrying digest date `2026-09-03`** (`generated_at 2026-09-03T09:14:19.426Z`; merge log **`merged 23 · orphan 0 · error 0`**, 43 items). **Day-of-week record: Mon–Sat 45-for-45, Sunday 0-for-5.** ✅ `grep -rn "rebase --abort" .github/workflows/` **still returns nothing** — day 33 with the one-line fix unwritten. 🚫 **A weekday landing is not evidence. Land the line.**
+>
+> 🕳️🟢 **B-149 CONFIRMED A SECOND TIME — TWO GREEN `trending-refresh` RUNS TODAY, ZERO WRITES.** Runs `2026-09-03T00:02:15Z` and `2026-09-03T23:57:14Z`, **both `success`**, both in ~21s. **`public/data/trending.json` still ships `generatedAt 2026-09-01T23:58:56.255Z` with `mondelez-international, views: 1, uniques: 1` — day 2 of the freeze.** Last actual write was `d34be5dcc` on 09-01. 🔑 **`scripts/refresh-trending.mjs:72–74` returns early WITHOUT writing on an empty result, so `git diff --quiet` finds nothing and the workflow commits nothing — a green run every night, forever, over a stale user-facing surface.** 🧭 **MVP fix is still three lines: write the empty result (`brands: []`) and let "Trending Now" render its own empty state.** 🚫 **NEVER read `trending.json` as current — read `generatedAt`.**
+>
+> ✅🕳️ **B-144 DID NOT FIRE TODAY — AND THAT IS NOT EVIDENCE OF A FIX.** `cron-health-daily` snapshotted **`2026-09-03T17:02:07Z`**. Three runs concluded after that instant — `nlrb-voluntary-recognition-monthly` 19:19Z, `ofac-sdn-daily` 20:05Z, `trending-refresh` 23:57Z — and **all three SUCCEEDED**, so there was no late failure for the race to hide. 📊 **#155 is 29 rows, unchanged from yesterday, roster stable.** **Both phantoms still present: `canada-comp-monthly` (no `.yml` on disk) and `followthemoney-state-monthly` (`disabled_manually`).** **`bcorp-quarterly` still erased (B-142) — on disk at `.github/workflows/bcorp-quarterly.yml`, latest scheduled run `2026-06-15 cancelled`, absent from #155.** 🚨 **The B-141/B-142/B-144 rewrite is still owed; a quiet day just means nothing failed late.**
+>
+> 🟢⏱️ **ZERO CRON FAILURES TODAY — 10 RUNS, 10 SUCCESSES.** `trending-refresh` ×2, `ca-dlse-monthly`, `cftc-enforcement-monthly`, `news-rss-nightly`, `state-regulators-r3-monthly`, `cron-health-daily`, `nlrb-voluntary-recognition-monthly`, `ofac-sdn-daily`. ⚠️ **This is a day-3-of-month schedule with few crons due — it is NOT a signal that the 29 broken crons on #155 improved. None of them was scheduled to run today.**
+>
+> 🟡📉 **B-128 — FLAT. 419 single-line / 12,411 pretty**, unchanged from yesterday. Today's writers touched only pretty-printed files. 🔑 **Still tracks WHICH writer ran, not the day of week.**
+>
+> ⏱️🧭 **SCHEDULER DELAY — THIRD DAY IN THE SAME BAND.** Measured against each cron's own expression: **`news-rss-nightly` (`48 4`) ran 09:12Z = +4h24m · `cron-health-daily` (`12 13`) ran 17:02Z = +3h50m · `ofac-sdn-daily` (`34 17`) ran 20:05Z = +2h31m · `trending-refresh` (`3 22`) ran 23:57Z = +1h54m.** Band **+1h54m → +4h24m**, against yesterday's **+1h59m → +4h16m**. Today's day-3 monthlies ran wider: **`ca-dlse` (`22 1 3 * *`) +4h33m · `cftc` (`56 2 3 * *`) +4h27m · `state-regulators-r3` (`23 7 3 * *`) +4h44m · `nlrb-vr` (`23 16 3 * *`) +2h56m** — max observed **+4h44m**. ⚠️ **Report the band. Do not forecast it.** ✅ Still a GitHub-side queue; no workflow file touched since 08-01.
+>
+> 🧮 **B-137 RE-MEASURED — THE "200+" CLAIM IS ON 10 LINES ACROSS 6 FILES.** Enumerated today: **`src/Methodology.jsx:44` · `src/OnboardingFlow.jsx:95` · `src/MarketingLanding.jsx:142,:353` · `src/App.jsx:4136,:4156,:4183,:8155` · `index.html:73` · `public/llms.txt:3`.** ⚠️ **Two grep hits are FALSE POSITIVES — `src/lib/catalog-stats.js:17` is `CATALOG_UNGRADED_LABEL = "10,200+"`, and the `src/companies.js` / `src/companies.json` hits are brand prose ("1,200+ charitable organizations", "200+:1" pay ratios). Do not edit those.** 🔑 **Documented roster 118 · in-app Sources screen 104 · claim 200+ — and B-148 showed at least one listed source (`muckrock`) reaches no surface at all.**
+>
+> 📌 **EVERYTHING ELSE RE-VERIFIED.** **B-133 exactly 43, flat** (`typeof …totalGrants === "number"`; the `charity_irs990` key is present on **11,202** files — key-presence remains the wrong test). **B-101 42 open data PRs, count flat but see the third finding**; oldest still **#116, now 66 days**; **#134 and #165 both still OPEN — the two must-not-merge landmines.** **B-134 untouched today** — `finra-weekly` is weekly and did not run. **B-122, B-123, B-125, B-129, B-130, B-140, B-141, B-142, B-143, B-145, B-146, B-147, B-148, B-150 untouched.** **Zero human activity — `find . -newermt "2026-09-03 00:00"` outside `public/data/`, `data/`, `.git/`, `node_modules/` and `dist/` returns nothing.** 🟢 **v1.1 Build 81 remains the LIVE App Store build. Next iOS ship = Build 82 — it carries B-131's `company_view` fix and B-136's paywall fix.** ⚠️ **16 untracked `docs/` files, unchanged, day 32.**
+>
+> 🔴 **WHAT YOU STILL OWE.** ① **`RESEND_API_KEY`** — five missed Sundays; DNS/DKIM done 08-27; create the key, add the secret, dry-run `weekly-digest.yml`. ② **the "200+ public sources" framing call** — documented roster **118**, in-app Sources screen **104**, claim on **10 lines / 6 files**; recommendation on the table is "100+, derived at build time." ③ **the three still-open growth decisions from 08-26** — the price overrule, the CDP licence, the public-face call. ④ **B-143 — the quizzed/un-quizzed grade divergence. Decide before V-4 widens it.** 🧭 **ENGINEERING ORDER — B-151 ENTERS HIGH BECAUSE IT IS CHEAP AND IT GUARDS EVERYTHING ELSE: ① B-124 `git rebase --abort` — one line, five confirmed Sundays, a destroyed commit SHA on the record, seven workflows carrying the loop. ② B-151's three-line `schedule` + `workflow_dispatch` on `ci.yml` — restores the scoring gate without waiting on a repo setting. ③ Ship Build 82 — B-136 is a live revenue leak. ④ B-134 FINRA matcher before V-4. Then B-149 (three lines, stops a frozen user-facing surface), B-145's 5% guard, B-128, V-4 led by `cfpb`/`secTax` against B-148's corrected denominator, B-129 + B-146 + B-150, B-130, and the B-141/B-142/B-144 rewrite of `cron-health-daily.yml`.**
+>
+> ---
+>
+> **[09-03 01:15 sync]**
+>
+> *Daily doc-sync covering 2026-09-02, a Wednesday — 8 bot commits, zero human activity, zero code changes. The headline was the first full key-by-key census of the company files.*
 >
 > 🆕🔴🕳️ **BIGGEST FINDING — 12 DATA KEYS ON 23,412 COMPANY-FILE PLACEMENTS HAVE *NO READER ANYWHERE IN THE CODEBASE*, AND THE PATH WE KEEP GREPPING (`scripts/index-entry.mjs`) DOES NOT EXIST.** ✅ **CORRECTION FIRST — the real file is `scripts/lib/index-entry.mjs`.** Every past note instructing a session to grep `rebake-scoring.mjs / index-entry.mjs` sent it at a path that isn't there; the grep returns nothing and *looks* like a confirmed "dark" verdict. **Always grep `scripts/lib/index-entry.mjs`.** 📊 **THE CENSUS (all 12,830 files, parsed): 100 distinct top-level keys and 35 `enriched.*` subkeys.** Cross-checked each against `scripts/rebake-scoring.mjs`, `scripts/lib/index-entry.mjs`, `scripts/rebuild-bundle-index.mjs` and `src/App.jsx` on word boundaries. 🚨 **TWELVE top-level keys appear NOWHERE in `src/`, `scripts/` (outside their own fetch/merge writer) or `api/` — written every cycle, read by nothing: `environment_ejscreen` 11,202 · `ownership_wikidata` 11,202 · `dei_eeo1` 763 · `privacy_tosdr` 160 · `news_items` 58 · `dea` 7 · `epaEcho` 6 · `pcaob` 5 · `stanfordScac` 3 · `sam_exclusion` 3 · `euSanctions` 2 · `gsaSam` 1 = 23,412 placements.** ⚠️ **`environment_ejscreen` and `ownership_wikidata` sit on 11,202 files each — 87% of the catalog — and have no writer script left in the tree either. They are orphaned backfills.** 📉 **Under the looser "no reference in the scoring engine" test the standing note has been using, the real numbers are 40 top-level keys / 158,569 placements and 29 `enriched.*` keys / 2,581 placements.** 🚫 **RETIRE THE "317 placements across 6 keys" FIGURE. It was never a census — it only ever listed keys a recent cron happened to touch, so it grew by accretion and undercounted by ~74× on the strict test.** 🔑 **The durable rule stands and is now proven: enumerate EVERY key from the files themselves; never quote a running total someone appended to.** 🧭 **This does NOT change V-4's order — `enriched.secTax` (3,415) and `cfpb` (80, and it IS read by `api/company-seo.js`) are still the best first wires. What it changes is the denominator you plan against.** *(New: **B-148**.)*
 >
@@ -1275,6 +1309,98 @@
   ✅ **LIVE** — API routes + sitemap, deployed on push; no Build 82 dependency.
   *(WS-A, S — done)*
 
+- **B-151 🆕 NEW 2026-09-03 — the CI gate has run ZERO times since 2026-08-26 and has NEVER once
+  run against a data change. Both of its triggers are dead, for two different reasons.**
+  *(WS-A, S — cheap, and it guards every other workstream)*
+  📐 **THE MEASUREMENT.** `.github/workflows/ci.yml` fires on `pull_request:` and `push: branches:[main]`.
+  **① The push path is skipped by design.** All 40 of the last 40 commits on `main` carry `[skip ci]`
+  (`git log -40 --pretty=%s | grep -c 'skip ci'` → 40). `ci.yml:42` says so itself: *"Data crons commit
+  with [skip ci]; GitHub already honors that for pushes."* **Last `push` CI run: `2026-08-26T21:10:05Z`.
+  Last non-`[skip ci]` commit on main: `a1efa81ad` (2026-08-26).**
+  **② The pull_request path is created but never dispatched.** The last **16** `pull_request` CI runs are
+  all `action_required`, back to 2026-08-05. Today's (`33753810943`, branch `data/state-regulators-r3`)
+  reads `status: completed · conclusion: action_required · triggering_actor: github-actions[bot]`, and
+  `GET /actions/runs/33753810943/jobs` returns an **empty array — not one job was ever dispatched**.
+  These are in-repo branches, not forks. GitHub holds bot-triggered PR workflow runs for approval.
+  📉 **They were never green before that either — the 4 prior `pull_request` runs (08-01 → 08-03) are
+  `failure`.** Last-100 tally: `pull_request` → **16 `action_required` · 4 `failure` · 1 `success`**
+  (that one success was a human branch, `docs/geo-audit-2026-08-01`); `push` → **30 `success` · 1
+  `failure`**, none since 08-26.
+  🚨 **CONSEQUENCE.** The 28 frozen-threshold scoring tests, the `vite build` App.jsx syntax gate,
+  `ui-guards`, `resolve-brand` and `scoringFlags` — B-82's entire stated purpose — have not run since
+  08-26 and have never run against a data change. The gate reads green in the Actions list only because
+  the last thing it saw was a human commit.
+  🔑 **This compounds B-101.** The 42 open bot PRs cannot be validated before merge — their CI is
+  un-runnable without someone clicking "Approve and run". **"Drain by hand" is riskier than recorded:
+  there is no automated check standing behind any of them.**
+  🧭 **MVP fix, in order:** ① flip the repo setting so bot-authored PR runs dispatch without approval
+  (or approve them as they arrive); ② **add `workflow_dispatch` + a nightly `schedule` trigger to
+  `ci.yml`** so the scoring tests run daily regardless of `[skip ci]` — three lines, and it does not
+  depend on a settings change.
+  🚫 **Never read "CI is green" off the workflow list again without checking the DATE and EVENT of the
+  last run.**
+
+- **B-150 🆕 NEW 2026-09-02 — three more crons that have NEVER succeeded. The never-succeeded list
+  goes 8 → 11.** *(WS-B, M)*
+  All monthly, so all invisible except at month start.
+  ① **`gao-monthly` — 0-for-3** (07-02, 08-02, 09-02), every run `cancelled` at **30m18s / 30m19s /
+  30m22s against the 30m cap** at `gao-monthly.yml:25`.
+  ② **`oversight-ig-monthly` — 0-for-3** (07-02, 08-02, 09-02), `cancelled` at **30m17s / 30m23s /
+  30m20s against the 30m cap** at `oversight-ig-monthly.yml:39`.
+  ③ **`eu-antitrust-monthly` — 0-for-3** (07-02, 08-02, 09-02), `failure` at ~9m50s each — **NOT a
+  timeout** (its cap is 45m). Log reads `presscorner page 0 failed: HTTP 404` and `page 1 failed: HTTP
+  404` — a B-122/B-146-class upstream restructure.
+  🚨 **Neither `gao` nor `oversight-ig` has ever written an artifact — there is no `gao*.json` or
+  `oversight*.json` anywhere under `public/data/`. Both have fetch AND merge scripts on disk that have
+  never produced a byte.**
+  🔑 **B-125's timeout class gains two members (`gao`, `oversight-ig`) alongside `fra` and `gdelt` — and
+  the `faa` lesson applies to all four: a timeout kill proves the job did not finish, NOT that it would
+  have produced data. Do not raise a cap before you can read a `with_*_count`.**
+  📅 **Monthly crons are observable only at month start — next window 10-01.**
+
+- **B-149 🆕 NEW 2026-09-02 — `trending.json` does not go to zero when traffic dies; it FREEZES
+  forever, behind a green nightly cron.** *(WS-A, S — three lines)*
+  ✅ **B-131's `company_view` event aged out on schedule.** `trending-refresh` ran `2026-09-03T00:02:15Z`
+  → `success` in 21s and the log says it outright: *"(No company_view events in the lookback window —
+  leaving trending.json alone.)"*
+  🚨 **But `scripts/refresh-trending.mjs:72–74` returns early WITHOUT writing when the result set is
+  empty**, so the workflow's `if ! git diff --quiet` finds no change and commits nothing.
+  📌 **`public/data/trending.json` therefore still ships `generatedAt 2026-09-01T23:58:56.255Z` with
+  `mondelez-international, views: 1, uniques: 1`** — and will ship that indefinitely until real traffic
+  returns. Last actual write was `d34be5dcc` (09-01).
+  ✅ **CONFIRMED AGAIN 09-03: two green runs that day (00:02:15Z and 23:57:14Z), zero writes.**
+  🔑 **This is the B-126 soft-fail family applied to emptiness: keep-last-on-empty. A user-facing
+  "Trending Now" surface is pinned to one brand off one event from 08-26.**
+  🧭 **MVP fix: write the empty result (`brands: []`) and let the surface render its own empty state.**
+  🚫 **NEVER read `trending.json` as current. Read `generatedAt`, or the workflow log.**
+
+- **B-148 🆕 NEW 2026-09-02 — the first full key-by-key census of the company files. 12 data keys on
+  23,412 placements have NO READER ANYWHERE, and the grep path this project cited for weeks does not
+  exist.** *(WS-B, M — this resets V-4's denominator)*
+  ✅ **CORRECTION FIRST — the real file is `scripts/lib/index-entry.mjs`, not `scripts/index-entry.mjs`.**
+  Every past note instructing a session to grep `rebake-scoring.mjs / index-entry.mjs` sent it at a path
+  that isn't there; the grep returns nothing and *looks* like a confirmed "dark" verdict.
+  📊 **THE CENSUS (all 12,830 files, parsed): 100 distinct top-level keys and 35 `enriched.*` subkeys.**
+  Cross-checked each against `scripts/rebake-scoring.mjs`, `scripts/lib/index-entry.mjs`,
+  `scripts/rebuild-bundle-index.mjs` and `src/App.jsx` on word boundaries.
+  🚨 **TWELVE top-level keys appear NOWHERE in `src/`, `scripts/` (outside their own fetch/merge writer)
+  or `api/` — written every cycle, read by nothing: `environment_ejscreen` 11,202 · `ownership_wikidata`
+  11,202 · `dei_eeo1` 763 · `privacy_tosdr` 160 · `news_items` 58 · `dea` 7 · `epaEcho` 6 · `pcaob` 5 ·
+  `stanfordScac` 3 · `sam_exclusion` 3 · `euSanctions` 2 · `gsaSam` 1 = 23,412 placements.**
+  ⚠️ **`environment_ejscreen` and `ownership_wikidata` sit on 11,202 files each — 87% of the catalog —
+  and have no writer script left in the tree either. They are orphaned backfills.**
+  📉 **Under the looser "no reference in the scoring engine" test the old note used, the real numbers are
+  40 top-level keys / 158,569 placements and 29 `enriched.*` keys / 2,581 placements.**
+  🚫 **RETIRE THE "317 placements across 6 keys" FIGURE. It was never a census — it only listed keys a
+  recent cron happened to touch, so it grew by accretion and undercounted by ~74× on the strict test.**
+  🔑 **Enumerate EVERY key from the files themselves; never quote a running total someone appended to.**
+  🧭 **This does not change V-4's order — `enriched.secTax` (3,415) and `cfpb` (80, and it IS read by
+  `api/company-seo.js`) are still the best first wires. What it changes is the denominator.**
+  📣 **RELATED — `muckrock` is on 208 company files, is read by nothing, and is ADVERTISED to users.**
+  Its only appearance in the app is `src/App.jsx:4960`, a Sources-screen roster entry ("MuckRock FOIA …
+  Monthly"). **So the in-app Sources screen lists a source whose data reaches no surface. That is a
+  coverage-claim problem, not just a dark-data problem — it belongs next to B-137.**
+
 - **B-145 🆕 NEW 2026-09-01 — `openstates-monthly` reported SUCCESS, committed a brand-new production
   data file, and that file is 100% EMPTY. The workflow's own comment documents why it can never work.**
   *(WS-B, M — new class: a green cron that ships a zero-record artifact and then clears itself off the
@@ -1337,10 +1463,16 @@
   (first write ever). Unlike openstates it returned **real rows**: `ranking_year 2025 · brand_count 528 ·
   matched_count 67 · no_match_count 461`, merged **64** with **3 orphans**. **63 company files now carry
   a `justCapital` key.**
-  **THE PROBLEM.** `grep` across `scripts/rebake-scoring.mjs`, `scripts/index-entry.mjs` and
+  **THE PROBLEM.** `grep` across `scripts/rebake-scoring.mjs`, **`scripts/lib/index-entry.mjs`** and
   `src/App.jsx` returns **zero references** to `justCapital` / `just_capital` / `just-capital`. It is a
-  sixth dark key. **Running dark-data inventory: `finra` 92 · `cfpb` 80 · `enriched.fdic` 38 · `phmsa`
-  30 · `occ` 14 · 🆕 `justCapital` 63 = 317 placements across 6 keys.**
+  dark key.
+  ⚠️ **CORRECTED 2026-09-02 by B-148 — two things in the original write-up were wrong.** ① The path was
+  written as `scripts/index-entry.mjs`, **which does not exist**; the real file is
+  `scripts/lib/index-entry.mjs`, so the original grep proved nothing. ② The "running dark-data
+  inventory: `finra` 92 · `cfpb` 80 · `enriched.fdic` 38 · `phmsa` 30 · `occ` 14 · `justCapital` 63 =
+  **317 placements across 6 keys**" figure is **RETIRED**. It was never a census — it only listed keys a
+  recent cron happened to touch. **The real census is 12 reader-less top-level keys on 23,412
+  placements. See B-148.**
   🧭 **V-4 note:** a curated Russell-1000 ranking is a *ranking*, not a record of conduct. Wiring it to a
   grade is a scoring-semantics decision, not a plumbing job — it belongs behind `cfpb`/`secTax` in the
   V-4 order, and behind Aron's B-143 call.
