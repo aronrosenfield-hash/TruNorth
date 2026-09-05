@@ -6,7 +6,39 @@
 >
 > **🟢 LAUNCHED — Jun 23, 2026 · 2:01 AM CDT** (App Store · id `6775301458` · `https://apps.apple.com/app/id6775301458` · PH launched). **CURRENT LIVE BUILD = v1.1 Build 81** (approved 2026-07-08, released Manual **2026-07-14**) — it superseded v1.0 Build 75, which was live Jun 23 → Jul 14. **Next iOS ship = Build 82.** *(The 2026-06-11 "date is soft, get it right" call held through the Compass redesign; the experience shipped on the locked date. Go-live runbook: `docs/LAUNCH_DAY.md`.)*
 >
-> **Last updated:** 2026-09-04 01:10 CDT (daily doc-sync covering **2026-09-03**, a Thursday — **4 bot commits**, zero human activity, zero code changes, and **zero cron failures — the first completely clean cron day on record.** **The headline is that the CI gate has not executed in 8 days and has never once run against a data change.** The catalog held a fourth day, B-149's frozen surface got a second confirmation, and a long-standing note about the index is corrected.)
+> **Last updated:** 2026-09-05 01:11 CDT (daily doc-sync covering **2026-09-04**, a Friday — **3 bot commits**, zero human activity, zero code changes. **The headline is `au-fair-work-monthly`, which fires only on the 4th of the month and was caught in its once-a-month window: 0-for-3 lifetime, killed at its cap all three times, and it has never written a byte.** A healthy cron was also found shipping its records into a dead end, and B-137's line count is corrected upward.)
+>
+> 🆕🔴⏱️ **BIGGEST FINDING — `au-fair-work-monthly` IS 0-FOR-3 LIFETIME, KILLED AT ITS `timeout-minutes` CAP ALL THREE TIMES, AND HAS NEVER WRITTEN AN ARTIFACT. IT IS VISIBLE ONLY ON THE 4TH OF EACH MONTH.** Run `33863331174` ran **`2026-09-04T10:27:36Z → 10:42:57Z` = 921s**, `cancelled`. Its full history is **three runs, three cancels, all within ~21s of the cap**: **07-04 919s · 08-04 919s · 09-04 921s against the 900s (15-minute) cap at `.github/workflows/au-fair-work-monthly.yml:25`.** 🚨 **`find public/data data -iname "*fair-work*"` returns NOTHING — no raw file, no derived augment, no company key — despite `scripts/au-fair-work-fetch.mjs`, `scripts/au-fair-work-merge.mjs` AND `scripts/au-fair-work-fetch.test.mjs` all sitting on disk.** The workflow's own steps confirm it dies in the first one: it runs fetch → merge → tests → `create-pull-request`, and no PR for `data/au-fair-work-*` has ever existed. 🔑 **This is a B-125 timeout-class member, not a new outage — `au-fair-work` was ALREADY inside the eleven never-succeeded crons, but it had never been measured. Its live scope is now `fra`, `gdelt`, `gao-monthly`, `oversight-ig-monthly` and `au-fair-work-monthly`.** 🚫 **DO NOT raise the 15m cap on the strength of this.** The `faa` precedent governs: on 08-31 `faa-weekly` finally finished inside its cap and returned `with_records: 0` on all 528 brands. **A kill proves the job did not FINISH; it does not prove data was waiting.** 🧭 **The right first move is to run `node scripts/au-fair-work-fetch.mjs` off-runner and time it — the fetcher scrapes `fairwork.gov.au` year-by-year for 2020..current, six sequential year pages, so a local timing tells you in ten minutes whether 15m is genuinely tight or the scrape is hanging on a dead URL (the B-122/B-146 pattern).** 📅 **Next observation window is 2026-10-04.**
+>
+> 🆕🕳️📤 **SECOND FINDING — `uk-ico-monthly` IS A PERFECTLY HEALTHY CRON WHOSE DATA REACHES NOTHING. IT IS A NEW DARK-DATA SHAPE: NOT A DARK KEY, A DARK AUGMENT.** The cron is **3-for-3 lifetime** (07-04, 08-04, and today `2026-09-05T00:25:37Z`, all `success` in ~17s) and today committed `8320fe41f`, writing `data/raw/uk-ico/2026-09-05.json` and refreshing `data/derived/uk-ico-augment.json`. **That augment holds 8 real, high-value records — British Airways (£20,000,000 Monetary Penalty Notice, 2020-10-16), Marriott International and six others, every one a GDPR-era ICO privacy fine with a citable `ico.org.uk` URL.** 🚨 **And it stops there.** ① `scripts/uk-ico-merge.mjs` writes only the derived augment — the workflow's steps are fetch → merge → test → commit, with no company-file write. ② **The two generic appliers load augments by EXPLICIT NAME, not by globbing the directory** (`loadAugment(name)` in `scripts/apply-augments-to-companies.mjs`) — and **`uk-ico` appears in neither `apply-augments-to-companies.mjs` nor `apply-enriched-augments.mjs`.** ③ **No key matching `ico` exists on any of the 12,830 company files** (checked against the full 100-top-level-key / 35-`enriched.*` census). ④ `grep -rl uk-ico src/ api/ scripts/` outside its own three writer files returns **zero**. 📊 **AND IT IS NOT ALONE. Of 201 `data/derived/*-augment.json` files, 78 are named by neither applier. Eighteen of those have NO `-merge.mjs` script at all, so an applier is their only possible route to a company file and they have none:** `bafin` · `cade-brazil` · `cnmv-spain` · `cofece-mexico` · `corporate-prwire` · `ec-antitrust` · `factcheck-verdicts` · `gdpr-enforcement` · `high-cred-news` · `hk-compcomm` · `ivass-italy` · `kftc-korea` · `norway-consumer` · `oecd-bribery` · `sa-competition` · `saudi-cma` · `sbv-vietnam` · `uae-sca`. ⚠️ **SIZE IT HONESTLY BEFORE ACTING: those 18 hold ~53 records between them (0 to 10 entries each; five are completely EMPTY — `cnmv-spain`, `hk-compcomm`, `ivass-italy`, `saudi-cma`, `sbv-vietnam`, `uae-sca` all read 0). This is a plumbing gap, not a data windfall.** 🚫 **DO NOT extend the claim to the other 60 of the 78 — they have `-merge.mjs` scripts, and an augment can legitimately reach a company file as a NARRATIVE rather than as a per-source key, so the key test returns a false "dark" verdict for them. That subset is unmeasured.** 🧭 **`uk-ico` is the single best first wire: 8 records, all privacy-category, all sourced, and `dataPrivacy` is already a live scoring category.** *(New: **B-152**.)*
+>
+> 🆕🧮 **THIRD FINDING — B-137's "200+" CLAIM IS ON 11 LINES, NOT 10. THE RECORDED ENUMERATION MISSED ONE.** Re-grepped today: **`src/Methodology.jsx:44` · `src/OnboardingFlow.jsx:95` · `src/MarketingLanding.jsx:142,:353` · `src/App.jsx:4136,:4156,:4183,:8155,` 🆕 **`:8220`** · `index.html:73` · `public/llms.txt:3`.** **`src/App.jsx:8220` ("…across **200+ data sources** spanning {SOURCES_DATA.length} categories") was never on the list.** ⚠️ **The two documented false positives still hold and must NOT be edited: `src/lib/catalog-stats.js:17` is `CATALOG_UNGRADED_LABEL = "10,200+"`, and the `src/companies.js` / `src/companies.json` hits are brand prose.** 🔑 **11 lines / 6 files. This is the second time a hand-typed coverage enumeration came up short — it is exactly the failure the "generate, never type" rule exists to prevent.**
+>
+> 📊✅ **CATALOG HELD — DAY 5 AT THE SAME MD5.** `curl https://www.trunorthapp.com/data/index.json` → HTTP 200, **12,830 tracked / 2,622 graded — A 63 · B 738 · C 1,031 · D 535 · F 255**, 10,208 `"?"`, md5 **`1527f2e9ec86cd9555075f0162978532`**, 9,989,657 B — byte-identical to 08-31 through 09-03. 🔑 **Quote 2,622.** ✅ **`grade !== "?"` and `overall !== null` both return 2,622; they agree exactly.**
+>
+> ✅📐 **3 BOT COMMITS, 15 COMPANY FILES REWRITTEN, MEASURED PER-BRAND: ZERO GRADE INPUTS MOVED.** Parsed every changed file object-by-object across `355b52f64..HEAD`: **`sc` 0 · `excl` 0 · `flags` 0 · stored `grade` 0 · `overall` 0 · `csc` 0 · `realCats` 0.** What moved: **`dataLastUpdated` 15 · `news` 15 · `news_items` 15 · `recent_events` 12** — display or dark, every one, and **no other key moved on any file.** **Zero paths under `src/`, `scripts/`, `ios/`, `android/`, `.github/` or `package.json`.** Commits: `b482a2e40` news · `3cd210d35` ofac-sdn · `8320fe41f` uk-ico. ⚠️ **Note the shape: `ofac-sdn` and `uk-ico` touched only `data/raw/` and `data/derived/` — neither reached a company file today.**
+>
+> ✅🎯 **B-124 — FRIDAY LANDED. CONTROL ARM, NOT A FIX.** `data(news)` `b482a2e40` committed **09-04 02:26 PDT carrying digest date `2026-09-04`** (`generated_at 2026-09-04T09:06:13.919Z`; merge log **`merged 15 · orphan 0 · error 0`**, 35 items across 15 brands). **Day-of-week record: Mon–Sat 46-for-46, Sunday 0-for-5.** ✅ `grep -rn "rebase --abort" .github/workflows/` **still returns nothing — day 34 with the one-line fix unwritten.** 🚫 **A weekday landing is not evidence. The next real test is Sunday 2026-09-06. Land the line before then.**
+>
+> 🔴🧪 **B-151 — DAY 9, AND TODAY THE CI GATE DID NOT PRODUCE A RUN OF ANY KIND.** No `ci.yml` run was created on 09-04. **The most recent CI run of any type is still `2026-09-03T12:11:32Z` (`pull_request`, `action_required`, branch `data/state-regulators-r3`) — created, stamped, never dispatched. The last CI run that ACTUALLY EXECUTED remains `2026-08-26T21:10:05Z` on `push`/`main`.** **`git log -40 --pretty=%s | grep -c 'skip ci'` → 40 of 40**, and the last non-`[skip ci]` commit is still `a1efa81ad` (2026-08-26). 🚨 **The 28 frozen-threshold scoring tests, the `vite build` App.jsx syntax gate, `ui-guards`, `resolve-brand` and `scoringFlags` have now been unenforced for nine days and have never run against a data change.** 🧭 **The three-line fix — `workflow_dispatch` + a nightly `schedule` on `ci.yml` — does not depend on the repo setting and is still unwritten.**
+>
+> 🕳️🟢 **B-149 — DAY 3 OF THE FREEZE, THIRD CONFIRMATION.** `trending-refresh` ran **`2026-09-04T23:55:50Z` → `success` in 23 seconds** and wrote nothing. **`public/data/trending.json` still ships `generatedAt 2026-09-01T23:58:56.255Z` with `mondelez-international, views: 1, uniques: 1`.** Last actual write remains `d34be5dcc` (09-01). 🔑 **`scripts/refresh-trending.mjs:72–74` returns early without writing on an empty result, so `git diff --quiet` finds nothing and the job commits nothing — a green run every night over a stale user-facing surface.** 🧭 **MVP fix is three lines: write `brands: []` and let "Trending Now" render its own empty state.** 🚫 **NEVER read `trending.json` as current — read `generatedAt`.**
+>
+> ✅🕳️ **B-144 DID NOT FIRE — AND THE ROSTER IS BYTE-STABLE.** `cron-health-daily` snapshotted **`2026-09-04T16:52:25Z`**. Two runs concluded after that instant — `ofac-sdn-daily` 19:49Z and `trending-refresh` 23:56Z — and **both SUCCEEDED**, so there was no late failure for the race to hide. 📊 **#155 is 29 rows, and the roster is IDENTICAL to yesterday's name-for-name** (diffed, not counted). **`au-fair-work-monthly`'s row correctly refreshed to today's run `33863331174`, dated 2026-09-04 — the watchdog caught this one properly.** **Both phantoms still present: `canada-comp-monthly` (no `.yml` on disk) and `followthemoney-state-monthly` (`disabled_manually`).** **`bcorp-quarterly` still erased (B-142).** 🚨 **The B-141/B-142/B-144 rewrite is still owed.**
+>
+> 🟡📉 **B-128 — FLAT. 419 single-line / 12,411 pretty**, unchanged for a third day. Today's only company-file writer was the news merger, which is a pretty-printer. 🔑 **Still tracks WHICH writer ran, not the day of week.**
+>
+> ⏱️🧭 **SCHEDULER DELAY — FOURTH DAY IN THE SAME BAND.** Measured against each cron's own expression: **`news-rss-nightly` (`48 4`) ran 09:04Z = +4h16m · `cron-health-daily` (`12 13`) ran 16:51Z = +3h39m · `ofac-sdn-daily` (`34 17`) ran 19:49Z = +2h15m · `trending-refresh` (`3 22`) ran 23:55Z = +1h52m.** Band **+1h52m → +4h16m**, against yesterday's **+1h54m → +4h24m**. Today's day-4 monthlies: **`au-fair-work` (`57 5 4 * *`) ran 10:27Z = +4h30m · `uk-ico` (`50 22 4 * *`) ran 09-05T00:25Z = +1h35m.** Max observed **+4h30m**. ⚠️ **Report the band. Do not forecast it.** ✅ Still a GitHub-side queue; no workflow file touched since 08-01.
+>
+> 📌 **EVERYTHING ELSE RE-VERIFIED.** **B-133 exactly 43, flat** (`typeof …totalGrants === "number"`; the `charity_irs990` key is present on **11,202** files — key-presence remains the wrong test). **B-101 42 open data PRs, flat, and this time genuinely idle — NOT ONE PR was updated on 09-04** (`updatedAt` checked on all 42; #126's last touch is still 09-03T12:12Z). Oldest still **#116, now 67 days**; newest still **#169** from 08-31; **#134 and #165 both still OPEN — the two must-not-merge landmines.** **B-134 untouched** — `finra-weekly` is weekly and did not run. **B-122, B-123, B-125, B-129, B-130, B-140, B-141, B-142, B-143, B-145, B-146, B-147, B-148, B-150 untouched.** **Zero human activity — `find . -newermt "2026-09-04 00:00"` outside `public/data/`, `data/`, `.git/`, `node_modules/` and `dist/` returns nothing.** 🟢 **v1.1 Build 81 remains the LIVE App Store build. Next iOS ship = Build 82 — it carries B-131's `company_view` fix and B-136's paywall fix.** ⚠️ **16 untracked `docs/` files, unchanged, day 33.**
+>
+> 🔴 **WHAT YOU STILL OWE.** ① **`RESEND_API_KEY`** — five missed Sundays; DNS/DKIM done 08-27; create the key, add the secret, dry-run `weekly-digest.yml`. ② **the "200+ public sources" framing call** — documented roster **118**, in-app Sources screen **104**, claim now measured at **11 lines / 6 files**; recommendation on the table is "100+, derived at build time." ③ **the three still-open growth decisions from 08-26** — the price overrule, the CDP licence, the public-face call. ④ **B-143 — the quizzed/un-quizzed grade divergence. Decide before V-4 widens it.** 🧭 **ENGINEERING ORDER, UNCHANGED AT THE TOP: ① B-124 `git rebase --abort` — one line, five confirmed Sundays, a destroyed commit SHA on the record, seven workflows carrying the loop, and Sunday 09-06 is two days out. ② B-151's three-line `schedule` + `workflow_dispatch` on `ci.yml` — restores the scoring gate without waiting on a repo setting. ③ Ship Build 82 — B-136 is a live revenue leak. ④ B-134 FINRA matcher before V-4. Then B-149 (three lines, stops a frozen user-facing surface), B-152's `uk-ico` wire (8 sourced privacy records, one applier entry), B-145's 5% guard, B-128, V-4 led by `cfpb`/`secTax`, B-129 + B-146 + B-150, B-130, and the B-141/B-142/B-144 rewrite of `cron-health-daily.yml`.**
+>
+> ---
+>
+> **[09-04 01:10 sync]**
+>
+> *Daily doc-sync covering 2026-09-03, a Thursday — 4 bot commits, zero human activity, zero code changes, and zero cron failures. The headline was that the CI gate had not executed in 8 days and had never once run against a data change.*
 >
 > 🆕🔴🧪 **BIGGEST FINDING — B-82's CI GATE HAS RUN ZERO TIMES SINCE 2026-08-26, AND IT HAS NEVER ONCE GATED A DATA-CRON CHANGE. BOTH OF ITS TRIGGERS ARE DEAD, FOR TWO DIFFERENT REASONS.** `ci.yml` fires on `pull_request:` and `push: branches:[main]`. **Neither path has executed a job in eight days.** ① **THE PUSH PATH IS SKIPPED BY DESIGN — every one of the last 40 commits on `main` carries `[skip ci]`** (`git log -40 --pretty=%s | grep -c 'skip ci'` → **40 of 40**). The workflow file says so itself at `ci.yml:42`: *"Data crons commit with [skip ci]; GitHub already honors that for pushes."* **The last `push` CI run was `2026-08-26T21:10:05Z`; the last non-`[skip ci]` commit on main was `a1efa81ad` (2026-08-26).** ② **THE PULL_REQUEST PATH IS HELD UNRUN BY GITHUB — the last 16 `pull_request` CI runs are ALL `action_required`, going back to 2026-08-05.** Today's (`33753810943`, branch `data/state-regulators-r3`) has **`status: completed`, `conclusion: action_required`, `triggering_actor: github-actions[bot]` — and `/jobs` returns an EMPTY array. Not one job was ever dispatched.** These are in-repo branches, not forks (`git ls-remote origin refs/heads/data/state-regulators-r3` resolves). GitHub holds bot-triggered PR workflow runs for manual approval, so the run is created, stamped, and never runs. 📉 **Before 08-05 they were not green either — the 4 prior `pull_request` runs (08-01 → 08-03) are `failure`.** Lifetime tally over the last 100 CI runs: **`pull_request` → 16 `action_required` · 4 `failure` · 1 `success`** (and that one success was a human branch, `docs/geo-audit-2026-08-01`); **`push` → 30 `success` · 1 `failure`, none since 08-26.** 🚨 **CONSEQUENCE: the 28 frozen-threshold scoring tests, the `vite build` App.jsx syntax gate, `ui-guards`, `resolve-brand` and `scoringFlags` — B-82's entire stated purpose — have not run since 08-26 and have NEVER run against a data change.** The gate reads green in the Actions list only because the last thing it saw was a human commit eight days ago. 🔑 **This directly compounds B-101: the 42 open bot PRs cannot be validated before merge, because their CI is un-runnable without someone clicking "Approve and run." "Drain by hand" is therefore riskier than recorded — there is no automated check standing behind ANY of them.** 🧭 **MVP fix, in order: ① flip the repo setting so bot-authored PR runs dispatch without approval (or approve them as they arrive); ② add a `workflow_dispatch` + nightly `schedule` trigger to `ci.yml` so the scoring tests run at least daily regardless of `[skip ci]`. The second is three lines and does not depend on a settings change.** 🚫 **Never again read "CI is green" off the workflow list without checking the DATE and EVENT of the last run.** *(New: **B-151**.)*
 >
@@ -1309,6 +1341,60 @@
   ✅ **LIVE** — API routes + sitemap, deployed on push; no Build 82 dependency.
   *(WS-A, S — done)*
 
+- **B-152 🆕 NEW 2026-09-04 — a healthy cron can ship its records into a dead end. `uk-ico-monthly`
+  is 3-for-3 and its 8 sourced ICO privacy fines reach no company file, no scoring path, and no
+  screen.** *(WS-B, S — one applier entry)*
+  📐 **THE MEASUREMENT.** `uk-ico-monthly` has succeeded on every scheduled run (07-04, 08-04, and
+  `2026-09-05T00:25:37Z`, each ~17s). Today's commit `8320fe41f` wrote `data/raw/uk-ico/2026-09-05.json`
+  and refreshed `data/derived/uk-ico-augment.json`, which holds **8 real records — British Airways
+  (£20,000,000 Monetary Penalty Notice, 2020-10-16), Marriott International and six others**, each with
+  a citable `ico.org.uk` URL.
+  🚨 **AND IT STOPS THERE. Four independent checks:**
+  ① `scripts/uk-ico-merge.mjs` writes only the derived augment — the workflow runs fetch → merge →
+  test → commit, with no company-file write.
+  ② **The generic appliers load by EXPLICIT NAME, not by globbing** — `loadAugment(name)` in
+  `scripts/apply-augments-to-companies.mjs`. **`uk-ico` is named in neither that file nor
+  `scripts/apply-enriched-augments.mjs`.**
+  ③ **No key matching `ico` exists on any of the 12,830 company files**, checked against the full
+  100-top-level-key / 35-`enriched.*` census.
+  ④ `grep -rl uk-ico src/ api/ scripts/` outside its own three writer files returns **zero**.
+  📊 **IT IS NOT ALONE.** Of **201** `data/derived/*-augment.json` files, **78 are named by neither
+  applier**. **Eighteen of those have NO `-merge.mjs` script at all**, so an applier is their only
+  possible route to a company file and they have none: `bafin` · `cade-brazil` · `cnmv-spain` ·
+  `cofece-mexico` · `corporate-prwire` · `ec-antitrust` · `factcheck-verdicts` · `gdpr-enforcement` ·
+  `high-cred-news` · `hk-compcomm` · `ivass-italy` · `kftc-korea` · `norway-consumer` · `oecd-bribery` ·
+  `sa-competition` · `saudi-cma` · `sbv-vietnam` · `uae-sca`.
+  ⚠️ **SIZE IT HONESTLY BEFORE SPENDING TIME: those 18 hold ~53 records between them (0–10 entries
+  each), and six read literally 0** (`cnmv-spain`, `hk-compcomm`, `ivass-italy`, `saudi-cma`,
+  `sbv-vietnam`, `uae-sca`). **This is a plumbing gap, not a data windfall.**
+  🚫 **DO NOT extend the claim to the other 60 of the 78.** They have `-merge.mjs` scripts, and an
+  augment can legitimately reach a company file as a **narrative** rather than as a per-source key —
+  so the key test returns a false "dark" verdict for them. **That subset is unmeasured; measure it
+  before quoting a number.**
+  🔑 **This is a NEW dark-data shape and it sits beside B-148, not inside it.** B-148 counted keys
+  written ONTO company files that nothing reads. B-152 is data that never reaches a company file at all.
+  🧭 **MVP fix: add `uk-ico` to the applier's source list and map it to the privacy category.** 8
+  records, all sourced, and `dataPrivacy` is already a live scoring category — it is the single best
+  first wire of the 18.
+
+- **B-125 UPDATE 2026-09-04 — `au-fair-work-monthly` joins the timeout class, measured for the first
+  time. Live scope is now `fra`, `gdelt`, `gao-monthly`, `oversight-ig-monthly`, `au-fair-work-monthly`.**
+  Run `33863331174` ran `2026-09-04T10:27:36Z → 10:42:57Z` = **921s**, `cancelled`. Full lifetime
+  history is **three runs, three cancels, all within ~21s of the cap: 07-04 919s · 08-04 919s ·
+  09-04 921s against the 900s (15-minute) cap at `.github/workflows/au-fair-work-monthly.yml:25`.**
+  🚨 **`find public/data data -iname "*fair-work*"` returns NOTHING** — no raw file, no derived
+  augment, no company key — despite `scripts/au-fair-work-fetch.mjs`, `scripts/au-fair-work-merge.mjs`
+  and `scripts/au-fair-work-fetch.test.mjs` all sitting on disk. No `data/au-fair-work-*` PR has ever
+  existed either, so it dies in the fetch step before `create-pull-request`.
+  🚫 **DO NOT raise the 15m cap on this evidence.** The `faa` precedent governs: on 08-31 `faa-weekly`
+  finally finished inside its cap and returned `with_records: 0` on all 528 brands. **A kill proves the
+  job did not FINISH; it does not prove data was waiting.**
+  🧭 **Right first move: run `node scripts/au-fair-work-fetch.mjs` off-runner and time it.** The
+  fetcher scrapes `fairwork.gov.au` year-by-year for 2020..current — six sequential year pages — so a
+  local timing tells you in ten minutes whether 15m is genuinely tight or the scrape is hanging on a
+  dead URL (the B-122/B-146 pattern).
+  📅 **Next observation window: 2026-10-04.** It fires only on the 4th of the month.
+
 - **B-151 🆕 NEW 2026-09-03 — the CI gate has run ZERO times since 2026-08-26 and has NEVER once
   run against a data change. Both of its triggers are dead, for two different reasons.**
   *(WS-A, S — cheap, and it guards every other workstream)*
@@ -1339,6 +1425,11 @@
   depend on a settings change.
   🚫 **Never read "CI is green" off the workflow list again without checking the DATE and EVENT of the
   last run.**
+  📅 **STATUS 2026-09-04 — day 9, and today `ci.yml` produced NO run of any kind.** The most recent CI
+  run of any type is still `2026-09-03T12:11:32Z` (`pull_request`, `action_required`, branch
+  `data/state-regulators-r3`). The last CI run that ACTUALLY EXECUTED remains `2026-08-26T21:10:05Z` on
+  `push`/`main`. `git log -40 --pretty=%s | grep -c 'skip ci'` → **40 of 40**, unchanged. The three-line
+  fix is still unwritten.
 
 - **B-150 🆕 NEW 2026-09-02 — three more crons that have NEVER succeeded. The never-succeeded list
   goes 8 → 11.** *(WS-B, M)*
