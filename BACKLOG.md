@@ -6,7 +6,31 @@
 >
 > **🟢 LAUNCHED — Jun 23, 2026 · 2:01 AM CDT** (App Store · id `6775301458` · `https://apps.apple.com/app/id6775301458` · PH launched). **CURRENT LIVE BUILD = v1.1 Build 81** (approved 2026-07-08, released Manual **2026-07-14**) — it superseded v1.0 Build 75, which was live Jun 23 → Jul 14. **Next iOS ship = Build 82.** *(The 2026-06-11 "date is soft, get it right" call held through the Compass redesign; the experience shipped on the locked date. Go-live runbook: `docs/LAUNCH_DAY.md`.)*
 >
-> **Last updated:** 2026-09-05 01:11 CDT (daily doc-sync covering **2026-09-04**, a Friday — **3 bot commits**, zero human activity, zero code changes. **The headline is `au-fair-work-monthly`, which fires only on the 4th of the month and was caught in its once-a-month window: 0-for-3 lifetime, killed at its cap all three times, and it has never written a byte.** A healthy cron was also found shipping its records into a dead end, and B-137's line count is corrected upward.)
+> **Last updated:** 2026-09-06 01:10 CDT (daily doc-sync covering **2026-09-05**, a Saturday — **5 bot commits**, zero human activity, zero code changes. **The headline is a NEW DEFECT CLASS: four monthly crons are green, have never left DRY mode, and re-publish the same bundled CSV fixture every month under a "refresh" commit message.** One of them is `uk-ico` — which means **yesterday's B-152 write-up is corrected: its 8 ICO fines are fixture rows, not fetched records.** A second correction retires the "`canada-comp-monthly` is a phantom with no `.yml`" claim.)
+>
+> 🆕🔴🎭 **BIGGEST FINDING — FOUR MONTHLY CRONS HAVE NEVER PERFORMED A FETCH. THEY RE-SERIALIZE A BUNDLED CSV FIXTURE INTO A NEW DATED FILE EVERY MONTH AND COMMIT IT AS A "REFRESH."** The tell is a single key in the committed artifact: **`"mode": "dry"`.** 📐 **THE FOUR RECURRING OFFENDERS, ALL GREEN, ALL BYTE-FROZEN:** **`mas-singapore` 4-for-4 through `9a822a2d5` (2026-09-05)** · **`uk-ico` 4-for-4 through `8320fe41f` (2026-09-05)** · **`cftc-enforcement` 4 snapshots through 2026-09-03** · **`canada-competition-bureau` 3 snapshots through 2026-08-06.** 🔑 **THE MECHANISM IS IDENTICAL IN ALL FOUR WORKFLOWS.** Each runs `URL="${{ github.event.inputs.url || secrets.<X>_URL }}"; if [ -n "$URL" ]; then node scripts/<x>-fetch.mjs --apply --url "$URL"; else node scripts/<x>-fetch.mjs; fi`. **The secret is unset, so the bare invocation runs, `APPLY` is false, and `loadInput()` falls through to `if (!existsSync(FIXTURE)) throw ...; return rowsToRecords(parseCSV(await fs.readFile(FIXTURE)))`** (`scripts/mas-singapore-fetch.mjs:102-114`, `FIXTURE` defined at `:36`). **The fetch branch is unreachable and no error is ever raised — the job exits 0 and commits.** 📊 **PROVEN BY GENERATED CENSUS, NOT ASSERTED.** ① Hashing every dated raw payload with the volatile keys (`fetched_at`/`generated_at`/`snapshot_date`) stripped: **22 of the raw sources have every snapshot byte-identical**; the four above are the ones that are *also* `mode: "dry"` *and* still firing monthly. ② Scanning all of `data/raw/**` for `mode === "dry"`: **30 sources / 43 files** — but **26 of those 30 are one-off 2026-06-07/06-09 seed files, not recurring crons.** ③ `data/raw/mas-singapore/{2026-07-05,2026-08-05,2026-09-05}.json` all hash to **`e0ecade5ab700a89a9d1220927a0ed16`** on the `records` array. ⚠️ **THIS IS NOT B-126. The rows are not invented** — Goldman Sachs Singapore S$122M (1MDB, 2020), British Airways £20M, Marriott £18.4M are real historical enforcement actions with real regulator URLs. **The defect is STALENESS PUBLISHED AS FRESHNESS: 2020-2024 rows re-stamped `fetched_at: 2026-09-05` and committed as a monthly refresh.** 🚫 **`ca-dlse`, `eviction-lab` and `tx-tceq` are byte-frozen too but are NOT in this class — they run `--refresh`/`--apply` over curated static compilations by design. Do not lump them in.** 🧭 **MVP fix is one line per workflow: fail the step when the secret is unset, instead of silently falling back.** The fixture belongs in the tests, not in `data/raw/`. *(New: **B-153**.)*
+>
+> 🆕✅🔧 **SECOND FINDING — YESTERDAY'S B-152 WRITE-UP IS WRONG ON ITS KEY WORD, AND ITS RECOMMENDED FIX WOULD HAVE SHIPPED STALE DATA.** B-152 called `uk-ico`'s payload **"8 real, high-value records ... every one a GDPR-era ICO privacy fine with a citable `ico.org.uk` URL"** and named it **"the single best first wire."** 🚨 **They are the bundled fixture, verbatim.** `scripts/fixtures/uk-ico/sample.csv` is **9 lines — 1 header + the exact 8 rows** in `data/raw/uk-ico/2026-09-05.json`, and that file reads **`"mode": "dry"`.** ✅ **The B-152 PLUMBING finding still stands unchanged** — `uk-ico` is named by neither applier, `scripts/uk-ico-merge.mjs` writes only the derived augment, and 78 of 201 augments are named by neither applier. **What changes is the remedy: wiring `uk-ico` today would publish six-year-old fixture rows into the live `dataPrivacy` category.** 🔑 **Fix B-153 first, then wire it.** 🚫 **The word "sourced" was doing work it had not earned — a real URL inside a record does not mean the record was fetched.**
+>
+> 🆕✅🕳️ **THIRD FINDING — THE STANDING PREDICTION THAT WATCHDOG ROWS "AGE OUT ON THEIR OWN" IS FALSIFIED. A ROW WHOSE WORKFLOW FILE WAS DELETED PERSISTS INDEFINITELY.** ⚠️ **CORRECTION TO MY OWN FIRST READ TODAY: this is NOT a rename.** `git log --diff-filter=D` shows **`.github/workflows/canada-comp-monthly.yml` was DELETED on 2026-08-01 by `fc0b4aa0d` (B-108), together with `scripts/canada-comp-fetch.mjs` and `scripts/canada-comp-merge.mjs` — 636 lines, a genuine dead duplicate.** The standing note that it "has no `.yml` on disk" is **CORRECT and stays.** 🚨 **What IS newly falsified is the prediction recorded on the same note — *"Rows DO age out — that is the defect. `canada-comp-monthly`'s last run is 2026-07-02 and it will vanish on its own."* It has now sat on #155 for 65 days past that run and 35 days past the file's deletion.** 📌 **Separately measured and healthy: the surviving `canada-competition-bureau-monthly` (workflow id `290911439`, `active`) is 2-for-2 `success` — 2026-07-06 and 2026-08-06 — though it is a B-153 dry-mode member.** 📌 **`followthemoney-state-monthly` re-verified: returns nothing from `/actions/workflows`, consistent with `disabled_manually`.** 🧭 **Net effect: #155's 29 rows should be quoted as 27 real + 2 permanent phantoms, and "permanent" now has 65 days of evidence behind it. Fold the phantom-suppression into the B-141/B-142/B-144 single-pass rewrite.** *(New: **B-154**.)*
+>
+> 📊✅ **CATALOG HELD — DAY 6 AT THE SAME MD5.** `curl https://www.trunorthapp.com/data/index.json` → **12,830 tracked / 2,622 graded — A 63 · B 738 · C 1,031 · D 535 · F 255**, md5 **`1527f2e9ec86cd9555075f0162978532`**, 9,989,657 B — byte-identical 08-31 → 09-05. 🔑 **Quote 2,622.**
+>
+> ✅📐 **5 BOT COMMITS, 12 COMPANY FILES REWRITTEN, MEASURED PER-BRAND: ZERO GRADE INPUTS MOVED.** Parsed every changed file object-by-object across `f67926f15..HEAD`: **`sc` 0 · `excl` 0 · `flags` 0 · stored `grade` 0 · `overall` 0 · `csc` 0 · `realCats` 0.** What moved: **`dataLastUpdated` 12 · `news` 12 · `news_items` 12 · `recent_events` 9** — display or dark, every one. **23 files total; zero paths under `src/`, `scripts/`, `ios/`, `android/`, `.github/` or `package.json`.** Commits: `382a70a7d` news · `f271eaa8e` eviction-lab · `9a822a2d5` mas-singapore · `f9958b444` ofac-sdn · `6539726cd` tx-tceq. ⚠️ **Four of the five touched only `data/raw/` and `data/derived/` — none reached a company file.**
+>
+> 🔴🎯 **B-124 — SATURDAY LANDED, AND SUNDAY IS TOMORROW.** `data(news)` `382a70a7d` carries digest date **`2026-09-05`** (`generated_at 2026-09-05T08:38:24.115Z`; merge log **`merged 12 · orphan 0 · error 0`**, 40 items across 12 brands). **Day-of-week record: Mon–Sat 47-for-47, Sunday 0-for-5.** 🚨 **`grep -rn "rebase --abort" .github/workflows/` STILL RETURNS 0 — day 35 with the one-line fix unwritten, and the sixth Sunday test is 2026-09-06.** 🚫 **A Saturday landing is the control arm, not a fix.**
+>
+> 🔴🧪 **B-151 — DAY 10. TWO CI RUNS WERE CREATED TODAY AND NEITHER EXECUTED.** `ci.yml` runs `2026-09-05T09:03:54Z` and `2026-09-05T11:17:44Z` are both `pull_request` / **`action_required`** — created, stamped, never dispatched. **The last CI run that ACTUALLY EXECUTED remains `2026-08-26T21:10:05Z` on `push`/`main`**, and the last 10 commits on `main` are **10-for-10 `[skip ci]`**. 🧭 **The three-line fix — `workflow_dispatch` + nightly `schedule` on `ci.yml` — is still unwritten.**
+>
+> 🕳️🟢 **B-149 — DAY 4 OF THE FREEZE, FOURTH CONFIRMATION.** `public/data/trending.json` still reads **`generatedAt 2026-09-01T23:58:56.255Z`** with **`brands: [{ mondelez-international, views 1, uniques 1 }]`**. 🚫 **NEVER read `trending.json` as current — read `generatedAt`.**
+>
+> 📬 **B-101 — THE COUNT IS NO LONGER FLAT: 42 → 43.** New PR **#170 `data(ca-prop65): monthly refresh 2026-09-05`** opened `2026-09-05T06:23:40Z`. **Oldest is still #116, now 68 days.** **#134 and #165 remain the two must-not-merge landmines.** 🔴 **And per B-151, not one of the 43 has runnable CI — hand-review is still the only gate.**
+>
+> 📌 **EVERYTHING ELSE RE-VERIFIED.** **Cron watchdog #155 still lists 29 rows** (checked `2026-09-05T16:04Z`), unchanged in count since 09-02; `au-fair-work-monthly` now appears with its 09-04 cancel, as predicted. **`eviction-lab`, `mas-singapore` and `tx-tceq` are each 3-for-3 on the 5th of the month.** **B-122, B-123, B-125, B-128, B-129, B-130, B-133, B-134, B-137, B-140, B-141, B-142, B-143, B-145, B-146, B-147, B-148, B-150 untouched.** **Zero human activity, zero code changes.** 🟢 **v1.1 Build 81 remains the LIVE App Store build. Next iOS ship = Build 82** — it carries B-131's `company_view` fix and B-136's paywall fix. ⚠️ **16 untracked `docs/` files, unchanged, day 34.**
+>
+> 🔴 **WHAT YOU STILL OWE.** ① **`RESEND_API_KEY`** — five missed Sundays; DNS/DKIM done 08-27. ② **the "200+ public sources" framing call** — documented roster **118**, in-app Sources screen **104**, claim measured at **11 lines / 6 files**. ③ **the three still-open growth decisions from 08-26** — the price overrule, the CDP licence, the public-face call. ④ **B-143 — the quizzed/un-quizzed grade divergence.** 🧭 **ENGINEERING ORDER: ① B-124 `git rebase --abort` — one line, and the sixth Sunday test is TOMORROW. ② B-151's three-line `schedule` + `workflow_dispatch` on `ci.yml`. ③ Ship Build 82 — B-136 is a live revenue leak. ④ B-153 — fail the four dry-mode workflows when their secret is unset; it is one line each and it must land BEFORE B-152's `uk-ico` wire. ⑤ B-134 FINRA matcher before V-4.** Then B-149 (three lines), B-145's 5% guard, B-128, V-4 led by `cfpb`/`secTax`, B-129 + B-146 + B-150, B-130, and the B-141/B-142/B-144/B-154 single-pass rewrite of `cron-health-daily.yml`.
+>
+> **— PRIOR SYNC (history) —** 2026-09-05 01:11 CDT (daily doc-sync covering **2026-09-04**, a Friday — **3 bot commits**, zero human activity, zero code changes. **The headline is `au-fair-work-monthly`, which fires only on the 4th of the month and was caught in its once-a-month window: 0-for-3 lifetime, killed at its cap all three times, and it has never written a byte.** A healthy cron was also found shipping its records into a dead end, and B-137's line count is corrected upward.)
 >
 > 🆕🔴⏱️ **BIGGEST FINDING — `au-fair-work-monthly` IS 0-FOR-3 LIFETIME, KILLED AT ITS `timeout-minutes` CAP ALL THREE TIMES, AND HAS NEVER WRITTEN AN ARTIFACT. IT IS VISIBLE ONLY ON THE 4TH OF EACH MONTH.** Run `33863331174` ran **`2026-09-04T10:27:36Z → 10:42:57Z` = 921s**, `cancelled`. Its full history is **three runs, three cancels, all within ~21s of the cap**: **07-04 919s · 08-04 919s · 09-04 921s against the 900s (15-minute) cap at `.github/workflows/au-fair-work-monthly.yml:25`.** 🚨 **`find public/data data -iname "*fair-work*"` returns NOTHING — no raw file, no derived augment, no company key — despite `scripts/au-fair-work-fetch.mjs`, `scripts/au-fair-work-merge.mjs` AND `scripts/au-fair-work-fetch.test.mjs` all sitting on disk.** The workflow's own steps confirm it dies in the first one: it runs fetch → merge → tests → `create-pull-request`, and no PR for `data/au-fair-work-*` has ever existed. 🔑 **This is a B-125 timeout-class member, not a new outage — `au-fair-work` was ALREADY inside the eleven never-succeeded crons, but it had never been measured. Its live scope is now `fra`, `gdelt`, `gao-monthly`, `oversight-ig-monthly` and `au-fair-work-monthly`.** 🚫 **DO NOT raise the 15m cap on the strength of this.** The `faa` precedent governs: on 08-31 `faa-weekly` finally finished inside its cap and returned `with_records: 0` on all 528 brands. **A kill proves the job did not FINISH; it does not prove data was waiting.** 🧭 **The right first move is to run `node scripts/au-fair-work-fetch.mjs` off-runner and time it — the fetcher scrapes `fairwork.gov.au` year-by-year for 2020..current, six sequential year pages, so a local timing tells you in ten minutes whether 15m is genuinely tight or the scrape is hanging on a dead URL (the B-122/B-146 pattern).** 📅 **Next observation window is 2026-10-04.**
 >
@@ -1341,8 +1365,69 @@
   ✅ **LIVE** — API routes + sitemap, deployed on push; no Build 82 dependency.
   *(WS-A, S — done)*
 
+- **B-153 🆕 NEW 2026-09-05 — four monthly crons have NEVER performed a fetch. They re-serialize a
+  bundled CSV fixture into a new dated file every month and commit it as a "refresh."**
+  *(WS-B, S — one line per workflow)*
+  📐 **THE TELL.** A single key in the committed artifact: **`"mode": "dry"`.** Any file under
+  `data/raw/**` carrying it was produced from a fixture, not from the network.
+  🔴 **THE FOUR RECURRING OFFENDERS — all green, all byte-frozen across every snapshot:**
+  - `mas-singapore` — 4-for-4, latest `9a822a2d5` (2026-09-05), 7 records
+  - `uk-ico` — 4-for-4, latest `8320fe41f` (2026-09-05), 8 records
+  - `cftc-enforcement` — 4 snapshots, latest 2026-09-03, 7 records
+  - `canada-competition-bureau` — 3 snapshots, latest 2026-08-06, 8 records
+  🔑 **THE MECHANISM IS IDENTICAL IN ALL FOUR WORKFLOWS.** Each runs
+  `URL="${{ github.event.inputs.url || secrets.<X>_URL }}"` then
+  `if [ -n "$URL" ]; then node scripts/<x>-fetch.mjs --apply --url "$URL"; else node scripts/<x>-fetch.mjs; fi`.
+  **The secret is unset, so the bare invocation runs, `APPLY` is false, and `loadInput()` falls through
+  to the fixture branch** — `scripts/mas-singapore-fetch.mjs:102-114`, with `FIXTURE` defined at `:36`
+  as `scripts/fixtures/mas-singapore/sample.csv`. **The fetch branch is unreachable, no error is
+  raised, the job exits 0, and the commit step pushes.**
+  📊 **PROVEN BY GENERATED CENSUS, NOT ASSERTED.**
+  ① Hashing every dated raw payload with the volatile keys (`fetched_at` / `generated_at` /
+  `snapshot_date`) stripped: **22 raw sources have every snapshot byte-identical.**
+  ② Scanning all of `data/raw/**` for `mode === "dry"`: **30 sources / 43 files** — but **26 of those
+  30 are one-off 2026-06-07 / 06-09 seed files, not recurring crons.** The intersection of "still
+  firing monthly" and "`mode: dry`" is exactly the four above.
+  ③ `data/raw/mas-singapore/{2026-07-05,2026-08-05,2026-09-05}.json` all hash to
+  **`e0ecade5ab700a89a9d1220927a0ed16`** on the `records` array.
+  ⚠️ **THIS IS NOT B-126, AND THE DIFFERENCE MATTERS.** The rows are **not invented** — Goldman Sachs
+  (Singapore) S$122,000,000 (1MDB, 2020-10-22), British Airways £20,000,000 (2020-10-16), Marriott
+  £18,400,000 are real historical enforcement actions with real regulator URLs. **The defect is
+  STALENESS PUBLISHED AS FRESHNESS: 2020–2024 rows re-stamped `fetched_at: 2026-09-05` and committed
+  under a "monthly refresh" subject line.** They are citation-ready and would read as current.
+  🚫 **`ca-dlse`, `eviction-lab` and `tx-tceq` are byte-frozen too but are NOT in this class.** They
+  run `--refresh` / `--apply` over curated static compilations by design and carry no `mode` key.
+  Do not lump them in.
+  🧭 **MVP FIX — one line per workflow: fail the step when the secret is unset**, instead of silently
+  falling back. The fixture belongs in `*-fetch.test.mjs`, not in `data/raw/`.
+  🔑 **DURABLE RULE: a real source URL inside a record does NOT mean the record was fetched. Read
+  `mode`, and diff the payload across snapshots, before calling any cron's output current.**
+
+- **B-154 🆕 NEW 2026-09-05 — the standing prediction that watchdog rows "age out on their own" is
+  FALSIFIED. A row whose workflow FILE was deleted persists on #155 indefinitely.**
+  *(WS-B, S — folds into the B-141/B-142/B-144 rewrite)*
+  ⚠️ **CORRECTION TO THE FIRST READ OF THIS TODAY: it is NOT a rename.**
+  `git log --all --diff-filter=D -- .github/workflows/canada-comp*` shows
+  **`.github/workflows/canada-comp-monthly.yml` was DELETED on 2026-08-01 by `fc0b4aa0d` (B-108)**,
+  together with `scripts/canada-comp-fetch.mjs` and `scripts/canada-comp-merge.mjs` — 636 lines, a
+  genuine dead duplicate pipeline. ✅ **The standing note that it "has no `.yml` on disk" is CORRECT
+  and stays.**
+  🚨 **WHAT IS NEWLY FALSIFIED** is the prediction recorded alongside it — *"Rows DO age out — that is
+  the defect. `canada-comp-monthly`'s last run is 2026-07-02 and it will vanish on its own."*
+  **It has now sat on #155 for 65 days past that run and 35 days past the file's deletion.** The
+  watchdog resolves each row from a historical run record, so a run whose workflow no longer exists
+  never clears.
+  📌 **SEPARATELY MEASURED AND HEALTHY:** the surviving `canada-competition-bureau-monthly`
+  (workflow id `290911439`, `active`) is **2-for-2 `success` — 2026-07-06 and 2026-08-06** — though it
+  is itself a **B-153 dry-mode member** and has never fetched.
+  📌 **`followthemoney-state-monthly` re-verified:** returns nothing from `/actions/workflows`,
+  consistent with `disabled_manually`.
+  🧭 **Quote #155 as 29 rows = 27 real + 2 PERMANENT phantoms** — "permanent" now has 65 days of
+  evidence behind it, not an assumption. Fold phantom-suppression (drop any row whose workflow id is
+  absent from `/actions/workflows`) into the single-pass rewrite of `cron-health-daily.yml`.
+
 - **B-152 🆕 NEW 2026-09-04 — a healthy cron can ship its records into a dead end. `uk-ico-monthly`
-  is 3-for-3 and its 8 sourced ICO privacy fines reach no company file, no scoring path, and no
+  is 3-for-3 and its 8 ICO privacy fines (⚠️ FIXTURE rows — see the B-153 correction below) reach no company file, no scoring path, and no
   screen.** *(WS-B, S — one applier entry)*
   📐 **THE MEASUREMENT.** `uk-ico-monthly` has succeeded on every scheduled run (07-04, 08-04, and
   `2026-09-05T00:25:37Z`, each ~17s). Today's commit `8320fe41f` wrote `data/raw/uk-ico/2026-09-05.json`
@@ -1373,9 +1458,17 @@
   before quoting a number.**
   🔑 **This is a NEW dark-data shape and it sits beside B-148, not inside it.** B-148 counted keys
   written ONTO company files that nothing reads. B-152 is data that never reaches a company file at all.
-  🧭 **MVP fix: add `uk-ico` to the applier's source list and map it to the privacy category.** 8
-  records, all sourced, and `dataPrivacy` is already a live scoring category — it is the single best
-  first wire of the 18.
+  🔴 **CORRECTED 2026-09-05 BY B-153 — THE WORD "SOURCED" WAS WRONG, AND SO WAS THE RECOMMENDED FIX.**
+  `data/raw/uk-ico/2026-09-05.json` reads **`"mode": "dry"`**, and `scripts/fixtures/uk-ico/sample.csv`
+  is **9 lines — 1 header + the exact 8 rows** in that file. **`uk-ico-monthly` has never fetched ICO.**
+  The records (British Airways £20M, Marriott £18.4M, Ticketmaster £1.25M) are real 2020-era penalties
+  with real `ico.org.uk` URLs, but they are frozen fixture rows re-stamped `fetched_at: 2026-09-05`.
+  ✅ **THE PLUMBING FINDING ABOVE STANDS UNCHANGED** — `uk-ico` is named by neither applier,
+  `scripts/uk-ico-merge.mjs` writes only the derived augment, and 78 of 201 augments are unnamed.
+  🚫 **WHAT CHANGES IS THE REMEDY. Do NOT wire `uk-ico` yet** — doing so would publish six-year-old
+  fixture rows into the live `dataPrivacy` category as if they were a current monthly feed.
+  🧭 **ORDER: fix B-153 for `uk-ico` first (fail the step when `ICO_URL` is unset), confirm a real
+  fetch lands, THEN add the applier entry.**
 
 - **B-125 UPDATE 2026-09-04 — `au-fair-work-monthly` joins the timeout class, measured for the first
   time. Live scope is now `fra`, `gdelt`, `gao-monthly`, `oversight-ig-monthly`, `au-fair-work-monthly`.**
