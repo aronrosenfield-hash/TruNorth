@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T23:10:40.606Z",
+  "generated_at": "2026-09-07T21:57:26.491Z",
   "source_endpoints": {
     "enforcement_txt": "https://primis.phmsa.dot.gov/enforcement-documents/PHMSA%20Pipeline%20Enforcement%20Raw%20Data.txt",
     "incident_page_data": "https://primis.phmsa.dot.gov/enforcement-data/page-data/incident-report/page-data.json"
@@ -128,7 +128,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:33.021Z"
+      "scraped_at": "2026-09-07T21:57:17.636Z"
     },
     {
       "slug": "gatorade",
@@ -468,7 +468,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:33.917Z"
+      "scraped_at": "2026-09-07T21:57:18.671Z"
     },
     {
       "slug": "clorox",
@@ -585,16 +585,6 @@
       "total_damage_usd": null,
       "sample_incidents": [
         {
-          "cpf_number": "22026001NOPV",
-          "operator": "PIPELINES OF PUERTO RICO INCD, THE",
-          "date": "2026-05-01",
-          "location": "Southern",
-          "commodity": "INTRASTATE LIQUID",
-          "cause": "Integrity Management,  OME Procedural Manual,  Operation and/or Maintenance",
-          "damage_usd": null,
-          "status": "OPEN"
-        },
-        {
           "cpf_number": "22026008WL",
           "operator": "PIPELINES OF PUERTO RICO INCD, THE",
           "date": "2026-05-01",
@@ -603,6 +593,16 @@
           "cause": "Corrosion Control,  Operation and/or Maintenance",
           "damage_usd": null,
           "status": "CLOSED"
+        },
+        {
+          "cpf_number": "22026001NOPV",
+          "operator": "PIPELINES OF PUERTO RICO INCD, THE",
+          "date": "2026-05-01",
+          "location": "Southern",
+          "commodity": "INTRASTATE LIQUID",
+          "cause": "Integrity Management,  OME Procedural Manual,  Operation and/or Maintenance",
+          "damage_usd": null,
+          "status": "OPEN"
         },
         {
           "cpf_number": "120140002",
@@ -637,7 +637,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:34.188Z"
+      "scraped_at": "2026-09-07T21:57:18.980Z"
     },
     {
       "slug": "glossier",
@@ -922,19 +922,19 @@
           "status": "CLOSED"
         },
         {
-          "cpf_number": "32025027NOPV",
+          "cpf_number": "32025028NOA",
           "operator": "TEXAS EASTERN TRANSMISSION, LP",
           "date": "2025-07-01",
           "location": "Central",
           "commodity": "INTERSTATE GAS TRANSMISSION",
-          "cause": "OME Procedural Manual",
+          "cause": "MAOP Assessment,  Operation and/or Maintenance",
           "damage_usd": null,
           "status": "CLOSED"
         }
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:34.848Z"
+      "scraped_at": "2026-09-07T21:57:19.727Z"
     },
     {
       "slug": "cheesecake-factory",
@@ -991,16 +991,6 @@
       "total_damage_usd": null,
       "sample_incidents": [
         {
-          "cpf_number": "22026001NOPV",
-          "operator": "PIPELINES OF PUERTO RICO INCD, THE",
-          "date": "2026-05-01",
-          "location": "Southern",
-          "commodity": "INTRASTATE LIQUID",
-          "cause": "Integrity Management,  OME Procedural Manual,  Operation and/or Maintenance",
-          "damage_usd": null,
-          "status": "OPEN"
-        },
-        {
           "cpf_number": "22026008WL",
           "operator": "PIPELINES OF PUERTO RICO INCD, THE",
           "date": "2026-05-01",
@@ -1009,6 +999,16 @@
           "cause": "Corrosion Control,  Operation and/or Maintenance",
           "damage_usd": null,
           "status": "CLOSED"
+        },
+        {
+          "cpf_number": "22026001NOPV",
+          "operator": "PIPELINES OF PUERTO RICO INCD, THE",
+          "date": "2026-05-01",
+          "location": "Southern",
+          "commodity": "INTRASTATE LIQUID",
+          "cause": "Integrity Management,  OME Procedural Manual,  Operation and/or Maintenance",
+          "damage_usd": null,
+          "status": "OPEN"
         },
         {
           "cpf_number": "120140002",
@@ -1043,7 +1043,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:34.967Z"
+      "scraped_at": "2026-09-07T21:57:19.848Z"
     },
     {
       "slug": "lowes",
@@ -1186,16 +1186,6 @@
       "total_damage_usd": null,
       "sample_incidents": [
         {
-          "cpf_number": "520090019",
-          "operator": "BIG WEST OF CALIFORNIA, LLC",
-          "date": "2009-07-02",
-          "location": "Western",
-          "commodity": "GAS INTRASTATE ONSHORE",
-          "cause": "Corrosion Control,  Operation and/or Maintenance",
-          "damage_usd": 122600,
-          "status": "CLOSED"
-        },
-        {
           "cpf_number": "520090020W",
           "operator": "BIG WEST OF CALIFORNIA, LLC",
           "date": "2009-07-02",
@@ -1203,6 +1193,16 @@
           "commodity": "GAS INTRASTATE ONSHORE",
           "cause": "Corrosion Control,  OME Procedural Manual,  Operation and/or Maintenance,  Operator Qualification",
           "damage_usd": null,
+          "status": "CLOSED"
+        },
+        {
+          "cpf_number": "520090019",
+          "operator": "BIG WEST OF CALIFORNIA, LLC",
+          "date": "2009-07-02",
+          "location": "Western",
+          "commodity": "GAS INTRASTATE ONSHORE",
+          "cause": "Corrosion Control,  Operation and/or Maintenance",
+          "damage_usd": 122600,
           "status": "CLOSED"
         },
         {
@@ -1218,7 +1218,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:35.332Z"
+      "scraped_at": "2026-09-07T21:57:20.271Z"
     },
     {
       "slug": "tj-maxx",
@@ -1343,7 +1343,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:35.595Z"
+      "scraped_at": "2026-09-07T21:57:20.579Z"
     },
     {
       "slug": "academy",
@@ -1550,7 +1550,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:35.993Z"
+      "scraped_at": "2026-09-07T21:57:21.037Z"
     },
     {
       "slug": "reebok",
@@ -1630,7 +1630,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:36.143Z"
+      "scraped_at": "2026-09-07T21:57:21.212Z"
     },
     {
       "slug": "hollister",
@@ -1717,16 +1717,6 @@
       "total_damage_usd": null,
       "sample_incidents": [
         {
-          "cpf_number": "22026001NOPV",
-          "operator": "PIPELINES OF PUERTO RICO INCD, THE",
-          "date": "2026-05-01",
-          "location": "Southern",
-          "commodity": "INTRASTATE LIQUID",
-          "cause": "Integrity Management,  OME Procedural Manual,  Operation and/or Maintenance",
-          "damage_usd": null,
-          "status": "OPEN"
-        },
-        {
           "cpf_number": "22026008WL",
           "operator": "PIPELINES OF PUERTO RICO INCD, THE",
           "date": "2026-05-01",
@@ -1735,6 +1725,16 @@
           "cause": "Corrosion Control,  Operation and/or Maintenance",
           "damage_usd": null,
           "status": "CLOSED"
+        },
+        {
+          "cpf_number": "22026001NOPV",
+          "operator": "PIPELINES OF PUERTO RICO INCD, THE",
+          "date": "2026-05-01",
+          "location": "Southern",
+          "commodity": "INTRASTATE LIQUID",
+          "cause": "Integrity Management,  OME Procedural Manual,  Operation and/or Maintenance",
+          "damage_usd": null,
+          "status": "OPEN"
         },
         {
           "cpf_number": "120140002",
@@ -1769,7 +1769,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:36.327Z"
+      "scraped_at": "2026-09-07T21:57:21.428Z"
     },
     {
       "slug": "columbia",
@@ -1852,7 +1852,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:36.344Z"
+      "scraped_at": "2026-09-07T21:57:21.447Z"
     },
     {
       "slug": "arc-teryx",
@@ -1942,7 +1942,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:36.430Z"
+      "scraped_at": "2026-09-07T21:57:21.552Z"
     },
     {
       "slug": "moncler",
@@ -2042,7 +2042,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:36.519Z"
+      "scraped_at": "2026-09-07T21:57:21.657Z"
     },
     {
       "slug": "prada",
@@ -2474,16 +2474,6 @@
       "total_damage_usd": null,
       "sample_incidents": [
         {
-          "cpf_number": "22026001NOPV",
-          "operator": "PIPELINES OF PUERTO RICO INCD, THE",
-          "date": "2026-05-01",
-          "location": "Southern",
-          "commodity": "INTRASTATE LIQUID",
-          "cause": "Integrity Management,  OME Procedural Manual,  Operation and/or Maintenance",
-          "damage_usd": null,
-          "status": "OPEN"
-        },
-        {
           "cpf_number": "22026008WL",
           "operator": "PIPELINES OF PUERTO RICO INCD, THE",
           "date": "2026-05-01",
@@ -2492,6 +2482,16 @@
           "cause": "Corrosion Control,  Operation and/or Maintenance",
           "damage_usd": null,
           "status": "CLOSED"
+        },
+        {
+          "cpf_number": "22026001NOPV",
+          "operator": "PIPELINES OF PUERTO RICO INCD, THE",
+          "date": "2026-05-01",
+          "location": "Southern",
+          "commodity": "INTRASTATE LIQUID",
+          "cause": "Integrity Management,  OME Procedural Manual,  Operation and/or Maintenance",
+          "damage_usd": null,
+          "status": "OPEN"
         },
         {
           "cpf_number": "120140002",
@@ -2526,7 +2526,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:37.654Z"
+      "scraped_at": "2026-09-07T21:57:22.992Z"
     },
     {
       "slug": "disney-plus",
@@ -2576,7 +2576,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:37.711Z"
+      "scraped_at": "2026-09-07T21:57:23.060Z"
     },
     {
       "slug": "roku",
@@ -2721,7 +2721,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:38.035Z"
+      "scraped_at": "2026-09-07T21:57:23.442Z"
     },
     {
       "slug": "visa",
@@ -2816,7 +2816,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:38.108Z"
+      "scraped_at": "2026-09-07T21:57:23.528Z"
     },
     {
       "slug": "robinhood",
@@ -2930,7 +2930,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:38.197Z"
+      "scraped_at": "2026-09-07T21:57:23.631Z"
     },
     {
       "slug": "blackrock",
@@ -3014,7 +3014,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:38.225Z"
+      "scraped_at": "2026-09-07T21:57:23.666Z"
     },
     {
       "slug": "geico",
@@ -3141,7 +3141,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:38.383Z"
+      "scraped_at": "2026-09-07T21:57:23.852Z"
     },
     {
       "slug": "massmutual",
@@ -3181,7 +3181,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:38.414Z"
+      "scraped_at": "2026-09-07T21:57:23.887Z"
     },
     {
       "slug": "att",
@@ -3289,7 +3289,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:38.484Z"
+      "scraped_at": "2026-09-07T21:57:23.969Z"
     },
     {
       "slug": "mint-mobile",
@@ -3364,7 +3364,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:38.558Z"
+      "scraped_at": "2026-09-07T21:57:24.057Z"
     },
     {
       "slug": "optimum",
@@ -3444,7 +3444,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:38.588Z"
+      "scraped_at": "2026-09-07T21:57:24.093Z"
     },
     {
       "slug": "comcast",
@@ -3539,7 +3539,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:38.632Z"
+      "scraped_at": "2026-09-07T21:57:24.145Z"
     },
     {
       "slug": "chevron",
@@ -3611,7 +3611,7 @@
           "status": "CLOSED"
         },
         {
-          "cpf_number": "520170024W",
+          "cpf_number": "520170023W",
           "operator": "CHEVRON PIPE LINE CO",
           "date": "2017-11-08",
           "location": "Western",
@@ -3623,7 +3623,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:38.646Z"
+      "scraped_at": "2026-09-07T21:57:24.162Z"
     },
     {
       "slug": "shell",
@@ -3706,7 +3706,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:38.660Z"
+      "scraped_at": "2026-09-07T21:57:24.178Z"
     },
     {
       "slug": "bp",
@@ -3790,7 +3790,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:38.674Z"
+      "scraped_at": "2026-09-07T21:57:24.198Z"
     },
     {
       "slug": "conocophillips",
@@ -3869,7 +3869,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:38.689Z"
+      "scraped_at": "2026-09-07T21:57:24.216Z"
     },
     {
       "slug": "duke-energy",
@@ -3950,7 +3950,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:38.705Z"
+      "scraped_at": "2026-09-07T21:57:24.234Z"
     },
     {
       "slug": "nextera",
@@ -4032,7 +4032,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:38.736Z"
+      "scraped_at": "2026-09-07T21:57:24.272Z"
     },
     {
       "slug": "southern-company",
@@ -4123,7 +4123,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:38.753Z"
+      "scraped_at": "2026-09-07T21:57:24.291Z"
     },
     {
       "slug": "exelon",
@@ -4443,7 +4443,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:39.535Z"
+      "scraped_at": "2026-09-07T21:57:25.225Z"
     },
     {
       "slug": "american-airlines",
@@ -4478,7 +4478,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:39.551Z"
+      "scraped_at": "2026-09-07T21:57:25.244Z"
     },
     {
       "slug": "united-airlines",
@@ -4562,7 +4562,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:39.583Z"
+      "scraped_at": "2026-09-07T21:57:25.283Z"
     },
     {
       "slug": "jetblue",
@@ -4604,8 +4604,8 @@
       "fatalities_total": null,
       "injuries_total": null,
       "proposed_penalties_total_usd": 491100,
-      "assessed_penalties_total_usd": 237500,
-      "collected_penalties_total_usd": 237500,
+      "assessed_penalties_total_usd": 284100,
+      "collected_penalties_total_usd": 284100,
       "total_damage_usd": null,
       "sample_incidents": [
         {
@@ -4615,7 +4615,7 @@
           "location": "Western",
           "commodity": "INTRASTATE GAS TRANSMISSION",
           "cause": "Procedures for Adoption of Rules",
-          "damage_usd": null,
+          "damage_usd": 46600,
           "status": "OPEN"
         },
         {
@@ -4661,7 +4661,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:39.613Z"
+      "scraped_at": "2026-09-07T21:57:25.319Z"
     },
     {
       "slug": "spirit-airlines",
@@ -4741,7 +4741,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:39.644Z"
+      "scraped_at": "2026-09-07T21:57:25.356Z"
     },
     {
       "slug": "marriott",
@@ -4838,25 +4838,45 @@
       "name": "Enterprise",
       "status": "ok",
       "matched_operator_names": [
-        "ENTERPRISE PRODUCTS OPERATING LLC",
         "ENTERPRISE CRUDE PIPELINE LLC",
+        "ENTERPRISE PRODUCTS OPERATING LLC",
         "ENTERPRISE PRODUCTS CO"
       ],
       "matched_operator_ids": [
-        "31618",
         "30829",
+        "31618",
         "4493"
       ],
-      "total_enforcement_actions": 82,
-      "recent_24mo_actions": 2,
-      "incident_linked_actions": 25,
+      "total_enforcement_actions": 84,
+      "recent_24mo_actions": 4,
+      "incident_linked_actions": 26,
       "fatalities_total": null,
       "injuries_total": null,
-      "proposed_penalties_total_usd": 2880700,
+      "proposed_penalties_total_usd": 3972404,
       "assessed_penalties_total_usd": 2381254,
       "collected_penalties_total_usd": 2381254,
       "total_damage_usd": null,
       "sample_incidents": [
+        {
+          "cpf_number": "42026020NOPV",
+          "operator": "ENTERPRISE CRUDE PIPELINE LLC",
+          "date": "02/06/25",
+          "location": "HARRIS TX",
+          "commodity": null,
+          "cause": "Notice of Probable Violation",
+          "damage_usd": null,
+          "status": "OPEN"
+        },
+        {
+          "cpf_number": "42026020NOPV",
+          "operator": "ENTERPRISE CRUDE PIPELINE LLC",
+          "date": "2026-09-02",
+          "location": "Southwest",
+          "commodity": "INTERSTATE LIQUID",
+          "cause": "Control Room Management,  Corrosion Control,  OME Procedural Manual",
+          "damage_usd": null,
+          "status": "OPEN"
+        },
         {
           "cpf_number": "42026005CAO",
           "operator": "ENTERPRISE PRODUCTS OPERATING LLC",
@@ -4886,31 +4906,11 @@
           "cause": "Construction,  Corrosion Control,  Operation and/or Maintenance",
           "damage_usd": 135500,
           "status": "CLOSED"
-        },
-        {
-          "cpf_number": "42024024NOPV",
-          "operator": "ENTERPRISE PRODUCTS OPERATING LLC",
-          "date": "09/09/21",
-          "location": "CORTLAND NY",
-          "commodity": null,
-          "cause": "Notice of Probable Violation",
-          "damage_usd": null,
-          "status": "CLOSED"
-        },
-        {
-          "cpf_number": "42024024NOPV",
-          "operator": "ENTERPRISE PRODUCTS OPERATING LLC",
-          "date": "2024-05-02",
-          "location": "Southwest",
-          "commodity": "INTERSTATE LIQUID",
-          "cause": "Corrosion Control,  OME Procedural Manual,  Operation and/or Maintenance,  Reporting",
-          "damage_usd": null,
-          "status": "CLOSED"
         }
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:39.908Z"
+      "scraped_at": "2026-09-07T21:57:25.668Z"
     },
     {
       "slug": "avis",
@@ -4991,7 +4991,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:39.950Z"
+      "scraped_at": "2026-09-07T21:57:25.719Z"
     },
     {
       "slug": "carnival",
@@ -5196,7 +5196,7 @@
       ],
       "data_limited": true,
       "data_limited_reason": "PHMSA bulk incident ZIPs are blocked by AkamaiGHost; only enforcement-case data is reachable. Fatalities/injuries/dollar-damage are unavailable from the open programmatic surface.",
-      "scraped_at": "2026-08-31T23:10:40.318Z"
+      "scraped_at": "2026-09-07T21:57:26.151Z"
     },
     {
       "slug": "dewalt",
