@@ -1,35 +1,23 @@
 {
-  "merged_at": "2026-08-31T09:52:42.372Z",
+  "merged_at": "2026-09-07T08:26:13.421Z",
   "source_file": "public/data/cisa-kev.json",
-  "total_vendors": 281,
-  "merged_count": 4,
-  "skipped_count": 35,
-  "orphan_count": 242,
+  "total_vendors": 283,
+  "merged_count": 2,
+  "skipped_count": 37,
+  "orphan_count": 244,
   "error_count": 0,
   "merged_vendors": [
     {
-      "vendor": "Microsoft",
-      "target": "microsoft",
+      "vendor": "Google",
+      "target": "google-alphabet",
       "routed_via": "override",
-      "cves": 386
-    },
-    {
-      "vendor": "Oracle",
-      "target": "oracle-cloud",
-      "routed_via": "parent",
-      "cves": 46
-    },
-    {
-      "vendor": "Red Hat",
-      "target": "red-hat",
-      "routed_via": "direct",
-      "cves": 9
+      "cves": 73
     },
     {
       "vendor": "JFrog",
       "target": "jfrog",
       "routed_via": "direct",
-      "cves": 1
+      "cves": 2
     }
   ],
   "top_orphans": [
@@ -59,14 +47,14 @@
       "cves": 23
     },
     {
-      "vendor": "Synacor",
-      "vendor_slug": "synacor",
+      "vendor": "SonicWall",
+      "vendor_slug": "sonicwall",
       "cves": 19
     },
     {
-      "vendor": "SonicWall",
-      "vendor_slug": "sonicwall",
-      "cves": 17
+      "vendor": "Synacor",
+      "vendor_slug": "synacor",
+      "cves": 19
     },
     {
       "vendor": "Mozilla",
@@ -139,6 +127,11 @@
       "cves": 6
     },
     {
+      "vendor": "PaperCut",
+      "vendor_slug": "papercut",
+      "cves": 5
+    },
+    {
       "vendor": "WordPress",
       "vendor_slug": "wordpress",
       "cves": 5
@@ -174,13 +167,8 @@
       "cves": 5
     },
     {
-      "vendor": "JetBrains",
-      "vendor_slug": "jetbrains",
-      "cves": 4
-    },
-    {
-      "vendor": "SimpleHelp",
-      "vendor_slug": "simplehelp",
+      "vendor": "Sangoma",
+      "vendor_slug": "sangoma",
       "cves": 4
     }
   ]

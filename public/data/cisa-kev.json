@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-08-31T09:52:42.320Z",
-  "catalog_version": "2026.08.27",
-  "catalog_released": "2026-08-27T17:00:36.6632Z",
-  "total_cve_count": 1685,
-  "vendor_count": 281,
+  "generated_at": "2026-09-07T08:26:13.368Z",
+  "catalog_version": "2026.09.04",
+  "catalog_released": "2026-09-04T16:47:03.5197Z",
+  "total_cve_count": 1695,
+  "vendor_count": 283,
   "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
   "vendors": [
     {
       "vendor": "Microsoft",
       "total_cve_count": 386,
       "recent_12mo_count": 46,
-      "ransomware_count": 114,
+      "ransomware_count": 115,
       "product_breakdown": [
         {
           "label": "Windows",
@@ -423,7 +423,7 @@
       "vendor": "Adobe",
       "total_cve_count": 80,
       "recent_12mo_count": 6,
-      "ransomware_count": 10,
+      "ransomware_count": 11,
       "product_breakdown": [
         {
           "label": "Flash Player",
@@ -568,13 +568,13 @@
     },
     {
       "vendor": "Google",
-      "total_cve_count": 72,
-      "recent_12mo_count": 8,
+      "total_cve_count": 73,
+      "recent_12mo_count": 9,
       "ransomware_count": 0,
       "product_breakdown": [
         {
           "label": "Chromium V8",
-          "count": 39
+          "count": 40
         },
         {
           "label": "Chromium",
@@ -614,6 +614,17 @@
         }
       ],
       "top_cves": [
+        {
+          "cveID": "CVE-2026-85046",
+          "product": "Chromium V8",
+          "vulnerabilityName": "Google Chromium V8 Type Confusion Vulnerability",
+          "dateAdded": "2026-09-04",
+          "dueDate": "2026-09-18",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Google Chromium V8 contains a type confusion vulnerability that allows a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85046"
+        },
         {
           "cveID": "CVE-2026-11645",
           "product": "Chromium V8",
@@ -657,20 +668,17 @@
           "shortDescription": "Google Skia contains an out-of-bounds write vulnerability that could allow a remote attacker to perform out of bounds memory access via a crafted HTML page. This vulnerability affects Google Chrome and ChromeOS, Android, Flutter, and possibly other products.",
           "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-3909"
-        },
-        {
-          "cveID": "CVE-2026-2441",
-          "product": "Chromium",
-          "vulnerabilityName": "Google Chromium CSS Use-After-Free Vulnerability",
-          "dateAdded": "2026-02-17",
-          "dueDate": "2026-03-10",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Google Chromium CSS contains a use-after-free vulnerability that could allow a remote attacker to potentially exploit heap corruption via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-2441"
         }
       ],
       "highest_severity": [
+        {
+          "cveID": "CVE-2026-85046",
+          "product": "Chromium V8",
+          "vulnerabilityName": "Google Chromium V8 Type Confusion Vulnerability",
+          "dateAdded": "2026-09-04",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85046"
+        },
         {
           "cveID": "CVE-2026-11645",
           "product": "Chromium V8",
@@ -678,14 +686,6 @@
           "dateAdded": "2026-06-09",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-11645"
-        },
-        {
-          "cveID": "CVE-2026-5281",
-          "product": "Dawn",
-          "vulnerabilityName": "Google Dawn Use-After-Free Vulnerability",
-          "dateAdded": "2026-04-01",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-5281"
         }
       ]
     },
@@ -1276,7 +1276,7 @@
     {
       "vendor": "Linux",
       "total_cve_count": 28,
-      "recent_12mo_count": 7,
+      "recent_12mo_count": 6,
       "ransomware_count": 2,
       "product_breakdown": [
         {
@@ -1810,6 +1810,149 @@
       ]
     },
     {
+      "vendor": "SonicWall",
+      "total_cve_count": 19,
+      "recent_12mo_count": 5,
+      "ransomware_count": 13,
+      "product_breakdown": [
+        {
+          "label": "SMA1000 Appliances",
+          "count": 5
+        },
+        {
+          "label": "SonicOS",
+          "count": 3
+        },
+        {
+          "label": "SonicWall Email Security",
+          "count": 3
+        },
+        {
+          "label": "SMA100 Appliances",
+          "count": 2
+        },
+        {
+          "label": "SMA100",
+          "count": 2
+        },
+        {
+          "label": "SMA1000 appliance",
+          "count": 1
+        },
+        {
+          "label": "Secure Remote Access (SRA)",
+          "count": 1
+        },
+        {
+          "label": "SMA 100 Appliances",
+          "count": 1
+        },
+        {
+          "label": "SSLVPN SMA100",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-83548",
+          "product": "SMA1000 Appliances",
+          "vulnerabilityName": "SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability",
+          "dateAdded": "2026-09-02",
+          "dueDate": "2026-09-05",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "SonicWall SMA1000 Appliances contains a server-side request forgery vulnerability that could allow a remote unauthenticated attacker to gain unauthorized access to sensitive functionality and perform unauthorized operations.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83548"
+        },
+        {
+          "cveID": "CVE-2026-83549",
+          "product": "SMA1000 Appliances",
+          "vulnerabilityName": "SonicWall SMA1000 Appliances OS Command Injection Vulnerability",
+          "dateAdded": "2026-09-02",
+          "dueDate": "2026-09-05",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "SonicWall SMA1000 Appliances contains an OS command injection vulnerability that could enable a remote authenticated attacker as administrator to execute arbitrary OS commands, resulting in remote code execution.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83549"
+        },
+        {
+          "cveID": "CVE-2026-15409",
+          "product": "SMA1000 Appliances",
+          "vulnerabilityName": "SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability",
+          "dateAdded": "2026-07-14",
+          "dueDate": "2026-07-17",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "SonicWall SMA1000 Appliances contain a server-side request forgery vulnerability that could allow a remote unauthenticated attacker to potentially cause the appliance to make requests to unintended location.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15409"
+        },
+        {
+          "cveID": "CVE-2026-15410",
+          "product": "SMA1000 Appliances",
+          "vulnerabilityName": "SonicWall SMA1000 Appliances Code Injection Vulnerability",
+          "dateAdded": "2026-07-14",
+          "dueDate": "2026-07-17",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "SonicWall SMA1000 Appliances contain a code injection vulnerability which in specific conditions could potentially enable a remote authenticated attacker as administrator to execute arbitrary OS commands.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15410"
+        },
+        {
+          "cveID": "CVE-2025-40602",
+          "product": "SMA1000 appliance",
+          "vulnerabilityName": "SonicWall SMA1000 Missing Authorization Vulnerability",
+          "dateAdded": "2025-12-17",
+          "dueDate": "2025-12-24",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "SonicWall SMA1000 contains a missing authorization vulnerability that could allow for privilege escalation appliance management console (AMC) of affected devices.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-40602"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2026-15409",
+          "product": "SMA1000 Appliances",
+          "vulnerabilityName": "SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability",
+          "dateAdded": "2026-07-14",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15409"
+        },
+        {
+          "cveID": "CVE-2026-15410",
+          "product": "SMA1000 Appliances",
+          "vulnerabilityName": "SonicWall SMA1000 Appliances Code Injection Vulnerability",
+          "dateAdded": "2026-07-14",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15410"
+        },
+        {
+          "cveID": "CVE-2024-53704",
+          "product": "SonicOS",
+          "vulnerabilityName": "SonicWall SonicOS SSLVPN Improper Authentication Vulnerability",
+          "dateAdded": "2025-02-18",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-53704"
+        },
+        {
+          "cveID": "CVE-2026-83548",
+          "product": "SMA1000 Appliances",
+          "vulnerabilityName": "SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability",
+          "dateAdded": "2026-09-02",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83548"
+        },
+        {
+          "cveID": "CVE-2026-83549",
+          "product": "SMA1000 Appliances",
+          "vulnerabilityName": "SonicWall SMA1000 Appliances OS Command Injection Vulnerability",
+          "dateAdded": "2026-09-02",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-83549"
+        }
+      ]
+    },
+    {
       "vendor": "Synacor",
       "total_cve_count": 19,
       "recent_12mo_count": 6,
@@ -1933,152 +2076,9 @@
       ]
     },
     {
-      "vendor": "SonicWall",
-      "total_cve_count": 17,
-      "recent_12mo_count": 3,
-      "ransomware_count": 13,
-      "product_breakdown": [
-        {
-          "label": "SMA1000 Appliances",
-          "count": 3
-        },
-        {
-          "label": "SonicOS",
-          "count": 3
-        },
-        {
-          "label": "SonicWall Email Security",
-          "count": 3
-        },
-        {
-          "label": "SMA100 Appliances",
-          "count": 2
-        },
-        {
-          "label": "SMA100",
-          "count": 2
-        },
-        {
-          "label": "SMA1000 appliance",
-          "count": 1
-        },
-        {
-          "label": "Secure Remote Access (SRA)",
-          "count": 1
-        },
-        {
-          "label": "SMA 100 Appliances",
-          "count": 1
-        },
-        {
-          "label": "SSLVPN SMA100",
-          "count": 1
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2026-15409",
-          "product": "SMA1000 Appliances",
-          "vulnerabilityName": "SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability",
-          "dateAdded": "2026-07-14",
-          "dueDate": "2026-07-17",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "SonicWall SMA1000 Appliances contain a server-side request forgery vulnerability that could allow a remote unauthenticated attacker to potentially cause the appliance to make requests to unintended location.",
-          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15409"
-        },
-        {
-          "cveID": "CVE-2026-15410",
-          "product": "SMA1000 Appliances",
-          "vulnerabilityName": "SonicWall SMA1000 Appliances Code Injection Vulnerability",
-          "dateAdded": "2026-07-14",
-          "dueDate": "2026-07-17",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "SonicWall SMA1000 Appliances contain a code injection vulnerability which in specific conditions could potentially enable a remote authenticated attacker as administrator to execute arbitrary OS commands.",
-          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15410"
-        },
-        {
-          "cveID": "CVE-2025-40602",
-          "product": "SMA1000 appliance",
-          "vulnerabilityName": "SonicWall SMA1000 Missing Authorization Vulnerability",
-          "dateAdded": "2025-12-17",
-          "dueDate": "2025-12-24",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "SonicWall SMA1000 contains a missing authorization vulnerability that could allow for privilege escalation appliance management console (AMC) of affected devices.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-40602"
-        },
-        {
-          "cveID": "CVE-2023-44221",
-          "product": "SMA100 Appliances",
-          "vulnerabilityName": "SonicWall SMA100 Appliances OS Command Injection Vulnerability",
-          "dateAdded": "2025-05-01",
-          "dueDate": "2025-05-22",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "SonicWall SMA100 appliances contain an OS command injection vulnerability in the SSL-VPN management interface that allows a remote, authenticated attacker with administrative privilege to inject arbitrary commands as a 'nobody' user.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-44221"
-        },
-        {
-          "cveID": "CVE-2021-20035",
-          "product": "SMA100 Appliances",
-          "vulnerabilityName": "SonicWall SMA100 Appliances OS Command Injection Vulnerability",
-          "dateAdded": "2025-04-16",
-          "dueDate": "2025-05-07",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "SonicWall SMA100 appliances contain an OS command injection vulnerability in the management interface that allows a remote authenticated attacker to inject arbitrary commands as a 'nobody' user, which could potentially lead to code execution.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-20035"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2026-15409",
-          "product": "SMA1000 Appliances",
-          "vulnerabilityName": "SonicWall SMA1000 Appliances Server-Side Request Forgery Vulnerability",
-          "dateAdded": "2026-07-14",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15409"
-        },
-        {
-          "cveID": "CVE-2026-15410",
-          "product": "SMA1000 Appliances",
-          "vulnerabilityName": "SonicWall SMA1000 Appliances Code Injection Vulnerability",
-          "dateAdded": "2026-07-14",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15410"
-        },
-        {
-          "cveID": "CVE-2024-53704",
-          "product": "SonicOS",
-          "vulnerabilityName": "SonicWall SonicOS SSLVPN Improper Authentication Vulnerability",
-          "dateAdded": "2025-02-18",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-53704"
-        },
-        {
-          "cveID": "CVE-2025-40602",
-          "product": "SMA1000 appliance",
-          "vulnerabilityName": "SonicWall SMA1000 Missing Authorization Vulnerability",
-          "dateAdded": "2025-12-17",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-40602"
-        },
-        {
-          "cveID": "CVE-2023-44221",
-          "product": "SMA100 Appliances",
-          "vulnerabilityName": "SonicWall SMA100 Appliances OS Command Injection Vulnerability",
-          "dateAdded": "2025-05-01",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-44221"
-        }
-      ]
-    },
-    {
       "vendor": "Android",
       "total_cve_count": 17,
-      "recent_12mo_count": 4,
+      "recent_12mo_count": 3,
       "ransomware_count": 0,
       "product_breakdown": [
         {
@@ -4731,7 +4731,7 @@
     {
       "vendor": "TP-Link",
       "total_cve_count": 6,
-      "recent_12mo_count": 3,
+      "recent_12mo_count": 0,
       "ransomware_count": 0,
       "product_breakdown": [
         {
@@ -4828,6 +4828,113 @@
           "dateAdded": "2025-09-03",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-9377"
+        }
+      ]
+    },
+    {
+      "vendor": "PaperCut",
+      "total_cve_count": 5,
+      "recent_12mo_count": 3,
+      "ransomware_count": 2,
+      "product_breakdown": [
+        {
+          "label": "NG/MF",
+          "count": 4
+        },
+        {
+          "label": "MF/NG",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-82078",
+          "product": "NG/MF",
+          "vulnerabilityName": "PaperCut NG/MF Unsafe Reflection Vulnerability",
+          "dateAdded": "2026-08-31",
+          "dueDate": "2026-09-14",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "PaperCut NG/MF contains an unsafe reflection vulnerability that allows an attacker to manipulate system configuration parameters and execute arbitrary Java bytecode residing on the application classpath under the security context of the PaperCut server process. This vulnerability can be chained with CVE-2026-81578.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82078"
+        },
+        {
+          "cveID": "CVE-2026-81578",
+          "product": "NG/MF",
+          "vulnerabilityName": "PaperCut NG/MF Missing Authentication for Critical Function Vulnerability",
+          "dateAdded": "2026-08-31",
+          "dueDate": "2026-09-14",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "PaperCut NG/MF contains a missing authentication for critical function vulnerability which allows an unauthenticated remote attacker to modify certain system configurations. This vulnerability can be chained with CVE-2026-82078.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81578"
+        },
+        {
+          "cveID": "CVE-2023-27351",
+          "product": "NG/MF",
+          "vulnerabilityName": "PaperCut NG/MF Improper Authentication Vulnerability",
+          "dateAdded": "2026-04-20",
+          "dueDate": "2026-05-04",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "PaperCut NG/MF contains an improper authentication vulnerability that could allow remote attackers to bypass authentication on affected installations via the SecurityRequestFilter class.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-27351"
+        },
+        {
+          "cveID": "CVE-2023-2533",
+          "product": "NG/MF",
+          "vulnerabilityName": "PaperCut NG/MF Cross-Site Request Forgery (CSRF) Vulnerability",
+          "dateAdded": "2025-07-28",
+          "dueDate": "2025-08-18",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "PaperCut NG/MF contains a cross-site request forgery (CSRF) vulnerability, which, under specific conditions, could potentially enable an attacker to alter security settings or execute arbitrary code. ",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-2533"
+        },
+        {
+          "cveID": "CVE-2023-27350",
+          "product": "MF/NG",
+          "vulnerabilityName": "PaperCut MF/NG Improper Access Control Vulnerability",
+          "dateAdded": "2023-04-21",
+          "dueDate": "2023-05-12",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "PaperCut MF/NG contains an improper access control vulnerability within the SetupCompleted class that allows authentication bypass and code execution in the context of system.",
+          "requiredAction": "Apply updates per vendor instructions.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-27350"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2023-27351",
+          "product": "NG/MF",
+          "vulnerabilityName": "PaperCut NG/MF Improper Authentication Vulnerability",
+          "dateAdded": "2026-04-20",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-27351"
+        },
+        {
+          "cveID": "CVE-2023-27350",
+          "product": "MF/NG",
+          "vulnerabilityName": "PaperCut MF/NG Improper Access Control Vulnerability",
+          "dateAdded": "2023-04-21",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-27350"
+        },
+        {
+          "cveID": "CVE-2026-82078",
+          "product": "NG/MF",
+          "vulnerabilityName": "PaperCut NG/MF Unsafe Reflection Vulnerability",
+          "dateAdded": "2026-08-31",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82078"
+        },
+        {
+          "cveID": "CVE-2026-81578",
+          "product": "NG/MF",
+          "vulnerabilityName": "PaperCut NG/MF Missing Authentication for Critical Function Vulnerability",
+          "dateAdded": "2026-08-31",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81578"
         }
       ]
     },
@@ -5640,6 +5747,90 @@
           "dateAdded": "2022-03-25",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-4344"
+        }
+      ]
+    },
+    {
+      "vendor": "Sangoma",
+      "total_cve_count": 4,
+      "recent_12mo_count": 3,
+      "ransomware_count": 0,
+      "product_breakdown": [
+        {
+          "label": "FreePBX",
+          "count": 2
+        },
+        {
+          "label": "Switchvox",
+          "count": 1
+        },
+        {
+          "label": "FreePBX ",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-9586",
+          "product": "Switchvox",
+          "vulnerabilityName": "Sangoma Switchvox SQL Injection Vulnerability",
+          "dateAdded": "2026-09-02",
+          "dueDate": "2026-09-05",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Sangoma Switchvox contains a SQL injection vulnerability which allows an unauthenticated remote attacker to execute arbitrary SQL statements against the backend PostgreSQL database using a single crafted request, including database operations and remote code execution.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9586"
+        },
+        {
+          "cveID": "CVE-2025-64328",
+          "product": "FreePBX ",
+          "vulnerabilityName": "Sangoma FreePBX OS Command Injection Vulnerability",
+          "dateAdded": "2026-02-03",
+          "dueDate": "2026-02-24",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Sangoma FreePBX Endpoint Manager contains an OS command injection vulnerability that could allow for a post-authentication command injection by an authenticated known user via the testconnection -> check_ssh_connect() function. An attacker can leverage this vulnerability to potentially obtain remote access to the system as an asterisk user. ",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-64328"
+        },
+        {
+          "cveID": "CVE-2019-19006",
+          "product": "FreePBX",
+          "vulnerabilityName": " Sangoma FreePBX Improper Authentication Vulnerability",
+          "dateAdded": "2026-02-03",
+          "dueDate": "2026-02-24",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Sangoma FreePBX contains an improper authentication vulnerability that potentially allows unauthorized users to bypass password authentication and access services provided by the FreePBX admin.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-19006"
+        },
+        {
+          "cveID": "CVE-2025-57819",
+          "product": "FreePBX",
+          "vulnerabilityName": "Sangoma FreePBX Authentication Bypass Vulnerability",
+          "dateAdded": "2025-08-29",
+          "dueDate": "2025-09-19",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Sangoma FreePBX contains an authentication bypass vulnerability due to insufficiently sanitized user-supplied data allows unauthenticated access to FreePBX Administrator leading to arbitrary database manipulation and remote code execution.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-57819"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2026-9586",
+          "product": "Switchvox",
+          "vulnerabilityName": "Sangoma Switchvox SQL Injection Vulnerability",
+          "dateAdded": "2026-09-02",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9586"
+        },
+        {
+          "cveID": "CVE-2025-64328",
+          "product": "FreePBX ",
+          "vulnerabilityName": "Sangoma FreePBX OS Command Injection Vulnerability",
+          "dateAdded": "2026-02-03",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-64328"
         }
       ]
     },
@@ -6506,7 +6697,7 @@
     {
       "vendor": "Sitecore",
       "total_cve_count": 4,
-      "recent_12mo_count": 1,
+      "recent_12mo_count": 0,
       "ransomware_count": 1,
       "product_breakdown": [
         {
@@ -6924,6 +7115,71 @@
       ]
     },
     {
+      "vendor": "BerriAI",
+      "total_cve_count": 3,
+      "recent_12mo_count": 3,
+      "ransomware_count": 0,
+      "product_breakdown": [
+        {
+          "label": "LiteLLM",
+          "count": 3
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-59822",
+          "product": "LiteLLM",
+          "vulnerabilityName": "BerriAI LiteLLM Improper Authentication Vulnerability",
+          "dateAdded": "2026-09-02",
+          "dueDate": "2026-09-16",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "BerriAI LiteLLM contains an improper authentication vulnerability in the MCP Streamable HTTP endpoint that could allow an unauthenticated attacker to establish an authenticated MCP session using an arbitrary Bearer token.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59822"
+        },
+        {
+          "cveID": "CVE-2026-42271",
+          "product": "LiteLLM",
+          "vulnerabilityName": "BerriAI LiteLLM Command Injection Vulnerability",
+          "dateAdded": "2026-06-08",
+          "dueDate": "2026-06-22",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "BerriAI LiteLLM contains a command injection vulnerability that could allow any authenticated user, including holders of low-privilege internal-user keys, to run arbitrary commands on the host.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42271"
+        },
+        {
+          "cveID": "CVE-2026-42208",
+          "product": "LiteLLM",
+          "vulnerabilityName": "BerriAI LiteLLM SQL Injection Vulnerability",
+          "dateAdded": "2026-05-08",
+          "dueDate": "2026-05-11",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "BerriAI LiteLLM contains a SQL injection vulnerability that allows an attacker to read data from the proxy's database and potentially modify it, leading to unauthorized access to the proxy and the credentials it manages.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42208"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2026-59822",
+          "product": "LiteLLM",
+          "vulnerabilityName": "BerriAI LiteLLM Improper Authentication Vulnerability",
+          "dateAdded": "2026-09-02",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59822"
+        },
+        {
+          "cveID": "CVE-2026-42271",
+          "product": "LiteLLM",
+          "vulnerabilityName": "BerriAI LiteLLM Command Injection Vulnerability",
+          "dateAdded": "2026-06-08",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42271"
+        }
+      ]
+    },
+    {
       "vendor": "TrueConf",
       "total_cve_count": 3,
       "recent_12mo_count": 3,
@@ -7143,83 +7399,6 @@
           "dateAdded": "2025-06-02",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-3935"
-        }
-      ]
-    },
-    {
-      "vendor": "PaperCut",
-      "total_cve_count": 3,
-      "recent_12mo_count": 1,
-      "ransomware_count": 2,
-      "product_breakdown": [
-        {
-          "label": "NG/MF",
-          "count": 2
-        },
-        {
-          "label": "MF/NG",
-          "count": 1
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2023-27351",
-          "product": "NG/MF",
-          "vulnerabilityName": "PaperCut NG/MF Improper Authentication Vulnerability",
-          "dateAdded": "2026-04-20",
-          "dueDate": "2026-05-04",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "PaperCut NG/MF contains an improper authentication vulnerability that could allow remote attackers to bypass authentication on affected installations via the SecurityRequestFilter class.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-27351"
-        },
-        {
-          "cveID": "CVE-2023-2533",
-          "product": "NG/MF",
-          "vulnerabilityName": "PaperCut NG/MF Cross-Site Request Forgery (CSRF) Vulnerability",
-          "dateAdded": "2025-07-28",
-          "dueDate": "2025-08-18",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "PaperCut NG/MF contains a cross-site request forgery (CSRF) vulnerability, which, under specific conditions, could potentially enable an attacker to alter security settings or execute arbitrary code. ",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-2533"
-        },
-        {
-          "cveID": "CVE-2023-27350",
-          "product": "MF/NG",
-          "vulnerabilityName": "PaperCut MF/NG Improper Access Control Vulnerability",
-          "dateAdded": "2023-04-21",
-          "dueDate": "2023-05-12",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "PaperCut MF/NG contains an improper access control vulnerability within the SetupCompleted class that allows authentication bypass and code execution in the context of system.",
-          "requiredAction": "Apply updates per vendor instructions.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-27350"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2023-27351",
-          "product": "NG/MF",
-          "vulnerabilityName": "PaperCut NG/MF Improper Authentication Vulnerability",
-          "dateAdded": "2026-04-20",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-27351"
-        },
-        {
-          "cveID": "CVE-2023-27350",
-          "product": "MF/NG",
-          "vulnerabilityName": "PaperCut MF/NG Improper Access Control Vulnerability",
-          "dateAdded": "2023-04-21",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-27350"
-        },
-        {
-          "cveID": "CVE-2023-2533",
-          "product": "NG/MF",
-          "vulnerabilityName": "PaperCut NG/MF Cross-Site Request Forgery (CSRF) Vulnerability",
-          "dateAdded": "2025-07-28",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-2533"
         }
       ]
     },
@@ -7459,75 +7638,6 @@
       ]
     },
     {
-      "vendor": "Sangoma",
-      "total_cve_count": 3,
-      "recent_12mo_count": 2,
-      "ransomware_count": 0,
-      "product_breakdown": [
-        {
-          "label": "FreePBX",
-          "count": 2
-        },
-        {
-          "label": "FreePBX ",
-          "count": 1
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2025-64328",
-          "product": "FreePBX ",
-          "vulnerabilityName": "Sangoma FreePBX OS Command Injection Vulnerability",
-          "dateAdded": "2026-02-03",
-          "dueDate": "2026-02-24",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Sangoma FreePBX Endpoint Manager contains an OS command injection vulnerability that could allow for a post-authentication command injection by an authenticated known user via the testconnection -> check_ssh_connect() function. An attacker can leverage this vulnerability to potentially obtain remote access to the system as an asterisk user. ",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-64328"
-        },
-        {
-          "cveID": "CVE-2019-19006",
-          "product": "FreePBX",
-          "vulnerabilityName": " Sangoma FreePBX Improper Authentication Vulnerability",
-          "dateAdded": "2026-02-03",
-          "dueDate": "2026-02-24",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Sangoma FreePBX contains an improper authentication vulnerability that potentially allows unauthorized users to bypass password authentication and access services provided by the FreePBX admin.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-19006"
-        },
-        {
-          "cveID": "CVE-2025-57819",
-          "product": "FreePBX",
-          "vulnerabilityName": "Sangoma FreePBX Authentication Bypass Vulnerability",
-          "dateAdded": "2025-08-29",
-          "dueDate": "2025-09-19",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Sangoma FreePBX contains an authentication bypass vulnerability due to insufficiently sanitized user-supplied data allows unauthenticated access to FreePBX Administrator leading to arbitrary database manipulation and remote code execution.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-57819"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2025-64328",
-          "product": "FreePBX ",
-          "vulnerabilityName": "Sangoma FreePBX OS Command Injection Vulnerability",
-          "dateAdded": "2026-02-03",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-64328"
-        },
-        {
-          "cveID": "CVE-2019-19006",
-          "product": "FreePBX",
-          "vulnerabilityName": " Sangoma FreePBX Improper Authentication Vulnerability",
-          "dateAdded": "2026-02-03",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-19006"
-        }
-      ]
-    },
-    {
       "vendor": "ASUS",
       "total_cve_count": 3,
       "recent_12mo_count": 1,
@@ -7737,7 +7847,7 @@
     {
       "vendor": "Meta Platforms",
       "total_cve_count": 3,
-      "recent_12mo_count": 1,
+      "recent_12mo_count": 0,
       "ransomware_count": 0,
       "product_breakdown": [
         {
@@ -8879,6 +8989,60 @@
       ]
     },
     {
+      "vendor": "JFrog",
+      "total_cve_count": 2,
+      "recent_12mo_count": 2,
+      "ransomware_count": 0,
+      "product_breakdown": [
+        {
+          "label": "Artifactory",
+          "count": 2
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-82329",
+          "product": "Artifactory",
+          "vulnerabilityName": "JFrog Artifactory Improper Authentication Vulnerability",
+          "dateAdded": "2026-09-02",
+          "dueDate": "2026-09-05",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "JFrog Artifactory contains an improper authentication vulnerability that under default configuration can allow an unauthenticated attacker with network access to obtain administrative privileges. ",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82329"
+        },
+        {
+          "cveID": "CVE-2026-66384",
+          "product": "Artifactory",
+          "vulnerabilityName": "JFrog Artifactory Improper Limitation of a Pathname to a Restricted Directory Vulnerability",
+          "dateAdded": "2026-08-27",
+          "dueDate": "2026-09-10",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "JFrog Artifactory contains an improper limitation of a pathname to a restricted directory vulnerability. This can allow an authenticated user to write data outside the intended Docker cache path under specific remote-repository conditions.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-66384"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2026-82329",
+          "product": "Artifactory",
+          "vulnerabilityName": "JFrog Artifactory Improper Authentication Vulnerability",
+          "dateAdded": "2026-09-02",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82329"
+        },
+        {
+          "cveID": "CVE-2026-66384",
+          "product": "Artifactory",
+          "vulnerabilityName": "JFrog Artifactory Improper Limitation of a Pathname to a Restricted Directory Vulnerability",
+          "dateAdded": "2026-08-27",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-66384"
+        }
+      ]
+    },
+    {
       "vendor": "ownCloud",
       "total_cve_count": 2,
       "recent_12mo_count": 1,
@@ -9099,60 +9263,6 @@
           "dateAdded": "2026-05-26",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48172"
-        }
-      ]
-    },
-    {
-      "vendor": "BerriAI",
-      "total_cve_count": 2,
-      "recent_12mo_count": 2,
-      "ransomware_count": 0,
-      "product_breakdown": [
-        {
-          "label": "LiteLLM",
-          "count": 2
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2026-42271",
-          "product": "LiteLLM",
-          "vulnerabilityName": "BerriAI LiteLLM Command Injection Vulnerability",
-          "dateAdded": "2026-06-08",
-          "dueDate": "2026-06-22",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "BerriAI LiteLLM contains a command injection vulnerability that could allow any authenticated user, including holders of low-privilege internal-user keys, to run arbitrary commands on the host.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42271"
-        },
-        {
-          "cveID": "CVE-2026-42208",
-          "product": "LiteLLM",
-          "vulnerabilityName": "BerriAI LiteLLM SQL Injection Vulnerability",
-          "dateAdded": "2026-05-08",
-          "dueDate": "2026-05-11",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "BerriAI LiteLLM contains a SQL injection vulnerability that allows an attacker to read data from the proxy's database and potentially modify it, leading to unauthorized access to the proxy and the credentials it manages.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42208"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2026-42271",
-          "product": "LiteLLM",
-          "vulnerabilityName": "BerriAI LiteLLM Command Injection Vulnerability",
-          "dateAdded": "2026-06-08",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42271"
-        },
-        {
-          "cveID": "CVE-2026-42208",
-          "product": "LiteLLM",
-          "vulnerabilityName": "BerriAI LiteLLM SQL Injection Vulnerability",
-          "dateAdded": "2026-05-08",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42208"
         }
       ]
     },
@@ -11439,37 +11549,72 @@
       ]
     },
     {
-      "vendor": "JFrog",
+      "vendor": "Kludex",
       "total_cve_count": 1,
       "recent_12mo_count": 1,
       "ransomware_count": 0,
       "product_breakdown": [
         {
-          "label": "Artifactory",
+          "label": "Starlette",
           "count": 1
         }
       ],
       "top_cves": [
         {
-          "cveID": "CVE-2026-66384",
-          "product": "Artifactory",
-          "vulnerabilityName": "JFrog Artifactory Improper Limitation of a Pathname to a Restricted Directory Vulnerability",
-          "dateAdded": "2026-08-27",
-          "dueDate": "2026-09-10",
+          "cveID": "CVE-2026-48710",
+          "product": "Starlette",
+          "vulnerabilityName": "Kludex Starlette HTTP Request/Response Smuggling Vulnerability",
+          "dateAdded": "2026-09-02",
+          "dueDate": "2026-09-16",
           "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "JFrog Artifactory contains an improper limitation of a pathname to a restricted directory vulnerability. This can allow an authenticated user to write data outside the intended Docker cache path under specific remote-repository conditions.",
+          "shortDescription": "Kludex Starlette contains a HTTP request/response smuggling vulnerability that could allow attackers to inject paths into the host part, prepending the actual path leading to issues such as authentication bypass when the authentication depends on the reconstructed URL’s path. This vulnerability could be chaned with CVE-2026-42271.",
           "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-66384"
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48710"
         }
       ],
       "highest_severity": [
         {
-          "cveID": "CVE-2026-66384",
-          "product": "Artifactory",
-          "vulnerabilityName": "JFrog Artifactory Improper Limitation of a Pathname to a Restricted Directory Vulnerability",
-          "dateAdded": "2026-08-27",
+          "cveID": "CVE-2026-48710",
+          "product": "Starlette",
+          "vulnerabilityName": "Kludex Starlette HTTP Request/Response Smuggling Vulnerability",
+          "dateAdded": "2026-09-02",
           "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-66384"
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48710"
+        }
+      ]
+    },
+    {
+      "vendor": "Kestra",
+      "total_cve_count": 1,
+      "recent_12mo_count": 1,
+      "ransomware_count": 0,
+      "product_breakdown": [
+        {
+          "label": "Kestra OSS",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-49869",
+          "product": "Kestra OSS",
+          "vulnerabilityName": "Kestra OSS OS Command Injection Vulnerability",
+          "dateAdded": "2026-09-02",
+          "dueDate": "2026-09-05",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Kestra OSS contains an OS command injection vulnerability that could allow an unauthenticated remote attacker to create and execute arbitrary workflows without credentials.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49869"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2026-49869",
+          "product": "Kestra OSS",
+          "vulnerabilityName": "Kestra OSS OS Command Injection Vulnerability",
+          "dateAdded": "2026-09-02",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-49869"
         }
       ]
     },
