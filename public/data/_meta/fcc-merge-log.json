@@ -1,5 +1,5 @@
 {
-  "merged_at": "2026-07-27T13:39:11.147Z",
+  "merged_at": "2026-09-07T15:46:12.910Z",
   "source_file": "public/data/fcc-complaints.json",
   "dataset_limitation": "FCC CGB Consumer Complaints dataset 3xyp-aqkj has no company/carrier column; per-brand attribution is not possible. Industry aggregates are recorded for context.",
   "total_brands": 528,
@@ -7,89 +7,89 @@
   "skipped_count": 528,
   "orphan_count": 0,
   "error_count": 0,
-  "industry_total_complaints_24mo": 648382,
+  "industry_total_complaints_24mo": 668597,
   "industry_top_categories": [
     {
       "label": "Unwanted Calls",
-      "count": 258672
+      "count": 263860
     },
     {
       "label": "Billing",
-      "count": 150593
+      "count": 161373
     },
     {
       "label": "Equipment",
-      "count": 44846
-    },
-    {
-      "label": "Availability",
-      "count": 41677
+      "count": 47394
     },
     {
       "label": "Availability (including rural call completion)",
-      "count": 39566
+      "count": 40941
+    },
+    {
+      "label": "Availability",
+      "count": 40473
     },
     {
       "label": "Number Portability (keeping your number if you change providers)",
-      "count": 20204
+      "count": 21552
     },
     {
       "label": "Interference",
-      "count": 17168
+      "count": 17833
     },
     {
       "label": "Privacy",
-      "count": 13827
-    },
-    {
-      "label": "Indecency",
-      "count": 12065
+      "count": 14048
     },
     {
       "label": "Cramming (unauthorized charges on your phone bill)",
-      "count": 10420
+      "count": 11441
+    },
+    {
+      "label": "Indecency",
+      "count": 9898
     }
   ],
   "industry_top_methods": [
     {
       "label": "Wireless (cell phone/other mobile device)",
-      "count": 350493
+      "count": 373341
     },
     {
       "label": "Internet (VOIP)",
-      "count": 72172
+      "count": 70723
     },
     {
       "label": "Cable",
-      "count": 54114
-    },
-    {
-      "label": "Wired",
-      "count": 49842
+      "count": 53054
     },
     {
       "label": "Wireless",
-      "count": 48847
+      "count": 49672
+    },
+    {
+      "label": "Wired",
+      "count": 48868
     },
     {
       "label": "",
-      "count": 22827
+      "count": 22235
     },
     {
       "label": "Fiber",
-      "count": 17565
+      "count": 19209
     },
     {
       "label": "Broadcast",
-      "count": 13275
+      "count": 12133
     },
     {
       "label": "Satellite",
-      "count": 5790
+      "count": 5764
     },
     {
       "label": "DSL",
-      "count": 4322
+      "count": 4373
     }
   ],
   "orphans": []
