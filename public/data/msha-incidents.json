@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-07T19:09:47.365Z",
+  "generated_at": "2026-09-14T19:51:56.863Z",
   "source_urls": {
     "violations": "https://arlweb.msha.gov/OpenGovernmentData/DataSets/Violations.zip",
     "accidents": "https://arlweb.msha.gov/OpenGovernmentData/DataSets/Accidents.zip",
     "mines": "https://arlweb.msha.gov/OpenGovernmentData/DataSets/Mines.zip"
   },
-  "violations_rows": 3099594,
-  "accidents_rows": 274623,
+  "violations_rows": 3100750,
+  "accidents_rows": 274737,
   "brand_count": 528,
   "with_records_count": 78,
   "no_records_count": 450,
@@ -35,7 +35,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.727Z"
+      "scraped_at": "2026-09-14T19:51:56.241Z"
     },
     {
       "slug": "pepsi",
@@ -96,14 +96,14 @@
       "slug": "corona",
       "name": "Corona",
       "status": "ok",
-      "total_citations": 12796,
-      "total_penalties_usd": 7616808,
-      "significant_substantial": 2444,
+      "total_citations": 12801,
+      "total_penalties_usd": 7637859,
+      "significant_substantial": 2443,
       "fatalities_5y": 2,
-      "total_accidents": 754,
+      "total_accidents": 755,
       "sample_citations": [
         {
-          "date": "09/03/2026",
+          "date": "09/10/2026",
           "mine_name": "Buchanan Mine #1",
           "mine_type": "Underground",
           "section": "75.370(a)(1)",
@@ -112,10 +112,22 @@
           "likelihood": "Unlikely",
           "proposed_penalty_usd": 0,
           "violator": "Buchanan Minerals, LLC",
-          "violation_no": "9216790"
+          "violation_no": "9216799"
         },
         {
-          "date": "09/03/2026",
+          "date": "09/10/2026",
+          "mine_name": "Buchanan Mine #1",
+          "mine_type": "Underground",
+          "section": "75.351(k)",
+          "type": "Citation",
+          "sig_sub": false,
+          "likelihood": "Unlikely",
+          "proposed_penalty_usd": 0,
+          "violator": "Buchanan Minerals, LLC",
+          "violation_no": "9271794"
+        },
+        {
+          "date": "09/09/2026",
           "mine_name": "Buchanan Mine #1",
           "mine_type": "Underground",
           "section": "75.351(c)(4)",
@@ -124,43 +136,31 @@
           "likelihood": "Unlikely",
           "proposed_penalty_usd": 0,
           "violator": "Buchanan Minerals, LLC",
-          "violation_no": "9216792"
+          "violation_no": "9216796"
         },
         {
-          "date": "09/03/2026",
+          "date": "09/09/2026",
           "mine_name": "Buchanan Mine #1",
           "mine_type": "Underground",
-          "section": "75.380(g)",
+          "section": "75.351(k)",
           "type": "Citation",
           "sig_sub": false,
           "likelihood": "Unlikely",
           "proposed_penalty_usd": 0,
           "violator": "Buchanan Minerals, LLC",
-          "violation_no": "9216793"
+          "violation_no": "9216797"
         },
         {
-          "date": "09/03/2026",
+          "date": "09/09/2026",
           "mine_name": "Buchanan Mine #1",
           "mine_type": "Underground",
-          "section": "75.333(c)(3)",
+          "section": "75.351(d)(2)",
           "type": "Citation",
           "sig_sub": false,
           "likelihood": "Unlikely",
           "proposed_penalty_usd": 0,
           "violator": "Buchanan Minerals, LLC",
-          "violation_no": "9216794"
-        },
-        {
-          "date": "09/03/2026",
-          "mine_name": "Buchanan Mine #1",
-          "mine_type": "Underground",
-          "section": "75.370(a)(1)",
-          "type": "Citation",
-          "sig_sub": false,
-          "likelihood": "Unlikely",
-          "proposed_penalty_usd": 0,
-          "violator": "Buchanan Minerals, LLC",
-          "violation_no": "9216795"
+          "violation_no": "9216798"
         }
       ],
       "sample_fatalities": [
@@ -201,7 +201,7 @@
           "coal_metal": "coal"
         }
       ],
-      "scraped_at": "2026-09-07T19:09:46.810Z"
+      "scraped_at": "2026-09-14T19:51:56.325Z"
     },
     {
       "slug": "heineken",
@@ -325,7 +325,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.811Z"
+      "scraped_at": "2026-09-14T19:51:56.326Z"
     },
     {
       "slug": "pringles",
@@ -454,7 +454,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.811Z"
+      "scraped_at": "2026-09-14T19:51:56.327Z"
     },
     {
       "slug": "hellmanns",
@@ -485,7 +485,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.811Z"
+      "scraped_at": "2026-09-14T19:51:56.327Z"
     },
     {
       "slug": "kellogg",
@@ -569,7 +569,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.819Z"
+      "scraped_at": "2026-09-14T19:51:56.331Z"
     },
     {
       "slug": "pepsico",
@@ -605,75 +605,75 @@
       "slug": "campbells",
       "name": "Campbell's",
       "status": "ok",
-      "total_citations": 1042,
+      "total_citations": 1047,
       "total_penalties_usd": 311703,
-      "significant_substantial": 261,
+      "significant_substantial": 262,
       "fatalities_5y": 0,
       "total_accidents": 27,
       "sample_citations": [
         {
-          "date": "09/01/2026",
-          "mine_name": "CREAMER PIT",
+          "date": "09/03/2026",
+          "mine_name": "Sand Pit",
           "mine_type": "Surface",
-          "section": "56.14132(a)",
+          "section": "56.12004",
           "type": "Citation",
           "sig_sub": false,
           "likelihood": "Unlikely",
           "proposed_penalty_usd": 0,
-          "violator": "South Alabama Materials",
-          "violation_no": "5193267"
+          "violator": "Campbell Redi-Mix Inc",
+          "violation_no": "5103893"
         },
         {
-          "date": "08/27/2026",
-          "mine_name": "ANDRESS PIT",
+          "date": "09/03/2026",
+          "mine_name": "Sand Pit",
           "mine_type": "Surface",
-          "section": "56.14132(a)",
-          "type": "Citation",
-          "sig_sub": false,
-          "likelihood": "Unlikely",
-          "proposed_penalty_usd": 0,
-          "violator": "South Alabama Materials",
-          "violation_no": "5193262"
-        },
-        {
-          "date": "08/27/2026",
-          "mine_name": "ANDRESS PIT",
-          "mine_type": "Surface",
-          "section": "56.14107(a)",
-          "type": "Citation",
-          "sig_sub": false,
-          "likelihood": "Unlikely",
-          "proposed_penalty_usd": 0,
-          "violator": "South Alabama Materials",
-          "violation_no": "5193263"
-        },
-        {
-          "date": "07/06/2026",
-          "mine_name": "Repton Mine",
-          "mine_type": "Surface",
-          "section": "56.14103(b)",
-          "type": "Citation",
-          "sig_sub": false,
-          "likelihood": "Unlikely",
-          "proposed_penalty_usd": 151,
-          "violator": "Campbell Sand & Gravel, Inc",
-          "violation_no": "5191856"
-        },
-        {
-          "date": "07/06/2026",
-          "mine_name": "Repton Mine",
-          "mine_type": "Surface",
-          "section": "46.8(a)",
+          "section": "46.7(a)",
           "type": "Order",
+          "sig_sub": false,
+          "likelihood": "Unlikely",
+          "proposed_penalty_usd": 0,
+          "violator": "Campbell Redi-Mix Inc",
+          "violation_no": "5103894"
+        },
+        {
+          "date": "09/03/2026",
+          "mine_name": "Sand Pit",
+          "mine_type": "Surface",
+          "section": "56.4104(a)",
+          "type": "Citation",
+          "sig_sub": false,
+          "likelihood": "Unlikely",
+          "proposed_penalty_usd": 0,
+          "violator": "Campbell Redi-Mix Inc",
+          "violation_no": "5103895"
+        },
+        {
+          "date": "09/02/2026",
+          "mine_name": "Lake Havasu Airport Pit",
+          "mine_type": "Surface",
+          "section": "56.20003(a)",
+          "type": "Citation",
+          "sig_sub": false,
+          "likelihood": "Unlikely",
+          "proposed_penalty_usd": 0,
+          "violator": "Campbell Redi-Mix Inc.",
+          "violation_no": "5103891"
+        },
+        {
+          "date": "09/02/2026",
+          "mine_name": "Lake Havasu Airport Pit",
+          "mine_type": "Surface",
+          "section": "56.11002",
+          "type": "Citation",
           "sig_sub": true,
           "likelihood": "Reasonably",
-          "proposed_penalty_usd": 517,
-          "violator": "Campbell Sand & Gravel, Inc",
-          "violation_no": "5191857"
+          "proposed_penalty_usd": 0,
+          "violator": "Campbell Redi-Mix Inc.",
+          "violation_no": "5103892"
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.825Z"
+      "scraped_at": "2026-09-14T19:51:56.338Z"
     },
     {
       "slug": "del-monte",
@@ -747,7 +747,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.825Z"
+      "scraped_at": "2026-09-14T19:51:56.338Z"
     },
     {
       "slug": "chobani",
@@ -876,7 +876,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.829Z"
+      "scraped_at": "2026-09-14T19:51:56.342Z"
     },
     {
       "slug": "charmin",
@@ -908,7 +908,7 @@
       "name": "Cascade",
       "status": "ok",
       "total_citations": 906,
-      "total_penalties_usd": 180256,
+      "total_penalties_usd": 182109,
       "significant_substantial": 197,
       "fatalities_5y": 0,
       "total_accidents": 16,
@@ -945,7 +945,7 @@
           "type": "Citation",
           "sig_sub": false,
           "likelihood": "Unlikely",
-          "proposed_penalty_usd": 0,
+          "proposed_penalty_usd": 151,
           "violator": "Sierra Cascade Aggregate & Asphalt Products Inc",
           "violation_no": "5102169"
         },
@@ -957,7 +957,7 @@
           "type": "Citation",
           "sig_sub": false,
           "likelihood": "Unlikely",
-          "proposed_penalty_usd": 0,
+          "proposed_penalty_usd": 151,
           "violator": "Sierra Cascade Aggregate & Asphalt Products Inc",
           "violation_no": "5102170"
         },
@@ -969,13 +969,13 @@
           "type": "Citation",
           "sig_sub": false,
           "likelihood": "Unlikely",
-          "proposed_penalty_usd": 0,
+          "proposed_penalty_usd": 151,
           "violator": "Sierra Cascade Aggregate & Asphalt Products Inc",
           "violation_no": "5102171"
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.833Z"
+      "scraped_at": "2026-09-14T19:51:56.346Z"
     },
     {
       "slug": "clorox",
@@ -1049,7 +1049,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.834Z"
+      "scraped_at": "2026-09-14T19:51:56.346Z"
     },
     {
       "slug": "lysol",
@@ -1158,7 +1158,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.835Z"
+      "scraped_at": "2026-09-14T19:51:56.347Z"
     },
     {
       "slug": "suave",
@@ -1347,14 +1347,14 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.835Z"
+      "scraped_at": "2026-09-14T19:51:56.347Z"
     },
     {
       "slug": "mcdonalds",
       "name": "McDonald's",
       "status": "ok",
       "total_citations": 84,
-      "total_penalties_usd": 11612,
+      "total_penalties_usd": 11763,
       "significant_substantial": 12,
       "fatalities_5y": 0,
       "total_accidents": 0,
@@ -1379,7 +1379,7 @@
           "type": "Citation",
           "sig_sub": true,
           "likelihood": "Reasonably",
-          "proposed_penalty_usd": 0,
+          "proposed_penalty_usd": 151,
           "violator": "McDonald Sand and Gravel",
           "violation_no": "5064187"
         },
@@ -1421,7 +1421,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.835Z"
+      "scraped_at": "2026-09-14T19:51:56.348Z"
     },
     {
       "slug": "burger-king",
@@ -1500,7 +1500,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.835Z"
+      "scraped_at": "2026-09-14T19:51:56.348Z"
     },
     {
       "slug": "chick-fil-a",
@@ -1536,7 +1536,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.835Z"
+      "scraped_at": "2026-09-14T19:51:56.348Z"
     },
     {
       "slug": "subway",
@@ -1730,7 +1730,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.836Z"
+      "scraped_at": "2026-09-14T19:51:56.348Z"
     },
     {
       "slug": "costco",
@@ -1824,7 +1824,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.836Z"
+      "scraped_at": "2026-09-14T19:51:56.348Z"
     },
     {
       "slug": "best-buy",
@@ -2033,7 +2033,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.836Z"
+      "scraped_at": "2026-09-14T19:51:56.349Z"
     },
     {
       "slug": "homegoods",
@@ -2127,7 +2127,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.836Z"
+      "scraped_at": "2026-09-14T19:51:56.349Z"
     },
     {
       "slug": "bloomingdales",
@@ -2243,7 +2243,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.836Z"
+      "scraped_at": "2026-09-14T19:51:56.349Z"
     },
     {
       "slug": "cvs",
@@ -2402,7 +2402,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.836Z"
+      "scraped_at": "2026-09-14T19:51:56.349Z"
     },
     {
       "slug": "brooks",
@@ -2486,7 +2486,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.836Z"
+      "scraped_at": "2026-09-14T19:51:56.349Z"
     },
     {
       "slug": "gap",
@@ -2580,7 +2580,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.836Z"
+      "scraped_at": "2026-09-14T19:51:56.349Z"
     },
     {
       "slug": "hollister",
@@ -2654,7 +2654,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.837Z"
+      "scraped_at": "2026-09-14T19:51:56.350Z"
     },
     {
       "slug": "hm",
@@ -2815,14 +2815,14 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.837Z"
+      "scraped_at": "2026-09-14T19:51:56.350Z"
     },
     {
       "slug": "coach",
       "name": "Coach",
       "status": "ok",
       "total_citations": 404,
-      "total_penalties_usd": 88405,
+      "total_penalties_usd": 88707,
       "significant_substantial": 112,
       "fatalities_5y": 0,
       "total_accidents": 10,
@@ -2847,7 +2847,7 @@
           "type": "Citation",
           "sig_sub": false,
           "likelihood": "Unlikely",
-          "proposed_penalty_usd": 0,
+          "proposed_penalty_usd": 151,
           "violator": "Stagecoach Transport & Crushing LLC",
           "violation_no": "5155251"
         },
@@ -2859,7 +2859,7 @@
           "type": "Citation",
           "sig_sub": false,
           "likelihood": "NoLikelihood",
-          "proposed_penalty_usd": 0,
+          "proposed_penalty_usd": 151,
           "violator": "Stagecoach Transport & Crushing LLC",
           "violation_no": "5155252"
         },
@@ -2889,7 +2889,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.839Z"
+      "scraped_at": "2026-09-14T19:51:56.352Z"
     },
     {
       "slug": "michael-kors",
@@ -2973,7 +2973,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.841Z"
+      "scraped_at": "2026-09-14T19:51:56.354Z"
     },
     {
       "slug": "apple",
@@ -3047,7 +3047,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.849Z"
+      "scraped_at": "2026-09-14T19:51:56.361Z"
     },
     {
       "slug": "microsoft",
@@ -3166,7 +3166,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.849Z"
+      "scraped_at": "2026-09-14T19:51:56.362Z"
     },
     {
       "slug": "salesforce",
@@ -3202,9 +3202,9 @@
       "slug": "cisco",
       "name": "Cisco",
       "status": "ok",
-      "total_citations": 808,
-      "total_penalties_usd": 323288,
-      "significant_substantial": 267,
+      "total_citations": 809,
+      "total_penalties_usd": 323741,
+      "significant_substantial": 268,
       "fatalities_5y": 0,
       "total_accidents": 2,
       "sample_citations": [
@@ -3233,6 +3233,18 @@
           "violation_no": "5088020"
         },
         {
+          "date": "08/26/2026",
+          "mine_name": "Houston Quarry",
+          "mine_type": "Surface",
+          "section": "56.15004",
+          "type": "Citation",
+          "sig_sub": true,
+          "likelihood": "Reasonably",
+          "proposed_penalty_usd": 0,
+          "violator": "C Wall Stone LLC",
+          "violation_no": "5088021"
+        },
+        {
           "date": "08/25/2026",
           "mine_name": "Houston Quarry",
           "mine_type": "Surface",
@@ -3255,22 +3267,10 @@
           "proposed_penalty_usd": 0,
           "violator": "Seawall Stone",
           "violation_no": "5088015"
-        },
-        {
-          "date": "07/31/2026",
-          "mine_name": "H&R Rock LLC",
-          "mine_type": "Surface",
-          "section": "56.14100(b)",
-          "type": "Citation",
-          "sig_sub": false,
-          "likelihood": "Unlikely",
-          "proposed_penalty_usd": 0,
-          "violator": "H&R Rock LLC",
-          "violation_no": "5178827"
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.854Z"
+      "scraped_at": "2026-09-14T19:51:56.366Z"
     },
     {
       "slug": "hp",
@@ -3409,7 +3409,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.854Z"
+      "scraped_at": "2026-09-14T19:51:56.367Z"
     },
     {
       "slug": "zoom",
@@ -3533,7 +3533,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.854Z"
+      "scraped_at": "2026-09-14T19:51:56.367Z"
     },
     {
       "slug": "canva",
@@ -3617,7 +3617,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.854Z"
+      "scraped_at": "2026-09-14T19:51:56.367Z"
     },
     {
       "slug": "square",
@@ -3691,7 +3691,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.855Z"
+      "scraped_at": "2026-09-14T19:51:56.368Z"
     },
     {
       "slug": "block",
@@ -3765,7 +3765,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.866Z"
+      "scraped_at": "2026-09-14T19:51:56.379Z"
     },
     {
       "slug": "paypal",
@@ -3899,7 +3899,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.866Z"
+      "scraped_at": "2026-09-14T19:51:56.379Z"
     },
     {
       "slug": "netlify",
@@ -4013,7 +4013,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.866Z"
+      "scraped_at": "2026-09-14T19:51:56.379Z"
     },
     {
       "slug": "soundcloud",
@@ -4112,7 +4112,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.866Z"
+      "scraped_at": "2026-09-14T19:51:56.379Z"
     },
     {
       "slug": "hbo-max",
@@ -4191,7 +4191,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.866Z"
+      "scraped_at": "2026-09-14T19:51:56.379Z"
     },
     {
       "slug": "paramount",
@@ -4217,7 +4217,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.866Z"
+      "scraped_at": "2026-09-14T19:51:56.379Z"
     },
     {
       "slug": "roku",
@@ -4351,7 +4351,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.867Z"
+      "scraped_at": "2026-09-14T19:51:56.379Z"
     },
     {
       "slug": "jpmorgan-chase",
@@ -4367,75 +4367,75 @@
       "slug": "wells-fargo",
       "name": "Wells Fargo",
       "status": "ok",
-      "total_citations": 44,
+      "total_citations": 52,
       "total_penalties_usd": 12930,
-      "significant_substantial": 8,
+      "significant_substantial": 10,
       "fatalities_5y": 0,
       "total_accidents": 5,
       "sample_citations": [
         {
-          "date": "06/03/2026",
-          "mine_name": "ALDEN PLANT",
+          "date": "09/03/2026",
+          "mine_name": "JASPER PLANT",
           "mine_type": "Surface",
-          "section": "56.12004",
+          "section": "46.7(b)",
           "type": "Citation",
           "sig_sub": false,
           "likelihood": "Unlikely",
-          "proposed_penalty_usd": 151,
+          "proposed_penalty_usd": 0,
           "violator": "ILC Resources",
-          "violation_no": "5114695"
+          "violation_no": "5220763"
         },
         {
-          "date": "06/03/2026",
-          "mine_name": "ALDEN PLANT",
-          "mine_type": "Surface",
-          "section": "56.14100(c)",
-          "type": "Citation",
-          "sig_sub": false,
-          "likelihood": "Unlikely",
-          "proposed_penalty_usd": 151,
-          "violator": "ILC Resources",
-          "violation_no": "5114696"
-        },
-        {
-          "date": "06/03/2026",
-          "mine_name": "ALDEN PLANT",
-          "mine_type": "Surface",
-          "section": "56.14112(b)",
-          "type": "Citation",
-          "sig_sub": false,
-          "likelihood": "Unlikely",
-          "proposed_penalty_usd": 151,
-          "violator": "ILC Resources",
-          "violation_no": "5114697"
-        },
-        {
-          "date": "03/04/2026",
+          "date": "09/03/2026",
           "mine_name": "JASPER PLANT",
           "mine_type": "Surface",
           "section": "56.12032",
           "type": "Citation",
           "sig_sub": false,
           "likelihood": "Unlikely",
-          "proposed_penalty_usd": 959,
+          "proposed_penalty_usd": 0,
           "violator": "ILC Resources",
-          "violation_no": "5220212"
+          "violation_no": "5220764"
         },
         {
-          "date": "03/03/2026",
+          "date": "09/03/2026",
           "mine_name": "JASPER PLANT",
           "mine_type": "Surface",
-          "section": "56.14132(a)",
+          "section": "56.12004",
           "type": "Citation",
           "sig_sub": false,
           "likelihood": "Unlikely",
-          "proposed_penalty_usd": 959,
+          "proposed_penalty_usd": 0,
           "violator": "ILC Resources",
-          "violation_no": "5220207"
+          "violation_no": "5220765"
+        },
+        {
+          "date": "09/03/2026",
+          "mine_name": "JASPER PLANT",
+          "mine_type": "Surface",
+          "section": "56.20003(a)",
+          "type": "Citation",
+          "sig_sub": false,
+          "likelihood": "Unlikely",
+          "proposed_penalty_usd": 0,
+          "violator": "ILC Resources",
+          "violation_no": "5220766"
+        },
+        {
+          "date": "09/03/2026",
+          "mine_name": "JASPER PLANT",
+          "mine_type": "Surface",
+          "section": "56.14100(b)",
+          "type": "Citation",
+          "sig_sub": false,
+          "likelihood": "Unlikely",
+          "proposed_penalty_usd": 0,
+          "violator": "ILC Resources",
+          "violation_no": "5220767"
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.867Z"
+      "scraped_at": "2026-09-14T19:51:56.380Z"
     },
     {
       "slug": "citi",
@@ -4534,7 +4534,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.867Z"
+      "scraped_at": "2026-09-14T19:51:56.380Z"
     },
     {
       "slug": "american-express",
@@ -4668,7 +4668,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.868Z"
+      "scraped_at": "2026-09-14T19:51:56.380Z"
     },
     {
       "slug": "state-farm",
@@ -4752,7 +4752,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.870Z"
+      "scraped_at": "2026-09-14T19:51:56.383Z"
     },
     {
       "slug": "allstate",
@@ -4826,7 +4826,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.871Z"
+      "scraped_at": "2026-09-14T19:51:56.384Z"
     },
     {
       "slug": "liberty-mutual",
@@ -4905,7 +4905,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.871Z"
+      "scraped_at": "2026-09-14T19:51:56.384Z"
     },
     {
       "slug": "farmers-insurance",
@@ -4976,7 +4976,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.871Z"
+      "scraped_at": "2026-09-14T19:51:56.384Z"
     },
     {
       "slug": "t-mobile",
@@ -5050,7 +5050,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.872Z"
+      "scraped_at": "2026-09-14T19:51:56.384Z"
     },
     {
       "slug": "sprint",
@@ -5124,7 +5124,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.872Z"
+      "scraped_at": "2026-09-14T19:51:56.385Z"
     },
     {
       "slug": "us-cellular",
@@ -5218,7 +5218,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.872Z"
+      "scraped_at": "2026-09-14T19:51:56.385Z"
     },
     {
       "slug": "cox",
@@ -5297,7 +5297,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.872Z"
+      "scraped_at": "2026-09-14T19:51:56.385Z"
     },
     {
       "slug": "frontier",
@@ -5323,7 +5323,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.872Z"
+      "scraped_at": "2026-09-14T19:51:56.385Z"
     },
     {
       "slug": "comcast",
@@ -5407,7 +5407,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.878Z"
+      "scraped_at": "2026-09-14T19:51:56.391Z"
     },
     {
       "slug": "chevron",
@@ -5509,18 +5509,30 @@
           "coal_metal": "coal"
         }
       ],
-      "scraped_at": "2026-09-07T19:09:46.907Z"
+      "scraped_at": "2026-09-14T19:51:56.419Z"
     },
     {
       "slug": "shell",
       "name": "Shell",
       "status": "ok",
-      "total_citations": 2375,
-      "total_penalties_usd": 495364,
+      "total_citations": 2376,
+      "total_penalties_usd": 497950,
       "significant_substantial": 492,
       "fatalities_5y": 0,
       "total_accidents": 149,
       "sample_citations": [
+        {
+          "date": "09/08/2026",
+          "mine_name": "MARSTON PIT",
+          "mine_type": "Surface",
+          "section": "56.14112(b)",
+          "type": "Citation",
+          "sig_sub": false,
+          "likelihood": "Unlikely",
+          "proposed_penalty_usd": 0,
+          "violator": "R.L. BRADSHER CONTRACTING INC.",
+          "violation_no": "5060302"
+        },
         {
           "date": "08/25/2026",
           "mine_name": "Columbus Limestone",
@@ -5568,22 +5580,10 @@
           "proposed_penalty_usd": 0,
           "violator": "Shelly Materials, Inc.",
           "violation_no": "5076169"
-        },
-        {
-          "date": "08/13/2026",
-          "mine_name": "Columbus Limestone",
-          "mine_type": "Surface",
-          "section": "56.14112(b)",
-          "type": "Citation",
-          "sig_sub": true,
-          "likelihood": "Reasonably",
-          "proposed_penalty_usd": 0,
-          "violator": "Shelly Materials Inc",
-          "violation_no": "5076333"
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.923Z"
+      "scraped_at": "2026-09-14T19:51:56.435Z"
     },
     {
       "slug": "bp",
@@ -5626,7 +5626,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.923Z"
+      "scraped_at": "2026-09-14T19:51:56.435Z"
     },
     {
       "slug": "duke-energy",
@@ -5710,7 +5710,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.927Z"
+      "scraped_at": "2026-09-14T19:51:56.439Z"
     },
     {
       "slug": "southern-company",
@@ -5789,7 +5789,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.927Z"
+      "scraped_at": "2026-09-14T19:51:56.439Z"
     },
     {
       "slug": "tesla",
@@ -5916,7 +5916,7 @@
           "coal_metal": "metal"
         }
       ],
-      "scraped_at": "2026-09-07T19:09:46.968Z"
+      "scraped_at": "2026-09-14T19:51:56.479Z"
     },
     {
       "slug": "jeep",
@@ -6005,14 +6005,14 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.968Z"
+      "scraped_at": "2026-09-14T19:51:56.479Z"
     },
     {
       "slug": "honda",
       "name": "Honda",
       "status": "ok",
       "total_citations": 1130,
-      "total_penalties_usd": 1059760,
+      "total_penalties_usd": 1059911,
       "significant_substantial": 470,
       "fatalities_5y": 0,
       "total_accidents": 71,
@@ -6025,7 +6025,7 @@
           "type": "Citation",
           "sig_sub": false,
           "likelihood": "Unlikely",
-          "proposed_penalty_usd": 0,
+          "proposed_penalty_usd": 151,
           "violator": "DAVIS MATERIALS, INC.",
           "violation_no": "5193254"
         },
@@ -6079,7 +6079,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.974Z"
+      "scraped_at": "2026-09-14T19:51:56.485Z"
     },
     {
       "slug": "nissan",
@@ -6188,7 +6188,7 @@
           "coal_metal": "metal"
         }
       ],
-      "scraped_at": "2026-09-07T19:09:46.992Z"
+      "scraped_at": "2026-09-14T19:51:56.503Z"
     },
     {
       "slug": "volkswagen",
@@ -6263,7 +6263,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.992Z"
+      "scraped_at": "2026-09-14T19:51:56.503Z"
     },
     {
       "slug": "ferrari",
@@ -6337,7 +6337,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.992Z"
+      "scraped_at": "2026-09-14T19:51:56.503Z"
     },
     {
       "slug": "lamborghini",
@@ -6461,7 +6461,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.993Z"
+      "scraped_at": "2026-09-14T19:51:56.503Z"
     },
     {
       "slug": "unitedhealth",
@@ -6527,7 +6527,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.993Z"
+      "scraped_at": "2026-09-14T19:51:56.503Z"
     },
     {
       "slug": "quest-diagnostics",
@@ -6691,7 +6691,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.993Z"
+      "scraped_at": "2026-09-14T19:51:56.503Z"
     },
     {
       "slug": "hilton",
@@ -6775,14 +6775,14 @@
           "coal_metal": "metal"
         }
       ],
-      "scraped_at": "2026-09-07T19:09:46.994Z"
+      "scraped_at": "2026-09-14T19:51:56.505Z"
     },
     {
       "slug": "hyatt",
       "name": "Hyatt",
       "status": "ok",
       "total_citations": 240,
-      "total_penalties_usd": 49368,
+      "total_penalties_usd": 49670,
       "significant_substantial": 74,
       "fatalities_5y": 0,
       "total_accidents": 0,
@@ -6795,7 +6795,7 @@
           "type": "Citation",
           "sig_sub": false,
           "likelihood": "Unlikely",
-          "proposed_penalty_usd": 0,
+          "proposed_penalty_usd": 151,
           "violator": "RANDALL JASON HYATT, INC.",
           "violation_no": "5193250"
         },
@@ -6807,7 +6807,7 @@
           "type": "Citation",
           "sig_sub": false,
           "likelihood": "Unlikely",
-          "proposed_penalty_usd": 0,
+          "proposed_penalty_usd": 151,
           "violator": "RANDALL JASON HYATT, INC.",
           "violation_no": "5193251"
         },
@@ -6849,7 +6849,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.996Z"
+      "scraped_at": "2026-09-14T19:51:56.506Z"
     },
     {
       "slug": "ihg",
@@ -6993,18 +6993,42 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:46.996Z"
+      "scraped_at": "2026-09-14T19:51:56.506Z"
     },
     {
       "slug": "enterprise",
       "name": "Enterprise",
       "status": "ok",
-      "total_citations": 39426,
-      "total_penalties_usd": 13087182,
+      "total_citations": 39428,
+      "total_penalties_usd": 13097065,
       "significant_substantial": 11411,
       "fatalities_5y": 4,
-      "total_accidents": 2634,
+      "total_accidents": 2635,
       "sample_citations": [
+        {
+          "date": "09/09/2026",
+          "mine_name": "Terex Portable Crushing Spread",
+          "mine_type": "Surface",
+          "section": "56.12025",
+          "type": "Citation",
+          "sig_sub": false,
+          "likelihood": "Unlikely",
+          "proposed_penalty_usd": 0,
+          "violator": "Green Tech Enterprises, LLC",
+          "violation_no": "5118642"
+        },
+        {
+          "date": "09/03/2026",
+          "mine_name": "Michael Powellton  Deep Mine",
+          "mine_type": "Underground",
+          "section": "77.404(a)",
+          "type": "Citation",
+          "sig_sub": false,
+          "likelihood": "Unlikely",
+          "proposed_penalty_usd": 0,
+          "violator": "SCENIC ENTERPRISES, INC",
+          "violation_no": "5135009"
+        },
         {
           "date": "09/02/2026",
           "mine_name": "Waldorf-MD Sand & Gravel",
@@ -7040,30 +7064,6 @@
           "proposed_penalty_usd": 0,
           "violator": "Sustainable Land Use, LLC",
           "violation_no": "9273293"
-        },
-        {
-          "date": "09/02/2026",
-          "mine_name": "Waldorf-MD Sand & Gravel",
-          "mine_type": "Surface",
-          "section": "56.14112(a)(1)",
-          "type": "Citation",
-          "sig_sub": false,
-          "likelihood": "Unlikely",
-          "proposed_penalty_usd": 0,
-          "violator": "Sustainable Land Use, LLC",
-          "violation_no": "9273294"
-        },
-        {
-          "date": "09/02/2026",
-          "mine_name": "BAKERSVILLE QUARRY",
-          "mine_type": "Underground",
-          "section": "57.14132(b)(2)",
-          "type": "Citation",
-          "sig_sub": true,
-          "likelihood": "Reasonably",
-          "proposed_penalty_usd": 0,
-          "violator": "New Enterprise Stone & Lime Co., Inc.",
-          "violation_no": "5152538"
         }
       ],
       "sample_fatalities": [
@@ -7113,7 +7113,7 @@
           "coal_metal": "metal"
         }
       ],
-      "scraped_at": "2026-09-07T19:09:47.364Z"
+      "scraped_at": "2026-09-14T19:51:56.862Z"
     },
     {
       "slug": "avis",
@@ -7192,7 +7192,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:47.364Z"
+      "scraped_at": "2026-09-14T19:51:56.862Z"
     },
     {
       "slug": "royal-caribbean",
@@ -7381,7 +7381,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:47.364Z"
+      "scraped_at": "2026-09-14T19:51:56.862Z"
     },
     {
       "slug": "roomba",
@@ -7465,7 +7465,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:47.364Z"
+      "scraped_at": "2026-09-14T19:51:56.862Z"
     },
     {
       "slug": "craftsman",
@@ -7569,7 +7569,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:47.364Z"
+      "scraped_at": "2026-09-14T19:51:56.862Z"
     },
     {
       "slug": "lego",
@@ -7648,7 +7648,7 @@
         }
       ],
       "sample_fatalities": [],
-      "scraped_at": "2026-09-07T19:09:47.365Z"
+      "scraped_at": "2026-09-14T19:51:56.863Z"
     },
     {
       "slug": "mattel",
