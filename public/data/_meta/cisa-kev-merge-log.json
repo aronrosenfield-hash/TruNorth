@@ -1,23 +1,59 @@
 {
-  "merged_at": "2026-09-07T08:26:13.421Z",
+  "merged_at": "2026-09-14T09:02:58.080Z",
   "source_file": "public/data/cisa-kev.json",
   "total_vendors": 283,
-  "merged_count": 2,
-  "skipped_count": 37,
+  "merged_count": 8,
+  "skipped_count": 31,
   "orphan_count": 244,
   "error_count": 0,
   "merged_vendors": [
     {
+      "vendor": "Microsoft",
+      "target": "microsoft",
+      "routed_via": "override",
+      "cves": 388
+    },
+    {
+      "vendor": "Cisco",
+      "target": "cisco",
+      "routed_via": "override",
+      "cves": 97
+    },
+    {
+      "vendor": "Adobe",
+      "target": "adobe",
+      "routed_via": "override",
+      "cves": 81
+    },
+    {
       "vendor": "Google",
       "target": "google-alphabet",
       "routed_via": "override",
-      "cves": 73
+      "cves": 74
+    },
+    {
+      "vendor": "Fortinet",
+      "target": "fortinet",
+      "routed_via": "override",
+      "cves": 30
+    },
+    {
+      "vendor": "GitLab",
+      "target": "gitlab",
+      "routed_via": "direct",
+      "cves": 5
+    },
+    {
+      "vendor": "N-able",
+      "target": "n-able",
+      "routed_via": "direct",
+      "cves": 5
     },
     {
       "vendor": "JFrog",
       "target": "jfrog",
       "routed_via": "direct",
-      "cves": 2
+      "cves": 4
     }
   ],
   "top_orphans": [
@@ -44,7 +80,7 @@
     {
       "vendor": "Citrix",
       "vendor_slug": "citrix",
-      "cves": 23
+      "cves": 24
     },
     {
       "vendor": "SonicWall",
@@ -167,8 +203,8 @@
       "cves": 5
     },
     {
-      "vendor": "Sangoma",
-      "vendor_slug": "sangoma",
+      "vendor": "ConnectWise",
+      "vendor_slug": "connectwise",
       "cves": 4
     }
   ]
