@@ -6,7 +6,43 @@
 >
 > **🟢 LAUNCHED — Jun 23, 2026 · 2:01 AM CDT** (App Store · id `6775301458` · `https://apps.apple.com/app/id6775301458` · PH launched). **CURRENT LIVE BUILD = v1.1 Build 81** (approved 2026-07-08, released Manual **2026-07-14**) — it superseded v1.0 Build 75, which was live Jun 23 → Jul 14. **Next iOS ship = Build 82.** *(The 2026-06-11 "date is soft, get it right" call held through the Compass redesign; the experience shipped on the locked date. Go-live runbook: `docs/LAUNCH_DAY.md`.)*
 >
-> **Last updated:** 2026-09-13 21:30 CDT (daily doc-sync covering **2026-09-13**, a Sunday — **10 bot commits, 14 scheduled runs ALL GREEN, 355 company files rewritten, zero human activity, zero code changes.** **The headline is that the B-124 Sunday test FIRED — seven-for-seven — and this sync caught the MECHANISM, not just the pattern: TWO crons (`nhtsa-weekly`, `cpsc-weekly`) destroyed their own commits and reported `success`, and the thing they conflicted against was B-128's serializer fight. B-124 is Sunday-only because the file-reformatting weekly rebake is Sunday-only.** ✏️ **Second result falsifies this log's B-128 model outright: files OSCILLATE. `american-eagle.json` went single → pretty → single inside ONE day.** 📧 **Third: `weekly-digest` went GREEN and sent nothing for the SEVENTH straight Sunday, exactly as B-155 predicts.**)
+> **Last updated:** 2026-09-14 23:20 CDT (daily doc-sync covering **2026-09-14**, a Monday — **8 bot commits, 19 scheduled runs, zero human activity, zero code changes.** **The headline is a cron nobody was watching: `enriched-augments-refresh` has been GREEN 12-for-12 since 2026-06-26 while throwing away 4,075 company files on every single run. 80 days of the footprint pipeline — including `enriched.tax`, one of only TWO enriched dims that touch a grade — written and discarded.** ✅ **Second result: Monday is the control arm and it behaved — 8 crons pushed to `main` with zero rebase conflicts, which is the cleanest confirmation yet that B-124 is Sunday-only.** 🕳️ **Third: the watchdog erased a SECOND row in two days — `wikirate-quarterly` is gone and was never fixed.**)
+>
+> 🆕🔴🅱️ **BIGGEST FINDING — B-158 (NEW): `enriched-augments-refresh` HAS DISCARDED 4,075 COMPANY FILES A WEEK FOR 80 DAYS AND REPORTED `success` EVERY TIME.** The cron fetches fine. It is the **push** that has never worked on the scheduled path.
+> - **Last `data(enriched)` commit on `main` is `9b49e6273`, 2026-06-26** — and that one came from a `workflow_dispatch`, not the schedule.
+> - **12 scheduled runs since. Conclusions: `{"success": 12}`. Commits landed: ZERO.**
+>
+> 🔑 **THE MECHANISM — A PARTIAL `git add`, NOT A CONFLICT AND NOT A `.gitignore`.** `.github/workflows/enriched-augments-refresh.yml:76` stages only two paths: `git add public/data/companies/ data/derived/`. But the same run also writes **`data/raw/itep-tax/<date>.json`** and **`public/data/fed-reserve-enforcement.json`**, which are **tracked and NOT gitignored** — so after the commit at `:78` they sit in the tree as unstaged changes, and the retry loop at `:79-82` dies three times on **`error: cannot pull with rebase: You have unstaged changes. / error: Please commit or stash them.`** The loop's last statement is `sleep 5`, so the step **exits 0** and the job is green. ✅ **Verified verbatim in three runs seven weeks apart — `34865202454` (09-14), `34136348257` (09-07), `33417599639` (08-31) — plus `30266683422` (07-27).**
+>
+> 📉 **WHAT IS ACTUALLY BEING THROWN AWAY, from today's run log:** `sec-tax-augment.json` **3,458 slugs** · `supply-chain-augment.json` **872** · `openfda-recalls-augment.json` **365** · `privacy-enforcement-augment.json` **357** · `labor-wages-augment.json` **49** · `animal-certs-augment.json` **17** · `itep-tax-augment.json` → **`Wrote enriched.tax into 306 company files`** · then **`Applied → 4075 company files written (0 errors)`**. 🚨 **`enriched.tax` is one of the only TWO enriched dimensions that reach a grade (`rebake-scoring.mjs:182`), and `secTax` at 3,415–3,458 slugs is the exact dataset V-4 was going to start from.** 🧭 **FIX IS TWO LINES:** ① add the missing paths to `:76` (`git add public/data/companies/ data/derived/ data/raw/ public/data/fed-reserve-enforcement.json`); ② make the retry loop `exit 1` after the third failure so this can never be green again. ⚠️ **The first successful run will land ~12 weeks of augment data at once and CAN move grades — re-baseline `grade-snapshot.json` in the same pass (B-127's rule).** 🔑 **This is a THIRD distinct silent-loss mechanism: B-123 is a `.gitignore`d add-path, B-124 is an un-aborted rebase conflict, B-158 is a partial add that blocks the rebase outright. Same symptom, three different fixes — do not assume one patch covers all seven workflows.**
+>
+> 🕳️❌ **WATCHDOG — 22 → 21 ROWS. `wikirate-quarterly` ERASED, THE SECOND SILENT DELETION IN TWO DAYS.** #155 rewritten **2026-09-14T18:38:21Z** with **21 rows**; diffed name-for-name against yesterday's 22, the single removal is **`wikirate-quarterly`**, and nothing was added. 🚨 **IT WAS NOT FIXED. Its only scheduled run ever is a `failure` on 2026-07-05 — 71 days ago — and the workflow file has not been touched since `1dfe4d2d6`.** That is **B-142 erasure**, same as `canada-comp-monthly` yesterday. 📌 **#155 now hides EIGHT broken crons**, up from seven. 🚫 **Two evictions in two days is the pattern to record, not a cutoff to forecast — the 800-run window is not a FIFO you can extrapolate.** 📌 **Today's 21, recorded for the next diff:** `au-fair-work-monthly` · `bis-entity-list-weekly` · `dime-augment-quarterly` · `disability-in-annual` · `dol-ofccp-monthly` · `eu-antitrust-monthly` · `eu-enforcement-quarterly` · `faa-weekly` · `followthemoney-state-monthly` · `forest500-annual` · `fra-weekly` · `fsis-dw-weekly` · `fsis-weekly` · `gao-monthly` · `gdelt-weekly` · `oversight-ig-monthly` · `sec-8k-events-monthly` · `sec-def14a-annual` · `stanford-scac-monthly` · `tosdr-monthly` · `usda-aphis-monthly`. 📌 **`bcorp-quarterly` runs tomorrow (2026-09-15) — still the nearest chance a hidden row reappears on its own.**
+>
+> ✅🗓️ **B-124 CONTROL ARM HELD — MONDAY WAS CLEAN.** Eight crons pushed to `main` today (`cisa-kev`, `news-rss`, `fcc`, `msha`, `ntsb`, `ofac-sdn`, `phmsa`, `trending`) and **every one landed**: `git log origin/main` shows all eight commits present, no destroyed shas, no `CONFLICT (content)` in any log. 🔑 **This is the strongest control result yet: the same abort-less retry loop that swallowed `nhtsa-weekly` and `cpsc-weekly` yesterday caused zero loss today, because `score-rebake-weekly` (Sundays only) did not run and no writer reformatted hundreds of files underneath the others.** ✅ **Confirms the B-124 ⇄ B-128 chain from yesterday's sync rather than merely repeating it.**
+>
+> 🆕📵 **B-159 (NEW) — `fcc-weekly` IS GREEN, HONEST, AND STRUCTURALLY INCAPABLE OF PRODUCING A SINGLE PER-BRAND RECORD.** Today's run succeeded and rewrote **49,338 lines (24,690 in / 24,690 out)** of `public/data/fcc-complaints.json`. Parsed: **528 of 528 brands carry `status: "no_company_attribution"` — zero `ok`, zero records.** The file says why, in its own `dataset_limitation` field: *FCC CGB dataset `3xyp-aqkj` has no company/carrier column; per-brand attribution is not possible.* 🔑 **So the entire weekly 49k-line churn exists to update ONE scalar — `industry_total_complaints_24mo`, 668,597 → 671,504 — copied identically into 528 rows.** ✅ **NOT B-126 and NOT B-153: the fetch is real, the aggregate is real, nothing is fabricated.** 🚫 **The defect is that a source which can never attribute to a brand was wired into a per-brand sweep.** 🧭 **Decision for Aron, not a code fix: either drop `fcc` from the 528-brand sweep and keep one industry-context row, or retire the cron. Either way it should stop counting as a "source" in coverage claims — see B-137.** ⚠️ **This also corrects this log's 08-2x triage of `fcc-weekly` as "a real regression": the failures were real, but fixing them buys nothing, because a green run produces no brand data either.**
+>
+> 🆕📬 **B-160 (NEW) — `la-county-restaurants-weekly` IS THE SINGLE LARGEST CONTRIBUTOR TO THE BOT-PR PILE, AND IT IS FETCHING AN 8-YEAR-OLD ARCHIVE.** It opened **#178** today. Of **51 open bot PRs, 12 are `la-county-restaurants`** — `#178, #173, #169, #168, #167, #164, #157, #152, #148, #146, #131, #116` — and **`#116` (2026-06-29, 77 days) is the oldest open PR in the repo.** 🔑 **Cause is the branch name: `data/la-county-restaurants-${{ github.run_id }}` — a fresh branch every run, so it MULTIPLIES PRs instead of re-pushing onto one** (the same naming trap as B-126's `data/fmcsa-sms-<run id>`). 🚨 **And the workflow's own header comment says the dataset "does not refresh weekly (it is a historical archive last updated 2018-07)" — so it opens a PR every Monday for data that has not changed in eight years.** 🧭 **Fix is one line: pin the branch to a stable `data/la-county-restaurants`, or drop the schedule to annual. Close the 11 stale ones by hand.** ✏️ **CORRECTION to this log and to memory: the predicted "#178 due 2026-10-12" for the next B-126 fiction PR is now wrong — #178 is la-county's. The monthly recurrence still stands; the NUMBER does not. Never pre-assign a PR number.**
+>
+> 🕳️🔴 **B-130 RECONFIRMED — `ntsb-weekly` RAN, SUCCEEDED, AND PRODUCED NOTHING, AGAIN.** Run `34864...` at **2026-09-14T20:37Z** → `success`, commit `f189fc719`, **1,058 lines churned (530 in / 530 out)** in `ntsb-accidents.json`. Counters read straight off the artifact: **`with_records: 0` · `no_records: 0` · `not_available: 528` · `error_count: 0`**, and all 528 rows carry `status: "not_available"`. **Only `generated_at` changed.** 🔑 **`orphan_count`-equivalent is 0 on a 528-brand universe → this is a FETCH bug, not a matcher bug** — exactly the B-130 signature. 🚫 **Its green conclusion is worth nothing; read `with_records`.**
+>
+> 📦🟠 **B-157 — 94 SNAPSHOTS NOW, AND TODAY'S IS PROVABLY REDUNDANT.** `ofac-sdn-daily` committed `0cd2d9e64`, a **15,067-line** new file `data/raw/ofac-sdn/2026-09-14.json`. **`data/raw/ofac-sdn/` is now 94 files / 61 MB.** ✅ **Hashed `entities` (not the file, per this log's 09-12 correction): 09-13 and 09-14 are `44a325dd9c8e118a324b807e58798cce` on both days, 1,882 rows each — IDENTICAL.** The only differences in the whole object are **`generated_at`** and **`snapshot_date`**. 🆕 **Today the row counters did NOT drift at all, which is why the entity-level hash is the right dedupe key and a whole-file hash is not.** 🚫 **Fix the writer; do not bulk-delete the 94 files.**
+>
+> 📊✅ **CATALOG — DAY 15 AT THE SAME MD5.** CDN `index.json`: HTTP 200, **12,830 tracked / 2,622 graded — A 63 · B 738 · C 1,031 · D 535 · F 255**, md5 **`1527f2e9ec86cd9555075f0162978532`**, 9,989,657 B, byte-identical **2026-08-31 → 2026-09-14**. 🔑 **Quote 2,622. Verify at the CDN, never from git.**
+>
+> ✏️🟡 **B-128 — SPLIT MOVED 400 → 405 SINGLE-LINE / 12,430 → 12,425 PRETTY.** Net **+5 toward single-line**, the opposite direction from yesterday's +6 toward pretty, which is exactly what the corrected oscillation model predicts: no rebake ran today, so only the single-line writers (`news-rss-nightly`, and `cisa-kev-weekly` collapsing `fortinet.json` and `n-able.json`) touched formatting. 🔑 **The split is a tug-of-war, not a trend — never extrapolate it.**
+>
+> 🕳️🟢 **B-149 — FIFTH CONSECUTIVE WRITE, SAME TWO BRANDS.** `trending-refresh` ran `2026-09-15T00:28Z` → `success` (`046be14cf`). **`generatedAt` `2026-09-14T00:04:06.109Z` → `2026-09-15T00:28:42.323Z`.** The 7-day window still holds exactly **`genentech` (1 view / 1 unique)** and **`constellium-se` (1 / 1)** — **no new brand entered and neither aged out.** 🚫 **Still ~1 brand-card open per week. Read `generatedAt`, never the file.**
+>
+> 🔴🧪 **B-151 — DAY 19; `ci.yml` still has not run.** The only `ci` entry today is **`action_required` on a `pull_request`** at 09:51Z — the same empty-`/jobs` state this log has recorded since 08-26. **40 of the last 40 commits carry `[skip ci]`.** Today added **8 more untested data commits and 118 changed files.** 🚫 **Never read "CI is green" off the Actions list — check the DATE and the EVENT.** 🧭 **Still a 3-line fix.**
+>
+> 📬 **B-101 — 50 → 51 OPEN.** New today: **#178** (`data/la-county-restaurants-34830159201`). Newest **#178** (2026-09-14), oldest **#116** (2026-06-29, **77 days**). 🔑 **Branch-prefix census, which is the number that actually matters:** `la-county-restaurants` **12** · `health-pharma-r3` **3** · `strike-map` **3** · `fdaaa-trials` **3** · `cornell-ilr` **3** · `fmcsa-sms` **2**. **26 of 51 open PRs come from six run-ID-branched crons.** 🔴 **Three must-not-merge landmines unchanged:** #134 (CC-BY-NC stripped) · #165 (synthetic `.gov` data) · #177 (byte-identical re-proposal of #165).
+>
+> 📌 **EVERYTHING ELSE RE-VERIFIED.** **B-133 exactly 43, flat** (`typeof d.charity_irs990.totalGrants === "number"`; the `charity_irs990` key is present on **11,202** files). **Zero code, script, or workflow changes today** — every path touched by all 8 commits is under `public/data/` or `data/`. **Real fetches that DID work:** `cisa-kev` catalog `2026.09.04 → 2026.09.11`, CVEs **1,695 → 1,709**; `msha` violations **3,099,594 → 3,100,750**, accidents **274,623 → 274,737**, **78 brands with records**; `fcc` industry complaints **668,597 → 671,504**; `phmsa` **40 with records** and honestly declaring its three bulk ZIPs are **403 AkamaiGHost**. **Failures today, all known:** `fsis-weekly`, `fsis-dw-weekly`, `bis-entity-list-weekly` (B-122, still waiting on the `api.data.gov` key). **Timeout kills today:** `faa-weekly`, `fra-weekly`, `gdelt-weekly` (B-125).
+>
+> 🔴 **WHAT YOU STILL OWE.** ① **`RESEND_API_KEY`** — seven missed Sundays; **and remember B-155 means the key ALONE will not fix it**, the guard at `send-weekly-digest.mjs:47-50` has to move below the `sent === 0` check or the next empty week goes green again. ② **Install Build 81 and open 5 brand cards** — B-136's paywall fix is still not live on iOS, so every iOS conversion number remains unusable as a baseline. ③ **NEW — decide on B-159 (`fcc`)**: keep it as one industry-context row or retire it; it cannot ever grade a brand. ④ **NEW — B-137 coverage claim** is still unresolved and B-159 makes it worse: `fcc` is being counted as a source that produces no brand data.
+>
+> **— PRIOR SYNC (history) —** 2026-09-13 21:30 CDT (daily doc-sync covering **2026-09-13**, a Sunday — **10 bot commits, 14 scheduled runs ALL GREEN, 355 company files rewritten, zero human activity, zero code changes.** **The headline is that the B-124 Sunday test FIRED — seven-for-seven — and this sync caught the MECHANISM, not just the pattern: TWO crons (`nhtsa-weekly`, `cpsc-weekly`) destroyed their own commits and reported `success`, and the thing they conflicted against was B-128's serializer fight. B-124 is Sunday-only because the file-reformatting weekly rebake is Sunday-only.** ✏️ **Second result falsifies this log's B-128 model outright: files OSCILLATE. `american-eagle.json` went single → pretty → single inside ONE day.** 📧 **Third: `weekly-digest` went GREEN and sent nothing for the SEVENTH straight Sunday, exactly as B-155 predicts.**)
 >
 > 🆕🔴🎯 **BIGGEST FINDING — B-124 FIRED ON SUNDAY 09-13 (SEVEN FOR SEVEN), AND THE CONFLICT GENERATOR IS B-128. THESE ARE ONE BUG CHAIN, NOT TWO BUGS.** Two crons destroyed their own work today and both reported **`success`**:
 > - **`nhtsa-weekly`** — run **`34775594604`**, destroyed commit **`968ef22`** (`data(nhtsa): weekly NHTSA recall + complaint refresh + merge`). **2 conflicts: `public/data/companies/chrysler.json` and `jeep.json`.**
@@ -1565,6 +1601,84 @@
   are correctly preceded by an explicit `== null` check.**
   ✅ **LIVE** — API routes + sitemap, deployed on push; no Build 82 dependency.
   *(WS-A, S — done)*
+
+- **B-158 🆕 NEW 2026-09-14 — `enriched-augments-refresh` has discarded 4,075 company files on every
+  run for 80 days while reporting `success`. A partial `git add` leaves tracked files unstaged, which
+  makes `git pull --rebase` refuse outright, and the retry loop exits 0.**
+  *(WS-B, S — two lines in one workflow; 🔴 HIGHEST-VALUE SILENT-LOSS FIX OPEN)*
+  🔴 **WHAT HAPPENED.** The last `data(enriched)` commit on `main` is **`9b49e6273`, 2026-06-26** —
+  and that came from a `workflow_dispatch`, not the schedule. Since then: **12 scheduled runs,
+  conclusions `{"success": 12}`, commits landed ZERO.**
+  🔑 **MECHANISM — a partial add, NOT a conflict and NOT a `.gitignore`.**
+  `.github/workflows/enriched-augments-refresh.yml:76` stages only
+  `git add public/data/companies/ data/derived/`. The same run also writes
+  **`data/raw/itep-tax/<date>.json`** and **`public/data/fed-reserve-enforcement.json`** — both
+  tracked, neither gitignored (`git check-ignore` returns nothing for either). After the commit at
+  `:78` they remain unstaged, so all three iterations of the loop at `:79-82` die on
+  `error: cannot pull with rebase: You have unstaged changes. / error: Please commit or stash them.`
+  The loop's last statement is `sleep 5`, so the step **exits 0**.
+  ✅ **VERIFIED VERBATIM IN FOUR RUNS SPANNING SEVEN WEEKS:** `34865202454` (09-14),
+  `34136348257` (09-07), `33417599639` (08-31), `30266683422` (07-27) — identical failure text,
+  identical green conclusion in all four.
+  📉 **WHAT IS BEING THROWN AWAY (today's log, verbatim):** `sec-tax-augment.json` **3,458 slugs** ·
+  `supply-chain-augment.json` **872** · `openfda-recalls-augment.json` **365** ·
+  `privacy-enforcement-augment.json` **357** · `labor-wages-augment.json` **49** ·
+  `animal-certs-augment.json` **17** · `Wrote enriched.tax into 306 company files` · then
+  `Applied → 4075 company files written (0 errors)`.
+  🚨 **`enriched.tax` is one of only TWO enriched dims that reach a grade
+  (`scripts/rebake-scoring.mjs:182`), and `secTax` at ~3,458 slugs is the exact dataset V-4 was going
+  to start from.** So the highest-value coverage work in the program has been feeding a dead end.
+  🧭 **FIX — TWO LINES.** ① `:76` → `git add public/data/companies/ data/derived/ data/raw/ public/data/fed-reserve-enforcement.json`
+  ② make the loop `exit 1` after the third failure so this can never report success again.
+  ⚠️ **The first successful run lands ~12 weeks of augment data at once and CAN move grades —
+  re-baseline `grade-snapshot.json` in the SAME pass (B-127's rule).**
+  🔑 **THIRD DISTINCT SILENT-LOSS MECHANISM.** B-123 = a `.gitignore`d add-path. B-124 = an
+  un-aborted rebase conflict. B-158 = a partial add that blocks the rebase before it starts. Same
+  symptom, three different fixes — **do not assume one patch covers all the affected workflows.**
+  🚫 **Do not "fix" this by widening to `git add -A` in a repo where parallel sessions share the
+  working tree — name the paths.**
+
+- **B-159 🆕 NEW 2026-09-14 — `fcc-weekly` is green, honest, and structurally incapable of producing a
+  single per-brand record. 528 of 528 brands come back `no_company_attribution`, and the 49,338-line
+  weekly churn exists to update one scalar.**
+  *(WS-B, XS — a scope decision, not a code fix; 🔴 ARON'S CALL)*
+  🟠 **WHAT HAPPENED.** `9368e68eb` (`fcc-weekly`, 2026-09-14T15:59:49Z, **`success`**) rewrote
+  `public/data/fcc-complaints.json` — **24,690 insertions / 24,690 deletions.** Parsed: **528/528
+  rows carry `status: "no_company_attribution"`; zero `ok`, zero records.** The only value that moved
+  is `industry_total_complaints_24mo`, **668,597 → 671,504**, copied identically into all 528 rows.
+  🔑 **The file states the cause itself, in its own `dataset_limitation` field:** *"FCC CGB Consumer
+  Complaints dataset 3xyp-aqkj has no company/carrier column; per-brand attribution is not possible."*
+  ✅ **NOT B-126 and NOT B-153.** The fetch is real, the aggregate is real, nothing is fabricated and
+  nothing is a fixture. The defect is that a source which can never attribute to a brand was wired
+  into a 528-brand per-brand sweep.
+  ✏️ **CORRECTS THIS LOG'S 08-2x TRIAGE.** `fcc-weekly` was recorded then as "a real regression"
+  worth triaging differently because it had 3 successes in 40 runs. The failures were real — but
+  **fixing them buys nothing, because a green run produces no brand data either.**
+  🧭 **DECISION FOR ARON.** Either (a) drop `fcc` from the 528-brand sweep and keep a single
+  industry-context row, or (b) retire the cron. **Either way it must stop counting as a "source" in
+  any coverage claim — this makes B-137 worse, not better.**
+
+- **B-160 🆕 NEW 2026-09-14 — `la-county-restaurants-weekly` is the largest single contributor to the
+  bot-PR pile: 12 of 51 open PRs, including the oldest in the repo, all for a dataset its own
+  workflow says was last updated 2018-07.**
+  *(WS-B, XS — one line, plus hand-closing 11 PRs)*
+  🟠 **WHAT HAPPENED.** It opened **#178** today. Of **51 open bot PRs, 12 are `la-county-restaurants`**
+  — `#178, #173, #169, #168, #167, #164, #157, #152, #148, #146, #131, #116` — and **`#116`
+  (2026-06-29, 77 days) is the oldest open PR in the repo.**
+  🔑 **CAUSE IS THE BRANCH NAME.** `.github/workflows/la-county-restaurants-weekly.yml` uses
+  `branch: data/la-county-restaurants-${{ github.run_id }}`, so every run opens a NEW PR instead of
+  re-pushing onto one — the same trap as B-126's `data/fmcsa-sms-<run id>`.
+  🚨 **AND THE FETCH IS POINTLESS AT WEEKLY CADENCE.** The workflow's own header comment says the
+  dataset "does not refresh weekly (it is a historical archive last updated 2018-07)."
+  📌 **BRANCH-PREFIX CENSUS OF THE PILE (the number that actually matters, not the total):**
+  `la-county-restaurants` **12** · `health-pharma-r3` **3** · `strike-map` **3** · `fdaaa-trials` **3** ·
+  `cornell-ilr` **3** · `fmcsa-sms` **2**. **26 of 51 open PRs come from six run-ID-branched crons.**
+  🧭 **FIX.** Pin the branch to a stable `data/la-county-restaurants`, or drop the schedule to annual.
+  Close the 11 stale ones **by hand** — never in bulk, and never on the title (B-101's rule; #134,
+  #165 and #177 are still must-not-merge landmines).
+  ✏️ **CORRECTION TO B-126's RECORDED FORECAST.** This log predicted the next FMCSA fiction PR would
+  be "#178 due 2026-10-12". **#178 is la-county's.** The monthly recurrence still stands; the NUMBER
+  does not. **Never pre-assign a PR number.**
 
 - **B-157 🆕 NEW 2026-09-11 — `ofac-sdn-daily` commits a full 15,067-line snapshot every day even when
   the sanctions payload is byte-identical. 83 of its 91 files are redundant copies; 59 MB of repo for
