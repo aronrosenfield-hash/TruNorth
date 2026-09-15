@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T14:09:52.265Z",
+  "generated_at": "2026-09-15T14:43:42.059Z",
   "smoke_mode": false,
   "brand_count": 528,
   "with_enforcement_count": 0,
@@ -938,8 +938,7 @@
       "status": "edos_unreachable",
       "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
       "bank_cert_numbers": [
-        9261,
-        1018
+        9261
       ],
       "bank_names": [
         {
@@ -948,13 +947,6 @@
           "state": "IL",
           "active": 0,
           "bkclass": "NM"
-        },
-        {
-          "cert": 1018,
-          "name": "M&I Bank of Burlington",
-          "state": "WI",
-          "active": 0,
-          "bkclass": "SM"
         }
       ]
     },
@@ -1222,24 +1214,24 @@
       "status": "edos_unreachable",
       "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
       "bank_cert_numbers": [
-        57359,
         31581,
+        57359,
         58514
       ],
       "bank_names": [
-        {
-          "cert": 57359,
-          "name": "American Eagle Bank",
-          "state": "IL",
-          "active": 1,
-          "bkclass": "NM"
-        },
         {
           "cert": 31581,
           "name": "American Eagle Savings Bank",
           "state": "PA",
           "active": 0,
           "bkclass": "SB"
+        },
+        {
+          "cert": 57359,
+          "name": "American Eagle Bank",
+          "state": "IL",
+          "active": 1,
+          "bkclass": "NM"
         },
         {
           "cert": 58514,
@@ -2007,8 +1999,8 @@
         14997,
         12466,
         32906,
-        27595,
         10600,
+        27595,
         4768,
         17438,
         9575
@@ -2057,18 +2049,18 @@
           "bkclass": "NM"
         },
         {
-          "cert": 27595,
-          "name": "Bank of America, National Association (USA)",
-          "state": "AZ",
-          "active": 0,
-          "bkclass": "N"
-        },
-        {
           "cert": 10600,
           "name": "Sun Security Bank of America",
           "state": "MO",
           "active": 0,
           "bkclass": "NM"
+        },
+        {
+          "cert": 27595,
+          "name": "Bank of America, National Association (USA)",
+          "state": "AZ",
+          "active": 0,
+          "bkclass": "N"
         },
         {
           "cert": 4768,
@@ -2107,11 +2099,12 @@
         5146,
         26839,
         1230,
-        27930,
         26983,
+        27930,
         14533,
         18694,
-        2843,
+        13849,
+        16309,
         16853,
         19501,
         27076,
@@ -2120,10 +2113,9 @@
         4448,
         5208,
         5457,
-        13849,
-        16309,
-        15277,
-        2210
+        2843,
+        2210,
+        15277
       ],
       "bank_names": [
         {
@@ -2183,18 +2175,18 @@
           "bkclass": "N"
         },
         {
-          "cert": 27930,
-          "name": "Wells Fargo Bank Nevada, National Association",
-          "state": "NV",
-          "active": 0,
-          "bkclass": "N"
-        },
-        {
           "cert": 26983,
           "name": "Wells Fargo Financial Bank",
           "state": "SD",
           "active": 0,
           "bkclass": "NM"
+        },
+        {
+          "cert": 27930,
+          "name": "Wells Fargo Bank Nevada, National Association",
+          "state": "NV",
+          "active": 0,
+          "bkclass": "N"
         },
         {
           "cert": 14533,
@@ -2211,9 +2203,16 @@
           "bkclass": "N"
         },
         {
-          "cert": 2843,
-          "name": "Wells Fargo Bank of Arizona, National Association",
-          "state": "AZ",
+          "cert": 13849,
+          "name": "Wells Fargo Bank Indiana, National Association",
+          "state": "IN",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 16309,
+          "name": "Wells Fargo Bank Montana, National Association",
+          "state": "MT",
           "active": 0,
           "bkclass": "N"
         },
@@ -2274,23 +2273,9 @@
           "bkclass": "N"
         },
         {
-          "cert": 13849,
-          "name": "Wells Fargo Bank Indiana, National Association",
-          "state": "IN",
-          "active": 0,
-          "bkclass": "N"
-        },
-        {
-          "cert": 16309,
-          "name": "Wells Fargo Bank Montana, National Association",
-          "state": "MT",
-          "active": 0,
-          "bkclass": "N"
-        },
-        {
-          "cert": 15277,
-          "name": "Wells Fargo Bank South Dakota, National Association",
-          "state": "SD",
+          "cert": 2843,
+          "name": "Wells Fargo Bank of Arizona, National Association",
+          "state": "AZ",
           "active": 0,
           "bkclass": "N"
         },
@@ -2298,6 +2283,13 @@
           "cert": 2210,
           "name": "Wells Fargo Bank Wyoming, National Association",
           "state": "WY",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
+          "cert": 15277,
+          "name": "Wells Fargo Bank South Dakota, National Association",
+          "state": "SD",
           "active": 0,
           "bkclass": "N"
         }
@@ -2331,10 +2323,10 @@
         5134,
         1304,
         26441,
-        23922,
         34590,
-        1277,
+        23922,
         2268,
+        1277,
         2976,
         2162
       ],
@@ -2368,13 +2360,6 @@
           "bkclass": "NM"
         },
         {
-          "cert": 23922,
-          "name": "U.S. Bank National Association OR",
-          "state": "OR",
-          "active": 0,
-          "bkclass": "N"
-        },
-        {
           "cert": 34590,
           "name": "U.S. Bank National Association ND",
           "state": "ND",
@@ -2382,9 +2367,9 @@
           "bkclass": "N"
         },
         {
-          "cert": 1277,
-          "name": "U.S. Bank of Washington, National Association",
-          "state": "WA",
+          "cert": 23922,
+          "name": "U.S. Bank National Association OR",
+          "state": "OR",
           "active": 0,
           "bkclass": "N"
         },
@@ -2394,6 +2379,13 @@
           "state": "UT",
           "active": 0,
           "bkclass": "SM"
+        },
+        {
+          "cert": 1277,
+          "name": "U.S. Bank of Washington, National Association",
+          "state": "WA",
+          "active": 0,
+          "bkclass": "N"
         },
         {
           "cert": 2976,
@@ -2422,10 +2414,10 @@
         6384,
         27266,
         679,
+        24868,
         34425,
         7740,
         742,
-        24868,
         7944,
         10513,
         31435,
@@ -2468,6 +2460,13 @@
           "bkclass": "SM"
         },
         {
+          "cert": 24868,
+          "name": "PNC Advisors, National Association",
+          "state": "MA",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
           "cert": 34425,
           "name": "PNC National Bank",
           "state": "DE",
@@ -2485,13 +2484,6 @@
           "cert": 742,
           "name": "PNC Bank, Ohio, National Association",
           "state": "OH",
-          "active": 0,
-          "bkclass": "N"
-        },
-        {
-          "cert": 24868,
-          "name": "PNC Advisors, National Association",
-          "state": "MA",
           "active": 0,
           "bkclass": "N"
         },
@@ -2778,18 +2770,11 @@
       "status": "edos_unreachable",
       "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
       "bank_cert_numbers": [
-        22139,
         24443,
-        31488
+        31488,
+        22139
       ],
       "bank_names": [
-        {
-          "cert": 22139,
-          "name": "Progressive Bank",
-          "state": "LA",
-          "active": 0,
-          "bkclass": "NM"
-        },
         {
           "cert": 24443,
           "name": "Progressive National Bank",
@@ -2803,6 +2788,13 @@
           "state": "MO",
           "active": 1,
           "bkclass": "SM"
+        },
+        {
+          "cert": 22139,
+          "name": "Progressive Bank",
+          "state": "LA",
+          "active": 0,
+          "bkclass": "NM"
         }
       ]
     },
@@ -3124,23 +3116,23 @@
       "status": "edos_unreachable",
       "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
       "bank_cert_numbers": [
-        4655,
-        19792
+        19792,
+        4655
       ],
       "bank_names": [
-        {
-          "cert": 4655,
-          "name": "First National Bank and Trust Company in Dodge City",
-          "state": "KS",
-          "active": 0,
-          "bkclass": "N"
-        },
         {
           "cert": 19792,
           "name": "Colony Bank of Dodge County",
           "state": "GA",
           "active": 0,
           "bkclass": "NM"
+        },
+        {
+          "cert": 4655,
+          "name": "First National Bank and Trust Company in Dodge City",
+          "state": "KS",
+          "active": 0,
+          "bkclass": "N"
         }
       ]
     },
