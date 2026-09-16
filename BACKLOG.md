@@ -6,7 +6,48 @@
 >
 > **🟢 LAUNCHED — Jun 23, 2026 · 2:01 AM CDT** (App Store · id `6775301458` · `https://apps.apple.com/app/id6775301458` · PH launched). **CURRENT LIVE BUILD = v1.1 Build 81** (approved 2026-07-08, released Manual **2026-07-14**) — it superseded v1.0 Build 75, which was live Jun 23 → Jul 14. **Next iOS ship = Build 82.** *(The 2026-06-11 "date is soft, get it right" call held through the Compass redesign; the experience shipped on the locked date. Go-live runbook: `docs/LAUNCH_DAY.md`.)*
 >
-> **Last updated:** 2026-09-14 23:20 CDT (daily doc-sync covering **2026-09-14**, a Monday — **8 bot commits, 19 scheduled runs, zero human activity, zero code changes.** **The headline is a cron nobody was watching: `enriched-augments-refresh` has been GREEN 12-for-12 since 2026-06-26 while throwing away 4,075 company files on every single run. 80 days of the footprint pipeline — including `enriched.tax`, one of only TWO enriched dims that touch a grade — written and discarded.** ✅ **Second result: Monday is the control arm and it behaved — 8 crons pushed to `main` with zero rebase conflicts, which is the cleanest confirmation yet that B-124 is Sunday-only.** 🕳️ **Third: the watchdog erased a SECOND row in two days — `wikirate-quarterly` is gone and was never fixed.**)
+> **Last updated:** 2026-09-15 23:40 CDT (daily doc-sync covering **2026-09-15**, a Tuesday — **9 bot commits, zero human activity, zero code changes, 111 company files touched and ZERO grade fields moved.** **The headline is B-161: `bcorp-quarterly` got its first successful SCHEDULED run ever — and the live fetch returned ZERO brands, so a green cron overwrote a 15-record file with an empty one. Yesterday's sync named `bcorp` as "the nearest chance a hidden watchdog row reappears." It ran, it succeeded, it produced nothing, and the watchdog stayed silent.** ✏️ **Second result CORRECTS B-153: the dry-mode fixture list was never four crons. `bcorp` was a fifth, frozen at `"mode": "dry"` since 2026-06-09 — and it has now self-cleared by flipping to live-and-empty.** 🕳️ **Third: the watchdog held at 21 rows, name-for-name identical to yesterday — no eviction, no recovery.**)
+>
+> 🆕🔴🅱️ **BIGGEST FINDING — B-161 (NEW): `bcorp-quarterly` WENT GREEN, FETCHED LIVE FOR THE FIRST TIME, GOT ZERO BRANDS, AND DELETED THE 15 RECORDS THAT WERE THERE.** Commit `20cf15485`, run at **2026-09-15T05:01:30Z** → **`success`** on a `schedule` event.
+> - **BEFORE (`20cf15485^`):** `public/data/_raw/bcorp.json` = `"generated_at": "2026-06-09T13:21:26.812Z"`, **`"mode": "dry"`, `"brand_count": 15`** — Allbirds, Alter Eco, Ben & Jerry's, Danone NA, Hyatt and 10 more, each with full B Impact subscores.
+> - **AFTER (`HEAD`):** `"generated_at": "2026-09-15T05:01:46.453Z"`, **`"mode": "live"`, `"brand_count": 0`, `"certified_brands": []`.**
+> - **The merge log tells the same story twice:** `{"apply": true, "raw_brand_count": 0, "matched_count": 0, "written_count": 0, "unmatched_count": 0}`. The 2026-06-11 predecessor was `{"apply": false, "raw_brand_count": 15, "matched_count": 5, "written_count": 0}`.
+>
+> ✅ **CONTAINMENT HOLDS — `bcorp` HAS NEVER WRITTEN A BYTE INTO A COMPANY FILE.** `written_count` is **0 on both runs** (the June run was `--apply false`, today's had nothing to apply). No grade moved, no badge appeared or vanished. **The loss is the 15-row fixture, not shipped data.**
+>
+> 🔑 **THE MECHANISM — THE WORKFLOW WAS ALWAYS `--live`; IT HAD SIMPLY NEVER SUCCEEDED ON THE SCHEDULE.** `.github/workflows/bcorp-quarterly.yml:44` runs `node scripts/bcorp-fetch.mjs --live` and `:47` runs `bcorp-merge.mjs --apply`. `scripts/bcorp-fetch.mjs:66-68` defaults to DRY and **only `--live` opts into network calls** — so the committed `"mode": "dry"` file came from a hand-run, not from CI. Run history is exactly three entries: **`2026-06-07` `workflow_dispatch` success · `2026-06-15` `schedule` cancelled · `2026-09-15` `schedule` success.** ⚠️ **Neither the workflow nor the fetcher was edited today** (`bcorp-quarterly.yml` last touched `9f4bf87b2`, 2026-08-01). **Nothing changed except that the job finally finished.**
+>
+> 🧭 **WHAT TO DO:** ① reproduce `node scripts/bcorp-fetch.mjs --live` **off-runner** before touching the scraper — B-122's rule; `bcorporation.net/find-a-b-corp/` is a JS-rendered directory and a zero-result parse is the expected failure shape. ② add a **floor guard**: refuse to write `_raw/bcorp.json` when `brand_count === 0` and the previous file was non-empty — the same guard class B-161 shares with B-145 (`openstates-monthly`). ③ **Do not restore the fixture.** It was 15 rows of stale 2026-06 data masquerading as a source; an honest zero is better than a dishonest fifteen. 🚫 **And stop counting `bcorp` as a live source in any coverage claim until ① lands — see B-137.**
+>
+> ✏️🟡 **CORRECTION TO B-153 — THE DRY-MODE FIXTURE LIST WAS FIVE, NOT FOUR.** This log has recorded `mas-singapore` · `uk-ico` · `cftc-enforcement` · `canada-competition-bureau` as the complete set of crons republishing a bundled fixture under a `"mode": "dry"` tell. **`bcorp` was a fifth and was missed**, because it is quarterly and its artifact lives at `public/data/_raw/bcorp.json` rather than under `data/raw/`. 🔑 **The generalized rule: grep for `"mode": "dry"` across BOTH `data/raw/` and `public/data/_raw/`, and treat a quarterly/annual cadence as a reason the tell has gone unseen, not as evidence it is absent.** ✅ **`bcorp` is now OFF the B-153 list — it is live. It is ON B-161 instead.**
+>
+> 🕳️🔴 **B-130 RECONFIRMED TWICE TODAY — `nrc-weekly` AND `fdic-weekly` BOTH RAN, BOTH SUCCEEDED, BOTH PRODUCED NOTHING.**
+> - **`nrc-weekly`** (`fd2776f68`) — merge log: **`total_brands: 5`, `merged_count: 0`, `skipped_count: 5`, `orphan_count: 0`, `merged_brands: []`.** The 12-line diff in `nrc-events.json` is **`generated_at` and five `scraped_at` stamps and nothing else**; every row still carries `sample_events: []` and `sample_violations: []`. 🔑 **Zero orphans on a nonzero universe = FETCH bug, per the B-130 signature.**
+> - **`fdic-weekly`** (`621a5123a`) — merge log: **`merged_count: 0`, `merged_partial_count: 38`, `skipped_count: 483`, `orphan_count: 7`, `error_count: 0`.** Identical to the 09-08 reading. 🚨 **`merged_partial_count: 38` is the tell this log recorded on 09-08: those 38 files get `enriched.fdic.lastUpdated` advanced while each one says `edosStatus: "edos_unreachable"`. `lastUpdated` records WHEN A WRITER RAN, never whether a source answered.**
+>
+> 🧾🚨 **B-134 — `merged_count` HELD FLAT AT 93 WHILE THREE BINDINGS MOVED, AND ONE MOVED 97%.** Diffed `finra-merge-log.json` entry-for-entry against last week (`621a5123a` → `HEAD`): **`jpmorgan-chase` 548 → 549** · **`charles-schwab` 319 → 321** · **`marriott` 30 → 1.** 🚨 **A hotel chain's bound broker-dealer lost 29 of its 30 disclosures in one week and the headline counter did not move a digit.** 🔑 **This is the third consecutive sync where a flat `merged_count` concealed drift — the counter is not a change detector. Diff the bindings.** ✅ **Still harmless only because nothing reads `finra`;** 14 orphans, unchanged names.
+>
+> ✏️🟢 **`chrysler.json` LOST 545 LINES IN THE FINRA COMMIT AND LOST NOTHING AT ALL.** `--stat` shows `545 +-` on `public/data/companies/chrysler.json` in `8aad44cb5`. **Parsed both sides: 57 top-level keys before, 57 after, identical key list.** It is a B-128 pretty → single-line flip. 🔑 **This is the exact trap recorded in memory: a huge deletion count in a bot commit is a FORMATTING question first — parse the objects, never read `--stat`.**
+>
+> ✏️🟡 **B-128 — SPLIT MOVED 405 → 407 SINGLE-LINE / 12,425 → 12,423 PRETTY.** Net **+2 toward single-line**, the third direction change in four days (+5 single 09-14, +6 pretty 09-13). No rebake ran (Tuesday), so only the single-line writers moved anything. 🔑 **Tug-of-war, not a trend. Never extrapolate it.**
+>
+> 📦🟠 **B-157 — THIRD CONSECUTIVE BYTE-IDENTICAL PAYLOAD. 95 FILES / 62 MB.** `ofac-sdn-daily` committed `1d283fccb`, another **15,067-line** file at `data/raw/ofac-sdn/2026-09-15.json`. ✅ **`entities` md5 is `44a325dd9c8e118a324b807e58798cce` at 1,882 rows on 09-13, 09-14 AND 09-15 — three days, zero change.** Only `generated_at` and `snapshot_date` differ. 🚫 **Fix the writer; do not bulk-delete the 95 files.**
+>
+> 🕳️🟢 **B-149 — SIXTH CONSECUTIVE WRITE, STILL THE SAME TWO BRANDS.** `trending-refresh` wrote `4695a6da0`; **`generatedAt` `2026-09-15T00:28:42.323Z` → `2026-09-16T00:08:31.743Z`.** The 7-day window holds **`genentech` (1/1)** and **`constellium-se` (1/1)** — **no entry, no expiry, six writes running.** 🚫 **Still ~1 brand-card open per week. Read `generatedAt`, never the file.**
+>
+> 🕳️➡️ **WATCHDOG — HELD AT 21, NAME-FOR-NAME IDENTICAL.** #155 rewritten **2026-09-15T17:40:21Z** with **21 rows**; diffed against yesterday's 21 — **no additions, no removals.** 📌 **#155 still hides EIGHT broken crons.** 🆕 **And it hid a ninth kind today: `bcorp-quarterly` shipped a 100% empty artifact and stays OFF the list because it is green.** 🔑 **That is B-145 blindness, not B-142 erasure — a fifth direction the watchdog misleads in. Yesterday's "nearest chance a hidden row reappears" question is now answered: it does not, because the failure mode was emptiness, not failure.**
+>
+> 📊✅ **CATALOG — DAY 16 AT THE SAME MD5.** CDN `index.json`: HTTP 200, **12,830 tracked / 2,622 graded — A 63 · B 738 · C 1,031 · D 535 · F 255**, md5 **`1527f2e9ec86cd9555075f0162978532`**, 9,989,657 B, byte-identical **2026-08-31 → 2026-09-15**. 🔑 **Quote 2,622. Verify at the CDN, never from git.**
+>
+> 🔴🧪 **B-151 — DAY 20; `ci.yml` STILL HAS NOT RUN ON A PUSH.** **40 of the last 40 commits carry `[skip ci]`; `gh run list --limit 40` returns ZERO `push` events.** The only `ci` entry remains the 09-14 `pull_request` at `action_required`. Today added **9 more untested data commits and 130 changed files.** 🚫 **Never read "CI is green" off the Actions list — check the DATE and the EVENT.** 🧭 **Still a 3-line fix.**
+>
+> 📬 **B-101 — HELD AT 51 OPEN.** No new bot PR today. Newest **#178**, oldest **#116** (2026-06-29, **78 days**). 🔑 **Branch-prefix census unchanged:** `la-county-restaurants` **12** · `health-pharma-r3` **3** · `strike-map` **3** · `fdaaa-trials` **3** · `cornell-ilr` **3** · `fmcsa-sms` **2** — **26 of 51 from six run-ID-branched crons.** 🔴 **Three must-not-merge landmines unchanged:** #134 (CC-BY-NC stripped) · #165 (synthetic `.gov` data) · #177 (byte-identical re-proposal of #165).
+>
+> 📌 **EVERYTHING ELSE RE-VERIFIED.** **Zero grade movement** — diffed `overall`/`grade`/`csc`/`sc`/`excl`/`flags`/`realCats` across all **111** touched company files: **0 changes.** **B-133 exactly 43, flat** (`charity_irs990` present on **11,202** files). **Zero code, script, or workflow changes today.** **Real fetches that DID work:** `occ-weekly` **merged 14** brands (3 orphans: `pandora`, `us-bank`, `metlife`); `climate-trace-monthly` a genuine live bulk pull (`_mode: "apply"`, real subsector stats) producing **211 companies / 100 orphans** in `climate-trace-augment.json`; `news-rss-nightly` its usual digest. ⚠️ **Worth a look, not yet a bug:** the climate-trace augment's 211 companies reach **no company file** — `climate-trace-merge.mjs` writes only the augment, and the only other reference in the repo is a name in `scripts/enrich-all.mjs:49`. That is the **B-152 shape** (a healthy cron whose records dead-end), but it may be by design; confirm intent before filing.
+>
+> 🔴 **WHAT YOU STILL OWE.** ① **`RESEND_API_KEY`** — seven missed Sundays; **and B-155 means the key ALONE will not fix it**, the guard at `send-weekly-digest.mjs:47-50` has to move below the `sent === 0` check. ② **Install Build 81 and open 5 brand cards** — B-136's paywall fix is still not live on iOS, so every iOS conversion number remains unusable as a baseline. ③ **Decide on B-159 (`fcc`)**: keep one industry-context row or retire it; it cannot ever grade a brand. ④ **B-137 coverage claim** unresolved — and **B-161 makes it worse again: `bcorp` now joins `fcc` as a counted "source" that produces zero brand data.**
+>
+> **— PRIOR SYNC (history) —** 2026-09-14 23:20 CDT (daily doc-sync covering **2026-09-14**, a Monday — **8 bot commits, 19 scheduled runs, zero human activity, zero code changes.** **The headline is a cron nobody was watching: `enriched-augments-refresh` has been GREEN 12-for-12 since 2026-06-26 while throwing away 4,075 company files on every single run. 80 days of the footprint pipeline — including `enriched.tax`, one of only TWO enriched dims that touch a grade — written and discarded.** ✅ **Second result: Monday is the control arm and it behaved — 8 crons pushed to `main` with zero rebase conflicts, which is the cleanest confirmation yet that B-124 is Sunday-only.** 🕳️ **Third: the watchdog erased a SECOND row in two days — `wikirate-quarterly` is gone and was never fixed.**)
 >
 > 🆕🔴🅱️ **BIGGEST FINDING — B-158 (NEW): `enriched-augments-refresh` HAS DISCARDED 4,075 COMPANY FILES A WEEK FOR 80 DAYS AND REPORTED `success` EVERY TIME.** The cron fetches fine. It is the **push** that has never worked on the scheduled path.
 > - **Last `data(enriched)` commit on `main` is `9b49e6273`, 2026-06-26** — and that one came from a `workflow_dispatch`, not the schedule.
@@ -1680,6 +1721,53 @@
   be "#178 due 2026-10-12". **#178 is la-county's.** The monthly recurrence still stands; the NUMBER
   does not. **Never pre-assign a PR number.**
 
+- **B-161 🆕 NEW 2026-09-15 — `bcorp-quarterly` got its first successful SCHEDULED run ever, the live
+  fetch returned ZERO brands, and the green run overwrote a 15-record file with an empty one.**
+  *(WS-B, S — an off-runner repro plus one floor guard)*
+  🟠 **WHAT HAPPENED.** Commit `20cf15485`, run **2026-09-15T05:01:30Z**, event `schedule`,
+  conclusion **`success`**.
+  - **BEFORE (`20cf15485^`)** — `public/data/_raw/bcorp.json`: `"generated_at": "2026-06-09T13:21:26.812Z"`,
+    **`"mode": "dry"`, `"brand_count": 15`** (Allbirds, Alter Eco, Ben & Jerry's, Danone NA, Hyatt +10,
+    each with full B Impact subscores).
+  - **AFTER (`HEAD`)** — `"generated_at": "2026-09-15T05:01:46.453Z"`, **`"mode": "live"`,
+    `"brand_count": 0`, `"certified_brands": []`.**
+  - **Merge log now:** `{"apply": true, "raw_brand_count": 0, "matched_count": 0, "written_count": 0,
+    "unmatched_count": 0, "conflict_count": 0}`.
+  - **Merge log 2026-06-11:** `{"apply": false, "raw_brand_count": 15, "matched_count": 5,
+    "written_count": 0}`.
+  ✅ **CONTAINMENT HOLDS — `bcorp` HAS NEVER WRITTEN A BYTE INTO A COMPANY FILE.** `written_count` is
+  **0 on both runs**: the June run was `--apply false`, today's had nothing to apply. **No grade moved,
+  no badge appeared or vanished.** The loss is the 15-row fixture, not shipped data.
+  🔑 **MECHANISM — THE WORKFLOW WAS ALWAYS `--live`; IT HAD SIMPLY NEVER FINISHED ON THE SCHEDULE.**
+  `.github/workflows/bcorp-quarterly.yml:44` runs `node scripts/bcorp-fetch.mjs --live`; `:47` runs
+  `bcorp-merge.mjs --apply`. `scripts/bcorp-fetch.mjs:66-68` defaults to DRY and **only `--live` opts
+  into network calls** — so the committed `"mode": "dry"` file came from a hand-run, never from CI.
+  **Full run history is three entries: `2026-06-07` `workflow_dispatch` success · `2026-06-15`
+  `schedule` cancelled · `2026-09-15` `schedule` success.**
+  ⚠️ **NOTHING WAS EDITED TODAY.** `bcorp-quarterly.yml` last touched `9f4bf87b2` (2026-08-01);
+  `bcorp-fetch.mjs` untouched. **The only thing that changed is that the job finally finished.**
+  🧭 **FIX — THREE STEPS, IN ORDER.**
+  ① **Reproduce `node scripts/bcorp-fetch.mjs --live` OFF-RUNNER before touching the scraper** (B-122's
+  rule). `bcorporation.net/find-a-b-corp/` is a JS-rendered directory; a zero-result parse is the
+  expected failure shape and is not evidence of a CI-only block.
+  ② **Add a floor guard:** refuse to write `_raw/bcorp.json` when `brand_count === 0` and the previous
+  file was non-empty. **Same guard class as B-145 (`openstates-monthly`).**
+  ③ **Do NOT restore the fixture.** It was 15 rows of stale 2026-06 data masquerading as a live source;
+  an honest zero beats a dishonest fifteen.
+  🚫 **AND STOP COUNTING `bcorp` AS A LIVE SOURCE in any coverage claim until ① lands — this makes
+  B-137 worse alongside B-159.**
+  ✏️ **CORRECTS B-153 — THE DRY-MODE FIXTURE LIST WAS FIVE, NOT FOUR.** This log recorded
+  `mas-singapore` · `uk-ico` · `cftc-enforcement` · `canada-competition-bureau` as the complete set.
+  **`bcorp` was a fifth and was missed**, because it is quarterly and its artifact lives at
+  `public/data/_raw/bcorp.json` rather than under `data/raw/`. **Generalized rule: grep `"mode": "dry"`
+  across BOTH `data/raw/` and `public/data/_raw/`, and treat a quarterly/annual cadence as a reason the
+  tell went unseen, not as evidence it is absent.** ✅ **`bcorp` is now OFF the B-153 list — it is live.**
+  🕳️ **AND IT EXPOSES A FIFTH WATCHDOG BLIND SPOT.** Yesterday's sync named `bcorp-quarterly` as "the
+  nearest chance a hidden row reappears on its own." **It ran, it succeeded, it produced nothing, and
+  #155 stayed at 21 rows.** A cron that ships a 100%-empty artifact is invisible to the watchdog
+  because it is green — **B-145 blindness, not B-142 erasure.** *(Updates the watchdog item; links
+  B-145, B-153, B-137.)*
+
 - **B-157 🆕 NEW 2026-09-11 — `ofac-sdn-daily` commits a full 15,067-line snapshot every day even when
   the sanctions payload is byte-identical. 83 of its 91 files are redundant copies; 59 MB of repo for
   8 real changes in 97 days.**
@@ -1821,6 +1909,14 @@
   falling back. The fixture belongs in `*-fetch.test.mjs`, not in `data/raw/`.
   🔑 **DURABLE RULE: a real source URL inside a record does NOT mean the record was fetched. Read
   `mode`, and diff the payload across snapshots, before calling any cron's output current.**
+  ✏️ **CORRECTION 2026-09-15 — THE LIST WAS FIVE, NOT FOUR. See B-161.** `bcorp-quarterly` was a fifth
+  dry-mode fixture cron, frozen at `"mode": "dry"` / `"brand_count": 15` since **2026-06-09**, and this
+  census missed it for a specific, reproducible reason: **step ② scanned `data/raw/**` only, and
+  `bcorp` writes to `public/data/_raw/bcorp.json`.** Its quarterly cadence is why the tell went unseen
+  for three months. 🔑 **Amended rule: grep `"mode": "dry"` across BOTH `data/raw/` and
+  `public/data/_raw/`, and treat a quarterly or annual cadence as a reason a tell is UNOBSERVED, never
+  as evidence it is absent.** ✅ **`bcorp` is now OFF this list — its 2026-09-15 run fetched live. It is
+  on B-161 instead, because the live fetch returned zero brands.**
 
 - **B-154 🆕 NEW 2026-09-05 — the standing prediction that watchdog rows "age out on their own" is
   FALSIFIED. A row whose workflow FILE was deleted persists on #155 indefinitely.**
