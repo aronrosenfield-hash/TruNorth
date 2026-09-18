@@ -6,7 +6,23 @@
 >
 > **🟢 LAUNCHED — Jun 23, 2026 · 2:01 AM CDT** (App Store · id `6775301458` · `https://apps.apple.com/app/id6775301458` · PH launched). **CURRENT LIVE BUILD = v1.1 Build 81** (approved 2026-07-08, released Manual **2026-07-14**) — it superseded v1.0 Build 75, which was live Jun 23 → Jul 14. **Next iOS ship = Build 82.** *(The 2026-06-11 "date is soft, get it right" call held through the Compass redesign; the experience shipped on the locked date. Go-live runbook: `docs/LAUNCH_DAY.md`.)*
 >
-> **Last updated:** 2026-09-16 23:30 CDT (daily doc-sync covering **2026-09-16**, a Wednesday — **the quietest day on record: 3 bot commits, 5 scheduled runs (all `success`), zero human activity, zero code/script/workflow changes, 11 company files touched and ZERO grade fields moved.** No new defect found. Everything below is a re-verification of open items — the value today is that nothing drifted, and one old forecast expired without happening.)
+> **Last updated:** 2026-09-17 23:45 CDT (daily doc-sync covering **2026-09-17**, a Thursday — **3 bot commits, 5 scheduled runs (all `success`), zero human activity, zero code/script/workflow changes, 16 company files touched and ZERO grade fields moved.** No new defect. **The one movement: `constellium-se` aged out of the trending window — TruNorth's 7-day brand-card audience is now ONE view of ONE brand.**)
+>
+> 📊✅ **CATALOG — DAY 18 AT THE SAME MD5.** CDN `index.json`: HTTP 200, 9,989,657 B, md5 **`1527f2e9ec86cd9555075f0162978532`** — byte-identical **2026-08-31 → 2026-09-17**. **Quote 2,622 graded / 12,830 tracked.**
+>
+> 🕳️📉 **B-149 — EIGHTH CONSECUTIVE WRITE; THE WINDOW SHRANK TO ONE BRAND.** `4c19dea22`, `generatedAt` **`2026-09-18T00:04:49.875Z`**. **`constellium-se` aged out; only `genentech` (1 view / 1 unique) remains.** That is the entire measured web brand-card audience for the last 7 days. 🔑 **When `genentech` ages out too, `refresh-trending.mjs:72–75` will refuse to write an empty result and the file will FREEZE on `genentech` — a frozen file is NOT evidence of a view. Read `generatedAt`, never the file.** This is a distribution fact, not a data defect — see *never had an audience*.
+>
+> 📦🟠 **B-157 — FIFTH CONSECUTIVE BYTE-IDENTICAL PAYLOAD. 97 FILES / 65.8 MB.** `ofac-sdn-daily` committed `b144ed9f7`, another **15,067-line** `data/raw/ofac-sdn/2026-09-17.json`. `entities` md5 **`44a325dd9c8e118a324b807e58798cce`, 1,882 rows — unchanged 09-13 → 09-17.** The augment diff is `generated_at` + `snapshot_date` only (`matched_slug_count` 91). 🚫 Fix the writer; do not bulk-delete.
+>
+> 🕳️➡️ **WATCHDOG — HELD AT 21, NAME-FOR-NAME IDENTICAL (fourth straight day).** #155 rewritten **2026-09-17T17:38Z**; no additions, no removals. Still hides EIGHT broken crons and is blind to `bcorp`'s empty-but-green artifact (B-161). 🚫 Report the band; never forecast the cutoff.
+>
+> 📰 **`news-rss-nightly` (`f52837e63`)** — normal digest; merged into 16 company files (`anheuser-busch`, `campbells`, `chobani`, `general-mills`, `heineken-usa`, `heinz`, `hormel-foods`, `kraft-heinz`, `mars`, `mondelez-international`, `nestl`, `pepsi`, `pepsico`, `red-bull`, `tyson-foods`, `unilever`). **Diffed `overall`/`grade`/`csc`/`sc`/`excl`/`flags`/`realCats`: 0 changes.** ✅ Landed cleanly (weekday — B-124 control arm holds).
+>
+> 📌 **HELD / RE-VERIFIED:** **B-128** split unchanged at **407 single-line / 12,423 pretty** · **B-133** exactly **43** · **B-101** **51** open PRs, newest #178, oldest #116 (opened 2026-06-29, **80 days**) · **B-151 day 22** — latest `ci` push run is still **2026-08-26**; the only `ci` entries since are `pull_request` at `action_required` (last 09-14). No weekly/monthly crons fired today, so B-130/B-134/B-158/B-161 had no new observation. **Next B-124 exposure is Sunday 09-20** (rebake + `nhtsa`/`cpsc`), the same day as the eighth missed email send.
+>
+> 🔴 **WHAT YOU STILL OWE — UNCHANGED:** ① `RESEND_API_KEY` **plus** the B-155 guard move (next missed Sunday = 09-20, the eighth) · ② install Build 81 / ship Build 82 (B-136 revenue fix still not live on iOS) · ③ B-159 `fcc` keep-or-retire · ④ B-137 coverage claim, with `bcorp` (B-161) among the zero-data sources.
+>
+> **— PRIOR SYNC (history) —** 2026-09-16 23:30 CDT (daily doc-sync covering **2026-09-16**, a Wednesday — **the quietest day on record: 3 bot commits, 5 scheduled runs (all `success`), zero human activity, zero code/script/workflow changes, 11 company files touched and ZERO grade fields moved.** No new defect found. Everything below is a re-verification of open items — the value today is that nothing drifted, and one old forecast expired without happening.)
 >
 > 📊✅ **CATALOG — DAY 17 AT THE SAME MD5.** CDN `index.json`: HTTP 200, 9,989,657 B, md5 **`1527f2e9ec86cd9555075f0162978532`** — byte-identical **2026-08-31 → 2026-09-16**. **Quote 2,622 graded / 12,830 tracked.**
 >
