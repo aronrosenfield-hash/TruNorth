@@ -6,7 +6,23 @@
 >
 > **🟢 LAUNCHED — Jun 23, 2026 · 2:01 AM CDT** (App Store · id `6775301458` · `https://apps.apple.com/app/id6775301458` · PH launched). **CURRENT LIVE BUILD = v1.1 Build 81** (approved 2026-07-08, released Manual **2026-07-14**) — it superseded v1.0 Build 75, which was live Jun 23 → Jul 14. **Next iOS ship = Build 82.** *(The 2026-06-11 "date is soft, get it right" call held through the Compass redesign; the experience shipped on the locked date. Go-live runbook: `docs/LAUNCH_DAY.md`.)*
 >
-> **Last updated:** 2026-09-17 23:45 CDT (daily doc-sync covering **2026-09-17**, a Thursday — **3 bot commits, 5 scheduled runs (all `success`), zero human activity, zero code/script/workflow changes, 16 company files touched and ZERO grade fields moved.** No new defect. **The one movement: `constellium-se` aged out of the trending window — TruNorth's 7-day brand-card audience is now ONE view of ONE brand.**)
+> **Last updated:** 2026-09-18 23:30 CDT (daily doc-sync covering **2026-09-18**, a Friday — **3 bot commits, 4 scheduled runs (all `success`), zero human activity, zero code/script/workflow changes, 15 company files touched and ZERO grade fields moved.** No new defect. **The one movement: a NEW brand-card view (`chef-boyardee`) entered the trending window — yesterday's "next it freezes" forecast did not happen.**)
+>
+> 📊✅ **CATALOG — DAY 19 AT THE SAME MD5.** CDN `index.json`: HTTP 200, 9,989,657 B, md5 **`1527f2e9ec86cd9555075f0162978532`** — byte-identical **2026-08-31 → 2026-09-18**. **Quote 2,622 graded / 12,830 tracked** (A 63 · B 738 · C 1,031 · D 535 · F 255).
+>
+> 🟢 **B-149 — NINTH CONSECUTIVE WRITE; WINDOW BACK TO TWO BRANDS.** `bc17e830b`, `generatedAt` **`2026-09-19T00:09:22.071Z`**: **`genentech` (1/1)** + **new `chef-boyardee` (1/1)**. ✏️ **Correction to the 09-17 entry: it said the file would FREEZE on `genentech` next. A new view landed first. The freeze guard (`refresh-trending.mjs:72–75`) is real; its timing is not forecastable — stop predicting it.** Audience reality unchanged: ~1 brand-card open per week on web.
+>
+> 📦🟠 **B-157 — SIXTH CONSECUTIVE BYTE-IDENTICAL PAYLOAD. 98 FILES / 66.5 MB.** `ofac-sdn-daily` committed `850db35f9`, another **15,067-line** `data/raw/ofac-sdn/2026-09-18.json`. `entities` md5 **`44a325dd9c8e118a324b807e58798cce`, 1,882 rows — unchanged 09-13 → 09-18.** Augment diff = `generated_at` + `snapshot_date` only. Scheduled 17:34 UTC, ran 19:55 UTC (+2h21m — GitHub queue, inside the recorded band). 🚫 Fix the writer; do not bulk-delete.
+>
+> 🕳️➡️ **WATCHDOG — HELD AT 21 (fifth straight day).** #155 rewritten **2026-09-18T17:04Z**; same 21 names. Still hides EIGHT broken crons and is blind to `bcorp`'s empty-but-green artifact (B-161).
+>
+> 📰 **`news-rss-nightly` (`0e7e7c5e2`)** — normal digest; merged into 15 company files (`campbells`, `chobani`, `coca-cola`, `conagra-brands`, `heinz`, `hershey`, `hormel-foods`, `kellogg-s`, `mars`, `mondelez-international`, `pepsi`, `pepsico`, `red-bull`, `tyson-foods`, `unilever`). **Diffed `overall`/`grade`/`csc`/`sc`/`excl`/`flags`/`realCats`: 0 changes.** ✅ Landed cleanly (weekday — B-124 control arm holds).
+>
+> 📌 **HELD / RE-VERIFIED:** **B-128** **407 single-line / 12,423 pretty** · **B-133** exactly **43** · **B-101** **51** open PRs, newest #178, oldest #116 (**81 days**) · **B-151 day 23** — latest `ci` push run still **2026-08-26**; last `pull_request` run 09-14 at `action_required`. No weekly/monthly crons fired. **Next B-124 exposure is Sunday 09-20** (rebake + `nhtsa`/`cpsc`), the same day as the eighth missed email send.
+>
+> 🔴 **WHAT YOU STILL OWE — UNCHANGED:** ① `RESEND_API_KEY` **plus** the B-155 guard move (09-20 = eighth missed Sunday) · ② install Build 81 / ship Build 82 (B-136 revenue fix still not live on iOS) · ③ B-159 `fcc` keep-or-retire · ④ B-137 coverage claim, with `bcorp` (B-161) among the zero-data sources.
+>
+> **— PRIOR SYNC (history) —** 2026-09-17 23:45 CDT (daily doc-sync covering **2026-09-17**, a Thursday — **3 bot commits, 5 scheduled runs (all `success`), zero human activity, zero code/script/workflow changes, 16 company files touched and ZERO grade fields moved.** No new defect. **The one movement: `constellium-se` aged out of the trending window — TruNorth's 7-day brand-card audience is now ONE view of ONE brand.**)
 >
 > 📊✅ **CATALOG — DAY 18 AT THE SAME MD5.** CDN `index.json`: HTTP 200, 9,989,657 B, md5 **`1527f2e9ec86cd9555075f0162978532`** — byte-identical **2026-08-31 → 2026-09-17**. **Quote 2,622 graded / 12,830 tracked.**
 >
