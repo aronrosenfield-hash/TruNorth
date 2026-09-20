@@ -6,7 +6,32 @@
 >
 > **🟢 LAUNCHED — Jun 23, 2026 · 2:01 AM CDT** (App Store · id `6775301458` · `https://apps.apple.com/app/id6775301458` · PH launched). **CURRENT LIVE BUILD = v1.1 Build 81** (approved 2026-07-08, released Manual **2026-07-14**) — it superseded v1.0 Build 75, which was live Jun 23 → Jul 14. **Next iOS ship = Build 82.** *(The 2026-06-11 "date is soft, get it right" call held through the Compass redesign; the experience shipped on the locked date. Go-live runbook: `docs/LAUNCH_DAY.md`.)*
 >
-> **Last updated:** 2026-09-18 23:30 CDT (daily doc-sync covering **2026-09-18**, a Friday — **3 bot commits, 4 scheduled runs (all `success`), zero human activity, zero code/script/workflow changes, 15 company files touched and ZERO grade fields moved.** No new defect. **The one movement: a NEW brand-card view (`chef-boyardee`) entered the trending window — yesterday's "next it freezes" forecast did not happen.**)
+> **Last updated:** 2026-09-19 23:30 CDT (daily doc-sync covering **2026-09-19**, a Saturday — **3 bot commits, 5 scheduled runs (all `success`), zero human activity, zero code/script/workflow changes, 16 company files touched and ZERO grade fields moved.** 🆕 **ONE NEW DEFECT, B-162 — and it is the largest silent throughput loss in the pipeline: the nightly news AI extraction has hit its 20-minute wall-clock budget on 80 of its 81 runs since the guard was added, abandoning 5,430 items unread. Of 1,443 high-signal news items collected today, 87 were classified — 6%.** ✏️ **And a measurement correction: B-157's "sixth consecutive identical payload" was an artifact of when this log started counting. The OFAC `entities` payload last actually changed on 2026-08-24 — it is TWENTY-SIX consecutive identical days, not six.**)
+>
+> 🆕🔴📰 **BIGGEST FINDING — B-162 (NEW): THE NIGHTLY NEWS AI EXTRACTION IS TIME-BUDGET-STARVED, AND HAS BEEN SINCE THE DAY THE BUDGET WAS ADDED.** `scripts/news-rss-extract.mjs:255` sets `EXTRACT_BUDGET_MS = 20 * 60_000`; `:260-262` stops the batch loop when it is exceeded and marks every remaining item `"skipped: extract time budget exceeded"`.
+> - **Today (`c2fad8479`, run `success`):** 200 items in → **90 skipped on the budget** + 23 `no extraction returned` → **110 attempted, 87 extracted, 31 real news, 16 company files touched.**
+> - **The census across all 81 `*.extracted.json` files: 80 of 81 runs hit the budget. 5,430 items have been abandoned unread since 2026-06-25** — the date B-64's fix introduced the guard. **It has never been a safety valve; it is the binding constraint on every run.**
+> - **The funnel in plain English:** `news-rss-collect.mjs:479` gathers **35,092** items, flags **1,443** high-signal, then caps the AI batch at **200** (`highSignal.slice(0, 200)` — "cap AI batch to top 200 for cost"). The budget then kills ~40% of that 200. **6% of the high-signal corpus is classified; 94% is never looked at.**
+> - 🔑 **THE FIELD IS `error`, NOT `reason`.** Each entry in `failed_items` carries `error`. A histogram keyed on `reason` returns `{"?": 113}` and tells you nothing. **Read `failed_items[].error`.**
+> - ✅ **NOT B-124, NOT B-126, NOT B-153.** Nothing is lost to a rebase, nothing is fabricated, nothing is a fixture, the partial results that DO land are real and sourced. The run is honest — it even writes its own failure list. **The defect is that the honest failure list has never been read.**
+> - 🧭 **FIX — CHEAPEST FIRST.** ① **Raise `BATCH_SIZE` from 10** (`:39`): B-64 lowered it 20→10 **because `max_tokens` was 4096**; it is **8192 now** (`:156`), so the truncation that forced the cut no longer applies at the old size. 11 of 20 batches finish in 20 min (~109 s/batch), so halving the batch count is the whole fix. ② Or **split the workflow's collector and extractor into two jobs** — the 20-min cap exists only because both share one 60-min job (`news-rss-nightly.yml:32`) behind a 35-min collector budget. 🚫 **Do NOT simply raise the budget in place — 35 + 20 = 55 < 60 is the only reason the job does not get killed outright.**
+> - ⚠️ **SCOPE CHECK BEFORE BUILDING:** more extraction means more Anthropic spend on a **$0 budget** and feeds **display data that has never moved a grade**. **This is Aron's call, not an automatic fix.**
+>
+> 📊✅ **CATALOG — DAY 20 AT THE SAME MD5.** CDN `index.json`: HTTP 200, 9,989,657 B, md5 **`1527f2e9ec86cd9555075f0162978532`** — byte-identical **2026-08-31 → 2026-09-19**. **Quote 2,622 graded / 12,830 tracked** (A 63 · B 738 · C 1,031 · D 535 · F 255).
+>
+> ✏️📦 **B-157 CORRECTED — THE RUN IS 26 DAYS, NOT 6. AND 99 FILES HOLD ONLY 9 DISTINCT PAYLOADS.** `ofac-sdn-daily` committed `c23a150c5`, another **15,067-line** `data/raw/ofac-sdn/2026-09-19.json`. `entities` md5 **`44a325dd9c8e118a324b807e58798cce`, 1,882 rows.** 🚨 **Hashed every one of the 99 snapshots: this payload has been unchanged since `2026-08-24` — 26 consecutive days.** The last real change was **08-23 → 08-24 (1,876 → 1,882 entities, `total_rows` 19,250 → 19,315).** 📊 **99 files · 67.3 MB · 9 distinct `entities` payloads in 105 days — 90 of 99 files are redundant copies.** 🔑 **THE LESSON IS A MEASUREMENT ONE, AND IT IS SHARPER THAN IT LOOKS: the B-157 ITEM BODY HAD THIS RIGHT ALL ALONG** — it recorded "the CURRENT identical run is 18 days, unbroken since `2026-08-24.json`" on 09-11. **The DAILY HEADER entries then re-derived a fresh, smaller number each day ("third / fourth / fifth / sixth consecutive") by comparing only back to the day that sync started looking, and memory absorbed the smaller number.** 🚨 **A daily log can talk a correct item out of its own finding. When a header stat and an item stat disagree, re-measure from the source — do not assume the newer number is the better one.** 🚫 Fix the writer; do not bulk-delete.
+>
+> 🟢 **B-149 — TENTH CONSECUTIVE WRITE; ONLY `generatedAt` MOVED.** `4870e3915`, `generatedAt` **`2026-09-20T00:03:49.088Z`**. The brand array is **byte-identical to yesterday's** — still **`genentech` (1/1)** + **`chef-boyardee` (1/1)**. 🔑 **This is exactly why you read `generatedAt` and never the file: the file looks alive because a timestamp moved; the audience did not.** ~1 brand-card open per week on web, unchanged.
+>
+> 🕳️➡️ **WATCHDOG — HELD AT 21, NAME-FOR-NAME (sixth straight day).** #155 rewritten **2026-09-19T16:30:06Z**; same 21 names as 09-14 → 09-18. Still hides EIGHT broken crons and is blind to `bcorp`'s empty-but-green artifact (B-161).
+>
+> 📰 **`news-rss-nightly` (`c2fad8479`)** — digest date **2026-09-19** (`brand_count` 528, `total_items` 35,092, `high_signal` 1,443); merged into 16 company files (`anheuser-busch`, `campbells`, `chobani`, `general-mills`, `heineken-usa`, `heinz`, `hershey`, `hormel-foods`, `kraft-heinz`, `mars`, `mondelez-international`, `pepsi`, `pepsico`, `red-bull`, `tyson-foods`, `unilever`). **Diffed `overall`/`grade`/`csc`/`sc`/`excl`/`flags`/`realCats`: 0 changes.** ✅ Landed cleanly (Saturday — B-124 control arm holds). 🆕 **This is the run B-162 was found in.**
+>
+> 📌 **HELD / RE-VERIFIED:** **B-128** **407 single-line / 12,423 pretty** (flat since 09-15 — four days, the longest hold recorded; still never extrapolate it) · **B-133** exactly **43** · **B-101** **51** open PRs, newest #178, oldest #116 (**82 days**), branch-prefix census unchanged (`la-county-restaurants` **12** of 51) · **B-151 day 24** — latest `ci` push run still **2026-08-26T21:10Z** `success`; the 16 `ci` entries since are all `pull_request` at `action_required` (last 09-14). No weekly/monthly crons fired, so B-130/B-134/B-158/B-161 had no new observation. 🔴 **TOMORROW IS SUNDAY 09-20 — the B-124 exposure day (rebake + `nhtsa`/`cpsc`) AND the eighth missed email send.**
+>
+> 🔴 **WHAT YOU STILL OWE — UNCHANGED:** ① `RESEND_API_KEY` **plus** the B-155 guard move (**tomorrow, 09-20, is the eighth missed Sunday**) · ② install Build 81 / ship Build 82 (B-136 revenue fix still not live on iOS) · ③ B-159 `fcc` keep-or-retire · ④ B-137 coverage claim, with `bcorp` (B-161) among the zero-data sources. 🆕 ⑤ **B-162 — decide whether more news extraction is worth the spend at all before anyone "fixes" the budget.**
+>
+> **— PRIOR SYNC (history) —** 2026-09-18 23:30 CDT (daily doc-sync covering **2026-09-18**, a Friday — **3 bot commits, 4 scheduled runs (all `success`), zero human activity, zero code/script/workflow changes, 15 company files touched and ZERO grade fields moved.** No new defect. **The one movement: a NEW brand-card view (`chef-boyardee`) entered the trending window — yesterday's "next it freezes" forecast did not happen.**)
 >
 > 📊✅ **CATALOG — DAY 19 AT THE SAME MD5.** CDN `index.json`: HTTP 200, 9,989,657 B, md5 **`1527f2e9ec86cd9555075f0162978532`** — byte-identical **2026-08-31 → 2026-09-18**. **Quote 2,622 graded / 12,830 tracked** (A 63 · B 738 · C 1,031 · D 535 · F 255).
 >
@@ -1818,9 +1843,56 @@
   because it is green — **B-145 blindness, not B-142 erasure.** *(Updates the watchdog item; links
   B-145, B-153, B-137.)*
 
+- **B-162 🆕 NEW 2026-09-19 — the nightly news AI extraction hits its 20-minute wall-clock budget
+  on 80 of 81 runs and abandons the rest of the batch unread. 5,430 items skipped since 2026-06-25;
+  only 6% of the high-signal corpus is ever classified.**
+  *(WS-B, S — one constant, or a workflow job split. But see the SCOPE CHECK — this is Aron's call.)*
+  🟠 **WHAT HAPPENS.** `scripts/news-rss-extract.mjs:255` sets `EXTRACT_BUDGET_MS = 20 * 60_000`.
+  The batch loop at `:260-262` checks the clock before each batch and, once past the budget, pushes
+  every remaining item into `failures` with `error: "skipped: extract time budget exceeded"` and
+  `break`s. The run then writes partial results and **exits 0 — green.**
+  📊 **TODAY'S NUMBERS (`c2fad8479`, run `success`).** `2026-09-19.extracted.json`:
+  `total_input` **200** → **90 skipped on the budget** + **23 `no extraction returned`** = 113 failures →
+  **110 attempted, 87 extracted, 31 `real_news`, 56 `tangential`** → merged into **16 company files.**
+  📈 **THE CENSUS — 81 EXTRACT RUNS ON DISK, 80 OF THEM BUDGET-KILLED.** First budget kill is
+  **`2026-06-25`**, the day B-64's fix introduced the guard. **Total items abandoned: 5,430.**
+  Daily skip counts have run **60–90** every day for the last three weeks (`80` on 09-13 → 09-18,
+  **`90` today**). **The guard has never been a safety valve. It is the binding constraint on every run.**
+  🗝️ **THE FULL FUNNEL, IN PLAIN ENGLISH.** `scripts/news-rss-collect.mjs:479` collects
+  **35,092** items across **528** brands, flags **1,443** as high-signal, then hands the AI
+  `highSignal.slice(0, 200)` — its own comment says **"cap AI batch to top 200 for cost."** The budget
+  then kills ~40% of that 200. **87 of 1,443 high-signal items get classified: 6%. 94% is never read.**
+  🔑 **THE FIELD IS `error`, NOT `reason`.** Every entry in `failed_items` carries **`error`**.
+  A histogram keyed on `reason` returns `{"?": 113}` and looks like the file has no diagnosis in it.
+  **It does. Read `failed_items[].error`** — it is the only place the loss is recorded.
+  ✅ **NOT B-124, NOT B-126, NOT B-153, NOT B-130.** Nothing is destroyed by a rebase, nothing is
+  fabricated, nothing is a republished fixture, and the partial results that land are real and sourced.
+  **The run is honest — it writes its own failure list. The defect is that nobody has ever read it.**
+  🧭 **FIX — CHEAPEST FIRST.**
+  ① **Raise `BATCH_SIZE` from 10** (`:39`). B-64 cut it 20→10 **because `max_tokens` was 4096 and the
+  forced tool call truncated.** `max_tokens` is **8192 now** (`:156`), so the constraint that forced the
+  cut is gone. Measured rate is **~109 s per 10-item batch**; **11 of 20 batches finish inside 20 min**,
+  so halving the batch count clears the whole backlog without touching the budget.
+  ② **Or split `news-rss-nightly.yml` into two jobs.** The 20-min cap exists only because the
+  collector (35-min budget) and the extractor share one 60-min job (`news-rss-nightly.yml:32`).
+  Two jobs = two 60-min caps.
+  🚫 **Do NOT simply raise `EXTRACT_BUDGET_MS` in place.** `35 + 20 = 55 < 60` is the only reason
+  the job is not killed outright — that arithmetic is B-64's whole fix and the code comment says so.
+  ⚠️ **SCOPE CHECK BEFORE ANYONE BUILDS THIS.** More extraction means **more Anthropic spend on a
+  declared $0 budget**, and it feeds **display data that has never moved a grade**. The honest question
+  is not "how do we extract more" but **"is 6% enough for a display feature nobody is reading yet?"** —
+  see *never had an audience*. **Aron's call. Do not auto-fix.**
+  ✏️ **AMENDS B-64 (closed 2026-06-27).** B-64's fix is recorded in this file as fully closed, and
+  the cron has been green ever since. **It is green because the budget makes it green.** The fix worked;
+  its cost was never measured. 🔑 **Generalized: when a fix is a cap, measure how often the cap
+  fires before calling the item closed.**
+
 - **B-157 🆕 NEW 2026-09-11 — `ofac-sdn-daily` commits a full 15,067-line snapshot every day even when
-  the sanctions payload is byte-identical. 83 of its 91 files are redundant copies; 59 MB of repo for
-  8 real changes in 97 days.**
+  the sanctions payload is byte-identical. 90 of its 99 files are redundant copies; 67.3 MB of repo for
+  8 real changes in 105 days.**
+  🔄 **UPDATED 2026-09-19 — 99 files · 67.3 MB · 9 distinct `entities` payloads. The current
+  identical run is 26 days (`2026-08-24` → `2026-09-19`), now the longest on record.** The last real
+  change was 08-23 → 08-24: `entities` 1,876 → 1,882, `total_rows` 19,250 → 19,315.
   *(WS-B, S — one hash-compare guard in the writer)*
   🟠 **WHAT HAPPENED.** `d30e9fcce` (`ofac-sdn-daily`, 2026-09-11T19:59:22Z, **`success`**) created
   `data/raw/ofac-sdn/2026-09-11.json` — **15,067 new lines.** Parsed object-by-object against
