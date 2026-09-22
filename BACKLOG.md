@@ -6,7 +6,97 @@
 >
 > **🟢 LAUNCHED — Jun 23, 2026 · 2:01 AM CDT** (App Store · id `6775301458` · `https://apps.apple.com/app/id6775301458` · PH launched). **CURRENT LIVE BUILD = v1.1 Build 81** (approved 2026-07-08, released Manual **2026-07-14**) — it superseded v1.0 Build 75, which was live Jun 23 → Jul 14. **Next iOS ship = Build 82.** *(The 2026-06-11 "date is soft, get it right" call held through the Compass redesign; the experience shipped on the locked date. Go-live runbook: `docs/LAUNCH_DAY.md`.)*
 >
-> **Last updated:** 2026-09-19 23:30 CDT (daily doc-sync covering **2026-09-19**, a Saturday — **3 bot commits, 5 scheduled runs (all `success`), zero human activity, zero code/script/workflow changes, 16 company files touched and ZERO grade fields moved.** 🆕 **ONE NEW DEFECT, B-162 — and it is the largest silent throughput loss in the pipeline: the nightly news AI extraction has hit its 20-minute wall-clock budget on 80 of its 81 runs since the guard was added, abandoning 5,430 items unread. Of 1,443 high-signal news items collected today, 87 were classified — 6%.** ✏️ **And a measurement correction: B-157's "sixth consecutive identical payload" was an artifact of when this log started counting. The OFAC `entities` payload last actually changed on 2026-08-24 — it is TWENTY-SIX consecutive identical days, not six.**)
+> **Last updated:** 2026-09-21 23:20 CDT (daily doc-sync covering **Monday 2026-09-21** — **8 bot commits, 18 scheduled runs (12 `success`, 3 `failure`, 3 `cancelled`), zero human activity, zero code/script/workflow changes, 102 company files touched and ZERO grade fields moved.** 🆕 **B-158 WAS CAUGHT IN THE ACT WITH A PRICE TAG: `enriched-augments-refresh` built a 4,207-file commit at 15:54Z, threw it away, and went green — 13 consecutive scheduled runs, 87 days, not one byte committed.** 🆕 **AND THE WATCHDOG DELETED A BROKEN CRON'S ROW IN FRONT OF US: `gdelt-weekly` finished `cancelled` at 18:43:19Z, SIXTY SECONDS after #155's 18:42:19Z check — B-144's race and B-142's erasure, proven rather than inferred, and the row count moved off 21 for the first time in eight days.** ✅ **B-124 clean: zero `CONFLICT (content)` across all seven committing crons — the weekday control arm holds.** ⚠️ **Contradiction to flag: the 09-20 sync never committed. This working copy sat 8 commits behind origin with an unstaged `BACKLOG.md` all day; today's commit closes both.** *(No doc-sync commit exists for 09-20 either — today's commit is the first since 09-19.)*)
+>
+> 🆕🔴🧬 **BIGGEST FINDING — B-158 CAUGHT IN THE ACT, AND NOW WE KNOW WHAT IT COSTS PER WEEK.** `enriched-augments-refresh` ran **2026-09-21T15:54:21Z → `success`.** The log is unambiguous:
+> - It **built the commit**: `[main 2520c7d] data(enriched): refresh footprint sources (7 + WHISARD) [skip ci]` — **4,207 files changed, 28,148 insertions(+), 12,099 deletions(-).**
+> - Then, three times: `error: cannot pull with rebase: You have unstaged changes.` → `error: Please commit or stash them.` → `Push attempt 1/2/3 failed, retrying…` → the loop ends on `sleep 5` → **exit 0.** `2520c7d` exists nowhere in `origin/main`.
+> - 📅 **THE RUN LENGTH IS NOW MEASURED FROM THE SOURCE, NOT ESTIMATED.** Last real `data(enriched)` commit: **`9b49e6273`, 2026-06-26** — **87 days ago.** Scheduled runs since: **13, every one `success`, every one empty** (06-29, 07-06, 07-13, 07-20, 07-27, 08-03, 08-10, 08-17, 08-24, 08-31, 09-07, 09-14, 09-21). The only two runs that ever committed were `workflow_dispatch` on 06-26 and 06-27.
+> - 🚨 **THIS IS THE ONE WHERE THE DATA MATTERS.** This cron writes **`enriched.tax`** — one of only two `enriched.*` dimensions that touch a grade — and **`secTax`**, the 3,415-company dataset V-4 is supposed to start from. **Twelve weeks of tax and footprint refresh have been built and destroyed.**
+> - 🔑 **READ THE ERROR TEXT BEFORE PICKING A FIX.** `You have unstaged changes` is **B-158** (a partial `git add` left files out of the index). `paths are ignored` is **B-123**. `CONFLICT (content)` is **B-124**. Three different bugs, three different fixes, one shared push loop.
+> - 🧭 **FIX:** stage everything the script writes (or `git add -A` **inside the runner's own checkout**, which is not the local-repo rule), then let the rebase run. ⚠️ **The first green run WILL be large and CAN move grades** — snapshot-rebaseline in the same pass (see B-127).
+>
+> 🆕🕳️⏱️ **SECOND FINDING — THE WATCHDOG ERASED A BROKEN CRON 60 SECONDS BEFORE IT FINISHED. B-144 IS NO LONGER AN INFERENCE.** #155 rewritten **2026-09-21T18:42:19Z** with **20 rows** — off 21 for the first time since 09-14.
+> - **`gdelt-weekly`: created 17:12:43Z, completed `cancelled` at 18:43:19Z.** The watchdog checked at **18:42:19Z**. It was in flight by **60 seconds** and is **absent from the 20 rows.**
+> - **It qualified yesterday and it qualifies today** — its 09-14 run was also `cancelled`, and its latest run still is. Nothing recovered; the row was simply dropped.
+> - ✅ **CONTROL:** `faa-weekly` finished 16:26:49Z and `fra-weekly` finished 17:29:39Z — both before the check, both correctly listed. **The only cron that vanished is the only one still running.**
+> - 🕳️ **SEVENTH BLIND SPOT, SECOND NAMED VICTIM.** B-163 gave the erasure a name (`peta-bwb-quarterly`, outside the lookback); today gives the *race* a name with a stopwatch on it. 🧭 **B-141 + B-142 + B-144 are still one fix: make the watchdog skip in-flight runs and fall back to the last COMPLETED run, not the last run.**
+>
+> 🆕📉 **THIRD FINDING — B-130's NTSB DEAD FETCH IS FULLY CHARACTERIZED, AND IT REPORTS `error_count: 0` ON 2,112 ERRORS.** `ntsb-weekly` ran green and committed **1,058 changed lines** (`726c5fd20`).
+> - `public/data/ntsb-accidents.json`: `brand_count` **528**, `with_records` **0**, `no_records` **0**, `not_available` **528**, **`error_count: 0`**.
+> - **Every one of the 528 rows carries `source_status` = `endpoint_error` on all four NTSB modes** — aviation, rail, marine, highway. **That is 2,112 failed endpoint calls summarized as zero errors.**
+> - **The entire 1,058-line diff is 528 `scraped_at` timestamps.** Merge log: `merged_count: 0`, `skipped_count: 528`, `orphan_count: 0` — the exact B-130 fetch-bug signature (`orphan_count: 0` on a nonzero universe).
+> - 🔑 **THE NEW LESSON: a top-level `error_count` can be computed from the merge step, not the fetch step.** The fetcher faithfully recorded its own failure on every row; the summary counted zero because no *merge* threw. **Same shape as B-156 and B-163's `sources: 2` — check WHAT the counter counts.**
+>
+> 🆕🧾 **FOURTH FINDING — `msha-weekly` IS A SINGLE-LINE WRITER. B-128's writer list grows to four.** `eb7cd385d` showed `lay-s.json` at **−444 lines** in `--stat`.
+> - **Parsed, not read off `--stat`: 56 top-level keys before, 56 after. The only data change is a timestamp** — `dataLastUpdated.msha` and `enriched.msha.lastUpdated`, both `2026-09-14T19:51Z → 2026-09-21T20:00Z`. `enriched.msha` is otherwise byte-identical (`totalCitations` 163, `totalPenaltiesUsd` 27,623, same `sampleCitations`).
+> - **The file went from 442 lines to ONE.** `msha-weekly` pretty→single-line reserializes every file it touches, joining `news-rss` and `sec-litigation`. **The rebake (`rebake-scoring.mjs:637`) pushes them back to pretty every Sunday.**
+> - 📊 **CENSUS: 404 single-line / 12,426 pretty** (was 402/12,428 on 09-20). **Still oscillating; still never extrapolate it.**
+> - 🔑 **Third straight confirmation of the rule: a huge deletion count in a bot commit is a FORMATTING question first. Parse the objects. Never read `--stat`.**
+>
+> 📦🟠 **B-157 — DAY 28, AND THE SHARPEST STATEMENT OF THE DEFECT YET: 15,067 LINES FOR TWO CHANGED FIELDS.** `1ce8f7143` added `data/raw/ofac-sdn/2026-09-21.json`.
+> - **Diffed key-by-key against 09-20, the ONLY differing top-level fields are `snapshot_date` and `generated_at`.** `total_rows` **19,394**, `individual_rows` **17,512**, `entity_rows` **1,882** — *all three identical to yesterday*. Even the individual rows stopped moving.
+> - **101 files · 9 distinct `entities` payloads · `entities` unchanged since 2026-08-24 — 28 consecutive days.**
+> - ✅ Still not a truncation (the 09-20 innocence proof stands). 🚫 Fix the writer; do not bulk-delete.
+>
+> 📰⏱️ **B-162 — RUN 82, AND THE BUDGET FIRED AGAIN.** `6fe8e9853`, extracted at 10:36Z, model `claude-sonnet-4-6`: **`total_input` 200 → `extracted` 95, `failures` 105.** Keyed on `failed_items[].error`: **80 `skipped: extract time budget exceeded` + 25 `no extraction returned`.**
+> - Digest: `total_items` **34,069**, `high_signal` **1,369**, `brand_count` 528. **95 of 1,369 high-signal items classified = 6.9%.** 16 company files merged, 33 real-news items.
+> - **81 of 82 runs have now hit the wall.** 🚫 Do not just raise the budget (35 + 20 = 55 < 60). 🧭 Raise `BATCH_SIZE` (`news-rss-extract.mjs:39`) — `max_tokens` is 8192 now, not the 4096 that forced B-64's cut. ⚠️ **$0 budget + zero audience: still Aron's call, not an auto-fix.**
+>
+> ✅🗓️ **B-124 — CLEAN MONDAY. THE CONTROL ARM HOLDS.** Grepped every committing cron's run log for `CONFLICT (content)`: `msha`, `ntsb`, `phmsa`, `cisa-kev`, `fcc`, `news-rss`, `la-county` — **0 conflicts, all 8 commits landed.** Seven days of Sunday damage and zero weekday damage. 🚨 **`grep -rn "rebase --abort" .github/workflows/` still returns 0 — day 53 since the first lost Sunday. Next exposure: Sunday 09-27, which is also B-155's ninth missed send.**
+>
+> 📬 **B-101 BROKE ITS EIGHT-DAY HOLD — 51 → 52.** New PR **#179** (`data/la-county-restaurants-35585997712`, opened 09:56Z). **`la-county-restaurants` is now 13 of 52.** Oldest still **#116, 84 days** (opened 2026-06-29), for a dataset its own workflow calls a historical archive last updated 2018-07. 🔑 **Census by branch PREFIX: la-county 13 · strike-map 3 · health-pharma-r3 3 · fdaaa-trials 3 · cornell-ilr 3 · fmcsa-sms 2.** 🔴 No bot PR has runnable CI.
+>
+> 📵 **B-159 — `fcc-weekly` RE-CONFIRMED, WORD FOR WORD.** `4370a37a8`: `merged_count` **0**, `skipped_count` **528**, `orphan_count` **0**, and the log states its own limitation: *"FCC CGB Consumer Complaints dataset 3xyp-aqkj has no company/carrier column; per-brand attribution is not possible."* Industry aggregate 675,658 complaints / 24mo. ✅ Honest, green, and structurally unable to produce a brand record. 🔴 **Still your keep-or-retire call, and still counted in the 200+ source claim (B-137).**
+>
+> 📊✅ **CATALOG — DAY 22, RE-VERIFIED AT 23:15 CDT.** CDN `index.json`: HTTP 200, **9,989,657 B**, md5 **`1527f2e9ec86cd9555075f0162978532`** — byte-identical **2026-08-31 → 2026-09-21**. **2,622 graded / 12,830 tracked** (A 63 · B 738 · C 1,031 · D 535 · F 255). ✅ Consistent with 0 grade moves across 102 touched files.
+>
+> 📉👥 **B-149 — TWELFTH WRITE; THE ARRAY IS BACK TO BYTE-IDENTICAL.** `5644bfc22`, `generatedAt` **`2026-09-22T00:43:02.309Z`**: **`chef-boyardee` (1 view / 1 unique), alone, unchanged from yesterday.** The 2→1 drop was a one-day move, not a trend. 🚫 Read `generatedAt`, never the file — and still do not forecast the freeze.
+>
+> 🧟 **`fsis-weekly` AND `fsis-dw-weekly` — LIFETIME 0-FOR-16 AND 0-FOR-15.** Both failed again today (17:07Z, 15:51Z), both on the watchdog. **Neither has ever succeeded.** Ask "did this ever work?" before "what broke it?"
+>
+> 📌 **HELD / RE-VERIFIED:** **B-133** exactly **43** (numeric `charity_irs990.totalGrants`, flat since 09-15) · **B-151 day 26** — newest `ci` `push` run still **2026-08-26T21:10Z**; today's only CI entry is a `pull_request` at `action_required` (09:56Z, from PR #179) · **B-122** `bis-entity-list-weekly` failed again **05:21Z** (still blocked on your `api.data.gov` key) · **B-125** `faa`/`fra`/`gdelt` all `cancelled` again · **B-134/B-153/B-161/B-163** had no new observation — none of those crons fired. 🆕 **`cisa-kev-weekly`** merged **2 of 283 vendors** (Cisco, Google, both via override) with **244 orphans** — a B-129-shaped matcher gap, not yet an item.
+>
+> 🔴 **WHAT YOU STILL OWE:** ① `RESEND_API_KEY` **plus** the B-155 guard move (**09-27 is the ninth missed Sunday unless both ship**) · ② install Build 81 / ship Build 82 (B-136 revenue fix still not live on iOS) · ③ B-159 `fcc` keep-or-retire · ④ B-137 coverage claim — zero-data sources now `fcc`, `bcorp`, the cruelty-free pair, **and `ntsb`** · ⑤ B-162 — decide whether more news extraction is worth the spend at all · ⑥ ship the one-line `git rebase --abort || true` (B-124). 🆕 ⑦ **B-158 — fix the staging bug. It is the single most valuable unshipped line in the repo: 4,207 files a week, including grade-bearing `enriched.tax`, built and thrown away for 87 days.**
+>
+> 
+> **— PRIOR SYNC (history) —** 2026-09-21 00:45 CDT (daily doc-sync covering **Sunday 2026-09-20** — **9 bot commits, 16 scheduled runs (15 `success`, 1 `failure`), zero human activity, zero code/script/workflow changes, 351 company files touched and ZERO grade fields moved.** 🆕 **B-124 TOOK A THIRD VICTIM AND THE BIGGEST ONE YET: the nightly news digest for 09-20 was destroyed. Commit `c42c11b` never landed; the run went green.** 🆕 **ONE NEW DEFECT, B-163 — the entire cruelty-free chain is dead end-to-end: both upstream quarterly fetchers produced nothing on 2026-07-01 and the weekly merge has reported `merged_count: 0` for at least eight straight weeks while running green.** ✏️ **And a mechanism correction: the Sunday rebake is NOT the conflict generator. Two of today's three victims conflicted NINE HOURS before the rebake ran.** *(No doc-sync commit exists for 09-20 — this sync covers that day.)*)
+>
+> 🆕🔴📰 **BIGGEST FINDING — B-124 DESTROYED THE NIGHTLY NEWS DIGEST ON 09-20, AND THE SUNDAY MECHANISM IN THIS LOG'S SUMMARY WAS WRONG.**
+> - **Three crons lost their work today, all green:** `news-rss-nightly` (destroyed commit **`c42c11b`**, conflicts on `tyson-foods`, `unilever`), `cpsc-weekly` (conflicts on `whirlpool-corp`, `x-corp`), `nhtsa-weekly` (conflicts on `chrysler`, `jeep`). All three logs end the same way: `CONFLICT (content)` → `Push attempt 1/2/3 failed` → `fatal: Exiting because of an unresolved conflict.` → **exit 0.**
+> - 📰 **The news loss is the expensive one.** `data(news)` is unbroken **09-12 → 09-19** and **breaks on 09-20**. A full night of collection *plus* the AI extraction spend that B-162 fights over was discarded — the 20-minute budget was burned and the output thrown away.
+> - ✏️🔑 **THE CORRECTION — TIMESTAMPS FALSIFY THE "REBAKE REFORMATS, OTHERS CONFLICT" STORY.** `score-rebake-weekly` ran **18:52Z**. `cpsc` conflicted **09:41Z** and `news` conflicted **09:50Z** — **nine hours EARLIER.** Only `nhtsa` (conflict **20:04Z**) is downstream of the rebake. **The 09-20 collider for `cpsc` is named and verified: `courtlistener-weekly` committed `whirlpool-corp.json` at 09:28Z; `cpsc` hit a content conflict on that exact file 13 minutes later.**
+> - 🔑 **WHAT SUNDAY ACTUALLY IS: CONCURRENCY, NOT THE REBAKE.** Eight weekly crons fire in one Sunday window (`cfpb` 07:54, `courtlistener` 09:14, `cpsc` 09:26, `news` 09:27, `cruelty-free` 09:42, `doj` 11:28, `epa-echo` 12:29, `nhtsa` 18:43, `rebake` 18:52, `sec-litigation` 22:41) and they rebase onto each other. The rebake is **one collider among several**, not the generator. 🚨 **The B-135 item body had this right since 2026-08-22 — it named the destagger and listed the colliding window. The daily headers narrowed it to the rebake. Same failure mode as the B-157 miscount: a rolling summary talked a correct item out of its own finding.**
+> - 🧭 **FIX IS UNCHANGED AND STILL ONE LINE:** `git rebase --abort || true` at the top of the shared push retry loop. 🚨 **`grep -rn "rebase --abort" .github/workflows/` still returns 0 — day 52 since the first lost Sunday.**
+>
+> 🆕🔴🐰 **NEW DEFECT — B-163: THE CRUELTY-FREE CHAIN IS DEAD AT EVERY LINK, AND HAS BEEN SINCE 2026-07-01.** `cruelty-free-merge-weekly` ran green today and wrote **two timestamp bytes**.
+> - **`merged_count: 0` and `conflict_count: 0` on all eight runs checked (08-02 → 09-20).** The only field that changes between runs is `merged_at`. **Zero company files written, ever, in that window.**
+> - **Upstream link 1 — `leaping-bunny-quarterly`: exactly ONE run in its lifetime, `2026-07-01T12:25Z`, conclusion `success`, and the artifact it wrote is `{"brand_count": 0, "certified_brands": 0}`.** Green, live, empty — **B-145/B-161 class.**
+> - **Upstream link 2 — `peta-bwb-quarterly`: exactly ONE run, `2026-07-01T12:21Z`, conclusion `cancelled`** (timeout kill, B-125 class). **`public/data/_raw/peta-bwb.json` does not exist anywhere in the repo.**
+> - 🎭 **AND THE MERGE LOG STILL SAYS `sources: 2`.** It counts the configured path list, not the files it actually opened — one of the two does not exist. **This is B-156's lesson again: check WHAT the generator counts.**
+> - 🕳️ **SIXTH WATCHDOG BLIND SPOT, WITH A NAMED VICTIM.** `peta-bwb-quarterly`'s latest run is `cancelled` — exactly what #155 claims to report — and it is **not among the 21 rows.** Its run is from 07-01, old enough to have fallen out of the 800-run lookback. **B-142 erasure, now with a name attached.**
+> - ✅ **NO FABRICATION, NO GRADE IMPACT.** 11,203 company files carry `animalCerts`, written before the chain died; `animalCerts` is a **badge, not a grade input**. Nothing false was published — the badge data is simply frozen at 2026-07-01 and nobody is refreshing it.
+> - 🪤 **THIS LOG WALKED PAST IT ON 08-23.** The B-135 item notes in passing that `cruelty-free` "touches 0 company files" — recorded as an alibi for a rebase timeline, never recognized as a dead pipeline. **A fact used to exonerate one cron was the symptom of another.**
+>
+> 📊✅ **CATALOG — DAY 22 AT THE SAME MD5.** CDN `index.json`: HTTP 200, 9,989,657 B, md5 **`1527f2e9ec86cd9555075f0162978532`** — byte-identical **2026-08-31 → 2026-09-21**. **Quote 2,622 graded / 12,830 tracked** (A 63 · B 738 · C 1,031 · D 535 · F 255). ✅ Consistent with the rebake: **0 grade moves.**
+>
+> 🧾🗜️ **THE SUNDAY REBAKE REWROTE 14,287 LINES AND CHANGED DATA IN 3 OF 38 FILES.** `552793e20`: 38 company files rewritten, **35 of them byte-different but DATA-IDENTICAL** — pure B-128 reserialization. Real changes: `_meta` (3 files), `scoring_overlay` (2), `events_agg` (1). `grade-snapshot.json` moved `takenAt` only; `meta.json` moved `finalizeStamp` only. 🔑 **This is the sharpest B-128 cost measurement yet: 92% of the rebake's diff is serializer churn, and that churn is what the other Sunday crons collide with.**
+>
+> 📧🔴 **B-155 — EIGHTH MISSED SUNDAY, THIRD CONSECUTIVE FALSE GREEN.** `weekly-digest` ran `2026-09-20T20:04Z` → **`success`**, and the log reads: `RESEND_API_KEY:` **(empty)** then `(weekly_changes.json has no changes this week — skipping digest.)` — the early return at `send-weekly-digest.mjs:47-50` fired before the `sent === 0` guard at `:147-170`, exactly as predicted. **`weekly_changes.json` for `weekOf 2026-09-20`: `changes: []`, `gradeChanges 0`, `newScandals 0`, `newRecalls 0`, `newBrands 0`.** 🚨 **The key alone still will not fix this. Both changes ship together or the ninth Sunday goes green too.**
+>
+> 📉👥 **B-149 — ELEVENTH WRITE, AND THE FIRST ONE WHERE THE DATA ACTUALLY MOVED.** `6288c82cf`, `generatedAt` **`2026-09-21T00:07:17.212Z`**: **`genentech` aged out; only `chef-boyardee` (1 view / 1 unique) remains.** The brands array went **2 → 1** after ten byte-identical writes. 🔑 **TruNorth's entire measured web brand-card audience for the trailing window is now ONE view of ONE brand.** The freeze guard (`refresh-trending.mjs:72–75`) has still never fired — it cannot, while one view survives. 🚫 **Still: read `generatedAt`, never the file. And do not forecast the freeze — this log has missed that call three times.**
+>
+> 📦🟠 **B-157 — DAY 27, AND AN INNOCENCE PROOF THAT CLOSES THE TRUNCATION QUESTION.** `23dc6f5e2` committed another 15,067-line `data/raw/ofac-sdn/2026-09-20.json`. **100 files · 67.8 MB · 9 distinct `entities` payloads.** `entities` unchanged since **2026-08-24 — 27 consecutive days.** ✅ **NOT a truncation, and here is the proof:** `total_rows` **did** grow over that window, **19,315 → 19,394**, but so did `individual_rows`, **17,433 → 17,512** — *the same +79*. **`entity_rows` is flat at 1,882 and equals the stored array exactly.** The fetcher stores corporate entities and drops individuals by design; OFAC simply has not added a corporate entity since 08-24. ⚠️ **MEASUREMENT NOTE: the md5 string quoted in earlier entries (`44a325dd…`) is NOT reproducible from this file by either plain or sorted-key JSON serialization. A hash string is only comparable within one hashing method — quote the RUN LENGTH and the row counts, not the digest.** 🚫 Fix the writer; do not bulk-delete.
+>
+> 🕳️➡️ **WATCHDOG — HELD AT 21, NAME-FOR-NAME (seventh straight day).** #155 rewritten **2026-09-20T16:47:40Z**; same 21 names as 09-14 → 09-19. 🆕 **Now hides NINE broken crons — `peta-bwb-quarterly` (B-163) joins the list.**
+>
+> 📌 **HELD / RE-VERIFIED:** **B-128 MOVED — 402 single-line / 12,428 pretty** (was 407/12,423; the Sunday rebake pretty-printed 5 more — the oscillation continues, still never extrapolate it) · **B-133** exactly **43** (`charity_irs990` non-null on 43 files, numeric `totalGrants` on all 43) · **B-101** **51** open PRs (eighth straight day), newest #178, oldest #116 (**84 days**), branch-prefix census unchanged (`la-county-restaurants` **12** of 51) · **B-151 day 26** — latest `ci` push run still **2026-08-26T21:10Z** `success`; nothing since but `pull_request` at `action_required` (last 09-14) · **B-122** `bis-entity-list-weekly` failed again **2026-09-21T05:21Z** (still blocked on your `api.data.gov` key) · B-130/B-134/B-158/B-161 had no new observation — none of those crons fired.
+>
+> ✅ **WHAT LANDED CLEANLY ON 09-20:** `courtlistener` (327 files, `litigation_courtlistener`) · `doj` (156, `doj`) · `cfpb` (80, `cfpb`) · `sec-litigation` (62, `enriched`) · `epa-echo` (6, `epaEcho`) · `ofac-sdn` · `trending`. **All diffed on `overall`/`grade`/`csc`/`sc`/`excl`/`flags`/`realCats`: 0 changes.**
+>
+> 🔴 **WHAT YOU STILL OWE:** ① `RESEND_API_KEY` **plus** the B-155 guard move (**eight Sundays missed; 09-27 is the ninth unless both ship**) · ② install Build 81 / ship Build 82 (B-136 revenue fix still not live on iOS) · ③ B-159 `fcc` keep-or-retire · ④ B-137 coverage claim — **now with `bcorp` (B-161) AND the cruelty-free pair (B-163) among the zero-data sources** · ⑤ B-162 — decide whether more news extraction is worth the spend at all. 🆕 ⑥ **Ship the one-line `git rebase --abort || true`. It is now costing a full news night every Sunday, not just two recall feeds.**
+>
+> **— PRIOR SYNC (history) —** 2026-09-19 23:30 CDT (daily doc-sync covering **2026-09-19**, a Saturday — **3 bot commits, 5 scheduled runs (all `success`), zero human activity, zero code/script/workflow changes, 16 company files touched and ZERO grade fields moved.** 🆕 **ONE NEW DEFECT, B-162 — and it is the largest silent throughput loss in the pipeline: the nightly news AI extraction has hit its 20-minute wall-clock budget on 80 of its 81 runs since the guard was added, abandoning 5,430 items unread. Of 1,443 high-signal news items collected today, 87 were classified — 6%.** ✏️ **And a measurement correction: B-157's "sixth consecutive identical payload" was an artifact of when this log started counting. The OFAC `entities` payload last actually changed on 2026-08-24 — it is TWENTY-SIX consecutive identical days, not six.**)
 >
 > 🆕🔴📰 **BIGGEST FINDING — B-162 (NEW): THE NIGHTLY NEWS AI EXTRACTION IS TIME-BUDGET-STARVED, AND HAS BEEN SINCE THE DAY THE BUDGET WAS ADDED.** `scripts/news-rss-extract.mjs:255` sets `EXTRACT_BUDGET_MS = 20 * 60_000`; `:260-262` stops the batch loop when it is exceeded and marks every remaining item `"skipped: extract time budget exceeded"`.
 > - **Today (`c2fad8479`, run `success`):** 200 items in → **90 skipped on the budget** + 23 `no extraction returned` → **110 attempted, 87 extracted, 31 real news, 16 company files touched.**
@@ -1718,13 +1808,21 @@
   ✅ **LIVE** — API routes + sitemap, deployed on push; no Build 82 dependency.
   *(WS-A, S — done)*
 
-- **B-158 🆕 NEW 2026-09-14 — `enriched-augments-refresh` has discarded 4,075 company files on every
-  run for 80 days while reporting `success`. A partial `git add` leaves tracked files unstaged, which
-  makes `git pull --rebase` refuse outright, and the retry loop exits 0.**
+- **B-158 🆕 NEW 2026-09-14 · ⏫ RE-MEASURED 2026-09-21 — `enriched-augments-refresh` has discarded
+  ~4,200 files on every run for 87 days while reporting `success`. A partial `git add` leaves tracked
+  files unstaged, which makes `git pull --rebase` refuse outright, and the retry loop exits 0.**
   *(WS-B, S — two lines in one workflow; 🔴 HIGHEST-VALUE SILENT-LOSS FIX OPEN)*
   🔴 **WHAT HAPPENED.** The last `data(enriched)` commit on `main` is **`9b49e6273`, 2026-06-26** —
-  and that came from a `workflow_dispatch`, not the schedule. Since then: **12 scheduled runs,
-  conclusions `{"success": 12}`, commits landed ZERO.**
+  and that came from a `workflow_dispatch`, not the schedule. Since then: **13 scheduled runs,
+  conclusions `{"success": 13}`, commits landed ZERO.**
+  📏 **2026-09-21 — CAUGHT IN THE ACT WITH AN EXACT PRICE TAG.** Run `35622090115` (15:54:21Z,
+  `success`) printed the commit it then destroyed: `[main 2520c7d] data(enriched): refresh footprint
+  sources (7 + WHISARD) [skip ci]` → **`4207 files changed, 28148 insertions(+), 12099 deletions(-)`**,
+  followed by three rounds of `error: cannot pull with rebase: You have unstaged changes.` →
+  `Push attempt N failed, retrying…` → exit 0. **`2520c7d` is absent from `origin/main`.**
+  📅 **THE 13 EMPTY SCHEDULED RUNS, FROM THE SOURCE:** 06-29, 07-06, 07-13, 07-20, 07-27, 08-03,
+  08-10, 08-17, 08-24, 08-31, 09-07, 09-14, 09-21 — all `success`. The only two runs that ever
+  committed were `workflow_dispatch` on 06-26 and 06-27.
   🔑 **MECHANISM — a partial add, NOT a conflict and NOT a `.gitignore`.**
   `.github/workflows/enriched-augments-refresh.yml:76` stages only
   `git add public/data/companies/ data/derived/`. The same run also writes
@@ -1886,6 +1984,64 @@
   the cron has been green ever since. **It is green because the budget makes it green.** The fix worked;
   its cost was never measured. 🔑 **Generalized: when a fix is a cap, measure how often the cap
   fires before calling the item closed.**
+
+- **B-163 🆕 NEW 2026-09-20 — the cruelty-free chain is dead at every link. Both quarterly fetchers
+  died on their single 2026-07-01 run; the weekly merge has reported `merged_count: 0` for at least
+  eight straight weeks while reporting `success`, and writes nothing but a timestamp.**
+  *(WS-B, M — three separate repairs: revive two fetchers, then make the merge fail loudly on zero.)*
+  🟠 **WHAT HAPPENS.** `cruelty-free-merge-weekly` runs every Sunday, reads two declared sources,
+  matches nothing, and commits `public/data/_meta/cruelty-free-merge-log.json` +
+  `cruelty-free-unmatched.json` — **one line each, the `merged_at` timestamp.** Today (`0f6b7fd1c`,
+  run `2026-09-20T09:42Z`, conclusion **`success`**): `merged_count: 0`, `conflict_count: 0`,
+  `merged_sample: []`, **0 company files written.**
+  📊 **THE HISTORY — EIGHT CONSECUTIVE ZEROS.** `merged_count` read out of git at each run:
+  08-02 **0** · 08-09 **0** · 08-16 **0** · 08-23 **0** · 08-30 **0** · 09-06 **0** · 09-13 **0** ·
+  09-20 **0**. Company files written on each of the last six runs: **0, 0, 0, 0, 0, 0.**
+  🔗 **LINK 1 — `leaping-bunny-quarterly` IS GREEN AND EMPTY.** Exactly one run in its lifetime,
+  `2026-07-01T12:25:17Z`, conclusion **`success`**. The artifact it wrote and has never revisited:
+  `public/data/_raw/leaping-bunny.json` = `{"generated_at": "2026-07-01T12:27:41.533Z",
+  "source_url": "https://www.leapingbunny.org/shopping-guide", "brand_count": 0,
+  "certified_brands": []}`. **A live fetch that returned zero brands — B-145/B-161 class exactly.**
+  🔗 **LINK 2 — `peta-bwb-quarterly` HAS NEVER PRODUCED ITS FILE.** Exactly one run,
+  `2026-07-01T12:21:02Z`, conclusion **`cancelled`** (timeout kill, B-125 class).
+  **`public/data/_raw/peta-bwb.json` does not exist** — `find . -iname '*peta*'` returns the fetcher
+  script, the workflow, two test fixtures, and two unrelated `petaluma-*` company files. No data file.
+  🎭 **THE MERGE LOG STILL CLAIMS `sources: 2`.** It counts the configured path list, not the files it
+  successfully opened. **B-156's lesson, second instance: a generated count can count the config map.**
+  🕳️ **SIXTH WATCHDOG BLIND SPOT — AND THE FIRST ONE WITH A NAMED VICTIM.** `peta-bwb-quarterly`'s
+  latest run is `cancelled`, which is precisely the category #155 exists to report, and it is **not
+  among the 21 rows.** Its only run is from 07-01 — old enough to have dropped out of the 800-run
+  lookback. **This is B-142 erasure, demonstrated on a specific workflow rather than inferred.**
+  ✅ **NOTHING FABRICATED, NO GRADE IMPACT.** 11,203 company files carry `animalCerts`, written before
+  the chain died. `animalCerts` is a **badge, not a grade input** (`rebake-scoring.mjs` reads only
+  `execPay.payRatio` and `tax`). The published badges are not false — they are **frozen at 2026-07-01**
+  and nothing is refreshing them.
+  🪤 **THIS LOG WALKED PAST IT ON 2026-08-23.** The B-135 item records that `cruelty-free` "touches 0
+  company files" — written as an alibi to exclude it from a rebase timeline, never read as the symptom
+  it was. **A fact used to exonerate one cron was the evidence of another cron being dead.**
+  🔬 **ROOT CAUSE, LINE BY LINE (`scripts/cruelty-free-merge.mjs`).** Three things have to line up and
+  all three do: ① **`:168` only skips when BOTH sources are absent** (`if (!lb && !peta)` → B-64's
+  deliberate soft-skip, `process.exit(0)`). `leaping-bunny.json` **exists** — it is merely empty — so
+  this branch never fires. ② **`:182` and `:198` guard with optional chaining** (`if (lb?.certified_brands)`,
+  `if (peta?.dont_test)`), so an empty array and a missing file are both traversed as "nothing to do,"
+  **silently**. ③ **There is no `merged_count === 0` guard anywhere**, so the run writes its log and
+  exits 0. 🎭 **And `:283` writes `sources: ["public/data/_raw/leaping-bunny.json",
+  "public/data/_raw/peta-bwb.json"]` as a HARDCODED LITERAL** — it is not derived from what was read,
+  which is why the log advertises two sources when one file does not exist. **B-156 in its purest form:
+  the count is a constant.** ✏️ **This AMENDS B-64 a second time.** B-64 (closed 2026-06-27) added the
+  `:168` soft-skip *and* the 20-min extract budget that became B-162. **One "close" introduced two
+  separate silent-failure mechanisms. When a fix makes a red cron green, ask what it made invisible.**
+  🧭 **FIX — IN ORDER.** ① Make `cruelty-free-merge-weekly` **`exit 1` when `merged_count === 0`**, and
+  make it fail when a declared source file is missing rather than counting it. ② Re-run
+  `leaping-bunny-fetch.mjs` off-runner and find out whether the shopping-guide page changed shape —
+  `brand_count: 0` against a live 200 is a parser break, not an outage. ③ Raise
+  `peta-bwb-quarterly`'s `timeout-minutes` and confirm it can complete once before trusting it.
+  ⚠️ **SCOPE CHECK.** This feeds a badge, not a grade, on a product with no measured audience. It is
+  worth **one hour to make the failure loud** (fix ①); reviving both fetchers is optional and is
+  Aron's call. 🚫 **Do not "fix" it by backfilling `animalCerts` from the frozen file — that would be
+  publishing a 2026-07-01 certification as current.**
+  **Verify with** `git show <sha>:public/data/_meta/cruelty-free-merge-log.json` across runs — never
+  the run conclusion. *(Links B-145, B-161, B-156, B-142, B-125, B-135.)*
 
 - **B-157 🆕 NEW 2026-09-11 — `ofac-sdn-daily` commits a full 15,067-line snapshot every day even when
   the sanctions payload is byte-identical. 90 of its 99 files are redundant copies; 67.3 MB of repo for
@@ -2338,6 +2494,15 @@
   **`19:30:23Z`**. `gdelt-weekly` had started at `18:10:47Z` and was **still in progress** at that
   instant — it was not `cancelled` until **`19:41:07Z`, eleven minutes later**. **So `gdelt-weekly` is
   absent from today's roster despite failing today**, on the fifth consecutive Monday it has failed.
+  ⏱️🆕 **RE-PROVEN 2026-09-21 WITH A 60-SECOND MARGIN — SAME CRON, SAME MECHANISM, THREE WEEKS LATER.**
+  `cron-health-daily` ran `18:41:45Z` and #155 records its check at **`18:42:19Z`**. `gdelt-weekly`
+  (run `35630545353`) was created `17:12:43Z` and did **not** complete `cancelled` until
+  **`18:43:19Z` — sixty seconds after the check.** It is **absent from the 20 rows**, and its previous
+  run (09-14) was also `cancelled`, so it qualified both yesterday and today. ✅ **CONTROL THAT RULES
+  OUT EVERY OTHER EXPLANATION:** `faa-weekly` finished `16:26:49Z` and `fra-weekly` finished
+  `17:29:39Z` — both `cancelled`, both before the check, **both correctly listed.** The only cron that
+  vanished is the only one still running. 📉 **This is also what moved the roster 21 → 20 after seven
+  days name-for-name — the drop was an erasure, not a recovery.**
   **WHY IT MATTERS.** This is a **fourth** independent way #155 misleads, and it is the one that bites
   hardest on Monday, when six weekly crons run between 17:00Z and 23:10Z — i.e. mostly *after* the
   13:12Z-scheduled check. Combined with the other three, today's roster of **33 rows** decomposes as
@@ -2575,6 +2740,19 @@
   05:02:31Z landed before the checkout; `104b2e185` `cruelty-free` 05:36:55Z landed after and touches
   0 company files). **Verified `cpsc` rewrote all nine.** On 08-16 `cpsc` landed 05:18:43Z — same minute,
   same weekday. 🧭 **Stop gathering evidence. Ship fix ① (`git rebase --abort || true`).**
+  🆕🚨 **2026-09-20 — THIRD VICTIM IN ONE DAY, AND A CORRECTION TO THIS ITEM'S DAILY SUMMARIES.**
+  Sunday 09-20 destroyed **three** commits, all reporting `success`: `news-rss-nightly`
+  (**`c42c11b`**, conflicts on `tyson-foods`, `unilever`, 09:50Z), `cpsc-weekly` (`whirlpool-corp`,
+  `x-corp`, 09:41Z) and `nhtsa-weekly` (`chrysler`, `jeep`, 20:04Z). `data(news)` is unbroken
+  09-12 → 09-19 and breaks on 09-20. **`nhtsa` has not landed since 08-23; `cpsc` not since 09-06.**
+  ✏️ **THE REBAKE IS NOT THE GENERATOR.** Recent daily headers in this file reduced the mechanism to
+  "the Sunday rebake pretty-prints and later crons conflict." **The clock falsifies it:**
+  `score-rebake-weekly` ran **18:52Z**, while `cpsc` and `news` conflicted at **09:41Z** and **09:50Z**
+  — nine hours earlier. Only `nhtsa` is downstream of the rebake. **The 09-20 collider for `cpsc` is
+  verified by file: `courtlistener-weekly` committed `whirlpool-corp.json` at 09:28Z; `cpsc` hit a
+  content conflict on that same file at 09:41Z.** 🔑 **The original body of this item had it right in
+  August — the destagger put eight weekly crons in one Sunday window and they rebase onto each other.
+  The rebake is one collider among several. Trust the item, not the rolling summary.**
 
 - **B-133 🟡 NEW 2026-08-20 — The IRS 990-PF path writes the grant dollars into PROSE but not into
   the structured key the scorer reads, so 327 of 340 charity-sourced brands are pinned to the flat
@@ -2674,6 +2852,20 @@
   notification reports + enforcement actions per nuclear utility") as part of the "100 public-records
   sources" claim, while contributing literally nothing. It also burns a weekly commit that makes the
   data log look busier than it is.
+  🔬🆕 **2026-09-21 — `ntsb` IS NOW FULLY CHARACTERIZED, AND THE FETCHER LIES IN ITS OWN SUMMARY.**
+  `ntsb-weekly` ran `success` and committed **1,058 changed lines** (`726c5fd20`).
+  `public/data/ntsb-accidents.json` top-level: **`brand_count: 528 · with_records: 0 · no_records: 0 ·
+  not_available: 528 · error_count: 0`.** But **every one of the 528 rows carries
+  `source_status: {aviation: "endpoint_error", rail: "endpoint_error", marine: "endpoint_error",
+  highway: "endpoint_error"}` — 2,112 failed endpoint calls reported as `error_count: 0`.** The entire
+  1,058-line diff is 528 `scraped_at` timestamps rolling forward. Merge log: `merged_count: 0 ·
+  skipped_count: 528 · orphan_count: 0` — the B-130 fetch-bug signature exactly.
+  🔑 **NEW LESSON, AND IT GENERALIZES:** a top-level `error_count` can be computed from the MERGE
+  step while the FETCH step records its failure per-row. The fetcher was honest; the summary counted
+  the wrong thing. **Same family as B-156's source count and B-163's `sources: 2` — check WHAT the
+  counter counts before you trust a zero.**
+  🚫 **`ntsb` should join `fcc` and `bcorp` on the B-137 zero-data-source list.** All four NTSB
+  endpoints are dead; this is a fetcher/endpoint rewrite or a retirement, not a matcher fix.
   **Fix shape.** Run the NRC fetcher locally and see whether the endpoint returns records at all
   (**B-122's lesson: reproduce off-runner before rewriting any URL**). If it does, the parser is broken;
   if it does not, the source moved and the honest move is to retire it from the Sources screen. Either
@@ -2748,6 +2940,15 @@
   writer in the repo.** The SEC cron wrote single-line the same day; net −30.
   ✅ **Both writers are still fighting — the DEFECT is unchanged. What is retired is the claim that
   "single-line writers cluster on Sunday." Sunday is when the biggest PRETTY writer runs.**
+  🆕📄 **2026-09-21 — A FOURTH SINGLE-LINE WRITER IS NAMED: `msha-weekly`.** `eb7cd385d` showed
+  `lay-s.json` at **−444 lines** in `--stat`. Parsed rather than read: **56 top-level keys before, 56
+  after, and the ONLY data change is a timestamp** (`dataLastUpdated.msha` and
+  `enriched.msha.lastUpdated`, `2026-09-14T19:51Z → 2026-09-21T20:00Z`); `enriched.msha` is otherwise
+  identical (`totalCitations` 163, `totalPenaltiesUsd` 27,623, same `sampleCitations`). **The file went
+  from 442 lines to one.** Known single-line writers are now **`news-rss`, `sec-litigation`, `msha`**;
+  the pretty writer is still `rebake-scoring.mjs:637`. 📊 **Census 2026-09-21: 404 single-line /
+  12,426 pretty** (402 / 12,428 on 09-20). 🔑 **Third straight confirmation: a huge deletion count in a
+  bot commit is a FORMATTING question first — parse the objects, never read `--stat`.**
   📄 **Companion verification, and the reason the memory rule exists:** `data(sec)` **`f5e9ae3aa`**
   showed **4,066 deletions** and is **100% reformat** — `american-eagle` 806 lines → 1, `dove`
   749 → 1, `heinz` 825 → 1, **key counts IDENTICAL (58→58, 61→61, 59→59), zero keys lost**, and only
