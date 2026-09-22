@@ -6,7 +6,27 @@
 >
 > **🟢 LAUNCHED — Jun 23, 2026 · 2:01 AM CDT** (App Store · id `6775301458` · `https://apps.apple.com/app/id6775301458` · PH launched). **CURRENT LIVE BUILD = v1.1 Build 81** (approved 2026-07-08, released Manual **2026-07-14**) — it superseded v1.0 Build 75, which was live Jun 23 → Jul 14. **Next iOS ship = Build 82.** *(The 2026-06-11 "date is soft, get it right" call held through the Compass redesign; the experience shipped on the locked date. Go-live runbook: `docs/LAUNCH_DAY.md`.)*
 >
-> **Last updated:** 2026-09-21 23:20 CDT (daily doc-sync covering **Monday 2026-09-21** — **8 bot commits, 18 scheduled runs (12 `success`, 3 `failure`, 3 `cancelled`), zero human activity, zero code/script/workflow changes, 102 company files touched and ZERO grade fields moved.** 🆕 **B-158 WAS CAUGHT IN THE ACT WITH A PRICE TAG: `enriched-augments-refresh` built a 4,207-file commit at 15:54Z, threw it away, and went green — 13 consecutive scheduled runs, 87 days, not one byte committed.** 🆕 **AND THE WATCHDOG DELETED A BROKEN CRON'S ROW IN FRONT OF US: `gdelt-weekly` finished `cancelled` at 18:43:19Z, SIXTY SECONDS after #155's 18:42:19Z check — B-144's race and B-142's erasure, proven rather than inferred, and the row count moved off 21 for the first time in eight days.** ✅ **B-124 clean: zero `CONFLICT (content)` across all seven committing crons — the weekday control arm holds.** ⚠️ **Contradiction to flag: the 09-20 sync never committed. This working copy sat 8 commits behind origin with an unstaged `BACKLOG.md` all day; today's commit closes both.** *(No doc-sync commit exists for 09-20 either — today's commit is the first since 09-19.)*)
+> **Last updated:** 2026-09-22 07:30 CDT (daily doc-sync covering **Tuesday 2026-09-22 from 00:00 to 07:30 CDT** — ⚠️ **THIS SYNC RAN IN THE MORNING, NOT AT NIGHT. The window is 7.5 hours, not 24.** In it: **1 bot commit, 1 scheduled run (`success`), zero human activity, zero code/script/workflow changes, 20 company files touched and ZERO grade fields moved.** **Every daytime and weekly cron — `ofac-sdn`, `bis`, `faa`, `fra`, `gdelt`, `fsis`, the watchdog itself — fires LATER today and is NOT in this report.** *(The `trending-refresh` commit `5644bfc22` at 00:42Z = 09-21 19:42 CDT belongs to yesterday and was already covered.)* 🆕 **ONE NEW FINDING, AND IT CORRECTS OUR OWN RECOMMENDED FIX: B-162's "just raise `BATCH_SIZE`" rests on an assumption nothing on disk supports, and the extract loop is strictly sequential — ONE in-flight API call at a time, every night. Concurrency, not batch size, is the lever with the highest certainty.** ✅ **B-124 clean — 0 `CONFLICT (content)`, the commit landed.** Catalog **day 23** at the same md5.)
+>
+> 🆕📰🔑 **ONLY FINDING — B-162: THE SKIP COUNT IS QUANTIZED AT EXACTLY 80, AND THE FIX WE WROTE DOWN MAY BUY NOTHING.** Run `35710621085`, `a8856c5e7`, green, `claude-sonnet-4-6`.
+> - **Today's numbers:** `total_input` **200** → **`extracted` 110, `failures` 90** = **80 `skipped: extract time budget exceeded` + 10 `no extraction returned`.** Digest `total_items` **33,820**, `high_signal` **1,429** → **110 of 1,429 classified = 7.7%.** Merged into **20** company files, **38 `real_news`** / 72 tangential, `orphan_count: 0`, `error_count: 0`.
+> - 📈 **Census re-measured: 83 extract runs on disk, 82 budget-killed, 5,590 items abandoned** (was 81 / 80 / 5,430 on 09-19; +80 today, exactly today's skip).
+> - 🆕🔑 **THE SKIP IS NOT VARIABLE — IT IS QUANTIZED.** Across the last 14 runs the budget skip is **80 on 12 of them** (`70` on 09-09, `90` on 09-19). `BATCH_SIZE` is **10**, so the budget can only abandon whole batches, and it abandons **8 of 20** nearly every night. **The run completes 12 of 20 batches and no more.** What actually moves night to night is **`no extraction returned`** (10 today, 49 on 09-14) — a model/parse failure, **not** a budget failure. **`extracted` swinging 71 → 110 over two weeks says nothing about the budget. Split the two error strings before drawing any conclusion.**
+> - ✏️🆕 **THE CORRECTION — AND IT IS OURS TO OWN.** This file has recommended "raise `BATCH_SIZE` from 10; 11 of 20 batches finish in 20 min, so halving the batch count is the whole fix" since 09-19. **Per-batch timestamps from today's log: batch 1 starts `09:32:58Z`, batch 12 starts `09:52:18Z`, batch 13 is the one killed — 12 batches in 19m20s = ~96.7 s/batch = ~9.7 s per item.** **That recommendation silently assumes the 97 s is mostly FIXED per-request overhead. If it is output-token-bound — and a forced tool call returning 10 structured extractions is exactly that shape — then a 20-item batch just takes ~194 s and throughput does not move.** Nothing on disk decomposes overhead from per-item cost. 🚫 **Treat it as a hypothesis, not a fix.**
+> - 🧭 **THE BETTER LEVER, READ STRAIGHT OFF THE SOURCE.** `news-rss-extract.mjs:258-270` is a plain sequential `for` loop with one `await extractBatch(batch, apiKey)` per iteration — **exactly one in-flight API call at a time.** Running 3–4 batches concurrently is a near-linear win that does **not** depend on where the 97 s goes, does **not** touch `max_tokens`, and does **not** touch the `35 + 20 = 55 < 60` budget arithmetic. **Highest certainty per line changed.** ⚠️ **Still $0 budget, still display-only data, still zero audience — Aron's call, not an auto-fix.**
+> - 🔑 **THE GENERAL LESSON, ADDED TO THE "MEASURE THE CAP" RULE:** when a cap fires, also ask **what the cap is quantized by**. An 80-item loss is not "40% of the batch" — it is **eight units of `BATCH_SIZE`**, which is why changing `BATCH_SIZE` changes the shape of the loss and not necessarily its size.
+>
+> ✅🗓️ **B-124 — CLEAN.** `news-rss-nightly`'s log: **0 `CONFLICT (content)`**, `[main a8856c5]` printed and pushed, `a8856c5e7` is in `origin/main`. Weekday control arm holds. 🚨 **`grep -rn "rebase --abort" .github/workflows/` still returns 0 — day 54. Next exposure Sunday 09-27, which is also B-155's ninth missed send.**
+>
+> 📊✅ **CATALOG — DAY 23, VERIFIED AT THE CDN.** `index.json`: HTTP **200**, **9,989,657 B**, md5 **`1527f2e9ec86cd9555075f0162978532`** — byte-identical **2026-08-31 → 2026-09-22**. **2,622 graded / 12,830 tracked** (A 63 · B 738 · C 1,031 · D 535 · F 255). ✅ Consistent with 0 grade moves across the 20 touched files (diffed key-by-key on `overall`/`grade`/`csc`/`sc`/`excl`/`flags`/`realCats`).
+>
+> 📌 **HELD / RE-VERIFIED (and note how little this proves on a 7.5-hour window):** **B-128** **404 single-line / 12,426 pretty** — unchanged from 09-21, as expected with only a single-line writer running · **B-133** exactly **43** numeric `charity_irs990.totalGrants` (key present on 11,202 files — never measure by presence) · **B-101** **52** open PRs, unchanged; newest #179, oldest **#116 at 85 days**; branch-prefix census unchanged (`la-county-restaurants` **13** of 52) · **B-151 day 27** — newest `ci` `push` run is still **2026-08-26T21:10Z**; the newest `ci` entry of any kind is the 09-21 `pull_request` at `action_required` · **B-149** no new write — `trending.json` still at `generatedAt` **`2026-09-22T00:43:02.309Z`**, `chef-boyardee` alone (1 view / 1 unique); tonight's run is the thirteenth · **watchdog #155** last rewritten **2026-09-21T18:42:19Z** with **20 rows** — it has not run today, so B-141/B-142/B-144 had no new observation · **B-122 / B-130 / B-134 / B-153 / B-157 / B-158 / B-159 / B-161 / B-163** — none of those crons fired in this window.
+>
+> ⚠️ **CONTRADICTION TO FLAG.** The sync moved from ~23:20 CDT to ~07:30 CDT. **A morning sync structurally cannot see the day it is named after** — 17 of the 24 hours, and nearly every cron that matters, come after it. Two options, and the first is better: **① move the schedule back to late evening CDT so each sync covers a whole day**, or **② keep the morning slot and redefine the window as "yesterday evening + last night"** so nothing falls between two reports. As written today, the daytime of 09-22 will only ever be seen by the 09-23 sync. **Your call — this is a schedule setting, not a code change.**
+>
+> 🔴 **WHAT YOU STILL OWE — UNCHANGED:** ① `RESEND_API_KEY` **plus** the B-155 guard move (**09-27 is the ninth missed Sunday unless both ship**) · ② install Build 81 / ship Build 82 (B-136 revenue fix still not live on iOS) · ③ B-159 `fcc` keep-or-retire · ④ B-137 coverage claim — zero-data sources are `fcc`, `bcorp`, the cruelty-free pair, and `ntsb` · ⑤ B-162 — decide whether more news extraction is worth the spend at all **(and if yes, the answer is concurrency, not `BATCH_SIZE`)** · ⑥ ship the one-line `git rebase --abort || true` (B-124) · ⑦ **B-158 — fix the staging bug; 4,207 files a week, including grade-bearing `enriched.tax`, built and thrown away for 88 days.**
+>
+> **— PRIOR SYNC (history) —** 2026-09-21 23:20 CDT (daily doc-sync covering **Monday 2026-09-21** — **8 bot commits, 18 scheduled runs (12 `success`, 3 `failure`, 3 `cancelled`), zero human activity, zero code/script/workflow changes, 102 company files touched and ZERO grade fields moved.** 🆕 **B-158 WAS CAUGHT IN THE ACT WITH A PRICE TAG: `enriched-augments-refresh` built a 4,207-file commit at 15:54Z, threw it away, and went green — 13 consecutive scheduled runs, 87 days, not one byte committed.** 🆕 **AND THE WATCHDOG DELETED A BROKEN CRON'S ROW IN FRONT OF US: `gdelt-weekly` finished `cancelled` at 18:43:19Z, SIXTY SECONDS after #155's 18:42:19Z check — B-144's race and B-142's erasure, proven rather than inferred, and the row count moved off 21 for the first time in eight days.** ✅ **B-124 clean: zero `CONFLICT (content)` across all seven committing crons — the weekday control arm holds.** ⚠️ **Contradiction to flag: the 09-20 sync never committed. This working copy sat 8 commits behind origin with an unstaged `BACKLOG.md` all day; today's commit closes both.** *(No doc-sync commit exists for 09-20 either — today's commit is the first since 09-19.)*)
 >
 > 🆕🔴🧬 **BIGGEST FINDING — B-158 CAUGHT IN THE ACT, AND NOW WE KNOW WHAT IT COSTS PER WEEK.** `enriched-augments-refresh` ran **2026-09-21T15:54:21Z → `success`.** The log is unambiguous:
 > - It **built the commit**: `[main 2520c7d] data(enriched): refresh footprint sources (7 + WHISARD) [skip ci]` — **4,207 files changed, 28,148 insertions(+), 12,099 deletions(-).**
@@ -1941,9 +1961,9 @@
   because it is green — **B-145 blindness, not B-142 erasure.** *(Updates the watchdog item; links
   B-145, B-153, B-137.)*
 
-- **B-162 🆕 NEW 2026-09-19 — the nightly news AI extraction hits its 20-minute wall-clock budget
-  on 80 of 81 runs and abandons the rest of the batch unread. 5,430 items skipped since 2026-06-25;
-  only 6% of the high-signal corpus is ever classified.**
+- **B-162 🆕 NEW 2026-09-19 (counts re-measured 2026-09-22) — the nightly news AI extraction hits its
+  20-minute wall-clock budget on 82 of 83 runs and abandons the rest of the batch unread. 5,590 items
+  skipped since 2026-06-25; only 6–8% of the high-signal corpus is ever classified.**
   *(WS-B, S — one constant, or a workflow job split. But see the SCOPE CHECK — this is Aron's call.)*
   🟠 **WHAT HAPPENS.** `scripts/news-rss-extract.mjs:255` sets `EXTRACT_BUDGET_MS = 20 * 60_000`.
   The batch loop at `:260-262` checks the clock before each batch and, once past the budget, pushes
@@ -1952,10 +1972,17 @@
   📊 **TODAY'S NUMBERS (`c2fad8479`, run `success`).** `2026-09-19.extracted.json`:
   `total_input` **200** → **90 skipped on the budget** + **23 `no extraction returned`** = 113 failures →
   **110 attempted, 87 extracted, 31 `real_news`, 56 `tangential`** → merged into **16 company files.**
-  📈 **THE CENSUS — 81 EXTRACT RUNS ON DISK, 80 OF THEM BUDGET-KILLED.** First budget kill is
-  **`2026-06-25`**, the day B-64's fix introduced the guard. **Total items abandoned: 5,430.**
-  Daily skip counts have run **60–90** every day for the last three weeks (`80` on 09-13 → 09-18,
-  **`90` today**). **The guard has never been a safety valve. It is the binding constraint on every run.**
+  📈 **THE CENSUS — 83 EXTRACT RUNS ON DISK, 82 OF THEM BUDGET-KILLED (re-measured 2026-09-22).**
+  First budget kill is **`2026-06-25`**, the day B-64's fix introduced the guard.
+  **Total items abandoned: 5,590.**
+  🆕🔑 **THE SKIP COUNT IS QUANTIZED, NOT VARIABLE — IT IS ALMOST ALWAYS EXACTLY 80.** Across the last
+  14 runs the budget skip is **80 on 12 of them** (`70` on 09-09, `90` on 09-19). That is not noise:
+  `BATCH_SIZE` is **10**, so the budget can only ever abandon whole batches, and it abandons
+  **8 of the 20** nearly every night. **The run reliably completes 12 of 20 batches and no more.**
+  The number that actually varies night to night is **`no extraction returned`** (10 → 49 over the same
+  14 runs) — a model/parse failure, **not** a budget failure. **Do not read a change in `extracted` as a
+  change in the budget's bite; separate the two error strings before drawing any conclusion.**
+  **The guard has never been a safety valve. It is the binding constraint on every run.**
   🗝️ **THE FULL FUNNEL, IN PLAIN ENGLISH.** `scripts/news-rss-collect.mjs:479` collects
   **35,092** items across **528** brands, flags **1,443** as high-signal, then hands the AI
   `highSignal.slice(0, 200)` — its own comment says **"cap AI batch to top 200 for cost."** The budget
@@ -1967,11 +1994,24 @@
   fabricated, nothing is a republished fixture, and the partial results that land are real and sourced.
   **The run is honest — it writes its own failure list. The defect is that nobody has ever read it.**
   🧭 **FIX — CHEAPEST FIRST.**
-  ① **Raise `BATCH_SIZE` from 10** (`:39`). B-64 cut it 20→10 **because `max_tokens` was 4096 and the
-  forced tool call truncated.** `max_tokens` is **8192 now** (`:156`), so the constraint that forced the
-  cut is gone. Measured rate is **~109 s per 10-item batch**; **11 of 20 batches finish inside 20 min**,
-  so halving the batch count clears the whole backlog without touching the budget.
-  ② **Or split `news-rss-nightly.yml` into two jobs.** The 20-min cap exists only because the
+  ✏️🆕 **CORRECTION 2026-09-22 — THE PREVIOUSLY RECOMMENDED FIX (① RAISE `BATCH_SIZE`) RESTS ON AN
+  UNVERIFIED ASSUMPTION, AND THE LOOP HANDS US A BETTER LEVER.** Per-batch timestamps from run
+  `35710621085` (2026-09-22): batch 1 starts **09:32:58Z**, batch 12 starts **09:52:18Z**, batch 13 is
+  the one the budget kills — **12 batches in 19m20s = ~96.7 s/batch = ~9.7 s per item.**
+  **Raising `BATCH_SIZE` only helps if that 97 s is mostly FIXED per-request overhead. If it is
+  output-token-bound — and a forced tool call returning 10 structured extractions is exactly that
+  shape — a 20-item batch simply takes ~194 s and throughput does not move at all.** Nothing on disk
+  decomposes overhead from per-item cost, so **treat ① as a hypothesis, not a fix.**
+  🆕 **① (REPLACES THE OLD ①) — RUN BATCHES CONCURRENTLY.** `:258-270` is a strictly sequential
+  `for` loop with a single `await extractBatch(batch, apiKey)` per iteration: **one in-flight API call
+  at a time, every night.** Three or four concurrent batches is a near-linear win that does **not**
+  depend on where the 97 s goes, does **not** touch `max_tokens`, and does **not** touch the budget
+  arithmetic. **This is the lever with the highest certainty per line changed.**
+  ② **Raise `BATCH_SIZE` from 10** (`:39`) — the old ①, demoted. B-64 cut it 20→10 **because
+  `max_tokens` was 4096 and the forced tool call truncated**; `max_tokens` is **8192 now** (`:156`),
+  so the constraint that forced the cut is gone. **Worth trying, but measure a single batch's wall
+  time at 20 items before believing it buys anything.**
+  ③ **Or split `news-rss-nightly.yml` into two jobs.** The 20-min cap exists only because the
   collector (35-min budget) and the extractor share one 60-min job (`news-rss-nightly.yml:32`).
   Two jobs = two 60-min caps.
   🚫 **Do NOT simply raise `EXTRACT_BUDGET_MS` in place.** `35 + 20 = 55 < 60` is the only reason
