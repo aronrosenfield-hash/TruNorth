@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T14:43:42.059Z",
+  "generated_at": "2026-09-22T14:26:05.200Z",
   "smoke_mode": false,
   "brand_count": 528,
   "with_enforcement_count": 0,
@@ -938,7 +938,8 @@
       "status": "edos_unreachable",
       "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
       "bank_cert_numbers": [
-        9261
+        9261,
+        1018
       ],
       "bank_names": [
         {
@@ -947,6 +948,13 @@
           "state": "IL",
           "active": 0,
           "bkclass": "NM"
+        },
+        {
+          "cert": 1018,
+          "name": "M&I Bank of Burlington",
+          "state": "WI",
+          "active": 0,
+          "bkclass": "SM"
         }
       ]
     },
@@ -1998,8 +2006,8 @@
         17300,
         14997,
         12466,
-        32906,
         10600,
+        32906,
         27595,
         4768,
         17438,
@@ -2042,16 +2050,16 @@
           "bkclass": "NM"
         },
         {
-          "cert": 32906,
-          "name": "Bank of America Community Development Bank",
-          "state": "CA",
+          "cert": 10600,
+          "name": "Sun Security Bank of America",
+          "state": "MO",
           "active": 0,
           "bkclass": "NM"
         },
         {
-          "cert": 10600,
-          "name": "Sun Security Bank of America",
-          "state": "MO",
+          "cert": 32906,
+          "name": "Bank of America Community Development Bank",
+          "state": "CA",
           "active": 0,
           "bkclass": "NM"
         },
@@ -2105,6 +2113,7 @@
         18694,
         13849,
         16309,
+        2843,
         16853,
         19501,
         27076,
@@ -2113,7 +2122,6 @@
         4448,
         5208,
         5457,
-        2843,
         2210,
         15277
       ],
@@ -2217,6 +2225,13 @@
           "bkclass": "N"
         },
         {
+          "cert": 2843,
+          "name": "Wells Fargo Bank of Arizona, National Association",
+          "state": "AZ",
+          "active": 0,
+          "bkclass": "N"
+        },
+        {
           "cert": 16853,
           "name": "Wells Fargo Bank Alaska, National Association",
           "state": "AK",
@@ -2269,13 +2284,6 @@
           "cert": 5457,
           "name": "Wells Fargo Bank Nebraska,  National Association",
           "state": "NE",
-          "active": 0,
-          "bkclass": "N"
-        },
-        {
-          "cert": 2843,
-          "name": "Wells Fargo Bank of Arizona, National Association",
-          "state": "AZ",
           "active": 0,
           "bkclass": "N"
         },
@@ -2414,12 +2422,12 @@
         6384,
         27266,
         679,
-        24868,
         34425,
         7740,
         742,
-        7944,
+        24868,
         10513,
+        7944,
         31435,
         2688
       ],
@@ -2460,13 +2468,6 @@
           "bkclass": "SM"
         },
         {
-          "cert": 24868,
-          "name": "PNC Advisors, National Association",
-          "state": "MA",
-          "active": 0,
-          "bkclass": "N"
-        },
-        {
           "cert": 34425,
           "name": "PNC National Bank",
           "state": "DE",
@@ -2488,9 +2489,9 @@
           "bkclass": "N"
         },
         {
-          "cert": 7944,
-          "name": "PNC Bank, National Association",
-          "state": "PA",
+          "cert": 24868,
+          "name": "PNC Advisors, National Association",
+          "state": "MA",
           "active": 0,
           "bkclass": "N"
         },
@@ -2500,6 +2501,13 @@
           "state": "KY",
           "active": 0,
           "bkclass": "SM"
+        },
+        {
+          "cert": 7944,
+          "name": "PNC Bank, National Association",
+          "state": "PA",
+          "active": 0,
+          "bkclass": "N"
         },
         {
           "cert": 31435,
@@ -3192,21 +3200,21 @@
       "status": "edos_unreachable",
       "edos_error": "edos_fetch_Unexpected token '*', \"*/{\"messag\"... is not valid JSON",
       "bank_cert_numbers": [
-        26621,
-        19553
+        19553,
+        26621
       ],
       "bank_names": [
-        {
-          "cert": 26621,
-          "name": "Mitsubishi UFJ Trust & Banking Corporation (U.S.A.)",
-          "state": "NY",
-          "active": 0,
-          "bkclass": "NC"
-        },
         {
           "cert": 19553,
           "name": "Bank of Tokyo-Mitsubishi UFJ Trust Company",
           "state": "CA",
+          "active": 0,
+          "bkclass": "NC"
+        },
+        {
+          "cert": 26621,
+          "name": "Mitsubishi UFJ Trust & Banking Corporation (U.S.A.)",
+          "state": "NY",
           "active": 0,
           "bkclass": "NC"
         }
