@@ -1,81 +1,14 @@
 {
-  "merged_at": "2026-09-23T09:56:31.317Z",
-  "source_file": "2026-09-23.extracted.json",
-  "total_items": 29,
-  "brand_count": 16,
-  "merged_count": 16,
+  "merged_at": "2026-09-24T09:55:21.058Z",
+  "source_file": "2026-09-24.extracted.json",
+  "total_items": 28,
+  "brand_count": 13,
+  "merged_count": 13,
   "orphan_count": 0,
   "error_count": 0,
   "orphans": [],
   "errors": [],
   "sample_merged": [
-    {
-      "slug": "coca-cola",
-      "status": "merged",
-      "news_added": 3,
-      "events_added": 3,
-      "items_total": 50,
-      "events_total": 30,
-      "aggregate": {
-        "mentionCount90d": 50,
-        "avgTone": -2.05,
-        "scandalSignals": [
-          "ENVIRONMENT",
-          "PRIVACY",
-          "LEGAL"
-        ],
-        "topArticles": [
-          {
-            "title": "Coca-Cola facility in Bellevue sued over alleged polluted runoff reaching Lake Washington - MyNorthwest.com",
-            "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1HX2V6aFVPalIyVEtmOUJiUDVDQlRPcnRiQWd5dml2MVBfRkVlNTJoVk9hcHBWZVEyQnJzZzZ4NmV4TjNDblBNOWY0UUtEOTZXeVN1OTJVOVFrUnNMbDRHY3d6YWJYRWM?oc=5"
-          },
-          {
-            "title": "Coca-Cola sued over alleged pollution flowing into Lake Washington - KING5.com",
-            "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQSXNMQXR0b3N2bXA5LThZRlJXLVV1U01QdFNVc1dvUU5sYy1fWlh5RDNaTzdYS3JuVlJHcWNCelM4ekRoTlhZSkNYcEtSbHFWczlPNV9taUt4bkFUQ0RwaGllNVQtOWlqT3FHQmxFdUF4cUplOGpXR0tseVFRb0pfdDhtS1c0REZoWExuMFhGV2g1NGpaTnM4OWNhSnpNelJIUklSVk5tUC1fYTQ5RFZ1ckNmNV93eUpxLUFqZEZRb0dEdVQ0S28yZVF4Tl9jRzQwdWlYeXA5MVlLVjYx?oc=5"
-          },
-          {
-            "title": "Coca-Cola plans to test prebiotic sodas in its signature flavors this fall - NewsNation",
-            "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNZENpMXo5eU1mTEh0UFhBS25LZEFKSFRmSkZNOVJuRjMyY0dpM2pZVko1b2pRTTNWMVlLREcwUEtTT2NaTVhpcXpVTk5qSlZJN3VmSVlaRXNKSk9ocnNISEdxeEY4XzJHRGU5NUJkX0E0NFRpSjFWa0xJT1lxSUVuc19FdW91cFNNeVN1RtIBkgFBVV95cUxQX2dFYVY3UzE3R2FleHh4aFduNXgzMUFhSHRlMmZWMXdEbHJyRERScVl3NExYQzFkVzlxa1I3Rmt3Y2dSbVcyNTdZZEJqb2R3bWNuN3Z0NGI2UEdkUFFkbDBDY3VET3ViVkcwSGt3VVIzeXFVU0FhSWdnNDhmTzhCRjQ2dXZRM0ZVd3FEcnFhRGdiQQ?oc=5"
-          }
-        ],
-        "lastUpdated": "2026-09-23T09:56:31.332Z",
-        "source": "rss-extraction"
-      }
-    },
-    {
-      "slug": "pepsi",
-      "status": "merged",
-      "news_added": 1,
-      "events_added": 0,
-      "items_total": 31,
-      "events_total": 26,
-      "aggregate": {
-        "mentionCount90d": 30,
-        "avgTone": -0.78,
-        "scandalSignals": [
-          "LABOR",
-          "ENVIRONMENT",
-          "PRODUCT_SAFETY",
-          "LEGAL"
-        ],
-        "topArticles": [
-          {
-            "title": "WNY Appeals Court Presses State on Scope of Pepsi Plastic-Pollution Suit - Law.com",
-            "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQRGF2QWUxU01UeEZ2RVpVaHNTODlZQXE2VzNDb0JQU0hYVGZoU1M5MFBlUnRsOFBib09KUUNXbGZ4WFJ6Ujk5X3hlaEZGOGU4Y1FQMWRlczQ1bXhSSWl2Si0xdkdHTHBNdGU0R1VmM29mX0twT011TnZrdXNpNXZkT0xZcXd5dmJUWkJVbVRIMjd6cER6eUpDOFl5WDg0dDVmb1YteDhLcjZPNm55OWVPcmQ1U1RjdzVtYlhBVXZPRQ?oc=5"
-          },
-          {
-            "title": "Layoffs Affect All Employees At PepsiCo In Cheverly - Patch",
-            "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPS2FmenJCZFJHc28wV3A2WFktMDl2bmR4UGpjSnRiQnNUMUktZWw2VDFGR1pVQXZWemhmYjlzU2htWWtmUUV1UDkwOUM0MTNUQ2FmUWMtTEZ2Z3VNUDU0QlhEajluYUwtdEVBZ203UGFTN3I0ZHFLUkh5UWhPcE1nb2RsMlRFd0tCSkhJOGZB0gGnAUFVX3lxTE1WRElFUHJkbjBqbTBZeENBT2RldmNCRE45SlpvOXlPdkl2MXlVN2JwZGtFUmJpTDV2ZHppcF9NbGR3RDMwMUtEa0pjaXdrYXRXamJrdHJISDFPekE1aGdERWJlOEpiWi1RLUVtQXl5R01CMHctX3BCQWhNQXBicV9WS3NXcVIxMTNoLWY4elN4OUNTdzlITXZ5STR3TEprdGxYamdnaUZv?oc=5"
-          },
-          {
-            "title": "PepsiCo layoff hits more than 100 workers at Cheverly plant - NBC4 Washington",
-            "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQT1YxYVF1UXUtZWs0cjNPM25zMC11V21ocERBWWRxalRuUDNyQWVmaGpBVlFGX1Z3V3ZCS2E4a0ZLUTlpQmtFam01M0tKc1VLZkZUbkJrT3pYb09hbzJ1Y0x0T1RQMS1LLWMzekc5QXNjcGVvbU1yNll2MERRTEcxcmVlb0dYdmc1b2NrWVhVbE1BX2xJaERkOVZhbzg3MDROVmoyWtIBrAFBVV95cUxOTDRldmJoVkxvbFJ5am9DamJSUjRkNlk5dlJYLUIwZm9jaHVQbzRRWnJueFhnc21Kd3ZQSmtkeXNycEpvQ2dFNnkydzAxYnU4al9tN0tiNzA3NS1Cd29ic2VIZHBqLTF4dWNWVE9YdWhuZU50Vm9zejMwcDBOMUhiRDJyOXg4Zzh4VThLWUpvWmJnX1FnZ3RPbFRuZHctSTJ3alB4WEFzRm1CcWhX?oc=5"
-          }
-        ],
-        "lastUpdated": "2026-09-23T09:56:31.334Z",
-        "source": "rss-extraction"
-      }
-    },
     {
       "slug": "red-bull",
       "status": "merged",
@@ -99,7 +32,7 @@
             "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQVjlHRVAtSElCXzFacndqZUdfYnFTcTVxa0I5N3BHQkExU1ZuaTljbWd5SVQ1UUVscUsxcDF0Mm93aTBRQ012NXVUZVZUb3Fja1YwcVBYdzVndkgyOUpzQlFqQmdQOTA3bmNZTXlERjZXc0ExUGhhMHJvbFFpcm5IaXMyb3owS1M5RkdCQ24xSlVMV3RhaDZRMmxJQ2FGRnYtUGNtQnNPbndqYzA3VmZrXzlxWGpYMTQ?oc=5"
           }
         ],
-        "lastUpdated": "2026-09-23T09:56:31.335Z",
+        "lastUpdated": "2026-09-24T09:55:21.076Z",
         "source": "rss-extraction"
       }
     },
@@ -130,122 +63,63 @@
             "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOd1RWMGgzXzJmRzZUQUltMXVuMFhYbnNRUDl6b25pWVNlR0FGZlJBaUE0bGwybWNMazg4T21mNEN0UnJmWlpyVEZaUkZ1UXFyYU1SV0p2Z0ZlRk5keW1oVlA4UzhMbHlrYnFFckdIczlneTVsS3NoX3hDWTFTWTIyeTlGZlBsb0swa2c?oc=5"
           }
         ],
-        "lastUpdated": "2026-09-23T09:56:31.336Z",
-        "source": "rss-extraction"
-      }
-    },
-    {
-      "slug": "mondelez-international",
-      "status": "merged",
-      "news_added": 1,
-      "events_added": 0,
-      "items_total": 29,
-      "events_total": 17,
-      "aggregate": {
-        "mentionCount90d": 25,
-        "avgTone": -0.9,
-        "scandalSignals": [
-          "ENVIRONMENT",
-          "PRODUCT_SAFETY",
-          "LEGAL"
-        ],
-        "topArticles": [
-          {
-            "title": "Chocolate giant Mondelez ramps up lobbying to delay EU deforestation law, after previously backing it - EUobserver",
-            "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOYUZZNms2SWQ2d0ZFQXBzcGxlc0Y2UGk4Tm5VN3Bmc3R3REFsam53VVI1T2RNYkdWSlNVOHV4RnlEU1dHbnZXU3VQZGlmVk1zRGJWdGwwMXM5MTVUa3VqbEZQMnFHYW5DUjg2YmZXNU9XcUdVVEpEbVdfNnVRd1JvZXpLVXFaSXFhSGhVM2ZUMW54Mkl1MHNKNWVUZ1Mya1VyX0NVT0VkTDlvY1ZFSy1IZEU3MFFVOUl4QmJUX2JlaTBJVVlyR04tcExjbw?oc=5"
-          },
-          {
-            "title": "KFC, Oreo unveil unusual sweet-and-savory menu items in China - cbs19.tv",
-            "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNQVdsbDBHdXI1UzhyMk1sTjQtMDVMNW5HbTNlaXJwZWZ1V0Y5eE00RzV2bFhod0pYOEFqaHNYREpWVHZBQXlXSkdkTmZGX2hNV0ZtN0ZHUW9mYk0wVTlsVGdEalhveU9BU0c1aDctTDBMMzk3bGdjNE5NanFQYkkwMlpIcV9QTHcteWw4LWp3dGU5bHZZWXgzSkxsNkZpU214SlVsbFBRUlh3T0o4NDdiZ3ZoNUpacjl3S0g0bm9JWDNXZ0t2emJoRVRrLWlNVVlrNS1XOUxn?oc=5"
-          },
-          {
-            "title": "Russian strike damages US-owned Mondelez facility in Sumy Oblast - The Kyiv Independent",
-            "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOT0VROEZNaHRmZVFRZmJmMG5BSE9QanE4V2YwU3Q3dFR4N1FHNlk1eDFQNkRSTnpPQWh5N18zbEt4LUZlalk3M3EyUENjTGg2am5EVDVINE9SMGRyelN1U1Zwc240OTV0WXNYMTBtbDZKRzcwMzZKVnBoR3BNdFFQUDJ3UjN0SzV6SV95eVI4UG5XTVZZemZQUQ?oc=5"
-          }
-        ],
-        "lastUpdated": "2026-09-23T09:56:31.337Z",
-        "source": "rss-extraction"
-      }
-    },
-    {
-      "slug": "mars",
-      "status": "merged",
-      "news_added": 1,
-      "events_added": 1,
-      "items_total": 4,
-      "events_total": 3,
-      "aggregate": {
-        "mentionCount90d": 2,
-        "avgTone": 0.25,
-        "scandalSignals": [
-          "LEGAL"
-        ],
-        "topArticles": [
-          {
-            "title": "General Mills, Mars sue sugar producers in price-fixing lawsuit - Reuters",
-            "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPU1FKVV95ZVN6Uk92WjJGQzhmOTJXTWJDcFF0emJ5eG1FLTZuMmdCNlBGeUNJMTUwZGFkSThRb2Q5TTNkZ2MwdGF6NW81aVJudTVRV244WUNjeHZSa01BZnF6ZEFrOEU3bklBcy1mNG5zdHRWUm9xa1dKNjRqQXlSd0ZnaWllLTdxOUhEbkQtT2Z3UC0wNGdZNzZBX21QWGR2RlVRYl9uVldiUThJVzhXdXVB?oc=5"
-          },
-          {
-            "title": "Mars Impact Fund Invests $13 Million in Farming Communities, Scientists, Animal Well-Being - ESG Today",
-            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxONUlHbDhkOVdwbmZ2MzRwVXh3NFIwQUpJVmVsbFJsZE90ZnRJTG9udVU0SzREWjJVU2psWlRWYWRBRFZXWlRkWWh4dkVhTDFaX2RMcTA1TlBqcGk4eFIxSTUwdGMycHZETFVtSWpfTGNtUWR0UUlSRUEzZV9XM085ckMwcG9pQjgzeDdLRzlyOENJamNSQ2taR3lNdE9MdzRjbkcwZU9QaTlvZ1lfWl9iczMteWs?oc=5"
-          },
-          {
-            "title": "How Mars and Mondelēz fared on 2025 packaging targets - Packaging Dive",
-            "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPZ2tSVWdYdW5rVGNqSmw2aVF2bVREZTJQRUUyZV9sdUVSZkNsTTZFbUJEU2F2eTh4UHJkSDFRcFJRV2dJQzlFNUlHTE5FYnYzVWN0eDBZTlFyRk1WbDM4R3k4SERqaGF5a1VpUmRqaUJiM0dwQlB6MFMwSjVwdkxmV3l5aldpcHR6R1hrTFpSRGJPdXAzZ0JiQ1JEb1M3bUFPQmVoMQ?oc=5"
-          }
-        ],
-        "lastUpdated": "2026-09-23T09:56:31.338Z",
+        "lastUpdated": "2026-09-24T09:55:21.078Z",
         "source": "rss-extraction"
       }
     },
     {
       "slug": "hershey",
       "status": "merged",
-      "news_added": 1,
-      "events_added": 1,
-      "items_total": 27,
-      "events_total": 21,
+      "news_added": 3,
+      "events_added": 3,
+      "items_total": 29,
+      "events_total": 23,
       "aggregate": {
-        "mentionCount90d": 26,
-        "avgTone": -0.83,
+        "mentionCount90d": 28,
+        "avgTone": -0.73,
         "scandalSignals": [
           "LEGAL",
           "PRODUCT_SAFETY"
         ],
         "topArticles": [
           {
+            "title": "Lawsuit over faceless Reese's pumpkin candy gets thrown out - wtsp.com",
+            "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNakdaZlRrX1BrYjdNNFVmcDhKV01URmpfSWF4QVhnWEJJTDEzT3Y1QjA4aDZBdDM1T2wwWFZ0RG4ycmZlM192Q3NROGpQM082ajdBY3doemt2eFdMSF9WclJ6aEhGLWN3ZE9xSjZYUm40Ry1rTjNzSFdCZDY4N1NhbGdXeXpxSzd3bkREdmRtb3lsd3Jrbk5CSGNzeGl1aGlLenYwTnNuVXBFTXZQWC0wTWZXcEVtMjlnODVLakpaWHFZUHl1NlE4N214THAyY1hm?oc=5"
+          },
+          {
+            "title": "Florida judge dismisses lawsuit over Reese's Peanut Butter Pumpkins - wtsp.com",
+            "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQQ29ONnBRd1ZXZVdYbmpnTDZfNDBna3piOXhuaHh5SzliazQtWTkyZDM0SUNOM2dxalU3cllLRVNZZmJnbFo2WXBGUVdnLXpqWVpVTEM5enlCMWR1Zm4tMW5LNFc4Z29ySmhBN3BlM2ZVUXIybTlfdkZ2NF9rY0ZwQ1liZlF6MEo2MC1RVDlLQm4zeE5sSFJIZ0xwTV9nUW5qV1g2Ny1hamFPMlBoSDRRNlBTT3JxaWl5Vzl6T1dHNmZkcHZ1Z3hFR1ZCOWhCbXB2MHBaMmZxLTVIZDhZTWc?oc=5"
+          },
+          {
             "title": "Hershey defeats lawsuit over Reese's Halloween pumpkins that lacked 'cool' carvings - UnionLeader.com",
             "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNZ0F4X05nRlhYa0U5d2dqV0lLaThmNW9pdU5faTZLRmJWX2xDRDFvQW5IMzlUVU1OUlExMXlrSFo0RzVxVzVMZ2NUX2hEZ290N0o1WWplaUVoWWtfenVxblJGaWhHYUpUNFNibi00SVVkVnM0bmdjS0U1WGRXRklwaTROOEFpam9oaGZPSkYycEFHODFiZzFnam9ncG9samdvWm91V05UZjRZUU1KRUp4T3ZpUGVka2hDOTVWWXRLWU0xM2lSS3hHSUZvQ1UzeWlWYXRMcjJrLUd3OHMyanQ4VHVNQnlRX0xlZmhiejg2MThhY0htR1pONzdNaHN6MTVDUVJaeThrck0?oc=5"
-          },
-          {
-            "title": "Hershey defeats lawsuit over Reese's Halloween pumpkins that lacked 'cool' carvings - KSL News",
-            "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQektmTWFsZ05fTW1oczdvaEFBVWU5QUN2dGdNNWU3NHh4SmpETUhXemxRSlhpeGdfX2JBMGNaRkhJU0ZhOThOWWh0VURpOVY5UzgzWmVNaEd1WXQyVHc0N1JUSkJkNWU0TzRNUWtCajF5S0VXQ2ViT1dkaDYza2JNcWtZYUdReTdiTXRjaFBxS1MwUjRMT0M5eUM5V2syR1pwWGNvTVg0b01laEZ2bXQzMl84ZE9VVjdINFRsMlBWQlhtRUtZU3hXSV91TQ?oc=5"
-          },
-          {
-            "title": "Hershey defeats lawsuit over Reese's Halloween pumpkins that lacked 'cool' carvings - Reuters",
-            "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQMjUyOVBLSjhwSmVZNU9jdk8wd2ZCWV94VWZYS2U2dS1FelhtdFk1V2NlQ1FOMkh5TmV6MGhxSkEyazlLXzhfWVZZWV93UmEzMmRjV0hSTVhDWEo3UER1eTN1ZGFKdGcwdV9KQ25Ja1R2MlBGTTllVkh5XzlVekpTRHlFeURnREFyMFVhc2pjVHBRdnFjczdYdmxVMkIzMzhkal9nSXZqX3RTSFY3WGZNbF8wam9jRXhVd1pHSGJ0ZldteXRmalgtRmtPRXBzcDRVMG9XM2h3b2s?oc=5"
           }
         ],
-        "lastUpdated": "2026-09-23T09:56:31.340Z",
+        "lastUpdated": "2026-09-24T09:55:21.079Z",
         "source": "rss-extraction"
       }
     },
     {
       "slug": "heinz",
       "status": "merged",
-      "news_added": 3,
+      "news_added": 4,
       "events_added": 1,
-      "items_total": 12,
+      "items_total": 13,
       "events_total": 6,
       "aggregate": {
-        "mentionCount90d": 10,
-        "avgTone": -0.45,
+        "mentionCount90d": 11,
+        "avgTone": -0.41,
         "scandalSignals": [
+          "GOVERNANCE",
           "LEGAL",
           "LABOR",
           "PRODUCT_SAFETY"
         ],
         "topArticles": [
+          {
+            "title": "Kraft Heinz CEO shares how he stays on track each day - NBC News",
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNRDRhSGFiTVFTcVZfRmd4T0didTc1MmtidnlDQXZQLXJoeWxGal95akhEWWdnMHhudDB2ZjBDa1ZmNEFmMjNFVnhPbXctS0gzcE1hWDVNMHhSLW9YXzd6VnNUdDl3N1NSZnpwRXNkMzNvUXp0VUVwMVBON05ZOERyQndWN0lUV2l3cFFrZXEySVh0UzBoQVRwY042T3J3RkdZNVVTc0NR?oc=5"
+          },
           {
             "title": "Companies looking at taking over Heinz plant in Pocatello - Idaho State Journal",
             "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOM2NBZDIyZURZXzVjdklOZzdlWWRmVmVGVXRhYjZrTGtEUDFXZTBqN2l4a2tsYTZuYmJ3RHlBTExxMU9PR3BPcEl1RHA5UmZ2N2t0ajEwaURlRFE5M25NZU9IMDh4bnA0eVJGek9mdF93aC1hRkk1OGJ5MG5sUnJqWVlQTVJzTlMtMl9fOC1fek9ha2EtdTFtcnl4V19aRTNnbVF2ZXA3aWVkYXVYUGJxaUFPZkVqZlBZTm15U1JHb21TMjBiTlhheHUzdk9mRzAybEFaNVNHVWlfT0gtcmlOVF9qV0prSDQ5RUhJbg?oc=5"
@@ -253,33 +127,32 @@
           {
             "title": "Exchange transition: Kraft Heinz departs Nasdaq for a new home on the NYSE - wpxi.com",
             "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPampzZGZPT1BSR1RwaE5xSFdIM3FGRVpuRWVuckFpN1E0WkJ4NWtmRkI5Tjd4a2Q0eXdPdDR5azZ0a3M2b1JQeHJmNXB5bVB0M3JyZU41YTl6ZFpnYnhvTmJuM20yOUMxTFlvcWt0SmNFWGdEakdrV3pJQ2tsR2JZYnNGNzVmbGZxdzJFZkRtUzV6Yjk5ZEdvcFpYZEFsbFZwRjRMRmpnLU43V29FTE5SR0paM19OY2ZjZGZRatIB0AFBVV95cUxQS3djOVdKTDQ4UTVJRDdmZjU5dTMteTlhMVRJQklqdlhteEcwYWl2eTVKOWx0TE1VMkF4UG9ZcWt4RHpmT25XalotcFpUdjdiUmNwQ1BfMDljejN5dkE2WS1VTlBwbEpLYXF0cG40QmY2OXFRUTNiWlV5OVNTYmxFVzFVa28xM055bjJqR2ZEaGJwLUh0SWZZY2pwOWlrOEJBMlZVTE1hYUlzRHozVGtPaDk2T2xZTWNUa0VvT0hmYmZwNENBUkpia1QzYkNsaDNR?oc=5"
-          },
-          {
-            "title": "Exchange transition: Kraft Heinz departs Nasdaq for a new home on the NYSE - The Business Journals",
-            "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNb0V3bU5ReFl0WmVJMmRsZzBaVWdodTlmZVZaR0VjNnFiNlBERjFuSFFKUV90TU00X0VCbkRfM2RhZDNzYVVmTmp5MEgyVkZWaFZBMl9WWDlkMUNuUS1ONkM5M08zbi1TTVVrVVRTRmlsWnQ1S2wtcjJpUEVDRzZNRlpiVHZNU2Y4czQ0?oc=5"
           }
         ],
-        "lastUpdated": "2026-09-23T09:56:31.341Z",
+        "lastUpdated": "2026-09-24T09:55:21.080Z",
         "source": "rss-extraction"
       }
     },
     {
       "slug": "kraft-heinz",
       "status": "merged",
-      "news_added": 5,
-      "events_added": 5,
-      "items_total": 21,
-      "events_total": 16,
+      "news_added": 7,
+      "events_added": 7,
+      "items_total": 23,
+      "events_total": 18,
       "aggregate": {
-        "mentionCount90d": 16,
-        "avgTone": -0.59,
+        "mentionCount90d": 18,
+        "avgTone": -0.75,
         "scandalSignals": [
-          "LEGAL",
-          "ETHICS",
           "POLITICAL",
+          "LEGAL",
           "ENVIRONMENT"
         ],
         "topArticles": [
+          {
+            "title": "Robert Kraft’s attempts to silence Macklemore have backfired spectacularly | Arwa Mahdawi - The Guardian",
+            "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxONWk3Q1VIaFBBcVJFaDF3czA1czFJVGdnV29SOFNfcFNHRkJYZ09XRnM0VDM1Ti1fc0Zlel9ZN1Z1dFVZd1liTk9EaGs4c0ltelVHTW5yNXpib3JhSU9JOXpNYkJvekJORmx5dXNSUl8yZkZVY1BQeXhENloxSnNvZFdYdmJYRHE0NFdVbXRVbHFMVmlLMmI1Tw?oc=5"
+          },
           {
             "title": "Could Kraft face legal exposure over the Macklemore controversy? A past lawsuit offers hints. - The Boston Globe",
             "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOcGRmbmJ4TVN0LThfLUd5Qnl5dlh1NXZXUzJKMmdBT1dtOFh5elFhYWp0ejl3S29pTVJMcXRxWVlUSGptcWdRSGI0WnhpQnE1MzR6TUVQTFNGX2R6Nlg0TTNkdmdmcFF6SnFJOGRHbnZsTHBpWl9zcW10cmZ1cGk1cEtTclRyNlg1OWc?oc=5"
@@ -287,13 +160,41 @@
           {
             "title": "Kraft Heinz CEO shares how he stays on track each day - NBC News",
             "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNRDRhSGFiTVFTcVZfRmd4T0didTc1MmtidnlDQXZQLXJoeWxGal95akhEWWdnMHhudDB2ZjBDa1ZmNEFmMjNFVnhPbXctS0gzcE1hWDVNMHhSLW9YXzd6VnNUdDl3N1NSZnpwRXNkMzNvUXp0VUVwMVBON05ZOERyQndWN0lUV2l3cFFrZXEySVh0UzBoQVRwY042T3J3RkdZNVVTc0NR?oc=5"
-          },
-          {
-            "title": "Robert Kraft said Ed Sheeran already asked for $2 million aid donation after Macklemore tests him - Fortune",
-            "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQWHBpZmpZazBtOVVRbnJfcVFUZ3Q4QUhDS2pMVEdCS3hDdGMyZGxPc0EwNEdjSFBHZ1ZsZmpMWUVfOGQ3cWkxRDJZbEtkZ012cnZxbGY5TzdSUkRuYmcwWk44ZUJyVlF4eTh6S21HNllSRFBBcDhyTUhKNW1PVE9UeU9DTDlFSWtobFBlSQ?oc=5"
           }
         ],
-        "lastUpdated": "2026-09-23T09:56:31.342Z",
+        "lastUpdated": "2026-09-24T09:55:21.082Z",
+        "source": "rss-extraction"
+      }
+    },
+    {
+      "slug": "general-mills",
+      "status": "merged",
+      "news_added": 1,
+      "events_added": 1,
+      "items_total": 40,
+      "events_total": 30,
+      "aggregate": {
+        "mentionCount90d": 38,
+        "avgTone": -1.82,
+        "scandalSignals": [
+          "LEGAL",
+          "PRODUCT_SAFETY"
+        ],
+        "topArticles": [
+          {
+            "title": "General Mills Gears Up For Q1 Print; Here Are The Recent Forecast Changes From Wall Street's Most Accurat - Benzinga",
+            "url": "https://news.google.com/rss/articles/CBMimgJBVV95cUxNbjF2QXhiVEVidEdpQU5qSmJxNEpzd2FFQXpzcGJMRVVUc0VSVzE0VXI2RVhMRFhvUDRKS0RoVHVScjNfU1lIakRWRjE2b1FsbjByU2M0ek0tOVZJSHNoaEJzYWd0X3MtZ080UWRaOG95MjZvTXROVUxRZ2t0eWE4LWVjSmF6OGNMOXpacFlhRmlUWEVfT1VIVnVVeXA3bnF4WkdnVGMxMUxjeFhacHVTUWp2Zi1FZUt6R25ReDZOMmM3WEhmTklsbWJtNUhlVjVGY21tNTZ6NHJnT0tRZnVNR2RUNzdHS3ZOX2I5STVwTFl3WS1lUlBxZ2ZhbW5lSWpibVF5YTYxVUlJX0c0RjlhVDRpY1hrdC1jcmc?oc=5"
+          },
+          {
+            "title": "General Mills, Mars sue sugar producers in price-fixing lawsuit - reuters.com",
+            "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPU1FKVV95ZVN6Uk92WjJGQzhmOTJXTWJDcFF0emJ5eG1FLTZuMmdCNlBGeUNJMTUwZGFkSThRb2Q5TTNkZ2MwdGF6NW81aVJudTVRV244WUNjeHZSa01BZnF6ZEFrOEU3bklBcy1mNG5zdHRWUm9xa1dKNjRqQXlSd0ZnaWllLTdxOUhEbkQtT2Z3UC0wNGdZNzZBX21QWGR2RlVRYl9uVldiUThJVzhXdXVB?oc=5"
+          },
+          {
+            "title": "General Mills, Inc. (NYSE:GIS) Receives Average Rating of \"Reduce\" from Brokerages - marketbeat.com",
+            "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPaW9XOF9SOUo5NFRpSzF6MjlZQlR4eU4wNWZIQlI0U2pWQm9LSnBRcFFTcU1hWGdFYkdzTkRqcE9sRC0zTjNUODl3ZTVvYkZZZE00eE45aDBxTndnU05fR3c4d2prRXlvWlBISGZaOV9OZHNBdUVYdGhyZG1MRTR0TVFrYUpNd0lZWXI1VmF6VlByTjF3WmFBMWZ6d3puMlFYQURsMkJuSXBVTS1MWmp4c1N6TWg3Ti1Wd0U0NzZLR2dLVExGZGpBQlZJZl8wWmxCZVhzcll3dw?oc=5"
+          }
+        ],
+        "lastUpdated": "2026-09-24T09:55:21.083Z",
         "source": "rss-extraction"
       }
     },
@@ -326,7 +227,104 @@
             "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxONm9UTXN3T0FvUHNPMUJ0bWszdDg2NmdhOUVRQ3dEa2dUTlRjMU44TGVkNEZqZkVjaXQ3NU1GOFFJTFlsSjJncmU1TURESTdnNGRNck04MXhmTUR2eE5YRENrUWxqVnRsLUVpeGpGY3g4NnIwLTBrNTZFY1o5aEFTc0NNN1pxczBndlJjbTUwMldkb0VMdHBkYg?oc=5"
           }
         ],
-        "lastUpdated": "2026-09-23T09:56:31.343Z",
+        "lastUpdated": "2026-09-24T09:55:21.085Z",
+        "source": "rss-extraction"
+      }
+    },
+    {
+      "slug": "unilever",
+      "status": "merged",
+      "news_added": 2,
+      "events_added": 1,
+      "items_total": 9,
+      "events_total": 5,
+      "aggregate": {
+        "mentionCount90d": 8,
+        "avgTone": -1.31,
+        "scandalSignals": [
+          "LEGAL",
+          "PRODUCT_SAFETY"
+        ],
+        "topArticles": [
+          {
+            "title": "McCormick and Unilever’s $45B merger under investigation in UK - Food Dive",
+            "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQVTZWWGw0STh0ZW90eE5MYmtWVmstVXJLNFFDQlh5UFMxSTFleHd2dXM4dlZ0b1JPaEdMMEhIemJ6X20tZWFSNFRRZXlKbUd6b2s5ME5pNFFYNjVRam44Q2RTdktyRVUtdUk2X0ZvRndfQjBXaTh1aHVZb3c3QWs1dDNmOUQwMXZyVFhJ?oc=5"
+          },
+          {
+            "title": "Unilever, Gruns Sued Over Gummies Marketed As 'Sugar-Free' - Law360",
+            "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAyZmJGd2xLczZDSjRjZHlDUmhMc21EOHgzMzhKa1pUSy1nVWw0MzFzUUxnRXRaZ0RQVzJELTg5czB5Q1JhT09WMlg0cXN1ajBXazluVi1n0gFWQVVfeXFMUDJmYkZ3bEtzNkNKNGNkeUNSaExzbUQ4eDMzOEprWlRLLWdVbDQzMXNRTGdFdFpnRFBXMkQtODlzMHlDUmFPT1YyWDRxc3VqMFdrOW5WLWc?oc=5"
+          },
+          {
+            "title": "Unilever, Gruns Sued Over Gummies Marketed As 'Sugar-Free' - Law360",
+            "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOeUlwbzR5bF8tM1VESDV2cFhSRWVEYTBqSTdkUFkwem5ZUDQzQnY4cEVhUmVtenotUTJSZ1o4SkptNmMwa0tXTHdOVnZFNjBmVzdUTWtNSHJxMnhTa2pCUUI0UEpuVEw2QVRoRW43SWd6R2x2MjVWVHEwYUpTZXdKYmo2VXFXeVRPeXhsZGd3VEZVa1l0VlI4b3Y2R27SAVZBVV95cUxQMmZiRndsS3M2Q0o0Y2R5Q1JoTHNtRDh4MzM4SmtaVEstZ1VsNDMxc1FMZ0V0WmdEUFcyRC04OXMweUNSYU9PVjJYNHFzdWowV2s5blYtZw?oc=5"
+          }
+        ],
+        "lastUpdated": "2026-09-24T09:55:21.086Z",
+        "source": "rss-extraction"
+      }
+    },
+    {
+      "slug": "tyson-foods",
+      "status": "merged",
+      "news_added": 4,
+      "events_added": 4,
+      "items_total": 29,
+      "events_total": 27,
+      "aggregate": {
+        "mentionCount90d": 29,
+        "avgTone": -1.72,
+        "scandalSignals": [
+          "LABOR",
+          "LEGAL",
+          "ENVIRONMENT"
+        ],
+        "topArticles": [
+          {
+            "title": "Tyson Foods (TSN) Securities Investigation Notice - Levi &amp; Korsinsky - PR Newswire",
+            "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPVHgtamhaRzVJN1diLVg2blJSdTBnTWhESFQ0SWgtTWhyQXB2TTFFZ3czR196Z3R1TllnOFhWRVdQMk05NlJ3LVk1a3R3S3N2Y3pwcm5EM3VuaVlreDRJT3J2dUIybElSU0NqcXJZbnd6aExmVFJLSzNMT1R5MWVGZEpBTV94dEpNWjkteTQ1enRRbHdhU0dGSmRaR2VXb2hfdUhyYk5FME9rY0NJRmJZNC1wNnFPcUdlaS03dkZn?oc=5"
+          },
+          {
+            "title": "Tyson Foods, Inc. (TSN) Investigation: Bronstein, Gewirtz &amp; Gross - The National Law Review",
+            "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOLWpUaEZGZEptT1V0ZnlacnJwSFFuSEFxcmNwZElraTRvRXJYUWdPWHZlN0xlRXprLTlkT3FzcHB3Y3YySm1xRXhMZ3RGWExYcTA1NDVHRzJ4TF9MSWJPYXZhYTluQ3V5c0lDQXZGeVJZUm8xTDltUlZWZURFQk5CeC1OU2x4RjZYX25uVmFUdUd5WjAwYVhDYmZKWDQ3SjhjM0o5QXpZQkJ2NHZyR0FGVk5Hd28yUQ?oc=5"
+          },
+          {
+            "title": "“They Got Zero Notice”: 2,500 Workers Laid Off as Tyson Foods Shutters Meatpacking Plant in Illinois - Democracy Now!",
+            "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQZXVPOVVWU1ZPdjJlMkI2MDE3Sk9rQXR5MEFhUFRDRnZWVHBYak9xWjdSZ3ZlczRyR1o5RjlodllzUXRocUtpcEpNd2lfSWN3WHFRaEZPd2NIXzlFUlF2aUZ1QnZiM2ltczJjMURXTUYxcnBNbFlPaThXN3JBNEVPbTZJanM4Ylk?oc=5"
+          }
+        ],
+        "lastUpdated": "2026-09-24T09:55:21.087Z",
+        "source": "rss-extraction"
+      }
+    },
+    {
+      "slug": "campbells",
+      "status": "merged",
+      "news_added": 1,
+      "events_added": 1,
+      "items_total": 5,
+      "events_total": 5,
+      "aggregate": {
+        "mentionCount90d": 3,
+        "avgTone": -1.5,
+        "scandalSignals": [
+          "LABOR",
+          "LEGAL"
+        ],
+        "topArticles": [
+          {
+            "title": "Campbell’s layoffs hit Charlotte Lance cracker workers amid $500M in cost cuts - Charlotte Observer",
+            "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE94bTJuSW9QSFFZbnJuNy0yenU4LVZERDZsY3IyUzFyLVQ1Q3ZTLUJ3THY3Yi14a2FtT3Z1aXZwQk1zZlRZNDZWLUxVaFBwNUl4dDd1dWlEalJXa09uMlo4R0FIRloxUkVfLWh4TjQxWlhzaTdUbDZVadIBeEFVX3lxTE9RdV9Xb1NfUnBEVXpmYUdoUkxjZVpFdHlLcWVxLU9QdnlmUWN3REREdklEbTl2QW9jZmF6VHZ3ZnJnZjJnOFZVc05MNU1YaG1VQzVBbU4wOTVlOFZJWHRWeURlamlBSFlrQ0luRjNMbzdON2lkTDJHVw?oc=5"
+          },
+          {
+            "title": "Campbell's faces kettle of trouble over missing avocado oil - Courthouse News",
+            "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNUVBCRUc0WmwyVHp0eEFBd1paWTE0VEJIMXZ3Ui1vN2JmbzdkZ3lsSG1mMWtBTF9CbHBKSHlVOGlxbFpWbXdVWGwwS1JuWnFkSDZGYVZTN3ZMdjI3RjlkN0hWMUdZTnAtVGVKdTlEeTZKcVozYkRGdEJSWk9Dck51Zjg1T2xNVjdPOWRHVVBCdw?oc=5"
+          },
+          {
+            "title": "Campbell's faces kettle of trouble over missing avocado oil - courthousenews.com",
+            "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOVW9qS0htTmE4MV9xQV9vY2ZQSk1uMHZyMzVuaGtkM041OWpoSEFrTzZXbVozWkF0cndCSkFEUkphRWYxZDBZWC1MU1ZGMGRiOGZxVWExYmNmclVMVzJJS0FSWlZmSlIyVDczUWxjbHFhZm1HMVBuYnl2Uy0xQnVYc2lfRTg3cnRvcVpZU2J4amtQNE9p?oc=5"
+          }
+        ],
+        "lastUpdated": "2026-09-24T09:55:21.088Z",
         "source": "rss-extraction"
       }
     }
