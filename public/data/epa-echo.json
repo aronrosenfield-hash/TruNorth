@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-20T12:40:39.865Z",
+  "generated_at": "2026-09-27T13:21:03.067Z",
   "brand_count": 528,
   "with_facilities_count": 7,
-  "no_facilities_count": 521,
-  "error_count": 0,
+  "no_facilities_count": 508,
+  "error_count": 13,
   "facilities": [
     {
       "slug": "coca-cola",
@@ -183,8 +183,8 @@
       "slug": "mars",
       "name": "Mars",
       "status": "ok",
-      "query_id": "155",
-      "total_facilities": 2010,
+      "query_id": "265",
+      "total_facilities": 2008,
       "sampled_facilities": 0,
       "total_inspections": 0,
       "total_violations": 0,
@@ -192,7 +192,7 @@
       "top_violation_types": [],
       "total_penalties_usd": 24480971,
       "top_facilities": [],
-      "scraped_at": "2026-09-20T12:30:41.694Z"
+      "scraped_at": "2026-09-27T13:09:18.600Z"
     },
     {
       "slug": "mms",
@@ -414,8 +414,8 @@
       "slug": "cascade",
       "name": "Cascade",
       "status": "ok",
-      "query_id": "337",
-      "total_facilities": 418,
+      "query_id": "423",
+      "total_facilities": 417,
       "sampled_facilities": 0,
       "total_inspections": 0,
       "total_violations": 0,
@@ -423,7 +423,7 @@
       "top_violation_types": [],
       "total_penalties_usd": 5740709,
       "top_facilities": [],
-      "scraped_at": "2026-09-20T12:31:25.892Z"
+      "scraped_at": "2026-09-27T13:10:03.686Z"
     },
     {
       "slug": "clorox",
@@ -615,7 +615,7 @@
       "slug": "marlboro",
       "name": "Marlboro",
       "status": "ok",
-      "query_id": "478",
+      "query_id": "591",
       "total_facilities": 78,
       "sampled_facilities": 0,
       "total_inspections": 0,
@@ -624,7 +624,7 @@
       "top_violation_types": [],
       "total_penalties_usd": 36517,
       "top_facilities": [],
-      "scraped_at": "2026-09-20T12:32:03.912Z"
+      "scraped_at": "2026-09-27T13:10:42.793Z"
     },
     {
       "slug": "camel",
@@ -1014,8 +1014,8 @@
       "slug": "burlington",
       "name": "Burlington",
       "status": "ok",
-      "query_id": "796",
-      "total_facilities": 2107,
+      "query_id": "890",
+      "total_facilities": 2105,
       "sampled_facilities": 0,
       "total_inspections": 0,
       "total_violations": 0,
@@ -1023,7 +1023,7 @@
       "top_violation_types": [],
       "total_penalties_usd": 1570650,
       "top_facilities": [],
-      "scraped_at": "2026-09-20T12:33:22.795Z"
+      "scraped_at": "2026-09-27T13:12:05.377Z"
     },
     {
       "slug": "homegoods",
@@ -2445,8 +2445,8 @@
       "slug": "ford",
       "name": "Ford",
       "status": "ok",
-      "query_id": "84",
-      "total_facilities": 372,
+      "query_id": "119",
+      "total_facilities": 373,
       "sampled_facilities": 0,
       "total_inspections": 0,
       "total_violations": 0,
@@ -2454,7 +2454,7 @@
       "top_violation_types": [],
       "total_penalties_usd": 5300000,
       "top_facilities": [],
-      "scraped_at": "2026-09-20T12:38:06.227Z"
+      "scraped_at": "2026-09-27T13:16:59.403Z"
     },
     {
       "slug": "gm",
@@ -2478,8 +2478,8 @@
       "slug": "dodge",
       "name": "Dodge",
       "status": "ok",
-      "query_id": "113",
-      "total_facilities": 855,
+      "query_id": "156",
+      "total_facilities": 854,
       "sampled_facilities": 0,
       "total_inspections": 0,
       "total_violations": 0,
@@ -2487,7 +2487,7 @@
       "top_violation_types": [],
       "total_penalties_usd": 133258,
       "top_facilities": [],
-      "scraped_at": "2026-09-20T12:38:11.680Z"
+      "scraped_at": "2026-09-27T13:17:05.349Z"
     },
     {
       "slug": "jeep",
@@ -2499,8 +2499,8 @@
       "slug": "ram",
       "name": "Ram",
       "status": "ok",
-      "query_id": "131",
-      "total_facilities": 3562,
+      "query_id": "171",
+      "total_facilities": 3564,
       "sampled_facilities": 0,
       "total_inspections": 0,
       "total_violations": 0,
@@ -2508,7 +2508,7 @@
       "top_violation_types": [],
       "total_penalties_usd": 5942396,
       "top_facilities": [],
-      "scraped_at": "2026-09-20T12:38:15.304Z"
+      "scraped_at": "2026-09-27T13:17:08.218Z"
     },
     {
       "slug": "stellantis",
@@ -3161,80 +3161,80 @@
     {
       "slug": "john-deere",
       "name": "John Deere",
-      "status": "no_facilities",
-      "total_facilities": 0
+      "status": "error",
+      "error": "HTTP 500"
     },
     {
       "slug": "lego",
       "name": "LEGO",
-      "status": "no_facilities",
-      "total_facilities": 0
+      "status": "error",
+      "error": "HTTP 500"
     },
     {
       "slug": "hasbro",
       "name": "Hasbro",
-      "status": "no_facilities",
-      "total_facilities": 0
+      "status": "error",
+      "error": "HTTP 500"
     },
     {
       "slug": "mattel",
       "name": "Mattel",
-      "status": "no_facilities",
-      "total_facilities": 0
+      "status": "error",
+      "error": "HTTP 500"
     },
     {
       "slug": "fisher-price",
       "name": "Fisher-Price",
-      "status": "no_facilities",
-      "total_facilities": 0
+      "status": "error",
+      "error": "HTTP 500"
     },
     {
       "slug": "nintendo",
       "name": "Nintendo",
-      "status": "no_facilities",
-      "total_facilities": 0
+      "status": "error",
+      "error": "HTTP 500"
     },
     {
       "slug": "playstation",
       "name": "PlayStation",
-      "status": "no_facilities",
-      "total_facilities": 0
+      "status": "error",
+      "error": "HTTP 500"
     },
     {
       "slug": "xbox",
       "name": "Xbox",
-      "status": "no_facilities",
-      "total_facilities": 0
+      "status": "error",
+      "error": "HTTP 500"
     },
     {
       "slug": "ea",
       "name": "Electronic Arts",
-      "status": "no_facilities",
-      "total_facilities": 0
+      "status": "error",
+      "error": "HTTP 500"
     },
     {
       "slug": "activision",
       "name": "Activision Blizzard",
-      "status": "no_facilities",
-      "total_facilities": 0
+      "status": "error",
+      "error": "HTTP 500"
     },
     {
       "slug": "take-two",
       "name": "Take-Two Interactive",
-      "status": "no_facilities",
-      "total_facilities": 0
+      "status": "error",
+      "error": "HTTP 500"
     },
     {
       "slug": "ubisoft",
       "name": "Ubisoft",
-      "status": "no_facilities",
-      "total_facilities": 0
+      "status": "error",
+      "error": "HTTP 500"
     },
     {
       "slug": "square-enix",
       "name": "Square Enix",
-      "status": "no_facilities",
-      "total_facilities": 0
+      "status": "error",
+      "error": "HTTP 500"
     }
   ]
 }
