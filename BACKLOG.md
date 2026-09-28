@@ -6,7 +6,32 @@
 >
 > **🟢 LAUNCHED — Jun 23, 2026 · 2:01 AM CDT** (App Store · id `6775301458` · `https://apps.apple.com/app/id6775301458` · PH launched). **CURRENT LIVE BUILD = v1.1 Build 81** (approved 2026-07-08, released Manual **2026-07-14**) — it superseded v1.0 Build 75, which was live Jun 23 → Jul 14. **Next iOS ship = Build 82.** *(The 2026-06-11 "date is soft, get it right" call held through the Compass redesign; the experience shipped on the locked date. Go-live runbook: `docs/LAUNCH_DAY.md`.)*
 >
-> **Last updated:** 2026-09-27 03:10 CDT (daily doc-sync covering **Saturday 2026-09-26, 01:20 CDT → 03:00 CDT 09-27**, starting exactly where the last sync stopped. In it: **2 bot commits, 4 scheduled runs, all 4 `success`** (`news-rss-nightly` `36233069580`, `cron-health-daily` `36258010986`, `ofac-sdn-daily` `36268324968`, `trending-refresh` `36282493782`). **No human sessions and no code, script or workflow changes** (the last code commit is still `a1efa81ad`, 2026-08-26). **13 company files touched, ZERO grade fields moved** (compared key-by-key on `overall`/`grade`/`csc`/`sc`/`excl`/`flags`/`realCats`). Only the news keys changed: `dataLastUpdated`, `news` and `news_items` (13 files each) and `recent_events` (10). **No Sunday weekly cron had fired yet at sync time.**)
+> **Last updated:** 2026-09-28 (daily doc-sync covering **Sunday 2026-09-27, 03:10 CDT 09-27 → ~01:00 CDT 09-28**, starting where the last sync stopped. In it: **7 bot commits, 15 scheduled runs — 14 `success`, 1 `failure`** (`bis-entity-list-weekly`, B-122 expired cert, expected). **No human sessions and no code, script or workflow changes** (last code commit still `a1efa81ad`, 2026-08-26). **343 company files touched, ZERO grade fields moved** (compared key-by-key `3879c1861`→`88d4218dd` on `overall`/`grade`/`csc`/`sc`/`excl`/`flags`/`realCats`). Keys that changed: `dataLastUpdated` 341, `litigation_courtlistener` 312, `doj` 154, `enriched` 62, `epaEcho` 6. Rebake `81c78daa4`: *"0 change(s) this week — 0 grade, 0 recall, 0 newly graded,"* baseline check OK on 2622/2622.)
+>
+> 🔴🗓️ **B-124 FIRED AGAIN — NINTH SUNDAY IN A ROW, AND THE SAME THREE CRONS AS 09-20.** All three runs are **green** and **none of their commits exist on `origin/main`**. Each log: `CONFLICT (content)` → `Push attempt 1/2/3 failed` → `Pulling is not possible because you have unmerged files` → exit 0.
+> - 📰 **`news-rss-nightly` `36311817024` — the 09-27 news digest is GONE** (local commit `4e68130`, 17 files / 20,364 insertions). Extraction had run 12 of 20 batches before the budget stop (`high_signal` 1,398), so the AI spend was paid and discarded. **`data(news)` now has holes on 09-20 AND 09-27.** Conflicts on 10 files (`clorox-co`, `coca-cola`, `conagra-brands`, `general-mills`, `heineken-usa`, `hershey`, `johnson-and-johnson`, `pepsi`, `red-bull`, `unilever`).
+> - 🛒 **`cpsc-weekly` `36311762838`** — commit `eb1dd40` (188 files) discarded, **145 files in conflict.**
+> - 🚗 **`nhtsa-weekly` `36345399554`** — commit `904b870` (21 files) discarded, conflicts on `chrysler`, `jeep` (same two as 09-20).
+> - 🔑 **Colliders verified by file overlap:** `courtlistener-weekly` (`11a8bb2fc`, 10:13Z, 312 company files) landed ~20 min before the `cpsc` (10:34Z) and `news` (10:35Z) pushes and includes 9 of their conflicted files; `score-rebake-weekly` (`81c78daa4`, 19:48Z) wrote `chrysler.json` and `jeep.json` an hour before `nhtsa` pushed. **Same concurrency pattern as 09-20.** Landed today: `cfpb`, `courtlistener`, `cruelty-free` (timestamps only, B-163), `doj`, `epa-echo`, `rebake`, `sec-litigation`, `ofac-sdn`.
+> - 🚨 **`grep -rn "rebase --abort" .github/workflows/` still returns 0 — day 59.** The one-line fix did not ship before this Sunday. Watchdog #155 cannot see any of this (all three are green).
+>
+> 📧🔴 **B-155 — NINTH MISSED SUNDAY, FOURTH CONSECUTIVE FALSE GREEN.** `weekly-digest` `36348853623` → `success`; log shows `RESEND_API_KEY:` **(empty)** then *"weekly_changes.json has no changes this week — skipping digest."* The early return fired before the `sent === 0` guard, exactly as documented. Nothing sent.
+>
+> 📉👥 **B-149: TRENDING FROZEN — THIRD EMPTY 7-DAY WINDOW IN A ROW.** `trending-refresh` `36362548798` ran green at `2026-09-28T00:32Z`: *"No company_view events in the lookback window — leaving trending.json alone."* File still `generatedAt` `2026-09-25T00:27:56.636Z`. **Zero web brand-card opens in the ~09-21 → 09-28 window.** 🚫 Do not forecast the thaw.
+>
+> 🔐 **B-122:** `bis-entity-list-weekly` `36383317901` failed 09-28T05:46Z — `certificate has expired`. Unchanged; still blocked on the free `api.data.gov` key.
+>
+> 📦 **B-157 `ofac-sdn-daily`** (`584f9ba59`): another daily file added; no company files touched.
+>
+> 🕳️ **Watchdog #155** rewritten **2026-09-27T17:44Z** with **20 rows — same set.** `sec-def14a-annual` still missing (B-142).
+>
+> 📊✅ **CATALOG, DAY 28, VERIFIED AT THE CDN 09-28.** `index.json`: HTTP **200**, **9,989,657 B**, md5 **`1527f2e9ec86cd9555075f0162978532`** — byte-identical **2026-08-31 → 2026-09-27**. **2,622 graded / 12,830 tracked** (A 63 · B 738 · C 1,031 · D 535 · F 255). The Sunday rebake moved nothing.
+>
+> 📌 **HELD:** **B-101** **52** open PRs, newest #179, oldest **#116 (opened 2026-06-29, now 91 days)** · **B-151 day 32**: newest `ci` run of any kind is still the 09-21 `pull_request` at `action_required`; no `push` run since **2026-08-26T21:10Z**.
+>
+> 🔴 **WHAT YOU STILL OWE (UNCHANGED, 8 ITEMS):** ① `RESEND_API_KEY` **plus** moving the B-155 guard (**nine Sundays missed; next is 10-04**) · ② install Build 81 / ship Build 82 (B-136 revenue fix still not live on iOS) · ③ B-159: keep or retire `fcc` · ④ B-137 coverage claim · ⑤ B-162: more news extraction worth the spend? · ⑥ **the one-line `git rebase --abort || true` (B-124) — it has now cost two news digests and two CPSC/NHTSA refreshes in two weeks; next exposure Sunday 10-04** · ⑦ B-158 staging bug · ⑧ fix the C-2 parser before `sec-def14a-annual` next runs.
+>
+> **— PRIOR SYNC (history) —** 2026-09-27 03:10 CDT (daily doc-sync covering **Saturday 2026-09-26, 01:20 CDT → 03:00 CDT 09-27**, starting exactly where the last sync stopped. In it: **2 bot commits, 4 scheduled runs, all 4 `success`** (`news-rss-nightly` `36233069580`, `cron-health-daily` `36258010986`, `ofac-sdn-daily` `36268324968`, `trending-refresh` `36282493782`). **No human sessions and no code, script or workflow changes** (the last code commit is still `a1efa81ad`, 2026-08-26). **13 company files touched, ZERO grade fields moved** (compared key-by-key on `overall`/`grade`/`csc`/`sc`/`excl`/`flags`/`realCats`). Only the news keys changed: `dataLastUpdated`, `news` and `news_items` (13 files each) and `recent_events` (10). **No Sunday weekly cron had fired yet at sync time.**)
 >
 > 📉👥 **B-149: TRENDING STILL FROZE — SECOND EMPTY 7-DAY WINDOW IN A ROW.** `trending-refresh` ran green at `2026-09-27T00:26Z`, logged *"No company_view events in the lookback window — leaving trending.json alone,"* and **committed nothing**. `trending.json` still reads **`generatedAt` `2026-09-25T00:27:56.636Z`** (`chef-boyardee` 1/1, stale). 🔑 **Zero web brand-card opens in the ~09-20 → 09-27 window.** Distribution problem, unchanged. 🚫 Do not forecast the thaw.
 >
@@ -3227,6 +3252,10 @@
   nights are Sundays; every Mon-Sat night for 33 days landed. Log proof in B-135.**
   ⭐⭐ **Highest-severity infrastructure item open — it invalidates "the cron is green" as evidence anywhere
   in this repo.** *(WS-B, S — a 2-line change per workflow, but it touches 117 files; no grade impact by itself)*
+  🔴 **2026-09-27 — NINTH SUNDAY; SAME THREE VICTIMS AS 09-20.** `news-rss-nightly` (`4e68130`, the
+  09-27 digest), `cpsc-weekly` (`eb1dd40`, 145 conflicts), `nhtsa-weekly` (`904b870`, `chrysler`/`jeep`) — all
+  green, none landed. Colliders: `courtlistener-weekly` `11a8bb2fc` (10:13Z) for cpsc+news; `score-rebake-weekly`
+  `81c78daa4` (19:48Z) for nhtsa. Fix still unwritten (day 59).
   🔴🔴🔴 **2026-08-30 — FIFTH CONSECUTIVE SUNDAY. THE DESTROYED COMMIT NOW HAS A SHA, AND THE COLLIDER
   MODEL IS WRONG AND MUST BE WIDENED.** `news-rss-nightly` run **`33305707816`** started
   **`2026-08-30T10:07:34Z`**, reported **`success`**, committed **nothing** — there is no `data(news)`
