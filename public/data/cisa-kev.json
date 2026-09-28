@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-09-21T09:04:35.131Z",
-  "catalog_version": "2026.09.18",
-  "catalog_released": "2026-09-18T19:00:05.0974Z",
-  "total_cve_count": 1716,
+  "generated_at": "2026-09-28T09:55:42.380Z",
+  "catalog_version": "2026.09.27",
+  "catalog_released": "2026-09-27T21:30:35.5521Z",
+  "total_cve_count": 1728,
   "vendor_count": 283,
   "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
   "vendors": [
     {
       "vendor": "Microsoft",
-      "total_cve_count": 388,
-      "recent_12mo_count": 48,
+      "total_cve_count": 389,
+      "recent_12mo_count": 49,
       "ransomware_count": 117,
       "product_breakdown": [
         {
@@ -34,7 +34,7 @@
         },
         {
           "label": "SharePoint",
-          "count": 9
+          "count": 10
         },
         {
           "label": "SharePoint Server",
@@ -54,6 +54,17 @@
         }
       ],
       "top_cves": [
+        {
+          "cveID": "CVE-2026-65660",
+          "product": "SharePoint",
+          "vulnerabilityName": "Microsoft SharePoint Code Injection Vulnerability",
+          "dateAdded": "2026-09-25",
+          "dueDate": "2026-09-28",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Microsoft SharePoint contains a code injection vulnerability which could allow an authorized attacker to execute code over a network.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65660"
+        },
         {
           "cveID": "CVE-2026-81963",
           "product": "Windows",
@@ -97,17 +108,6 @@
           "shortDescription": "Microsoft Internet Key Exchange (IKE) Service Extensions contains a double free vulnerability that could enable remote code execution.",
           "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33824"
-        },
-        {
-          "cveID": "CVE-2026-55040",
-          "product": "SharePoint",
-          "vulnerabilityName": "Microsoft SharePoint Weak Authentication Vulnerability",
-          "dateAdded": "2026-08-18",
-          "dueDate": "2026-08-21",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Microsoft SharePoint contains a weak authentication vulnerability which allows an unauthorized attacker to bypass a security feature over a network.",
-          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55040"
         }
       ],
       "highest_severity": [
@@ -136,27 +136,27 @@
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-60710"
         },
         {
+          "cveID": "CVE-2026-65660",
+          "product": "SharePoint",
+          "vulnerabilityName": "Microsoft SharePoint Code Injection Vulnerability",
+          "dateAdded": "2026-09-25",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65660"
+        },
+        {
           "cveID": "CVE-2026-81963",
           "product": "Windows",
           "vulnerabilityName": "Microsoft Windows Link Following Vulnerability",
           "dateAdded": "2026-09-08",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81963"
-        },
-        {
-          "cveID": "CVE-2026-85880",
-          "product": "Windows",
-          "vulnerabilityName": "Microsoft Windows Heap-Based Buffer Overflow Vulnerability",
-          "dateAdded": "2026-09-08",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85880"
         }
       ]
     },
     {
       "vendor": "Cisco",
       "total_cve_count": 99,
-      "recent_12mo_count": 21,
+      "recent_12mo_count": 19,
       "ransomware_count": 7,
       "product_breakdown": [
         {
@@ -421,8 +421,8 @@
     },
     {
       "vendor": "Adobe",
-      "total_cve_count": 81,
-      "recent_12mo_count": 7,
+      "total_cve_count": 82,
+      "recent_12mo_count": 8,
       "ransomware_count": 11,
       "product_breakdown": [
         {
@@ -450,6 +450,10 @@
           "count": 2
         },
         {
+          "label": "Commerce and Magento ",
+          "count": 1
+        },
+        {
           "label": "Commerce and Magento",
           "count": 1
         },
@@ -460,13 +464,20 @@
         {
           "label": "Commerce and Magento",
           "count": 1
-        },
-        {
-          "label": "Experience Manager (AEM) Forms",
-          "count": 1
         }
       ],
       "top_cves": [
+        {
+          "cveID": "CVE-2026-71362",
+          "product": "Commerce and Magento ",
+          "vulnerabilityName": "Adobe Commerce and Magento Incorrect Authorization Vulnerability ",
+          "dateAdded": "2026-09-24",
+          "dueDate": "2026-09-27",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Adobe Commerce and Magento contains an incorrect authorization vulnerability that could allow an attacker to leverage this vulnerability to gain elevated access to sensitive resources without any user interaction. ",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-71362"
+        },
         {
           "cveID": "CVE-2026-75650",
           "product": "Commerce and Magento",
@@ -510,17 +521,6 @@
           "shortDescription": "Adobe Acrobat contains a use-after-free vulnerability that allows for code execution",
           "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-9715"
-        },
-        {
-          "cveID": "CVE-2026-34621",
-          "product": "Acrobat and Reader",
-          "vulnerabilityName": "Adobe Acrobat and Reader Prototype Pollution Vulnerability",
-          "dateAdded": "2026-04-13",
-          "dueDate": "2026-04-27",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Adobe Acrobat and Reader contain a prototype pollution vulnerability that allows for arbitrary code execution.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34621"
         }
       ],
       "highest_severity": [
@@ -549,27 +549,27 @@
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-2861"
         },
         {
+          "cveID": "CVE-2026-71362",
+          "product": "Commerce and Magento ",
+          "vulnerabilityName": "Adobe Commerce and Magento Incorrect Authorization Vulnerability ",
+          "dateAdded": "2026-09-24",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-71362"
+        },
+        {
           "cveID": "CVE-2026-75650",
           "product": "Commerce and Magento",
           "vulnerabilityName": "Adobe Commerce and Magento Improper Neutralization of Special Elements Used in a Template Engine Vulnerability",
           "dateAdded": "2026-09-08",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75650"
-        },
-        {
-          "cveID": "CVE-2026-48282",
-          "product": "ColdFusion",
-          "vulnerabilityName": "Adobe ColdFusion Path Traversal Vulnerability",
-          "dateAdded": "2026-07-07",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-48282"
         }
       ]
     },
     {
       "vendor": "Google",
       "total_cve_count": 75,
-      "recent_12mo_count": 11,
+      "recent_12mo_count": 10,
       "ransomware_count": 0,
       "product_breakdown": [
         {
@@ -1377,6 +1377,153 @@
       ]
     },
     {
+      "vendor": "Citrix",
+      "total_cve_count": 26,
+      "recent_12mo_count": 5,
+      "ransomware_count": 7,
+      "product_breakdown": [
+        {
+          "label": "NetScaler",
+          "count": 5
+        },
+        {
+          "label": "NetScaler ADC and NetScaler Gateway",
+          "count": 5
+        },
+        {
+          "label": "Application Delivery Controller (ADC), Gateway, and SD-WAN WANOP Appliance",
+          "count": 4
+        },
+        {
+          "label": "Session Recording",
+          "count": 2
+        },
+        {
+          "label": "NetScaler ADC and Gateway",
+          "count": 2
+        },
+        {
+          "label": "SD-WAN and NetScaler",
+          "count": 2
+        },
+        {
+          "label": "Content Collaboration",
+          "count": 1
+        },
+        {
+          "label": "Application Delivery Controller (ADC) and Gateway",
+          "count": 1
+        },
+        {
+          "label": "ShareFile",
+          "count": 1
+        },
+        {
+          "label": "NetScaler SD-WAN Enterprise, CloudBridge Virtual WAN, and XenMobile Server",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-88772",
+          "product": "NetScaler",
+          "vulnerabilityName": "Citrix NetScaler Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
+          "dateAdded": "2026-09-27",
+          "dueDate": "2026-09-30",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Citrix NetScaler ADC and NetScaler Gateway contain an improper restriction of operations within the bounds of a memory buffer vulnerability that could allow for remote code execution or denial of service",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88772"
+        },
+        {
+          "cveID": "CVE-2026-88771",
+          "product": "NetScaler",
+          "vulnerabilityName": "Citrix NetScaler Improper Input Validation Vulnerability",
+          "dateAdded": "2026-09-27",
+          "dueDate": "2026-09-30",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Citrix NetScaler ADC and NetScaler Gateway contain an improper input validation vulnerability that could allow an unauthenticated attacker to execute arbitrary commands.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88771"
+        },
+        {
+          "cveID": "CVE-2026-19490",
+          "product": "NetScaler",
+          "vulnerabilityName": "Citrix NetScaler Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+          "dateAdded": "2026-09-09",
+          "dueDate": "2026-09-12",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Citrix NetScaler ADC and NetScaler Gateway contain an authentication-bypass vulnerability involving an alternate path or channel. When the NetScaler appliance is configured as an AAA virtual server or as a Gateway (SSL VPN, ICA Proxy, CVPN, or RDP Proxy), an unauthenticated remote threat actor may be able to bypass authentication.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19490"
+        },
+        {
+          "cveID": "CVE-2026-8452",
+          "product": "NetScaler ADC and NetScaler Gateway",
+          "vulnerabilityName": "Citrix NetScaler ADC and NetScaler Gateway Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
+          "dateAdded": "2026-08-26",
+          "dueDate": "2026-08-29",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Citrix NetScaler ADC and NetScaler Gateway contain an improper restriction of operations within the bounds of a memory buffer vulnerability which could lead to denial of service. ",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8452"
+        },
+        {
+          "cveID": "CVE-2026-3055",
+          "product": "NetScaler",
+          "vulnerabilityName": "Citrix NetScaler Out-of-Bounds Read Vulnerability",
+          "dateAdded": "2026-03-30",
+          "dueDate": "2026-04-02",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Citrix NetScaler ADC (formerly Citrix ADC), NetScaler Gateway (formerly Citrix Gateway) and NetScaler ADC FIPS and NDcPP contain an out-of-bounds reads vulnerability when configured as a SAML IDP leading to memory overread.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-3055"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2025-5777",
+          "product": "NetScaler ADC and Gateway",
+          "vulnerabilityName": "Citrix NetScaler ADC and Gateway Out-of-Bounds Read Vulnerability",
+          "dateAdded": "2025-07-10",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-5777"
+        },
+        {
+          "cveID": "CVE-2023-4966",
+          "product": "NetScaler ADC and NetScaler Gateway",
+          "vulnerabilityName": "Citrix NetScaler ADC and NetScaler Gateway Buffer Overflow Vulnerability",
+          "dateAdded": "2023-10-18",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-4966"
+        },
+        {
+          "cveID": "CVE-2023-3519",
+          "product": "NetScaler ADC and NetScaler Gateway",
+          "vulnerabilityName": "Citrix NetScaler ADC and NetScaler Gateway Code Injection Vulnerability",
+          "dateAdded": "2023-07-19",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-3519"
+        },
+        {
+          "cveID": "CVE-2026-88772",
+          "product": "NetScaler",
+          "vulnerabilityName": "Citrix NetScaler Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
+          "dateAdded": "2026-09-27",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88772"
+        },
+        {
+          "cveID": "CVE-2026-88771",
+          "product": "NetScaler",
+          "vulnerabilityName": "Citrix NetScaler Improper Input Validation Vulnerability",
+          "dateAdded": "2026-09-27",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-88771"
+        }
+      ]
+    },
+    {
       "vendor": "D-Link",
       "total_cve_count": 26,
       "recent_12mo_count": 2,
@@ -1659,153 +1806,6 @@
           "dateAdded": "2025-03-04",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-22224"
-        }
-      ]
-    },
-    {
-      "vendor": "Citrix",
-      "total_cve_count": 24,
-      "recent_12mo_count": 3,
-      "ransomware_count": 7,
-      "product_breakdown": [
-        {
-          "label": "NetScaler ADC and NetScaler Gateway",
-          "count": 5
-        },
-        {
-          "label": "Application Delivery Controller (ADC), Gateway, and SD-WAN WANOP Appliance",
-          "count": 4
-        },
-        {
-          "label": "NetScaler",
-          "count": 3
-        },
-        {
-          "label": "Session Recording",
-          "count": 2
-        },
-        {
-          "label": "NetScaler ADC and Gateway",
-          "count": 2
-        },
-        {
-          "label": "SD-WAN and NetScaler",
-          "count": 2
-        },
-        {
-          "label": "Content Collaboration",
-          "count": 1
-        },
-        {
-          "label": "Application Delivery Controller (ADC) and Gateway",
-          "count": 1
-        },
-        {
-          "label": "ShareFile",
-          "count": 1
-        },
-        {
-          "label": "NetScaler SD-WAN Enterprise, CloudBridge Virtual WAN, and XenMobile Server",
-          "count": 1
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2026-19490",
-          "product": "NetScaler",
-          "vulnerabilityName": "Citrix NetScaler Authentication Bypass Using an Alternate Path or Channel Vulnerability",
-          "dateAdded": "2026-09-09",
-          "dueDate": "2026-09-12",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Citrix NetScaler ADC and NetScaler Gateway contain an authentication-bypass vulnerability involving an alternate path or channel. When the NetScaler appliance is configured as an AAA virtual server or as a Gateway (SSL VPN, ICA Proxy, CVPN, or RDP Proxy), an unauthenticated remote threat actor may be able to bypass authentication.",
-          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19490"
-        },
-        {
-          "cveID": "CVE-2026-8452",
-          "product": "NetScaler ADC and NetScaler Gateway",
-          "vulnerabilityName": "Citrix NetScaler ADC and NetScaler Gateway Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
-          "dateAdded": "2026-08-26",
-          "dueDate": "2026-08-29",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Citrix NetScaler ADC and NetScaler Gateway contain an improper restriction of operations within the bounds of a memory buffer vulnerability which could lead to denial of service. ",
-          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8452"
-        },
-        {
-          "cveID": "CVE-2026-3055",
-          "product": "NetScaler",
-          "vulnerabilityName": "Citrix NetScaler Out-of-Bounds Read Vulnerability",
-          "dateAdded": "2026-03-30",
-          "dueDate": "2026-04-02",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Citrix NetScaler ADC (formerly Citrix ADC), NetScaler Gateway (formerly Citrix Gateway) and NetScaler ADC FIPS and NDcPP contain an out-of-bounds reads vulnerability when configured as a SAML IDP leading to memory overread.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-3055"
-        },
-        {
-          "cveID": "CVE-2025-7775",
-          "product": "NetScaler",
-          "vulnerabilityName": "Citrix NetScaler Memory Overflow Vulnerability",
-          "dateAdded": "2025-08-26",
-          "dueDate": "2025-08-28",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Citrix NetScaler ADC and NetScaler Gateway contain a memory overflow vulnerability that could allow for remote code execution and/or denial of service.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-7775"
-        },
-        {
-          "cveID": "CVE-2024-8068",
-          "product": "Session Recording",
-          "vulnerabilityName": "Citrix Session Recording Improper Privilege Management Vulnerability",
-          "dateAdded": "2025-08-25",
-          "dueDate": "2025-09-15",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Citrix Session Recording contains an improper privilege management vulnerability that could allow for privilege escalation to NetworkService Account access. An attacker must be an authenticated user in the same Windows Active Directory domain as the session recording server domain.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-8068"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2025-5777",
-          "product": "NetScaler ADC and Gateway",
-          "vulnerabilityName": "Citrix NetScaler ADC and Gateway Out-of-Bounds Read Vulnerability",
-          "dateAdded": "2025-07-10",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-5777"
-        },
-        {
-          "cveID": "CVE-2023-4966",
-          "product": "NetScaler ADC and NetScaler Gateway",
-          "vulnerabilityName": "Citrix NetScaler ADC and NetScaler Gateway Buffer Overflow Vulnerability",
-          "dateAdded": "2023-10-18",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-4966"
-        },
-        {
-          "cveID": "CVE-2023-3519",
-          "product": "NetScaler ADC and NetScaler Gateway",
-          "vulnerabilityName": "Citrix NetScaler ADC and NetScaler Gateway Code Injection Vulnerability",
-          "dateAdded": "2023-07-19",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-3519"
-        },
-        {
-          "cveID": "CVE-2026-19490",
-          "product": "NetScaler",
-          "vulnerabilityName": "Citrix NetScaler Authentication Bypass Using an Alternate Path or Channel Vulnerability",
-          "dateAdded": "2026-09-09",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19490"
-        },
-        {
-          "cveID": "CVE-2026-8452",
-          "product": "NetScaler ADC and NetScaler Gateway",
-          "vulnerabilityName": "Citrix NetScaler ADC and NetScaler Gateway Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
-          "dateAdded": "2026-08-26",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-8452"
         }
       ]
     },
@@ -2516,6 +2516,133 @@
       ]
     },
     {
+      "vendor": "Zyxel",
+      "total_cve_count": 13,
+      "recent_12mo_count": 1,
+      "ransomware_count": 2,
+      "product_breakdown": [
+        {
+          "label": "Multiple Firewalls",
+          "count": 5
+        },
+        {
+          "label": "DSL CPE Devices",
+          "count": 2
+        },
+        {
+          "label": "Multiple Network-Attached Storage (NAS) Devices",
+          "count": 2
+        },
+        {
+          "label": "GS1900 Series Switches",
+          "count": 1
+        },
+        {
+          "label": "EMG2926 Routers",
+          "count": 1
+        },
+        {
+          "label": "P660HN-T1A Routers",
+          "count": 1
+        },
+        {
+          "label": "Multiple Products",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-7273",
+          "product": "GS1900 Series Switches",
+          "vulnerabilityName": "Zyxel GS1900 Series Switches Stack-Based Buffer Overflow Vulnerability",
+          "dateAdded": "2026-09-21",
+          "dueDate": "2026-09-24",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Zyxel GS1900 series switches contain a stack-based buffer overflow vulnerability in the CGI program which could allow a LAN-based, unauthenticated attacker to exploit the flaw and potentially execute OS commands via a crafted HTTP request.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7273"
+        },
+        {
+          "cveID": "CVE-2024-40891",
+          "product": "DSL CPE Devices",
+          "vulnerabilityName": "Zyxel DSL CPE OS Command Injection Vulnerability",
+          "dateAdded": "2025-02-11",
+          "dueDate": "2025-03-04",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Multiple Zyxel DSL CPE devices contain a post-authentication command injection vulnerability in the management commands that could allow an authenticated attacker to execute OS commands via Telnet.",
+          "requiredAction": "The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization if a current mitigation is unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-40891"
+        },
+        {
+          "cveID": "CVE-2024-40890",
+          "product": "DSL CPE Devices",
+          "vulnerabilityName": "Zyxel DSL CPE OS Command Injection Vulnerability",
+          "dateAdded": "2025-02-11",
+          "dueDate": "2025-03-04",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Multiple Zyxel DSL CPE devices contain a post-authentication command injection vulnerability in the CGI program that could allow an authenticated attacker to execute OS commands via a crafted HTTP request.",
+          "requiredAction": "The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization if a current mitigation is unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-40890"
+        },
+        {
+          "cveID": "CVE-2024-11667",
+          "product": "Multiple Firewalls",
+          "vulnerabilityName": "Zyxel Multiple Firewalls Path Traversal Vulnerability",
+          "dateAdded": "2024-12-03",
+          "dueDate": "2024-12-24",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "Multiple Zyxel firewalls contain a path traversal vulnerability in the web management interface that could allow an attacker to download or upload files via a crafted URL.",
+          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-11667"
+        },
+        {
+          "cveID": "CVE-2017-6884",
+          "product": "EMG2926 Routers",
+          "vulnerabilityName": "Zyxel EMG2926 Routers Command Injection Vulnerability",
+          "dateAdded": "2023-09-18",
+          "dueDate": "2023-10-09",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "Zyxel EMG2926 routers contain a command injection vulnerability located in the diagnostic tools, specifically the nslookup function. A malicious user may exploit numerous vectors to execute malicious commands on the router, such as the ping_ip parameter to the expert/maintenance/diagnostic/nslookup URI.",
+          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-6884"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2024-11667",
+          "product": "Multiple Firewalls",
+          "vulnerabilityName": "Zyxel Multiple Firewalls Path Traversal Vulnerability",
+          "dateAdded": "2024-12-03",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-11667"
+        },
+        {
+          "cveID": "CVE-2017-6884",
+          "product": "EMG2926 Routers",
+          "vulnerabilityName": "Zyxel EMG2926 Routers Command Injection Vulnerability",
+          "dateAdded": "2023-09-18",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-6884"
+        },
+        {
+          "cveID": "CVE-2026-7273",
+          "product": "GS1900 Series Switches",
+          "vulnerabilityName": "Zyxel GS1900 Series Switches Stack-Based Buffer Overflow Vulnerability",
+          "dateAdded": "2026-09-21",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7273"
+        },
+        {
+          "cveID": "CVE-2024-40891",
+          "product": "DSL CPE Devices",
+          "vulnerabilityName": "Zyxel DSL CPE OS Command Injection Vulnerability",
+          "dateAdded": "2025-02-11",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-40891"
+        }
+      ]
+    },
+    {
       "vendor": "Mozilla",
       "total_cve_count": 13,
       "recent_12mo_count": 1,
@@ -2976,129 +3103,6 @@
           "dateAdded": "2025-06-03",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-21479"
-        }
-      ]
-    },
-    {
-      "vendor": "Zyxel",
-      "total_cve_count": 12,
-      "recent_12mo_count": 0,
-      "ransomware_count": 2,
-      "product_breakdown": [
-        {
-          "label": "Multiple Firewalls",
-          "count": 5
-        },
-        {
-          "label": "DSL CPE Devices",
-          "count": 2
-        },
-        {
-          "label": "Multiple Network-Attached Storage (NAS) Devices",
-          "count": 2
-        },
-        {
-          "label": "EMG2926 Routers",
-          "count": 1
-        },
-        {
-          "label": "P660HN-T1A Routers",
-          "count": 1
-        },
-        {
-          "label": "Multiple Products",
-          "count": 1
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2024-40891",
-          "product": "DSL CPE Devices",
-          "vulnerabilityName": "Zyxel DSL CPE OS Command Injection Vulnerability",
-          "dateAdded": "2025-02-11",
-          "dueDate": "2025-03-04",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Multiple Zyxel DSL CPE devices contain a post-authentication command injection vulnerability in the management commands that could allow an authenticated attacker to execute OS commands via Telnet.",
-          "requiredAction": "The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization if a current mitigation is unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-40891"
-        },
-        {
-          "cveID": "CVE-2024-40890",
-          "product": "DSL CPE Devices",
-          "vulnerabilityName": "Zyxel DSL CPE OS Command Injection Vulnerability",
-          "dateAdded": "2025-02-11",
-          "dueDate": "2025-03-04",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Multiple Zyxel DSL CPE devices contain a post-authentication command injection vulnerability in the CGI program that could allow an authenticated attacker to execute OS commands via a crafted HTTP request.",
-          "requiredAction": "The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization if a current mitigation is unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-40890"
-        },
-        {
-          "cveID": "CVE-2024-11667",
-          "product": "Multiple Firewalls",
-          "vulnerabilityName": "Zyxel Multiple Firewalls Path Traversal Vulnerability",
-          "dateAdded": "2024-12-03",
-          "dueDate": "2024-12-24",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "Multiple Zyxel firewalls contain a path traversal vulnerability in the web management interface that could allow an attacker to download or upload files via a crafted URL.",
-          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-11667"
-        },
-        {
-          "cveID": "CVE-2017-6884",
-          "product": "EMG2926 Routers",
-          "vulnerabilityName": "Zyxel EMG2926 Routers Command Injection Vulnerability",
-          "dateAdded": "2023-09-18",
-          "dueDate": "2023-10-09",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "Zyxel EMG2926 routers contain a command injection vulnerability located in the diagnostic tools, specifically the nslookup function. A malicious user may exploit numerous vectors to execute malicious commands on the router, such as the ping_ip parameter to the expert/maintenance/diagnostic/nslookup URI.",
-          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-6884"
-        },
-        {
-          "cveID": "CVE-2017-18368",
-          "product": "P660HN-T1A Routers",
-          "vulnerabilityName": "Zyxel P660HN-T1A Routers Command Injection Vulnerability",
-          "dateAdded": "2023-08-07",
-          "dueDate": "2023-08-28",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Zyxel P660HN-T1A routers contain a command injection vulnerability in the Remote System Log forwarding function, which is accessible by an unauthenticated user and exploited via the remote_host parameter of the ViewLog.asp page.",
-          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-18368"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2024-11667",
-          "product": "Multiple Firewalls",
-          "vulnerabilityName": "Zyxel Multiple Firewalls Path Traversal Vulnerability",
-          "dateAdded": "2024-12-03",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-11667"
-        },
-        {
-          "cveID": "CVE-2017-6884",
-          "product": "EMG2926 Routers",
-          "vulnerabilityName": "Zyxel EMG2926 Routers Command Injection Vulnerability",
-          "dateAdded": "2023-09-18",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-6884"
-        },
-        {
-          "cveID": "CVE-2024-40891",
-          "product": "DSL CPE Devices",
-          "vulnerabilityName": "Zyxel DSL CPE OS Command Injection Vulnerability",
-          "dateAdded": "2025-02-11",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-40891"
-        },
-        {
-          "cveID": "CVE-2024-40890",
-          "product": "DSL CPE Devices",
-          "vulnerabilityName": "Zyxel DSL CPE OS Command Injection Vulnerability",
-          "dateAdded": "2025-02-11",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-40890"
         }
       ]
     },
@@ -3920,6 +3924,133 @@
       ]
     },
     {
+      "vendor": "F5",
+      "total_cve_count": 8,
+      "recent_12mo_count": 2,
+      "ransomware_count": 4,
+      "product_breakdown": [
+        {
+          "label": "BIG-IP",
+          "count": 3
+        },
+        {
+          "label": "BIG-IP Configuration Utility",
+          "count": 2
+        },
+        {
+          "label": "BIG-IP APM",
+          "count": 1
+        },
+        {
+          "label": "BIG-IP Traffic Management Microkernel",
+          "count": 1
+        },
+        {
+          "label": "BIG-IP and BIG-IQ Centralized Management",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-94127",
+          "product": "BIG-IP APM",
+          "vulnerabilityName": "F5 BIG-IP APM Heap-based Buffer Overflow Vulnerability",
+          "dateAdded": "2026-09-22",
+          "dueDate": "2026-09-25",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "F5 BIG-IP APM contains a heap-based buffer overflow vulnerability when access policy and an OAuth profile are configured on a virtual server. This vulnerability could allow an unauthenticated attacker to perform remote code execution.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-94127"
+        },
+        {
+          "cveID": "CVE-2025-53521",
+          "product": "BIG-IP",
+          "vulnerabilityName": "F5 BIG-IP Stack-Based Buffer Overflow Vulnerability",
+          "dateAdded": "2026-03-27",
+          "dueDate": "2026-03-30",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "F5 BIG-IP APM contains a stack-based buffer overflow vulnerability that could allow a threat actor to achieve remote code execution.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-53521"
+        },
+        {
+          "cveID": "CVE-2023-46748",
+          "product": "BIG-IP Configuration Utility",
+          "vulnerabilityName": "F5 BIG-IP Configuration Utility SQL Injection Vulnerability",
+          "dateAdded": "2023-10-31",
+          "dueDate": "2023-11-21",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "F5 BIG-IP Configuration utility contains an SQL injection vulnerability that may allow an authenticated attacker with network access through the BIG-IP management port and/or self IP addresses to execute system commands. This vulnerability can be used in conjunction with CVE-2023-46747.",
+          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-46748"
+        },
+        {
+          "cveID": "CVE-2023-46747",
+          "product": "BIG-IP Configuration Utility",
+          "vulnerabilityName": "F5 BIG-IP Configuration Utility Authentication Bypass Vulnerability",
+          "dateAdded": "2023-10-31",
+          "dueDate": "2023-11-21",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "F5 BIG-IP Configuration utility contains an authentication bypass using an alternate path or channel vulnerability due to undisclosed requests that may allow an unauthenticated attacker with network access to the BIG-IP system through the management port and/or self IP addresses to execute system commands. This vulnerability can be used in conjunction with CVE-2023-46748.",
+          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-46747"
+        },
+        {
+          "cveID": "CVE-2022-1388",
+          "product": "BIG-IP",
+          "vulnerabilityName": "F5 BIG-IP Missing Authentication Vulnerability",
+          "dateAdded": "2022-05-10",
+          "dueDate": "2022-05-31",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "F5 BIG-IP contains a missing authentication in critical function vulnerability which can allow for remote code execution, creation or deletion of files, or disabling services.",
+          "requiredAction": "Apply updates per vendor instructions.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-1388"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2023-46747",
+          "product": "BIG-IP Configuration Utility",
+          "vulnerabilityName": "F5 BIG-IP Configuration Utility Authentication Bypass Vulnerability",
+          "dateAdded": "2023-10-31",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-46747"
+        },
+        {
+          "cveID": "CVE-2022-1388",
+          "product": "BIG-IP",
+          "vulnerabilityName": "F5 BIG-IP Missing Authentication Vulnerability",
+          "dateAdded": "2022-05-10",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-1388"
+        },
+        {
+          "cveID": "CVE-2020-5902",
+          "product": "BIG-IP",
+          "vulnerabilityName": "F5 BIG-IP Traffic Management User Interface (TMUI) Remote Code Execution Vulnerability",
+          "dateAdded": "2021-11-03",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-5902"
+        },
+        {
+          "cveID": "CVE-2026-94127",
+          "product": "BIG-IP APM",
+          "vulnerabilityName": "F5 BIG-IP APM Heap-based Buffer Overflow Vulnerability",
+          "dateAdded": "2026-09-22",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-94127"
+        },
+        {
+          "cveID": "CVE-2025-53521",
+          "product": "BIG-IP",
+          "vulnerabilityName": "F5 BIG-IP Stack-Based Buffer Overflow Vulnerability",
+          "dateAdded": "2026-03-27",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-53521"
+        }
+      ]
+    },
+    {
       "vendor": "IBM",
       "total_cve_count": 8,
       "recent_12mo_count": 1,
@@ -4245,129 +4376,6 @@
       ]
     },
     {
-      "vendor": "F5",
-      "total_cve_count": 7,
-      "recent_12mo_count": 1,
-      "ransomware_count": 4,
-      "product_breakdown": [
-        {
-          "label": "BIG-IP",
-          "count": 3
-        },
-        {
-          "label": "BIG-IP Configuration Utility",
-          "count": 2
-        },
-        {
-          "label": "BIG-IP Traffic Management Microkernel",
-          "count": 1
-        },
-        {
-          "label": "BIG-IP and BIG-IQ Centralized Management",
-          "count": 1
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2025-53521",
-          "product": "BIG-IP",
-          "vulnerabilityName": "F5 BIG-IP Stack-Based Buffer Overflow Vulnerability",
-          "dateAdded": "2026-03-27",
-          "dueDate": "2026-03-30",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "F5 BIG-IP APM contains a stack-based buffer overflow vulnerability that could allow a threat actor to achieve remote code execution.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-53521"
-        },
-        {
-          "cveID": "CVE-2023-46748",
-          "product": "BIG-IP Configuration Utility",
-          "vulnerabilityName": "F5 BIG-IP Configuration Utility SQL Injection Vulnerability",
-          "dateAdded": "2023-10-31",
-          "dueDate": "2023-11-21",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "F5 BIG-IP Configuration utility contains an SQL injection vulnerability that may allow an authenticated attacker with network access through the BIG-IP management port and/or self IP addresses to execute system commands. This vulnerability can be used in conjunction with CVE-2023-46747.",
-          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-46748"
-        },
-        {
-          "cveID": "CVE-2023-46747",
-          "product": "BIG-IP Configuration Utility",
-          "vulnerabilityName": "F5 BIG-IP Configuration Utility Authentication Bypass Vulnerability",
-          "dateAdded": "2023-10-31",
-          "dueDate": "2023-11-21",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "F5 BIG-IP Configuration utility contains an authentication bypass using an alternate path or channel vulnerability due to undisclosed requests that may allow an unauthenticated attacker with network access to the BIG-IP system through the management port and/or self IP addresses to execute system commands. This vulnerability can be used in conjunction with CVE-2023-46748.",
-          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-46747"
-        },
-        {
-          "cveID": "CVE-2022-1388",
-          "product": "BIG-IP",
-          "vulnerabilityName": "F5 BIG-IP Missing Authentication Vulnerability",
-          "dateAdded": "2022-05-10",
-          "dueDate": "2022-05-31",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "F5 BIG-IP contains a missing authentication in critical function vulnerability which can allow for remote code execution, creation or deletion of files, or disabling services.",
-          "requiredAction": "Apply updates per vendor instructions.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-1388"
-        },
-        {
-          "cveID": "CVE-2021-22991",
-          "product": "BIG-IP Traffic Management Microkernel",
-          "vulnerabilityName": "F5 BIG-IP Traffic Management Microkernel Buffer Overflow",
-          "dateAdded": "2022-01-18",
-          "dueDate": "2022-02-01",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "The Traffic Management Microkernel of BIG-IP ASM Risk Engine has a buffer overflow vulnerability, leading to a bypassing of URL-based access controls.",
-          "requiredAction": "Apply updates per vendor instructions.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-22991"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2023-46747",
-          "product": "BIG-IP Configuration Utility",
-          "vulnerabilityName": "F5 BIG-IP Configuration Utility Authentication Bypass Vulnerability",
-          "dateAdded": "2023-10-31",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-46747"
-        },
-        {
-          "cveID": "CVE-2022-1388",
-          "product": "BIG-IP",
-          "vulnerabilityName": "F5 BIG-IP Missing Authentication Vulnerability",
-          "dateAdded": "2022-05-10",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-1388"
-        },
-        {
-          "cveID": "CVE-2020-5902",
-          "product": "BIG-IP",
-          "vulnerabilityName": "F5 BIG-IP Traffic Management User Interface (TMUI) Remote Code Execution Vulnerability",
-          "dateAdded": "2021-11-03",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-5902"
-        },
-        {
-          "cveID": "CVE-2025-53521",
-          "product": "BIG-IP",
-          "vulnerabilityName": "F5 BIG-IP Stack-Based Buffer Overflow Vulnerability",
-          "dateAdded": "2026-03-27",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-53521"
-        },
-        {
-          "cveID": "CVE-2023-46748",
-          "product": "BIG-IP Configuration Utility",
-          "vulnerabilityName": "F5 BIG-IP Configuration Utility SQL Injection Vulnerability",
-          "dateAdded": "2023-10-31",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-46748"
-        }
-      ]
-    },
-    {
       "vendor": "Mitel",
       "total_cve_count": 7,
       "recent_12mo_count": 0,
@@ -4614,6 +4622,105 @@
       ]
     },
     {
+      "vendor": "WordPress",
+      "total_cve_count": 6,
+      "recent_12mo_count": 3,
+      "ransomware_count": 0,
+      "product_breakdown": [
+        {
+          "label": "Core",
+          "count": 3
+        },
+        {
+          "label": "File Manager Plugin",
+          "count": 1
+        },
+        {
+          "label": "Snap Creek Duplicator Plugin",
+          "count": 1
+        },
+        {
+          "label": "Social Warfare Plugin",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-87902",
+          "product": "Core",
+          "vulnerabilityName": "WordPress Core Remote File Inclusion Vulnerability",
+          "dateAdded": "2026-09-25",
+          "dueDate": "2026-09-28",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "WordPress Core contains a remote file inclusion vulnerability which could allow an unauthenticated attacker to make page-template resolution include a chosen readable local `.php` file outside the active theme directories, leading to remote code execution.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87902"
+        },
+        {
+          "cveID": "CVE-2026-60137",
+          "product": "Core",
+          "vulnerabilityName": "WordPress Core SQL Injection Vulnerability",
+          "dateAdded": "2026-07-21",
+          "dueDate": "2026-08-04",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "WordPress Core contains a SQL injection vulnerability when a plugin or theme passes untrusted input to the parameter. This vulnerability can be chained with CVE-2026-63030 to allow an unauthenticated attacker to gain remote code execution on default WordPress installations.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60137"
+        },
+        {
+          "cveID": "CVE-2026-63030",
+          "product": "Core",
+          "vulnerabilityName": "WordPress Core Interpretation Conflict Vulnerability",
+          "dateAdded": "2026-07-21",
+          "dueDate": "2026-07-24",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "WordPress Core contains an interpretation conflict vulnerability that could allow an attacker to perform SQL Injection and achieve Remote Code Execution. This vulnerability can be chained with CVE-2026-60137.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63030"
+        },
+        {
+          "cveID": "CVE-2020-25213",
+          "product": "File Manager Plugin",
+          "vulnerabilityName": "WordPress File Manager Plugin Remote Code Execution Vulnerability",
+          "dateAdded": "2021-11-03",
+          "dueDate": "2022-05-03",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "WordPress File Manager plugin contains a remote code execution vulnerability that allows unauthenticated users to execute PHP code and upload malicious files on a target site.",
+          "requiredAction": "Apply updates per vendor instructions.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-25213"
+        },
+        {
+          "cveID": "CVE-2020-11738",
+          "product": "Snap Creek Duplicator Plugin",
+          "vulnerabilityName": "WordPress Snap Creek Duplicator Plugin File Download Vulnerability",
+          "dateAdded": "2021-11-03",
+          "dueDate": "2022-05-03",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "WordPress Snap Creek Duplicator plugin contains a file download vulnerability when an administrator creates a new copy of their site that allows an attacker to download the generated files from their Wordpress dashboard. This vulnerability affects Duplicator and Dulplicator Pro.",
+          "requiredAction": "Apply updates per vendor instructions.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11738"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2026-87902",
+          "product": "Core",
+          "vulnerabilityName": "WordPress Core Remote File Inclusion Vulnerability",
+          "dateAdded": "2026-09-25",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-87902"
+        },
+        {
+          "cveID": "CVE-2026-60137",
+          "product": "Core",
+          "vulnerabilityName": "WordPress Core SQL Injection Vulnerability",
+          "dateAdded": "2026-07-21",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60137"
+        }
+      ]
+    },
+    {
       "vendor": "Jenkins",
       "total_cve_count": 6,
       "recent_12mo_count": 1,
@@ -4828,6 +4935,208 @@
           "dateAdded": "2025-09-03",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-9377"
+        }
+      ]
+    },
+    {
+      "vendor": "MikroTik",
+      "total_cve_count": 5,
+      "recent_12mo_count": 3,
+      "ransomware_count": 0,
+      "product_breakdown": [
+        {
+          "label": "RouterOS",
+          "count": 5
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-67279",
+          "product": "RouterOS",
+          "vulnerabilityName": "Mikrotik RouterOS Improper Enforcement of Behavioral Workflow Vulnerability",
+          "dateAdded": "2026-09-25",
+          "dueDate": "2026-09-28",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Mikrotik RouterOS contains an improper enforcement of behavioral workflow vulnerability that could allow an unauthenticated client to open a session channel and send an exec request. This vulnerability can be chained to achieve unauthenticated exploitation of CVE-2026-86060.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-67279"
+        },
+        {
+          "cveID": "CVE-2026-86060",
+          "product": "RouterOS",
+          "vulnerabilityName": "MikroTik RouterOS Improper Neutralization of Argument Delimiters in a Command Vulnerability",
+          "dateAdded": "2026-09-10",
+          "dueDate": "2026-09-13",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "MikroTik RouterOS contains an improper neutralization of argument delimiters in a command vulnerability which allows an attacker to change the trusted RouterOS policy mask, leading to privilege escalation.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86060"
+        },
+        {
+          "cveID": "CVE-2026-67277",
+          "product": "RouterOS",
+          "vulnerabilityName": "MikroTik RouterOS Missing Authentication for Critical Function Vulnerability",
+          "dateAdded": "2026-09-10",
+          "dueDate": "2026-09-13",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "MikroTik RouterOS contains a missing authentication for critical function vulnerability which allows kernel memory disclosure and denial of service in the btest service.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-67277"
+        },
+        {
+          "cveID": "CVE-2018-7445",
+          "product": "RouterOS",
+          "vulnerabilityName": "MikroTik RouterOS Stack-Based Buffer Overflow Vulnerability",
+          "dateAdded": "2022-09-08",
+          "dueDate": "2022-09-29",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "In MikroTik RouterOS, a stack-based buffer overflow occurs when processing NetBIOS session request messages. Remote attackers with access to the service can exploit this vulnerability and gain code execution on the system.",
+          "requiredAction": "Apply updates per vendor instructions.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-7445"
+        },
+        {
+          "cveID": "CVE-2018-14847",
+          "product": "RouterOS",
+          "vulnerabilityName": "MikroTik Router OS Directory Traversal Vulnerability",
+          "dateAdded": "2021-12-01",
+          "dueDate": "2022-06-01",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "MikroTik RouterOS through 6.42 allows unauthenticated remote attackers to read arbitrary files and remote authenticated attackers to write arbitrary files due to a directory traversal vulnerability in the WinBox interface.",
+          "requiredAction": "Apply updates per vendor instructions.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-14847"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2026-67279",
+          "product": "RouterOS",
+          "vulnerabilityName": "Mikrotik RouterOS Improper Enforcement of Behavioral Workflow Vulnerability",
+          "dateAdded": "2026-09-25",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-67279"
+        },
+        {
+          "cveID": "CVE-2026-86060",
+          "product": "RouterOS",
+          "vulnerabilityName": "MikroTik RouterOS Improper Neutralization of Argument Delimiters in a Command Vulnerability",
+          "dateAdded": "2026-09-10",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86060"
+        }
+      ]
+    },
+    {
+      "vendor": "Check Point",
+      "total_cve_count": 5,
+      "recent_12mo_count": 4,
+      "ransomware_count": 2,
+      "product_breakdown": [
+        {
+          "label": "Multiple Products",
+          "count": 2
+        },
+        {
+          "label": "SmartConsole",
+          "count": 1
+        },
+        {
+          "label": "Security Gateway",
+          "count": 1
+        },
+        {
+          "label": "Quantum Security Gateways",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-93616",
+          "product": "Multiple Products",
+          "vulnerabilityName": "Check Point Multiple Products Path Traversal Vulnerability",
+          "dateAdded": "2026-09-22",
+          "dueDate": "2026-09-25",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Check Point Security Management Server, Multi-Domain Security Management Server, Log Server, Multi-Domain Log Server, and SmartEvent contain a path traversal vulnerability that allows an unauthenticated attacker to upload and execute arbitrary scripts.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93616"
+        },
+        {
+          "cveID": "CVE-2026-85102",
+          "product": "Multiple Products",
+          "vulnerabilityName": "Check Point Multiple Products Improper Certificate Validation Vulnerability",
+          "dateAdded": "2026-09-22",
+          "dueDate": "2026-09-25",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Check Point Security Gateway and Check Point Spark Firewall using Site to Site VPN or Remote Access VPN contain an improper certificate validation vulnerability which could allow an unauthenticated remote attacker to execute arbitrary code on the Gateway.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85102"
+        },
+        {
+          "cveID": "CVE-2026-16232",
+          "product": "SmartConsole",
+          "vulnerabilityName": "Check Point SmartConsole Improper Authentication Vulnerability",
+          "dateAdded": "2026-07-22",
+          "dueDate": "2026-07-25",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Check Point SmartConsole contains an improper authentication vulnerability which could allow an unauthenticated remote attacker to obtain an application login token and use it to authenticate with full administrative privileges.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16232"
+        },
+        {
+          "cveID": "CVE-2026-50751",
+          "product": "Security Gateway",
+          "vulnerabilityName": "Check Point Security Gateway Improper Authentication Vulnerability",
+          "dateAdded": "2026-06-08",
+          "dueDate": "2026-06-11",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "Check Point Security Gateway contains an improper authentication vulnerability in IKEv1 key exchange that could allow an unauthenticated remote attacker to bypass user authentication and establish a remote access VPN connection without a valid user password.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50751"
+        },
+        {
+          "cveID": "CVE-2024-24919",
+          "product": "Quantum Security Gateways",
+          "vulnerabilityName": "Check Point Quantum Security Gateways Information Disclosure Vulnerability",
+          "dateAdded": "2024-05-30",
+          "dueDate": "2024-06-20",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "Check Point Quantum Security Gateways contain an unspecified information disclosure vulnerability. The vulnerability potentially allows an attacker to access information on Gateways connected to the internet, with IPSec VPN, Remote Access VPN or Mobile Access enabled. This issue affects several product lines from Check Point, including CloudGuard Network, Quantum Scalable Chassis, Quantum Security Gateways, and Quantum Spark Appliances.",
+          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-24919"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2026-50751",
+          "product": "Security Gateway",
+          "vulnerabilityName": "Check Point Security Gateway Improper Authentication Vulnerability",
+          "dateAdded": "2026-06-08",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50751"
+        },
+        {
+          "cveID": "CVE-2024-24919",
+          "product": "Quantum Security Gateways",
+          "vulnerabilityName": "Check Point Quantum Security Gateways Information Disclosure Vulnerability",
+          "dateAdded": "2024-05-30",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-24919"
+        },
+        {
+          "cveID": "CVE-2026-93616",
+          "product": "Multiple Products",
+          "vulnerabilityName": "Check Point Multiple Products Path Traversal Vulnerability",
+          "dateAdded": "2026-09-22",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93616"
+        },
+        {
+          "cveID": "CVE-2026-85102",
+          "product": "Multiple Products",
+          "vulnerabilityName": "Check Point Multiple Products Improper Certificate Validation Vulnerability",
+          "dateAdded": "2026-09-22",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85102"
         }
       ]
     },
@@ -5244,105 +5553,6 @@
           "dateAdded": "2026-01-23",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-37079"
-        }
-      ]
-    },
-    {
-      "vendor": "WordPress",
-      "total_cve_count": 5,
-      "recent_12mo_count": 2,
-      "ransomware_count": 0,
-      "product_breakdown": [
-        {
-          "label": "Core",
-          "count": 2
-        },
-        {
-          "label": "File Manager Plugin",
-          "count": 1
-        },
-        {
-          "label": "Snap Creek Duplicator Plugin",
-          "count": 1
-        },
-        {
-          "label": "Social Warfare Plugin",
-          "count": 1
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2026-60137",
-          "product": "Core",
-          "vulnerabilityName": "WordPress Core SQL Injection Vulnerability",
-          "dateAdded": "2026-07-21",
-          "dueDate": "2026-08-04",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "WordPress Core contains a SQL injection vulnerability when a plugin or theme passes untrusted input to the parameter. This vulnerability can be chained with CVE-2026-63030 to allow an unauthenticated attacker to gain remote code execution on default WordPress installations.",
-          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60137"
-        },
-        {
-          "cveID": "CVE-2026-63030",
-          "product": "Core",
-          "vulnerabilityName": "WordPress Core Interpretation Conflict Vulnerability",
-          "dateAdded": "2026-07-21",
-          "dueDate": "2026-07-24",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "WordPress Core contains an interpretation conflict vulnerability that could allow an attacker to perform SQL Injection and achieve Remote Code Execution. This vulnerability can be chained with CVE-2026-60137.",
-          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63030"
-        },
-        {
-          "cveID": "CVE-2020-25213",
-          "product": "File Manager Plugin",
-          "vulnerabilityName": "WordPress File Manager Plugin Remote Code Execution Vulnerability",
-          "dateAdded": "2021-11-03",
-          "dueDate": "2022-05-03",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "WordPress File Manager plugin contains a remote code execution vulnerability that allows unauthenticated users to execute PHP code and upload malicious files on a target site.",
-          "requiredAction": "Apply updates per vendor instructions.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-25213"
-        },
-        {
-          "cveID": "CVE-2020-11738",
-          "product": "Snap Creek Duplicator Plugin",
-          "vulnerabilityName": "WordPress Snap Creek Duplicator Plugin File Download Vulnerability",
-          "dateAdded": "2021-11-03",
-          "dueDate": "2022-05-03",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "WordPress Snap Creek Duplicator plugin contains a file download vulnerability when an administrator creates a new copy of their site that allows an attacker to download the generated files from their Wordpress dashboard. This vulnerability affects Duplicator and Dulplicator Pro.",
-          "requiredAction": "Apply updates per vendor instructions.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11738"
-        },
-        {
-          "cveID": "CVE-2019-9978",
-          "product": "Social Warfare Plugin",
-          "vulnerabilityName": "WordPress Social Warfare Plugin Cross-Site Scripting (XSS) Vulnerability",
-          "dateAdded": "2021-11-03",
-          "dueDate": "2022-05-03",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "WordPress Social Warfare plugin contains a cross-site scripting (XSS) vulnerability that allows for remote code execution. This vulnerability affects Social Warfare and Social Warfare Pro.",
-          "requiredAction": "Apply updates per vendor instructions.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-9978"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2026-60137",
-          "product": "Core",
-          "vulnerabilityName": "WordPress Core SQL Injection Vulnerability",
-          "dateAdded": "2026-07-21",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60137"
-        },
-        {
-          "cveID": "CVE-2026-63030",
-          "product": "Core",
-          "vulnerabilityName": "WordPress Core Interpretation Conflict Vulnerability",
-          "dateAdded": "2026-07-21",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63030"
         }
       ]
     },
@@ -6125,82 +6335,6 @@
       ]
     },
     {
-      "vendor": "MikroTik",
-      "total_cve_count": 4,
-      "recent_12mo_count": 2,
-      "ransomware_count": 0,
-      "product_breakdown": [
-        {
-          "label": "RouterOS",
-          "count": 4
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2026-86060",
-          "product": "RouterOS",
-          "vulnerabilityName": "MikroTik RouterOS Improper Neutralization of Argument Delimiters in a Command Vulnerability",
-          "dateAdded": "2026-09-10",
-          "dueDate": "2026-09-13",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "MikroTik RouterOS contains an improper neutralization of argument delimiters in a command vulnerability which allows an attacker to change the trusted RouterOS policy mask, leading to privilege escalation.",
-          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86060"
-        },
-        {
-          "cveID": "CVE-2026-67277",
-          "product": "RouterOS",
-          "vulnerabilityName": "MikroTik RouterOS Missing Authentication for Critical Function Vulnerability",
-          "dateAdded": "2026-09-10",
-          "dueDate": "2026-09-13",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "MikroTik RouterOS contains a missing authentication for critical function vulnerability which allows kernel memory disclosure and denial of service in the btest service.",
-          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-67277"
-        },
-        {
-          "cveID": "CVE-2018-7445",
-          "product": "RouterOS",
-          "vulnerabilityName": "MikroTik RouterOS Stack-Based Buffer Overflow Vulnerability",
-          "dateAdded": "2022-09-08",
-          "dueDate": "2022-09-29",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "In MikroTik RouterOS, a stack-based buffer overflow occurs when processing NetBIOS session request messages. Remote attackers with access to the service can exploit this vulnerability and gain code execution on the system.",
-          "requiredAction": "Apply updates per vendor instructions.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-7445"
-        },
-        {
-          "cveID": "CVE-2018-14847",
-          "product": "RouterOS",
-          "vulnerabilityName": "MikroTik Router OS Directory Traversal Vulnerability",
-          "dateAdded": "2021-12-01",
-          "dueDate": "2022-06-01",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "MikroTik RouterOS through 6.42 allows unauthenticated remote attackers to read arbitrary files and remote authenticated attackers to write arbitrary files due to a directory traversal vulnerability in the WinBox interface.",
-          "requiredAction": "Apply updates per vendor instructions.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-14847"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2026-86060",
-          "product": "RouterOS",
-          "vulnerabilityName": "MikroTik RouterOS Improper Neutralization of Argument Delimiters in a Command Vulnerability",
-          "dateAdded": "2026-09-10",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-86060"
-        },
-        {
-          "cveID": "CVE-2026-67277",
-          "product": "RouterOS",
-          "vulnerabilityName": "MikroTik RouterOS Missing Authentication for Critical Function Vulnerability",
-          "dateAdded": "2026-09-10",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-67277"
-        }
-      ]
-    },
-    {
       "vendor": "Sangoma",
       "total_cve_count": 4,
       "recent_12mo_count": 3,
@@ -6288,7 +6422,7 @@
       "vendor": "JetBrains",
       "total_cve_count": 4,
       "recent_12mo_count": 2,
-      "ransomware_count": 3,
+      "ransomware_count": 4,
       "product_breakdown": [
         {
           "label": "TeamCity",
@@ -6302,7 +6436,7 @@
           "vulnerabilityName": "JetBrains TeamCity Deserialization of Untrusted Data Vulnerability",
           "dateAdded": "2026-08-05",
           "dueDate": "2026-08-08",
-          "knownRansomwareCampaignUse": "Unknown",
+          "knownRansomwareCampaignUse": "Known",
           "shortDescription": "JetBrains TeamCity contains a deserialization of untrusted data vulnerability that could allow unauthenticated remote code execution via the agent polling protocol.",
           "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63077"
@@ -6343,6 +6477,14 @@
       ],
       "highest_severity": [
         {
+          "cveID": "CVE-2026-63077",
+          "product": "TeamCity",
+          "vulnerabilityName": "JetBrains TeamCity Deserialization of Untrusted Data Vulnerability",
+          "dateAdded": "2026-08-05",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63077"
+        },
+        {
           "cveID": "CVE-2024-27199",
           "product": "TeamCity",
           "vulnerabilityName": "JetBrains TeamCity Relative Path Traversal Vulnerability",
@@ -6357,22 +6499,6 @@
           "dateAdded": "2024-03-07",
           "knownRansomwareCampaignUse": "Known",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-27198"
-        },
-        {
-          "cveID": "CVE-2023-42793",
-          "product": "TeamCity",
-          "vulnerabilityName": "JetBrains TeamCity Authentication Bypass Vulnerability",
-          "dateAdded": "2023-10-04",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-42793"
-        },
-        {
-          "cveID": "CVE-2026-63077",
-          "product": "TeamCity",
-          "vulnerabilityName": "JetBrains TeamCity Deserialization of Untrusted Data Vulnerability",
-          "dateAdded": "2026-08-05",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-63077"
         }
       ]
     },
@@ -7401,6 +7527,75 @@
       ]
     },
     {
+      "vendor": "Arista",
+      "total_cve_count": 3,
+      "recent_12mo_count": 3,
+      "ransomware_count": 0,
+      "product_breakdown": [
+        {
+          "label": "VeloCloud Orchestrator",
+          "count": 2
+        },
+        {
+          "label": "Extensible Operating System",
+          "count": 1
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-93952",
+          "product": "VeloCloud Orchestrator",
+          "vulnerabilityName": "Arista VeloCloud Orchestrator Improper Input Validation Vulnerability",
+          "dateAdded": "2026-09-22",
+          "dueDate": "2026-09-25",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Arista VeloCloud Orchestrator (VCO) on-prem contains an improper input validation vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrity, and availability of the orchestrator and data managed by the orchestrator.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93952"
+        },
+        {
+          "cveID": "CVE-2026-16812",
+          "product": "VeloCloud Orchestrator",
+          "vulnerabilityName": "Arista VeloCloud Orchestrator On-Prem OS Command Injection Vulnerability",
+          "dateAdded": "2026-07-27",
+          "dueDate": "2026-07-30",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Arista VeloCloud Orchestrator On-Prem contains an OS command injection vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrity, and availability of the orchestrator and data managed by the orchestrator.",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16812"
+        },
+        {
+          "cveID": "CVE-2026-7473",
+          "product": "Extensible Operating System",
+          "vulnerabilityName": "Arista Extensible Operating System Incomplete Comparison with Missing Factors Vulnerability",
+          "dateAdded": "2026-06-09",
+          "dueDate": "2026-06-23",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "Arista Extensible Operating System (EOS) contains an incomplete comparison with missing factors vulnerability when the switch incorrectly decapsulate and forwards other unexpected tunneled packet with a destination IP matching its configured decapsulation IP.",
+          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7473"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2026-93952",
+          "product": "VeloCloud Orchestrator",
+          "vulnerabilityName": "Arista VeloCloud Orchestrator Improper Input Validation Vulnerability",
+          "dateAdded": "2026-09-22",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93952"
+        },
+        {
+          "cveID": "CVE-2026-16812",
+          "product": "VeloCloud Orchestrator",
+          "vulnerabilityName": "Arista VeloCloud Orchestrator On-Prem OS Command Injection Vulnerability",
+          "dateAdded": "2026-07-27",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16812"
+        }
+      ]
+    },
+    {
       "vendor": "BerriAI",
       "total_cve_count": 3,
       "recent_12mo_count": 3,
@@ -7531,87 +7726,6 @@
           "dateAdded": "2026-08-20",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-72529"
-        }
-      ]
-    },
-    {
-      "vendor": "Check Point",
-      "total_cve_count": 3,
-      "recent_12mo_count": 2,
-      "ransomware_count": 2,
-      "product_breakdown": [
-        {
-          "label": "SmartConsole",
-          "count": 1
-        },
-        {
-          "label": "Security Gateway",
-          "count": 1
-        },
-        {
-          "label": "Quantum Security Gateways",
-          "count": 1
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2026-16232",
-          "product": "SmartConsole",
-          "vulnerabilityName": "Check Point SmartConsole Improper Authentication Vulnerability",
-          "dateAdded": "2026-07-22",
-          "dueDate": "2026-07-25",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Check Point SmartConsole contains an improper authentication vulnerability which could allow an unauthenticated remote attacker to obtain an application login token and use it to authenticate with full administrative privileges.",
-          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16232"
-        },
-        {
-          "cveID": "CVE-2026-50751",
-          "product": "Security Gateway",
-          "vulnerabilityName": "Check Point Security Gateway Improper Authentication Vulnerability",
-          "dateAdded": "2026-06-08",
-          "dueDate": "2026-06-11",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "Check Point Security Gateway contains an improper authentication vulnerability in IKEv1 key exchange that could allow an unauthenticated remote attacker to bypass user authentication and establish a remote access VPN connection without a valid user password.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50751"
-        },
-        {
-          "cveID": "CVE-2024-24919",
-          "product": "Quantum Security Gateways",
-          "vulnerabilityName": "Check Point Quantum Security Gateways Information Disclosure Vulnerability",
-          "dateAdded": "2024-05-30",
-          "dueDate": "2024-06-20",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "Check Point Quantum Security Gateways contain an unspecified information disclosure vulnerability. The vulnerability potentially allows an attacker to access information on Gateways connected to the internet, with IPSec VPN, Remote Access VPN or Mobile Access enabled. This issue affects several product lines from Check Point, including CloudGuard Network, Quantum Scalable Chassis, Quantum Security Gateways, and Quantum Spark Appliances.",
-          "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-24919"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2026-50751",
-          "product": "Security Gateway",
-          "vulnerabilityName": "Check Point Security Gateway Improper Authentication Vulnerability",
-          "dateAdded": "2026-06-08",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50751"
-        },
-        {
-          "cveID": "CVE-2024-24919",
-          "product": "Quantum Security Gateways",
-          "vulnerabilityName": "Check Point Quantum Security Gateways Information Disclosure Vulnerability",
-          "dateAdded": "2024-05-30",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-24919"
-        },
-        {
-          "cveID": "CVE-2026-16232",
-          "product": "SmartConsole",
-          "vulnerabilityName": "Check Point SmartConsole Improper Authentication Vulnerability",
-          "dateAdded": "2026-07-22",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16232"
         }
       ]
     },
@@ -9202,6 +9316,60 @@
       ]
     },
     {
+      "vendor": "WSO2",
+      "total_cve_count": 2,
+      "recent_12mo_count": 1,
+      "ransomware_count": 1,
+      "product_breakdown": [
+        {
+          "label": "Multiple Products",
+          "count": 2
+        }
+      ],
+      "top_cves": [
+        {
+          "cveID": "CVE-2026-5430",
+          "product": "Multiple Products",
+          "vulnerabilityName": "WSO2 Multiple Products Path Traversal Vulnerability ",
+          "dateAdded": "2026-09-24",
+          "dueDate": "2026-09-27",
+          "knownRansomwareCampaignUse": "Unknown",
+          "shortDescription": "WSO2 API Control Plane, API Manager, Traffic Manager & Universal Gateway contain a path traversal vulnerability that could allow for unrestricted file upload and lead to remote code execution. ",
+          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-5430"
+        },
+        {
+          "cveID": "CVE-2022-29464",
+          "product": "Multiple Products",
+          "vulnerabilityName": "WSO2 Multiple Products Unrestrictive Upload of File Vulnerability",
+          "dateAdded": "2022-04-25",
+          "dueDate": "2022-05-16",
+          "knownRansomwareCampaignUse": "Known",
+          "shortDescription": "Multiple WSO2 products allow for unrestricted file upload, resulting in remote code execution.",
+          "requiredAction": "Apply updates per vendor instructions.",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-29464"
+        }
+      ],
+      "highest_severity": [
+        {
+          "cveID": "CVE-2022-29464",
+          "product": "Multiple Products",
+          "vulnerabilityName": "WSO2 Multiple Products Unrestrictive Upload of File Vulnerability",
+          "dateAdded": "2022-04-25",
+          "knownRansomwareCampaignUse": "Known",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-29464"
+        },
+        {
+          "cveID": "CVE-2026-5430",
+          "product": "Multiple Products",
+          "vulnerabilityName": "WSO2 Multiple Products Path Traversal Vulnerability ",
+          "dateAdded": "2026-09-24",
+          "knownRansomwareCampaignUse": "Unknown",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-5430"
+        }
+      ]
+    },
+    {
       "vendor": "Acronis",
       "total_cve_count": 2,
       "recent_12mo_count": 1,
@@ -9368,64 +9536,6 @@
           "dateAdded": "2024-11-12",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-41277"
-        }
-      ]
-    },
-    {
-      "vendor": "Arista",
-      "total_cve_count": 2,
-      "recent_12mo_count": 2,
-      "ransomware_count": 0,
-      "product_breakdown": [
-        {
-          "label": "VeloCloud Orchestrator",
-          "count": 1
-        },
-        {
-          "label": "Extensible Operating System",
-          "count": 1
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2026-16812",
-          "product": "VeloCloud Orchestrator",
-          "vulnerabilityName": "Arista VeloCloud Orchestrator On-Prem OS Command Injection Vulnerability",
-          "dateAdded": "2026-07-27",
-          "dueDate": "2026-07-30",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Arista VeloCloud Orchestrator On-Prem contains an OS command injection vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrity, and availability of the orchestrator and data managed by the orchestrator.",
-          "requiredAction": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16812"
-        },
-        {
-          "cveID": "CVE-2026-7473",
-          "product": "Extensible Operating System",
-          "vulnerabilityName": "Arista Extensible Operating System Incomplete Comparison with Missing Factors Vulnerability",
-          "dateAdded": "2026-06-09",
-          "dueDate": "2026-06-23",
-          "knownRansomwareCampaignUse": "Unknown",
-          "shortDescription": "Arista Extensible Operating System (EOS) contains an incomplete comparison with missing factors vulnerability when the switch incorrectly decapsulate and forwards other unexpected tunneled packet with a destination IP matching its configured decapsulation IP.",
-          "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7473"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2026-16812",
-          "product": "VeloCloud Orchestrator",
-          "vulnerabilityName": "Arista VeloCloud Orchestrator On-Prem OS Command Injection Vulnerability",
-          "dateAdded": "2026-07-27",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-16812"
-        },
-        {
-          "cveID": "CVE-2026-7473",
-          "product": "Extensible Operating System",
-          "vulnerabilityName": "Arista Extensible Operating System Incomplete Comparison with Missing Factors Vulnerability",
-          "dateAdded": "2026-06-09",
-          "knownRansomwareCampaignUse": "Unknown",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-7473"
         }
       ]
     },
@@ -15208,41 +15318,6 @@
           "dateAdded": "2022-05-04",
           "knownRansomwareCampaignUse": "Unknown",
           "url": "https://nvd.nist.gov/vuln/detail/CVE-2014-0160"
-        }
-      ]
-    },
-    {
-      "vendor": "WSO2",
-      "total_cve_count": 1,
-      "recent_12mo_count": 0,
-      "ransomware_count": 1,
-      "product_breakdown": [
-        {
-          "label": "Multiple Products",
-          "count": 1
-        }
-      ],
-      "top_cves": [
-        {
-          "cveID": "CVE-2022-29464",
-          "product": "Multiple Products",
-          "vulnerabilityName": "WSO2 Multiple Products Unrestrictive Upload of File Vulnerability",
-          "dateAdded": "2022-04-25",
-          "dueDate": "2022-05-16",
-          "knownRansomwareCampaignUse": "Known",
-          "shortDescription": "Multiple WSO2 products allow for unrestricted file upload, resulting in remote code execution.",
-          "requiredAction": "Apply updates per vendor instructions.",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-29464"
-        }
-      ],
-      "highest_severity": [
-        {
-          "cveID": "CVE-2022-29464",
-          "product": "Multiple Products",
-          "vulnerabilityName": "WSO2 Multiple Products Unrestrictive Upload of File Vulnerability",
-          "dateAdded": "2022-04-25",
-          "knownRansomwareCampaignUse": "Known",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-29464"
         }
       ]
     },

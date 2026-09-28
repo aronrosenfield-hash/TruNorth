@@ -1,23 +1,29 @@
 {
-  "merged_at": "2026-09-21T09:04:35.182Z",
+  "merged_at": "2026-09-28T09:55:42.440Z",
   "source_file": "public/data/cisa-kev.json",
   "total_vendors": 283,
-  "merged_count": 2,
-  "skipped_count": 37,
+  "merged_count": 3,
+  "skipped_count": 36,
   "orphan_count": 244,
   "error_count": 0,
   "merged_vendors": [
     {
-      "vendor": "Cisco",
-      "target": "cisco",
+      "vendor": "Microsoft",
+      "target": "microsoft",
       "routed_via": "override",
-      "cves": 99
+      "cves": 389
     },
     {
-      "vendor": "Google",
-      "target": "google-alphabet",
+      "vendor": "Adobe",
+      "target": "adobe",
       "routed_via": "override",
-      "cves": 75
+      "cves": 82
+    },
+    {
+      "vendor": "F5",
+      "target": "f5",
+      "routed_via": "direct",
+      "cves": 8
     }
   ],
   "top_orphans": [
@@ -37,14 +43,14 @@
       "cves": 31
     },
     {
-      "vendor": "D-Link",
-      "vendor_slug": "d-link",
+      "vendor": "Citrix",
+      "vendor_slug": "citrix",
       "cves": 26
     },
     {
-      "vendor": "Citrix",
-      "vendor_slug": "citrix",
-      "cves": 24
+      "vendor": "D-Link",
+      "vendor_slug": "d-link",
+      "cves": 26
     },
     {
       "vendor": "SonicWall",
@@ -57,6 +63,11 @@
       "cves": 19
     },
     {
+      "vendor": "Zyxel",
+      "vendor_slug": "zyxel",
+      "cves": 13
+    },
+    {
       "vendor": "Mozilla",
       "vendor_slug": "mozilla",
       "cves": 13
@@ -64,11 +75,6 @@
     {
       "vendor": "Trend Micro",
       "vendor_slug": "trend-micro",
-      "cves": 12
-    },
-    {
-      "vendor": "Zyxel",
-      "vendor_slug": "zyxel",
       "cves": 12
     },
     {
@@ -117,6 +123,11 @@
       "cves": 7
     },
     {
+      "vendor": "WordPress",
+      "vendor_slug": "wordpress",
+      "cves": 6
+    },
+    {
       "vendor": "Jenkins",
       "vendor_slug": "jenkins",
       "cves": 6
@@ -127,13 +138,18 @@
       "cves": 6
     },
     {
-      "vendor": "PaperCut",
-      "vendor_slug": "papercut",
+      "vendor": "MikroTik",
+      "vendor_slug": "mikrotik",
       "cves": 5
     },
     {
-      "vendor": "WordPress",
-      "vendor_slug": "wordpress",
+      "vendor": "Check Point",
+      "vendor_slug": "check-point",
+      "cves": 5
+    },
+    {
+      "vendor": "PaperCut",
+      "vendor_slug": "papercut",
       "cves": 5
     },
     {
@@ -160,16 +176,6 @@
       "vendor": "DrayTek",
       "vendor_slug": "draytek",
       "cves": 5
-    },
-    {
-      "vendor": "Exim",
-      "vendor_slug": "exim",
-      "cves": 5
-    },
-    {
-      "vendor": "ConnectWise",
-      "vendor_slug": "connectwise",
-      "cves": 4
     }
   ]
 }
