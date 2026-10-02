@@ -6,8 +6,13 @@ name: news-rss-nightly
 # keyword match + outlet whitelist, annotates AllSides bias rating per
 # domain, writes /public/data/news/YYYY-MM-DD.json.
 #
-# AI extraction (using Anthropic API) is a separate downstream step that
-# only runs on the high-signal subset to keep cost down.
+# 2026-10-02: the AI extraction step (Anthropic API, scripts/news-rss-extract.mjs)
+# and the merge step that consumed its output (scripts/news-extracted-merge.mjs,
+# which reads public/data/news/YYYY-MM-DD.extracted.json) were removed — Aron's
+# call, no new Anthropic key. This job now only collects + commits the RSS
+# digest. Per-company `news` objects already in public/data/companies/*.json are
+# left as-is (the UI renders them only when present). Both scripts stay in the
+# repo for a one-line revival if a key is ever restored.
 
 on:
   schedule:
@@ -44,18 +49,6 @@ jobs:
       - name: Run news collector
         run: node scripts/news-rss-collect.mjs
 
-      - name: Run AI extraction on high-signal items
-        if: ${{ !cancelled() }}
-        continue-on-error: true
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: node scripts/news-rss-extract.mjs
-
-      - name: Merge extracted signals into per-company JSON
-        if: ${{ !cancelled() }}
-        continue-on-error: true
-        run: node scripts/news-extracted-merge.mjs
-
       - name: Commit + push the digest
         if: ${{ !cancelled() }}
         run: |
@@ -69,7 +62,7 @@ jobs:
           # before the data/news files could be committed.
           git add -A public/data/news/ public/data/companies/
           git diff --quiet --staged && echo "No changes" && exit 0
-          git commit -m "data(news): nightly RSS digest + AI extraction + per-company merge $DATE [skip ci]"
+          git commit -m "data(news): nightly RSS digest $DATE [skip ci]"
           for i in 1 2 3; do
             git pull --rebase origin main && git push origin main && break
             echo "Push attempt $i failed, retrying…"
